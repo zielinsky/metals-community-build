@@ -11,6 +11,7 @@ import {
 } from "vscode-extension-tester";
 
 import {
+  captureScreenshot,
   delay,
   fileFor,
   log,
@@ -31,11 +32,16 @@ async function openRenameInput(editor: TextEditor, timeoutMs: number) {
   const driver = VSBrowser.instance.driver;
   const deadline = Date.now() + timeoutMs;
   let lastError: unknown;
+  let selectionCaptured = false;
 
   while (Date.now() < deadline) {
     try {
       await editor.selectText(scenario.rename.symbol);
       log(`Selected symbol: ${scenario.rename.symbol}`);
+      if (!selectionCaptured) {
+        await captureScreenshot("rename-symbol-selected");
+        selectionCaptured = true;
+      }
       log("Executing command: Rename Symbol");
       await new Workbench().executeCommand("Rename Symbol");
 
@@ -48,6 +54,7 @@ async function openRenameInput(editor: TextEditor, timeoutMs: number) {
         attemptTimeout,
       );
       await driver.wait(until.elementIsVisible(input), attemptTimeout);
+      await captureScreenshot("rename-input-opened");
       return input;
     } catch (error) {
       lastError = error;
@@ -113,6 +120,7 @@ async function verifyRename(): Promise<void> {
   assert.equal(identifierOccurrences(saved, symbol), 0);
   assert.equal(identifierOccurrences(saved, newName), expectedOccurrences);
   log(`Verified ${expectedOccurrences} occurrences of ${newName}`);
+  await captureScreenshot("rename-verified");
 }
 
 describe(`${project.buildTool} / ${project.id}`, function () {
@@ -124,6 +132,9 @@ describe(`${project.buildTool} / ${project.id}`, function () {
       await prepareMbt(scenario);
       await verifyRename();
       log(`Scenario passed: ${scenario.id}`);
+    } catch (error) {
+      await captureScreenshot("failure");
+      throw error;
     } finally {
       writeFileSync(openFile, original);
       log(`Restored ${openFile}`);

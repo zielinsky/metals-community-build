@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "tsc -p tsconfig.json",
     "matrix": "npm run compile --silent && node out/scripts/create-matrix.js",
+    "report": "npm run compile --silent && node out/scripts/build-report.js",
     "setup:vscode": "npm run compile --silent && node out/scripts/setup-vscode.js",
     "test:e2e": "npm run compile && node out/scripts/setup-vscode.js && npm run test:e2e:prepared",
     "test:e2e:prepared": "node out/scripts/run-project.js"

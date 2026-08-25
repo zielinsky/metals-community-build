@@ -95,6 +95,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          report_directory="$GITHUB_WORKSPACE/.test-report"
+          mkdir -p "$report_directory"
+          exec > >(tee "$report_directory/job.log") 2>&1
           metals_directory="$METALS_COMMUNITY_WORKSPACE/.metals"
           metals_log="$metals_directory/metals.log"
           mkdir -p "$metals_directory"
@@ -105,6 +108,7 @@ jobs:
           xvfb-run -a npm run test:e2e:prepared
         env:
           COMMUNITY_BUILD_PROJECT_CONFIG: ${{ matrix.config }}
+          COMMUNITY_BUILD_REPORT_DIR: ${{ github.workspace }}/.test-report
           METALS_COMMUNITY_WORKSPACE: ${{ github.workspace }}/${{ matrix.workspacePath }}
           METALS_COMMUNITY_METALS_VERSION: ${{ inputs.metalsVersion }}
 
@@ -112,8 +116,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: ${{ matrix.buildTool }}-${{ matrix.project }}-${{ github.run_id }}
+          name: diagnostics-${{ matrix.buildTool }}-${{ matrix.project }}-${{ github.run_id }}
           path: |
+            .test-report
             .test-resources/screenshots
             .test-resources/chromedriver.log
             .test-resources/settings/logs

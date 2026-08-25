@@ -23,8 +23,9 @@ The source input is visible in GitHub Actions. Pass only a public repository and
 ref; never include credentials or tokens in the URL.
 
 The selected repository and ref are built once. The resulting Ivy and Maven
-local repositories are uploaded as a short-lived artifact and restored by every
-generated project job.
+local repositories are uploaded as a temporary artifact and restored by every
+generated project job. A successful test run deletes that artifact immediately;
+a failed run retains it for one day so **Re-run failed jobs** can reuse it.
 
 ## Structure
 
@@ -53,9 +54,22 @@ dependencies, VS Code, ChromeDriver, and installed extensions across jobs and
 workflow runs. Only the preparation job can write this cache; project jobs restore
 it read-only. Tests are compiled from the current checkout in every project job.
 During a scenario, the CI log reports every relevant UI action and streams
-`.metals/metals.log` with a `[metals]` prefix. Screenshots, VS Code logs, the MBT
-model, and the complete Metals log are also uploaded as diagnostics after every
-job.
+`.metals/metals.log` with a `[metals]` prefix. The test captures VS Code after
+opening the file, displaying and accepting build-server prompts, completing the
+MBT import, completing feature-specific actions, and encountering a failure.
+
+After all project jobs finish, including failed jobs, CI builds a static report.
+Its front page lists every configured project under Bazel, Maven, or Gradle and
+highlights failed projects. Each project page contains scenario results,
+screenshots, the complete E2E and Metals logs, VS Code/ChromeDriver logs, and a
+lazy, formatted `mbt.json` viewer with namespace and dependency counts. The
+report is retained as a downloadable Actions artifact for 30 days and deployed
+as the repository's latest GitHub Pages site when Pages is enabled.
+
+Enable publishing once in **Settings → Pages → Build and deployment → Source →
+GitHub Actions**. The Pages report is public for a public repository, so project
+manifests must continue to reference only public repositories and refs and tests
+must not print credentials.
 
 ## Add a repository
 

@@ -3,6 +3,7 @@ import { isAbsolute, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
+  captureScreenshot,
   log,
   prepareMbt,
   project,
@@ -32,40 +33,46 @@ describe(`${project.buildTool} / ${project.id}`, function () {
   this.timeout(20 * 60 * 1000);
 
   it(scenario.id, async () => {
-    const imported = await prepareMbt(scenario);
-    const namespaces = imported.namespaces ?? {};
-    const dependencyModules = imported.dependencyModules ?? [];
-    const minimumNamespaces = scenario.assertions.minimumNamespaces ?? 1;
+    try {
+      const imported = await prepareMbt(scenario);
+      const namespaces = imported.namespaces ?? {};
+      const dependencyModules = imported.dependencyModules ?? [];
+      const minimumNamespaces = scenario.assertions.minimumNamespaces ?? 1;
 
-    log(
-      `MBT model contains ${Object.keys(namespaces).length} namespaces and ` +
-        `${dependencyModules.length} dependency modules`,
-    );
-    assert.ok(
-      Object.keys(namespaces).length >= minimumNamespaces,
-      `Expected at least ${minimumNamespaces} MBT namespaces`,
-    );
-    if (scenario.assertions.minimumDependencyModules !== undefined) {
-      assert.ok(
-        dependencyModules.length >=
-          scenario.assertions.minimumDependencyModules,
-        `Expected at least ${scenario.assertions.minimumDependencyModules} dependency modules`,
-      );
-    }
-
-    const importedSources = Object.values(namespaces).flatMap(
-      (namespace) => namespace.sources ?? [],
-    );
-    for (const expectedSource of scenario.assertions.sources) {
-      const owningSource = importedSources.find((source) =>
-        sourceContainsFile(source, expectedSource),
+      log(
+        `MBT model contains ${Object.keys(namespaces).length} namespaces and ` +
+          `${dependencyModules.length} dependency modules`,
       );
       assert.ok(
-        owningSource,
-        `Expected an MBT source root containing ${expectedSource}`,
+        Object.keys(namespaces).length >= minimumNamespaces,
+        `Expected at least ${minimumNamespaces} MBT namespaces`,
       );
-      log(`Verified imported source: ${expectedSource} via ${owningSource}`);
+      if (scenario.assertions.minimumDependencyModules !== undefined) {
+        assert.ok(
+          dependencyModules.length >=
+            scenario.assertions.minimumDependencyModules,
+          `Expected at least ${scenario.assertions.minimumDependencyModules} dependency modules`,
+        );
+      }
+
+      const importedSources = Object.values(namespaces).flatMap(
+        (namespace) => namespace.sources ?? [],
+      );
+      for (const expectedSource of scenario.assertions.sources) {
+        const owningSource = importedSources.find((source) =>
+          sourceContainsFile(source, expectedSource),
+        );
+        assert.ok(
+          owningSource,
+          `Expected an MBT source root containing ${expectedSource}`,
+        );
+        log(`Verified imported source: ${expectedSource} via ${owningSource}`);
+      }
+      await captureScreenshot("import-verified");
+      log(`Scenario passed: ${scenario.id}`);
+    } catch (error) {
+      await captureScreenshot("failure");
+      throw error;
     }
-    log(`Scenario passed: ${scenario.id}`);
   });
 });

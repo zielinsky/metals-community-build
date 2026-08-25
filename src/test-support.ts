@@ -1,10 +1,11 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 
 import {
   EditorView,
   Notification,
+  VSBrowser,
   Workbench,
 } from "vscode-extension-tester";
 
@@ -28,6 +29,8 @@ const projectConfigPath = resolve(
   requiredEnvironment("COMMUNITY_BUILD_PROJECT_CONFIG"),
 );
 const scenarioId = requiredEnvironment("COMMUNITY_BUILD_SCENARIO");
+const reportDirectory = process.env.COMMUNITY_BUILD_REPORT_DIR;
+let screenshotIndex = 0;
 export const project = JSON.parse(
   readFileSync(projectConfigPath, "utf8"),
 ) as ProjectConfig;
@@ -59,6 +62,21 @@ export function log(message: string): void {
 
 export function delay(milliseconds: number): Promise<void> {
   return new Promise((done) => setTimeout(done, milliseconds));
+}
+
+export async function captureScreenshot(step: string): Promise<void> {
+  if (!reportDirectory) return;
+  const slug = step.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const directory = resolve(reportDirectory, "screenshots", scenarioId);
+  const filename = `${String(++screenshotIndex).padStart(2, "0")}-${slug}.png`;
+  try {
+    mkdirSync(directory, { recursive: true });
+    const screenshot = await VSBrowser.instance.driver.takeScreenshot();
+    writeFileSync(resolve(directory, filename), screenshot, "base64");
+    log(`Captured screenshot: ${scenarioId}/${filename}`);
+  } catch (error) {
+    log(`Could not capture screenshot '${step}': ${String(error)}`);
+  }
 }
 
 async function waitForWorkspaceFile(
@@ -123,9 +141,11 @@ async function selectNamespaceMode(scenario: Scenario): Promise<void> {
     "How should Metals group Bazel targets in the MBT build?",
     2 * 60 * 1000,
   );
+  await captureScreenshot("namespace-mode-prompt");
   log(`Clicking notification action: ${action}`);
   await notification.takeAction(action);
   log(`Clicked notification action: ${action}`);
+  await captureScreenshot("namespace-mode-selected");
 }
 
 async function waitForMbtImport(timeoutMs: number): Promise<MbtModel> {
@@ -166,17 +186,22 @@ export async function prepareMbt(scenario: Scenario): Promise<MbtModel> {
   log("Waiting for VS Code to open the requested file");
   await waitForWorkspaceFile(openFile, 30 * 1000);
   log(`VS Code opened ${basename(openFile)}`);
+  await captureScreenshot("file-opened");
 
   log("Waiting for the build server choice notification");
   const buildServerChoice = await waitForNotification(
     "workspace detected. Which build server would you like to use?",
     2 * 60 * 1000,
   );
+  await captureScreenshot("build-server-prompt");
   log("Clicking notification action: Use MBT");
   await buildServerChoice.takeAction("Use MBT");
   log("Clicked notification action: Use MBT");
+  await captureScreenshot("mbt-selected");
   await selectNamespaceMode(scenario);
 
   log("Waiting for MBT import to finish");
-  return waitForMbtImport(15 * 60 * 1000);
+  const imported = await waitForMbtImport(15 * 60 * 1000);
+  await captureScreenshot("mbt-imported");
+  return imported;
 }

@@ -48,6 +48,8 @@ jobs:
     needs: projects
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    outputs:
+      artifactId: ${{ steps.metals-artifact.outputs.artifact-id }}
     steps:
       - name: Check out Metals
         uses: actions/checkout@v7
@@ -90,7 +92,8 @@ jobs:
             .ivy2/local/org.scalameta \
             .m2/repository/org/scalameta
 
-      - name: Upload local Metals repositories
+      - id: metals-artifact
+        name: Upload local Metals repositories
         uses: actions/upload-artifact@v7
         with:
           name: metals-local-${{ github.run_id }}
@@ -169,3 +172,118 @@ jobs:
     with:
       matrix: ${{ needs.projects.outputs.gradleMatrix }}
       metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+
+  report:
+    name: Build static report
+    needs: [projects, bazel, maven, gradle]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      pages: write
+      id-token: write
+    outputs:
+      pagesArtifactId: ${{ steps.pages-artifact.outputs.artifact_id }}
+    steps:
+      - name: Check out the community build
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install community build dependencies
+        run: npm ci
+
+      - name: Download project diagnostics
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: diagnostics-*-${{ github.run_id }}
+          path: report-input
+
+      - name: Build report
+        run: >-
+          npm run report --
+          --input report-input
+          --output report-site
+          --run-url "$RUN_URL"
+          --metals "$METALS_SOURCE"
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          METALS_SOURCE: ${{ inputs.metals }}
+
+      - name: Upload downloadable report
+        uses: actions/upload-artifact@v7
+        with:
+          name: community-build-report-${{ github.run_id }}
+          path: report-site
+          include-hidden-files: true
+          retention-days: 30
+
+      - id: pages
+        name: Configure GitHub Pages
+        continue-on-error: true
+        uses: actions/configure-pages@v5
+
+      - id: pages-artifact
+        name: Upload GitHub Pages report
+        if: steps.pages.outcome == 'success'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: report-site
+          include-hidden-files: true
+
+  deploy-report:
+    name: Publish static report
+    needs: report
+    if: ${{ always() && needs.report.outputs.pagesArtifactId != '' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v5
+
+      - name: Add report link to the job summary
+        run: echo "[Open community build report]($REPORT_URL)" >> "$GITHUB_STEP_SUMMARY"
+        env:
+          REPORT_URL: ${{ steps.deployment.outputs.page_url }}
+
+  cleanup-metals:
+    name: Delete temporary Metals artifact
+    needs: [build-metals, bazel, maven, gradle, report, deploy-report]
+    if: >-
+      ${{
+        always() &&
+        needs.build-metals.outputs.artifactId != '' &&
+        needs.report.result == 'success' &&
+        (needs.bazel.result == 'success' || needs.bazel.result == 'skipped') &&
+        (needs.maven.result == 'success' || needs.maven.result == 'skipped') &&
+        (needs.gradle.result == 'success' || needs.gradle.result == 'skipped')
+      }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Delete locally published Metals
+        run: >-
+          gh api --method DELETE
+          -H "X-GitHub-Api-Version: 2026-03-10"
+          "/repos/$GITHUB_REPOSITORY/actions/artifacts/$METALS_ARTIFACT_ID"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          METALS_ARTIFACT_ID: ${{ needs.build-metals.outputs.artifactId }}
