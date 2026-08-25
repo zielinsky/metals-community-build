@@ -2,6 +2,7 @@ import {
   existsSync,
   mkdirSync,
   readFileSync,
+  readdirSync,
   rmSync,
   writeFileSync,
 } from "node:fs";
@@ -44,7 +45,13 @@ function cleanSession(workspace: string): void {
   if (!existsSync(workspace) || workspace === parse(workspace).root) {
     throw new Error(`Refusing to clean invalid workspace: ${workspace}`);
   }
-  rmSync(resolve(workspace, ".metals"), { recursive: true, force: true });
+  const metalsDirectory = resolve(workspace, ".metals");
+  mkdirSync(metalsDirectory, { recursive: true });
+  for (const entry of readdirSync(metalsDirectory)) {
+    if (entry !== "metals.log") {
+      rmSync(resolve(metalsDirectory, entry), { recursive: true, force: true });
+    }
+  }
   rmSync(resolve(paths.storage, "settings"), { recursive: true, force: true });
 }
 
