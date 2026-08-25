@@ -10,25 +10,25 @@ import {
   Workbench,
 } from "vscode-extension-tester";
 
+import type { RenameScenario } from "../scripts/config";
 import {
   captureScreenshot,
   delay,
   fileFor,
   log,
   prepareMbt,
-  project,
-  selectScenario,
 } from "./test-support";
-
-const scenario = selectScenario("rename-symbol");
-const openFile = fileFor(scenario);
 
 function identifierOccurrences(text: string, identifier: string): number {
   const escaped = identifier.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   return text.match(new RegExp(`\\b${escaped}\\b`, "g"))?.length ?? 0;
 }
 
-async function openRenameInput(editor: TextEditor, timeoutMs: number) {
+async function openRenameInput(
+  scenario: RenameScenario,
+  editor: TextEditor,
+  timeoutMs: number,
+) {
   const driver = VSBrowser.instance.driver;
   const deadline = Date.now() + timeoutMs;
   let lastError: unknown;
@@ -73,7 +73,8 @@ async function openRenameInput(editor: TextEditor, timeoutMs: number) {
   );
 }
 
-async function verifyRename(): Promise<void> {
+async function verifyRename(scenario: RenameScenario): Promise<void> {
+  const openFile = fileFor(scenario);
   const { symbol, newName, expectedOccurrences } = scenario.rename;
   const editor = new TextEditor();
   const before = await editor.getText();
@@ -83,7 +84,7 @@ async function verifyRename(): Promise<void> {
     `Unexpected number of '${symbol}' occurrences before rename`,
   );
 
-  const input = await openRenameInput(editor, 2 * 60 * 1000);
+  const input = await openRenameInput(scenario, editor, 2 * 60 * 1000);
   const selectAll = Key.chord(
     process.platform === "darwin" ? Key.COMMAND : Key.CONTROL,
     "a",
@@ -120,24 +121,24 @@ async function verifyRename(): Promise<void> {
   assert.equal(identifierOccurrences(saved, symbol), 0);
   assert.equal(identifierOccurrences(saved, newName), expectedOccurrences);
   log(`Verified ${expectedOccurrences} occurrences of ${newName}`);
+
+  await editor.selectText(newName);
+  log(`Selected renamed symbol for screenshot: ${newName}`);
+  await delay(300);
   await captureScreenshot("rename-verified");
 }
 
-describe(`${project.buildTool} / ${project.id}`, function () {
-  this.timeout(20 * 60 * 1000);
-
-  it(scenario.id, async () => {
-    const original = readFileSync(openFile, "utf8");
-    try {
-      await prepareMbt(scenario);
-      await verifyRename();
-      log(`Scenario passed: ${scenario.id}`);
-    } catch (error) {
-      await captureScreenshot("failure");
-      throw error;
-    } finally {
-      writeFileSync(openFile, original);
-      log(`Restored ${openFile}`);
-    }
-  });
-});
+export async function testRenameSymbol(
+  scenario: RenameScenario,
+): Promise<void> {
+  const openFile = fileFor(scenario);
+  const original = readFileSync(openFile, "utf8");
+  try {
+    await prepareMbt(scenario);
+    await verifyRename(scenario);
+    log(`Scenario passed: ${scenario.id}`);
+  } finally {
+    writeFileSync(openFile, original);
+    log(`Restored ${openFile}`);
+  }
+}

@@ -11,23 +11,7 @@ import {
 import { basename, join, parse, relative, resolve, sep } from "node:path";
 
 import { buildTools, discoverProjects } from "./config";
-
-interface ScenarioResult {
-  id: string;
-  kind: string;
-  status: "passed" | "failed" | "unknown";
-  durationMs?: number;
-}
-
-interface ProjectResult {
-  project: string;
-  projectName: string;
-  buildTool: string;
-  repository: string;
-  ref: string;
-  status: "passed" | "failed" | "unknown";
-  scenarios: ScenarioResult[];
-}
+import type { ProjectResult } from "./test-report";
 
 function option(name: string, required = true): string {
   const index = process.argv.indexOf(name);
@@ -144,27 +128,43 @@ function projectPage(result: ProjectResult, filesRoot: string): string {
   const logs = allFiles.filter((file) => file.endsWith(".log"));
   const models = allFiles.filter((file) => basename(file) === "mbt.json");
   const link = (file: string) => urlPath(join("files", relative(filesRoot, file)));
+  const screenshotGallery = (scenarioId: string) => {
+    const directory = join(".test-report", "screenshots", scenarioId);
+    const scenarioScreenshots = screenshots
+      .filter((file) => {
+        const path = relative(filesRoot, file);
+        return path === directory || path.startsWith(`${directory}${sep}`);
+      })
+      .sort();
+    const content = scenarioScreenshots.length
+      ? `<div class="gallery">${scenarioScreenshots
+          .map(
+            (file) => `<figure>
+              <a href="${link(file)}" data-gallery="${escapeHtml(scenarioId)}" data-caption="${escapeHtml(basename(file))}"><img loading="lazy" src="${link(file)}" alt="${escapeHtml(basename(file))}"></a>
+              <figcaption>${escapeHtml(basename(file))}</figcaption>
+            </figure>`,
+          )
+          .join("")}</div>`
+      : '<p class="muted">No screenshots were produced for this scenario.</p>';
+    return `<details class="screenshot-viewer">
+      <summary>Screenshots (${scenarioScreenshots.length})</summary>
+      ${content}
+    </details>`;
+  };
   const scenarios = result.scenarios.length
     ? result.scenarios
         .map(
           (scenario) => `<li>
-            <span class="status ${scenario.status}">${scenario.status}</span>
-            <strong>${escapeHtml(scenario.id)}</strong>
-            <span>${escapeHtml(scenario.kind)}${scenario.durationMs === undefined ? "" : ` · ${duration(scenario.durationMs)}`}</span>
+            <div class="scenario-header">
+              <span class="status ${scenario.status}">${scenario.status}</span>
+              <strong>${escapeHtml(scenario.id)}</strong>
+              <span>${escapeHtml(scenario.kind)}${scenario.durationMs === undefined ? "" : ` · ${duration(scenario.durationMs)}`}</span>
+            </div>
+            ${screenshotGallery(scenario.id)}
           </li>`,
         )
         .join("")
     : '<li><span class="status unknown">unknown</span>No scenario result was produced.</li>';
-  const gallery = screenshots.length
-    ? screenshots
-        .map(
-          (file) => `<figure>
-            <a href="${link(file)}"><img loading="lazy" src="${link(file)}" alt="${escapeHtml(basename(file))}"></a>
-            <figcaption>${escapeHtml(relative(filesRoot, file))}</figcaption>
-          </figure>`,
-        )
-        .join("")
-    : "<p>No screenshots were produced.</p>";
   const logViewers = logs
     .sort((left, right) => {
       const priority = (file: string) =>
@@ -194,7 +194,6 @@ function projectPage(result: ProjectResult, filesRoot: string): string {
       <span class="status large ${result.status}">${result.status}</span>
     </header>
     <section><h2>Scenarios</h2><ul class="scenarios">${scenarios}</ul></section>
-    <section><h2>VS Code screenshots</h2><div class="gallery">${gallery}</div></section>
     <section><h2>MBT model</h2>${mbtSummary(models[0])}${modelViewers}</section>
     <section><h2>Logs</h2>${logViewers || "<p>No logs were uploaded.</p>"}</section>`,
     3,
@@ -315,6 +314,63 @@ writeFileSync(
     }
   });
 });
+
+const galleryLinks = [...document.querySelectorAll("a[data-gallery]")];
+if (galleryLinks.length) {
+  const lightbox = document.createElement("dialog");
+  lightbox.className = "lightbox";
+  lightbox.innerHTML =
+    '<button class="lightbox-close" type="button" aria-label="Close screenshot">×</button>' +
+    '<button class="lightbox-previous" type="button" aria-label="Previous screenshot">←</button>' +
+    '<figure><img alt=""><figcaption></figcaption></figure>' +
+    '<button class="lightbox-next" type="button" aria-label="Next screenshot">→</button>';
+  document.body.append(lightbox);
+
+  const image = lightbox.querySelector("img");
+  const caption = lightbox.querySelector("figcaption");
+  const previous = lightbox.querySelector(".lightbox-previous");
+  const next = lightbox.querySelector(".lightbox-next");
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  const show = (index) => {
+    currentIndex = (index + currentGallery.length) % currentGallery.length;
+    const link = currentGallery[currentIndex];
+    image.src = link.href;
+    image.alt = link.dataset.caption;
+    caption.textContent =
+      link.dataset.caption + " · " + (currentIndex + 1) + "/" + currentGallery.length;
+    const hasMultiple = currentGallery.length > 1;
+    previous.hidden = !hasMultiple;
+    next.hidden = !hasMultiple;
+  };
+  const move = (offset) => show(currentIndex + offset);
+
+  galleryLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      currentGallery = galleryLinks.filter(
+        (candidate) => candidate.dataset.gallery === link.dataset.gallery,
+      );
+      show(currentGallery.indexOf(link));
+      lightbox.showModal();
+    });
+  });
+  previous.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+  lightbox.querySelector(".lightbox-close").addEventListener("click", () =>
+    lightbox.close(),
+  );
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      move(event.key === "ArrowLeft" ? -1 : 1);
+    }
+  });
+}
 `,
 );
 writeFileSync(
@@ -343,11 +399,26 @@ h2 { margin-top: 42px; }
 .metrics span { padding: 9px 12px; border: 1px solid #30394a; border-radius: 9px; background: #171c26; }
 .metrics strong { margin-right: 4px; font-size: 1.1rem; }
 .scenarios { display: grid; gap: 10px; padding: 0; list-style: none; }
-.scenarios li { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px; border: 1px solid #30394a; border-radius: 10px; }
+.scenarios li { padding: 12px; border: 1px solid #30394a; border-radius: 10px; }
+.scenario-header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.screenshot-viewer { margin-top: 12px; border: 1px solid #30394a; border-radius: 10px; background: #171c26; }
+.screenshot-viewer summary { padding: 14px; cursor: pointer; font-weight: 700; }
+.screenshot-viewer .gallery { padding: 0 12px 12px; }
+.screenshot-viewer .muted { padding: 0 14px 14px; }
 .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
 figure { margin: 0; padding: 10px; border: 1px solid #30394a; border-radius: 10px; background: #171c26; }
 figure img { display: block; width: 100%; border-radius: 6px; }
 figcaption { margin-top: 8px; color: #aeb8c8; font-size: .78rem; overflow-wrap: anywhere; }
+.lightbox { width: 100vw; max-width: none; height: 100vh; max-height: none; padding: 0; border: 0; background: rgba(5, 7, 11, .96); color: #e8ecf3; }
+.lightbox::backdrop { background: rgba(5, 7, 11, .9); }
+.lightbox[open] { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 16px; }
+.lightbox figure { display: grid; place-items: center; min-width: 0; height: calc(100vh - 64px); padding: 0; border: 0; background: none; }
+.lightbox figure img { width: auto; max-width: 100%; max-height: calc(100vh - 110px); object-fit: contain; }
+.lightbox figcaption { text-align: center; }
+.lightbox button { width: 48px; height: 48px; margin: 12px; border: 1px solid #5b6577; border-radius: 999px; background: #171c26; color: #e8ecf3; font-size: 1.6rem; cursor: pointer; }
+.lightbox button:hover { background: #293246; border-color: #8db8ff; }
+.lightbox-close { position: fixed; top: 8px; right: 8px; z-index: 1; }
+.lightbox button[hidden] { visibility: hidden; }
 .log-viewer { margin: 12px 0; border: 1px solid #30394a; border-radius: 10px; background: #171c26; }
 .log-viewer summary { padding: 14px; cursor: pointer; font-weight: 700; }
 .log-viewer p { padding: 0 14px; }

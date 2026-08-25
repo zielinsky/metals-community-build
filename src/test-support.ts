@@ -10,6 +10,11 @@ import {
 } from "vscode-extension-tester";
 
 import type { ProjectConfig, Scenario } from "../scripts/config";
+import {
+  createProjectResult,
+  updateScenarioResult,
+  writeProjectResult,
+} from "../scripts/test-report";
 
 export interface MbtModel {
   dependencyModules?: unknown[];
@@ -28,29 +33,35 @@ export const workspace = resolve(
 const projectConfigPath = resolve(
   requiredEnvironment("COMMUNITY_BUILD_PROJECT_CONFIG"),
 );
-const scenarioId = requiredEnvironment("COMMUNITY_BUILD_SCENARIO");
-const reportDirectory = process.env.COMMUNITY_BUILD_REPORT_DIR;
-let screenshotIndex = 0;
+const reportDirectory = process.env.COMMUNITY_BUILD_REPORT_DIR || undefined;
 export const project = JSON.parse(
   readFileSync(projectConfigPath, "utf8"),
 ) as ProjectConfig;
+const selectedScenarioIds = JSON.parse(
+  requiredEnvironment("COMMUNITY_BUILD_SCENARIOS"),
+) as unknown;
 
-export function selectScenario<K extends Scenario["kind"]>(
-  expectedKind: K,
-): Extract<Scenario, { kind: K }> {
-  const scenario = project.scenarios.find(({ id }) => id === scenarioId);
-  if (!scenario) {
-    throw new Error(
-      `Scenario '${scenarioId}' does not exist in ${projectConfigPath}`,
-    );
-  }
-  if (scenario.kind !== expectedKind) {
-    throw new Error(
-      `Scenario '${scenarioId}' has kind '${scenario.kind}', expected '${expectedKind}'`,
-    );
-  }
-  return scenario as Extract<Scenario, { kind: K }>;
+if (
+  !Array.isArray(selectedScenarioIds) ||
+  selectedScenarioIds.some((id) => typeof id !== "string")
+) {
+  throw new Error("COMMUNITY_BUILD_SCENARIOS must be a JSON array of strings");
 }
+
+export const scenarios = selectedScenarioIds.map((id) => {
+  const scenario = project.scenarios.find((candidate) => candidate.id === id);
+  if (!scenario) {
+    throw new Error(`Scenario '${id}' does not exist in ${projectConfigPath}`);
+  }
+  return scenario;
+});
+
+const result = createProjectResult(project, scenarios);
+const screenshotIndexes = new Map<string, number>();
+let activeScenarioId = "startup";
+let currentOpenFile = fileFor(scenarios[0]);
+let mbtImport: Promise<MbtModel> | undefined;
+writeProjectResult(reportDirectory, result);
 
 export function fileFor(scenario: Scenario): string {
   return resolve(workspace, scenario.openFile);
@@ -67,15 +78,35 @@ export function delay(milliseconds: number): Promise<void> {
 export async function captureScreenshot(step: string): Promise<void> {
   if (!reportDirectory) return;
   const slug = step.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-  const directory = resolve(reportDirectory, "screenshots", scenarioId);
-  const filename = `${String(++screenshotIndex).padStart(2, "0")}-${slug}.png`;
+  const directory = resolve(reportDirectory, "screenshots", activeScenarioId);
+  const index = (screenshotIndexes.get(activeScenarioId) ?? 0) + 1;
+  screenshotIndexes.set(activeScenarioId, index);
+  const filename = `${String(index).padStart(2, "0")}-${slug}.png`;
   try {
     mkdirSync(directory, { recursive: true });
     const screenshot = await VSBrowser.instance.driver.takeScreenshot();
     writeFileSync(resolve(directory, filename), screenshot, "base64");
-    log(`Captured screenshot: ${scenarioId}/${filename}`);
+    log(`Captured screenshot: ${activeScenarioId}/${filename}`);
   } catch (error) {
     log(`Could not capture screenshot '${step}': ${String(error)}`);
+  }
+}
+
+export async function executeScenario(
+  scenario: Scenario,
+  action: () => Promise<void>,
+): Promise<void> {
+  activeScenarioId = scenario.id;
+  const startedAt = Date.now();
+  try {
+    await action();
+    updateScenarioResult(result, scenario, "passed", Date.now() - startedAt);
+  } catch (error) {
+    await captureScreenshot("failure");
+    updateScenarioResult(result, scenario, "failed", Date.now() - startedAt);
+    throw error;
+  } finally {
+    writeProjectResult(reportDirectory, result);
   }
 }
 
@@ -176,17 +207,28 @@ async function waitForMbtImport(timeoutMs: number): Promise<MbtModel> {
   );
 }
 
-export async function prepareMbt(scenario: Scenario): Promise<MbtModel> {
+async function openScenarioFile(scenario: Scenario): Promise<void> {
   const openFile = fileFor(scenario);
   log(`Starting ${project.buildTool} / ${project.id} / ${scenario.id}`);
   log(`Workspace: ${workspace}`);
   log(`Expected editor: ${openFile}`);
   assert.ok(existsSync(openFile), `Missing file to open: ${openFile}`);
 
+  if (openFile !== currentOpenFile) {
+    log(`Opening ${basename(openFile)} in the existing VS Code session`);
+    await VSBrowser.instance.openResources(openFile);
+    currentOpenFile = openFile;
+  }
   log("Waiting for VS Code to open the requested file");
   await waitForWorkspaceFile(openFile, 30 * 1000);
   log(`VS Code opened ${basename(openFile)}`);
   await captureScreenshot("file-opened");
+}
+
+async function importMbt(scenario: Scenario): Promise<MbtModel> {
+  const namespaceScenario = scenarios.find(
+    (candidate) => candidate.namespaceMode !== undefined,
+  );
 
   log("Waiting for the build server choice notification");
   const buildServerChoice = await waitForNotification(
@@ -198,10 +240,21 @@ export async function prepareMbt(scenario: Scenario): Promise<MbtModel> {
   await buildServerChoice.takeAction("Use MBT");
   log("Clicked notification action: Use MBT");
   await captureScreenshot("mbt-selected");
-  await selectNamespaceMode(scenario);
+  await selectNamespaceMode(namespaceScenario ?? scenario);
 
   log("Waiting for MBT import to finish");
   const imported = await waitForMbtImport(15 * 60 * 1000);
   await captureScreenshot("mbt-imported");
   return imported;
+}
+
+export async function prepareMbt(scenario: Scenario): Promise<MbtModel> {
+  await openScenarioFile(scenario);
+  if (!mbtImport) {
+    mbtImport = importMbt(scenario);
+  } else {
+    log("Reusing the existing VS Code, Metals and MBT session");
+    await captureScreenshot("mbt-session-reused");
+  }
+  return mbtImport;
 }

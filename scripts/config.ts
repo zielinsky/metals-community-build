@@ -41,7 +41,21 @@ export interface RenameScenario extends ScenarioBase {
   };
 }
 
-export type Scenario = ImportScenario | RenameScenario;
+export interface JavaDiagnosticsScenario extends ScenarioBase {
+  kind: "java-diagnostics";
+  imports: string[];
+}
+
+export interface JavaTestDiscoveryScenario extends ScenarioBase {
+  kind: "java-test-discovery";
+  testName: string;
+}
+
+export type Scenario =
+  | ImportScenario
+  | RenameScenario
+  | JavaDiagnosticsScenario
+  | JavaTestDiscoveryScenario;
 
 export interface ProjectConfig {
   id: string;
@@ -138,6 +152,27 @@ function normalizeRename(
   };
 }
 
+function normalizeImports(
+  value: unknown,
+  scenarioId: string,
+  source: string,
+): string[] {
+  ensure(
+    Array.isArray(value) && value.length > 0,
+    source,
+    `scenario '${scenarioId}'.imports must be a non-empty array`,
+  );
+  const imports = value.map((entry, index) =>
+    text(entry, `scenario '${scenarioId}'.imports[${index}]`, source),
+  );
+  ensure(
+    new Set(imports).size === imports.length,
+    source,
+    `scenario '${scenarioId}'.imports must not contain duplicates`,
+  );
+  return imports;
+}
+
 function normalizeScenario(
   value: unknown,
   buildTool: BuildTool,
@@ -187,6 +222,24 @@ function normalizeScenario(
       openFile,
       namespaceMode,
       rename: normalizeRename(result.rename, id, source),
+    };
+  }
+  if (result.kind === "java-diagnostics") {
+    return {
+      id,
+      kind: "java-diagnostics",
+      openFile,
+      namespaceMode,
+      imports: normalizeImports(result.imports, id, source),
+    };
+  }
+  if (result.kind === "java-test-discovery") {
+    return {
+      id,
+      kind: "java-test-discovery",
+      openFile,
+      namespaceMode,
+      testName: text(result.testName, `scenario '${id}'.testName`, source),
     };
   }
   throw new Error(`${source}: unsupported scenario kind '${String(result.kind)}'`);

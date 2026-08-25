@@ -42,29 +42,37 @@ projects/
 scripts/*.ts                  typed CI setup, validation, and scenario runner
 src/mbt-import.test.ts        reusable MBT import UI scenario
 src/rename-symbol.test.ts     reusable Rename Symbol UI scenario
+src/java-diagnostics.test.ts  Java diagnostics scenario
+src/java-test-discovery.test.ts  Java test discovery scenario
 src/test-support.ts           shared VS Code/MBT setup for UI scenarios
 ```
 
-Each repository is cloned only once per CI job. Its build tool, VS Code, and the
-Metals extension are prepared once, while every scenario gets a fresh VS Code
-session and a clean `.metals` directory. Matrix jobs remain isolated and may run
-in parallel. The published Metals binaries are shared as a per-run artifact. A
-cache keyed by `package-lock.json` and `community-build.json` shares Node
-dependencies, VS Code, ChromeDriver, and installed extensions across jobs and
-workflow runs. Only the preparation job can write this cache; project jobs restore
-it read-only. Tests are compiled from the current checkout in every project job.
-During a scenario, the CI log reports every relevant UI action and streams
-`.metals/metals.log` with a `[metals]` prefix. The test captures VS Code after
-opening the file, displaying and accepting build-server prompts, completing the
-MBT import, completing feature-specific actions, and encountering a failure.
+Each repository is cloned only once per CI job. Its build tool, VS Code, Metals,
+and MBT import are prepared once, then all project scenarios run sequentially in
+that session. Matrix jobs remain isolated and may run in parallel. The published
+Metals binaries are shared as a per-run artifact. A cache keyed by
+`package-lock.json` and `community-build.json` shares Node dependencies, VS Code,
+ChromeDriver, and installed extensions across jobs and workflow runs. Only the
+preparation job can write this cache; project jobs restore it read-only. Tests
+are compiled from the current checkout in every project job. During a scenario,
+the CI log reports every relevant UI action and streams `.metals/metals.log` with
+a `[metals]` prefix. The test captures VS Code after opening the file, displaying
+and accepting build-server prompts, completing the MBT import, completing
+feature-specific actions, and encountering a failure. The final cleanup job
+keeps the current VS Code runtime cache and deletes obsolete versions of that
+cache. Reusable npm, Coursier, Bazel, and Gradle dependency caches remain intact.
 
 After all project jobs finish, including failed jobs, CI builds a static report.
 Its front page lists every configured project under Bazel, Maven, or Gradle and
 highlights failed projects. Each project page contains scenario results,
-screenshots, the complete E2E and Metals logs, VS Code/ChromeDriver logs, and a
-lazy, formatted `mbt.json` viewer with namespace and dependency counts. The
-report is retained as a downloadable Actions artifact for 30 days and deployed
-as the repository's latest GitHub Pages site when Pages is enabled.
+screenshots grouped under their scenario, the complete E2E action log, the
+Metals log, and a lazy, formatted `mbt.json` viewer with namespace and dependency
+counts. The report is retained as a downloadable Actions artifact for 30 days
+and deployed as the repository's latest GitHub Pages site when Pages is enabled.
+There is one Pages site per repository: it contains all projects from the run,
+with a separate page for each project. A later workflow run replaces the live
+site, while downloadable reports from earlier runs remain available as Actions
+artifacts until their retention period expires.
 
 Enable publishing once in **Settings → Pages → Build and deployment → Source →
 GitHub Actions**. The Pages report is public for a public repository, so project
@@ -119,6 +127,30 @@ Rename is a separate scenario and test file. Add it next to the import scenario:
 The rename test imports the project through MBT, invokes VS Code's **Rename
 Symbol**, verifies all expected occurrences, and restores the original file.
 
+Java diagnostics and test discovery are separate scenarios. Diagnostics verifies
+that configured imports produce no errors:
+
+```json
+{
+  "id": "gradle-api-imports",
+  "kind": "java-diagnostics",
+  "openFile": "src/test/java/example/ExampleTest.java",
+  "imports": ["org.gradle.api.Project"]
+}
+```
+
+Test discovery independently checks that VS Code displays a test run button
+without starting the test itself:
+
+```json
+{
+  "id": "test-discovery",
+  "kind": "java-test-discovery",
+  "openFile": "src/test/java/example/ExampleTest.java",
+  "testName": "exampleTest"
+}
+```
+
 Validate all manifests and inspect the generated CI matrix with:
 
 ```bash
@@ -143,8 +175,11 @@ METALS_COMMUNITY_WORKSPACE="$PWD/workspaces/project" \
 npm run test:e2e
 ```
 
-Set `COMMUNITY_BUILD_SCENARIO` to run only one scenario from the manifest. On a
-headless Linux machine, prefix the final command with `xvfb-run -a`.
+All scenarios configured for a project run sequentially in one VS Code and
+Metals session. MBT is selected and imported once, then subsequent scenarios
+reuse that session. Set `COMMUNITY_BUILD_SCENARIO` to run only one scenario from
+the manifest. On a headless Linux machine, prefix the final command with
+`xvfb-run -a`.
 
 Downloaded VS Code/ChromeDriver files, installed extensions, generated settings,
 compiled tests, and community workspaces are ignored by Git.

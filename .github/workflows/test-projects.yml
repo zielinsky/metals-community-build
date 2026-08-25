@@ -119,9 +119,6 @@ jobs:
           name: diagnostics-${{ matrix.buildTool }}-${{ matrix.project }}-${{ github.run_id }}
           path: |
             .test-report
-            .test-resources/screenshots
-            .test-resources/chromedriver.log
-            .test-resources/settings/logs
             ${{ matrix.workspacePath }}/.metals/metals.log
             ${{ matrix.workspacePath }}/.metals/mbt.json
           if-no-files-found: ignore

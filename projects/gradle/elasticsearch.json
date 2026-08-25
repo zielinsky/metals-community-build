@@ -1,0 +1,37 @@
+{
+  "$schema": "../project.schema.json",
+  "id": "elasticsearch",
+  "name": "Elasticsearch",
+  "buildTool": "gradle",
+  "repository": "elastic/elasticsearch",
+  "ref": "main",
+  "projectRoot": ".",
+  "scenarios": [
+    {
+      "id": "import-included-builds",
+      "kind": "mbt-import",
+      "openFile": "build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java",
+      "assertions": {
+        "minimumNamespaces": 1,
+        "sources": [
+          "build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java"
+        ]
+      }
+    },
+    {
+      "id": "gradle-api-imports",
+      "kind": "java-diagnostics",
+      "openFile": "build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java",
+      "imports": [
+        "org.gradle.api.Project",
+        "org.gradle.testfixtures.ProjectBuilder"
+      ]
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "openFile": "build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java",
+      "testName": "testCreateEmptyDir"
+    }
+  ]
+}

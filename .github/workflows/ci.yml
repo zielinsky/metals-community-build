@@ -262,24 +262,53 @@ jobs:
         env:
           REPORT_URL: ${{ steps.deployment.outputs.page_url }}
 
-  cleanup-metals:
-    name: Delete temporary Metals artifact
-    needs: [build-metals, bazel, maven, gradle, report, deploy-report]
-    if: >-
-      ${{
-        always() &&
-        needs.build-metals.outputs.artifactId != '' &&
-        needs.report.result == 'success' &&
-        (needs.bazel.result == 'success' || needs.bazel.result == 'skipped') &&
-        (needs.maven.result == 'success' || needs.maven.result == 'skipped') &&
-        (needs.gradle.result == 'success' || needs.gradle.result == 'skipped')
-      }}
+  cleanup:
+    name: Clean up temporary workflow data
+    needs: [build-metals, prepare-runtime, bazel, maven, gradle, report, deploy-report]
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     permissions:
       actions: write
       contents: read
     steps:
+      - name: Check out the community build
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Delete obsolete VS Code runtime caches
+        if: needs.prepare-runtime.result == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api --paginate \
+            -H "X-GitHub-Api-Version: 2026-03-10" \
+            "/repos/$GITHUB_REPOSITORY/actions/caches?per_page=100&key=$RUNTIME_CACHE_PREFIX" \
+            --jq '.actions_caches[] | [.id, .key] | @tsv' |
+          while IFS=$'\t' read -r cache_id cache_key; do
+            if [[ "$cache_key" == "$CURRENT_RUNTIME_CACHE_KEY" ]]; then
+              echo "Keeping current runtime cache: $cache_key"
+            else
+              echo "Deleting obsolete runtime cache: $cache_key"
+              gh api --method DELETE \
+                -H "X-GitHub-Api-Version: 2026-03-10" \
+                "/repos/$GITHUB_REPOSITORY/actions/caches/$cache_id"
+            fi
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUNTIME_CACHE_PREFIX: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-
+          CURRENT_RUNTIME_CACHE_KEY: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
+
       - name: Delete locally published Metals
+        if: >-
+          ${{
+            needs.build-metals.outputs.artifactId != '' &&
+            needs.report.result == 'success' &&
+            (needs.bazel.result == 'success' || needs.bazel.result == 'skipped') &&
+            (needs.maven.result == 'success' || needs.maven.result == 'skipped') &&
+            (needs.gradle.result == 'success' || needs.gradle.result == 'skipped')
+          }}
         run: >-
           gh api --method DELETE
           -H "X-GitHub-Api-Version: 2026-03-10"

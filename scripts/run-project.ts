@@ -15,6 +15,7 @@ import {
 } from "./config";
 import { runExtester } from "./extester";
 import { paths } from "./paths";
+import { createProjectResult, writeProjectResult } from "./test-report";
 
 const targetBuildTools: Record<BuildTool, string> = {
   bazel: "bazel",
@@ -93,80 +94,23 @@ const extesterArguments = [
 const nodeOptions = [process.env.NODE_OPTIONS, `--require=${paths.vscodePreload}`]
   .filter(Boolean)
   .join(" ");
-let failed = false;
-const scenarioResults: Array<{
-  id: string;
-  kind: string;
-  status: "passed" | "failed";
-  durationMs: number;
-}> = [];
 
-function writeReport(): void {
-  if (!reportDirectory) return;
-  mkdirSync(reportDirectory, { recursive: true });
-  writeFileSync(
-    resolve(reportDirectory, "result.json"),
-    `${JSON.stringify(
-      {
-        project: project.id,
-        projectName: project.name,
-        buildTool: project.buildTool,
-        repository: project.repository,
-        ref: project.ref,
-        status: failed
-          ? "failed"
-          : scenarioResults.length === scenarios.length
-            ? "passed"
-            : "unknown",
-        scenarios: scenarioResults,
-      },
-      null,
-      2,
-    )}\n`,
-  );
-}
+console.log(
+  `\n=== ${project.buildTool} / ${project.id} / ${scenarios.length} scenario(s) ===\n`,
+);
+cleanSession(workspace);
+writeProjectResult(reportDirectory, createProjectResult(project, scenarios));
 
-writeReport();
-for (const scenario of scenarios) {
-  console.log(`\n=== ${project.buildTool} / ${project.id} / ${scenario.id} ===\n`);
-  cleanSession(workspace);
+const status = runExtester(["run-tests", paths.tests, ...extesterArguments], {
+  COMMUNITY_BUILD_PROJECT_CONFIG: source,
+  COMMUNITY_BUILD_REPORT_DIR: reportDirectory ?? "",
+  COMMUNITY_BUILD_SCENARIOS: JSON.stringify(scenarios.map(({ id }) => id)),
+  METALS_COMMUNITY_WORKSPACE: workspace,
+  METALS_COMMUNITY_VSCODE_RESOURCES: JSON.stringify({
+    folder: workspace,
+    file: resolve(workspace, scenarios[0].openFile),
+  }),
+  NODE_OPTIONS: nodeOptions,
+});
 
-  const startedAt = Date.now();
-  let status = 1;
-  try {
-    status = runExtester(
-      ["run-tests", paths.testForScenario(scenario.kind), ...extesterArguments],
-      {
-        COMMUNITY_BUILD_PROJECT_CONFIG: source,
-        COMMUNITY_BUILD_REPORT_DIR: reportDirectory ?? "",
-        COMMUNITY_BUILD_SCENARIO: scenario.id,
-        METALS_COMMUNITY_WORKSPACE: workspace,
-        METALS_COMMUNITY_VSCODE_RESOURCES: JSON.stringify({
-          folder: workspace,
-          file: resolve(workspace, scenario.openFile),
-        }),
-        NODE_OPTIONS: nodeOptions,
-      },
-    );
-  } catch (error) {
-    failed = true;
-    scenarioResults.push({
-      id: scenario.id,
-      kind: scenario.kind,
-      status: "failed",
-      durationMs: Date.now() - startedAt,
-    });
-    writeReport();
-    throw error;
-  }
-  if (status !== 0) failed = true;
-  scenarioResults.push({
-    id: scenario.id,
-    kind: scenario.kind,
-    status: status === 0 ? "passed" : "failed",
-    durationMs: Date.now() - startedAt,
-  });
-  writeReport();
-}
-
-if (failed) process.exit(1);
+if (status !== 0) process.exit(status);

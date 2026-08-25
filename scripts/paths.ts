@@ -10,8 +10,6 @@ export const paths = {
   mocha: resolve(root, ".mocharc.json"),
   settingsBase: resolve(root, "settings.base.json"),
   storage: resolve(root, ".test-resources"),
-  testForScenario(kind: string): string {
-    return resolve(root, "out", "src", `${kind}.test.js`);
-  },
+  tests: resolve(root, "out", "src", "community-build.test.js"),
   vscodePreload: resolve(root, "out", "scripts", "vscode-launch-resources.js"),
 };

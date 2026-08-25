@@ -20,7 +20,14 @@
         "required": ["id", "kind", "openFile"],
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
-          "kind": { "enum": ["mbt-import", "rename-symbol"] },
+          "kind": {
+            "enum": [
+              "mbt-import",
+              "rename-symbol",
+              "java-diagnostics",
+              "java-test-discovery"
+            ]
+          },
           "openFile": { "type": "string", "minLength": 1 },
           "namespaceMode": {
             "enum": ["each-build-target", "single-global-target"]
@@ -35,6 +42,13 @@
               "expectedOccurrences": { "type": "integer", "minimum": 1 }
             }
           },
+          "imports": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "testName": { "type": "string", "minLength": 1 },
           "assertions": {
             "type": "object",
             "additionalProperties": false,
@@ -53,14 +67,56 @@
             "if": { "properties": { "kind": { "const": "mbt-import" } } },
             "then": {
               "required": ["assertions"],
-              "not": { "required": ["rename"] }
+              "not": {
+                "anyOf": [
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["testName"] }
+                ]
+              }
             }
           },
           {
             "if": { "properties": { "kind": { "const": "rename-symbol" } } },
             "then": {
               "required": ["rename"],
-              "not": { "required": ["assertions"] }
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["imports"] },
+                  { "required": ["testName"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": { "kind": { "const": "java-diagnostics" } }
+            },
+            "then": {
+              "required": ["imports"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["testName"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": { "kind": { "const": "java-test-discovery" } }
+            },
+            "then": {
+              "required": ["testName"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] }
+                ]
+              }
             }
           }
         ]
