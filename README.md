@@ -88,6 +88,19 @@ Add a manifest to the matching build-tool directory. For example:
 Bazel scenarios may additionally select `each-build-target` or
 `single-global-target` through `namespaceMode`.
 
+To verify rename after a successful import, add a `rename` action:
+
+```json
+"rename": {
+  "symbol": "OLD_NAME",
+  "newName": "NEW_NAME",
+  "expectedOccurrences": 2
+}
+```
+
+The test invokes VS Code's **Rename Symbol**, saves the file, and verifies that
+all expected occurrences changed.
+
 Validate all manifests and inspect the generated CI matrix with:
 
 ```bash
@@ -96,7 +109,7 @@ npm run matrix
 
 ## Run a project locally
 
-Requirements: JDK 17+, Node.js 24, the project's build tool, and Xvfb on
+Requirements: JDK 21+, Node.js 24, the project's build tool, and Xvfb on
 headless Linux.
 
 ```bash

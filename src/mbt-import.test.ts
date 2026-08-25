@@ -3,8 +3,13 @@ import { existsSync, readFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 
 import {
+  By,
   EditorView,
+  Key,
   Notification,
+  TextEditor,
+  until,
+  VSBrowser,
   Workbench,
 } from "vscode-extension-tester";
 
@@ -14,12 +19,19 @@ interface ImportAssertions {
   sources?: string[];
 }
 
+interface RenameAssertion {
+  symbol: string;
+  newName: string;
+  expectedOccurrences: number;
+}
+
 interface ImportScenario {
   id: string;
   kind: "mbt-import";
   openFile: string;
   namespaceMode?: "each-build-target" | "single-global-target";
   assertions: ImportAssertions;
+  rename?: RenameAssertion;
 }
 
 interface ProjectConfig {
@@ -62,6 +74,14 @@ const openFile = resolve(workspace, scenario.openFile);
 
 function log(message: string): void {
   console.log(`[community-build] ${new Date().toISOString()} ${message}`);
+}
+
+function occurrences(text: string, value: string): number {
+  return text.split(value).length - 1;
+}
+
+function delay(milliseconds: number): Promise<void> {
+  return new Promise((done) => setTimeout(done, milliseconds));
 }
 
 async function waitForWorkspaceFile(timeoutMs: number): Promise<void> {
@@ -155,6 +175,105 @@ async function selectNamespaceMode(): Promise<void> {
   log(`Clicked notification action: ${action}`);
 }
 
+async function openRenameInput(
+  editor: TextEditor,
+  symbol: string,
+  timeoutMs: number,
+) {
+  const driver = VSBrowser.instance.driver;
+  const deadline = Date.now() + timeoutMs;
+  let lastError: unknown;
+
+  while (Date.now() < deadline) {
+    try {
+      await editor.selectText(symbol);
+      log(`Selected symbol: ${symbol}`);
+      log("Executing command: Rename Symbol");
+      await new Workbench().executeCommand("Rename Symbol");
+
+      const attemptTimeout = Math.max(
+        1_000,
+        Math.min(10_000, deadline - Date.now()),
+      );
+      const input = await driver.wait(
+        until.elementLocated(By.css("input.rename-input")),
+        attemptTimeout,
+      );
+      await driver.wait(until.elementIsVisible(input), attemptTimeout);
+      return input;
+    } catch (error) {
+      lastError = error;
+      log("Rename input is not ready yet; retrying");
+      try {
+        await driver.actions().sendKeys(Key.ESCAPE).perform();
+      } catch {
+        // The focused element may disappear while the command is completing.
+      }
+      await delay(2_000);
+    }
+  }
+
+  throw new Error(
+    `Rename input did not appear for '${symbol}': ${String(lastError)}`,
+  );
+}
+
+async function verifyRename(rename: RenameAssertion): Promise<void> {
+  const editor = new TextEditor();
+  const before = await editor.getText();
+  assert.equal(
+    occurrences(before, rename.symbol),
+    rename.expectedOccurrences,
+    `Unexpected number of '${rename.symbol}' occurrences before rename`,
+  );
+
+  const input = await openRenameInput(editor, rename.symbol, 2 * 60 * 1000);
+  const selectAll = Key.chord(
+    process.platform === "darwin" ? Key.COMMAND : Key.CONTROL,
+    "a",
+  );
+  log(`Renaming ${rename.symbol} to ${rename.newName}`);
+  await input.sendKeys(selectAll, rename.newName, Key.ENTER);
+
+  const driver = VSBrowser.instance.driver;
+  await driver.wait(async () => {
+    try {
+      const text = await editor.getText();
+      return (
+        occurrences(text, rename.symbol) === 0 &&
+        occurrences(text, rename.newName) === rename.expectedOccurrences
+      );
+    } catch {
+      return false;
+    }
+  }, 30_000);
+  await editor.save();
+
+  await driver.wait(() => {
+    try {
+      const text = readFileSync(openFile, "utf8");
+      return occurrences(text, rename.newName) === rename.expectedOccurrences;
+    } catch {
+      return false;
+    }
+  }, 30_000);
+
+  const saved = readFileSync(openFile, "utf8");
+  assert.equal(
+    occurrences(saved, rename.symbol),
+    0,
+    `Rename left occurrences of '${rename.symbol}' in ${openFile}`,
+  );
+  assert.equal(
+    occurrences(saved, rename.newName),
+    rename.expectedOccurrences,
+    `Rename did not update every occurrence in ${openFile}`,
+  );
+  log(
+    `Verified ${rename.expectedOccurrences} occurrences of ${rename.newName}`,
+  );
+}
+
 describe(`${project.buildTool} / ${project.id}`, function () {
   this.timeout(20 * 60 * 1000);
 
@@ -211,6 +330,7 @@ describe(`${project.buildTool} / ${project.id}`, function () {
       );
       log(`Verified imported source: ${expectedSource}`);
     }
+    if (scenario.rename) await verifyRename(scenario.rename);
     log(`Scenario passed: ${scenario.id}`);
   });
 });

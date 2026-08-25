@@ -53,6 +53,33 @@ function normalizeAssertions(value, scenarioId, source) {
   };
 }
 
+function normalizeRename(value, scenarioId, source) {
+  if (value === undefined) return undefined;
+  const result = record(value, `scenario '${scenarioId}'.rename`, source);
+  const symbol = text(
+    result.symbol,
+    `scenario '${scenarioId}'.rename.symbol`,
+    source,
+  );
+  const newName = text(
+    result.newName,
+    `scenario '${scenarioId}'.rename.newName`,
+    source,
+  );
+  ensure(
+    symbol !== newName,
+    source,
+    `scenario '${scenarioId}' rename must change the name`,
+  );
+  ensure(
+    Number.isInteger(result.expectedOccurrences) &&
+      result.expectedOccurrences > 0,
+    source,
+    `scenario '${scenarioId}'.rename.expectedOccurrences must be a positive integer`,
+  );
+  return { symbol, newName, expectedOccurrences: result.expectedOccurrences };
+}
+
 function normalizeScenario(value, buildTool, source, ids) {
   const result = record(value, "scenario", source);
   const id = text(result.id, "scenario.id", source);
@@ -85,6 +112,7 @@ function normalizeScenario(value, buildTool, source, ids) {
     id,
     openFile: relativePath(result.openFile, `scenario '${id}'.openFile`, source),
     assertions: normalizeAssertions(result.assertions, id, source),
+    rename: normalizeRename(result.rename, id, source),
   };
 }
 

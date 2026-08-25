@@ -1,0 +1,25 @@
+{
+  "$schema": "../project.schema.json",
+  "id": "turbine",
+  "name": "Turbine",
+  "buildTool": "maven",
+  "repository": "google/turbine",
+  "ref": "main",
+  "projectRoot": ".",
+  "scenarios": [
+    {
+      "id": "import-and-rename-symbol",
+      "kind": "mbt-import",
+      "openFile": "java/com/google/turbine/main/Main.java",
+      "assertions": {
+        "minimumNamespaces": 1,
+        "sources": ["java/com/google/turbine/main/Main.java"]
+      },
+      "rename": {
+        "symbol": "MANIFEST_DIR",
+        "newName": "MANIFEST_DIRECTORY",
+        "expectedOccurrences": 2
+      }
+    }
+  ]
+}

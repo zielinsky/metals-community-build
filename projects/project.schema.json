@@ -25,6 +25,16 @@
           "namespaceMode": {
             "enum": ["each-build-target", "single-global-target"]
           },
+          "rename": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["symbol", "newName", "expectedOccurrences"],
+            "properties": {
+              "symbol": { "type": "string", "minLength": 1 },
+              "newName": { "type": "string", "minLength": 1 },
+              "expectedOccurrences": { "type": "integer", "minimum": 1 }
+            }
+          },
           "assertions": {
             "type": "object",
             "additionalProperties": false,
