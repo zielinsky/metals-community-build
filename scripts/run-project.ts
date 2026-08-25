@@ -7,19 +7,27 @@ import {
 } from "node:fs";
 import { dirname, parse, resolve } from "node:path";
 
-import { loadCommunityConfig, loadProjectConfig } from "./config.mjs";
-import { runExtester } from "./extester.mjs";
-import { paths } from "./paths.mjs";
+import {
+  BuildTool,
+  loadCommunityConfig,
+  loadProjectConfig,
+} from "./config";
+import { runExtester } from "./extester";
+import { paths } from "./paths";
 
-const targetBuildTools = { bazel: "bazel", gradle: "gradle", maven: "mvn" };
+const targetBuildTools: Record<BuildTool, string> = {
+  bazel: "bazel",
+  gradle: "gradle",
+  maven: "mvn",
+};
 
-function environment(name) {
+function environment(name: string): string {
   const value = process.env[name];
   if (!value) throw new Error(`${name} is not set`);
   return value;
 }
 
-function writeSettings(buildTool, metalsVersion) {
+function writeSettings(buildTool: BuildTool, metalsVersion: string): void {
   const settings = {
     ...JSON.parse(readFileSync(paths.settingsBase, "utf8")),
     "metals.targetBuildTool": targetBuildTools[buildTool],
@@ -32,7 +40,7 @@ function writeSettings(buildTool, metalsVersion) {
   );
 }
 
-function cleanSession(workspace) {
+function cleanSession(workspace: string): void {
   if (!existsSync(workspace) || workspace === parse(workspace).root) {
     throw new Error(`Refusing to clean invalid workspace: ${workspace}`);
   }
@@ -82,7 +90,7 @@ for (const scenario of scenarios) {
   cleanSession(workspace);
 
   const status = runExtester(
-    ["run-tests", paths.test, ...extesterArguments],
+    ["run-tests", paths.testForScenario(scenario.kind), ...extesterArguments],
     {
       COMMUNITY_BUILD_PROJECT_CONFIG: source,
       COMMUNITY_BUILD_SCENARIO: scenario.id,

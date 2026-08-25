@@ -35,14 +35,10 @@ projects/
   bazel/*.json                Bazel repositories
   maven/*.json                Maven repositories
   gradle/*.json               Gradle repositories
-scripts/create-matrix.mjs     manifest discovery and CI matrix generation
-scripts/run-project.mjs       isolated scenario runner for one repository
-scripts/config.mjs            manifest loading and validation
-scripts/extester.mjs          ExTester process wrapper
-scripts/metals-source.mjs      Metals URL/ref parsing
-scripts/paths.mjs             shared repository paths
-scripts/validation.mjs        reusable input validation
+scripts/*.ts                  typed CI setup, validation, and scenario runner
 src/mbt-import.test.ts        reusable MBT import UI scenario
+src/rename-symbol.test.ts     reusable Rename Symbol UI scenario
+src/test-support.ts           shared VS Code/MBT setup for UI scenarios
 ```
 
 Each repository is cloned only once per CI job. Its build tool, VS Code, and the
@@ -88,18 +84,23 @@ Add a manifest to the matching build-tool directory. For example:
 Bazel scenarios may additionally select `each-build-target` or
 `single-global-target` through `namespaceMode`.
 
-To verify rename after a successful import, add a `rename` action:
+Rename is a separate scenario and test file. Add it next to the import scenario:
 
 ```json
-"rename": {
-  "symbol": "OLD_NAME",
-  "newName": "NEW_NAME",
-  "expectedOccurrences": 2
+{
+  "id": "rename-old-name",
+  "kind": "rename-symbol",
+  "openFile": "src/main/java/example/App.java",
+  "rename": {
+    "symbol": "OLD_NAME",
+    "newName": "NEW_NAME",
+    "expectedOccurrences": 2
+  }
 }
 ```
 
-The test invokes VS Code's **Rename Symbol**, saves the file, and verifies that
-all expected occurrences changed.
+The rename test imports the project through MBT, invokes VS Code's **Rename
+Symbol**, verifies all expected occurrences, and restores the original file.
 
 Validate all manifests and inspect the generated CI matrix with:
 

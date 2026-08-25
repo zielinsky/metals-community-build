@@ -5,10 +5,10 @@
   "description": "VS Code end-to-end tests for Metals against community projects",
   "scripts": {
     "compile": "tsc -p tsconfig.json",
-    "matrix": "node scripts/create-matrix.mjs",
-    "setup:vscode": "node scripts/setup-vscode.mjs",
-    "test:e2e": "npm run compile && npm run setup:vscode && npm run test:e2e:prepared",
-    "test:e2e:prepared": "node scripts/run-project.mjs"
+    "matrix": "npm run compile --silent && node out/scripts/create-matrix.js",
+    "setup:vscode": "npm run compile --silent && node out/scripts/setup-vscode.js",
+    "test:e2e": "npm run compile && node out/scripts/setup-vscode.js && npm run test:e2e:prepared",
+    "test:e2e:prepared": "node out/scripts/run-project.js"
   },
   "devDependencies": {
     "@types/mocha": "10.0.10",

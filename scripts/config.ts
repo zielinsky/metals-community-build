@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { isAbsolute, relative, resolve, sep } from "node:path";
 
-import { paths } from "./paths.mjs";
+import { paths } from "./paths";
 import {
   ensure,
   gitRef,
@@ -9,14 +9,57 @@ import {
   relativePath,
   repository,
   text,
-} from "./validation.mjs";
+} from "./validation";
 
-export const buildTools = ["bazel", "maven", "gradle"];
+export const buildTools = ["bazel", "maven", "gradle"] as const;
+export type BuildTool = (typeof buildTools)[number];
+export type NamespaceMode =
+  | "each-build-target"
+  | "single-global-target";
+
+interface ScenarioBase {
+  id: string;
+  openFile: string;
+  namespaceMode?: NamespaceMode;
+}
+
+export interface ImportScenario extends ScenarioBase {
+  kind: "mbt-import";
+  assertions: {
+    minimumNamespaces?: number;
+    minimumDependencyModules?: number;
+    sources: string[];
+  };
+}
+
+export interface RenameScenario extends ScenarioBase {
+  kind: "rename-symbol";
+  rename: {
+    symbol: string;
+    newName: string;
+    expectedOccurrences: number;
+  };
+}
+
+export type Scenario = ImportScenario | RenameScenario;
+
+export interface ProjectConfig {
+  id: string;
+  name: string;
+  buildTool: BuildTool;
+  repository: string;
+  ref: string;
+  projectRoot: string;
+  scenarios: Scenario[];
+}
 
 const idPattern = /^[a-z0-9][a-z0-9-]*$/;
-const namespaceModes = ["each-build-target", "single-global-target"];
+const namespaceModes = [
+  "each-build-target",
+  "single-global-target",
+] as const;
 
-function readJson(file) {
+function readJson(file: string): unknown {
   try {
     return JSON.parse(readFileSync(file, "utf8"));
   } catch (error) {
@@ -24,20 +67,27 @@ function readJson(file) {
   }
 }
 
-function normalizeAssertions(value, scenarioId, source) {
+function normalizeAssertions(
+  value: unknown,
+  scenarioId: string,
+  source: string,
+): ImportScenario["assertions"] {
   const result = record(value, `scenario '${scenarioId}'.assertions`, source);
-  const integerFields = [
-    ["minimumNamespaces", 1],
-    ["minimumDependencyModules", 0],
-  ];
-  for (const [field, minimum] of integerFields) {
-    const number = result[field];
-    ensure(
-      number === undefined || (Number.isInteger(number) && number >= minimum),
-      source,
-      `scenario '${scenarioId}'.${field} must be an integer >= ${minimum}`,
-    );
-  }
+  const minimumNamespaces = result.minimumNamespaces;
+  const minimumDependencyModules = result.minimumDependencyModules;
+  ensure(
+    minimumNamespaces === undefined ||
+      (Number.isInteger(minimumNamespaces) && Number(minimumNamespaces) >= 1),
+    source,
+    `scenario '${scenarioId}'.minimumNamespaces must be an integer >= 1`,
+  );
+  ensure(
+    minimumDependencyModules === undefined ||
+      (Number.isInteger(minimumDependencyModules) &&
+        Number(minimumDependencyModules) >= 0),
+    source,
+    `scenario '${scenarioId}'.minimumDependencyModules must be an integer >= 0`,
+  );
 
   const sources = result.sources ?? [];
   ensure(
@@ -46,15 +96,19 @@ function normalizeAssertions(value, scenarioId, source) {
     `scenario '${scenarioId}'.sources must be an array`,
   );
   return {
-    ...result,
+    minimumNamespaces: minimumNamespaces as number | undefined,
+    minimumDependencyModules: minimumDependencyModules as number | undefined,
     sources: sources.map((path) =>
       relativePath(path, `scenario '${scenarioId}'.sources`, source),
     ),
   };
 }
 
-function normalizeRename(value, scenarioId, source) {
-  if (value === undefined) return undefined;
+function normalizeRename(
+  value: unknown,
+  scenarioId: string,
+  source: string,
+): RenameScenario["rename"] {
   const result = record(value, `scenario '${scenarioId}'.rename`, source);
   const symbol = text(
     result.symbol,
@@ -73,30 +127,39 @@ function normalizeRename(value, scenarioId, source) {
   );
   ensure(
     Number.isInteger(result.expectedOccurrences) &&
-      result.expectedOccurrences > 0,
+      Number(result.expectedOccurrences) > 0,
     source,
     `scenario '${scenarioId}'.rename.expectedOccurrences must be a positive integer`,
   );
-  return { symbol, newName, expectedOccurrences: result.expectedOccurrences };
+  return {
+    symbol,
+    newName,
+    expectedOccurrences: Number(result.expectedOccurrences),
+  };
 }
 
-function normalizeScenario(value, buildTool, source, ids) {
+function normalizeScenario(
+  value: unknown,
+  buildTool: BuildTool,
+  source: string,
+  ids: Set<string>,
+): Scenario {
   const result = record(value, "scenario", source);
   const id = text(result.id, "scenario.id", source);
-
   ensure(idPattern.test(id), source, `scenario id '${id}' is not CI-safe`);
   ensure(!ids.has(id), source, `scenario id '${id}' is duplicated`);
-  ensure(
-    result.kind === "mbt-import",
-    source,
-    `unsupported scenario kind '${result.kind}'`,
-  );
   ids.add(id);
 
+  const openFile = relativePath(
+    result.openFile,
+    `scenario '${id}'.openFile`,
+    source,
+  );
   const mode = result.namespaceMode;
   if (mode !== undefined) {
     ensure(
-      namespaceModes.includes(mode),
+      typeof mode === "string" &&
+        namespaceModes.includes(mode as NamespaceMode),
       source,
       `scenario '${id}' has an invalid namespaceMode`,
     );
@@ -106,14 +169,27 @@ function normalizeScenario(value, buildTool, source, ids) {
       `scenario '${id}' uses namespaceMode outside Bazel`,
     );
   }
+  const namespaceMode = mode as NamespaceMode | undefined;
 
-  return {
-    ...result,
-    id,
-    openFile: relativePath(result.openFile, `scenario '${id}'.openFile`, source),
-    assertions: normalizeAssertions(result.assertions, id, source),
-    rename: normalizeRename(result.rename, id, source),
-  };
+  if (result.kind === "mbt-import") {
+    return {
+      id,
+      kind: "mbt-import",
+      openFile,
+      namespaceMode,
+      assertions: normalizeAssertions(result.assertions, id, source),
+    };
+  }
+  if (result.kind === "rename-symbol") {
+    return {
+      id,
+      kind: "rename-symbol",
+      openFile,
+      namespaceMode,
+      rename: normalizeRename(result.rename, id, source),
+    };
+  }
+  throw new Error(`${source}: unsupported scenario kind '${String(result.kind)}'`);
 }
 
 export function loadCommunityConfig() {
@@ -135,7 +211,10 @@ export function loadCommunityConfig() {
   };
 }
 
-export function loadProjectConfig(configPath, expectedBuildTool) {
+export function loadProjectConfig(
+  configPath: string,
+  expectedBuildTool?: BuildTool,
+): { source: string; relativeSource: string; project: ProjectConfig } {
   const source = isAbsolute(configPath)
     ? configPath
     : resolve(paths.root, configPath);
@@ -145,12 +224,13 @@ export function loadProjectConfig(configPath, expectedBuildTool) {
 
   ensure(idPattern.test(id), source, `project id '${id}' is not CI-safe`);
   ensure(
-    buildTools.includes(buildTool),
+    buildTools.includes(buildTool as BuildTool),
     source,
     `unsupported build tool '${buildTool}'`,
   );
+  const typedBuildTool = buildTool as BuildTool;
   ensure(
-    !expectedBuildTool || buildTool === expectedBuildTool,
+    !expectedBuildTool || typedBuildTool === expectedBuildTool,
     source,
     `buildTool '${buildTool}' does not match directory '${expectedBuildTool}'`,
   );
@@ -160,20 +240,19 @@ export function loadProjectConfig(configPath, expectedBuildTool) {
     "at least one scenario is required",
   );
 
-  const scenarioIds = new Set();
+  const scenarioIds = new Set<string>();
   return {
     source,
     relativeSource: relative(paths.root, source).split(sep).join("/"),
     project: {
-      ...raw,
       id,
       name: text(raw.name, "name", source),
-      buildTool,
+      buildTool: typedBuildTool,
       repository: repository(raw.repository, "repository", source),
       ref: gitRef(raw.ref, "ref", source),
       projectRoot: relativePath(raw.projectRoot ?? ".", "projectRoot", source),
-      scenarios: raw.scenarios.map((value) =>
-        normalizeScenario(value, buildTool, source, scenarioIds),
+      scenarios: raw.scenarios.map((scenario) =>
+        normalizeScenario(scenario, typedBuildTool, source, scenarioIds),
       ),
     },
   };

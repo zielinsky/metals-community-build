@@ -1,9 +1,13 @@
 import { appendFileSync } from "node:fs";
 
-import { discoverProjects, loadCommunityConfig } from "./config.mjs";
-import { parseMetalsSource } from "./metals-source.mjs";
+import {
+  discoverProjects,
+  loadCommunityConfig,
+  ProjectConfig,
+} from "./config";
+import { parseMetalsSource } from "./metals-source";
 
-function option(name) {
+function option(name: string): string | undefined {
   const index = process.argv.indexOf(name);
   if (index < 0) return undefined;
   const value = process.argv[index + 1];
@@ -11,7 +15,13 @@ function option(name) {
   return value;
 }
 
-function matrixEntry({ project, relativeSource }) {
+function matrixEntry({
+  project,
+  relativeSource,
+}: {
+  project: ProjectConfig;
+  relativeSource: string;
+}) {
   const workspace = "workspaces/project";
   return {
     project: project.id,

@@ -17,10 +17,10 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "kind", "openFile", "assertions"],
+        "required": ["id", "kind", "openFile"],
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
-          "kind": { "const": "mbt-import" },
+          "kind": { "enum": ["mbt-import", "rename-symbol"] },
           "openFile": { "type": "string", "minLength": 1 },
           "namespaceMode": {
             "enum": ["each-build-target", "single-global-target"]
@@ -47,7 +47,23 @@
               }
             }
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "kind": { "const": "mbt-import" } } },
+            "then": {
+              "required": ["assertions"],
+              "not": { "required": ["rename"] }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "rename-symbol" } } },
+            "then": {
+              "required": ["rename"],
+              "not": { "required": ["assertions"] }
+            }
+          }
+        ]
       }
     }
   }

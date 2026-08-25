@@ -1,6 +1,11 @@
-import { ensure, gitRef, repository, text } from "./validation.mjs";
+import { ensure, gitRef, repository, text } from "./validation";
 
-function fromGitHubUrl(input) {
+export interface MetalsSource {
+  repository: string;
+  ref: string;
+}
+
+function fromGitHubUrl(input: string): MetalsSource {
   const url = new URL(input);
   const isPlainGitHubUrl =
     url.protocol === "https:" &&
@@ -36,7 +41,10 @@ function fromGitHubUrl(input) {
   };
 }
 
-export function parseMetalsSource(value, defaultRepository) {
+export function parseMetalsSource(
+  value: string,
+  defaultRepository: string,
+): MetalsSource {
   const input = text(value?.trim(), "metals source", "command line");
   if (/^https?:\/\//.test(input)) return fromGitHubUrl(input);
 

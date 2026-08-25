@@ -1,10 +1,10 @@
-import { loadCommunityConfig } from "./config.mjs";
-import { runExtester } from "./extester.mjs";
-import { paths } from "./paths.mjs";
+import { loadCommunityConfig } from "./config";
+import { runExtester } from "./extester";
+import { paths } from "./paths";
 
 const { vscode } = loadCommunityConfig();
 const version = ["--storage", paths.storage, "--code_version", vscode.version];
-const commands = [
+const commands: string[][] = [
   ["get-vscode", ...version],
   ["get-chromedriver", ...version],
   [

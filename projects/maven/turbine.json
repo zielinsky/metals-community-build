@@ -8,13 +8,18 @@
   "projectRoot": ".",
   "scenarios": [
     {
-      "id": "import-and-rename-symbol",
+      "id": "import",
       "kind": "mbt-import",
       "openFile": "java/com/google/turbine/main/Main.java",
       "assertions": {
         "minimumNamespaces": 1,
         "sources": ["java/com/google/turbine/main/Main.java"]
-      },
+      }
+    },
+    {
+      "id": "rename-manifest-dir",
+      "kind": "rename-symbol",
+      "openFile": "java/com/google/turbine/main/Main.java",
       "rename": {
         "symbol": "MANIFEST_DIR",
         "newName": "MANIFEST_DIRECTORY",

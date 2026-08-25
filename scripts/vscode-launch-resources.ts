@@ -1,5 +1,5 @@
-const chrome = require("selenium-webdriver/chrome");
-const { pathToFileURL } = require("node:url");
+import chrome from "selenium-webdriver/chrome";
+import { pathToFileURL } from "node:url";
 
 const resources = JSON.parse(
   process.env.METALS_COMMUNITY_VSCODE_RESOURCES ?? "null",
