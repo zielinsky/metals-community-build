@@ -1,54 +1,53 @@
 import { appendFileSync } from "node:fs";
 
-import {
-  discoverProjects,
-  loadCommunityConfig,
-  parseMetalsSource,
-} from "./config.mjs";
+import { discoverProjects, loadCommunityConfig } from "./config.mjs";
+import { parseMetalsSource } from "./metals-source.mjs";
 
-const config = loadCommunityConfig();
-const metalsArgumentIndex = process.argv.indexOf("--metals");
-const metals =
-  metalsArgumentIndex === -1
-    ? config.metals
-    : {
-        ...config.metals,
-        ...parseMetalsSource(
-          process.argv[metalsArgumentIndex + 1],
-          config.metals.repository,
-        ),
-      };
-const include = discoverProjects().map(({ project, relativeSource }) => {
-  const workspacePath =
-    project.projectRoot === "."
-      ? "workspaces/project"
-      : `workspaces/project/${project.projectRoot}`;
+function option(name) {
+  const index = process.argv.indexOf(name);
+  if (index < 0) return undefined;
+  const value = process.argv[index + 1];
+  if (!value) throw new Error(`${name} requires a value`);
+  return value;
+}
+
+function matrixEntry({ project, relativeSource }) {
+  const workspace = "workspaces/project";
   return {
     project: project.id,
     projectName: project.name,
     buildTool: project.buildTool,
     repository: project.repository,
     ref: project.ref,
-    projectRoot: project.projectRoot,
-    workspacePath,
+    workspacePath:
+      project.projectRoot === "."
+        ? workspace
+        : `${workspace}/${project.projectRoot}`,
     config: relativeSource,
   };
-});
-const matrix = JSON.stringify({ include });
+}
+
+const config = loadCommunityConfig();
+const selectedSource = option("--metals");
+const metals = selectedSource
+  ? {
+      ...config.metals,
+      ...parseMetalsSource(selectedSource, config.metals.repository),
+    }
+  : config.metals;
+const matrix = JSON.stringify({ include: discoverProjects().map(matrixEntry) });
 
 if (process.argv.includes("--github-output")) {
   const output = process.env.GITHUB_OUTPUT;
   if (!output) throw new Error("GITHUB_OUTPUT is not set");
-  appendFileSync(
-    output,
-    [
-      `matrix=${matrix}`,
-      `metalsRepository=${metals.repository}`,
-      `metalsRef=${metals.ref}`,
-      `metalsVersion=${metals.version}`,
-      "",
-    ].join("\n"),
-  );
+  const values = {
+    matrix,
+    metalsRepository: metals.repository,
+    metalsRef: metals.ref,
+    metalsVersion: metals.version,
+  };
+  const lines = Object.entries(values).map(([name, value]) => `${name}=${value}`);
+  appendFileSync(output, `${lines.join("\n")}\n`);
 } else {
   console.log(matrix);
 }

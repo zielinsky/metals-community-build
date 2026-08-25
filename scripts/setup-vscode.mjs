@@ -1,32 +1,23 @@
-import { resolve } from "node:path";
+import { loadCommunityConfig } from "./config.mjs";
+import { runExtester } from "./extester.mjs";
+import { paths } from "./paths.mjs";
 
-import { loadCommunityConfig, repositoryRoot } from "./config.mjs";
-import { extest, run } from "./process.mjs";
-
-const config = loadCommunityConfig();
-const storage = resolve(repositoryRoot, ".test-resources");
-const extensions = resolve(repositoryRoot, ".test-extensions");
-
+const { vscode } = loadCommunityConfig();
+const version = ["--storage", paths.storage, "--code_version", vscode.version];
 const commands = [
-  ["get-vscode", "--storage", storage, "--code_version", config.vscode.version],
-  [
-    "get-chromedriver",
-    "--storage",
-    storage,
-    "--code_version",
-    config.vscode.version,
-  ],
+  ["get-vscode", ...version],
+  ["get-chromedriver", ...version],
   [
     "install-from-marketplace",
     "--storage",
-    storage,
+    paths.storage,
     "--extensions_dir",
-    extensions,
-    config.vscode.extension,
+    paths.extensions,
+    vscode.extension,
   ],
 ];
 
-for (const args of commands) {
-  const status = run(extest, args);
+for (const command of commands) {
+  const status = runExtester(command);
   if (status !== 0) process.exit(status);
 }

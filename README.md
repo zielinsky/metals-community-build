@@ -37,6 +37,11 @@ projects/
   gradle/*.json               Gradle repositories
 scripts/create-matrix.mjs     manifest discovery and CI matrix generation
 scripts/run-project.mjs       isolated scenario runner for one repository
+scripts/config.mjs            manifest loading and validation
+scripts/extester.mjs          ExTester process wrapper
+scripts/metals-source.mjs      Metals URL/ref parsing
+scripts/paths.mjs             shared repository paths
+scripts/validation.mjs        reusable input validation
 src/mbt-import.test.ts        reusable MBT import UI scenario
 ```
 

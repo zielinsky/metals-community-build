@@ -1,28 +1,29 @@
 const chrome = require("selenium-webdriver/chrome");
 const { pathToFileURL } = require("node:url");
 
-const encodedResources = process.env.METALS_COMMUNITY_VSCODE_RESOURCES;
-const resources = encodedResources ? JSON.parse(encodedResources) : {};
+const resources = JSON.parse(
+  process.env.METALS_COMMUNITY_VSCODE_RESOURCES ?? "null",
+);
 if (
-  typeof resources.folder !== "string" ||
-  typeof resources.file !== "string"
+  typeof resources?.folder !== "string" ||
+  typeof resources?.file !== "string"
 ) {
   throw new Error(
     "METALS_COMMUNITY_VSCODE_RESOURCES must define string folder and file fields",
   );
 }
-const resourceArguments = [
+const vscodeResources = [
   `--folder-uri=${pathToFileURL(resources.folder).href}`,
   `--file-uri=${pathToFileURL(resources.file).href}`,
 ];
 
 const originalAddArguments = chrome.Options.prototype.addArguments;
-let injected = false;
+let resourcesAdded = false;
 chrome.Options.prototype.addArguments = function (...args) {
   const launchesVSCode = args.includes("--skip-welcome");
-  if (!injected && launchesVSCode) {
-    injected = true;
-    return originalAddArguments.call(this, ...args, ...resourceArguments);
+  if (!resourcesAdded && launchesVSCode) {
+    resourcesAdded = true;
+    return originalAddArguments.call(this, ...args, ...vscodeResources);
   }
   return originalAddArguments.call(this, ...args);
 };
