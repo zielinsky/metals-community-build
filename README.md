@@ -5,9 +5,9 @@ Bazel projects. [ExTester](https://github.com/redhat-developer/vscode-extension-
 drives the VS Code UI through Selenium WebDriver.
 
 Projects are data, not CI jobs. The workflow discovers every JSON manifest below
-`projects/{maven,gradle,bazel}`, creates one isolated CI job per repository, and
-runs all scenarios declared by that repository. Adding a project or another MBT
-import scenario does not require editing `.github/workflows/ci.yml`.
+`projects/{maven,gradle,bazel}`, groups their jobs under Bazel, Maven, or Gradle,
+and runs all scenarios declared by each repository. Adding a project or scenario
+does not require editing `.github/workflows/ci.yml`.
 
 CI never starts on a push or pull request. Start it manually from **Actions →
 Community Build → Run workflow** and provide the Metals source to test. The
@@ -30,6 +30,9 @@ generated project job.
 
 ```text
 community-build.json          default Metals source plus VS Code/extension versions
+.github/workflows/
+  ci.yml                      manual entry point and build-tool groups
+  test-projects.yml           reusable per-build-tool project matrix
 projects/
   project.schema.json         project/scenario manifest schema
   bazel/*.json                Bazel repositories

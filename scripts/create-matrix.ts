@@ -1,6 +1,7 @@
 import { appendFileSync } from "node:fs";
 
 import {
+  buildTools,
   discoverProjects,
   loadCommunityConfig,
   ProjectConfig,
@@ -45,13 +46,26 @@ const metals = selectedSource
       ...parseMetalsSource(selectedSource, config.metals.repository),
     }
   : config.metals;
-const matrix = JSON.stringify({ include: discoverProjects().map(matrixEntry) });
+const entries = discoverProjects().map(matrixEntry);
+const matrices = Object.fromEntries(
+  buildTools.map((buildTool) => [
+    buildTool,
+    {
+      include: entries.filter((entry) => entry.buildTool === buildTool),
+    },
+  ]),
+);
 
 if (process.argv.includes("--github-output")) {
   const output = process.env.GITHUB_OUTPUT;
   if (!output) throw new Error("GITHUB_OUTPUT is not set");
   const values = {
-    matrix,
+    bazelMatrix: JSON.stringify(matrices.bazel),
+    mavenMatrix: JSON.stringify(matrices.maven),
+    gradleMatrix: JSON.stringify(matrices.gradle),
+    hasBazel: String(matrices.bazel.include.length > 0),
+    hasMaven: String(matrices.maven.include.length > 0),
+    hasGradle: String(matrices.gradle.include.length > 0),
     metalsRepository: metals.repository,
     metalsRef: metals.ref,
     metalsVersion: metals.version,
@@ -59,5 +73,5 @@ if (process.argv.includes("--github-output")) {
   const lines = Object.entries(values).map(([name, value]) => `${name}=${value}`);
   appendFileSync(output, `${lines.join("\n")}\n`);
 } else {
-  console.log(matrix);
+  console.log(JSON.stringify(matrices));
 }

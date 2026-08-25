@@ -17,7 +17,12 @@ jobs:
     name: Discover community projects
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.matrix.outputs.matrix }}
+      bazelMatrix: ${{ steps.matrix.outputs.bazelMatrix }}
+      mavenMatrix: ${{ steps.matrix.outputs.mavenMatrix }}
+      gradleMatrix: ${{ steps.matrix.outputs.gradleMatrix }}
+      hasBazel: ${{ steps.matrix.outputs.hasBazel }}
+      hasMaven: ${{ steps.matrix.outputs.hasMaven }}
+      hasGradle: ${{ steps.matrix.outputs.hasGradle }}
       metalsRepository: ${{ steps.matrix.outputs.metalsRepository }}
       metalsRef: ${{ steps.matrix.outputs.metalsRef }}
       metalsVersion: ${{ steps.matrix.outputs.metalsVersion }}
@@ -138,110 +143,29 @@ jobs:
             .test-extensions
           key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
 
-  test:
-    name: ${{ matrix.buildTool }} / ${{ matrix.projectName }}
+  bazel:
+    name: Bazel
     needs: [projects, build-metals, prepare-runtime]
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    strategy:
-      fail-fast: false
-      matrix: ${{ fromJSON(needs.projects.outputs.matrix) }}
+    if: needs.projects.outputs.hasBazel == 'true'
+    uses: ./.github/workflows/test-projects.yml
+    with:
+      matrix: ${{ needs.projects.outputs.bazelMatrix }}
+      metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
 
-    steps:
-      - name: Check out the community build
-        uses: actions/checkout@v7
-        with:
-          persist-credentials: false
+  maven:
+    name: Maven
+    needs: [projects, build-metals, prepare-runtime]
+    if: needs.projects.outputs.hasMaven == 'true'
+    uses: ./.github/workflows/test-projects.yml
+    with:
+      matrix: ${{ needs.projects.outputs.mavenMatrix }}
+      metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
 
-      - name: Check out ${{ matrix.projectName }}
-        uses: actions/checkout@v7
-        with:
-          repository: ${{ matrix.repository }}
-          ref: ${{ matrix.ref }}
-          path: workspaces/project
-          fetch-depth: 1
-          persist-credentials: false
-
-      - name: Set up Java
-        uses: actions/setup-java@v5
-        with:
-          distribution: temurin
-          java-version: "21"
-
-      - name: Cache Coursier dependencies
-        uses: coursier/cache-action@v8
-        with:
-          ignoreJob: true
-
-      - name: Download the published Metals server
-        uses: actions/download-artifact@v8
-        with:
-          name: metals-local-${{ github.run_id }}
-          path: ${{ runner.temp }}/metals-local
-
-      - name: Restore local Metals repositories
-        shell: bash
-        run: tar -C "$HOME" -xzf "$RUNNER_TEMP/metals-local/metals-local.tgz"
-
-      - name: Set up Bazel
-        if: matrix.buildTool == 'bazel'
-        uses: bazel-contrib/setup-bazel@0.19.0
-        with:
-          module-root: ${{ matrix.workspacePath }}
-          bazelisk-cache: true
-          repository-cache: true
-          cache-save: true
-
-      - name: Set up Gradle
-        if: matrix.buildTool == 'gradle'
-        uses: gradle/actions/setup-gradle@v6
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: "24"
-
-      - name: Restore the VS Code test runtime cache
-        uses: actions/cache/restore@v6
-        with:
-          path: |
-            node_modules
-            .test-resources
-            .test-extensions
-          key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
-          fail-on-cache-miss: true
-
-      - name: Compile community build tests
-        run: npm run compile
-
-      - name: Run project scenarios
-        shell: bash
-        run: |
-          set -euo pipefail
-          metals_directory="$METALS_COMMUNITY_WORKSPACE/.metals"
-          metals_log="$metals_directory/metals.log"
-          mkdir -p "$metals_directory"
-          touch "$metals_log"
-          tail -n +1 -F "$metals_log" > >(sed -u 's/^/[metals] /') &
-          metals_log_pid=$!
-          trap 'kill "$metals_log_pid" 2>/dev/null || true' EXIT
-          xvfb-run -a npm run test:e2e:prepared
-        env:
-          COMMUNITY_BUILD_PROJECT_CONFIG: ${{ matrix.config }}
-          METALS_COMMUNITY_WORKSPACE: ${{ github.workspace }}/${{ matrix.workspacePath }}
-          METALS_COMMUNITY_METALS_VERSION: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
-
-      - name: Upload test diagnostics
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: ${{ matrix.buildTool }}-${{ matrix.project }}-${{ github.run_id }}
-          path: |
-            .test-resources/screenshots
-            .test-resources/chromedriver.log
-            .test-resources/settings/logs
-            ${{ matrix.workspacePath }}/.metals/metals.log
-            ${{ matrix.workspacePath }}/.metals/mbt.json
-          if-no-files-found: ignore
-          include-hidden-files: true
-          retention-days: 7
+  gradle:
+    name: Gradle
+    needs: [projects, build-metals, prepare-runtime]
+    if: needs.projects.outputs.hasGradle == 'true'
+    uses: ./.github/workflows/test-projects.yml
+    with:
+      matrix: ${{ needs.projects.outputs.gradleMatrix }}
+      metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
