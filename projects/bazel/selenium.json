@@ -1,0 +1,23 @@
+{
+  "$schema": "../project.schema.json",
+  "id": "selenium",
+  "name": "Selenium",
+  "buildTool": "bazel",
+  "repository": "SeleniumHQ/selenium",
+  "ref": "trunk",
+  "projectRoot": ".",
+  "scenarios": [
+    {
+      "id": "import-each-build-target",
+      "kind": "mbt-import",
+      "openFile": "java/test/org/openqa/selenium/json/JsonTest.java",
+      "namespaceMode": "each-build-target",
+      "assertions": {
+        "minimumNamespaces": 2,
+        "sources": [
+          "java/test/org/openqa/selenium/json/JsonTest.java"
+        ]
+      }
+    }
+  ]
+}

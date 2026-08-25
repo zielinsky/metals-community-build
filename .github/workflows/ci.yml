@@ -1,0 +1,220 @@
+name: Community build
+
+on:
+  workflow_dispatch:
+    inputs:
+      metals:
+        description: "Metals branch/commit/tag URL (for example: https://github.com/scalameta/metals/tree/main-v2)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  projects:
+    name: Discover community projects
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      metalsRepository: ${{ steps.matrix.outputs.metalsRepository }}
+      metalsRef: ${{ steps.matrix.outputs.metalsRef }}
+      metalsVersion: ${{ steps.matrix.outputs.metalsVersion }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - id: matrix
+        name: Validate manifests and create matrix
+        run: node scripts/create-matrix.mjs --github-output --metals "$METALS_SOURCE"
+        env:
+          METALS_SOURCE: ${{ inputs.metals }}
+
+  build-metals:
+    name: Build Metals
+    needs: projects
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out Metals
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ needs.projects.outputs.metalsRepository }}
+          ref: ${{ needs.projects.outputs.metalsRef }}
+          path: workspaces/metals
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Coursier
+        uses: coursier/setup-action@v3
+
+      - name: Cache Coursier dependencies
+        uses: coursier/cache-action@v8
+        with:
+          ignoreJob: true
+
+      - name: Set up sbt
+        uses: sbt/setup-sbt@v1
+
+      - name: Publish the selected Metals server locally
+        run: sbt --client quick-publish-local
+        working-directory: workspaces/metals
+        env:
+          METALS_TEST: true
+          METALS_VERSION: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+
+      - name: Bundle local Metals repositories
+        shell: bash
+        run: |
+          test -d "$HOME/.ivy2/local/org.scalameta"
+          test -d "$HOME/.m2/repository/org/scalameta"
+          tar -C "$HOME" -czf "$RUNNER_TEMP/metals-local.tgz" \
+            .ivy2/local/org.scalameta \
+            .m2/repository/org/scalameta
+
+      - name: Upload local Metals repositories
+        uses: actions/upload-artifact@v7
+        with:
+          name: metals-local-${{ github.run_id }}
+          path: ${{ runner.temp }}/metals-local.tgz
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
+
+  prepare-runtime:
+    name: Prepare VS Code test runtime
+    needs: projects
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the community build
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - id: runtime-cache
+        name: Restore the VS Code test runtime cache
+        uses: actions/cache@v6
+        with:
+          path: |
+            node_modules
+            .test-resources
+            .test-extensions
+          key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
+
+      - name: Prepare the VS Code test runtime
+        if: steps.runtime-cache.outputs.cache-hit != 'true'
+        run: |
+          npm ci
+          npm run setup:vscode
+
+  test:
+    name: ${{ matrix.buildTool }} / ${{ matrix.projectName }}
+    needs: [projects, build-metals, prepare-runtime]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.projects.outputs.matrix) }}
+
+    steps:
+      - name: Check out the community build
+        uses: actions/checkout@v7
+
+      - name: Check out ${{ matrix.projectName }}
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ matrix.repository }}
+          ref: ${{ matrix.ref }}
+          path: workspaces/project
+          fetch-depth: 1
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Cache Coursier dependencies
+        uses: coursier/cache-action@v8
+        with:
+          ignoreJob: true
+
+      - name: Download the published Metals server
+        uses: actions/download-artifact@v8
+        with:
+          name: metals-local-${{ github.run_id }}
+          path: ${{ runner.temp }}/metals-local
+
+      - name: Restore local Metals repositories
+        shell: bash
+        run: tar -C "$HOME" -xzf "$RUNNER_TEMP/metals-local/metals-local.tgz"
+
+      - name: Set up Bazel
+        if: matrix.buildTool == 'bazel'
+        uses: bazel-contrib/setup-bazel@0.19.0
+        with:
+          module-root: ${{ matrix.workspacePath }}
+          bazelisk-cache: true
+          repository-cache: true
+          cache-save: true
+
+      - name: Set up Gradle
+        if: matrix.buildTool == 'gradle'
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+
+      - id: runtime-cache
+        name: Restore the VS Code test runtime cache
+        uses: actions/cache@v6
+        with:
+          path: |
+            node_modules
+            .test-resources
+            .test-extensions
+          key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
+
+      - name: Prepare the VS Code test runtime after a cache miss
+        if: steps.runtime-cache.outputs.cache-hit != 'true'
+        run: |
+          npm ci
+          npm run setup:vscode
+
+      - name: Compile community build tests
+        run: npm run compile
+
+      - name: Run project scenarios
+        run: xvfb-run -a npm run test:e2e:prepared
+        env:
+          COMMUNITY_BUILD_PROJECT_CONFIG: ${{ matrix.config }}
+          METALS_COMMUNITY_WORKSPACE: ${{ github.workspace }}/${{ matrix.workspacePath }}
+          METALS_COMMUNITY_METALS_VERSION: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+
+      - name: Upload test diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.buildTool }}-${{ matrix.project }}-${{ github.run_id }}
+          path: |
+            .test-resources/screenshots
+            .test-resources/chromedriver.log
+            .test-resources/settings/logs
+            ${{ matrix.workspacePath }}/.metals/metals.log
+            ${{ matrix.workspacePath }}/.metals/mbt.json
+          if-no-files-found: ignore
+          include-hidden-files: true
+          retention-days: 7

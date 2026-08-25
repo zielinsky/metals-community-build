@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["metals", "vscode"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "metals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "ref", "version"],
+      "properties": {
+        "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+        "ref": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "vscode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "extension"],
+      "properties": {
+        "version": { "type": "string", "minLength": 1 },
+        "extension": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
