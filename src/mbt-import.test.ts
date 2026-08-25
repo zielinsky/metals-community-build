@@ -60,6 +60,10 @@ const mbtPath = resolve(workspace, ".metals", "mbt.json");
 const metalsLogPath = resolve(workspace, ".metals", "metals.log");
 const openFile = resolve(workspace, scenario.openFile);
 
+function log(message: string): void {
+  console.log(`[community-build] ${new Date().toISOString()} ${message}`);
+}
+
 async function waitForWorkspaceFile(timeoutMs: number): Promise<void> {
   const expectedTitle = basename(openFile);
   const deadline = Date.now() + timeoutMs;
@@ -95,7 +99,10 @@ async function waitForNotification(
     const index = visibleMessages.findIndex((message) =>
       message.includes(expectedMessage),
     );
-    if (index >= 0) return notifications[index];
+    if (index >= 0) {
+      log(`Notification appeared: ${visibleMessages[index]}`);
+      return notifications[index];
+    }
 
     await new Promise((done) => setTimeout(done, 500));
   }
@@ -113,7 +120,9 @@ async function waitForMbtImport(timeoutMs: number): Promise<unknown> {
   while (Date.now() < deadline) {
     if (existsSync(mbtPath)) {
       try {
-        return JSON.parse(readFileSync(mbtPath, "utf8"));
+        const imported = JSON.parse(readFileSync(mbtPath, "utf8"));
+        log(`Loaded MBT model from ${mbtPath}`);
+        return imported;
       } catch (error) {
         lastError = error;
       }
@@ -141,29 +150,44 @@ async function selectNamespaceMode(): Promise<void> {
     "How should Metals group Bazel targets in the MBT build?",
     2 * 60 * 1000,
   );
+  log(`Clicking notification action: ${action}`);
   await notification.takeAction(action);
+  log(`Clicked notification action: ${action}`);
 }
 
 describe(`${project.buildTool} / ${project.id}`, function () {
   this.timeout(20 * 60 * 1000);
 
   it(scenario.id, async () => {
+    log(`Starting ${project.buildTool} / ${project.id} / ${scenario.id}`);
+    log(`Workspace: ${workspace}`);
+    log(`Expected editor: ${openFile}`);
     assert.ok(existsSync(openFile), `Missing file to open: ${openFile}`);
+    log("Waiting for VS Code to open the requested file");
     await waitForWorkspaceFile(30 * 1000);
+    log(`VS Code opened ${basename(openFile)}`);
 
+    log("Waiting for the build server choice notification");
     const buildServerChoice = await waitForNotification(
       "workspace detected. Which build server would you like to use?",
       2 * 60 * 1000,
     );
+    log("Clicking notification action: Use MBT");
     await buildServerChoice.takeAction("Use MBT");
+    log("Clicked notification action: Use MBT");
     await selectNamespaceMode();
 
+    log(`Waiting for MBT import to produce ${mbtPath}`);
     const imported = (await waitForMbtImport(15 * 60 * 1000)) as {
       dependencyModules?: unknown[];
       namespaces?: Record<string, { sources?: string[] }>;
     };
     const namespaces = imported.namespaces ?? {};
     const minimumNamespaces = scenario.assertions.minimumNamespaces ?? 1;
+    log(
+      `MBT model contains ${Object.keys(namespaces).length} namespaces and ` +
+        `${(imported.dependencyModules ?? []).length} dependency modules`,
+    );
 
     assert.ok(
       Object.keys(namespaces).length >= minimumNamespaces,
@@ -185,6 +209,8 @@ describe(`${project.buildTool} / ${project.id}`, function () {
         importedSources.some((source) => source.endsWith(expectedSource)),
         `Expected the MBT model to contain ${expectedSource}`,
       );
+      log(`Verified imported source: ${expectedSource}`);
     }
+    log(`Scenario passed: ${scenario.id}`);
   });
 });

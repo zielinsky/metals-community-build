@@ -9,7 +9,7 @@ export const repositoryRoot = resolve(
 export const buildTools = ["bazel", "maven", "gradle"];
 
 const idPattern = /^[a-z0-9][a-z0-9-]*$/;
-const repositoryPattern = /^[^/]+\/[^/]+$/;
+const repositoryPattern = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
 
 function readJson(path) {
   try {
@@ -20,8 +20,15 @@ function readJson(path) {
 }
 
 function requiredString(value, field, source) {
-  if (typeof value !== "string" || value.length === 0) {
-    throw new Error(`${source}: '${field}' must be a non-empty string`);
+  if (
+    typeof value !== "string" ||
+    value.length === 0 ||
+    value.includes("\n") ||
+    value.includes("\r")
+  ) {
+    throw new Error(
+      `${source}: '${field}' must be a non-empty single-line string`,
+    );
   }
   return value;
 }
@@ -48,6 +55,30 @@ function validateRepository(value, field, source) {
   return repository;
 }
 
+function validateRef(value, field, source) {
+  const ref = requiredString(value, field, source);
+  const invalidComponent = ref
+    .split("/")
+    .some(
+      (component) =>
+        component.length === 0 ||
+        component.startsWith(".") ||
+        component.endsWith(".lock"),
+    );
+  if (
+    ref.startsWith("-") ||
+    ref.endsWith(".") ||
+    ref.includes("..") ||
+    ref.includes("@{") ||
+    ref.includes("[") ||
+    /[\x00-\x20\x7f~^:?*\\]/.test(ref) ||
+    invalidComponent
+  ) {
+    throw new Error(`${source}: '${field}' is not a valid Git ref`);
+  }
+  return ref;
+}
+
 export function loadCommunityConfig() {
   const source = resolve(repositoryRoot, "community-build.json");
   const config = readJson(source);
@@ -61,7 +92,7 @@ export function loadCommunityConfig() {
         "metals.repository",
         source,
       ),
-      ref: requiredString(metals.ref, "metals.ref", source),
+      ref: validateRef(metals.ref, "metals.ref", source),
       version: requiredString(metals.version, "metals.version", source),
     },
     vscode: {
@@ -81,8 +112,16 @@ export function parseMetalsSource(value, defaultRepository) {
     } catch (error) {
       throw new Error(`Invalid Metals URL '${source}': ${String(error)}`);
     }
-    if (url.hostname !== "github.com") {
-      throw new Error("The Metals URL must point to github.com");
+    if (
+      url.protocol !== "https:" ||
+      url.hostname !== "github.com" ||
+      url.username ||
+      url.password ||
+      url.port ||
+      url.search ||
+      url.hash
+    ) {
+      throw new Error("Use a plain HTTPS URL pointing to github.com");
     }
 
     const parts = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
@@ -100,7 +139,14 @@ export function parseMetalsSource(value, defaultRepository) {
           "https://github.com/scalameta/metals/tree/main-v2",
       );
     }
-    return { repository: `${owner}/${repository}`, ref: refParts.join("/") };
+    return {
+      repository: validateRepository(
+        `${owner}/${repository}`,
+        "metals repository",
+        "command line",
+      ),
+      ref: validateRef(refParts.join("/"), "metals ref", "command line"),
+    };
   }
 
   const repositoryAndRef = source.match(/^([^/\s]+\/[^@\s]+)@(.+)$/);
@@ -111,13 +157,13 @@ export function parseMetalsSource(value, defaultRepository) {
         "metals repository",
         "command line",
       ),
-      ref: requiredString(repositoryAndRef[2], "metals ref", "command line"),
+      ref: validateRef(repositoryAndRef[2], "metals ref", "command line"),
     };
   }
 
   return {
     repository: defaultRepository,
-    ref: source,
+    ref: validateRef(source, "metals ref", "command line"),
   };
 }
 
@@ -220,7 +266,7 @@ export function loadProjectConfig(configPath, expectedBuildTool) {
       id,
       name: requiredString(project.name, "name", source),
       repository: validateRepository(project.repository, "repository", source),
-      ref: requiredString(project.ref, "ref", source),
+      ref: validateRef(project.ref, "ref", source),
       projectRoot: safeRelativePath(
         project.projectRoot ?? ".",
         "projectRoot",

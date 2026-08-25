@@ -10,14 +10,17 @@ runs all scenarios declared by that repository. Adding a project or another MBT
 import scenario does not require editing `.github/workflows/ci.yml`.
 
 CI never starts on a push or pull request. Start it manually from **Actions →
-Community build → Run workflow** and provide the Metals version to test. The
-input accepts:
+Community Build → Run workflow** and provide the Metals source to test. The
+selected source is included in the workflow run name. The input accepts:
 
 - a branch URL, for example `https://github.com/scalameta/metals/tree/main-v2`,
 - a commit URL, for example `https://github.com/scalameta/metals/commit/<sha>`,
 - a tag URL, for example `https://github.com/scalameta/metals/releases/tag/<tag>`,
 - `owner/repository@ref`, useful for forks, or just a ref from the default Metals
   repository.
+
+The source input is visible in GitHub Actions. Pass only a public repository and
+ref; never include credentials or tokens in the URL.
 
 The selected repository and ref are built once. The resulting Ivy and Maven
 local repositories are uploaded as a short-lived artifact and restored by every
@@ -43,7 +46,12 @@ session and a clean `.metals` directory. Matrix jobs remain isolated and may run
 in parallel. The published Metals binaries are shared as a per-run artifact. A
 cache keyed by `package-lock.json` and `community-build.json` shares Node
 dependencies, VS Code, ChromeDriver, and installed extensions across jobs and
-workflow runs. Tests are compiled from the current checkout in every project job.
+workflow runs. Only the preparation job can write this cache; project jobs restore
+it read-only. Tests are compiled from the current checkout in every project job.
+During a scenario, the CI log reports every relevant UI action and streams
+`.metals/metals.log` with a `[metals]` prefix. Screenshots, VS Code logs, the MBT
+model, and the complete Metals log are also uploaded as diagnostics after every
+job.
 
 ## Add a repository
 

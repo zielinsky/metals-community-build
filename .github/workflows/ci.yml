@@ -1,4 +1,5 @@
-name: Community build
+name: Community Build
+run-name: Community Build / ${{ inputs.metals }}
 
 on:
   workflow_dispatch:
@@ -22,6 +23,8 @@ jobs:
       metalsVersion: ${{ steps.matrix.outputs.metalsVersion }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v7
         with:
           node-version: "24"
@@ -43,6 +46,7 @@ jobs:
           repository: ${{ needs.projects.outputs.metalsRepository }}
           ref: ${{ needs.projects.outputs.metalsRef }}
           path: workspaces/metals
+          persist-credentials: false
 
       - name: Set up Java
         uses: actions/setup-java@v5
@@ -94,6 +98,8 @@ jobs:
     steps:
       - name: Check out the community build
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v7
@@ -104,7 +110,7 @@ jobs:
 
       - id: runtime-cache
         name: Restore the VS Code test runtime cache
-        uses: actions/cache@v6
+        uses: actions/cache/restore@v6
         with:
           path: |
             node_modules
@@ -118,6 +124,16 @@ jobs:
           npm ci
           npm run setup:vscode
 
+      - name: Save the VS Code test runtime cache
+        if: steps.runtime-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: |
+            node_modules
+            .test-resources
+            .test-extensions
+          key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
+
   test:
     name: ${{ matrix.buildTool }} / ${{ matrix.projectName }}
     needs: [projects, build-metals, prepare-runtime]
@@ -130,6 +146,8 @@ jobs:
     steps:
       - name: Check out the community build
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Check out ${{ matrix.projectName }}
         uses: actions/checkout@v7
@@ -138,6 +156,7 @@ jobs:
           ref: ${{ matrix.ref }}
           path: workspaces/project
           fetch-depth: 1
+          persist-credentials: false
 
       - name: Set up Java
         uses: actions/setup-java@v5
@@ -178,27 +197,31 @@ jobs:
         with:
           node-version: "24"
 
-      - id: runtime-cache
-        name: Restore the VS Code test runtime cache
-        uses: actions/cache@v6
+      - name: Restore the VS Code test runtime cache
+        uses: actions/cache/restore@v6
         with:
           path: |
             node_modules
             .test-resources
             .test-extensions
           key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
-
-      - name: Prepare the VS Code test runtime after a cache miss
-        if: steps.runtime-cache.outputs.cache-hit != 'true'
-        run: |
-          npm ci
-          npm run setup:vscode
+          fail-on-cache-miss: true
 
       - name: Compile community build tests
         run: npm run compile
 
       - name: Run project scenarios
-        run: xvfb-run -a npm run test:e2e:prepared
+        shell: bash
+        run: |
+          set -euo pipefail
+          metals_directory="$METALS_COMMUNITY_WORKSPACE/.metals"
+          metals_log="$metals_directory/metals.log"
+          mkdir -p "$metals_directory"
+          touch "$metals_log"
+          tail -n +1 -F "$metals_log" > >(sed -u 's/^/[metals] /') &
+          metals_log_pid=$!
+          trap 'kill "$metals_log_pid" 2>/dev/null || true' EXIT
+          xvfb-run -a npm run test:e2e:prepared
         env:
           COMMUNITY_BUILD_PROJECT_CONFIG: ${{ matrix.config }}
           METALS_COMMUNITY_WORKSPACE: ${{ github.workspace }}/${{ matrix.workspacePath }}
