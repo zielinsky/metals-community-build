@@ -5,6 +5,7 @@ import { basename, resolve } from "node:path";
 import {
   EditorView,
   Notification,
+  StatusBar,
   VSBrowser,
   Workbench,
 } from "vscode-extension-tester";
@@ -179,7 +180,54 @@ async function selectNamespaceMode(scenario: Scenario): Promise<void> {
   await captureScreenshot("namespace-mode-selected");
 }
 
-async function waitForMbtImport(timeoutMs: number): Promise<MbtModel> {
+async function statusBarTexts(): Promise<string[]> {
+  const items = await new StatusBar().getItems();
+  const texts = await Promise.all(
+    items.map(async (item) => {
+      const values = await Promise.all([
+        item.getText().catch(() => ""),
+        item.getAttribute("aria-label").catch(() => ""),
+        item.getAttribute("title").catch(() => ""),
+      ]);
+      return values.filter(Boolean).join(" ");
+    }),
+  );
+  return texts.filter(Boolean);
+}
+
+async function waitForImportStatus(timeoutMs: number): Promise<void> {
+  const deadline = Date.now() + timeoutMs;
+  let sawImporting = false;
+  let latestTexts: string[] = [];
+
+  while (Date.now() < deadline) {
+    try {
+      latestTexts = await statusBarTexts();
+      const isImporting = latestTexts.some((text) =>
+        /importing\.{3}/i.test(text),
+      );
+
+      if (isImporting && !sawImporting) {
+        sawImporting = true;
+        log("VS Code status bar reports that the project is importing");
+      } else if (sawImporting && !isImporting) {
+        log("VS Code status bar reports that the project import finished");
+        return;
+      }
+    } catch {
+      // The status bar DOM can be replaced while Metals updates its items.
+    }
+    await delay(500);
+  }
+
+  throw new Error(
+    sawImporting
+      ? `VS Code kept reporting an active import. Status bar: ${JSON.stringify(latestTexts)}`
+      : `VS Code never reported an active import. Status bar: ${JSON.stringify(latestTexts)}`,
+  );
+}
+
+async function readMbtModel(timeoutMs: number): Promise<MbtModel> {
   const mbtPath = resolve(workspace, ".metals", "mbt.json");
   const metalsLogPath = resolve(workspace, ".metals", "metals.log");
   const deadline = Date.now() + timeoutMs;
@@ -236,14 +284,16 @@ async function importMbt(scenario: Scenario): Promise<MbtModel> {
     2 * 60 * 1000,
   );
   await captureScreenshot("build-server-prompt");
+  const importFinished = waitForImportStatus(15 * 60 * 1000);
   log("Clicking notification action: Use MBT");
   await buildServerChoice.takeAction("Use MBT");
   log("Clicked notification action: Use MBT");
   await captureScreenshot("mbt-selected");
   await selectNamespaceMode(namespaceScenario ?? scenario);
 
-  log("Waiting for MBT import to finish");
-  const imported = await waitForMbtImport(15 * 60 * 1000);
+  log("Waiting for the VS Code importing status to finish");
+  await importFinished;
+  const imported = await readMbtModel(30 * 1000);
   await captureScreenshot("mbt-imported");
   return imported;
 }
