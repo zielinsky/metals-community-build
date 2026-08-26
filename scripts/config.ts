@@ -51,11 +51,20 @@ export interface JavaTestDiscoveryScenario extends ScenarioBase {
   testName: string;
 }
 
+export interface JavaMainRunScenario extends ScenarioBase {
+  kind: "java-main-run";
+  main: {
+    className: string;
+    successOutput: string;
+  };
+}
+
 export type Scenario =
   | ImportScenario
   | RenameScenario
   | JavaDiagnosticsScenario
-  | JavaTestDiscoveryScenario;
+  | JavaTestDiscoveryScenario
+  | JavaMainRunScenario;
 
 export interface ProjectConfig {
   id: string;
@@ -64,6 +73,7 @@ export interface ProjectConfig {
   repository: string;
   ref: string;
   projectRoot: string;
+  environment: Record<string, string>;
   scenarios: Scenario[];
 }
 
@@ -173,6 +183,44 @@ function normalizeImports(
   return imports;
 }
 
+function normalizeEnvironment(
+  value: unknown,
+  source: string,
+): Record<string, string> {
+  if (value === undefined) return {};
+  const environment = record(value, "environment", source);
+  return Object.fromEntries(
+    Object.entries(environment).map(([name, value]) => {
+      ensure(
+        /^[A-Za-z_][A-Za-z0-9_-]*$/.test(name),
+        source,
+        `environment variable '${name}' has an invalid name`,
+      );
+      return [name, text(value, `environment.${name}`, source)];
+    }),
+  );
+}
+
+function normalizeMain(
+  value: unknown,
+  scenarioId: string,
+  source: string,
+): JavaMainRunScenario["main"] {
+  const main = record(value, `scenario '${scenarioId}'.main`, source);
+  return {
+    className: text(
+      main.className,
+      `scenario '${scenarioId}'.main.className`,
+      source,
+    ),
+    successOutput: text(
+      main.successOutput,
+      `scenario '${scenarioId}'.main.successOutput`,
+      source,
+    ),
+  };
+}
+
 function normalizeScenario(
   value: unknown,
   buildTool: BuildTool,
@@ -242,6 +290,15 @@ function normalizeScenario(
       testName: text(result.testName, `scenario '${id}'.testName`, source),
     };
   }
+  if (result.kind === "java-main-run") {
+    return {
+      id,
+      kind: "java-main-run",
+      openFile,
+      namespaceMode,
+      main: normalizeMain(result.main, id, source),
+    };
+  }
   throw new Error(`${source}: unsupported scenario kind '${String(result.kind)}'`);
 }
 
@@ -304,6 +361,7 @@ export function loadProjectConfig(
       repository: repository(raw.repository, "repository", source),
       ref: gitRef(raw.ref, "ref", source),
       projectRoot: relativePath(raw.projectRoot ?? ".", "projectRoot", source),
+      environment: normalizeEnvironment(raw.environment, source),
       scenarios: raw.scenarios.map((scenario) =>
         normalizeScenario(scenario, typedBuildTool, source, scenarioIds),
       ),

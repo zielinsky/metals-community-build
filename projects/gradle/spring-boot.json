@@ -1,0 +1,35 @@
+{
+  "$schema": "../project.schema.json",
+  "id": "spring-boot",
+  "name": "Spring Boot",
+  "buildTool": "gradle",
+  "repository": "spring-projects/spring-boot",
+  "ref": "main",
+  "projectRoot": ".",
+  "environment": {
+    "SERVER_PORT": "0",
+    "SPRING_CONFIG_LOCATION": "optional:classpath:/community-build.yml"
+  },
+  "scenarios": [
+    {
+      "id": "import-reactive-oauth2-client",
+      "kind": "mbt-import",
+      "openFile": "smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java",
+      "assertions": {
+        "minimumNamespaces": 1,
+        "sources": [
+          "smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java"
+        ]
+      }
+    },
+    {
+      "id": "run-reactive-oauth2-client",
+      "kind": "java-main-run",
+      "openFile": "smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java",
+      "main": {
+        "className": "smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication",
+        "successOutput": "Started SampleReactiveOAuth2ClientApplication"
+      }
+    }
+  ]
+}

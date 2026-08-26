@@ -102,6 +102,7 @@ cleanSession(workspace);
 writeProjectResult(reportDirectory, createProjectResult(project, scenarios));
 
 const status = runExtester(["run-tests", paths.tests, ...extesterArguments], {
+  ...project.environment,
   COMMUNITY_BUILD_PROJECT_CONFIG: source,
   COMMUNITY_BUILD_REPORT_DIR: reportDirectory ?? "",
   COMMUNITY_BUILD_SCENARIOS: JSON.stringify(scenarios.map(({ id }) => id)),

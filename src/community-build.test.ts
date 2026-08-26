@@ -2,6 +2,7 @@ import { testJavaDiagnostics } from "./java-diagnostics.test";
 import { testMbtImport } from "./mbt-import.test";
 import { testRenameSymbol } from "./rename-symbol.test";
 import { testJavaTestDiscovery } from "./java-test-discovery.test";
+import { testJavaMainRun } from "./java-main-run.test";
 import { executeScenario, project, scenarios } from "./test-support";
 
 describe(`${project.buildTool} / ${project.id}`, function () {
@@ -22,6 +23,9 @@ describe(`${project.buildTool} / ${project.id}`, function () {
             break;
           case "java-test-discovery":
             await testJavaTestDiscovery(scenario);
+            break;
+          case "java-main-run":
+            await testJavaMainRun(scenario);
             break;
         }
       });

@@ -151,6 +151,27 @@ without starting the test itself:
 }
 ```
 
+Main-class execution is also a separate scenario. It clicks the `run` code
+lens, waits for a project-specific success message in the Debug Console, and
+then stops the application:
+
+```json
+{
+  "id": "run-application",
+  "kind": "java-main-run",
+  "openFile": "src/main/java/example/Application.java",
+  "main": {
+    "className": "example.Application",
+    "successOutput": "Started Application"
+  }
+}
+```
+
+Public, non-secret environment variables needed by every scenario in a project
+can be declared in the manifest's top-level `environment` object. They are
+passed to VS Code, Metals, and child build-tool processes. Never store tokens or
+credentials there because manifests are committed to the repository.
+
 Validate all manifests and inspect the generated CI matrix with:
 
 ```bash

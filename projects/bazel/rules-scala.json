@@ -1,0 +1,23 @@
+{
+  "$schema": "../project.schema.json",
+  "id": "rules-scala",
+  "name": "Rules Scala",
+  "buildTool": "bazel",
+  "repository": "bazel-contrib/rules_scala",
+  "ref": "master",
+  "projectRoot": ".",
+  "scenarios": [
+    {
+      "id": "import-encoded-target-names",
+      "kind": "mbt-import",
+      "openFile": "test/coverage_filename_encoding/Test.scala",
+      "namespaceMode": "each-build-target",
+      "assertions": {
+        "minimumNamespaces": 1,
+        "sources": [
+          "test/coverage_filename_encoding/Test.scala"
+        ]
+      }
+    }
+  ]
+}
