@@ -18,6 +18,16 @@
           "java/test/org/openqa/selenium/json/JsonTest.java"
         ]
       }
+    },
+    {
+      "id": "debug-json-test",
+      "kind": "java-debug-test",
+      "openFile": "java/test/org/openqa/selenium/json/JsonTest.java",
+      "namespaceMode": "each-build-target",
+      "testName": "canReadBooleans",
+      "breakpoint": {
+        "line": 60
+      }
     }
   ]
 }

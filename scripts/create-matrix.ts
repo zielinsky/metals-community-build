@@ -30,6 +30,7 @@ function matrixEntry({
     buildTool: project.buildTool,
     repository: project.repository,
     ref: project.ref,
+    javaVersion: project.javaVersion,
     workspacePath:
       project.projectRoot === "."
         ? workspace

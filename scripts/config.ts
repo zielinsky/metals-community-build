@@ -59,12 +59,21 @@ export interface JavaMainRunScenario extends ScenarioBase {
   };
 }
 
+export interface JavaDebugTestScenario extends ScenarioBase {
+  kind: "java-debug-test";
+  testName: string;
+  breakpoint: {
+    line: number;
+  };
+}
+
 export type Scenario =
   | ImportScenario
   | RenameScenario
   | JavaDiagnosticsScenario
   | JavaTestDiscoveryScenario
-  | JavaMainRunScenario;
+  | JavaMainRunScenario
+  | JavaDebugTestScenario;
 
 export interface ProjectConfig {
   id: string;
@@ -73,6 +82,8 @@ export interface ProjectConfig {
   repository: string;
   ref: string;
   projectRoot: string;
+  javaVersion: string;
+  metalsServerProperties: string[];
   environment: Record<string, string>;
   scenarios: Scenario[];
 }
@@ -221,6 +232,36 @@ function normalizeMain(
   };
 }
 
+function normalizeBreakpoint(
+  value: unknown,
+  scenarioId: string,
+  source: string,
+): JavaDebugTestScenario["breakpoint"] {
+  const breakpoint = record(
+    value,
+    `scenario '${scenarioId}'.breakpoint`,
+    source,
+  );
+  ensure(
+    Number.isInteger(breakpoint.line) && Number(breakpoint.line) >= 1,
+    source,
+    `scenario '${scenarioId}'.breakpoint.line must be an integer >= 1`,
+  );
+  return { line: Number(breakpoint.line) };
+}
+
+function normalizeStringArray(
+  value: unknown,
+  field: string,
+  source: string,
+): string[] {
+  if (value === undefined) return [];
+  ensure(Array.isArray(value), source, `'${field}' must be an array`);
+  return value.map((entry, index) =>
+    text(entry, `${field}[${index}]`, source),
+  );
+}
+
 function normalizeScenario(
   value: unknown,
   buildTool: BuildTool,
@@ -299,6 +340,16 @@ function normalizeScenario(
       main: normalizeMain(result.main, id, source),
     };
   }
+  if (result.kind === "java-debug-test") {
+    return {
+      id,
+      kind: "java-debug-test",
+      openFile,
+      namespaceMode,
+      testName: text(result.testName, `scenario '${id}'.testName`, source),
+      breakpoint: normalizeBreakpoint(result.breakpoint, id, source),
+    };
+  }
   throw new Error(`${source}: unsupported scenario kind '${String(result.kind)}'`);
 }
 
@@ -361,6 +412,12 @@ export function loadProjectConfig(
       repository: repository(raw.repository, "repository", source),
       ref: gitRef(raw.ref, "ref", source),
       projectRoot: relativePath(raw.projectRoot ?? ".", "projectRoot", source),
+      javaVersion: text(raw.javaVersion ?? "21", "javaVersion", source),
+      metalsServerProperties: normalizeStringArray(
+        raw.metalsServerProperties,
+        "metalsServerProperties",
+        source,
+      ),
       environment: normalizeEnvironment(raw.environment, source),
       scenarios: raw.scenarios.map((scenario) =>
         normalizeScenario(scenario, typedBuildTool, source, scenarioIds),

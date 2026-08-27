@@ -43,7 +43,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: "21"
+          java-version: ${{ matrix.javaVersion }}
 
       - name: Cache Coursier dependencies
         uses: coursier/cache-action@v8

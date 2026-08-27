@@ -21,14 +21,24 @@ async function assertNoFileErrors(openFile: string): Promise<void> {
   try {
     const problems = await panel.openProblemsView();
     await problems.setFilter(basename(openFile));
-    await delay(500);
-
-    const files = await problems.getAllVisibleMarkers(MarkerType.File);
-    for (const file of files) await file.toggleExpand(true);
-    await delay(500);
-
-    const errors = await problems.getAllVisibleMarkers(MarkerType.Error);
-    const messages = await Promise.all(errors.map((error) => error.getText()));
+    let messages: string[] | undefined;
+    let lastError: unknown;
+    const deadline = Date.now() + 30_000;
+    while (Date.now() < deadline && messages === undefined) {
+      try {
+        const files = await problems.getAllVisibleMarkers(MarkerType.File);
+        for (const file of files) await file.toggleExpand(true);
+        await delay(500);
+        const errors = await problems.getAllVisibleMarkers(MarkerType.Error);
+        messages = await Promise.all(errors.map((error) => error.getText()));
+      } catch (error) {
+        lastError = error;
+        await delay(500);
+      }
+    }
+    if (!messages) {
+      throw new Error(`Problems view did not stabilize: ${String(lastError)}`);
+    }
     assert.deepEqual(
       messages,
       [],

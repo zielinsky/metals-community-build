@@ -3,6 +3,7 @@ import { testMbtImport } from "./mbt-import.test";
 import { testRenameSymbol } from "./rename-symbol.test";
 import { testJavaTestDiscovery } from "./java-test-discovery.test";
 import { testJavaMainRun } from "./java-main-run.test";
+import { testJavaDebug } from "./java-debug-test.test";
 import { executeScenario, project, scenarios } from "./test-support";
 
 describe(`${project.buildTool} / ${project.id}`, function () {
@@ -26,6 +27,9 @@ describe(`${project.buildTool} / ${project.id}`, function () {
             break;
           case "java-main-run":
             await testJavaMainRun(scenario);
+            break;
+          case "java-debug-test":
+            await testJavaDebug(scenario);
             break;
         }
       });

@@ -11,6 +11,11 @@
     "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
     "ref": { "type": "string", "minLength": 1 },
     "projectRoot": { "type": "string", "default": "." },
+    "javaVersion": { "type": "string", "minLength": 1, "default": "21" },
+    "metalsServerProperties": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
     "environment": {
       "type": "object",
       "propertyNames": { "pattern": "^[A-Za-z_][A-Za-z0-9_-]*$" },
@@ -31,7 +36,8 @@
               "rename-symbol",
               "java-diagnostics",
               "java-test-discovery",
-              "java-main-run"
+              "java-main-run",
+              "java-debug-test"
             ]
           },
           "openFile": { "type": "string", "minLength": 1 },
@@ -55,6 +61,14 @@
             "items": { "type": "string", "minLength": 1 }
           },
           "testName": { "type": "string", "minLength": 1 },
+          "breakpoint": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["line"],
+            "properties": {
+              "line": { "type": "integer", "minimum": 1 }
+            }
+          },
           "main": {
             "type": "object",
             "additionalProperties": false,
@@ -87,7 +101,8 @@
                   { "required": ["rename"] },
                   { "required": ["imports"] },
                   { "required": ["testName"] },
-                  { "required": ["main"] }
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] }
                 ]
               }
             }
@@ -101,7 +116,8 @@
                   { "required": ["assertions"] },
                   { "required": ["imports"] },
                   { "required": ["testName"] },
-                  { "required": ["main"] }
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] }
                 ]
               }
             }
@@ -117,7 +133,8 @@
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["testName"] },
-                  { "required": ["main"] }
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] }
                 ]
               }
             }
@@ -133,7 +150,8 @@
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
-                  { "required": ["main"] }
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] }
                 ]
               }
             }
@@ -147,7 +165,22 @@
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
-                  { "required": ["testName"] }
+                  { "required": ["testName"] },
+                  { "required": ["breakpoint"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "java-debug-test" } } },
+            "then": {
+              "required": ["testName", "breakpoint"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["main"] }
                 ]
               }
             }

@@ -44,6 +44,7 @@ src/mbt-import.test.ts        reusable MBT import UI scenario
 src/rename-symbol.test.ts     reusable Rename Symbol UI scenario
 src/java-diagnostics.test.ts  Java diagnostics scenario
 src/java-test-discovery.test.ts  Java test discovery scenario
+src/java-debug-test.test.ts      Java test debugging and breakpoint scenario
 src/test-support.ts           shared VS Code/MBT setup for UI scenarios
 ```
 
@@ -167,6 +168,25 @@ then stops the application:
 }
 ```
 
+Java test debugging sets a breakpoint, starts the test through its `debug` code
+lens, verifies the exact stopped line, continues, and waits for a successful
+test result:
+
+```json
+{
+  "id": "debug-json-test",
+  "kind": "java-debug-test",
+  "openFile": "java/test/example/ExampleTest.java",
+  "testName": "exampleTest",
+  "breakpoint": { "line": 42 }
+}
+```
+
+Projects that need a different runtime JDK or a larger Metals heap can declare
+`javaVersion` and `metalsServerProperties` at the manifest top level. CI uses
+the selected JDK for that project and writes the server properties into the
+generated VS Code settings.
+
 Public, non-secret environment variables needed by every scenario in a project
 can be declared in the manifest's top-level `environment` object. They are
 passed to VS Code, Metals, and child build-tool processes. Never store tokens or
@@ -184,22 +204,26 @@ Requirements: JDK 21+, Node.js 24, the project's build tool, and Xvfb on
 headless Linux.
 
 ```bash
-git clone https://github.com/scalameta/metals.git workspaces/metals
-git -C workspaces/metals switch main-v2
-git clone --depth 1 https://github.com/SeleniumHQ/selenium.git workspaces/project
-(cd workspaces/metals && \
-  METALS_TEST=true METALS_VERSION=2.0.0-community-build \
-  sbt --client quick-publish-local)
 npm ci
-COMMUNITY_BUILD_PROJECT_CONFIG=projects/bazel/selenium.json \
-METALS_COMMUNITY_WORKSPACE="$PWD/workspaces/project" \
-npm run test:e2e
+npm run test:community -- \
+  --project selenium \
+  --workspace /path/to/selenium \
+  --metals /path/to/metals
 ```
+
+`--project` accepts either a manifest id or its JSON path. The command publishes
+the supplied Metals checkout locally, prepares the pinned VS Code runtime, and
+runs the configured scenarios against the supplied project checkout. Use
+`--scenario debug-json-test` to select one scenario. On subsequent runs,
+`--skip-publish` and `--skip-setup` reuse the already published server and test
+runtime. Local Metals checkouts publish as `2.0.0-SNAPSHOT` by default; use
+`--metals-version` only when the checkout is configured to publish another
+version. Run against a clean project checkout so a previously selected BSP
+server does not bypass the MBT selection prompt.
 
 All scenarios configured for a project run sequentially in one VS Code and
 Metals session. MBT is selected and imported once, then subsequent scenarios
-reuse that session. Set `COMMUNITY_BUILD_SCENARIO` to run only one scenario from
-the manifest. On a headless Linux machine, prefix the final command with
+reuse that session. On a headless Linux machine, prefix the command with
 `xvfb-run -a`.
 
 Downloaded VS Code/ChromeDriver files, installed extensions, generated settings,

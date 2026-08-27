@@ -29,11 +29,16 @@ function environment(name: string): string {
   return value;
 }
 
-function writeSettings(buildTool: BuildTool, metalsVersion: string): void {
+function writeSettings(
+  buildTool: BuildTool,
+  metalsVersion: string,
+  serverProperties: string[],
+): void {
   const settings = {
     ...JSON.parse(readFileSync(paths.settingsBase, "utf8")),
     "metals.targetBuildTool": targetBuildTools[buildTool],
     "metals.serverVersion": metalsVersion,
+    "metals.serverProperties": serverProperties,
   };
   mkdirSync(dirname(paths.generatedSettings), { recursive: true });
   writeFileSync(
@@ -77,6 +82,7 @@ if (scenarios.length === 0) {
 writeSettings(
   project.buildTool,
   process.env.METALS_COMMUNITY_METALS_VERSION ?? config.metals.version,
+  project.metalsServerProperties,
 );
 
 const extesterArguments = [

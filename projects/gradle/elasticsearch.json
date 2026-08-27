@@ -6,6 +6,7 @@
   "repository": "elastic/elasticsearch",
   "ref": "main",
   "projectRoot": ".",
+  "metalsServerProperties": ["-Xmx4g"],
   "scenarios": [
     {
       "id": "import-included-builds",
