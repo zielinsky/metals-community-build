@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 import type { ProjectConfig, Scenario } from "./config";
 
-export type ScenarioStatus = "passed" | "failed" | "unknown";
+export type ScenarioStatus = "passed" | "failed" | "skipped" | "unknown";
 
 export interface ScenarioResult {
   id: string;

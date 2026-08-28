@@ -245,7 +245,7 @@ const results = discoverProjects().map(({ project }) => {
   return result;
 });
 
-const statusOrder = { failed: 0, unknown: 1, passed: 2 };
+const statusOrder = { failed: 0, unknown: 1, skipped: 2, passed: 3 };
 const projectCard = (result: ProjectResult) =>
   `<a class="card result-${result.status}" href="${urlPath(join("projects", result.buildTool, result.project, "index.html"))}">
           <span class="status ${result.status}">${result.status}</span>
@@ -388,12 +388,14 @@ h2 { margin-top: 42px; }
 .card:hover { border-color: #6f9fea; transform: translateY(-1px); }
 .card.result-failed { border-color: #8f3544; }
 .card.result-unknown { border-color: #76652c; }
+.card.result-skipped { border-color: #4a5265; }
 .card strong { font-size: 1.35rem; }
 .status { display: inline-block; width: fit-content; padding: 3px 9px; border-radius: 999px; font-size: .75rem; font-weight: 800; text-transform: uppercase; }
 .status.large { padding: 6px 12px; font-size: .9rem; }
 .passed { background: #173b2a; color: #72e6a3; }
 .failed { background: #481e25; color: #ff9aa9; }
 .unknown { background: #3a3421; color: #f5d778; }
+.skipped { background: #2a3040; color: #a6b0c3; }
 .muted { color: #94a3b8; }
 .metrics { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
 .metrics span { padding: 9px 12px; border: 1px solid #30394a; border-radius: 9px; background: #171c26; }

@@ -93,6 +93,12 @@ export async function captureScreenshot(step: string): Promise<void> {
   }
 }
 
+export function skipScenario(scenario: Scenario, reason: string): void {
+  log(`Skipping ${scenario.id}: ${reason}`);
+  updateScenarioResult(result, scenario, "skipped", 0);
+  writeProjectResult(reportDirectory, result);
+}
+
 export async function executeScenario(
   scenario: Scenario,
   action: () => Promise<void>,
@@ -162,6 +168,27 @@ async function waitForNotification(
   );
 }
 
+async function waitForNotificationGone(
+  expectedMessage: string,
+  timeoutMs: number,
+): Promise<void> {
+  const workbench = new Workbench();
+  const deadline = Date.now() + timeoutMs;
+
+  while (Date.now() < deadline) {
+    const notifications = await workbench.getNotifications().catch(() => []);
+    const messages = await Promise.all(
+      notifications.map((notification) => notification.getMessage().catch(() => "")),
+    );
+    if (!messages.some((message) => message.includes(expectedMessage))) return;
+    await delay(300);
+  }
+  // The notification can also be dismissed by VS Code (e.g. replaced by the
+  // next step's own prompt) without the DOM element ever disappearing from
+  // this snapshot; either way, the screenshot right after this is only ever
+  // used as a best-effort "what did it look like" record, not an assertion.
+}
+
 async function selectNamespaceMode(scenario: Scenario): Promise<void> {
   if (!scenario.namespaceMode) return;
 
@@ -169,14 +196,13 @@ async function selectNamespaceMode(scenario: Scenario): Promise<void> {
     scenario.namespaceMode === "each-build-target"
       ? "Each build target"
       : "Single global target";
-  const notification = await waitForNotification(
-    "How should Metals group Bazel targets in the MBT build?",
-    2 * 60 * 1000,
-  );
+  const message = "How should Metals group Bazel targets in the MBT build?";
+  const notification = await waitForNotification(message, 2 * 60 * 1000);
   await captureScreenshot("namespace-mode-prompt");
   log(`Clicking notification action: ${action}`);
   await notification.takeAction(action);
   log(`Clicked notification action: ${action}`);
+  await waitForNotificationGone(message, 10_000);
   await captureScreenshot("namespace-mode-selected");
 }
 
@@ -279,8 +305,10 @@ async function importMbt(scenario: Scenario): Promise<MbtModel> {
   );
 
   log("Waiting for the build server choice notification");
+  const buildServerMessage =
+    "workspace detected. Which build server would you like to use?";
   const buildServerChoice = await waitForNotification(
-    "workspace detected. Which build server would you like to use?",
+    buildServerMessage,
     2 * 60 * 1000,
   );
   await captureScreenshot("build-server-prompt");
@@ -288,6 +316,7 @@ async function importMbt(scenario: Scenario): Promise<MbtModel> {
   log("Clicking notification action: Use MBT");
   await buildServerChoice.takeAction("Use MBT");
   log("Clicked notification action: Use MBT");
+  await waitForNotificationGone(buildServerMessage, 10_000);
   await captureScreenshot("mbt-selected");
   await selectNamespaceMode(namespaceScenario ?? scenario);
 

@@ -44,6 +44,11 @@
           "namespaceMode": {
             "enum": ["each-build-target", "single-global-target"]
           },
+          "required": {
+            "type": "boolean",
+            "default": false,
+            "description": "If true, a failure skips every later scenario in this project instead of just failing this one."
+          },
           "rename": {
             "type": "object",
             "additionalProperties": false,

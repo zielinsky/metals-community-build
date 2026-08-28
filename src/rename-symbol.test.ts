@@ -32,16 +32,16 @@ async function openRenameInput(
   const driver = VSBrowser.instance.driver;
   const deadline = Date.now() + timeoutMs;
   let lastError: unknown;
-  let selectionCaptured = false;
 
   while (Date.now() < deadline) {
     try {
       await editor.selectText(scenario.rename.symbol);
       log(`Selected symbol: ${scenario.rename.symbol}`);
-      if (!selectionCaptured) {
-        await captureScreenshot("rename-symbol-selected");
-        selectionCaptured = true;
-      }
+      // Captured on every attempt, not just the first: if an earlier attempt
+      // fails and a retry succeeds, a screenshot taken only once up front
+      // would show the failed attempt's state instead of the one that
+      // actually led to the rename input opening below.
+      await captureScreenshot("rename-symbol-selected");
       log("Executing command: Rename Symbol");
       await new Workbench().executeCommand("Rename Symbol");
 

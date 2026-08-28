@@ -21,6 +21,7 @@ interface ScenarioBase {
   id: string;
   openFile: string;
   namespaceMode?: NamespaceMode;
+  required: boolean;
 }
 
 export interface ImportScenario extends ScenarioBase {
@@ -295,12 +296,26 @@ function normalizeScenario(
   }
   const namespaceMode = mode as NamespaceMode | undefined;
 
+  const requiredRaw = result.required;
+  ensure(
+    requiredRaw === undefined || typeof requiredRaw === "boolean",
+    source,
+    `scenario '${id}'.required must be a boolean`,
+  );
+  // Scenarios are independent `it()`s, so by default a failure never stops
+  // the rest of the suite from running. Set `required: true` on a scenario
+  // (e.g. the MBT import) whose failure makes every later scenario pointless
+  // to still attempt — the remaining scenarios are then skipped instead of
+  // each burning their own timeout on a doomed session.
+  const required = requiredRaw ?? false;
+
   if (result.kind === "mbt-import") {
     return {
       id,
       kind: "mbt-import",
       openFile,
       namespaceMode,
+      required,
       assertions: normalizeAssertions(result.assertions, id, source),
     };
   }
@@ -310,6 +325,7 @@ function normalizeScenario(
       kind: "rename-symbol",
       openFile,
       namespaceMode,
+      required,
       rename: normalizeRename(result.rename, id, source),
     };
   }
@@ -319,6 +335,7 @@ function normalizeScenario(
       kind: "java-diagnostics",
       openFile,
       namespaceMode,
+      required,
       imports: normalizeImports(result.imports, id, source),
     };
   }
@@ -328,6 +345,7 @@ function normalizeScenario(
       kind: "java-test-discovery",
       openFile,
       namespaceMode,
+      required,
       testName: text(result.testName, `scenario '${id}'.testName`, source),
     };
   }
@@ -337,6 +355,7 @@ function normalizeScenario(
       kind: "java-main-run",
       openFile,
       namespaceMode,
+      required,
       main: normalizeMain(result.main, id, source),
     };
   }
@@ -346,6 +365,7 @@ function normalizeScenario(
       kind: "java-debug-test",
       openFile,
       namespaceMode,
+      required,
       testName: text(result.testName, `scenario '${id}'.testName`, source),
       breakpoint: normalizeBreakpoint(result.breakpoint, id, source),
     };
