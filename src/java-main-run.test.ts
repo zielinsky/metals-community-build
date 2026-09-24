@@ -3,7 +3,6 @@ import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import {
-  BottomBarPanel,
   CodeLens,
   Key,
   TextEditor,
@@ -11,9 +10,12 @@ import {
   Workbench,
 } from "vscode-extension-tester";
 
+import { openBottomPanel } from "./editor-actions";
+
 import type { JavaMainRunScenario } from "../scripts/config";
 import {
   captureScreenshot,
+  captureFailure,
   delay,
   log,
   prepareMbt,
@@ -48,7 +50,7 @@ async function waitForApplicationStart(
   successOutput: string,
   timeoutMs: number,
 ): Promise<void> {
-  const console = await new BottomBarPanel().openDebugConsoleView();
+  const console = await (await openBottomPanel()).openDebugConsoleView();
   const metalsLog = resolve(workspace, ".metals", "metals.log");
   const deadline = Date.now() + timeoutMs;
   let output = "";
@@ -128,6 +130,9 @@ export async function testJavaMainRun(
     );
     log(`Application started: ${scenario.main.className}`);
     await captureScreenshot("application-started");
+  } catch (error) {
+    await captureFailure();
+    throw error;
   } finally {
     await stopApplication();
   }

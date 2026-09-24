@@ -13,6 +13,7 @@ import {
 import type { RenameScenario } from "../scripts/config";
 import {
   captureScreenshot,
+  captureFailure,
   delay,
   fileFor,
   log,
@@ -137,6 +138,9 @@ export async function testRenameSymbol(
     await prepareMbt(scenario);
     await verifyRename(scenario);
     log(`Scenario passed: ${scenario.id}`);
+  } catch (error) {
+    await captureFailure();
+    throw error;
   } finally {
     writeFileSync(openFile, original);
     log(`Restored ${openFile}`);

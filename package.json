@@ -10,7 +10,10 @@
     "setup:vscode": "npm run compile --silent && node out/scripts/setup-vscode.js",
     "test:e2e": "npm run compile && node out/scripts/setup-vscode.js && npm run test:e2e:prepared",
     "test:e2e:prepared": "node out/scripts/run-project.js",
-    "test:community": "npm run compile --silent && node out/scripts/run-local.js"
+    "test:community": "npm run compile --silent && node out/scripts/run-local.js",
+    "test": "npm run compile --silent && node --test out/tests/*.test.js",
+    "test:smoke": "npm run compile --silent && node out/scripts/run-smoke.js",
+    "verify:screenshots": "npm run compile --silent && node out/scripts/verify-screenshots.js"
   },
   "devDependencies": {
     "@types/mocha": "10.0.10",

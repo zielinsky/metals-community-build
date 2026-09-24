@@ -141,7 +141,12 @@ that configured imports produce no errors:
 ```
 
 Test discovery independently checks that VS Code displays a test run button
-without starting the test itself:
+without starting the test itself. If icons have not appeared, discovery closes
+and reopens the file before retrying, as does the debug scenario. Both allow
+six attempts (up to five close/open cycles), each waiting up to 20 seconds for
+the test icon. Files reopen through Go to File in the same VS Code window; a
+failed reopen is also retried. Screenshots record both the closed and reopened file:
+
 
 ```json
 {
@@ -168,8 +173,7 @@ then stops the application:
 }
 ```
 
-Java test debugging sets a breakpoint, starts the test through its `debug` code
-lens, verifies the exact stopped line, continues, and waits for a successful
+Java test debugging sets a breakpoint, starts the test through **Debug Test** in its gutter menu, verifies the exact stopped line, continues, and waits for a successful
 test result:
 
 ```json
@@ -181,6 +185,38 @@ test result:
   "breakpoint": { "line": 42 }
 }
 ```
+
+Navigation scenarios also work for Scala sources. `go-to-definition` checks
+both the destination file and the text on the line where the cursor lands:
+
+```json
+{
+  "id": "greeter-definition",
+  "kind": "go-to-definition",
+  "openFile": "src/main/java/example/App.java",
+  "symbol": "Greeter",
+  "definition": {
+    "file": "src/main/java/example/Greeter.java",
+    "text": "public class Greeter"
+  }
+}
+```
+
+`hover` opens **Show or Focus Hover**, checks its visible content, captures it,
+and dismisses the popup:
+
+```json
+{
+  "id": "greeter-documentation",
+  "kind": "hover",
+  "openFile": "src/main/java/example/App.java",
+  "symbol": "Greeter",
+  "hoverText": "Provides a greeting"
+}
+```
+
+Both actions use the first occurrence of `symbol` in the source file. The Turbine
+manifest exercises both actions on `TurbineOptions`.
 
 Projects that need a different runtime JDK or a larger Metals heap can declare
 `javaVersion` and `metalsServerProperties` at the manifest top level. CI uses
@@ -228,3 +264,42 @@ reuse that session. On a headless Linux machine, prefix the command with
 
 Downloaded VS Code/ChromeDriver files, installed extensions, generated settings,
 compiled tests, and community workspaces are ignored by Git.
+
+## Test the runner and screenshots
+
+`npm test` runs fast regression tests for manifest validation, result aggregation,
+and screenshot handling. CI runs these before project scenarios.
+
+The small Maven fixture exercises **every scenario kind**, including test discovery,
+run, debug with a breakpoint, navigation, and hover, in a single VS Code session:
+
+```bash
+npm run test:smoke -- --metals /path/to/metals
+# Reuse a published server and a prepared VS Code runtime:
+npm run test:smoke -- --skip-publish --skip-setup
+```
+
+Set `JAVA_HOME` to a JDK supported by the Metals binaries you published (at least
+JDK 21). The runner passes it explicitly to both the server and project settings. The fixture
+is copied to the ignored `workspaces/smoke` directory; its checked-in sources are
+never edited by the UI tests. The copy gets its own Git repository and staged
+sources so MBT can index it independently of the parent `.gitignore`. Before each
+VS Code session, the runner removes the workspace’s entire `.metals` directory.
+A smoke run tests the reusable actions, while the
+community matrix additionally tests compatibility with each real repository.
+
+Reports are saved under `reports/local/<project>`. Every run removes old
+screenshots, numbers captures separately per scenario, and checks PNG dimensions
+and the final evidence for each successful action. Screenshot failures fail the
+scenario. Failure screenshots are captured before cleanup where possible, and
+the original test error is preserved if failure capture also fails.
+
+```bash
+npm run verify:screenshots -- reports/local/smoke
+```
+
+This checks image structure and required evidence, not the visual meaning of the
+pixels; the scenario assertions check the UI state before the corresponding
+capture. Inspect the PNGs to review rendering. The report builder also accepts
+`--project fixtures/smoke.json` to build a report for the fixture from artifacts
+with the same `.test-report` layout as CI.

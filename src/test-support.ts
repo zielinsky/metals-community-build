@@ -1,16 +1,20 @@
 import assert from "node:assert/strict";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 
 import {
   EditorView,
+  Key,
   Notification,
   StatusBar,
+  TextEditor,
   VSBrowser,
   Workbench,
 } from "vscode-extension-tester";
 
-import type { ProjectConfig, Scenario } from "../scripts/config";
+import { loadProjectConfig, type Scenario } from "../scripts/config";
+import { ScreenshotRecorder } from "../scripts/screenshots";
+import { retryWithReopen } from "./retry-with-reopen";
 import {
   createProjectResult,
   updateScenarioResult,
@@ -35,9 +39,7 @@ const projectConfigPath = resolve(
   requiredEnvironment("COMMUNITY_BUILD_PROJECT_CONFIG"),
 );
 const reportDirectory = process.env.COMMUNITY_BUILD_REPORT_DIR || undefined;
-export const project = JSON.parse(
-  readFileSync(projectConfigPath, "utf8"),
-) as ProjectConfig;
+export const { project } = loadProjectConfig(projectConfigPath);
 const selectedScenarioIds = JSON.parse(
   requiredEnvironment("COMMUNITY_BUILD_SCENARIOS"),
 ) as unknown;
@@ -58,9 +60,11 @@ export const scenarios = selectedScenarioIds.map((id) => {
 });
 
 const result = createProjectResult(project, scenarios);
-const screenshotIndexes = new Map<string, number>();
+const screenshots = reportDirectory
+  ? new ScreenshotRecorder(reportDirectory, () => VSBrowser.instance.driver.takeScreenshot())
+  : undefined;
 let activeScenarioId = "startup";
-let currentOpenFile = fileFor(scenarios[0]);
+let failureCaptured = false;
 let mbtImport: Promise<MbtModel> | undefined;
 writeProjectResult(reportDirectory, result);
 
@@ -77,19 +81,18 @@ export function delay(milliseconds: number): Promise<void> {
 }
 
 export async function captureScreenshot(step: string): Promise<void> {
-  if (!reportDirectory) return;
-  const slug = step.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-  const directory = resolve(reportDirectory, "screenshots", activeScenarioId);
-  const index = (screenshotIndexes.get(activeScenarioId) ?? 0) + 1;
-  screenshotIndexes.set(activeScenarioId, index);
-  const filename = `${String(index).padStart(2, "0")}-${slug}.png`;
+  if (!screenshots) return;
+  const filename = await screenshots.capture(activeScenarioId, step);
+  log(`Captured screenshot: ${filename}`);
+}
+
+export async function captureFailure(): Promise<void> {
+  if (failureCaptured) return;
   try {
-    mkdirSync(directory, { recursive: true });
-    const screenshot = await VSBrowser.instance.driver.takeScreenshot();
-    writeFileSync(resolve(directory, filename), screenshot, "base64");
-    log(`Captured screenshot: ${activeScenarioId}/${filename}`);
+    await captureScreenshot("failure");
+    failureCaptured = true;
   } catch (error) {
-    log(`Could not capture screenshot '${step}': ${String(error)}`);
+    log(`Could not capture failure screenshot: ${String(error)}`);
   }
 }
 
@@ -104,13 +107,15 @@ export async function executeScenario(
   action: () => Promise<void>,
 ): Promise<void> {
   activeScenarioId = scenario.id;
+  failureCaptured = false;
   const startedAt = Date.now();
   try {
     await action();
     updateScenarioResult(result, scenario, "passed", Date.now() - startedAt);
   } catch (error) {
-    await captureScreenshot("failure");
-    updateScenarioResult(result, scenario, "failed", Date.now() - startedAt);
+    await captureFailure();
+    updateScenarioResult(result, scenario, "failed", Date.now() - startedAt,
+      error instanceof Error ? error.message : String(error));
     throw error;
   } finally {
     writeProjectResult(reportDirectory, result);
@@ -127,7 +132,8 @@ async function waitForWorkspaceFile(
   while (Date.now() < deadline) {
     try {
       openEditors = await new EditorView().getOpenEditorTitles();
-      if (openEditors.includes(expectedTitle)) return;
+      if (openEditors.includes(expectedTitle) &&
+          resolve(await new TextEditor().getFilePath()) === openFile) return;
     } catch {
       // VS Code startup can briefly invalidate the workbench DOM.
     }
@@ -221,12 +227,13 @@ async function statusBarTexts(): Promise<string[]> {
   return texts.filter(Boolean);
 }
 
-async function waitForImportStatus(timeoutMs: number): Promise<void> {
+async function waitForImportStatus(timeoutMs: number, signal: AbortSignal): Promise<void> {
   const deadline = Date.now() + timeoutMs;
   let sawImporting = false;
   let latestTexts: string[] = [];
 
   while (Date.now() < deadline) {
+    signal.throwIfAborted();
     try {
       latestTexts = await statusBarTexts();
       const isImporting = latestTexts.some((text) =>
@@ -238,6 +245,16 @@ async function waitForImportStatus(timeoutMs: number): Promise<void> {
         log("VS Code status bar reports that the project is importing");
       } else if (sawImporting && !isImporting) {
         log("VS Code status bar reports that the project import finished");
+        return;
+      }
+      // Fast imports can finish between polls, or their status can be hidden by
+      // indexing. The runner removes .metals before each run, so these files
+      // cannot be stale evidence from an earlier import.
+      const metalsLog = resolve(workspace, ".metals", "metals.log");
+      if (!isImporting && existsSync(resolve(workspace, ".metals", "mbt.json")) &&
+          existsSync(metalsLog) &&
+          readFileSync(metalsLog, "utf8").includes("Connected to Build server: MBT")) {
+        log("Fresh MBT model and server connection confirm the import finished");
         return;
       }
     } catch {
@@ -288,10 +305,9 @@ async function openScenarioFile(scenario: Scenario): Promise<void> {
   log(`Expected editor: ${openFile}`);
   assert.ok(existsSync(openFile), `Missing file to open: ${openFile}`);
 
-  if (openFile !== currentOpenFile) {
+  if (await new TextEditor().getFilePath().catch(() => "") !== openFile) {
     log(`Opening ${basename(openFile)} in the existing VS Code session`);
     await VSBrowser.instance.openResources(openFile);
-    currentOpenFile = openFile;
   }
   log("Waiting for VS Code to open the requested file");
   await waitForWorkspaceFile(openFile, 30 * 1000);
@@ -312,19 +328,98 @@ async function importMbt(scenario: Scenario): Promise<MbtModel> {
     2 * 60 * 1000,
   );
   await captureScreenshot("build-server-prompt");
-  const importFinished = waitForImportStatus(15 * 60 * 1000);
-  log("Clicking notification action: Use MBT");
-  await buildServerChoice.takeAction("Use MBT");
-  log("Clicked notification action: Use MBT");
-  await waitForNotificationGone(buildServerMessage, 10_000);
-  await captureScreenshot("mbt-selected");
-  await selectNamespaceMode(namespaceScenario ?? scenario);
+  const controller = new AbortController();
+  // Observe rejection immediately while the namespace prompt is still open.
+  const importFinished = waitForImportStatus(15 * 60 * 1000, controller.signal)
+    .then(() => ({ error: undefined }), (error: unknown) => ({ error }));
+  try {
+    log("Clicking notification action: Use MBT");
+    await buildServerChoice.takeAction("Use MBT");
+    log("Clicked notification action: Use MBT");
+    await waitForNotificationGone(buildServerMessage, 10_000);
+    await captureScreenshot("mbt-selected");
+    await selectNamespaceMode(namespaceScenario ?? scenario);
 
-  log("Waiting for the VS Code importing status to finish");
-  await importFinished;
-  const imported = await readMbtModel(30 * 1000);
-  await captureScreenshot("mbt-imported");
-  return imported;
+    log("Waiting for the VS Code importing status to finish");
+    const { error } = await importFinished;
+    if (error) throw error;
+    const imported = await readMbtModel(30 * 1000);
+    await captureScreenshot("mbt-imported");
+    return imported;
+  } finally {
+    controller.abort();
+  }
+}
+
+export async function reopenScenarioFile(
+  scenario: Scenario & { testName: string },
+): Promise<TextEditor> {
+  const title = basename(scenario.openFile);
+  const openFile = fileFor(scenario);
+  const driver = VSBrowser.instance.driver;
+  log(`Closing and reopening ${title} to refresh test code lenses`);
+  await driver.actions().clear();
+  await driver.actions().sendKeys(Key.ESCAPE).perform();
+  // A previous open may have timed out with the file either open or closed.
+  // First focus the exact resource, then close it to deliver a real didClose.
+  await openFileInWorkbench(openFile);
+  await new EditorView().closeEditor(title);
+  await driver.wait(async () => {
+    try {
+      return !(await new EditorView().getOpenEditorTitles()).includes(title);
+    } catch {
+      return false;
+    }
+  }, 30_000, `${title} did not close`);
+  await captureScreenshot("file-closed");
+  await openFileInWorkbench(openFile);
+  const editor = new TextEditor();
+  await driver.wait(
+    async () => (await editor.getText().catch(() => "")).includes(scenario.testName),
+    30_000,
+    `${title} reopened without '${scenario.testName}'`,
+  );
+  await editor.selectText(scenario.testName);
+  await captureScreenshot("file-reopened");
+  return editor;
+}
+
+async function openFileInWorkbench(openFile: string): Promise<void> {
+  const driver = VSBrowser.instance.driver;
+  // Stay in the WebDriver-controlled window. The VS Code CLI can acknowledge
+  // an open request without reopening the resource in this window on CI.
+  const prompt = await new Workbench().openCommandPrompt();
+  await driver.actions().clear();
+  try {
+    // Removing the command prefix switches the palette to Go to File.
+    await prompt.setText(openFile);
+    await driver.wait(async () => {
+      const picks = await prompt.getQuickPicks().catch(() => []);
+      const labels = await Promise.all(picks.map((pick) => pick.getLabel().catch(() => "")));
+      return labels.includes(basename(openFile));
+    }, 30_000, `Go to File did not find ${openFile}`);
+    await prompt.confirm();
+    await waitForWorkspaceFile(openFile, 30_000);
+  } finally {
+    await driver.actions().clear();
+    await driver.actions().sendKeys(Key.ESCAPE).perform().catch(() => undefined);
+  }
+}
+
+/** Retry test UI discovery against a fresh editor, with the same bound for run/debug. */
+export async function withTestEditor<T>(
+  scenario: Scenario & { testName: string },
+  action: (editor: TextEditor) => Promise<T>,
+): Promise<T> {
+  return retryWithReopen({
+    current: () => new TextEditor(),
+    reopen: () => reopenScenarioFile(scenario),
+    action,
+    attempts: 6,
+    onFailure: (attempt, error) => log(
+      `Test UI attempt ${attempt}/6 failed for ${scenario.openFile}: ${String(error)}`,
+    ),
+  });
 }
 
 export async function prepareMbt(scenario: Scenario): Promise<MbtModel> {

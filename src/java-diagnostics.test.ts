@@ -2,14 +2,16 @@ import assert from "node:assert/strict";
 import { basename } from "node:path";
 
 import {
-  BottomBarPanel,
   MarkerType,
   TextEditor,
 } from "vscode-extension-tester";
 
+import { openBottomPanel } from "./editor-actions";
+
 import type { JavaDiagnosticsScenario } from "../scripts/config";
 import {
   captureScreenshot,
+  captureFailure,
   delay,
   fileFor,
   log,
@@ -17,7 +19,7 @@ import {
 } from "./test-support";
 
 async function assertNoFileErrors(openFile: string): Promise<void> {
-  const panel = new BottomBarPanel();
+  const panel = await openBottomPanel();
   try {
     const problems = await panel.openProblemsView();
     await problems.setFilter(basename(openFile));
@@ -46,6 +48,9 @@ async function assertNoFileErrors(openFile: string): Promise<void> {
     );
     log(`Verified that ${basename(openFile)} has no error diagnostics`);
     await captureScreenshot("imports-resolved");
+  } catch (error) {
+    await captureFailure();
+    throw error;
   } finally {
     await panel.closePanel().catch(() => undefined);
   }

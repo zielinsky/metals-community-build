@@ -1,0 +1,81 @@
+{
+  "id": "smoke",
+  "name": "Metals smoke",
+  "buildTool": "maven",
+  "repository": "scalameta/metals-community-build",
+  "ref": "main",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "openFile": "src/test/java/example/GreeterTest.java",
+      "required": true,
+      "assertions": {
+        "minimumNamespaces": 1,
+        "sources": [
+          "src/main/java/example/App.java",
+          "src/test/java/example/GreeterTest.java"
+        ]
+      }
+    },
+    {
+      "id": "rename",
+      "kind": "rename-symbol",
+      "openFile": "src/main/java/example/App.java",
+      "rename": {
+        "symbol": "GREETING",
+        "newName": "START_MESSAGE",
+        "expectedOccurrences": 2
+      }
+    },
+    {
+      "id": "diagnostics",
+      "kind": "java-diagnostics",
+      "openFile": "src/test/java/example/GreeterTest.java",
+      "imports": [
+        "org.junit.jupiter.api.Test"
+      ]
+    },
+    {
+      "id": "discovery",
+      "kind": "java-test-discovery",
+      "openFile": "src/test/java/example/GreeterTest.java",
+      "testName": "returnsGreeting"
+    },
+    {
+      "id": "hover",
+      "kind": "hover",
+      "openFile": "src/main/java/example/App.java",
+      "symbol": "Greeter",
+      "hoverText": "Provides a greeting"
+    },
+    {
+      "id": "definition",
+      "kind": "go-to-definition",
+      "openFile": "src/main/java/example/App.java",
+      "symbol": "Greeter",
+      "definition": {
+        "file": "src/main/java/example/Greeter.java",
+        "text": "public class Greeter"
+      }
+    },
+    {
+      "id": "run",
+      "kind": "java-main-run",
+      "openFile": "src/main/java/example/App.java",
+      "main": {
+        "className": "example.App",
+        "successOutput": "Metals smoke started"
+      }
+    },
+    {
+      "id": "debug",
+      "kind": "java-debug-test",
+      "openFile": "src/test/java/example/GreeterTest.java",
+      "testName": "returnsGreeting",
+      "breakpoint": {
+        "line": 10
+      }
+    }
+  ]
+}

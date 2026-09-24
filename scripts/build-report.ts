@@ -10,7 +10,7 @@ import {
 } from "node:fs";
 import { basename, join, parse, relative, resolve, sep } from "node:path";
 
-import { buildTools, discoverProjects } from "./config";
+import { buildTools, discoverProjects, loadProjectConfig } from "./config";
 import type { ProjectResult } from "./test-report";
 
 function option(name: string, required = true): string {
@@ -160,6 +160,7 @@ function projectPage(result: ProjectResult, filesRoot: string): string {
               <strong>${escapeHtml(scenario.id)}</strong>
               <span>${escapeHtml(scenario.kind)}${scenario.durationMs === undefined ? "" : ` · ${duration(scenario.durationMs)}`}</span>
             </div>
+            ${scenario.error ? `<pre>${escapeHtml(scenario.error)}</pre>` : ""}
             ${screenshotGallery(scenario.id)}
           </li>`,
         )
@@ -222,7 +223,9 @@ const artifactByProject = new Map(
     return [`${result.buildTool}/${result.project}`, { artifact, result }];
   }),
 );
-const results = discoverProjects().map(({ project }) => {
+const projectConfig = option("--project", false);
+const projects = projectConfig ? [loadProjectConfig(projectConfig)] : discoverProjects();
+const results = projects.map(({ project }) => {
   const downloaded = artifactByProject.get(`${project.buildTool}/${project.id}`);
   const result: ProjectResult = downloaded?.result ?? {
     project: project.id,

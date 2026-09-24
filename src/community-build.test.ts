@@ -1,3 +1,4 @@
+import { testDefinition, testHover } from "./navigation.test";
 import { testJavaDiagnostics } from "./java-diagnostics.test";
 import { testMbtImport } from "./mbt-import.test";
 import { testRenameSymbol } from "./rename-symbol.test";
@@ -25,6 +26,12 @@ describe(`${project.buildTool} / ${project.id}`, function () {
       try {
         await executeScenario(scenario, async () => {
           switch (scenario.kind) {
+            case "go-to-definition":
+              await testDefinition(scenario);
+              break;
+            case "hover":
+              await testHover(scenario);
+              break;
             case "mbt-import":
               await testMbtImport(scenario);
               break;
@@ -43,6 +50,10 @@ describe(`${project.buildTool} / ${project.id}`, function () {
             case "java-debug-test":
               await testJavaDebug(scenario);
               break;
+            default: {
+              const unsupported: never = scenario;
+              throw new Error(`Unsupported scenario: ${JSON.stringify(unsupported)}`);
+            }
           }
         });
       } catch (error) {

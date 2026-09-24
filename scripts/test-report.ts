@@ -10,6 +10,7 @@ export interface ScenarioResult {
   kind: string;
   status: ScenarioStatus;
   durationMs?: number;
+  error?: string;
 }
 
 export interface ProjectResult {
@@ -46,11 +47,13 @@ export function updateScenarioResult(
   scenario: Scenario,
   status: Exclude<ScenarioStatus, "unknown">,
   durationMs: number,
+  error?: string,
 ): void {
   const entry = result.scenarios.find(({ id }) => id === scenario.id);
   if (!entry) throw new Error(`Missing report entry for '${scenario.id}'`);
   entry.status = status;
   entry.durationMs = durationMs;
+  entry.error = error;
 
   result.status = result.scenarios.some(({ status }) => status === "failed")
     ? "failed"

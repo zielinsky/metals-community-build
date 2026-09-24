@@ -1,11 +1,8 @@
 import assert from "node:assert/strict";
-import { basename } from "node:path";
 
 import {
-  BottomBarPanel,
   By,
   DebugToolbar,
-  EditorView,
   Key,
   TextEditor,
   VSBrowser,
@@ -13,122 +10,17 @@ import {
 } from "vscode-extension-tester";
 import type { WebElement } from "selenium-webdriver";
 
+import { findTestGutter, openBottomPanel, waitForTestGutter } from "./editor-actions";
+
 import type { JavaDebugTestScenario } from "../scripts/config";
 import {
   captureScreenshot,
+  captureFailure,
   delay,
-  fileFor,
   log,
   prepareMbt,
+  withTestEditor,
 } from "./test-support";
-
-interface PositionedElement {
-  element: WebElement;
-  distance: number;
-}
-
-async function reopenScenarioFile(
-  scenario: JavaDebugTestScenario,
-): Promise<TextEditor> {
-  const title = basename(scenario.openFile);
-  log(`Closing and reopening ${title} to refresh test code lenses`);
-  const view = new EditorView();
-  await new Workbench().executeCommand("View: Close Editor");
-  await VSBrowser.instance.driver.wait(async () => {
-    const titles: string[] = await view
-      .getOpenEditorTitles()
-      .catch(() => [title]);
-    return !titles.includes(title);
-  }, 10_000, `${title} did not close`);
-  await VSBrowser.instance.openResources(fileFor(scenario));
-  await VSBrowser.instance.driver.wait(async () => {
-    const titles: string[] = await view.getOpenEditorTitles().catch(() => []);
-    return titles.includes(title);
-  }, 10_000, `${title} did not reopen`);
-  const editor = new TextEditor();
-  await VSBrowser.instance.driver.wait(
-    async () => (await editor.getText().catch(() => "")).includes(scenario.testName),
-    30_000,
-    `${title} reopened without '${scenario.testName}'`,
-  );
-  await editor.selectText(scenario.testName);
-  await captureScreenshot("file-reopened");
-  return editor;
-}
-
-async function launchDebugWithRecovery(
-  initialEditor: TextEditor,
-  scenario: JavaDebugTestScenario,
-): Promise<TextEditor> {
-  let editor = initialEditor;
-  let lastError: unknown;
-  for (let attempt = 1; attempt <= 5; attempt += 1) {
-    try {
-      const glyph = await waitForTestGutter(editor, scenario.testName, 20_000);
-      await openDebugTest(glyph, scenario.testName);
-      return editor;
-    } catch (error) {
-      lastError = error;
-      if (attempt < 5) editor = await reopenScenarioFile(scenario);
-    }
-  }
-  throw lastError;
-}
-
-async function visibleTestLineY(testName: string): Promise<number | undefined> {
-  const driver = VSBrowser.instance.driver;
-  const lines = await driver.findElements(
-    By.css(".monaco-editor .view-lines .view-line"),
-  );
-  for (const line of lines) {
-    const displayed = await line.isDisplayed().catch(() => false);
-    const text = await line.getText().catch(() => "");
-    if (displayed && text.includes(testName)) {
-      return (await line.getRect()).y;
-    }
-  }
-  return undefined;
-}
-
-async function findTestGutter(testName: string): Promise<WebElement | undefined> {
-  const testLineY = await visibleTestLineY(testName);
-  const glyphs = await VSBrowser.instance.driver.findElements(
-    By.css(".monaco-editor .testing-run-glyph"),
-  );
-  const positioned: PositionedElement[] = [];
-  for (const glyph of glyphs) {
-    if (!(await glyph.isDisplayed().catch(() => false))) continue;
-    const rect = await glyph.getRect();
-    positioned.push({
-      element: glyph,
-      distance:
-        testLineY === undefined ? Number.MAX_SAFE_INTEGER : Math.abs(rect.y - testLineY),
-    });
-  }
-  positioned.sort((left, right) => left.distance - right.distance);
-  return positioned[0]?.element;
-}
-
-async function waitForTestGutter(
-  editor: TextEditor,
-  testName: string,
-  timeoutMs: number,
-): Promise<WebElement> {
-  const deadline = Date.now() + timeoutMs;
-  await editor.selectText(testName);
-
-  while (Date.now() < deadline) {
-    try {
-      const glyph = await findTestGutter(testName);
-      if (glyph) return glyph;
-    } catch {
-      // Gutter decorations and editor lines are replaced while Metals refreshes them.
-    }
-    await delay(500);
-  }
-
-  throw new Error(`Test gutter did not appear for '${testName}'`);
-}
 
 async function visibleMenuItems(): Promise<WebElement[]> {
   const items = await VSBrowser.instance.driver.findElements(
@@ -237,7 +129,7 @@ async function waitForSuccessfulTest(
   testName: string,
   timeoutMs: number,
 ): Promise<void> {
-  const console = await new BottomBarPanel().openDebugConsoleView();
+  const console = await (await openBottomPanel()).openDebugConsoleView();
   const deadline = Date.now() + timeoutMs;
   let output = "";
 
@@ -294,7 +186,11 @@ export async function testJavaDebug(
 
   let toolbar: DebugToolbar | undefined;
   try {
-    editor = await launchDebugWithRecovery(editor, scenario);
+    editor = await withTestEditor(scenario, async (currentEditor) => {
+      const glyph = await waitForTestGutter(scenario.testName, 20_000);
+      await openDebugTest(glyph, scenario.testName);
+      return currentEditor;
+    });
 
     toolbar = await DebugToolbar.create(15 * 60 * 1000);
     await toolbar.waitForBreakPoint(10 * 60 * 1000);
@@ -315,6 +211,9 @@ export async function testJavaDebug(
     await waitForSuccessfulTest(scenario.testName, 60_000);
     log(`Debug test finished successfully: ${scenario.testName}`);
     await captureScreenshot("debug-test-finished");
+  } catch (error) {
+    await captureFailure();
+    throw error;
   } finally {
     if (toolbar) await toolbar.stop().catch(() => undefined);
     const breakpoint = await editor

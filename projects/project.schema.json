@@ -37,7 +37,9 @@
               "java-diagnostics",
               "java-test-discovery",
               "java-main-run",
-              "java-debug-test"
+              "java-debug-test",
+              "go-to-definition",
+              "hover"
             ]
           },
           "openFile": { "type": "string", "minLength": 1 },
@@ -64,6 +66,17 @@
             "minItems": 1,
             "uniqueItems": true,
             "items": { "type": "string", "minLength": 1 }
+          },
+          "symbol": { "type": "string", "minLength": 1 },
+          "hoverText": { "type": "string", "minLength": 1 },
+          "definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["file", "text"],
+            "properties": {
+              "file": { "type": "string", "minLength": 1 },
+              "text": { "type": "string", "minLength": 1 }
+            }
           },
           "testName": { "type": "string", "minLength": 1 },
           "breakpoint": {
@@ -103,6 +116,9 @@
               "required": ["assertions"],
               "not": {
                 "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
                   { "required": ["testName"] },
@@ -118,6 +134,9 @@
               "required": ["rename"],
               "not": {
                 "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["imports"] },
                   { "required": ["testName"] },
@@ -135,6 +154,9 @@
               "required": ["imports"],
               "not": {
                 "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["testName"] },
@@ -152,6 +174,9 @@
               "required": ["testName"],
               "not": {
                 "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
@@ -167,6 +192,9 @@
               "required": ["main"],
               "not": {
                 "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
@@ -182,12 +210,39 @@
               "required": ["testName", "breakpoint"],
               "not": {
                 "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
                   { "required": ["main"] }
                 ]
               }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "go-to-definition" } } },
+            "then": {
+              "required": ["symbol", "definition"],
+              "not": { "anyOf": [
+                { "required": ["assertions"] }, { "required": ["rename"] },
+                { "required": ["imports"] }, { "required": ["testName"] },
+                { "required": ["main"] }, { "required": ["breakpoint"] },
+                { "required": ["hoverText"] }
+              ] }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "hover" } } },
+            "then": {
+              "required": ["symbol", "hoverText"],
+              "not": { "anyOf": [
+                { "required": ["assertions"] }, { "required": ["rename"] },
+                { "required": ["imports"] }, { "required": ["testName"] },
+                { "required": ["main"] }, { "required": ["breakpoint"] },
+                { "required": ["definition"] }
+              ] }
             }
           }
         ]

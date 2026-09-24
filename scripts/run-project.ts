@@ -2,7 +2,6 @@ import {
   existsSync,
   mkdirSync,
   readFileSync,
-  readdirSync,
   rmSync,
   writeFileSync,
 } from "node:fs";
@@ -16,6 +15,7 @@ import {
 import { runExtester } from "./extester";
 import { paths } from "./paths";
 import { createProjectResult, writeProjectResult } from "./test-report";
+import { verifyScreenshots } from "./verify-screenshots";
 
 const targetBuildTools: Record<BuildTool, string> = {
   bazel: "bazel",
@@ -39,6 +39,11 @@ function writeSettings(
     "metals.targetBuildTool": targetBuildTools[buildTool],
     "metals.serverVersion": metalsVersion,
     "metals.serverProperties": serverProperties,
+    // On macOS VS Code resolves a login-shell environment and can replace JAVA_HOME.
+    ...(process.env.JAVA_HOME ? {
+      "metals.javaHome": process.env.JAVA_HOME,
+      "metals.metalsJavaHome": process.env.JAVA_HOME,
+    } : {}),
   };
   mkdirSync(dirname(paths.generatedSettings), { recursive: true });
   writeFileSync(
@@ -52,22 +57,17 @@ function cleanSession(workspace: string): void {
     throw new Error(`Refusing to clean invalid workspace: ${workspace}`);
   }
   const metalsDirectory = resolve(workspace, ".metals");
-  mkdirSync(metalsDirectory, { recursive: true });
-  for (const entry of readdirSync(metalsDirectory)) {
-    if (entry !== "metals.log") {
-      rmSync(resolve(metalsDirectory, entry), { recursive: true, force: true });
-    }
-  }
+  rmSync(metalsDirectory, { recursive: true, force: true });
   rmSync(resolve(paths.storage, "settings"), { recursive: true, force: true });
 }
 
 const configPath = environment("COMMUNITY_BUILD_PROJECT_CONFIG");
 const workspace = resolve(environment("METALS_COMMUNITY_WORKSPACE"));
+const { project, source } = loadProjectConfig(configPath);
 const reportDirectory = process.env.COMMUNITY_BUILD_REPORT_DIR
   ? resolve(process.env.COMMUNITY_BUILD_REPORT_DIR)
-  : undefined;
+  : resolve(paths.root, "reports", "local", project.id);
 const config = loadCommunityConfig();
-const { project, source } = loadProjectConfig(configPath);
 const requestedScenario = process.env.COMMUNITY_BUILD_SCENARIO;
 const scenarios = requestedScenario
   ? project.scenarios.filter(({ id }) => id === requestedScenario)
@@ -105,6 +105,8 @@ console.log(
   `\n=== ${project.buildTool} / ${project.id} / ${scenarios.length} scenario(s) ===\n`,
 );
 cleanSession(workspace);
+// Remove only generated screenshots, so retries cannot display an earlier run's evidence.
+rmSync(resolve(reportDirectory, "screenshots"), { recursive: true, force: true });
 writeProjectResult(reportDirectory, createProjectResult(project, scenarios));
 
 const status = runExtester(["run-tests", paths.tests, ...extesterArguments], {
@@ -121,3 +123,4 @@ const status = runExtester(["run-tests", paths.tests, ...extesterArguments], {
 });
 
 if (status !== 0) process.exit(status);
+console.log(`Verified ${verifyScreenshots(reportDirectory)} scenario screenshots`);

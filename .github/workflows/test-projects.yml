@@ -88,8 +88,8 @@ jobs:
           key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
           fail-on-cache-miss: true
 
-      - name: Compile community build tests
-        run: npm run compile
+      - name: Validate the test runner
+        run: npm test
 
       - name: Run project scenarios
         shell: bash

@@ -68,13 +68,27 @@ export interface JavaDebugTestScenario extends ScenarioBase {
   };
 }
 
+export interface DefinitionScenario extends ScenarioBase {
+  kind: "go-to-definition";
+  symbol: string;
+  definition: { file: string; text: string };
+}
+
+export interface HoverScenario extends ScenarioBase {
+  kind: "hover";
+  symbol: string;
+  hoverText: string;
+}
+
 export type Scenario =
   | ImportScenario
   | RenameScenario
   | JavaDiagnosticsScenario
   | JavaTestDiscoveryScenario
   | JavaMainRunScenario
-  | JavaDebugTestScenario;
+  | JavaDebugTestScenario
+  | DefinitionScenario
+  | HoverScenario;
 
 export interface ProjectConfig {
   id: string;
@@ -309,63 +323,66 @@ function normalizeScenario(
   // each burning their own timeout on a doomed session.
   const required = requiredRaw ?? false;
 
+  const base = { id, openFile, namespaceMode, required };
+  if (result.kind === "go-to-definition") {
+    const definition = record(result.definition, `scenario '${id}'.definition`, source);
+    return {
+      ...base,
+      kind: "go-to-definition",
+      symbol: text(result.symbol, `scenario '${id}'.symbol`, source),
+      definition: {
+        file: relativePath(definition.file, `scenario '${id}'.definition.file`, source),
+        text: text(definition.text, `scenario '${id}'.definition.text`, source),
+      },
+    };
+  }
+  if (result.kind === "hover") {
+    return {
+      ...base,
+      kind: "hover",
+      symbol: text(result.symbol, `scenario '${id}'.symbol`, source),
+      hoverText: text(result.hoverText, `scenario '${id}'.hoverText`, source),
+    };
+  }
   if (result.kind === "mbt-import") {
     return {
-      id,
+      ...base,
       kind: "mbt-import",
-      openFile,
-      namespaceMode,
-      required,
       assertions: normalizeAssertions(result.assertions, id, source),
     };
   }
   if (result.kind === "rename-symbol") {
     return {
-      id,
+      ...base,
       kind: "rename-symbol",
-      openFile,
-      namespaceMode,
-      required,
       rename: normalizeRename(result.rename, id, source),
     };
   }
   if (result.kind === "java-diagnostics") {
     return {
-      id,
+      ...base,
       kind: "java-diagnostics",
-      openFile,
-      namespaceMode,
-      required,
       imports: normalizeImports(result.imports, id, source),
     };
   }
   if (result.kind === "java-test-discovery") {
     return {
-      id,
+      ...base,
       kind: "java-test-discovery",
-      openFile,
-      namespaceMode,
-      required,
       testName: text(result.testName, `scenario '${id}'.testName`, source),
     };
   }
   if (result.kind === "java-main-run") {
     return {
-      id,
+      ...base,
       kind: "java-main-run",
-      openFile,
-      namespaceMode,
-      required,
       main: normalizeMain(result.main, id, source),
     };
   }
   if (result.kind === "java-debug-test") {
     return {
-      id,
+      ...base,
       kind: "java-debug-test",
-      openFile,
-      namespaceMode,
-      required,
       testName: text(result.testName, `scenario '${id}'.testName`, source),
       breakpoint: normalizeBreakpoint(result.breakpoint, id, source),
     };
