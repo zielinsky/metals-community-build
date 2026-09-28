@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 
 import {
@@ -66,6 +66,7 @@ const screenshots = reportDirectory
 let activeScenarioId = "startup";
 let failureCaptured = false;
 let mbtImport: Promise<MbtModel> | undefined;
+let refreshedTestFile: { path: string; original: string } | undefined;
 writeProjectResult(reportDirectory, result);
 
 export function fileFor(scenario: Scenario): string {
@@ -111,6 +112,7 @@ export async function executeScenario(
   const startedAt = Date.now();
   try {
     await action();
+    await restoreRefreshedTestFile();
     updateScenarioResult(result, scenario, "passed", Date.now() - startedAt);
   } catch (error) {
     await captureFailure();
@@ -118,7 +120,11 @@ export async function executeScenario(
       error instanceof Error ? error.message : String(error));
     throw error;
   } finally {
-    writeProjectResult(reportDirectory, result);
+    try {
+      await restoreRefreshedTestFile();
+    } finally {
+      writeProjectResult(reportDirectory, result);
+    }
   }
 }
 
@@ -353,6 +359,7 @@ async function importMbt(scenario: Scenario): Promise<MbtModel> {
 
 export async function reopenScenarioFile(
   scenario: Scenario & { testName: string },
+  refreshContent = false,
 ): Promise<TextEditor> {
   const title = basename(scenario.openFile);
   const openFile = fileFor(scenario);
@@ -363,6 +370,7 @@ export async function reopenScenarioFile(
   // A previous open may have timed out with the file either open or closed.
   // First focus the exact resource, then close it to deliver a real didClose.
   await openFileInWorkbench(openFile);
+  if (refreshContent) await refreshTestFile(scenario);
   await new EditorView().closeEditor(title);
   await driver.wait(async () => {
     try {
@@ -372,6 +380,7 @@ export async function reopenScenarioFile(
     }
   }, 30_000, `${title} did not close`);
   await captureScreenshot("file-closed");
+  await delay(1000);
   await openFileInWorkbench(openFile);
   const editor = new TextEditor();
   await driver.wait(
@@ -382,6 +391,42 @@ export async function reopenScenarioFile(
   await editor.selectText(scenario.testName);
   await captureScreenshot("file-reopened");
   return editor;
+}
+
+async function refreshTestFile(scenario: Scenario & { testName: string }): Promise<void> {
+  const path = fileFor(scenario);
+  const original = readFileSync(path, "utf8");
+  refreshedTestFile ??= { path, original };
+  const lines = original.split(/\r?\n/);
+  const editor = new TextEditor();
+  // Append without adding a line, so configured breakpoint numbers stay valid.
+  await editor.typeTextAt(lines.length, lines.at(-1)!.length + 1, " ");
+  await editor.save();
+  await VSBrowser.instance.driver.wait(
+    () => readFileSync(path, "utf8") !== original,
+    10_000,
+    `${scenario.openFile}: whitespace refresh was not saved`,
+  );
+  await delay(1000);
+  await editor.selectText(scenario.testName);
+  log(`Saved a whitespace change to refresh tests in ${scenario.openFile}`);
+  await captureScreenshot("file-touched-and-saved");
+}
+
+async function restoreRefreshedTestFile(): Promise<void> {
+  if (!refreshedTestFile) return;
+  const { path, original } = refreshedTestFile;
+  writeFileSync(path, original);
+  // Also discard a dirty editor buffer if an edit/save attempt failed.
+  try {
+    if (await new TextEditor().getFilePath() === path) {
+      await new Workbench().executeCommand("File: Revert File");
+    }
+  } catch (error) {
+    log(`Source restored on disk; editor reload unavailable: ${String(error)}`);
+  }
+  refreshedTestFile = undefined;
+  log(`Restored original test source: ${path}`);
 }
 
 async function openFileInWorkbench(openFile: string): Promise<void> {
@@ -411,9 +456,10 @@ export async function withTestEditor<T>(
   scenario: Scenario & { testName: string },
   action: (editor: TextEditor) => Promise<T>,
 ): Promise<T> {
+  let reopenCount = 0;
   return retryWithReopen({
     current: () => new TextEditor(),
-    reopen: () => reopenScenarioFile(scenario),
+    reopen: () => reopenScenarioFile(scenario, ++reopenCount >= 2),
     action,
     attempts: 6,
     onFailure: (attempt, error) => log(
