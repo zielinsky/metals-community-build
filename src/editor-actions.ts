@@ -1,5 +1,16 @@
-import { BottomBarPanel, By, TextEditor, VSBrowser } from "vscode-extension-tester";
+import { BottomBarPanel, By, Key, TextEditor, VSBrowser } from "vscode-extension-tester";
 import type { WebElement } from "selenium-webdriver";
+import { sourceSelection } from "../scripts/editor-text";
+
+export async function selectExactText(editor: TextEditor, text: string): Promise<void> {
+  const [line, column] = sourceSelection(await editor.getText(), text);
+  await editor.setCursor(line, column);
+  const actions = VSBrowser.instance.driver.actions();
+  await actions.clear();
+  actions.keyDown(Key.SHIFT);
+  for (let i = 0; i < text.length; i += 1) actions.sendKeys(Key.ARROW_RIGHT);
+  await actions.keyUp(Key.SHIFT).perform();
+}
 
 export async function openBottomPanel(): Promise<BottomBarPanel> {
   const panel = new BottomBarPanel();

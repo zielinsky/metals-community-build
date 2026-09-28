@@ -3,15 +3,17 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { By, Key, TextEditor, VSBrowser, Workbench } from "vscode-extension-tester";
 
-import type { DefinitionScenario, HoverScenario } from "../scripts/config";
+import type { DefinitionScenario, DocumentSymbolScenario, HoverScenario } from "../scripts/config";
 import { captureFailure, captureScreenshot, log, prepareMbt, workspace } from "./test-support";
+import { selectExactText } from "./editor-actions";
 
 export async function testDefinition(scenario: DefinitionScenario): Promise<void> {
   await prepareMbt(scenario);
-  await new TextEditor().selectText(scenario.symbol);
+  await selectExactText(new TextEditor(), scenario.symbol);
   await captureScreenshot("definition-symbol-selected");
-  log(`Go to Definition: ${scenario.symbol}`);
-  await new Workbench().executeCommand("Go to Definition");
+  const command = scenario.kind === "go-to-implementation" ? "Go to Implementations" : "Go to Definition";
+  log(`${command}: ${scenario.symbol}`);
+  await new Workbench().executeCommand(command);
   const expectedFile = resolve(workspace, scenario.definition.file);
   const lines = readFileSync(expectedFile, "utf8").split(/\r?\n/);
   await VSBrowser.instance.driver.wait(async () => {
@@ -26,14 +28,49 @@ export async function testDefinition(scenario: DefinitionScenario): Promise<void
       return false;
     }
   }, 60_000, `Definition did not navigate to ${scenario.definition.file}: ${scenario.definition.text}`);
-  await captureScreenshot("definition-verified");
+  await captureScreenshot(scenario.kind === "go-to-implementation" ? "implementation-verified" : "definition-verified");
+}
+
+export async function testDocumentSymbol(scenario: DocumentSymbolScenario): Promise<void> {
+  await prepareMbt(scenario);
+  const driver = VSBrowser.instance.driver;
+  const lines = readFileSync(resolve(workspace, scenario.openFile), "utf8").split(/\r?\n/);
+  const prompt = await new Workbench().openCommandPrompt();
+  await driver.actions().clear();
+  try {
+    await prompt.setText(`@${scenario.symbol}`);
+    const selectedLabel = await driver.wait(async () => {
+      const items = await prompt.getQuickPicks();
+      for (const item of items) {
+        const label = await item.getLabel();
+        if (label === scenario.symbol || label.startsWith(`${scenario.symbol}(`) ||
+            label.startsWith(`${scenario.symbol} `)) return label;
+      }
+      return false;
+    }, 30_000, `Document symbol '${scenario.symbol}' did not appear`);
+    assert.ok(selectedLabel);
+    await captureScreenshot("document-symbol-listed");
+    await prompt.selectQuickPick(selectedLabel);
+    await driver.wait(async () => {
+      const editor = new TextEditor();
+      if (resolve(await editor.getFilePath()) !== resolve(workspace, scenario.openFile)) return false;
+      const [line] = await editor.getCoordinates();
+      return lines[line - 1]?.includes(scenario.expectedLine) ?? false;
+    }, 30_000, `Document symbol did not navigate to '${scenario.expectedLine}'`);
+    await captureScreenshot("document-symbol-verified");
+  } catch (error) {
+    await captureFailure();
+    throw error;
+  } finally {
+    await driver.actions().sendKeys(Key.ESCAPE).perform().catch(() => undefined);
+  }
 }
 
 export async function testHover(scenario: HoverScenario): Promise<void> {
   await prepareMbt(scenario);
   const editor = new TextEditor();
   assert.ok((await editor.getText()).includes(scenario.symbol), `Missing symbol: ${scenario.symbol}`);
-  await editor.selectText(scenario.symbol);
+  await selectExactText(editor, scenario.symbol);
   log(`Show hover: ${scenario.symbol}`);
   const driver = VSBrowser.instance.driver;
   try {

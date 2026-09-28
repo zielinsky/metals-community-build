@@ -69,7 +69,7 @@ export interface JavaDebugTestScenario extends ScenarioBase {
 }
 
 export interface DefinitionScenario extends ScenarioBase {
-  kind: "go-to-definition";
+  kind: "go-to-definition" | "go-to-implementation";
   symbol: string;
   definition: { file: string; text: string };
 }
@@ -80,6 +80,17 @@ export interface HoverScenario extends ScenarioBase {
   hoverText: string;
 }
 
+export interface DocumentSymbolScenario extends ScenarioBase {
+  kind: "document-symbol";
+  symbol: string;
+  expectedLine: string;
+}
+
+export interface CompletionScenario extends ScenarioBase {
+  kind: "completion";
+  completion: { replace: string; prefix: string; item: string; expectedText: string };
+}
+
 export type Scenario =
   | ImportScenario
   | RenameScenario
@@ -88,7 +99,9 @@ export type Scenario =
   | JavaMainRunScenario
   | JavaDebugTestScenario
   | DefinitionScenario
-  | HoverScenario;
+  | HoverScenario
+  | DocumentSymbolScenario
+  | CompletionScenario;
 
 export interface ProjectConfig {
   id: string;
@@ -324,11 +337,26 @@ function normalizeScenario(
   const required = requiredRaw ?? false;
 
   const base = { id, openFile, namespaceMode, required };
-  if (result.kind === "go-to-definition") {
+  if (result.kind === "completion") {
+    const completion = record(result.completion, `scenario '${id}'.completion`, source);
+    return { ...base, kind: "completion", completion: {
+      replace: text(completion.replace, `scenario '${id}'.completion.replace`, source),
+      prefix: text(completion.prefix, `scenario '${id}'.completion.prefix`, source),
+      item: text(completion.item, `scenario '${id}'.completion.item`, source),
+      expectedText: text(completion.expectedText, `scenario '${id}'.completion.expectedText`, source),
+    } };
+  }
+  if (result.kind === "document-symbol") {
+    return { ...base, kind: "document-symbol",
+      symbol: text(result.symbol, `scenario '${id}'.symbol`, source),
+      expectedLine: text(result.expectedLine, `scenario '${id}'.expectedLine`, source),
+    };
+  }
+  if (result.kind === "go-to-definition" || result.kind === "go-to-implementation") {
     const definition = record(result.definition, `scenario '${id}'.definition`, source);
     return {
       ...base,
-      kind: "go-to-definition",
+      kind: result.kind,
       symbol: text(result.symbol, `scenario '${id}'.symbol`, source),
       definition: {
         file: relativePath(definition.file, `scenario '${id}'.definition.file`, source),

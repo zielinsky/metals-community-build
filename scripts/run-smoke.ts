@@ -1,12 +1,15 @@
 import { spawnSync } from "node:child_process";
 import { cpSync, mkdirSync } from "node:fs";
-import { resolve } from "node:path";
+import { basename, resolve } from "node:path";
 import { paths } from "./paths";
 
 export function prepareSmokeWorkspace(workspace: string): void {
   // Keep the checked-in fixture pristine, including when rename/debug fails.
   mkdirSync(workspace, { recursive: true });
-  cpSync(resolve(paths.root, "fixtures", "smoke"), workspace, { recursive: true });
+  cpSync(resolve(paths.root, "fixtures", "smoke"), workspace, {
+    recursive: true,
+    filter: (source) => !["target", ".metals", ".bsp", ".vscode", ".git"].includes(basename(source)),
+  });
   // MBT reads the Git index. An untracked fixture inherits workspaces/ ignores
   // from its parent repository and has no indexed sources.
   for (const args of [

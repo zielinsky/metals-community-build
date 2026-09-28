@@ -39,6 +39,9 @@
               "java-main-run",
               "java-debug-test",
               "go-to-definition",
+              "go-to-implementation",
+              "document-symbol",
+              "completion",
               "hover"
             ]
           },
@@ -69,6 +72,17 @@
           },
           "symbol": { "type": "string", "minLength": 1 },
           "hoverText": { "type": "string", "minLength": 1 },
+          "expectedLine": { "type": "string", "minLength": 1 },
+          "completion": {
+            "type": "object", "additionalProperties": false,
+            "required": ["replace", "prefix", "item", "expectedText"],
+            "properties": {
+              "replace": { "type": "string", "minLength": 1 },
+              "prefix": { "type": "string", "minLength": 1 },
+              "item": { "type": "string", "minLength": 1 },
+              "expectedText": { "type": "string", "minLength": 1 }
+            }
+          },
           "definition": {
             "type": "object",
             "additionalProperties": false,
@@ -110,6 +124,16 @@
           }
         },
         "allOf": [
+          {
+            "if": { "properties": { "kind": { "const": "completion" } } },
+            "then": { "required": ["completion"] },
+            "else": { "not": { "required": ["completion"] } }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "document-symbol" } } },
+            "then": { "required": ["symbol", "expectedLine"] },
+            "else": { "not": { "required": ["expectedLine"] } }
+          },
           {
             "if": { "properties": { "kind": { "const": "mbt-import" } } },
             "then": {
@@ -222,7 +246,7 @@
             }
           },
           {
-            "if": { "properties": { "kind": { "const": "go-to-definition" } } },
+            "if": { "properties": { "kind": { "enum": ["go-to-definition", "go-to-implementation"] } } },
             "then": {
               "required": ["symbol", "definition"],
               "not": { "anyOf": [

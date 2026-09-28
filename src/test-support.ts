@@ -3,6 +3,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 
 import {
+  ActivityBar,
   EditorView,
   Key,
   Notification,
@@ -313,7 +314,7 @@ async function openScenarioFile(scenario: Scenario): Promise<void> {
 
   if (await new TextEditor().getFilePath().catch(() => "") !== openFile) {
     log(`Opening ${basename(openFile)} in the existing VS Code session`);
-    await VSBrowser.instance.openResources(openFile);
+    await openFileInWorkbench(openFile);
   }
   log("Waiting for VS Code to open the requested file");
   await waitForWorkspaceFile(openFile, 30 * 1000);
@@ -456,6 +457,11 @@ export async function withTestEditor<T>(
   scenario: Scenario & { testName: string },
   action: (editor: TextEditor) => Promise<T>,
 ): Promise<T> {
+  // Opening Testing asks the client to resolve lazily discovered MBT suites.
+  // Merely reopening an editor does not initialize an unopened test tree.
+  const testing = await new ActivityBar().getViewControl("Testing");
+  assert.ok(testing, "VS Code Testing view is not available");
+  await testing.openView();
   let reopenCount = 0;
   return retryWithReopen({
     current: () => new TextEditor(),

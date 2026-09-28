@@ -60,6 +60,34 @@
       }
     },
     {
+      "id": "implementation",
+      "kind": "go-to-implementation",
+      "openFile": "src/main/java/example/Greeting.java",
+      "symbol": "Greeting",
+      "definition": {
+        "file": "src/main/java/example/Greeter.java",
+        "text": "public class Greeter"
+      }
+    },
+    {
+      "id": "document-symbol",
+      "kind": "document-symbol",
+      "openFile": "src/main/java/example/Greeter.java",
+      "symbol": "message",
+      "expectedLine": "public static String message()"
+    },
+    {
+      "id": "completion",
+      "kind": "completion",
+      "openFile": "src/main/java/example/App.java",
+      "completion": {
+        "replace": "Greeter.message()",
+        "prefix": "Greeter.m",
+        "item": "message",
+        "expectedText": "Greeter.message()"
+      }
+    },
+    {
       "id": "run",
       "kind": "java-main-run",
       "openFile": "src/main/java/example/App.java",

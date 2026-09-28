@@ -1,4 +1,5 @@
-import { testDefinition, testHover } from "./navigation.test";
+import { testDefinition, testDocumentSymbol, testHover } from "./navigation.test";
+import { testCompletion } from "./completion.test";
 import { testJavaDiagnostics } from "./java-diagnostics.test";
 import { testMbtImport } from "./mbt-import.test";
 import { testRenameSymbol } from "./rename-symbol.test";
@@ -26,6 +27,13 @@ describe(`${project.buildTool} / ${project.id}`, function () {
       try {
         await executeScenario(scenario, async () => {
           switch (scenario.kind) {
+            case "completion":
+              await testCompletion(scenario);
+              break;
+            case "document-symbol":
+              await testDocumentSymbol(scenario);
+              break;
+            case "go-to-implementation":
             case "go-to-definition":
               await testDefinition(scenario);
               break;

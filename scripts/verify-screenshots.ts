@@ -13,6 +13,9 @@ const evidence: Record<Scenario["kind"], string> = {
   "java-debug-test": "debug-test-finished",
   "go-to-definition": "definition-verified",
   hover: "hover-verified",
+  "go-to-implementation": "implementation-verified",
+  "document-symbol": "document-symbol-verified",
+  completion: "completion-verified",
 };
 
 export function verifyScreenshots(directory: string): number {

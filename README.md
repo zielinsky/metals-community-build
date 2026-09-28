@@ -271,6 +271,11 @@ reuse that session. On a headless Linux machine, prefix the command with
 Downloaded VS Code/ChromeDriver files, installed extensions, generated settings,
 compiled tests, and community workspaces are ignored by Git.
 
+## Action reference
+
+See [all test actions with runnable examples](docs/actions.md) for the complete
+scenario catalog, assertions, screenshots, retry behavior, and commands.
+
 ## Test the runner and screenshots
 
 `npm test` runs fast regression tests for manifest validation, result aggregation,

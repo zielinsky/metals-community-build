@@ -9,7 +9,7 @@ import { createProjectResult, updateScenarioResult } from "../scripts/test-repor
 test("all community manifests and the smoke fixture load", () => {
   assert.ok(discoverProjects().length >= 5);
   const { project } = loadProjectConfig("fixtures/smoke.json");
-  assert.equal(new Set(project.scenarios.map((s) => s.kind)).size, 8);
+  assert.equal(new Set(project.scenarios.map((s) => s.kind)).size, 11);
   assert.equal(project.scenarios[0].required, true);
   assert.equal(project.scenarios[1].required, false);
 });
@@ -17,6 +17,12 @@ test("all community manifests and the smoke fixture load", () => {
 for (const [name, change, expected] of [
   ["unknown action", (s: Record<string, unknown>) => { s.kind = "typo"; }, /unsupported scenario kind/],
   ["missing hover assertion", (s: Record<string, unknown>) => { s.kind = "hover"; s.symbol = "Greeter"; }, /hoverText/],
+  ["missing completion assertion", (s: Record<string, unknown>) => {
+    s.kind = "completion"; s.completion = { replace: "method()", prefix: "met", item: "method" };
+  }, /expectedText/],
+  ["missing document symbol destination", (s: Record<string, unknown>) => {
+    s.kind = "document-symbol"; s.symbol = "method";
+  }, /expectedLine/],
   ["escaping definition", (s: Record<string, unknown>) => {
     s.kind = "go-to-definition"; s.symbol = "Greeter";
     s.definition = { file: "../outside.java", text: "class" };
