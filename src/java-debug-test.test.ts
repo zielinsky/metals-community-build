@@ -19,7 +19,6 @@ import {
   delay,
   log,
   prepareMbt,
-  withTestEditor,
 } from "./test-support";
 
 async function visibleMenuItems(): Promise<WebElement[]> {
@@ -165,7 +164,7 @@ export async function testJavaDebug(
 ): Promise<void> {
   await prepareMbt(scenario);
 
-  let editor = new TextEditor();
+  const editor = new TextEditor();
   const source = await editor.getText();
   assert.ok(source.includes(scenario.testName), `Missing test: ${scenario.testName}`);
   const sourceLines = source.split(/\r?\n/);
@@ -186,11 +185,8 @@ export async function testJavaDebug(
 
   let toolbar: DebugToolbar | undefined;
   try {
-    editor = await withTestEditor(scenario, async (currentEditor) => {
-      const glyph = await waitForTestGutter(scenario.testName, 20_000);
-      await openDebugTest(glyph, scenario.testName);
-      return currentEditor;
-    });
+    const glyph = await waitForTestGutter(scenario.testName);
+    await openDebugTest(glyph, scenario.testName);
 
     toolbar = await DebugToolbar.create(15 * 60 * 1000);
     await toolbar.waitForBreakPoint(10 * 60 * 1000);

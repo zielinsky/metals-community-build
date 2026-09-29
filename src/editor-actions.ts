@@ -40,7 +40,7 @@ export async function findTestGutter(testName: string): Promise<WebElement | und
   return undefined;
 }
 
-export async function waitForTestGutter(testName: string, timeoutMs: number): Promise<WebElement> {
+export async function waitForTestGutter(testName: string, timeoutMs = 120_000): Promise<WebElement> {
   await new TextEditor().selectText(testName);
   const glyph = await VSBrowser.instance.driver.wait(
     async () => (await findTestGutter(testName).catch(() => undefined)) || false,

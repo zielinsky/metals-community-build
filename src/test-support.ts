@@ -1,9 +1,8 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 
 import {
-  ActivityBar,
   EditorView,
   Key,
   Notification,
@@ -15,7 +14,6 @@ import {
 
 import { loadProjectConfig, type Scenario } from "../scripts/config";
 import { ScreenshotRecorder } from "../scripts/screenshots";
-import { retryWithReopen } from "./retry-with-reopen";
 import {
   createProjectResult,
   updateScenarioResult,
@@ -67,7 +65,6 @@ const screenshots = reportDirectory
 let activeScenarioId = "startup";
 let failureCaptured = false;
 let mbtImport: Promise<MbtModel> | undefined;
-let refreshedTestFile: { path: string; original: string } | undefined;
 writeProjectResult(reportDirectory, result);
 
 export function fileFor(scenario: Scenario): string {
@@ -113,7 +110,6 @@ export async function executeScenario(
   const startedAt = Date.now();
   try {
     await action();
-    await restoreRefreshedTestFile();
     updateScenarioResult(result, scenario, "passed", Date.now() - startedAt);
   } catch (error) {
     await captureFailure();
@@ -121,11 +117,7 @@ export async function executeScenario(
       error instanceof Error ? error.message : String(error));
     throw error;
   } finally {
-    try {
-      await restoreRefreshedTestFile();
-    } finally {
-      writeProjectResult(reportDirectory, result);
-    }
+    writeProjectResult(reportDirectory, result);
   }
 }
 
@@ -358,78 +350,6 @@ async function importMbt(scenario: Scenario): Promise<MbtModel> {
   }
 }
 
-export async function reopenScenarioFile(
-  scenario: Scenario & { testName: string },
-  refreshContent = false,
-): Promise<TextEditor> {
-  const title = basename(scenario.openFile);
-  const openFile = fileFor(scenario);
-  const driver = VSBrowser.instance.driver;
-  log(`Closing and reopening ${title} to refresh test code lenses`);
-  await driver.actions().clear();
-  await driver.actions().sendKeys(Key.ESCAPE).perform();
-  // A previous open may have timed out with the file either open or closed.
-  // First focus the exact resource, then close it to deliver a real didClose.
-  await openFileInWorkbench(openFile);
-  if (refreshContent) await refreshTestFile(scenario);
-  await new EditorView().closeEditor(title);
-  await driver.wait(async () => {
-    try {
-      return !(await new EditorView().getOpenEditorTitles()).includes(title);
-    } catch {
-      return false;
-    }
-  }, 30_000, `${title} did not close`);
-  await captureScreenshot("file-closed");
-  await delay(1000);
-  await openFileInWorkbench(openFile);
-  const editor = new TextEditor();
-  await driver.wait(
-    async () => (await editor.getText().catch(() => "")).includes(scenario.testName),
-    30_000,
-    `${title} reopened without '${scenario.testName}'`,
-  );
-  await editor.selectText(scenario.testName);
-  await captureScreenshot("file-reopened");
-  return editor;
-}
-
-async function refreshTestFile(scenario: Scenario & { testName: string }): Promise<void> {
-  const path = fileFor(scenario);
-  const original = readFileSync(path, "utf8");
-  refreshedTestFile ??= { path, original };
-  const lines = original.split(/\r?\n/);
-  const editor = new TextEditor();
-  // Append without adding a line, so configured breakpoint numbers stay valid.
-  await editor.typeTextAt(lines.length, lines.at(-1)!.length + 1, " ");
-  await editor.save();
-  await VSBrowser.instance.driver.wait(
-    () => readFileSync(path, "utf8") !== original,
-    10_000,
-    `${scenario.openFile}: whitespace refresh was not saved`,
-  );
-  await delay(1000);
-  await editor.selectText(scenario.testName);
-  log(`Saved a whitespace change to refresh tests in ${scenario.openFile}`);
-  await captureScreenshot("file-touched-and-saved");
-}
-
-async function restoreRefreshedTestFile(): Promise<void> {
-  if (!refreshedTestFile) return;
-  const { path, original } = refreshedTestFile;
-  writeFileSync(path, original);
-  // Also discard a dirty editor buffer if an edit/save attempt failed.
-  try {
-    if (await new TextEditor().getFilePath() === path) {
-      await new Workbench().executeCommand("File: Revert File");
-    }
-  } catch (error) {
-    log(`Source restored on disk; editor reload unavailable: ${String(error)}`);
-  }
-  refreshedTestFile = undefined;
-  log(`Restored original test source: ${path}`);
-}
-
 async function openFileInWorkbench(openFile: string): Promise<void> {
   const driver = VSBrowser.instance.driver;
   // Stay in the WebDriver-controlled window. The VS Code CLI can acknowledge
@@ -450,28 +370,6 @@ async function openFileInWorkbench(openFile: string): Promise<void> {
     await driver.actions().clear();
     await driver.actions().sendKeys(Key.ESCAPE).perform().catch(() => undefined);
   }
-}
-
-/** Retry test UI discovery against a fresh editor, with the same bound for run/debug. */
-export async function withTestEditor<T>(
-  scenario: Scenario & { testName: string },
-  action: (editor: TextEditor) => Promise<T>,
-): Promise<T> {
-  // Opening Testing asks the client to resolve lazily discovered MBT suites.
-  // Merely reopening an editor does not initialize an unopened test tree.
-  const testing = await new ActivityBar().getViewControl("Testing");
-  assert.ok(testing, "VS Code Testing view is not available");
-  await testing.openView();
-  let reopenCount = 0;
-  return retryWithReopen({
-    current: () => new TextEditor(),
-    reopen: () => reopenScenarioFile(scenario, ++reopenCount >= 2),
-    action,
-    attempts: 6,
-    onFailure: (attempt, error) => log(
-      `Test UI attempt ${attempt}/6 failed for ${scenario.openFile}: ${String(error)}`,
-    ),
-  });
 }
 
 export async function prepareMbt(scenario: Scenario): Promise<MbtModel> {

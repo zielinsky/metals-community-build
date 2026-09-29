@@ -141,18 +141,9 @@ that configured imports produce no errors:
 ```
 
 Test discovery independently checks that VS Code displays a test run button
-without starting the test itself. If icons have not appeared, discovery closes
-and reopens the file before retrying, as does the debug scenario. Both allow
-six attempts (up to five close/open cycles), each waiting up to 20 seconds for
-the test icon. Files reopen through Go to File in the same VS Code window; a
-failed reopen is also retried. Screenshots record both the closed and reopened file.
-
-From the second reopen onward, the runner also appends a space and saves the
-file to trigger test discovery. It waits one second after saving and after
-closing, with a 30-second bound on closing/opening. The original source is
-restored after the entire scenario, including on failure; breakpoint line
-numbers remain unchanged.
-
+without starting the test itself. Discovery and debug wait up to 120 seconds
+for the icon in the already open file. They do not reopen or edit the source
+to trigger discovery.
 
 ```json
 {

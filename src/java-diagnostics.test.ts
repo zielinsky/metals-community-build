@@ -16,7 +16,6 @@ import {
   fileFor,
   log,
   prepareMbt,
-  reopenScenarioFile,
 } from "./test-support";
 
 async function assertNoFileErrors(openFile: string): Promise<void> {
@@ -61,8 +60,6 @@ export async function testJavaDiagnostics(
   scenario: JavaDiagnosticsScenario,
 ): Promise<void> {
   await prepareMbt(scenario);
-  // Re-evaluate the open file after its imported classpath becomes available.
-  await reopenScenarioFile({ ...scenario, testName: scenario.imports[0] }, true);
 
   const editor = new TextEditor();
   const source = await editor.getText();

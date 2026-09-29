@@ -78,7 +78,7 @@ Screen potwierdzający wynik: `*-rename-verified.png`.
 
 ## `java-diagnostics` — Diagnostyka importów Javy
 
-Odświeża plik przez zapis spacji i ponowne otwarcie po imporcie, sprawdza obecność wskazanych importów w źródle, otwiera Problems i wymaga braku błędów w tym pliku. Nie ignoruje błędów niezwiązanych z importami.
+Sprawdza obecność wskazanych importów w źródle, otwiera Problems i wymaga braku błędów w tym pliku. Nie ignoruje błędów niezwiązanych z importami.
 
 ```json
 {
@@ -244,7 +244,7 @@ Screen potwierdzający wynik: `*-debug-test-finished.png`.
 
 ## Brak ikonki testu i timeouty
 
-Discovery i debug otwierają najpierw widok Testing, aby zainicjalizować leniwe wykrywanie testów w MBT. Mają 6 prób, każda czeka do 20 s na ikonkę. Przed kolejną próbą plik jest zamykany i otwierany w tym samym oknie przez Go to File. Od drugiego reopen runner dodaje spację bez dodawania linii, zapisuje plik i odczekuje 1 s. Po zamknięciu również odczekuje 1 s. Otwarcie i zamknięcie mają limity 30 s. Nieudane otwarcie podlega kolejnym próbom. Źródło jest przywracane po całym scenariuszu, także po błędzie.
+Discovery i debug czekają do 120 s na ikonkę przy właściwej metodzie w już otwartym pliku. Nie zamykają i nie otwierają go ponownie, nie dopisują spacji i nie zapisują sztucznych zmian. Brak ikonki po tym czasie oznacza błąd scenariusza.
 
 ## Wyniki i screeny
 
