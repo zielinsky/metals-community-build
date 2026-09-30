@@ -1,0 +1,675 @@
+2026.09.30 14:27:10 INFO  Started: Metals version 2.0.0-community-build.36728348184 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+2026.09.30 14:27:10 INFO  Memory monitor started
+2026.09.30 14:27:11 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.09.30 14:27:12 WARN  [default] no logical packages found in source path (mode: MBT)
+2026.09.30 14:27:12 INFO  mbt-v2: indexing 485 files
+2026.09.30 14:27:14 INFO  Running command: bazel info output_base
+2026.09.30 14:27:15 INFO  time: mbt-v2 loaded index for 485 files in 2.72s
+2026.09.30 14:27:18 INFO  time: ran 'bazel-info' in 3.86s
+2026.09.30 14:27:18 INFO  Running command: bazel info bazel-bin
+2026.09.30 14:27:20 INFO  time: ran 'bazel-info' in 1.44s
+2026.09.30 14:27:20 INFO  bazel-mbt: found maven hubs: 
+2026.09.30 14:27:20 INFO  Found maven_install.json files: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/rules_scala_test_maven.json
+2026.09.30 14:27:20 INFO  bazel-mbt: processing maven lock file: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/rules_scala_test_maven.json
+2026.09.30 14:27:20 INFO  Running command: bazel query --output=label --keep_going kind('scala_library|java_library|scala_binary|java_binary|scala_test|java_test|scala_import|java_import', set(//...))
+2026.09.30 14:27:20 WARN  Loading: 0 packages loaded
+2026.09.30 14:27:21 WARN  Loading: 37 packages loaded
+2026.09.30 14:27:21 WARN      currently loading: test/scaladoc ... (167 packages)
+2026.09.30 14:27:22 WARN  Loading: 199 packages loaded
+2026.09.30 14:27:22 WARN      currently loading: test/jar_signature_checks ... (5 packages)
+2026.09.30 14:27:22 INFO  time: ran 'bazel-mbt-query' in 2.53s
+2026.09.30 14:27:22 INFO  bazel-mbt: found 1466 targets
+2026.09.30 14:27:22 INFO  Running command: bazel query --output=xml --keep_going --query_file /tmp/metals-bazel-query-3346631572007892647.txt
+2026.09.30 14:27:23 WARN  Loading: 0 packages loaded
+2026.09.30 14:27:24 WARN  Loading: 13 packages loaded
+2026.09.30 14:27:24 WARN  Loading: 45 packages loaded
+2026.09.30 14:27:25 WARN      currently loading: @@abseil-cpp+//absl/container
+2026.09.30 14:27:25 WARN  Loading: 79 packages loaded
+2026.09.30 14:27:27 WARN  Loading: 104 packages loaded
+2026.09.30 14:27:28 WARN  Loading: 120 packages loaded
+2026.09.30 14:27:29 WARN  Loading: 128 packages loaded
+2026.09.30 14:27:29 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:29 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:29 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:29 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:29 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:30 WARN  Loading: 134 packages loaded
+2026.09.30 14:27:30 WARN  Loading: 135 packages loaded
+2026.09.30 14:27:33 WARN  Loading: 137 packages loaded
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:33 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:33 WARN  ERROR: Evaluation of query "deps(set(//manual_test/scala_test_jacocorunner:empty_test //scala:PlaceHolderClassToCreateEmptyJarForScalaImport //scala:bazel_test_runner_deploy //scala/private/source_compat:source_compat //scala/scalafmt:scalafmt //scala/settings:stamp_scala_import //scala/support:test_reporter //specs2:empty //specs2:specs2 //src/java/io/bazel/rulesscala/coverage/instrumenter:JacocoInstrumenterTest //src/java/io/bazel/rulesscala/coverage/instrumenter:instrumenter //src/java/io/bazel/rulesscala/coverage/instrumenter:instrumenter_lib //src/java/io/bazel/rulesscala/exe:exe //src/java/io/bazel/rulesscala/exe:exe-lib //src/java/io/bazel/rulesscala/io_utils:io_utils //src/java/io/bazel/rulesscala/jar:binary //src/java/io/bazel/rulesscala/jar:jar //src/java/io/bazel/rulesscala/preconditions:preconditions //src/java/io/bazel/rulesscala/scala_test:runner //src/java/io/bazel/rulesscala/scalac:StdlibVersionCheckTest //src/java/io/bazel/rulesscala/scalac:scalac //src/java/io/bazel/rulesscala/scalac:[truncated]" failed: errors were encountered while computing transitive closure
+2026.09.30 14:27:33 WARN  WARNING: --keep_going specified, ignoring errors. Results may be inaccurate
+2026.09.30 14:27:33 INFO  time: ran 'bazel-mbt-query' in 10s
+2026.09.30 14:27:33 WARN  bazel-mbt: bazel query failed with exit code 3, but might be unreleated.
+2026.09.30 14:27:35 INFO  bazel-mbt: import targets: HashSet(//test/scala3_library_eviction:rc_rogue_scala_library, //test/scala3_library_eviction:third_party_stub_patch_only_scala3_library, //test/scala3_library_eviction:third_party_stub_same_version, //test/src/main/scala/scalarules/test/scala_import:guava_and_commons_lang_as_exports, //test/strict_dependency/scala_import:guava, //test/strict_dependency/scala_import:commons_lang_as_imported_jar_cats_and_guava_as_compile_deps, //test/scala3_library_eviction:third_party_stub_header_prefixed, //test/strict_dependency/scala_import:indirection_for_transitive_compile_deps, //test/strict_dependency/scala_import:middle_for_scala_import_passes_labels_of_direct_deps, //test/scaladoc:ImportedB, //test/aspect:com_google_guava_guava_21_0, //test/src/main/scala/scalarules/test/scala_import/srcjar:my-java-import, //test/src/main/scala/scalarules/test/scala_import:guava_and_commons_lang, //test/src/main/scala/scalarules/test/scala_import:guava_and_commons_lang_as_exports_from_java_import, //test/src/main/scala/scalarules/test/scala_import:stamping_second_time, //test/src/main/scala/scalarules/test/scala_import/nl:imported_scala_import_never_link, //test/src/main/scala/scalarules/test/scala_import:stamping_first_time, //test/strict_dependency/scala_import:cats, //test/src/main/scala/scalarules/test/scala_import:guava_and_commons_lang_java_import, //test/src/main/scala/scalarules/test/scala_import/srcjar:my-scala-import, //test/scala3_library_eviction:rogue_scala_library_only, //test/scala3_library_eviction:same_version_scala3_library, //test/src/main/scala/scalarules/test/scala_import:imported_genericlib_jar, //test/scala3_library_eviction:patch_only_rogue_scala_library, //test/src/main/scala/scalarules/test/scala_import:cats_and_guava_and_commons_lang_as_runtime_deps, //test/src/main/scala/scalarules/test/scala_import:indirection_for_transitive_runtime_deps, //test/scala3_library_eviction:third_party_stub_rc_scala_library, //specs2:specs2, //test/scala3_library_eviction:rogue_scala3_library_header_prefixed, //test/scala3_library_eviction:third_party_stub_scala_library_only, //test/scala3_library_eviction:rogue_scala3_library, //test/src/main/scala/scalarules/test/resource_jars:imported_jar_with_resources, //scala:bazel_test_runner_deploy, //test/strict_dependency/scala_import:dummy_dependency_to_trigger_create_provider_transitive_compile_jar_usage, //test/scala3_library_eviction:third_party_stub, //test/scala3_library_eviction:patch_only_rogue_scala3_library, //test/scala3_library_eviction:third_party_stub_patch_only_scala_library, //test/src/main/scala/scalarules/test/scala_import:scala_import_for_stamping_tests_stamping_test_False, //test/scaladoc:ImportedA, //test/src/main/scala/scalarules/test/scala_import:jffi_native_external, //test/src/main/scala/scalarules/test/scala_import:scala_import_for_stamping_tests_stamping_test_True)
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @bazel_tools//tools/jdk:TestRunner_deploy.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //specs2:libempty.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/scala3_library_eviction:scala3-library_3-3.6.99.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/scala3_library_eviction:scala-library-2.13.99.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/scala3_library_eviction:scala-library-2.13.0-RC1.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @io_bazel_rules_scala_scala_library_3_7_4//:scala3-library_3-3.7.4.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/scala3_library_eviction:header_scala3-library_3-3.7.4.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @io_bazel_rules_scala_scala_library_2_12_21//:scala-library-2.12.21.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @io_bazel_rules_scala_scala_library_3_6_4//:scala3-library_3-3.6.4.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/scaladoc:A.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/scaladoc:B.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/src/main/scala/scalarules/test/resource_jars:jar_with_resources.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/src/main/scala/scalarules/test/scala_import/nl:libscala_import_never_link.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/src/main/scala/scalarules/test/scala_import/srcjar:my-jar.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/src/main/scala/scalarules/test/scala_import/srcjar:my-src-jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:org_apache_commons_commons_lang3
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com/google/guava/guava/21.0/guava-21.0.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not resolve jar for label //test/src/main/scala/scalarules/test/scala_import:generic_scalalib.jar
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_github_jnr_jffi_native
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:org_typelevel_cats_core_2_12
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:org_apache_commons_commons_lang3
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:org_springframework_spring_core
+2026.09.30 14:27:35 WARN  bazel-mbt: could not derive module id for jar label @rules_scala_test_maven//:com_google_guava_guava
+2026.09.30 14:27:35 INFO  Running command: bazel query --output=label --keep_going filter('scala.library', deps(//...))
+2026.09.30 14:27:35 WARN  Loading: 0 packages loaded
+2026.09.30 14:27:35 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:35 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:35 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:35 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:35 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:36 WARN  Loading: 28 packages loaded
+2026.09.30 14:27:37 WARN  Loading: 57 packages loaded
+2026.09.30 14:27:38 WARN  Loading: 105 packages loaded
+2026.09.30 14:27:39 WARN  Loading: 148 packages loaded
+2026.09.30 14:27:40 WARN  Loading: 173 packages loaded
+2026.09.30 14:27:41 WARN  Loading: 175 packages loaded
+2026.09.30 14:27:42 WARN  Loading: 175 packages loaded
+2026.09.30 14:27:43 WARN  Loading: 175 packages loaded
+2026.09.30 14:27:45 WARN  Loading: 175 packages loaded
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:strict_deps_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:test_that_tests_run'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:unused_dependency_checker_test'
+2026.09.30 14:27:45 WARN  ERROR: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/third_party/dependency_analyzer/src/test/BUILD:4:6: no such package '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]//': The repository '@@[unknown repo 'io_bazel_rules_scala_scala_library_2_2_12_21' requested from @@ (did you mean 'io_bazel_rules_scala_scala_library_2_12_21'?)]' could not be resolved: No repository visible as '@io_bazel_rules_scala_scala_library_2_2_12_21' from main repository and referenced by '//third_party/dependency_analyzer/src/test:scalac_dependency_test'
+2026.09.30 14:27:45 WARN  ERROR: Evaluation of query "deps(//...)" failed: errors were encountered while computing transitive closure
+2026.09.30 14:27:45 WARN  WARNING: --keep_going specified, ignoring errors. Results may be inaccurate
+2026.09.30 14:27:46 INFO  time: ran 'bazel-mbt-query' in 11s
+2026.09.30 14:27:46 WARN  bazel-mbt: bazel query failed with exit code 3, but might be unreleated.
+2026.09.30 14:27:46 INFO  mbt-import: wrote .metals/mbt.json
+2026.09.30 14:27:46 INFO  Regenerating MBT json config to latest.
+2026.09.30 14:27:46 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/bin/java -classpath /home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/virtuslab/bazel-bsp/4.0.3/bazel-bsp-4.0.3.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bsp4j/2.2.0-M2/bsp4j-2.2.0-M2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.18.2/jackson-dataformat-xml-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-kotlin/2.18.2/jackson-module-kotlin-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.48.0/proto-google-common-protos-2.48.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.12.1/gson-2.12.1.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/guava/guava/33.3.1-android/guava-33.3.1-android.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/4.29.3/protobuf-java-4.29.3.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-cli/commons-cli/1.9.0/commons-cli-1.9.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/semconv/opentelemetry-semconv/1.30.0-rc.1/opentelemetry-semconv-1.30.0-rc.1.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-api/1.47.0/opentelemetry-api-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-otlp/1.47.0/opentelemetry-exporter-otlp-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-extension-kotlin/1.47.0/opentelemetry-extension-kotlin-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-trace/1.47.0/opentelemetry-sdk-trace-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk/1.47.0/opentelemetry-sdk-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.24.3/log4j-core-2.24.3.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/velocity/velocity-engine-core/2.4.1/velocity-engine-core-2.4.1.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.24.0/org.eclipse.lsp4j.jsonrpc-0.24.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.9.0/kotlinx-coroutines-core-jvm-1.9.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.9.0/kotlinx-coroutines-core-1.9.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.generator/0.20.1/org.eclipse.lsp4j.generator-0.20.1.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/codehaus/woodstox/stax2-api/4.2.2/stax2-api-4.2.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/woodstox/woodstox-core/7.0.0/woodstox-core-7.0.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.8.10/kotlin-reflect-1.8.10.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-context/1.47.0/opentelemetry-context-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-metrics/1.47.0/opentelemetry-sdk-metrics-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-logs/1.47.0/opentelemetry-sdk-logs-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-otlp-common/1.47.0/opentelemetry-exporter-otlp-common-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-sender-okhttp/1.47.0/opentelemetry-exporter-sender-okhttp-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.47.0/opentelemetry-sdk-extension-autoconfigure-spi-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.10/kotlin-stdlib-2.1.10.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-common/1.47.0/opentelemetry-sdk-common-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib/2.28.0/org.eclipse.xtend.lib-2.28.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-common/1.47.0/opentelemetry-exporter-common-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtext/org.eclipse.xtext.xbase.lib/2.28.0/org.eclipse.xtext.xbase.lib-2.28.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib.macro/2.28.0/org.eclipse.xtend.lib.macro-2.28.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.9.10/kotlin-stdlib-jdk8-1.9.10.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.9.10/kotlin-stdlib-jdk7-1.9.10.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar org.jetbrains.bsp.bazel.install.Install -t //...
+2026.09.30 14:27:48 INFO  Bazel BSP server installed in '/home/runner/work/metals-community-build/metals-community-build/workspaces/project'.
+2026.09.30 14:27:48 INFO  time: ran 'bazelbsp bspConfig' in 0.99s
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/scala3_library_eviction' references unknown dependency module 'test.scala3_library_eviction:header_scala3-library_3-3.7.4.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/scala3_library_eviction' references unknown dependency module 'test.scala3_library_eviction:scala-library-2.13.0-RC1.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/scala3_library_eviction' references unknown dependency module 'test.scala3_library_eviction:scala-library-2.13.99.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/scala3_library_eviction' references unknown dependency module 'test.scala3_library_eviction:scala3-library_3-3.6.99.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/src/main/scala/scalarules/test/scala_import/srcjar' references unknown dependency module 'test.src.main.scala.scalarules.test.scala_import.srcjar:my-jar.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/src/main/scala/scalarules/test/scala_import/nl' references unknown dependency module 'test.src.main.scala.scalarules.test.scala_import.nl:libscala_import_never_link.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/src/main/scala/scalarules/test/resource_jars' references unknown dependency module 'test.src.main.scala.scalarules.test.resource_jars:jar_with_resources.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//specs2' references unknown dependency module 'specs2:libempty.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/src/main/scala/scalarules/test/scala_import' references unknown dependency module 'test.src.main.scala.scalarules.test.scala_import.nl:libscala_import_never_link.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/src/main/scala/scalarules/test/scala_import' references unknown dependency module 'test.src.main.scala.scalarules.test.scala_import:generic_scalalib.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/scaladoc' references unknown dependency module 'test.scaladoc:A.jar:local'.
+2026.09.30 14:27:48 WARN  mbt-build: namespace '//test/scaladoc' references unknown dependency module 'test.scaladoc:B.jar:local'.
+2026.09.30 14:27:48 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.09.30 14:27:48 INFO  Connected to Build server: MBT v2.0.0-community-build.36728348184
+2026.09.30 14:27:49 ERROR /test/src/main/scala/scalarules/test/srcjars/SourceJar2.scala
+java.nio.file.ProviderMismatchException
+	at jdk.nio.zipfs.ZipPath.checkPath(ZipPath.java:408)
+	at jdk.nio.zipfs.ZipPath.compareTo(ZipPath.java:638)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:319)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:318)
+	at java.util.concurrent.ConcurrentSkipListMap.cpr(ConcurrentSkipListMap.java:393)
+	at java.util.concurrent.ConcurrentSkipListMap.doPut(ConcurrentSkipListMap.java:646)
+	at java.util.concurrent.ConcurrentSkipListMap.putIfAbsent(ConcurrentSkipListMap.java:1787)
+	at java.util.concurrent.ConcurrentSkipListSet.add(ConcurrentSkipListSet.java:243)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1(MbtWorkspaceSymbolProvider.scala:1148)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1$adapted(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.collection.immutable.List.foreach(List.scala:323)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.addDocumentToPackages(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.putDocument(MbtWorkspaceSymbolProvider.scala:1104)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.onDidChangeSymbols(MbtWorkspaceSymbolProvider.scala:486)
+	at scala.meta.internal.metals.Indexer.indexSourceFile(Indexer.scala:845)
+	at scala.meta.internal.metals.Indexer.$anonfun$indexWorkspaceSources$8(Indexer.scala:518)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1313)
+	at scala.collection.parallel.ParIterableLike$Foreach.leaf(ParIterableLike.scala:938)
+	at scala.collection.parallel.Task.$anonfun$tryLeaf$1(Tasks.scala:52)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.control.Breaks$$anon$1.catchBreak(Breaks.scala:97)
+	at scala.collection.parallel.Task.tryLeaf(Tasks.scala:55)
+	at scala.collection.parallel.Task.tryLeaf$(Tasks.scala:49)
+	at scala.collection.parallel.ParIterableLike$Foreach.tryLeaf(ParIterableLike.scala:935)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal(Tasks.scala:169)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal$(Tasks.scala:156)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.internal(Tasks.scala:304)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute(Tasks.scala:149)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute$(Tasks.scala:148)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.compute(Tasks.scala:304)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+2026.09.30 14:27:49 ERROR /Baz.java
+java.nio.file.ProviderMismatchException
+	at jdk.nio.zipfs.ZipPath.checkPath(ZipPath.java:408)
+	at jdk.nio.zipfs.ZipPath.compareTo(ZipPath.java:638)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:319)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:318)
+	at java.util.concurrent.ConcurrentSkipListMap.cpr(ConcurrentSkipListMap.java:393)
+	at java.util.concurrent.ConcurrentSkipListMap.doPut(ConcurrentSkipListMap.java:616)
+	at java.util.concurrent.ConcurrentSkipListMap.putIfAbsent(ConcurrentSkipListMap.java:1787)
+	at java.util.concurrent.ConcurrentSkipListSet.add(ConcurrentSkipListSet.java:243)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1(MbtWorkspaceSymbolProvider.scala:1148)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1$adapted(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.collection.immutable.List.foreach(List.scala:323)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.addDocumentToPackages(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.putDocument(MbtWorkspaceSymbolProvider.scala:1104)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.onDidChangeSymbols(MbtWorkspaceSymbolProvider.scala:486)
+	at scala.meta.internal.metals.Indexer.indexSourceFile(Indexer.scala:845)
+	at scala.meta.internal.metals.Indexer.$anonfun$indexWorkspaceSources$8(Indexer.scala:518)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1313)
+	at scala.collection.parallel.ParIterableLike$Foreach.leaf(ParIterableLike.scala:938)
+	at scala.collection.parallel.Task.$anonfun$tryLeaf$1(Tasks.scala:52)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.control.Breaks$$anon$1.catchBreak(Breaks.scala:97)
+	at scala.collection.parallel.Task.tryLeaf(Tasks.scala:55)
+	at scala.collection.parallel.Task.tryLeaf$(Tasks.scala:49)
+	at scala.collection.parallel.ParIterableLike$Foreach.tryLeaf(ParIterableLike.scala:935)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal(Tasks.scala:169)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal$(Tasks.scala:156)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.internal(Tasks.scala:304)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute(Tasks.scala:149)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute$(Tasks.scala:148)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.compute(Tasks.scala:304)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+2026.09.30 14:27:49 ERROR /JavaSource.java
+java.nio.file.ProviderMismatchException
+	at jdk.nio.zipfs.ZipPath.checkPath(ZipPath.java:408)
+	at jdk.nio.zipfs.ZipPath.compareTo(ZipPath.java:638)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:319)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:318)
+	at java.util.concurrent.ConcurrentSkipListMap.cpr(ConcurrentSkipListMap.java:393)
+	at java.util.concurrent.ConcurrentSkipListMap.doPut(ConcurrentSkipListMap.java:646)
+	at java.util.concurrent.ConcurrentSkipListMap.putIfAbsent(ConcurrentSkipListMap.java:1787)
+	at java.util.concurrent.ConcurrentSkipListSet.add(ConcurrentSkipListSet.java:243)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1(MbtWorkspaceSymbolProvider.scala:1148)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1$adapted(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.collection.immutable.List.foreach(List.scala:323)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.addDocumentToPackages(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.putDocument(MbtWorkspaceSymbolProvider.scala:1104)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.onDidChangeSymbols(MbtWorkspaceSymbolProvider.scala:486)
+	at scala.meta.internal.metals.Indexer.indexSourceFile(Indexer.scala:845)
+	at scala.meta.internal.metals.Indexer.$anonfun$indexWorkspaceSources$8(Indexer.scala:518)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1313)
+	at scala.collection.parallel.ParIterableLike$Foreach.leaf(ParIterableLike.scala:938)
+	at scala.collection.parallel.Task.$anonfun$tryLeaf$1(Tasks.scala:52)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.control.Breaks$$anon$1.catchBreak(Breaks.scala:97)
+	at scala.collection.parallel.Task.tryLeaf(Tasks.scala:55)
+	at scala.collection.parallel.Task.tryLeaf$(Tasks.scala:49)
+	at scala.collection.parallel.ParIterableLike$Foreach.tryLeaf(ParIterableLike.scala:935)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal(Tasks.scala:169)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal$(Tasks.scala:156)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.internal(Tasks.scala:304)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute(Tasks.scala:149)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute$(Tasks.scala:148)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.compute(Tasks.scala:304)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+2026.09.30 14:27:49 ERROR /test/src/main/scala/scalarules/test/srcjars/SourceJar1.scala
+java.nio.file.ProviderMismatchException
+	at jdk.nio.zipfs.ZipPath.checkPath(ZipPath.java:408)
+	at jdk.nio.zipfs.ZipPath.compareTo(ZipPath.java:638)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:319)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:318)
+	at java.util.concurrent.ConcurrentSkipListMap.cpr(ConcurrentSkipListMap.java:393)
+	at java.util.concurrent.ConcurrentSkipListMap.doPut(ConcurrentSkipListMap.java:646)
+	at java.util.concurrent.ConcurrentSkipListMap.putIfAbsent(ConcurrentSkipListMap.java:1787)
+	at java.util.concurrent.ConcurrentSkipListSet.add(ConcurrentSkipListSet.java:243)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1(MbtWorkspaceSymbolProvider.scala:1148)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1$adapted(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.collection.immutable.List.foreach(List.scala:323)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.addDocumentToPackages(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.putDocument(MbtWorkspaceSymbolProvider.scala:1104)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.onDidChangeSymbols(MbtWorkspaceSymbolProvider.scala:486)
+	at scala.meta.internal.metals.Indexer.indexSourceFile(Indexer.scala:845)
+	at scala.meta.internal.metals.Indexer.$anonfun$indexWorkspaceSources$8(Indexer.scala:518)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1313)
+	at scala.collection.parallel.ParIterableLike$Foreach.leaf(ParIterableLike.scala:938)
+	at scala.collection.parallel.Task.$anonfun$tryLeaf$1(Tasks.scala:52)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.control.Breaks$$anon$1.catchBreak(Breaks.scala:97)
+	at scala.collection.parallel.Task.tryLeaf(Tasks.scala:55)
+	at scala.collection.parallel.Task.tryLeaf$(Tasks.scala:49)
+	at scala.collection.parallel.ParIterableLike$Foreach.tryLeaf(ParIterableLike.scala:935)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal(Tasks.scala:169)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal$(Tasks.scala:156)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.internal(Tasks.scala:304)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute(Tasks.scala:149)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute$(Tasks.scala:148)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.compute(Tasks.scala:304)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+2026.09.30 14:27:49 ERROR /ScalaSource.scala
+java.nio.file.ProviderMismatchException
+	at jdk.nio.zipfs.ZipPath.checkPath(ZipPath.java:408)
+	at jdk.nio.zipfs.ZipPath.compareTo(ZipPath.java:638)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:319)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:318)
+	at java.util.concurrent.ConcurrentSkipListMap.cpr(ConcurrentSkipListMap.java:393)
+	at java.util.concurrent.ConcurrentSkipListMap.doPut(ConcurrentSkipListMap.java:646)
+	at java.util.concurrent.ConcurrentSkipListMap.putIfAbsent(ConcurrentSkipListMap.java:1787)
+	at java.util.concurrent.ConcurrentSkipListSet.add(ConcurrentSkipListSet.java:243)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1(MbtWorkspaceSymbolProvider.scala:1148)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1$adapted(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.collection.immutable.List.foreach(List.scala:323)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.addDocumentToPackages(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.putDocument(MbtWorkspaceSymbolProvider.scala:1104)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.onDidChangeSymbols(MbtWorkspaceSymbolProvider.scala:486)
+	at scala.meta.internal.metals.Indexer.indexSourceFile(Indexer.scala:845)
+	at scala.meta.internal.metals.Indexer.$anonfun$indexWorkspaceSources$8(Indexer.scala:518)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1313)
+	at scala.collection.parallel.ParIterableLike$Foreach.leaf(ParIterableLike.scala:938)
+	at scala.collection.parallel.Task.$anonfun$tryLeaf$1(Tasks.scala:52)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.control.Breaks$$anon$1.catchBreak(Breaks.scala:97)
+	at scala.collection.parallel.Task.tryLeaf(Tasks.scala:55)
+	at scala.collection.parallel.Task.tryLeaf$(Tasks.scala:49)
+	at scala.collection.parallel.ParIterableLike$Foreach.tryLeaf(ParIterableLike.scala:935)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal(Tasks.scala:169)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal$(Tasks.scala:156)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.internal(Tasks.scala:304)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute(Tasks.scala:149)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute$(Tasks.scala:148)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.compute(Tasks.scala:304)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+2026.09.30 14:27:49 ERROR /JavaSource.java
+java.nio.file.ProviderMismatchException
+	at jdk.nio.zipfs.ZipPath.checkPath(ZipPath.java:408)
+	at jdk.nio.zipfs.ZipPath.compareTo(ZipPath.java:638)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:319)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider$$anon$1.compare(MbtWorkspaceSymbolProvider.scala:318)
+	at java.util.concurrent.ConcurrentSkipListMap.cpr(ConcurrentSkipListMap.java:393)
+	at java.util.concurrent.ConcurrentSkipListMap.doPut(ConcurrentSkipListMap.java:646)
+	at java.util.concurrent.ConcurrentSkipListMap.putIfAbsent(ConcurrentSkipListMap.java:1787)
+	at java.util.concurrent.ConcurrentSkipListSet.add(ConcurrentSkipListSet.java:243)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1(MbtWorkspaceSymbolProvider.scala:1148)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.$anonfun$addDocumentToPackages$1$adapted(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.collection.immutable.List.foreach(List.scala:323)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.addDocumentToPackages(MbtWorkspaceSymbolProvider.scala:1143)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.putDocument(MbtWorkspaceSymbolProvider.scala:1104)
+	at scala.meta.internal.metals.mbt.MbtWorkspaceSymbolProvider.onDidChangeSymbols(MbtWorkspaceSymbolProvider.scala:486)
+	at scala.meta.internal.metals.Indexer.indexSourceFile(Indexer.scala:845)
+	at scala.meta.internal.metals.Indexer.$anonfun$indexWorkspaceSources$8(Indexer.scala:518)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1313)
+	at scala.collection.parallel.ParIterableLike$Foreach.leaf(ParIterableLike.scala:938)
+	at scala.collection.parallel.Task.$anonfun$tryLeaf$1(Tasks.scala:52)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.control.Breaks$$anon$1.catchBreak(Breaks.scala:97)
+	at scala.collection.parallel.Task.tryLeaf(Tasks.scala:55)
+	at scala.collection.parallel.Task.tryLeaf$(Tasks.scala:49)
+	at scala.collection.parallel.ParIterableLike$Foreach.tryLeaf(ParIterableLike.scala:935)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal(Tasks.scala:169)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.internal$(Tasks.scala:156)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.internal(Tasks.scala:304)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute(Tasks.scala:149)
+	at scala.collection.parallel.AdaptiveWorkStealingTasks$AWSTWrappedTask.compute$(Tasks.scala:148)
+	at scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks$AWSFJTWrappedTask.compute(Tasks.scala:304)
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+2026.09.30 14:27:51 ERROR Error downloading Dependency(org.scalameta:mtags_2.11.12, 2.0.0-community-build.36728348184, Configuration(), Set(), Publication(, Type(), Extension(), Classifier()), false, true)
+coursier.error.ResolutionError$CantDownloadModule: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+  not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: /home/runner/.m2/repository/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+	at coursier.Resolve$.$anonfun$validate$2(Resolve.scala:537)
+	at scala.collection.immutable.List.map(List.scala:236)
+	at scala.collection.immutable.List.map(List.scala:79)
+	at coursier.Resolve$.validate(Resolve.scala:531)
+	at coursier.Resolve.validate0$1(Resolve.scala:233)
+	at coursier.Resolve.$anonfun$ioWithConflicts0$8(Resolve.scala:284)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1(Task.scala:14)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1$adapted(Task.scala:14)
+	at coursier.util.Task$.wrap(Task.scala:82)
+	at coursier.util.Task$.$anonfun$flatMap$2(Task.scala:14)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2026.09.30 14:27:51 INFO  Using coursier binary at /home/runner/.metals/cs
+2026.09.30 14:27:51 INFO  Running coursier with command /home/runner/.metals/cs, using it to fetch dependency
+2026.09.30 14:27:51 ERROR Resolution error: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+2026.09.30 14:27:51 ERROR   not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+2026.09.30 14:27:51 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+2026.09.30 14:27:51 ERROR Error downloading Dependency(org.scalameta:mtags_2.11.12, 2.0.0-community-build.36728348184, Configuration(), Set(), Publication(, Type(), Extension(), Classifier()), false, true)
+coursier.error.ResolutionError$CantDownloadModule: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+  not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: /home/runner/.m2/repository/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+	at coursier.Resolve$.$anonfun$validate$2(Resolve.scala:537)
+	at scala.collection.immutable.List.map(List.scala:236)
+	at scala.collection.immutable.List.map(List.scala:79)
+	at coursier.Resolve$.validate(Resolve.scala:531)
+	at coursier.Resolve.validate0$1(Resolve.scala:233)
+	at coursier.Resolve.$anonfun$ioWithConflicts0$8(Resolve.scala:284)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1(Task.scala:14)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1$adapted(Task.scala:14)
+	at coursier.util.Task$.wrap(Task.scala:82)
+	at coursier.util.Task$.$anonfun$flatMap$2(Task.scala:14)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2026.09.30 14:27:51 INFO  Using coursier binary at /home/runner/.metals/cs
+2026.09.30 14:27:51 INFO  Running coursier with command /home/runner/.metals/cs, using it to fetch dependency
+2026.09.30 14:27:51 ERROR Resolution error: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+2026.09.30 14:27:51 ERROR   not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+2026.09.30 14:27:51 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+2026.09.30 14:27:52 ERROR Error downloading Dependency(org.scalameta:mtags_2.11.12, 2.0.0-community-build.36728348184, Configuration(), Set(), Publication(, Type(), Extension(), Classifier()), false, true)
+coursier.error.ResolutionError$CantDownloadModule: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+  not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: /home/runner/.m2/repository/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+	at coursier.Resolve$.$anonfun$validate$2(Resolve.scala:537)
+	at scala.collection.immutable.List.map(List.scala:236)
+	at scala.collection.immutable.List.map(List.scala:79)
+	at coursier.Resolve$.validate(Resolve.scala:531)
+	at coursier.Resolve.validate0$1(Resolve.scala:233)
+	at coursier.Resolve.$anonfun$ioWithConflicts0$8(Resolve.scala:284)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1(Task.scala:14)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1$adapted(Task.scala:14)
+	at coursier.util.Task$.wrap(Task.scala:82)
+	at coursier.util.Task$.$anonfun$flatMap$2(Task.scala:14)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2026.09.30 14:27:52 INFO  Using coursier binary at /home/runner/.metals/cs
+2026.09.30 14:27:52 INFO  Running coursier with command /home/runner/.metals/cs, using it to fetch dependency
+2026.09.30 14:27:52 ERROR Resolution error: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+2026.09.30 14:27:52 ERROR   not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+2026.09.30 14:27:52 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+2026.09.30 14:27:52 ERROR Error downloading Dependency(org.scalameta:mtags_2.11.12, 2.0.0-community-build.36728348184, Configuration(), Set(), Publication(, Type(), Extension(), Classifier()), false, true)
+coursier.error.ResolutionError$CantDownloadModule: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+  not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: /home/runner/.m2/repository/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+	at coursier.Resolve$.$anonfun$validate$2(Resolve.scala:537)
+	at scala.collection.immutable.List.map(List.scala:236)
+	at scala.collection.immutable.List.map(List.scala:79)
+	at coursier.Resolve$.validate(Resolve.scala:531)
+	at coursier.Resolve.validate0$1(Resolve.scala:233)
+	at coursier.Resolve.$anonfun$ioWithConflicts0$8(Resolve.scala:284)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1(Task.scala:14)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1$adapted(Task.scala:14)
+	at coursier.util.Task$.wrap(Task.scala:82)
+	at coursier.util.Task$.$anonfun$flatMap$2(Task.scala:14)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2026.09.30 14:27:52 INFO  Using coursier binary at /home/runner/.metals/cs
+2026.09.30 14:27:52 INFO  Running coursier with command /home/runner/.metals/cs, using it to fetch dependency
+2026.09.30 14:27:53 ERROR Resolution error: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+2026.09.30 14:27:53 ERROR   not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+2026.09.30 14:27:53 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+2026.09.30 14:27:53 ERROR Error downloading Dependency(org.scalameta:mtags_2.11.12, 2.0.0-community-build.36728348184, Configuration(), Set(), Publication(, Type(), Extension(), Classifier()), false, true)
+coursier.error.ResolutionError$CantDownloadModule: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+  not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: /home/runner/.m2/repository/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+	at coursier.Resolve$.$anonfun$validate$2(Resolve.scala:537)
+	at scala.collection.immutable.List.map(List.scala:236)
+	at scala.collection.immutable.List.map(List.scala:79)
+	at coursier.Resolve$.validate(Resolve.scala:531)
+	at coursier.Resolve.validate0$1(Resolve.scala:233)
+	at coursier.Resolve.$anonfun$ioWithConflicts0$8(Resolve.scala:284)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1(Task.scala:14)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1$adapted(Task.scala:14)
+	at coursier.util.Task$.wrap(Task.scala:82)
+	at coursier.util.Task$.$anonfun$flatMap$2(Task.scala:14)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2026.09.30 14:27:53 INFO  Using coursier binary at /home/runner/.metals/cs
+2026.09.30 14:27:53 INFO  Running coursier with command /home/runner/.metals/cs, using it to fetch dependency
+2026.09.30 14:27:53 ERROR Resolution error: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+2026.09.30 14:27:53 ERROR   not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+2026.09.30 14:27:53 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+2026.09.30 14:27:53 ERROR Error downloading Dependency(org.scalameta:mtags_2.11.12, 2.0.0-community-build.36728348184, Configuration(), Set(), Publication(, Type(), Extension(), Classifier()), false, true)
+coursier.error.ResolutionError$CantDownloadModule: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+  not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: /home/runner/.m2/repository/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+	at coursier.Resolve$.$anonfun$validate$2(Resolve.scala:537)
+	at scala.collection.immutable.List.map(List.scala:236)
+	at scala.collection.immutable.List.map(List.scala:79)
+	at coursier.Resolve$.validate(Resolve.scala:531)
+	at coursier.Resolve.validate0$1(Resolve.scala:233)
+	at coursier.Resolve.$anonfun$ioWithConflicts0$8(Resolve.scala:284)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1(Task.scala:14)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1$adapted(Task.scala:14)
+	at coursier.util.Task$.wrap(Task.scala:82)
+	at coursier.util.Task$.$anonfun$flatMap$2(Task.scala:14)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2026.09.30 14:27:53 INFO  Using coursier binary at /home/runner/.metals/cs
+2026.09.30 14:27:53 INFO  Running coursier with command /home/runner/.metals/cs, using it to fetch dependency
+2026.09.30 14:27:54 ERROR Resolution error: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+2026.09.30 14:27:54 ERROR   not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+2026.09.30 14:27:54 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+2026.09.30 14:27:54 ERROR Failed to resolve mtags for 2.11.12
+coursier.error.ResolutionError$CantDownloadModule: Error downloading org.scalameta:mtags_2.11.12:2.0.0-community-build.36728348184
+  not found: /home/runner/.ivy2/local/org.scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: /home/runner/.m2/repository/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.11.12/2.0.0-community-build.36728348184/mtags_2.11.12-2.0.0-community-build.36728348184.pom
+	at coursier.Resolve$.$anonfun$validate$2(Resolve.scala:537)
+	at scala.collection.immutable.List.map(List.scala:236)
+	at scala.collection.immutable.List.map(List.scala:79)
+	at coursier.Resolve$.validate(Resolve.scala:531)
+	at coursier.Resolve.validate0$1(Resolve.scala:233)
+	at coursier.Resolve.$anonfun$ioWithConflicts0$8(Resolve.scala:284)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1(Task.scala:14)
+	at coursier.util.Task$.$anonfun$flatMap$extension$1$adapted(Task.scala:14)
+	at coursier.util.Task$.wrap(Task.scala:82)
+	at coursier.util.Task$.$anonfun$flatMap$2(Task.scala:14)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2026.09.30 14:27:54 WARN  unsupported Scala 2.11.12
+2026.09.30 14:27:54 WARN  unsupported Scala 2.11.12
+2026.09.30 14:27:54 WARN  unsupported Scala 2.11.12
+2026.09.30 14:27:56 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.09.30 14:28:03 INFO  Dependency modules empty, falling back to classpath jars
+2026.09.30 14:28:03 INFO  time: indexed workspace in 15s
+2026.09.30 14:28:03 WARN  unsupported Scala 2.11.12
+2026.09.30 14:28:03 WARN  unsupported Scala 2.11.12
+2026.09.30 14:28:03 WARN  unsupported Scala 2.11.12
+2026.09.30 14:28:03 WARN  unsupported Scala 2.11.12
+2026.09.30 14:28:03 WARN  unsupported Scala 2.11.12
+2026.09.30 14:28:03 WARN  unsupported Scala 2.11.12
+2026.09.30 14:28:04 WARN  unsupported Scala 2.11.12
+2026.09.30 14:28:04 INFO  time: semanticdb:testDocument:toTextDocument in 473.6 ms
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Test#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Test#: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1Test#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Test#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Test.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Test.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1LspSuite#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1LspSuite#: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1Test.: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1LspSuite#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1LspSuite.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Test.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1LspSuite.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Suite#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Suite#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Suite.: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1LspSuite.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1LspSuite#: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1Suite#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Spec#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1LspSuite.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Suite#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Suite.: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1Suite.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Spec#: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1Spec#: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1Spec.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Spec.: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1Tests#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Spec.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Suite.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Tests#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Tests#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Spec#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Tests.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Tests.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/TestA1#: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/A1Tests.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Spec.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/TestA1#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Tests#: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/TestA1#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/A1Tests.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/TestA1#: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/TestA1.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/TestA1.: found 0 definitions
+2026.09.30 14:28:03 INFO  MBT fallback for symbol coverage_filename_encoding/TestA1.: found 0 definitions
+2026.09.30 14:28:04 INFO  MBT fallback for symbol coverage_filename_encoding/TestA1.: found 0 definitions
+2026.09.30 14:28:05 INFO  Shutting down server
+2026.09.30 14:28:05 INFO  Memory monitor stopped
+2026.09.30 14:28:05 INFO  shutting down Metals
+2026.09.30 14:28:04 INFO  Shut down connection with build server.
+2026.09.30 14:28:05 INFO  Exiting server

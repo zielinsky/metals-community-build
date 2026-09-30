@@ -1,0 +1,23 @@
+{
+  "project": "selenium",
+  "projectName": "Selenium",
+  "buildTool": "bazel",
+  "repository": "SeleniumHQ/selenium",
+  "ref": "trunk",
+  "status": "failed",
+  "scenarios": [
+    {
+      "id": "import-each-build-target",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 113580
+    },
+    {
+      "id": "debug-json-test",
+      "kind": "java-debug-test",
+      "status": "failed",
+      "durationMs": 128662,
+      "error": "Test gutter did not appear for 'canReadBooleans'\nWait timed out after 120106ms"
+    }
+  ]
+}

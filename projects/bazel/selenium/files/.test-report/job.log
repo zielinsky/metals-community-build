@@ -1,0 +1,592 @@
+
+> metals-community-build@0.1.0 test:e2e:prepared
+> node out/scripts/run-project.js
+
+
+=== bazel / selenium / 2 scenario(s) ===
+
+tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has become inaccessible: No such file or directory
+tail: directory containing watched file was removed
+tail: inotify cannot be used, reverting to polling
+Loading mocha configuration from /home/runner/work/metals-community-build/metals-community-build/.mocharc.json
+
+
+Detected user defined code settings
+Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
+Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
+Browser ready in 3350 ms
+Launching tests...
+  bazel / selenium
+[community-build] 2026-09-30T14:26:57.431Z Starting bazel / selenium / import-each-build-target
+[community-build] 2026-09-30T14:26:57.431Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-09-30T14:26:57.431Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/test/org/openqa/selenium/json/JsonTest.java
+[community-build] 2026-09-30T14:26:59.514Z Waiting for VS Code to open the requested file
+[community-build] 2026-09-30T14:27:01.307Z VS Code opened JsonTest.java
+[community-build] 2026-09-30T14:27:01.608Z Captured screenshot: import-each-build-target/001-file-opened.png
+[community-build] 2026-09-30T14:27:01.608Z Waiting for the build server choice notification
+tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
+[metals] 2026.09.30 14:27:04 INFO  Started: Metals version 2.0.0-community-build.36728348184 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+[metals] 2026.09.30 14:27:04 INFO  Memory monitor started
+[metals] 2026.09.30 14:27:04 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-09-30T14:27:06.405Z Notification appeared: New bazel workspace detected. Which build server would you like to use?
+[community-build] 2026-09-30T14:27:06.613Z Captured screenshot: import-each-build-target/002-build-server-prompt.png
+[community-build] 2026-09-30T14:27:06.614Z Clicking notification action: Use MBT
+[community-build] 2026-09-30T14:27:06.865Z Clicked notification action: Use MBT
+[metals] 2026.09.30 14:27:06 INFO  mbt-v2: indexing 1504 files
+[community-build] 2026-09-30T14:27:07.897Z Captured screenshot: import-each-build-target/003-mbt-selected.png
+[community-build] 2026-09-30T14:27:08.586Z Notification appeared: How should Metals group Bazel targets in the MBT build?
+[community-build] 2026-09-30T14:27:08.725Z VS Code status bar reports that the project is importing
+[community-build] 2026-09-30T14:27:09.131Z Captured screenshot: import-each-build-target/004-namespace-mode-prompt.png
+[community-build] 2026-09-30T14:27:09.131Z Clicking notification action: Each build target
+[community-build] 2026-09-30T14:27:09.507Z Clicked notification action: Each build target
+[metals] 2026.09.30 14:27:09 INFO  Running command: bazel info output_base
+[community-build] 2026-09-30T14:27:11.003Z Captured screenshot: import-each-build-target/005-namespace-mode-selected.png
+[community-build] 2026-09-30T14:27:11.003Z Waiting for the VS Code importing status to finish
+[metals] 2026.09.30 14:27:12 INFO  time: mbt-v2 loaded index for 1504 files in 6.94s
+[metals] 2026.09.30 14:27:15 INFO  time: ran 'bazel-info' in 6.12s
+[metals] 2026.09.30 14:27:15 INFO  Running command: bazel info bazel-bin
+[metals] 2026.09.30 14:27:23 INFO  time: ran 'bazel-info' in 7.93s
+[metals] 2026.09.30 14:27:23 INFO  bazel-mbt: found maven hubs: 
+[metals] 2026.09.30 14:27:23 INFO  Found maven_install.json files: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/maven_install.json
+[metals] 2026.09.30 14:27:23 INFO  bazel-mbt: processing maven lock file: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/maven_install.json
+[metals] 2026.09.30 14:27:24 INFO  Running command: bazel query --output=label --keep_going kind('scala_library|java_library|scala_binary|java_binary|scala_test|java_test|scala_import|java_import', set(//...))
+[metals] 2026.09.30 14:27:24 WARN  Loading: 0 packages loaded
+[metals] 2026.09.30 14:27:25 WARN  Loading: 67 packages loaded
+[metals] 2026.09.30 14:27:25 WARN      currently loading: third_party/dotnet/devtools/src/generator ... (240 packages)
+[metals] 2026.09.30 14:27:25 WARN  Loading: 293 packages loaded
+[metals] 2026.09.30 14:27:26 WARN      currently loading: third_party/dotnet/devtools/src/generator ... (14 packages)
+[metals] 2026.09.30 14:27:26 WARN  Loading: 303 packages loaded
+[metals] 2026.09.30 14:27:27 WARN      currently loading: scripts ... (4 packages)
+[metals] 2026.09.30 14:27:27 WARN  Loading: 305 packages loaded
+[metals] 2026.09.30 14:27:27 WARN      currently loading: rust/tests ... (2 packages)
+[metals] 2026.09.30 14:27:29 INFO  time: ran 'bazel-mbt-query' in 4.88s
+[metals] 2026.09.30 14:27:29 INFO  bazel-mbt: found 1508 targets
+[metals] 2026.09.30 14:27:29 INFO  Running command: bazel query --output=xml --keep_going --query_file /tmp/metals-bazel-query-10546653181110206134.txt
+[metals] 2026.09.30 14:27:29 WARN  Loading: 0 packages loaded
+[metals] 2026.09.30 14:27:30 WARN  Loading: 58 packages loaded
+[metals] 2026.09.30 14:27:30 WARN      currently loading: @@llvm++llvm+llvm-project//llvm ... (2 packages)
+[metals] 2026.09.30 14:27:31 WARN  Loading: 101 packages loaded
+[metals] 2026.09.30 14:27:32 WARN  Loading: 192 packages loaded
+[metals] 2026.09.30 14:27:32 WARN  Loading: 295 packages loaded
+[metals] 2026.09.30 14:27:33 WARN      currently loading: @@llvm+//toolchain
+[metals] 2026.09.30 14:27:35 WARN  Loading: 398 packages loaded
+[metals] 2026.09.30 14:27:35 WARN      currently loading: @@rules_rs++crate+crates__filetime_creation-0.2.0//
+[metals] 2026.09.30 14:27:36 WARN  Loading: 518 packages loaded
+[metals] 2026.09.30 14:27:36 WARN      currently loading: @@rules_rs++crate+crates__bzip2-0.4.4//
+[metals] 2026.09.30 14:27:37 WARN  Loading: 656 packages loaded
+[metals] 2026.09.30 14:27:37 WARN      currently loading: @@rules_java++toolchains+remote_java_tools//
+[metals] 2026.09.30 14:27:38 WARN  Loading: 690 packages loaded
+[metals] 2026.09.30 14:27:38 WARN      currently loading: @@rules_jvm_external++maven+com_google_errorprone_error_prone_annotations_2_36_0//file
+[metals] 2026.09.30 14:27:39 WARN  Loading: 926 packages loaded
+[metals] 2026.09.30 14:27:40 WARN  Loading: 926 packages loaded
+[metals] 2026.09.30 14:27:41 WARN  Loading: 926 packages loaded
+[metals] 2026.09.30 14:27:42 WARN  Loading: 926 packages loaded
+[metals] 2026.09.30 14:27:43 WARN  Loading: 926 packages loaded
+[metals] 2026.09.30 14:27:45 WARN  Loading: 926 packages loaded
+[metals] 2026.09.30 14:27:48 WARN  Loading: 927 packages loaded
+[metals] 2026.09.30 14:28:00 WARN  Loading: 928 packages loaded
+[metals] 2026.09.30 14:28:03 INFO  time: ran 'bazel-mbt-query' in 34s
+[metals] 2026.09.30 14:28:18 INFO  bazel-mbt: import targets: HashSet(//javascript/grid-ui/public:public, //javascript/grid-ui:react_jar, //java/src/org/openqa/selenium:manifest)
+[metals] 2026.09.30 14:28:18 WARN  bazel-mbt: could not resolve jar for label //java/src/org/openqa/selenium:manifest-entries.jar
+[metals] 2026.09.30 14:28:18 WARN  bazel-mbt: could not resolve jar for label //java/src/org/openqa/selenium:version.jar
+[metals] 2026.09.30 14:28:18 WARN  bazel-mbt: could not resolve jar for label //javascript/grid-ui/public:build-zip.jar
+[metals] 2026.09.30 14:28:18 WARN  bazel-mbt: could not resolve jar for label //javascript/grid-ui:add-missing-dirs
+[metals] 2026.09.30 14:28:20 INFO  Running command: bazel query --output=label --keep_going filter('scala.library', deps(//...))
+[metals] 2026.09.30 14:28:20 WARN  Loading: 0 packages loaded
+[metals] 2026.09.30 14:28:20 WARN  DEBUG: /home/runner/.bazel/external/rules_jvm_external+/private/rules/coursier.bzl:693:18: NOTE: rules_jvm_external_deps_install.json was generated by an older version of rules_jvm_external and needs to be regenerated. To update, run 'bazel run @rules_jvm_external_deps//:pin'.
+[metals] 2026.09.30 14:28:21 WARN  Loading: 118 packages loaded
+[metals] 2026.09.30 14:28:21 WARN      currently loading: @@rules_dotnet+//dotnet
+[metals] 2026.09.30 14:28:22 WARN  Loading: 366 packages loaded
+[metals] 2026.09.30 14:28:22 WARN      currently loading: @@rules_dotnet+//dotnet
+[metals] 2026.09.30 14:28:23 WARN  Loading: 456 packages loaded
+[metals] 2026.09.30 14:28:24 WARN  Loading: 537 packages loaded
+[metals] 2026.09.30 14:28:24 WARN      currently loading: @@rules_python++pip+py_dev_requirements_312_trio_websocket// ... (3 packages)
+[metals] 2026.09.30 14:28:25 WARN  Loading: 640 packages loaded
+[metals] 2026.09.30 14:28:25 WARN      currently loading: @@rules_python++pip+py_dev_requirements_314_pywin32_ctypes//
+[metals] 2026.09.30 14:28:27 WARN  Loading: 881 packages loaded
+[metals] 2026.09.30 14:28:27 WARN      currently loading: @@rules_python++pip+py_dev_requirements_310_accessible_pygments// ... (3 packages)
+[metals] 2026.09.30 14:28:28 WARN  Loading: 1016 packages loaded
+[metals] 2026.09.30 14:28:28 WARN      currently loading: @@rules_python++pip+py_dev_requirements_314_imagesize//
+[metals] 2026.09.30 14:28:29 WARN  Loading: 1379 packages loaded
+[metals] 2026.09.30 14:28:29 WARN      currently loading: @@rules_python++pip+py_dev_requirements_314_id//
+[metals] 2026.09.30 14:28:30 WARN  Loading: 1831 packages loaded
+[metals] 2026.09.30 14:28:30 WARN      currently loading: @@rules_python++pip+py_dev_requirements_312_id//
+[metals] 2026.09.30 14:28:31 WARN  Loading: 1866 packages loaded
+[metals] 2026.09.30 14:28:33 WARN  Loading: 1866 packages loaded
+[metals] 2026.09.30 14:28:33 WARN  DEBUG: Repo 'rules_ruby++ruby+bundle' indicated that a canonical reproducible form can be obtained by modifying arguments jar_checksums = {"com.dylibso.chicory:compiler:1.7.5": "1a54cc0b3a79aa914f7f2fa5e7b7ed902702f3ce7aa155ec0cfc74b386a97377", "com.dylibso.chicory:wasi:1.7.5": "52f68c155b1dc4ff6df9a6b9eb84201029886561e87bc77a858bd14333c1cfbc"}
+[metals] 2026.09.30 14:28:33 WARN  DEBUG: Repo rules_ruby++ruby+bundle defined by rule rb_bundle_fetch in @@rules_ruby+//ruby/private:bundle_fetch.bzl
+[metals] 2026.09.30 14:28:33 WARN  INFO: Empty results
+[metals] 2026.09.30 14:28:33 INFO  time: ran 'bazel-mbt-query' in 13s
+[metals] 2026.09.30 14:28:33 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.09.30 14:28:33 INFO  Regenerating MBT json config to latest.
+[metals] 2026.09.30 14:28:36 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/bin/java -classpath /home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/virtuslab/bazel-bsp/4.0.3/bazel-bsp-4.0.3.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bsp4j/2.2.0-M2/bsp4j-2.2.0-M2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.18.2/jackson-dataformat-xml-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-kotlin/2.18.2/jackson-module-kotlin-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.48.0/proto-google-common-protos-2.48.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.12.1/gson-2.12.1.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/guava/guava/33.3.1-android/guava-33.3.1-android.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/4.29.3/protobuf-java-4.29.3.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-cli/commons-cli/1.9.0/commons-cli-1.9.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/semconv/opentelemetry-semconv/1.30.0-rc.1/opentelemetry-semconv-1.30.0-rc.1.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-api/1.47.0/opentelemetry-api-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-otlp/1.47.0/opentelemetry-exporter-otlp-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-extension-kotlin/1.47.0/opentelemetry-extension-kotlin-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-trace/1.47.0/opentelemetry-sdk-trace-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk/1.47.0/opentelemetry-sdk-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.24.3/log4j-core-2.24.3.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/velocity/velocity-engine-core/2.4.1/velocity-engine-core-2.4.1.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.24.0/org.eclipse.lsp4j.jsonrpc-0.24.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.9.0/kotlinx-coroutines-core-jvm-1.9.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.9.0/kotlinx-coroutines-core-1.9.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/lsp4j/org.eclipse.lsp4j.generator/0.20.1/org.eclipse.lsp4j.generator-0.20.1.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/codehaus/woodstox/stax2-api/4.2.2/stax2-api-4.2.2.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/woodstox/woodstox-core/7.0.0/woodstox-core-7.0.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.8.10/kotlin-reflect-1.8.10.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-context/1.47.0/opentelemetry-context-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-metrics/1.47.0/opentelemetry-sdk-metrics-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-logs/1.47.0/opentelemetry-sdk-logs-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-otlp-common/1.47.0/opentelemetry-exporter-otlp-common-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-sender-okhttp/1.47.0/opentelemetry-exporter-sender-okhttp-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.47.0/opentelemetry-sdk-extension-autoconfigure-spi-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.10/kotlin-stdlib-2.1.10.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-sdk-common/1.47.0/opentelemetry-sdk-common-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib/2.28.0/org.eclipse.xtend.lib-2.28.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/io/opentelemetry/opentelemetry-exporter-common/1.47.0/opentelemetry-exporter-common-1.47.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtext/org.eclipse.xtext.xbase.lib/2.28.0/org.eclipse.xtext.xbase.lib-2.28.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/eclipse/xtend/org.eclipse.xtend.lib.macro/2.28.0/org.eclipse.xtend.lib.macro-2.28.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.9.10/kotlin-stdlib-jdk8-1.9.10.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.9.10/kotlin-stdlib-jdk7-1.9.10.jar:/home/runner/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar org.jetbrains.bsp.bazel.install.Install -t //...
+[metals] 2026.09.30 14:28:37 INFO  Bazel BSP server installed in '/home/runner/work/metals-community-build/metals-community-build/workspaces/project'.
+[metals] 2026.09.30 14:28:36 INFO  time: ran 'bazelbsp bspConfig' in 0.75s
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/commands' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/commands' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/chromium' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/chromium' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/relay' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/relay' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/tracing/opentelemetry' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/tracing/opentelemetry' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/web' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/web' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/session' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/session' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/permissions' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/permissions' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/interactions' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/interactions' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/interactions' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/interactions' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support/locators' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support/locators' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/events' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/events' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/tracing/empty' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/tracing/empty' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/docker' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/docker' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/server' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/server' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/server' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/server' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/browser' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/browser' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/browser' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/browser' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/os' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/os' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/gridui' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/gridui' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/gridui' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/gridui' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools/latest' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools/latest' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/edge' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/edge' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/edge' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/edge' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/remote' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/remote' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/testing' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/testing' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/environment' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/environment' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/ui' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/ui' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/router' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/router' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/dev/selenium/tools/javadoc' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/dev/selenium/tools/javadoc' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/httpd' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/httpd' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/virtualauthenticator' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/virtualauthenticator' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/kubernetes' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/kubernetes' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/kubernetes' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/kubernetes' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/concurrent' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/concurrent' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/kubernetes' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/kubernetes' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/kubernetes' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/kubernetes' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/script' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/script' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/codec/w3c' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/codec/w3c' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/remote' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/remote' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/decorators' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/decorators' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor/redis' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor/redis' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/cli' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/cli' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/log' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/log' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/events' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/events' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/storage' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/storage' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/router' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/router' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/router' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/router' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/internal' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/internal' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor/selector' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor/selector' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/ie' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/ie' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/tracing/opentelemetry' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/tracing/opentelemetry' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/redis' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/redis' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/grid-ui' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/grid-ui' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/docker' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/docker' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/selector' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/selector' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/distributor' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/graphql' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/graphql' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/locators' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/locators' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/firefox' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/firefox' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/firefox' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/firefox' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/jdbc' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/jdbc' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/jdbc' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/jdbc' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionqueue/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionqueue/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/browsingcontext' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/browsingcontext' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/docker' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/docker' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/io' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/io' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/module' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/module' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/httpd' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/httpd' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/webdriver' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/webdriver' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/json' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/json' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/ie' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/ie' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/build' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/build' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/security' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/security' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionqueue/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionqueue/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/manager' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/manager' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support/ui' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support/ui' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/httpd' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/httpd' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/docker' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/docker' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/json' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/json' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/devtools' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/devtools' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/devtools' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/devtools' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/router/httpd' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/router/httpd' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/permissions' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/permissions' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/permissions' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/permissions' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/graphql' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/graphql' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/events/zeromq' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/events/zeromq' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/os' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/os' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/redis' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/redis' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/redis' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/redis' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/k8s' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/k8s' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/k8s' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/k8s' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/script' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/script' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/script' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/script' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/locators' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/locators' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/locators' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/locators' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/log' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/log' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/edge' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/edge' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/chrome' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/chrome' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/chrome' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/chrome' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/remote' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/remote' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/testing/drivers' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/testing/drivers' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/redis' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/redis' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/redis' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap/redis' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/tracing' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/tracing' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/chrome-driver' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/chrome-driver' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/data' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/data' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/redis' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionqueue/redis' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/http' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/http' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/jdbc' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/jdbc' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/jdbc' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/jdbc' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/grid-ui/public' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionqueue/redis' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionqueue/redis' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/network' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/network' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/data' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/node/data' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/emulation' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/emulation' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/http' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/http' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/log' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/log' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/log' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/log' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/javascript' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/javascript' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/redis' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/redis' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/internal' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/internal' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/speculation' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/speculation' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/httpd' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap/httpd' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionmap' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionqueue/httpd' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/sessionqueue/httpd' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/safari' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/safari' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/safari' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/safari' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/netty/server' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/netty/server' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/emulation' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/emulation' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/emulation' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/emulation' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/browser' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/browser' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/sessionmap' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/netty/server' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/netty/server' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support/decorators' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support/decorators' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/docker/internal' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/docker/internal' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/service' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote/service' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/firefox' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/firefox' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/input' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/input' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/input' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/input' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/security' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/security' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/chrome' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/chrome' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/data' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/data' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools/v153' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools/v153' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/network' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/network' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/network' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/network' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools/v152' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools/v152' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/relay' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/relay' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/distributor' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools/v154' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools/v154' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/atoms' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/atoms' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/events/local' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/events/local' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/storage' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/storage' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/storage' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/storage' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/webextension' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/bidi/webextension' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/web' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/web' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/config' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/config' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/remote' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/logging' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/logging' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/safari' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/safari' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/browsingcontext' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/browsingcontext' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/browsingcontext' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/browsingcontext' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/remote' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node/remote' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/testing' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/grid/testing' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support/events' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/support/events' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/chromium' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/chromium' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/speculation' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/speculation' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/speculation' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/speculation' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/component' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/component' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/webextension' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/webextension' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/webextension' references unknown dependency module 'javascript.grid-ui.public:build-zip.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/bidi/webextension' references unknown dependency module 'javascript.grid-ui:add-missing-dirs:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/net' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/net' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/grid/node' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/federatedcredentialmanagement' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/federatedcredentialmanagement' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/pagefactory' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/pagefactory' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/tracing' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/remote/tracing' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/events' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/test/org/openqa/selenium/support/events' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/concurrent' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/concurrent' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/atoms' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//javascript/atoms' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools' references unknown dependency module 'java.src.org.openqa.selenium:manifest-entries.jar:local'.
+[metals] 2026.09.30 14:28:36 WARN  mbt-build: namespace '//java/src/org/openqa/selenium/devtools' references unknown dependency module 'java.src.org.openqa.selenium:version.jar:local'.
+[metals] 2026.09.30 14:28:37 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.09.30 14:28:37 INFO  Connected to Build server: MBT v2.0.0-community-build.36728348184
+[metals] 2026.09.30 14:28:42 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.09.30 14:28:49 INFO  Dependency modules empty, falling back to classpath jars
+[metals] 2026.09.30 14:28:49 INFO  time: indexed workspace in 12s
+[community-build] 2026-09-30T14:28:50.711Z VS Code status bar reports that the project import finished
+[community-build] 2026-09-30T14:28:50.714Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[community-build] 2026-09-30T14:28:50.883Z Captured screenshot: import-each-build-target/006-mbt-imported.png
+[community-build] 2026-09-30T14:28:50.883Z MBT model contains 185 namespaces and 0 dependency modules
+[community-build] 2026-09-30T14:28:50.892Z Verified imported source: java/test/org/openqa/selenium/json/JsonTest.java via java/test/org/openqa/selenium/json/JsonTest.java
+[community-build] 2026-09-30T14:28:51.010Z Captured screenshot: import-each-build-target/007-import-verified.png
+[community-build] 2026-09-30T14:28:51.010Z Scenario passed: import-each-build-target
+    ✔ import-each-build-target (113585ms)
+[community-build] 2026-09-30T14:28:51.011Z Starting bazel / selenium / debug-json-test
+[community-build] 2026-09-30T14:28:51.011Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-09-30T14:28:51.011Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/test/org/openqa/selenium/json/JsonTest.java
+[community-build] 2026-09-30T14:28:51.045Z Waiting for VS Code to open the requested file
+[community-build] 2026-09-30T14:28:51.139Z VS Code opened JsonTest.java
+[community-build] 2026-09-30T14:28:51.243Z Captured screenshot: debug-json-test/001-file-opened.png
+[community-build] 2026-09-30T14:28:51.243Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-09-30T14:28:51.360Z Captured screenshot: debug-json-test/002-mbt-session-reused.png
+[community-build] 2026-09-30T14:28:53.045Z Added breakpoint at line 60
+[community-build] 2026-09-30T14:28:53.183Z Captured screenshot: debug-json-test/003-breakpoint-added.png
+[community-build] 2026-09-30T14:30:54.426Z Captured screenshot: debug-json-test/004-failure.png
+    1) debug-json-test
+
+Shutting down the browser
+
+  1 passing (4m)
+  1 failing
+
+  1) bazel / selenium
+       debug-json-test:
+     TimeoutError: Test gutter did not appear for 'canReadBooleans'
+Wait timed out after 120106ms
+      at /home/runner/work/metals-community-build/metals-community-build/node_modules/selenium-webdriver/lib/webdriver.js:929:22
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+
+
+[33mINFO: Screenshots of failures can be found in: /home/runner/work/metals-community-build/metals-community-build/.test-resources/screenshots/20260930T142654
+[0m
+[metals] 2026.09.30 14:31:00 INFO  Shutting down server
+[metals] 2026.09.30 14:31:00 INFO  Memory monitor stopped
+[metals] 2026.09.30 14:31:00 INFO  shutting down Metals
+[metals] 2026.09.30 14:31:00 INFO  Shut down connection with build server.
+[metals] 2026.09.30 14:31:00 INFO  Exiting server

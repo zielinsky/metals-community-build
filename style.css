@@ -1,0 +1,51 @@
+:root { color-scheme: light dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+body { margin: 0; background: #10131a; color: #e8ecf3; }
+main { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0 80px; }
+a { color: #8db8ff; }
+header { margin: 24px 0 40px; }
+h1 { margin: 4px 0 12px; font-size: clamp(2rem, 5vw, 4rem); }
+h2 { margin-top: 42px; }
+.eyebrow { color: #94a3b8; font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.card { display: grid; gap: 8px; padding: 20px; border: 1px solid #30394a; border-radius: 14px; background: #171c26; color: inherit; text-decoration: none; }
+.card:hover { border-color: #6f9fea; transform: translateY(-1px); }
+.card.result-failed { border-color: #8f3544; }
+.card.result-unknown { border-color: #76652c; }
+.card.result-skipped { border-color: #4a5265; }
+.card strong { font-size: 1.35rem; }
+.status { display: inline-block; width: fit-content; padding: 3px 9px; border-radius: 999px; font-size: .75rem; font-weight: 800; text-transform: uppercase; }
+.status.large { padding: 6px 12px; font-size: .9rem; }
+.passed { background: #173b2a; color: #72e6a3; }
+.failed { background: #481e25; color: #ff9aa9; }
+.unknown { background: #3a3421; color: #f5d778; }
+.skipped { background: #2a3040; color: #a6b0c3; }
+.muted { color: #94a3b8; }
+.metrics { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+.metrics span { padding: 9px 12px; border: 1px solid #30394a; border-radius: 9px; background: #171c26; }
+.metrics strong { margin-right: 4px; font-size: 1.1rem; }
+.scenarios { display: grid; gap: 10px; padding: 0; list-style: none; }
+.scenarios li { padding: 12px; border: 1px solid #30394a; border-radius: 10px; }
+.scenario-header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.screenshot-viewer { margin-top: 12px; border: 1px solid #30394a; border-radius: 10px; background: #171c26; }
+.screenshot-viewer summary { padding: 14px; cursor: pointer; font-weight: 700; }
+.screenshot-viewer .gallery { padding: 0 12px 12px; }
+.screenshot-viewer .muted { padding: 0 14px 14px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+figure { margin: 0; padding: 10px; border: 1px solid #30394a; border-radius: 10px; background: #171c26; }
+figure img { display: block; width: 100%; border-radius: 6px; }
+figcaption { margin-top: 8px; color: #aeb8c8; font-size: .78rem; overflow-wrap: anywhere; }
+.lightbox { width: 100vw; max-width: none; height: 100vh; max-height: none; padding: 0; border: 0; background: rgba(5, 7, 11, .96); color: #e8ecf3; }
+.lightbox::backdrop { background: rgba(5, 7, 11, .9); }
+.lightbox[open] { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 16px; }
+.lightbox figure { display: grid; place-items: center; min-width: 0; height: calc(100vh - 64px); padding: 0; border: 0; background: none; }
+.lightbox figure img { width: auto; max-width: 100%; max-height: calc(100vh - 110px); object-fit: contain; }
+.lightbox figcaption { text-align: center; }
+.lightbox button { width: 48px; height: 48px; margin: 12px; border: 1px solid #5b6577; border-radius: 999px; background: #171c26; color: #e8ecf3; font-size: 1.6rem; cursor: pointer; }
+.lightbox button:hover { background: #293246; border-color: #8db8ff; }
+.lightbox-close { position: fixed; top: 8px; right: 8px; z-index: 1; }
+.lightbox button[hidden] { visibility: hidden; }
+.log-viewer { margin: 12px 0; border: 1px solid #30394a; border-radius: 10px; background: #171c26; }
+.log-viewer summary { padding: 14px; cursor: pointer; font-weight: 700; }
+.log-viewer p { padding: 0 14px; }
+pre { max-height: 70vh; overflow: auto; margin: 0; padding: 16px; border-top: 1px solid #30394a; background: #0b0e13; color: #d5dbea; font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+code { padding: 2px 5px; border-radius: 4px; background: #242b38; }
