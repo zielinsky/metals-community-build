@@ -180,7 +180,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: read
-      contents: read
+      contents: write
       pages: write
       id-token: write
     outputs:
@@ -226,6 +226,31 @@ jobs:
           path: report-site
           include-hidden-files: true
           retention-days: 30
+
+      - name: Publish the report to the results branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$remote" "$RESULTS_BRANCH" >/dev/null; then
+            git clone --quiet --depth 1 --branch "$RESULTS_BRANCH" "$remote" results-branch
+            git -C results-branch rm -r --quiet --ignore-unmatch .
+          else
+            git init --quiet --initial-branch "$RESULTS_BRANCH" results-branch
+            git -C results-branch remote add origin "$remote"
+          fi
+          cp -R report-site/. results-branch/
+          cd results-branch
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit --quiet --allow-empty -m "Community build run ${GITHUB_RUN_ID}: ${METALS_SOURCE}"
+          git push --quiet origin "HEAD:${RESULTS_BRANCH}"
+          echo "Published the report to branch ${RESULTS_BRANCH} at $(git rev-parse HEAD)"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESULTS_BRANCH: results
+          METALS_SOURCE: ${{ inputs.metals }}
 
       - id: pages
         name: Configure GitHub Pages
