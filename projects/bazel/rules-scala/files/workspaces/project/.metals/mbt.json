@@ -1,5 +1,71 @@
 {
-  "dependencyModules": [],
+  "dependencyModules": [
+    {
+      "id": "com.google.guava:guava:21.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+com_google_guava_guava_21_0/file/v1/com/google/guava/guava/21.0/guava-21.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+com_google_guava_guava_sources_21_0/file/v1/com/google/guava/guava/21.0/guava-21.0-sources.jar"
+    },
+    {
+      "id": "org.apache.commons:commons-lang3:3.18.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_apache_commons_commons_lang3_3_18_0/file/v1/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_apache_commons_commons_lang3_sources_3_18_0/file/v1/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0-sources.jar"
+    },
+    {
+      "id": "org.scala-lang.modules:scala-xml_2.12:2.3.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_modules_scala_xml_2_12_2_3_0/file/v1/org/scala-lang/modules/scala-xml_2.12/2.3.0/scala-xml_2.12-2.3.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_modules_scala_xml_2_12_sources_2_3_0/file/v1/org/scala-lang/modules/scala-xml_2.12/2.3.0/scala-xml_2.12-2.3.0-sources.jar"
+    },
+    {
+      "id": "org.scala-lang:scala-compiler:2.12.20",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_compiler_2_12_20/file/v1/org/scala-lang/scala-compiler/2.12.20/scala-compiler-2.12.20.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_compiler_sources_2_12_20/file/v1/org/scala-lang/scala-compiler/2.12.20/scala-compiler-2.12.20-sources.jar"
+    },
+    {
+      "id": "org.scala-lang:scala-library:2.12.20",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_library_2_12_20/file/v1/org/scala-lang/scala-library/2.12.20/scala-library-2.12.20.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_library_sources_2_12_20/file/v1/org/scala-lang/scala-library/2.12.20/scala-library-2.12.20-sources.jar"
+    },
+    {
+      "id": "org.scala-lang:scala-reflect:2.12.20",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_reflect_2_12_20/file/v1/org/scala-lang/scala-reflect/2.12.20/scala-reflect-2.12.20.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_reflect_sources_2_12_20/file/v1/org/scala-lang/scala-reflect/2.12.20/scala-reflect-2.12.20-sources.jar"
+    },
+    {
+      "id": "org.springframework:spring-beans:6.2.11",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_beans_6_2_11/file/v1/org/springframework/spring-beans/6.2.11/spring-beans-6.2.11.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_beans_sources_6_2_11/file/v1/org/springframework/spring-beans/6.2.11/spring-beans-6.2.11-sources.jar"
+    },
+    {
+      "id": "org.springframework:spring-core:6.2.11",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_core_6_2_11/file/v1/org/springframework/spring-core/6.2.11/spring-core-6.2.11.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_core_sources_6_2_11/file/v1/org/springframework/spring-core/6.2.11/spring-core-6.2.11-sources.jar"
+    },
+    {
+      "id": "org.springframework:spring-jcl:6.2.11",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_jcl_6_2_11/file/v1/org/springframework/spring-jcl/6.2.11/spring-jcl-6.2.11.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_jcl_sources_6_2_11/file/v1/org/springframework/spring-jcl/6.2.11/spring-jcl-6.2.11-sources.jar"
+    },
+    {
+      "id": "org.springframework:spring-tx:6.2.11",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_tx_6_2_11/file/v1/org/springframework/spring-tx/6.2.11/spring-tx-6.2.11.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_tx_sources_6_2_11/file/v1/org/springframework/spring-tx/6.2.11/spring-tx-6.2.11-sources.jar"
+    },
+    {
+      "id": "org.typelevel:cats-core_2.12:2.13.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_cats_core_2_12_2_13_0/file/v1/org/typelevel/cats-core_2.12/2.13.0/cats-core_2.12-2.13.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_cats_core_2_12_sources_2_13_0/file/v1/org/typelevel/cats-core_2.12/2.13.0/cats-core_2.12-2.13.0-sources.jar"
+    },
+    {
+      "id": "org.typelevel:cats-kernel_2.12:2.13.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_cats_kernel_2_12_2_13_0/file/v1/org/typelevel/cats-kernel_2.12/2.13.0/cats-kernel_2.12-2.13.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_cats_kernel_2_12_sources_2_13_0/file/v1/org/typelevel/cats-kernel_2.12/2.13.0/cats-kernel_2.12-2.13.0-sources.jar"
+    },
+    {
+      "id": "org.typelevel:kind-projector_2.12.20:0.13.4",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_kind_projector_2_12_20_0_13_4/file/v1/org/typelevel/kind-projector_2.12.20/0.13.4/kind-projector_2.12.20-0.13.4.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_kind_projector_2_12_20_sources_0_13_4/file/v1/org/typelevel/kind-projector_2.12.20/0.13.4/kind-projector_2.12.20-0.13.4-sources.jar"
+    }
+  ],
   "namespaces": {
     "//test/coverage_specs2_with_junit": {
       "sources": [
@@ -125,7 +191,12 @@
       ],
       "scalacOptions": [],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "org.springframework:spring-beans:6.2.11",
+        "org.springframework:spring-core:6.2.11",
+        "org.springframework:spring-jcl:6.2.11",
+        "org.springframework:spring-tx:6.2.11"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//src/java/io/bazel/rulesscala/coverage/instrumenter",
@@ -141,7 +212,13 @@
       ],
       "scalacOptions": [],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "org.scala-lang.modules:scala-xml_2.12:2.3.0",
+        "org.scala-lang:scala-compiler:2.12.20",
+        "org.scala-lang:scala-library:2.12.20",
+        "org.scala-lang:scala-reflect:2.12.20",
+        "org.typelevel:kind-projector_2.12.20:0.13.4"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//src/java/io/bazel/rulesscala/coverage/instrumenter",
@@ -164,7 +241,10 @@
       ],
       "scalacOptions": [],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0",
+        "org.apache.commons:commons-lang3:3.18.0"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//scala/support",
@@ -344,7 +424,9 @@
       ],
       "scalacOptions": [],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//src/java/io/bazel/rulesscala/coverage/instrumenter",
@@ -381,7 +463,15 @@
       ],
       "scalacOptions": [],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0",
+        "org.apache.commons:commons-lang3:3.18.0",
+        "org.scala-lang:scala-library:2.12.20",
+        "org.springframework:spring-core:6.2.11",
+        "org.springframework:spring-jcl:6.2.11",
+        "org.typelevel:cats-core_2.12:2.13.0",
+        "org.typelevel:cats-kernel_2.12:2.13.0"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//scala/settings",
@@ -540,6 +630,7 @@
       "scalacOptions": [],
       "javacOptions": [],
       "dependencyModules": [
+        "com.google.guava:guava:21.0",
         "test.scala3_library_eviction:header_scala3-library_3-3.7.4.jar:local",
         "test.scala3_library_eviction:scala-library-2.13.0-RC1.jar:local",
         "test.scala3_library_eviction:scala-library-2.13.99.jar:local",
@@ -622,6 +713,22 @@
         "//src/scala/scripts:scrooge_worker"
       ]
     },
+    "//test/toolchains/scala_repl_classpath_fallback": {
+      "sources": [
+        "test/toolchains/scala_repl_classpath_fallback/Legacy.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.11.12",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
     "//test/phase/add_to_all_rules": {
       "sources": [
         "test/phase/add_to_all_rules/PhaseBinary.scala",
@@ -648,7 +755,9 @@
       ],
       "scalacOptions": [],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//src/java/io/bazel/rulesscala/coverage/instrumenter",
@@ -1019,7 +1128,11 @@
         "-Xfatal-warnings"
       ],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "org.scala-lang:scala-library:2.12.20",
+        "org.typelevel:cats-core_2.12:2.13.0",
+        "org.typelevel:cats-kernel_2.12:2.13.0"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//scala/support",
@@ -1237,7 +1350,9 @@
       ],
       "scalacOptions": [],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//src/java/io/bazel/rulesscala/coverage/instrumenter",
@@ -2018,6 +2133,11 @@
       "scalacOptions": [],
       "javacOptions": [],
       "dependencyModules": [
+        "com.google.guava:guava:21.0",
+        "org.apache.commons:commons-lang3:3.18.0",
+        "org.scala-lang:scala-library:2.12.20",
+        "org.typelevel:cats-core_2.12:2.13.0",
+        "org.typelevel:cats-kernel_2.12:2.13.0",
         "test.src.main.scala.scalarules.test.scala_import.nl:libscala_import_never_link.jar:local",
         "test.src.main.scala.scalarules.test.scala_import:generic_scalalib.jar:local"
       ],
@@ -2470,7 +2590,9 @@
       ],
       "scalacOptions": [],
       "javacOptions": [],
-      "dependencyModules": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0"
+      ],
       "scalaVersion": "2.11.12",
       "dependsOn": [
         "//scala/settings",
