@@ -12,13 +12,13 @@
       <p class="eyebrow">Bazel</p>
       <h1>Selenium</h1>
       <p><a href="https://github.com/SeleniumHQ/selenium/tree/trunk">SeleniumHQ/selenium@trunk</a></p>
-      <span class="status large passed">passed</span>
+      <span class="status large failed">failed</span>
     </header>
     <section><h2>Scenarios</h2><ul class="scenarios"><li>
             <div class="scenario-header">
               <span class="status passed">passed</span>
               <strong>import-each-build-target</strong>
-              <span>mbt-import · 411.4 s</span>
+              <span>mbt-import · 301.5 s</span>
             </div>
             
             <details class="screenshot-viewer">
@@ -48,13 +48,14 @@
     </details>
           </li><li>
             <div class="scenario-header">
-              <span class="status passed">passed</span>
+              <span class="status failed">failed</span>
               <strong>debug-json-test</strong>
-              <span>java-debug-test · 84.5 s</span>
+              <span>java-debug-test · 910.0 s</span>
             </div>
-            
+            <pre>Waiting for element to be located By(css selector, .debug-toolbar)
+Wait timed out after 900200ms</pre>
             <details class="screenshot-viewer">
-      <summary>Screenshots (5)</summary>
+      <summary>Screenshots (4)</summary>
       <div class="gallery"><figure>
               <a href="files/.test-report/screenshots/debug-json-test/001-file-opened.png" data-gallery="debug-json-test" data-caption="001-file-opened.png"><img loading="lazy" src="files/.test-report/screenshots/debug-json-test/001-file-opened.png" alt="001-file-opened.png"></a>
               <figcaption>001-file-opened.png</figcaption>
@@ -65,11 +66,8 @@
               <a href="files/.test-report/screenshots/debug-json-test/003-breakpoint-added.png" data-gallery="debug-json-test" data-caption="003-breakpoint-added.png"><img loading="lazy" src="files/.test-report/screenshots/debug-json-test/003-breakpoint-added.png" alt="003-breakpoint-added.png"></a>
               <figcaption>003-breakpoint-added.png</figcaption>
             </figure><figure>
-              <a href="files/.test-report/screenshots/debug-json-test/004-breakpoint-hit.png" data-gallery="debug-json-test" data-caption="004-breakpoint-hit.png"><img loading="lazy" src="files/.test-report/screenshots/debug-json-test/004-breakpoint-hit.png" alt="004-breakpoint-hit.png"></a>
-              <figcaption>004-breakpoint-hit.png</figcaption>
-            </figure><figure>
-              <a href="files/.test-report/screenshots/debug-json-test/005-debug-test-finished.png" data-gallery="debug-json-test" data-caption="005-debug-test-finished.png"><img loading="lazy" src="files/.test-report/screenshots/debug-json-test/005-debug-test-finished.png" alt="005-debug-test-finished.png"></a>
-              <figcaption>005-debug-test-finished.png</figcaption>
+              <a href="files/.test-report/screenshots/debug-json-test/004-failure.png" data-gallery="debug-json-test" data-caption="004-failure.png"><img loading="lazy" src="files/.test-report/screenshots/debug-json-test/004-failure.png" alt="004-failure.png"></a>
+              <figcaption>004-failure.png</figcaption>
             </figure></div>
     </details>
           </li></ul></section>

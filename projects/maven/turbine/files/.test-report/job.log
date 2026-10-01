@@ -14,133 +14,119 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 23638 ms
+Browser ready in 2260 ms
 Launching tests...
   maven / turbine
-[community-build] 2026-10-01T13:04:25.131Z Starting maven / turbine / import
-[community-build] 2026-10-01T13:04:25.131Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-01T13:04:25.132Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
-[community-build] 2026-10-01T13:04:26.944Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-01T13:04:27.945Z VS Code opened Main.java
-[community-build] 2026-10-01T13:04:28.110Z Captured screenshot: import/001-file-opened.png
-[community-build] 2026-10-01T13:04:28.110Z Waiting for the build server choice notification
+[community-build] 2026-10-01T13:43:32.202Z Starting maven / turbine / import
+[community-build] 2026-10-01T13:43:32.202Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-01T13:43:32.202Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
+[community-build] 2026-10-01T13:43:33.409Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-01T13:43:33.847Z VS Code opened Main.java
+[community-build] 2026-10-01T13:43:33.967Z Captured screenshot: import/001-file-opened.png
+[community-build] 2026-10-01T13:43:33.967Z Waiting for the build server choice notification
+[community-build] 2026-10-01T13:43:38.187Z Notification appeared: New maven workspace detected. Which build server would you like to use?
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
-[community-build] 2026-10-01T13:04:45.373Z Notification appeared: New maven workspace detected. Which build server would you like to use?
-[community-build] 2026-10-01T13:04:45.586Z Captured screenshot: import/002-build-server-prompt.png
-[community-build] 2026-10-01T13:04:45.587Z Clicking notification action: Use MBT
-[community-build] 2026-10-01T13:04:45.834Z Clicked notification action: Use MBT
-[metals] 2026.10.01 13:04:44 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.10.01 13:04:45 INFO  mbt-v2: indexing 228 files
-[metals] 2026.10.01 13:04:45 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals2984405477862585189 -cp /tmp/metals2984405477862585189/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.36865447355:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-[community-build] 2026-10-01T13:04:47.079Z Captured screenshot: import/003-mbt-selected.png
-[community-build] 2026-10-01T13:04:47.079Z Waiting for the VS Code importing status to finish
-[metals] 2026.10.01 13:04:48 INFO  time: mbt-v2 loaded index for 228 files in 3.82s
-[metals] 2026.10.01 13:04:57 INFO  [metals-maven] exporting 1 module(s)
-[metals] 2026.10.01 13:04:57 INFO  [metals-maven] resolving sources JARs for 27 dependencies...
-[metals] 2026.10.01 13:04:57 INFO  [metals-maven] sources resolved: 26/27
-[metals] 2026.10.01 13:04:57 INFO  [metals-maven] resolving 26 dependency JAR(s) missing from local cache...
-[metals] 2026.10.01 13:04:57 INFO  [metals-maven] namespace: com.google.turbine:turbine:HEAD-SNAPSHOT
-[metals] 2026.10.01 13:04:58 INFO  [metals-maven] wrote 2 namespaces, 27 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-[metals] 2026.10.01 13:04:58 INFO  time: ran 'maven-export' in 12s
-[metals] 2026.10.01 13:04:58 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.10.01 13:04:58 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.10.01 13:04:58 INFO  Connected to Build server: MBT v2.0.0-community-build.36865447355
-[metals] 2026.10.01 13:04:58 WARN  Your project uses JDK version 25 and
+[community-build] 2026-10-01T13:43:38.420Z Captured screenshot: import/002-build-server-prompt.png
+[community-build] 2026-10-01T13:43:38.421Z Clicking notification action: Use MBT
+[community-build] 2026-10-01T13:43:38.850Z Clicked notification action: Use MBT
+[metals] 2026.10.01 13:43:37 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.10.01 13:43:37 INFO  mbt-v2: indexing 228 files
+[metals] 2026.10.01 13:43:38 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals14005863810767085416 -cp /tmp/metals14005863810767085416/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.36870084855:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+[community-build] 2026-10-01T13:43:39.616Z Captured screenshot: import/003-mbt-selected.png
+[community-build] 2026-10-01T13:43:39.616Z Waiting for the VS Code importing status to finish
+[metals] 2026.10.01 13:43:39 INFO  time: mbt-v2 loaded index for 228 files in 1.88s
+[metals] 2026.10.01 13:43:47 INFO  [metals-maven] exporting 1 module(s)
+[metals] 2026.10.01 13:43:47 INFO  [metals-maven] resolving sources JARs for 27 dependencies...
+[metals] 2026.10.01 13:43:47 INFO  [metals-maven] sources resolved: 26/27
+[metals] 2026.10.01 13:43:47 INFO  [metals-maven] resolving 26 dependency JAR(s) missing from local cache...
+[metals] 2026.10.01 13:43:47 INFO  [metals-maven] namespace: com.google.turbine:turbine:HEAD-SNAPSHOT
+[metals] 2026.10.01 13:43:47 INFO  [metals-maven] wrote 2 namespaces, 27 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+[metals] 2026.10.01 13:43:48 INFO  time: ran 'maven-export' in 9.5s
+[community-build] 2026-10-01T13:43:48.541Z Fresh MBT model and server connection confirm the import finished
+[community-build] 2026-10-01T13:43:48.541Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[community-build] 2026-10-01T13:43:48.697Z Captured screenshot: import/004-mbt-imported.png
+[community-build] 2026-10-01T13:43:48.700Z MBT model contains 2 namespaces and 27 dependency modules
+[community-build] 2026-10-01T13:43:48.700Z Verified imported source: java/com/google/turbine/main/Main.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java
+[community-build] 2026-10-01T13:43:48.871Z Captured screenshot: import/005-import-verified.png
+[community-build] 2026-10-01T13:43:48.872Z Scenario passed: import
+    ✔ import (16673ms)
+[community-build] 2026-10-01T13:43:48.877Z Starting maven / turbine / rename-manifest-dir
+[community-build] 2026-10-01T13:43:48.878Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-01T13:43:48.878Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
+[community-build] 2026-10-01T13:43:48.963Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-01T13:43:49.110Z VS Code opened Main.java
+[community-build] 2026-10-01T13:43:49.235Z Captured screenshot: rename-manifest-dir/001-file-opened.png
+[community-build] 2026-10-01T13:43:49.237Z Reusing the existing VS Code, Metals and MBT session
+[metals] 2026.10.01 13:43:48 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.10.01 13:43:48 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.10.01 13:43:48 INFO  Connected to Build server: MBT v2.0.0-community-build.36870084855
+[metals] 2026.10.01 13:43:48 WARN  Your project uses JDK version 25 and
 [metals] Metals server is running on JDK version 21.
 [metals] This might cause incorrect completions, since
 [metals] Metals JDK version should be greater than or equal to the project's JDK version.
 [metals] 
-[community-build] 2026-10-01T13:04:59.379Z Fresh MBT model and server connection confirm the import finished
-[community-build] 2026-10-01T13:04:59.379Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
-[community-build] 2026-10-01T13:04:59.688Z Captured screenshot: import/004-mbt-imported.png
-[community-build] 2026-10-01T13:04:59.688Z MBT model contains 2 namespaces and 27 dependency modules
-[community-build] 2026-10-01T13:04:59.688Z Verified imported source: java/com/google/turbine/main/Main.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java
-[community-build] 2026-10-01T13:05:00.016Z Captured screenshot: import/005-import-verified.png
-[community-build] 2026-10-01T13:05:00.016Z Scenario passed: import
-    ✔ import (34886ms)
-[community-build] 2026-10-01T13:05:00.020Z Starting maven / turbine / rename-manifest-dir
-[community-build] 2026-10-01T13:05:00.020Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-01T13:05:00.020Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
-[community-build] 2026-10-01T13:05:00.177Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-01T13:05:00.455Z VS Code opened Main.java
-[community-build] 2026-10-01T13:05:00.624Z Captured screenshot: rename-manifest-dir/001-file-opened.png
-[community-build] 2026-10-01T13:05:00.624Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-01T13:05:00.895Z Captured screenshot: rename-manifest-dir/002-mbt-session-reused.png
-[metals] 2026.10.01 13:05:00 WARN  Your project uses JDK version 25 and
+[community-build] 2026-10-01T13:43:49.383Z Captured screenshot: rename-manifest-dir/002-mbt-session-reused.png
+[metals] 2026.10.01 13:43:49 WARN  Your project uses JDK version 25 and
 [metals] Metals server is running on JDK version 21.
 [metals] This might cause incorrect completions, since
 [metals] Metals JDK version should be greater than or equal to the project's JDK version.
 [metals] 
-[metals] 2026.10.01 13:05:02 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-10-01T13:05:03.213Z Selected symbol: MANIFEST_DIR
-[community-build] 2026-10-01T13:05:03.376Z Captured screenshot: rename-manifest-dir/003-rename-symbol-selected.png
-[community-build] 2026-10-01T13:05:03.376Z Executing command: Rename Symbol
-[community-build] 2026-10-01T13:05:05.304Z Captured screenshot: rename-manifest-dir/004-rename-input-opened.png
-[community-build] 2026-10-01T13:05:05.304Z Renaming MANIFEST_DIR to MANIFEST_DIRECTORY
-[community-build] 2026-10-01T13:05:06.812Z Verified 2 occurrences of MANIFEST_DIRECTORY
-[metals] 2026.10.01 13:05:06 INFO  references: found 1 occurrences
-[metals] 2026.10.01 13:05:06 INFO  MBT fallback for symbol com/google/turbine/main/Main#MANIFEST_DIR#: found 0 definitions
-[metals] 2026.10.01 13:05:06 INFO  references: found 1 external document candidates in 29ms
-[metals] 2026.10.01 13:05:06 INFO  references: indexed 1 candidates in 588μs
-[metals] 2026.10.01 13:05:06 INFO  references: found 4 reference results in 70ms
-[community-build] 2026-10-01T13:05:08.338Z Selected renamed symbol for screenshot: MANIFEST_DIRECTORY
-[community-build] 2026-10-01T13:05:08.809Z Captured screenshot: rename-manifest-dir/005-rename-verified.png
-[community-build] 2026-10-01T13:05:08.809Z Scenario passed: rename-manifest-dir
-[community-build] 2026-10-01T13:05:08.810Z Restored /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
-    ✔ rename-manifest-dir (8790ms)
-[community-build] 2026-10-01T13:05:08.810Z Starting maven / turbine / turbine-options-hover
-[community-build] 2026-10-01T13:05:08.811Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-01T13:05:08.811Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
-[community-build] 2026-10-01T13:05:08.854Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-01T13:05:09.105Z VS Code opened Main.java
-[community-build] 2026-10-01T13:05:09.314Z Captured screenshot: turbine-options-hover/001-file-opened.png
-[community-build] 2026-10-01T13:05:09.314Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-01T13:05:09.475Z Captured screenshot: turbine-options-hover/002-mbt-session-reused.png
-[community-build] 2026-10-01T13:05:11.233Z Show hover: TurbineOptions
-[community-build] 2026-10-01T13:05:13.900Z Captured screenshot: turbine-options-hover/003-hover-verified.png
-    ✔ turbine-options-hover (5103ms)
-[community-build] 2026-10-01T13:05:13.913Z Starting maven / turbine / turbine-options-definition
-[community-build] 2026-10-01T13:05:13.913Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-01T13:05:13.913Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
-[community-build] 2026-10-01T13:05:13.997Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-01T13:05:14.183Z VS Code opened Main.java
-[community-build] 2026-10-01T13:05:14.379Z Captured screenshot: turbine-options-definition/001-file-opened.png
-[community-build] 2026-10-01T13:05:14.380Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-01T13:05:14.758Z Captured screenshot: turbine-options-definition/002-mbt-session-reused.png
-[metals] 2026.10.01 13:05:14 INFO  time: indexed workspace in 16s
-[metals] 2026.10.01 13:05:15 WARN  Your project uses JDK version 25 and
+[community-build] 2026-10-01T13:43:51.223Z Selected symbol: MANIFEST_DIR
+[community-build] 2026-10-01T13:43:51.347Z Captured screenshot: rename-manifest-dir/003-rename-symbol-selected.png
+[community-build] 2026-10-01T13:43:51.347Z Executing command: Rename Symbol
+[metals] 2026.10.01 13:43:50 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-10-01T13:43:52.560Z Captured screenshot: rename-manifest-dir/004-rename-input-opened.png
+[community-build] 2026-10-01T13:43:52.560Z Renaming MANIFEST_DIR to MANIFEST_DIRECTORY
+[metals] 2026.10.01 13:43:53 INFO  references: found 1 occurrences
+[metals] 2026.10.01 13:43:53 INFO  references: found 1 external document candidates in 20ms
+[metals] 2026.10.01 13:43:53 INFO  MBT fallback for symbol com/google/turbine/main/Main#MANIFEST_DIR#: found 0 definitions
+[metals] 2026.10.01 13:43:53 INFO  references: indexed 1 candidates in 613μs
+[metals] 2026.10.01 13:43:53 INFO  references: found 4 reference results in 35ms
+[community-build] 2026-10-01T13:43:53.758Z Verified 2 occurrences of MANIFEST_DIRECTORY
+[community-build] 2026-10-01T13:43:54.923Z Selected renamed symbol for screenshot: MANIFEST_DIRECTORY
+[community-build] 2026-10-01T13:43:55.335Z Captured screenshot: rename-manifest-dir/005-rename-verified.png
+[community-build] 2026-10-01T13:43:55.335Z Scenario passed: rename-manifest-dir
+[community-build] 2026-10-01T13:43:55.335Z Restored /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
+    ✔ rename-manifest-dir (6459ms)
+[community-build] 2026-10-01T13:43:55.336Z Starting maven / turbine / turbine-options-hover
+[community-build] 2026-10-01T13:43:55.336Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-01T13:43:55.336Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
+[community-build] 2026-10-01T13:43:55.367Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-01T13:43:55.498Z VS Code opened Main.java
+[community-build] 2026-10-01T13:43:55.589Z Captured screenshot: turbine-options-hover/001-file-opened.png
+[community-build] 2026-10-01T13:43:55.589Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-01T13:43:55.767Z Captured screenshot: turbine-options-hover/002-mbt-session-reused.png
+[community-build] 2026-10-01T13:43:56.901Z Show hover: TurbineOptions
+[metals] 2026.10.01 13:43:57 INFO  time: indexed workspace in 9.45s
+[metals] 2026.10.01 13:43:58 WARN  Your project uses JDK version 25 and
 [metals] Metals server is running on JDK version 21.
 [metals] This might cause incorrect completions, since
 [metals] Metals JDK version should be greater than or equal to the project's JDK version.
 [metals] 
-[metals] 2026.10.01 13:05:15 INFO  time: code lens generation in 1.12s
-[metals] 2026.10.01 13:05:15 INFO  time: code lens generation in 1.14s
-[metals] 2026.10.01 13:05:15 INFO  time: code lens generation in 1.17s
-[metals] 2026.10.01 13:05:15 INFO  time: code lens generation in 1.22s
-[metals] 2026.10.01 13:05:15 INFO  time: code lens generation in 1.26s
-[metals] 2026.10.01 13:05:15 INFO  time: code lens generation in 1.3s
-[metals] 2026.10.01 13:05:15 INFO  time: code lens generation in 1.34s
-[metals] 2026.10.01 13:05:15 INFO  time: code lens generation in 1.36s
-[metals] 2026.10.01 13:05:15 WARN  Your project uses JDK version 25 and
+[metals] 2026.10.01 13:43:59 WARN  Your project uses JDK version 25 and
 [metals] Metals server is running on JDK version 21.
 [metals] This might cause incorrect completions, since
 [metals] Metals JDK version should be greater than or equal to the project's JDK version.
 [metals] 
-[community-build] 2026-10-01T13:05:17.307Z Captured screenshot: turbine-options-definition/003-definition-symbol-selected.png
-[community-build] 2026-10-01T13:05:17.307Z Go to Definition: TurbineOptions
-[metals] 2026.10.01 13:05:18 INFO  time: indexed workspace in 3.65s
-[metals] 2026.10.01 13:05:19 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
-[metals] 2026.10.01 13:05:19 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
-[community-build] 2026-10-01T13:05:20.013Z Captured screenshot: turbine-options-definition/004-definition-verified.png
-    ✔ turbine-options-definition (6102ms)
+[community-build] 2026-10-01T13:43:59.985Z Captured screenshot: turbine-options-hover/003-hover-verified.png
+    ✔ turbine-options-hover (4657ms)
+[community-build] 2026-10-01T13:43:59.994Z Starting maven / turbine / turbine-options-definition
+[community-build] 2026-10-01T13:43:59.994Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-01T13:43:59.994Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
+[community-build] 2026-10-01T13:44:00.040Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-01T13:44:00.130Z VS Code opened Main.java
+[community-build] 2026-10-01T13:44:00.269Z Captured screenshot: turbine-options-definition/001-file-opened.png
+[community-build] 2026-10-01T13:44:00.270Z Reusing the existing VS Code, Metals and MBT session
+[metals] 2026.10.01 13:43:59 INFO  time: indexed workspace in 1.94s
+[community-build] 2026-10-01T13:44:00.386Z Captured screenshot: turbine-options-definition/002-mbt-session-reused.png
+[community-build] 2026-10-01T13:44:01.149Z Captured screenshot: turbine-options-definition/003-definition-symbol-selected.png
+[community-build] 2026-10-01T13:44:01.149Z Go to Definition: TurbineOptions
+[metals] 2026.10.01 13:44:02 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
+[community-build] 2026-10-01T13:44:02.433Z Captured screenshot: turbine-options-definition/004-definition-verified.png
+    ✔ turbine-options-definition (2441ms)
 
 Shutting down the browser
-[metals] 2026.10.01 13:05:20 INFO  Shutting down server
-[metals] 2026.10.01 13:05:20 INFO  Memory monitor stopped
-[metals] 2026.10.01 13:05:20 INFO  shutting down Metals
-[metals] 2026.10.01 13:05:20 INFO  Shut down connection with build server.
-[metals] 2026.10.01 13:05:20 INFO  Exiting server
 
-  4 passing (1m)
+  4 passing (33s)
 
 Verified 17 scenario screenshots
