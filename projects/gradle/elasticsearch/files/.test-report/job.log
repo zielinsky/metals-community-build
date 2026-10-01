@@ -14,39 +14,88 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 7239 ms
+Browser ready in 6005 ms
 Launching tests...
   gradle / elasticsearch
-[community-build] 2026-10-01T11:20:10.727Z Starting gradle / elasticsearch / import-included-builds
-[community-build] 2026-10-01T11:20:10.727Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-01T11:20:10.727Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
-[community-build] 2026-10-01T11:20:12.481Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-01T11:20:14.194Z VS Code opened EmptyDirTaskTests.java
-[community-build] 2026-10-01T11:20:14.481Z Captured screenshot: import-included-builds/001-file-opened.png
-[community-build] 2026-10-01T11:20:14.481Z Waiting for the build server choice notification
+[community-build] 2026-10-01T13:04:21.025Z Starting gradle / elasticsearch / import-included-builds
+[community-build] 2026-10-01T13:04:21.025Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-01T13:04:21.025Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
+[community-build] 2026-10-01T13:04:21.650Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-01T13:04:22.868Z VS Code opened EmptyDirTaskTests.java
+[community-build] 2026-10-01T13:04:23.123Z Captured screenshot: import-included-builds/001-file-opened.png
+[community-build] 2026-10-01T13:04:23.127Z Waiting for the build server choice notification
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
-[metals] 2026.10.01 11:20:16 INFO  Started: Metals version 2.0.0-community-build.36854231823 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-[metals] 2026.10.01 11:20:16 INFO  Memory monitor started
-[metals] 2026.10.01 11:20:17 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-10-01T11:20:19.249Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
-[community-build] 2026-10-01T11:20:19.517Z Captured screenshot: import-included-builds/002-build-server-prompt.png
-[community-build] 2026-10-01T11:20:19.518Z Clicking notification action: Use MBT
-[community-build] 2026-10-01T11:20:19.799Z Clicked notification action: Use MBT
-[community-build] 2026-10-01T11:20:20.577Z Captured screenshot: import-included-builds/003-mbt-selected.png
-[community-build] 2026-10-01T11:20:20.578Z Waiting for the VS Code importing status to finish
-[community-build] 2026-10-01T11:20:21.352Z VS Code status bar reports that the project is importing
-[metals] 2026.10.01 11:20:21 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-[metals] 2026.10.01 11:20:21 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.01 11:20:21 INFO  mbt-v2: indexing 32619 files
+[metals] 2026.10.01 13:04:30 INFO  Started: Metals version 2.0.0-community-build.36865447355 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+[metals] 2026.10.01 13:04:30 INFO  Memory monitor started
+[metals] 2026.10.01 13:04:31 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-10-01T13:04:32.460Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
+[community-build] 2026-10-01T13:04:32.643Z Captured screenshot: import-included-builds/002-build-server-prompt.png
+[community-build] 2026-10-01T13:04:32.646Z Clicking notification action: Use MBT
+[community-build] 2026-10-01T13:04:32.816Z Clicked notification action: Use MBT
+[community-build] 2026-10-01T13:04:33.339Z VS Code status bar reports that the project is importing
+[community-build] 2026-10-01T13:04:33.650Z Captured screenshot: import-included-builds/003-mbt-selected.png
+[community-build] 2026-10-01T13:04:33.650Z Waiting for the VS Code importing status to finish
+[metals] 2026.10.01 13:04:33 INFO  mbt-v2: indexing 32621 files
+[metals] 2026.10.01 13:04:35 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+[metals] 2026.10.01 13:04:35 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
 [metals] Fetching distribution.
 [metals] Downloading https://services.gradle.org/distributions/gradle-9.7.1-bin.zip
 [metals] ................................................................................................................................................
-[metals] 2026.10.01 11:20:42 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.01 11:21:13 INFO  time: mbt-v2 loaded index for 32619 files in 54s
-[metals] 2026.10.01 11:23:59 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.01 11:24:00 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.01 11:24:14 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.01 11:24:18 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools
+[metals] 2026.10.01 13:04:45 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.01 13:05:06 INFO  time: mbt-v2 loaded index for 32621 files in 34s
+[metals] 2026.10.01 13:08:46 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.01 13:08:46 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] Fetching distribution.
+[metals] Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
+[metals] 
+[metals] Attempt 1/1 failed. Reason: Server returned HTTP response code: 504 for URL: https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
+[metals] 2026.10.01 13:08:48 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-conventions
+[metals] org.gradle.tooling.GradleConnectionException: Could not install Gradle distribution from 'https://services.gradle.org/distributions/gradle-9.5.1-bin.zip'.
+[metals] 	at org.gradle.tooling.internal.consumer.DistributionFactory$ZippedDistribution.getToolingImplementationClasspath(DistributionFactory.java:123)
+[metals] 	at org.gradle.tooling.internal.consumer.loader.CachingToolingImplementationLoader.create(CachingToolingImplementationLoader.java:47)
+[metals] 	at org.gradle.tooling.internal.consumer.loader.SynchronizedToolingImplementationLoader.create(SynchronizedToolingImplementationLoader.java:44)
+[metals] 	at org.gradle.tooling.internal.consumer.connection.LazyConsumerActionExecutor.onStartAction(LazyConsumerActionExecutor.java:161)
+[metals] 	at org.gradle.tooling.internal.consumer.connection.LazyConsumerActionExecutor.run(LazyConsumerActionExecutor.java:143)
+[metals] 	at org.gradle.tooling.internal.consumer.connection.CancellableConsumerActionExecutor.run(CancellableConsumerActionExecutor.java:45)
+[metals] 	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConsumerActionExecutor.run(ProgressLoggingConsumerActionExecutor.java:61)
+[metals] 	at org.gradle.tooling.internal.consumer.connection.RethrowingErrorsConsumerActionExecutor.run(RethrowingErrorsConsumerActionExecutor.java:38)
+[metals] 	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConsumerActionExecutor$1$1.run(DefaultAsyncConsumerActionExecutor.java:66)
+[metals] 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+[metals] 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+[metals] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[metals] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[metals] 	at java.lang.Thread.run(Thread.java:1583)
+[metals] 	at org.gradle.tooling.internal.consumer.BlockingResultHandler.getResult(BlockingResultHandler.java:46)
+[metals] 	at org.gradle.tooling.internal.consumer.DefaultModelBuilder.get(DefaultModelBuilder.java:50)
+[metals] 	at gradleinfo.GradleInfoExtractor$.$anonfun$fetchModel$3(GradleInfoExtractor.scala:342)
+[metals] 	at scala.util.Try$.apply(Try.scala:217)
+[metals] 	at gradleinfo.GradleInfoExtractor$.fetchModel(GradleInfoExtractor.scala:342)
+[metals] 	at gradleinfo.GradleInfoExtractor$.fetchIdeaModules(GradleInfoExtractor.scala:203)
+[metals] 	at gradleinfo.GradleInfoExtractor$.$anonfun$extractEditableBuildModules$5(GradleInfoExtractor.scala:160)
+[metals] 	at scala.Option.fold(Option.scala:263)
+[metals] 	at gradleinfo.GradleInfoExtractor$.extractEditableBuildModules(GradleInfoExtractor.scala:147)
+[metals] 	at gradleinfo.GradleInfoExtractor$.$anonfun$extract$3(GradleInfoExtractor.scala:79)
+[metals] 	at scala.collection.immutable.List.flatMap(List.scala:283)
+[metals] 	at scala.collection.immutable.List.flatMap(List.scala:79)
+[metals] 	at gradleinfo.GradleInfoExtractor$.extract(GradleInfoExtractor.scala:79)
+[metals] 	at gradleinfo.GradleInfoExtractorImpl.extract(GradleInfoExtractorImpl.scala:28)
+[metals] 	at scala.meta.internal.metals.mbt.importer.GradleMbtImporter.$anonfun$extract$1(GradleMbtImporter.scala:43)
+[metals] 	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+[metals] 	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+[metals] 	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+[metals] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[metals] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[metals] 	at java.lang.Thread.run(Thread.java:1583)
+[metals] Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
+[metals] 	at org.gradle.wrapper.Download.downloadInternal(Download.java:138)
+[metals] 	at org.gradle.wrapper.Download.download(Download.java:112)
+[metals] 	at org.gradle.tooling.internal.consumer.DistributionInstaller$AsyncDownload$1.run(DistributionInstaller.java:184)
+[metals] 
+[metals] 2026.10.01 13:08:48 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] Fetching distribution.
+[metals] Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
+[metals] .....................................................................................................................................
+[metals] 2026.10.01 13:09:09 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools
 [metals] org.gradle.tooling.BuildException: Could not fetch model of type 'IdeaProject' using connection to Gradle distribution 'https://services.gradle.org/distributions/gradle-9.5.1-bin.zip'.
 [metals] 	at org.gradle.tooling.internal.consumer.ConnectionExceptionTransformer.transform(ConnectionExceptionTransformer.java:69)
 [metals] 	at org.gradle.tooling.internal.consumer.ResultHandlerAdapter.onFailure(ResultHandlerAdapter.java:42)
@@ -376,89 +425,133 @@ tail: '/home/runner/work/metals-community-build/metals-community-build/workspace
 [metals] 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 [metals] 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 [metals] 
-[metals] 2026.10.01 11:24:18 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.01 11:24:36 INFO  time: gradle-extractor extract in 4m16s
-[metals] 2026.10.01 11:24:36 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'repository-s3:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'azure-fixture:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'text-structure:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'data-streams:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'benchmarks' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'downsample-qa-mixed-cluster:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'tls-utils' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'streams:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'plugin:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'vector' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'qa-jdbc' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'test-clusters' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'stateless-test-framework:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'esql-qa-server' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'azure-fixture' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'x-pack-qa-third-party:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'yaml-rest-runner:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'server-security:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'test-multi-project:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'x-pack-qa-third-party' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'esql-qa-server:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'benchmarks:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'framework:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'downsample-qa-rest:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 's3-fixture:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'xpack-rest-tests-with-multiple-projects:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'qa-jdbc:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'test-clusters:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'tls-utils:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'stateless-test-framework' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'stateless:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 's3-fixture' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'esql-datasource-s3:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'repository-azure:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 WARN  mbt-build: namespace 'vector:test' dependsOn unknown namespace 'reaper'.
-[metals] 2026.10.01 11:24:36 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.10.01 11:24:36 INFO  Connected to Build server: MBT v2.0.0-community-build.36854231823
-[metals] 2026.10.01 11:25:31 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-10-01T11:25:51.673Z VS Code status bar reports that the project import finished
-[community-build] 2026-10-01T11:25:51.710Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
-[metals] 2026.10.01 11:25:50 INFO  time: indexed workspace in 1m12s
-[community-build] 2026-10-01T11:25:51.941Z Captured screenshot: import-included-builds/004-mbt-imported.png
-[community-build] 2026-10-01T11:25:51.941Z MBT model contains 983 namespaces and 695 dependency modules
-[community-build] 2026-10-01T11:25:51.948Z Verified imported source: build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java via build-tools-internal/src/test/java
-[community-build] 2026-10-01T11:25:52.187Z Captured screenshot: import-included-builds/005-import-verified.png
-[community-build] 2026-10-01T11:25:52.187Z Scenario passed: import-included-builds
-    ✔ import-included-builds (341467ms)
-[community-build] 2026-10-01T11:25:52.195Z Starting gradle / elasticsearch / gradle-api-imports
-[community-build] 2026-10-01T11:25:52.195Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-01T11:25:52.195Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
-[community-build] 2026-10-01T11:25:52.324Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-01T11:25:52.569Z VS Code opened EmptyDirTaskTests.java
-[community-build] 2026-10-01T11:25:52.788Z Captured screenshot: gradle-api-imports/001-file-opened.png
-[community-build] 2026-10-01T11:25:52.788Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-01T11:25:53.053Z Captured screenshot: gradle-api-imports/002-mbt-session-reused.png
-[metals] 2026.10.01 11:25:56 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
-[metals] Oct 01, 2026 11:26:02 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] 2026.10.01 13:09:09 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.01 13:09:36 INFO  time: gradle-extractor extract in 5m3s
+[metals] 2026.10.01 13:09:36 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'repository-s3:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'azure-fixture:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'data-streams:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'text-structure:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'build-tools-internal' dependsOn unknown namespace 'build-conventions'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'benchmarks' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'downsample-qa-mixed-cluster:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'tls-utils' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'streams:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'build-tools-internal:test' dependsOn unknown namespace 'build-conventions'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'plugin:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'vector' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'qa-jdbc' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'test-clusters' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'stateless-test-framework:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'esql-qa-server' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'azure-fixture' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'x-pack-qa-third-party:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'yaml-rest-runner:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'server-security:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'test-multi-project:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'x-pack-qa-third-party' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'esql-qa-server:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'benchmarks:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'framework:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'downsample-qa-rest:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 's3-fixture:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'xpack-rest-tests-with-multiple-projects:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'qa-jdbc:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'test-clusters:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'tls-utils:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'stateless-test-framework' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'stateless:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 's3-fixture' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'esql-datasource-s3:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'repository-azure:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'vector:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.10.01 13:09:36 INFO  Connected to Build server: MBT v2.0.0-community-build.36865447355
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'repository-s3:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'azure-fixture:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'data-streams:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'text-structure:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'build-tools-internal' dependsOn unknown namespace 'build-conventions'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'benchmarks' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'downsample-qa-mixed-cluster:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'tls-utils' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'streams:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'build-tools-internal:test' dependsOn unknown namespace 'build-conventions'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'plugin:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'vector' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'qa-jdbc' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'test-clusters' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'stateless-test-framework:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'esql-qa-server' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'azure-fixture' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'x-pack-qa-third-party:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'yaml-rest-runner:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'server-security:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'test-multi-project:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'x-pack-qa-third-party' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'esql-qa-server:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'benchmarks:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'framework:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'downsample-qa-rest:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 's3-fixture:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'xpack-rest-tests-with-multiple-projects:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'qa-jdbc:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'test-clusters:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'tls-utils:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'stateless-test-framework' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'stateless:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 's3-fixture' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'esql-datasource-s3:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'repository-azure:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:09:36 WARN  mbt-build: namespace 'vector:test' dependsOn unknown namespace 'reaper'.
+[metals] 2026.10.01 13:11:15 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.10.01 13:11:29 INFO  time: indexed workspace in 1m51s
+[community-build] 2026-10-01T13:11:31.004Z VS Code status bar reports that the project import finished
+[community-build] 2026-10-01T13:11:31.029Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[community-build] 2026-10-01T13:11:31.245Z Captured screenshot: import-included-builds/004-mbt-imported.png
+[community-build] 2026-10-01T13:11:31.247Z MBT model contains 980 namespaces and 675 dependency modules
+[community-build] 2026-10-01T13:11:31.257Z Verified imported source: build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java via build-tools-internal/src/test/java
+[community-build] 2026-10-01T13:11:31.431Z Captured screenshot: import-included-builds/005-import-verified.png
+[community-build] 2026-10-01T13:11:31.431Z Scenario passed: import-included-builds
+    ✔ import-included-builds (430413ms)
+[community-build] 2026-10-01T13:11:31.436Z Starting gradle / elasticsearch / gradle-api-imports
+[community-build] 2026-10-01T13:11:31.437Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-01T13:11:31.437Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
+[community-build] 2026-10-01T13:11:31.582Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-01T13:11:31.889Z VS Code opened EmptyDirTaskTests.java
+[community-build] 2026-10-01T13:11:32.098Z Captured screenshot: gradle-api-imports/001-file-opened.png
+[community-build] 2026-10-01T13:11:32.098Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-01T13:11:32.249Z Captured screenshot: gradle-api-imports/002-mbt-session-reused.png
+[metals] 2026.10.01 13:11:38 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
+[metals] Oct 01, 2026 1:11:43 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[community-build] 2026-10-01T11:26:04.494Z Verified that EmptyDirTaskTests.java has no error diagnostics
-[community-build] 2026-10-01T11:26:04.734Z Captured screenshot: gradle-api-imports/003-imports-resolved.png
-[metals] Oct 01, 2026 11:26:03 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[community-build] 2026-10-01T13:11:45.877Z Verified that EmptyDirTaskTests.java has no error diagnostics
+[community-build] 2026-10-01T13:11:46.074Z Captured screenshot: gradle-api-imports/003-imports-resolved.png
+[community-build] 2026-10-01T13:11:46.416Z Scenario passed: gradle-api-imports
+    ✔ gradle-api-imports (14981ms)
+[community-build] 2026-10-01T13:11:46.423Z Starting gradle / elasticsearch / test-discovery
+[community-build] 2026-10-01T13:11:46.423Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-01T13:11:46.423Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
+[community-build] 2026-10-01T13:11:46.540Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-01T13:11:46.723Z VS Code opened EmptyDirTaskTests.java
+[community-build] 2026-10-01T13:11:46.896Z Captured screenshot: test-discovery/001-file-opened.png
+[community-build] 2026-10-01T13:11:46.896Z Reusing the existing VS Code, Metals and MBT session
+[metals] Oct 01, 2026 1:11:46 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[community-build] 2026-10-01T11:26:05.104Z Scenario passed: gradle-api-imports
-    ✔ gradle-api-imports (12912ms)
-[community-build] 2026-10-01T11:26:05.107Z Starting gradle / elasticsearch / test-discovery
-[community-build] 2026-10-01T11:26:05.107Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-01T11:26:05.107Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
-[community-build] 2026-10-01T11:26:05.219Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-01T11:26:05.350Z VS Code opened EmptyDirTaskTests.java
-[community-build] 2026-10-01T11:26:05.475Z Captured screenshot: test-discovery/001-file-opened.png
-[community-build] 2026-10-01T11:26:05.475Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-01T11:26:05.656Z Captured screenshot: test-discovery/002-mbt-session-reused.png
-[community-build] 2026-10-01T11:26:08.911Z Waiting for VS Code to discover test: testCreateEmptyDir
-[community-build] 2026-10-01T11:26:39.895Z VS Code discovered test: testCreateEmptyDir
-[community-build] 2026-10-01T11:26:39.999Z Captured screenshot: test-discovery/003-test-run-button-discovered.png
-[community-build] 2026-10-01T11:26:39.999Z Scenario passed: test-discovery
-    ✔ test-discovery (34892ms)
+[community-build] 2026-10-01T13:11:47.186Z Captured screenshot: test-discovery/002-mbt-session-reused.png
+[community-build] 2026-10-01T13:11:49.835Z Waiting for VS Code to discover test: testCreateEmptyDir
+[community-build] 2026-10-01T13:12:17.091Z VS Code discovered test: testCreateEmptyDir
+[community-build] 2026-10-01T13:12:17.197Z Captured screenshot: test-discovery/003-test-run-button-discovered.png
+[community-build] 2026-10-01T13:12:17.197Z Scenario passed: test-discovery
+    ✔ test-discovery (30776ms)
 
 Shutting down the browser
+[metals] 2026.10.01 13:12:18 INFO  Shutting down server
+[metals] 2026.10.01 13:12:18 INFO  Memory monitor stopped
+[metals] 2026.10.01 13:12:18 INFO  shutting down Metals
+[metals] 2026.10.01 13:12:18 INFO  Shut down connection with build server.
+[metals] 2026.10.01 13:12:18 INFO  Exiting server
 
-  3 passing (7m)
+  3 passing (8m)
 
 Verified 11 scenario screenshots
