@@ -4,20 +4,19 @@
   "buildTool": "bazel",
   "repository": "SeleniumHQ/selenium",
   "ref": "trunk",
-  "status": "failed",
+  "status": "passed",
   "scenarios": [
     {
       "id": "import-each-build-target",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 226274
+      "durationMs": 204155
     },
     {
       "id": "debug-json-test",
       "kind": "java-debug-test",
-      "status": "failed",
-      "durationMs": 910591,
-      "error": "Waiting for element to be located By(css selector, .debug-toolbar)\nWait timed out after 900186ms"
+      "status": "passed",
+      "durationMs": 71261
     }
   ]
 }

@@ -226,7 +226,7 @@
     },
     {
       "id": "com.azure:azure-core:1.55.3",
-      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/5615e2a03e25b0d26e3286ecec804757/transformed/azure-core-1.55.3-patched.jar",
+      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/6cadfd0438fe2f643b8274b3dc6a2efb/transformed/azure-core-1.55.3-patched.jar",
       "sources": "file:///home/runner/.gradle/caches/modules-2/files-2.1/com.azure/azure-core/1.55.3/5fb880ce24d416307ddea19a10030e25ff0d120b/azure-core-1.55.3-sources.jar"
     },
     {
@@ -2113,7 +2113,7 @@
     },
     {
       "id": "org.apache.hadoop:hadoop-client-api:3.4.1",
-      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/264b0c7bb04fc1a906469a9ad65c3a18/transformed/hadoop-client-api-3.4.1-patched.jar"
+      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/74e548ca4420e35ab9dbbf663928c59c/transformed/hadoop-client-api-3.4.1-patched.jar"
     },
     {
       "id": "org.apache.hadoop:hadoop-client-api:3.4.3",
@@ -16096,109 +16096,6 @@
       "classDirectories": [],
       "projectPath": ":x-pack:plugin:encryption:qa"
     },
-    "web-utils:test": {
-      "sources": [
-        "libs/web-utils/src/test/java"
-      ],
-      "scalacOptions": [],
-      "javacOptions": [
-        "--release",
-        "21",
-        "-Werror",
-        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
-        "-Xdoclint:all",
-        "-Xdoclint:-missing"
-      ],
-      "dependencyModules": [
-        "at.yawk.lz4:lz4-java:1.11.1",
-        "co.elastic.logging:ecs-logging-core:1.7.0",
-        "co.elastic.logging:log4j2-ecs-layout:1.7.0",
-        "com.carrotsearch:hppc:0.8.1",
-        "com.carrotsearch.randomizedtesting:randomizedtesting-runner:2.8.2",
-        "com.google.errorprone:error_prone_annotations:2.38.0",
-        "commons-codec:commons-codec:1.15",
-        "commons-logging:commons-logging:1.2",
-        "io.netty:netty-buffer:4.1.138.Final",
-        "io.netty:netty-codec:4.1.138.Final",
-        "io.netty:netty-codec-http:4.1.138.Final",
-        "io.netty:netty-common:4.1.138.Final",
-        "io.netty:netty-handler:4.1.138.Final",
-        "io.netty:netty-resolver:4.1.138.Final",
-        "io.netty:netty-transport:4.1.138.Final",
-        "io.netty:netty-transport-native-unix-common:4.1.138.Final",
-        "junit:junit:4.13.2",
-        "net.bytebuddy:byte-buddy:1.18.12",
-        "net.sf.jopt-simple:jopt-simple:5.0.2",
-        "org.apache.httpcomponents:httpasyncclient:4.1.5",
-        "org.apache.httpcomponents:httpclient:4.5.14",
-        "org.apache.httpcomponents:httpcore:4.4.16",
-        "org.apache.httpcomponents:httpcore-nio:4.4.16",
-        "org.apache.logging.log4j:log4j-api:2.26.1",
-        "org.apache.logging.log4j:log4j-core:2.26.1",
-        "org.apache.lucene:lucene-analysis-common:10.5.1",
-        "org.apache.lucene:lucene-backward-codecs:10.5.1",
-        "org.apache.lucene:lucene-codecs:10.5.1",
-        "org.apache.lucene:lucene-core:10.5.1",
-        "org.apache.lucene:lucene-facet:10.5.1",
-        "org.apache.lucene:lucene-grouping:10.5.1",
-        "org.apache.lucene:lucene-highlighter:10.5.1",
-        "org.apache.lucene:lucene-join:10.5.1",
-        "org.apache.lucene:lucene-memory:10.5.1",
-        "org.apache.lucene:lucene-misc:10.5.1",
-        "org.apache.lucene:lucene-queries:10.5.1",
-        "org.apache.lucene:lucene-queryparser:10.5.1",
-        "org.apache.lucene:lucene-sandbox:10.5.1",
-        "org.apache.lucene:lucene-suggest:10.5.1",
-        "org.apache.lucene:lucene-test-framework:10.5.1",
-        "org.elasticsearch:mocksocket:1.2",
-        "org.hamcrest:hamcrest:3.0",
-        "org.hdrhistogram:HdrHistogram:2.1.9",
-        "org.jruby.jcodings:jcodings:1.0.63",
-        "org.jruby.joni:joni:2.2.6",
-        "org.jspecify:jspecify:1.0.0",
-        "org.mockito:mockito-core:5.23.0",
-        "org.mockito:mockito-subclass:5.23.0",
-        "org.objenesis:objenesis:3.3"
-      ],
-      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
-      "dependsOn": [
-        "web-utils",
-        "bridge",
-        "cli-terminal",
-        "client-rest",
-        "columnar",
-        "elasticsearch-server",
-        "entitlement",
-        "exponential-histogram",
-        "foreign-adapter",
-        "foreign-library",
-        "framework",
-        "geo",
-        "grok",
-        "ip-location-api",
-        "libs-cli",
-        "libs-core",
-        "libs-logging",
-        "libs-plugin-analysis-api",
-        "libs-plugin-api",
-        "libs-x-content",
-        "lucene-store",
-        "lz4",
-        "native",
-        "simdjson",
-        "simdvec",
-        "ssl-config",
-        "tdigest",
-        "transport-netty4",
-        "user-agent-api",
-        "zstd",
-        "simdvec:testFixtures"
-      ],
-      "classDirectories": [
-        "libs/web-utils/build/classes/java/test"
-      ],
-      "projectPath": ":libs:web-utils"
-    },
     "mapper-version": {
       "sources": [
         "x-pack/plugin/mapper-version/src/main/java"
@@ -17494,6 +17391,136 @@
         "test/fixtures/krb5kdc-fixture/build/classes/java/test"
       ],
       "projectPath": ":test:fixtures:krb5kdc-fixture"
+    },
+    "testing:test": {
+      "sources": [
+        "libs/foreign-library/testing/src/test/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing"
+      ],
+      "dependencyModules": [],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
+      "dependsOn": [
+        "testing",
+        "foreign-adapter",
+        "foreign-library",
+        "libs-core",
+        "libs-logging"
+      ],
+      "classDirectories": [
+        "libs/foreign-library/testing/build/classes/java/test"
+      ],
+      "projectPath": ":libs:foreign-library:testing"
+    },
+    "web-utils:test": {
+      "sources": [
+        "libs/web-utils/src/test/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing"
+      ],
+      "dependencyModules": [
+        "at.yawk.lz4:lz4-java:1.11.1",
+        "co.elastic.logging:ecs-logging-core:1.7.0",
+        "co.elastic.logging:log4j2-ecs-layout:1.7.0",
+        "com.carrotsearch:hppc:0.8.1",
+        "com.carrotsearch.randomizedtesting:randomizedtesting-runner:2.8.2",
+        "com.google.errorprone:error_prone_annotations:2.38.0",
+        "commons-codec:commons-codec:1.15",
+        "commons-logging:commons-logging:1.2",
+        "io.netty:netty-buffer:4.1.138.Final",
+        "io.netty:netty-codec:4.1.138.Final",
+        "io.netty:netty-codec-http:4.1.138.Final",
+        "io.netty:netty-common:4.1.138.Final",
+        "io.netty:netty-handler:4.1.138.Final",
+        "io.netty:netty-resolver:4.1.138.Final",
+        "io.netty:netty-transport:4.1.138.Final",
+        "io.netty:netty-transport-native-unix-common:4.1.138.Final",
+        "junit:junit:4.13.2",
+        "net.bytebuddy:byte-buddy:1.18.12",
+        "net.sf.jopt-simple:jopt-simple:5.0.2",
+        "org.apache.httpcomponents:httpasyncclient:4.1.5",
+        "org.apache.httpcomponents:httpclient:4.5.14",
+        "org.apache.httpcomponents:httpcore:4.4.16",
+        "org.apache.httpcomponents:httpcore-nio:4.4.16",
+        "org.apache.logging.log4j:log4j-api:2.26.1",
+        "org.apache.logging.log4j:log4j-core:2.26.1",
+        "org.apache.lucene:lucene-analysis-common:10.5.1",
+        "org.apache.lucene:lucene-backward-codecs:10.5.1",
+        "org.apache.lucene:lucene-codecs:10.5.1",
+        "org.apache.lucene:lucene-core:10.5.1",
+        "org.apache.lucene:lucene-facet:10.5.1",
+        "org.apache.lucene:lucene-grouping:10.5.1",
+        "org.apache.lucene:lucene-highlighter:10.5.1",
+        "org.apache.lucene:lucene-join:10.5.1",
+        "org.apache.lucene:lucene-memory:10.5.1",
+        "org.apache.lucene:lucene-misc:10.5.1",
+        "org.apache.lucene:lucene-queries:10.5.1",
+        "org.apache.lucene:lucene-queryparser:10.5.1",
+        "org.apache.lucene:lucene-sandbox:10.5.1",
+        "org.apache.lucene:lucene-suggest:10.5.1",
+        "org.apache.lucene:lucene-test-framework:10.5.1",
+        "org.elasticsearch:mocksocket:1.2",
+        "org.hamcrest:hamcrest:3.0",
+        "org.hdrhistogram:HdrHistogram:2.1.9",
+        "org.jruby.jcodings:jcodings:1.0.63",
+        "org.jruby.joni:joni:2.2.6",
+        "org.jspecify:jspecify:1.0.0",
+        "org.mockito:mockito-core:5.23.0",
+        "org.mockito:mockito-subclass:5.23.0",
+        "org.objenesis:objenesis:3.3"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
+      "dependsOn": [
+        "web-utils",
+        "bridge",
+        "cli-terminal",
+        "client-rest",
+        "columnar",
+        "elasticsearch-server",
+        "entitlement",
+        "exponential-histogram",
+        "foreign-adapter",
+        "foreign-library",
+        "framework",
+        "geo",
+        "grok",
+        "ip-location-api",
+        "libs-cli",
+        "libs-core",
+        "libs-logging",
+        "libs-plugin-analysis-api",
+        "libs-plugin-api",
+        "libs-x-content",
+        "lucene-store",
+        "lz4",
+        "native",
+        "simdjson",
+        "simdvec",
+        "ssl-config",
+        "tdigest",
+        "transport-netty4",
+        "user-agent-api",
+        "zstd",
+        "simdvec:testFixtures"
+      ],
+      "classDirectories": [
+        "libs/web-utils/build/classes/java/test"
+      ],
+      "projectPath": ":libs:web-utils"
     },
     "core-with-search": {
       "sources": [],
@@ -20061,6 +20088,7 @@
         "ssl-config",
         "tdigest",
         "template-resources",
+        "testing",
         "transport-netty4",
         "user-agent-api",
         "zstd",
@@ -26114,6 +26142,72 @@
       ],
       "projectPath": ":plugins:analysis-smartcn"
     },
+    "knn-eval": {
+      "sources": [
+        "x-pack/plugin/knn-eval/src/main/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing",
+        "--module-path=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/tdigest/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/exponential-histogram/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/x-content/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/lz4/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/user-agent-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/ip-location-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/cli/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/core/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/logging/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/geo/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/plugin-analysis-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/plugin-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/grok/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/columnar/build/classes/java/main:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-suggest/10.5.1/6e3bffd0618d6846d59856c0222ad7b2f5556654/lucene-suggest-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analysis-common/10.5.1/461fbd2772df41469b8a158a6ebe0ed6819d49a1/lucene-analysis-common-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-backward-codecs/10.5.1/c11b462b4ad72cf85fd6f8d3777cc52995d83638/lucene-backward-codecs-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queryparser/10.5.1/2d53a97c255537177b7c24d9c54bba32ff3f90d/lucene-queryparser-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-sandbox/10.5.1/2b799275b67e01257a2c18e4a2078e6eec04cda7/lucene-sandbox-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-facet/10.5.1/87a170ae7ba56d7c6ce090507c7968d872c5de15/lucene-facet-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-grouping/10.5.1/3fe2dd3835ac243f4505d30fcc374ca548ff2fda/lucene-grouping-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-highlighter/10.5.1/a0653daee57e6ac601f0c793207f78a9a6e90092/lucene-highlighter-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-join/10.5.1/ccbea503066ab703ee6428232b7ef86a33af90f7/lucene-join-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-memory/10.5.1/fb80c9c74920fe84e365f4f3b28c79d0d35b261/lucene-memory-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-misc/10.5.1/c8a9c62c39fc34a4ede6c44575cd8a847c078673/lucene-misc-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queries/10.5.1/171318c12d7560fb1e6f82562f2089a742df98f7/lucene-queries-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/10.5.1/9cf36fb7aaa63a1c994b653f317499ae7d87efbe/lucene-core-10.5.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.9/e4631ce165eb400edecfa32e03d3f1be53dee754/HdrHistogram-2.1.9.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.26.1/b9864ed8d0c01f65f3b0bf70f1447e5cc1b49c24/log4j-api-2.26.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.26.1/1941359537713285d224714f63ca4e5cf004d575/log4j-core-2.26.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/co.elastic.logging/log4j2-ecs-layout/1.7.0/8326e6fa5aa2a1090b22e6a4f1a1c114c84d85a3/log4j2-ecs-layout-1.7.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/co.elastic.logging/ecs-logging-core/1.7.0/46791b93c3acaa3bcc584b795252edd8d2054cc4/ecs-logging-core-1.7.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/at.yawk.lz4/lz4-java/1.11.1/140124bf632168cef73cf9ce80477dced52b2443/lz4-java-1.11.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jruby.joni/joni/2.2.6/864217ab7dcece78ad7bf3c045a602d871ff309a/joni-2.2.6.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.63/b8c386790e72f0bad666c8f1a8af12d0528992e0/jcodings-1.0.63.jar:/home/runner/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.2/98cafc6081d5632b61be2c9e60650b64ddbc637c/jopt-simple-5.0.2.jar:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/cli-terminal/build/classes/java/main:/home/runner/.gradle/caches/modules-2/files-2.1/org.jspecify/jspecify/1.0.0/7425a601c1c7ec76645a78d22b8c6a627edee507/jspecify-1.0.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.38.0/fc0ae991433e8590ba51cd558421478318a74c8c/error_prone_annotations-2.38.0.jar",
+        "--module-version=9.6.0-SNAPSHOT",
+        "-Xlint:-module,-exports,-requires-automatic,-requires-transitive-automatic,-missing-explicit-ctor"
+      ],
+      "dependencyModules": [
+        "at.yawk.lz4:lz4-java:1.11.1",
+        "co.elastic.logging:ecs-logging-core:1.7.0",
+        "co.elastic.logging:log4j2-ecs-layout:1.7.0",
+        "com.google.errorprone:error_prone_annotations:2.38.0",
+        "net.sf.jopt-simple:jopt-simple:5.0.2",
+        "org.apache.logging.log4j:log4j-api:2.26.1",
+        "org.apache.logging.log4j:log4j-core:2.26.1",
+        "org.apache.lucene:lucene-analysis-common:10.5.1",
+        "org.apache.lucene:lucene-backward-codecs:10.5.1",
+        "org.apache.lucene:lucene-core:10.5.1",
+        "org.apache.lucene:lucene-facet:10.5.1",
+        "org.apache.lucene:lucene-grouping:10.5.1",
+        "org.apache.lucene:lucene-highlighter:10.5.1",
+        "org.apache.lucene:lucene-join:10.5.1",
+        "org.apache.lucene:lucene-memory:10.5.1",
+        "org.apache.lucene:lucene-misc:10.5.1",
+        "org.apache.lucene:lucene-queries:10.5.1",
+        "org.apache.lucene:lucene-queryparser:10.5.1",
+        "org.apache.lucene:lucene-sandbox:10.5.1",
+        "org.apache.lucene:lucene-suggest:10.5.1",
+        "org.hdrhistogram:HdrHistogram:2.1.9",
+        "org.jruby.jcodings:jcodings:1.0.63",
+        "org.jruby.joni:joni:2.2.6",
+        "org.jspecify:jspecify:1.0.0"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
+      "dependsOn": [
+        "cli-terminal",
+        "columnar",
+        "elasticsearch-server",
+        "exponential-histogram",
+        "geo",
+        "grok",
+        "ip-location-api",
+        "libs-cli",
+        "libs-core",
+        "libs-logging",
+        "libs-plugin-analysis-api",
+        "libs-plugin-api",
+        "libs-x-content",
+        "lz4",
+        "tdigest",
+        "user-agent-api"
+      ],
+      "classDirectories": [
+        "x-pack/plugin/knn-eval/build/classes/java/main"
+      ],
+      "projectPath": ":x-pack:plugin:knn-eval"
+    },
     "ccs-rolling-upgrade:test": {
       "sources": [
         "x-pack/plugin/eql/qa/ccs-rolling-upgrade/src/javaRestTest/java"
@@ -28875,6 +28969,7 @@
         "simdvec",
         "ssl-config",
         "tdigest",
+        "testing",
         "transport-netty4",
         "user-agent-api",
         "zstd",
@@ -33504,6 +33599,35 @@
         "build-conventions/build/classes/java/test"
       ],
       "projectPath": "build-conventions:"
+    },
+    "testing": {
+      "sources": [
+        "libs/foreign-library/testing/src/main/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing",
+        "--module-path=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/foreign-library/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/core/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/logging/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/foreign-adapter/build/classes/java/main",
+        "--module-version=9.6.0-SNAPSHOT",
+        "-Xlint:-module,-exports,-requires-automatic,-requires-transitive-automatic,-missing-explicit-ctor"
+      ],
+      "dependencyModules": [],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
+      "dependsOn": [
+        "foreign-adapter",
+        "foreign-library",
+        "libs-core",
+        "libs-logging"
+      ],
+      "classDirectories": [
+        "libs/foreign-library/testing/build/classes/java/main"
+      ],
+      "projectPath": ":libs:foreign-library:testing"
     },
     "libs-plugin-api:test": {
       "sources": [
@@ -47152,45 +47276,6 @@
       "classDirectories": [],
       "projectPath": ":x-pack:plugin:ml:qa:multi-cluster-tests-with-security"
     },
-    "client-rest:test": {
-      "sources": [
-        "client/rest/src/test/java"
-      ],
-      "scalacOptions": [],
-      "javacOptions": [
-        "--release",
-        "8",
-        "-Werror",
-        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
-        "-Xdoclint:all",
-        "-Xdoclint:-missing"
-      ],
-      "dependencyModules": [
-        "com.carrotsearch.randomizedtesting:randomizedtesting-runner:2.8.2",
-        "commons-codec:commons-codec:1.15",
-        "commons-logging:commons-logging:1.2",
-        "junit:junit:4.13.2",
-        "net.bytebuddy:byte-buddy:1.18.12",
-        "org.apache.httpcomponents:httpasyncclient:4.1.5",
-        "org.apache.httpcomponents:httpclient:4.5.14",
-        "org.apache.httpcomponents:httpcore:4.4.16",
-        "org.apache.httpcomponents:httpcore-nio:4.4.16",
-        "org.elasticsearch:mocksocket:1.2",
-        "org.hamcrest:hamcrest:3.0",
-        "org.mockito:mockito-core:5.23.0",
-        "org.mockito:mockito-subclass:5.23.0",
-        "org.objenesis:objenesis:3.3"
-      ],
-      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
-      "dependsOn": [
-        "client-rest",
-        "client-test"
-      ],
-      "classDirectories": [
-        "client/rest/build/classes/java/test"
-      ],
-      "projectPath": ":client:rest"
-    },
     "sql-qa-server-single-node": {
       "sources": [
         "x-pack/plugin/sql/qa/server/single-node/src/main/java"
@@ -48677,6 +48762,150 @@
         "x-pack/qa/multi-project/xpack-rest-tests-with-multiple-projects/build/classes/java/test"
       ],
       "projectPath": ":x-pack:qa:multi-project:xpack-rest-tests-with-multiple-projects"
+    },
+    "client-rest:test": {
+      "sources": [
+        "client/rest/src/test/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "8",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing"
+      ],
+      "dependencyModules": [
+        "com.carrotsearch.randomizedtesting:randomizedtesting-runner:2.8.2",
+        "commons-codec:commons-codec:1.15",
+        "commons-logging:commons-logging:1.2",
+        "junit:junit:4.13.2",
+        "net.bytebuddy:byte-buddy:1.18.12",
+        "org.apache.httpcomponents:httpasyncclient:4.1.5",
+        "org.apache.httpcomponents:httpclient:4.5.14",
+        "org.apache.httpcomponents:httpcore:4.4.16",
+        "org.apache.httpcomponents:httpcore-nio:4.4.16",
+        "org.elasticsearch:mocksocket:1.2",
+        "org.hamcrest:hamcrest:3.0",
+        "org.mockito:mockito-core:5.23.0",
+        "org.mockito:mockito-subclass:5.23.0",
+        "org.objenesis:objenesis:3.3"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
+      "dependsOn": [
+        "client-rest",
+        "client-test"
+      ],
+      "classDirectories": [
+        "client/rest/build/classes/java/test"
+      ],
+      "projectPath": ":client:rest"
+    },
+    "knn-eval:test": {
+      "sources": [
+        "x-pack/plugin/knn-eval/src/internalClusterTest/java",
+        "x-pack/plugin/knn-eval/src/test/java",
+        "x-pack/plugin/knn-eval/src/yamlRestTest/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing"
+      ],
+      "dependencyModules": [
+        "at.yawk.lz4:lz4-java:1.11.1",
+        "co.elastic.logging:ecs-logging-core:1.7.0",
+        "co.elastic.logging:log4j2-ecs-layout:1.7.0",
+        "com.carrotsearch:hppc:0.8.1",
+        "com.carrotsearch.randomizedtesting:randomizedtesting-runner:2.8.2",
+        "com.google.errorprone:error_prone_annotations:2.38.0",
+        "commons-codec:commons-codec:1.15",
+        "commons-logging:commons-logging:1.2",
+        "io.netty:netty-buffer:4.1.138.Final",
+        "io.netty:netty-codec:4.1.138.Final",
+        "io.netty:netty-codec-http:4.1.138.Final",
+        "io.netty:netty-common:4.1.138.Final",
+        "io.netty:netty-handler:4.1.138.Final",
+        "io.netty:netty-resolver:4.1.138.Final",
+        "io.netty:netty-transport:4.1.138.Final",
+        "io.netty:netty-transport-native-unix-common:4.1.138.Final",
+        "junit:junit:4.13.2",
+        "net.bytebuddy:byte-buddy:1.18.12",
+        "net.sf.jopt-simple:jopt-simple:5.0.2",
+        "org.apache.httpcomponents:httpasyncclient:4.1.5",
+        "org.apache.httpcomponents:httpclient:4.5.14",
+        "org.apache.httpcomponents:httpcore:4.4.16",
+        "org.apache.httpcomponents:httpcore-nio:4.4.16",
+        "org.apache.logging.log4j:log4j-api:2.26.1",
+        "org.apache.logging.log4j:log4j-core:2.26.1",
+        "org.apache.lucene:lucene-analysis-common:10.5.1",
+        "org.apache.lucene:lucene-backward-codecs:10.5.1",
+        "org.apache.lucene:lucene-codecs:10.5.1",
+        "org.apache.lucene:lucene-core:10.5.1",
+        "org.apache.lucene:lucene-facet:10.5.1",
+        "org.apache.lucene:lucene-grouping:10.5.1",
+        "org.apache.lucene:lucene-highlighter:10.5.1",
+        "org.apache.lucene:lucene-join:10.5.1",
+        "org.apache.lucene:lucene-memory:10.5.1",
+        "org.apache.lucene:lucene-misc:10.5.1",
+        "org.apache.lucene:lucene-queries:10.5.1",
+        "org.apache.lucene:lucene-queryparser:10.5.1",
+        "org.apache.lucene:lucene-sandbox:10.5.1",
+        "org.apache.lucene:lucene-suggest:10.5.1",
+        "org.apache.lucene:lucene-test-framework:10.5.1",
+        "org.elasticsearch:mocksocket:1.2",
+        "org.hamcrest:hamcrest:3.0",
+        "org.hdrhistogram:HdrHistogram:2.1.9",
+        "org.jruby.jcodings:jcodings:1.0.63",
+        "org.jruby.joni:joni:2.2.6",
+        "org.jspecify:jspecify:1.0.0",
+        "org.mockito:mockito-core:5.23.0",
+        "org.mockito:mockito-subclass:5.23.0",
+        "org.objenesis:objenesis:3.3"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
+      "dependsOn": [
+        "knn-eval",
+        "bridge",
+        "cli-terminal",
+        "client-rest",
+        "columnar",
+        "elasticsearch-server",
+        "entitlement",
+        "exponential-histogram",
+        "foreign-adapter",
+        "foreign-library",
+        "framework",
+        "geo",
+        "grok",
+        "ip-location-api",
+        "libs-cli",
+        "libs-core",
+        "libs-logging",
+        "libs-plugin-analysis-api",
+        "libs-plugin-api",
+        "libs-x-content",
+        "lucene-store",
+        "lz4",
+        "native",
+        "simdjson",
+        "simdvec",
+        "ssl-config",
+        "tdigest",
+        "transport-netty4",
+        "user-agent-api",
+        "zstd",
+        "simdvec:testFixtures"
+      ],
+      "classDirectories": [
+        "x-pack/plugin/knn-eval/build/classes/java/test"
+      ],
+      "projectPath": ":x-pack:plugin:knn-eval"
     },
     "test-latency-simulating-directory": {
       "sources": [
