@@ -16,6 +16,7 @@
 # Usage:
 #   run-community-build.sh [--dry-run] [--wait] [--branch-url]
 #                          [--repo OWNER/NAME] [--workflow-ref REF]
+#                          [--projects-ref REF]
 #                          [--metals-repo OWNER/NAME] [--metals-ref REF]
 #                          [--timeout MINUTES]
 #
@@ -26,6 +27,8 @@
 #   WORKFLOW         workflow file or name to dispatch (default: ci.yml)
 #   WORKFLOW_REF     branch of REPO whose workflow definition runs
 #                    (default: main)
+#   PROJECTS_REF     branch, tag, or commit of REPO with the project
+#                    manifests; unset uses the workflow default (projects)
 #   METALS_REPO      Metals repository to test (default: scalameta/metals)
 #   METALS_REF       Metals branch to test (default: main-v2)
 #   BRANCH_URL       true/1/yes dispatches the branch URL instead of the
@@ -48,6 +51,7 @@ is_true() { [[ "$1" =~ ^(1|[Tt][Rr][Uu][Ee]|[Yy][Ee][Ss]|[Oo][Nn])$ ]]; }
 REPO="${VP_INPUT_REPO:-${REPO:-zielinsky/metals-community-build}}"
 WORKFLOW="${VP_INPUT_WORKFLOW:-${WORKFLOW:-ci.yml}}"
 WORKFLOW_REF="${VP_INPUT_WORKFLOW_REF:-${WORKFLOW_REF:-main}}"
+PROJECTS_REF="${VP_INPUT_PROJECTS_REF:-${PROJECTS_REF:-}}"
 METALS_REPO="${VP_INPUT_METALS_REPO:-${METALS_REPO:-scalameta/metals}}"
 METALS_REF="${VP_INPUT_METALS_REF:-${METALS_REF:-main-v2}}"
 TIMEOUT_MINUTES="${VP_INPUT_TIMEOUT_MINUTES:-${TIMEOUT_MINUTES:-240}}"
@@ -69,12 +73,12 @@ fi
 usage() {
   cat <<'USAGE'
 Usage: run-community-build.sh [--dry-run] [--wait] [--branch-url] [--repo OWNER/NAME]
-                              [--workflow-ref REF] [--metals-repo OWNER/NAME] [--metals-ref REF]
-                              [--timeout MINUTES]
+                              [--workflow-ref REF] [--projects-ref REF]
+                              [--metals-repo OWNER/NAME] [--metals-ref REF] [--timeout MINUTES]
 
 Dispatches the Community Build workflow against the latest commit of a Metals branch (main-v2 by default).
-Inputs (VP_INPUT_<NAME> or plain env): REPO, WORKFLOW, WORKFLOW_REF, METALS_REPO, METALS_REF,
-BRANCH_URL, WAIT, TIMEOUT_MINUTES, DRY_RUN, OUTPUT_PORT. Summary: $VP_OUTPUTS_DIR/<OUTPUT_PORT>.md.
+Inputs (VP_INPUT_<NAME> or plain env): REPO, WORKFLOW, WORKFLOW_REF, PROJECTS_REF, METALS_REPO,
+METALS_REF, BRANCH_URL, WAIT, TIMEOUT_MINUTES, DRY_RUN, OUTPUT_PORT. Summary: $VP_OUTPUTS_DIR/<OUTPUT_PORT>.md.
 Requires an authenticated gh with actions:write (unless --dry-run) and git or curl+jq.
 USAGE
 }
@@ -87,6 +91,7 @@ while [[ $# -gt 0 ]]; do
     --repo) REPO="$2"; shift ;;
     --workflow) WORKFLOW="$2"; shift ;;
     --workflow-ref) WORKFLOW_REF="$2"; shift ;;
+    --projects-ref) PROJECTS_REF="$2"; shift ;;
     --metals-repo) METALS_REPO="$2"; shift ;;
     --metals-ref) METALS_REF="$2"; shift ;;
     --timeout) TIMEOUT_MINUTES="$2"; shift ;;
@@ -99,6 +104,12 @@ done
 [[ "$REPO" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]] || { echo "Invalid repository: $REPO" >&2; exit 2; }
 [[ "$METALS_REPO" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]] || { echo "Invalid Metals repository: $METALS_REPO" >&2; exit 2; }
 [[ -n "$METALS_REF" && "$METALS_REF" != *" "* ]] || { echo "Invalid Metals ref: '$METALS_REF'" >&2; exit 2; }
+[[ "$PROJECTS_REF" != *" "* ]] || { echo "Invalid projects ref: '$PROJECTS_REF'" >&2; exit 2; }
+
+# Workflow inputs beyond the Metals source; empty PROJECTS_REF keeps the
+# workflow's own default (the projects branch).
+DISPATCH_FIELDS=()
+[[ -n "$PROJECTS_REF" ]] && DISPATCH_FIELDS+=(--field "projects=${PROJECTS_REF}")
 [[ "$TIMEOUT_MINUTES" =~ ^[0-9]+$ && "$TIMEOUT_MINUTES" -gt 0 ]] || { echo "Invalid timeout: $TIMEOUT_MINUTES" >&2; exit 2; }
 
 HAVE_GH=0
@@ -161,10 +172,11 @@ fi
 note "Metals ${METALS_REPO}@${METALS_REF} is at ${METALS_COMMIT:0:12}"
 note "Workflow: ${REPO} ${WORKFLOW} (ref ${WORKFLOW_REF})"
 note "Metals source input: ${METALS_SOURCE}"
+note "Project manifests: ${PROJECTS_REF:-workflow default (projects branch)}"
 
 if [[ $DRY_RUN -eq 1 ]]; then
   note "Dry run: not dispatching. Equivalent command:"
-  note "  gh workflow run '${WORKFLOW}' --repo '${REPO}' --ref '${WORKFLOW_REF}' --field metals='${METALS_SOURCE}'"
+  note "  gh workflow run '${WORKFLOW}' --repo '${REPO}' --ref '${WORKFLOW_REF}' --field metals='${METALS_SOURCE}'${PROJECTS_REF:+ --field projects='${PROJECTS_REF}'}"
   exit 0
 fi
 
@@ -174,7 +186,7 @@ fi
 # runs with the same input (for example a re-run of the same commit).
 DISPATCHED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-gh workflow run "$WORKFLOW" --repo "$REPO" --ref "$WORKFLOW_REF" --field "metals=${METALS_SOURCE}"
+gh workflow run "$WORKFLOW" --repo "$REPO" --ref "$WORKFLOW_REF" --field "metals=${METALS_SOURCE}" ${DISPATCH_FIELDS[@]+"${DISPATCH_FIELDS[@]}"}
 note "Dispatched the Community Build workflow at ${DISPATCHED_AT}"
 
 # The dispatch API returns nothing, so locate the run by workflow, event,

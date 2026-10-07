@@ -8,6 +8,11 @@ on:
         description: "Metals branch/commit/tag URL (for example: https://github.com/scalameta/metals/tree/main-v2)"
         required: true
         type: string
+      projects:
+        description: "Branch, tag, or commit of this repository with the project manifests"
+        required: false
+        default: projects
+        type: string
 
 permissions:
   contents: read
@@ -26,10 +31,30 @@ jobs:
       metalsRepository: ${{ steps.matrix.outputs.metalsRepository }}
       metalsRef: ${{ steps.matrix.outputs.metalsRef }}
       metalsVersion: ${{ steps.matrix.outputs.metalsVersion }}
+      # Every later job checks out this exact commit, so one run always
+      # tests a single, consistent set of manifests even if the projects
+      # branch moves while the run is in progress.
+      projectsCommit: ${{ steps.projects.outputs.commit }}
     steps:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
+      - name: Check out the project manifests
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.projects || 'projects' }}
+          path: projects
+          persist-credentials: false
+      - id: projects
+        name: Record the project manifests commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          commit="$(git -C projects rev-parse HEAD)"
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+          echo "Project manifests: \`${PROJECTS_REF}\` at [\`${commit:0:12}\`](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${commit})" >> "$GITHUB_STEP_SUMMARY"
+        env:
+          PROJECTS_REF: ${{ inputs.projects || 'projects' }}
       - uses: actions/setup-node@v7
         with:
           node-version: "24"
@@ -154,6 +179,7 @@ jobs:
     with:
       matrix: ${{ needs.projects.outputs.bazelMatrix }}
       metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+      projectsCommit: ${{ needs.projects.outputs.projectsCommit }}
 
   maven:
     name: Maven
@@ -163,6 +189,7 @@ jobs:
     with:
       matrix: ${{ needs.projects.outputs.mavenMatrix }}
       metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+      projectsCommit: ${{ needs.projects.outputs.projectsCommit }}
 
   gradle:
     name: Gradle
@@ -172,6 +199,7 @@ jobs:
     with:
       matrix: ${{ needs.projects.outputs.gradleMatrix }}
       metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+      projectsCommit: ${{ needs.projects.outputs.projectsCommit }}
 
   report:
     name: Build static report
@@ -189,6 +217,15 @@ jobs:
       - name: Check out the community build
         uses: actions/checkout@v7
         with:
+          persist-credentials: false
+
+      # The report lists every configured project, including those whose
+      # job produced no diagnostics, so it needs the same manifests.
+      - name: Check out the project manifests
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.projects.outputs.projectsCommit }}
+          path: projects
           persist-credentials: false
 
       - name: Set up Node.js

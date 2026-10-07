@@ -491,9 +491,18 @@ export function loadProjectConfig(
   };
 }
 
-export function discoverProjects() {
+// Project manifests are kept on the `projects` branch of this repository, not
+// on `main`. CI checks that branch out into `projects/`; locally create a
+// worktree of it there with `git worktree add projects projects`.
+export function discoverProjects(root: string = paths.projects) {
+  ensure(
+    existsSync(root),
+    root,
+    "project manifests directory not found; check out the `projects` branch " +
+      "there (git worktree add projects projects)",
+  );
   const projects = buildTools.flatMap((buildTool) => {
-    const directory = resolve(paths.root, "projects", buildTool);
+    const directory = resolve(root, buildTool);
     if (!existsSync(directory)) return [];
     return readdirSync(directory)
       .filter((file) => file.endsWith(".json"))
@@ -501,11 +510,11 @@ export function discoverProjects() {
       .map((file) => loadProjectConfig(resolve(directory, file), buildTool));
   });
 
-  ensure(projects.length > 0, "projects", "no community projects configured");
+  ensure(projects.length > 0, root, "no community projects configured");
   const ids = projects.map(({ project }) => project.id);
   ensure(
     new Set(ids).size === ids.length,
-    "projects",
+    root,
     "project ids must be unique",
   );
   return projects;

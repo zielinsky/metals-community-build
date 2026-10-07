@@ -1,17 +1,53 @@
 import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { test } from "node:test";
 import { discoverProjects, loadProjectConfig } from "../scripts/config";
 import { createProjectResult, updateScenarioResult } from "../scripts/test-report";
 
-test("all community manifests and the smoke fixture load", () => {
-  assert.ok(discoverProjects().length >= 5);
+test("the smoke fixture loads", () => {
   const { project } = loadProjectConfig("fixtures/smoke.json");
   assert.equal(new Set(project.scenarios.map((s) => s.kind)).size, 11);
   assert.equal(project.scenarios[0].required, true);
   assert.equal(project.scenarios[1].required, false);
+});
+
+test("manifests are discovered from a projects checkout", () => {
+  const directory = mkdtempSync(join(tmpdir(), "metals-projects-"));
+  try {
+    mkdirSync(join(directory, "maven"));
+    const raw = JSON.parse(readFileSync("fixtures/smoke.json", "utf8"));
+    writeFileSync(join(directory, "maven", "smoke.json"), JSON.stringify(raw));
+    const [discovered] = discoverProjects(directory);
+    assert.equal(discovered.project.id, "smoke");
+
+    writeFileSync(
+      join(directory, "maven", "copy.json"),
+      JSON.stringify({ ...raw, buildTool: "gradle" }),
+    );
+    assert.throws(() => discoverProjects(directory), /does not match directory/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test("a missing projects checkout points at the projects branch", () => {
+  const missing = join(tmpdir(), "metals-projects-missing");
+  assert.throws(() => discoverProjects(missing), /git worktree add projects projects/);
+});
+
+// The real manifests are only present when the `projects` branch is checked
+// out into projects/ (CI) or added there as a worktree (local).
+test("every checked-out community manifest loads", { skip: !existsSync("projects") }, () => {
+  assert.ok(discoverProjects().length >= 1);
 });
 
 for (const [name, change, expected] of [
