@@ -1,0 +1,44 @@
+name: Validate project manifests
+
+# Runs on every push and pull request to the projects branch. The runner and
+# its validation code are checked out from main; the manifests come from the
+# commit being tested. Nothing is built or executed against real projects
+# here: that is the Community Build workflow on main.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate manifests and create matrix
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the community build runner
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Check out the project manifests
+        uses: actions/checkout@v7
+        with:
+          path: projects
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install community build dependencies
+        run: npm ci
+
+      - name: Validate manifests and create matrix
+        run: npm run matrix

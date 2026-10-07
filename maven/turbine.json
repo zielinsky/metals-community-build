@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/zielinsky/metals-community-build/main/project.schema.json",
+  "id": "turbine",
+  "name": "Turbine",
+  "buildTool": "maven",
+  "repository": "google/turbine",
+  "ref": "main",
+  "projectRoot": ".",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "openFile": "java/com/google/turbine/main/Main.java",
+      "required": true,
+      "assertions": {
+        "minimumNamespaces": 1,
+        "sources": [
+          "java/com/google/turbine/main/Main.java"
+        ]
+      }
+    },
+    {
+      "id": "rename-manifest-dir",
+      "kind": "rename-symbol",
+      "openFile": "java/com/google/turbine/main/Main.java",
+      "rename": {
+        "symbol": "MANIFEST_DIR",
+        "newName": "MANIFEST_DIRECTORY",
+        "expectedOccurrences": 2
+      }
+    },
+    {
+      "id": "turbine-options-hover",
+      "kind": "hover",
+      "openFile": "java/com/google/turbine/main/Main.java",
+      "symbol": "TurbineOptions",
+      "hoverText": "Header compilation options."
+    },
+    {
+      "id": "turbine-options-definition",
+      "kind": "go-to-definition",
+      "openFile": "java/com/google/turbine/main/Main.java",
+      "symbol": "TurbineOptions",
+      "definition": {
+        "file": "java/com/google/turbine/options/TurbineOptions.java",
+        "text": "TurbineOptions"
+      }
+    }
+  ]
+}
