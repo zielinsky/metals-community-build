@@ -1,21 +1,18 @@
-2026.10.07 11:32:37 INFO  Started: Metals version 2.0.0-community-build.37614103677 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-2026.10.07 11:32:37 INFO  Memory monitor started
-2026.10.07 11:32:39 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.07 11:32:42 INFO  mbt-v2: indexing 32795 files
-2026.10.07 11:32:46 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-2026.10.07 11:32:46 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.07 12:32:22 INFO  Started: Metals version 2.0.0-community-build.37620956960 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+2026.10.07 12:32:22 INFO  Memory monitor started
+2026.10.07 12:32:24 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 12:32:27 INFO  mbt-v2: indexing 32801 files
+2026.10.07 12:32:29 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+2026.10.07 12:32:29 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
 Fetching distribution.
 Downloading https://services.gradle.org/distributions/gradle-9.7.1-bin.zip
 ................................................................................................................................................
-2026.10.07 11:32:58 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.07 11:33:34 INFO  time: mbt-v2 loaded index for 32795 files in 54s
-2026.10.07 11:37:12 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.07 11:37:13 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-Fetching distribution.
-Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
-.....................................................................................................................................
-2026.10.07 11:37:37 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.07 11:37:40 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools
+2026.10.07 12:32:47 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.07 12:33:18 INFO  time: mbt-v2 loaded index for 32801 files in 53s
+2026.10.07 12:36:36 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.07 12:36:37 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.07 12:36:52 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.07 12:36:55 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools
 org.gradle.tooling.BuildException: Could not fetch model of type 'IdeaProject' using connection to Gradle distribution 'https://services.gradle.org/distributions/gradle-9.5.1-bin.zip'.
 	at org.gradle.tooling.internal.consumer.ConnectionExceptionTransformer.transform(ConnectionExceptionTransformer.java:69)
 	at org.gradle.tooling.internal.consumer.ResultHandlerAdapter.onFailure(ResultHandlerAdapter.java:42)
@@ -170,6 +167,37 @@ Caused by: org.gradle.internal.serialize.ContextualPlaceholderException: Executi
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:328)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:146)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:131)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$11(DefaultBuildLifecycleController.java:323)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:304)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$9(StateTransitionController.java:215)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:45)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:215)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:314)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.lambda$runAndReleaseLocks$0(DefaultWorkerLeaseService.java:300)
+	at org.gradle.internal.work.ResourceLockStatistics$1.measure(ResourceLockStatistics.java:43)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAndReleaseLocks(DefaultWorkerLeaseService.java:298)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocksAcquired(DefaultWorkerLeaseService.java:294)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:286)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:130)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:182)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:199)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:199)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Compilation failed; see the compiler output below.
@@ -342,58 +370,89 @@ Note: Recompile with -Xlint:unchecked for details.
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:328)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:146)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:131)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$11(DefaultBuildLifecycleController.java:323)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:304)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$9(StateTransitionController.java:215)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:45)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:215)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:314)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.lambda$runAndReleaseLocks$0(DefaultWorkerLeaseService.java:300)
+	at org.gradle.internal.work.ResourceLockStatistics$1.measure(ResourceLockStatistics.java:43)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAndReleaseLocks(DefaultWorkerLeaseService.java:298)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocksAcquired(DefaultWorkerLeaseService.java:294)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:286)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:130)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:182)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:199)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:199)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 
-2026.10.07 11:37:40 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.07 11:38:01 INFO  time: gradle-extractor extract in 5m20s
-2026.10.07 11:38:01 INFO  mbt-import: wrote .metals/mbt.json
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'repository-s3:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'azure-fixture:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'text-structure:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'data-streams:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'benchmarks' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'downsample-qa-mixed-cluster:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'tls-utils' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'streams:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'plugin:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'vector' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'qa-jdbc' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'test-clusters' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'stateless-test-framework:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'esql-qa-server' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'azure-fixture' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'x-pack-qa-third-party:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'yaml-rest-runner:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'server-security:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'test-multi-project:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'x-pack-qa-third-party' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'esql-qa-server:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'benchmarks:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'framework:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'downsample-qa-rest:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 's3-fixture:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'xpack-rest-tests-with-multiple-projects:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'qa-jdbc:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'test-clusters:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'tls-utils:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'stateless-test-framework' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'stateless:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 's3-fixture' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'esql-datasource-s3:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'repository-azure:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 WARN  mbt-build: namespace 'vector:test' dependsOn unknown namespace 'reaper'.
-2026.10.07 11:38:01 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.10.07 11:38:01 INFO  Connected to Build server: MBT v2.0.0-community-build.37614103677
-2026.10.07 11:38:58 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.07 11:39:18 INFO  time: indexed workspace in 1m14s
-2026.10.07 11:39:24 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
-Oct 07, 2026 11:39:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+2026.10.07 12:36:55 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.07 12:37:12 INFO  time: gradle-extractor extract in 4m46s
+2026.10.07 12:37:12 INFO  mbt-import: wrote .metals/mbt.json
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'repository-s3:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'azure-fixture:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'text-structure:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'data-streams:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'benchmarks' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'downsample-qa-mixed-cluster:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'tls-utils' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'streams:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'plugin:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'vector' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'qa-jdbc' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'test-clusters' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'stateless-test-framework:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'esql-qa-server' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'azure-fixture' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'x-pack-qa-third-party:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'yaml-rest-runner:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'server-security:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'test-multi-project:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'x-pack-qa-third-party' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'esql-qa-server:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'benchmarks:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'framework:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'downsample-qa-rest:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 's3-fixture:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'xpack-rest-tests-with-multiple-projects:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'qa-jdbc:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'test-clusters:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'tls-utils:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'stateless-test-framework' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'stateless:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 's3-fixture' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'esql-datasource-s3:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'repository-azure:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 WARN  mbt-build: namespace 'vector:test' dependsOn unknown namespace 'reaper'.
+2026.10.07 12:37:13 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.10.07 12:37:13 INFO  Connected to Build server: MBT v2.0.0-community-build.37620956960
+2026.10.07 12:38:08 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.07 12:38:25 INFO  time: indexed workspace in 1m10s
+2026.10.07 12:38:30 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
+Oct 07, 2026 12:38:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-Oct 07, 2026 11:39:32 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+Oct 07, 2026 12:38:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-2026.10.07 11:40:09 INFO  Shutting down server
-2026.10.07 11:40:09 INFO  Memory monitor stopped
-2026.10.07 11:40:09 INFO  shutting down Metals
-2026.10.07 11:40:09 INFO  Shut down connection with build server.
-2026.10.07 11:40:09 INFO  Exiting server
+2026.10.07 12:39:13 INFO  Shutting down server
+2026.10.07 12:39:13 INFO  Memory monitor stopped
+2026.10.07 12:39:13 INFO  shutting down Metals
+2026.10.07 12:39:14 INFO  Shut down connection with build server.
+2026.10.07 12:39:13 INFO  Exiting server

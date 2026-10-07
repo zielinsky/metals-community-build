@@ -10728,6 +10728,7 @@
     },
     "//java/test/org/openqa/selenium/bidi/protocol/script": {
       "sources": [
+        "java/test/org/openqa/selenium/bidi/protocol/script/NodePropertiesTest.java",
         "java/test/org/openqa/selenium/bidi/protocol/script/SharedReferenceTest.java"
       ],
       "scalacOptions": [],
@@ -10765,12 +10766,20 @@
         "//java/src/org/openqa/selenium/bidi"
       ],
       "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/protocol/script/NodePropertiesTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/protocol/script/SharedReferenceTest.jar"
       ],
       "configurations": [
+        "//java/test/org/openqa/selenium/bidi/protocol/script:NodePropertiesTest",
         "//java/test/org/openqa/selenium/bidi/protocol/script:SharedReferenceTest"
       ],
       "testClasses": [
+        {
+          "className": "org.openqa.selenium.bidi.protocol.script.NodePropertiesTest",
+          "sourcePath": "java/test/org/openqa/selenium/bidi/protocol/script/NodePropertiesTest.java",
+          "configuration": "//java/test/org/openqa/selenium/bidi/protocol/script:NodePropertiesTest",
+          "framework": "JUnit"
+        },
         {
           "className": "org.openqa.selenium.bidi.protocol.script.SharedReferenceTest",
           "sourcePath": "java/test/org/openqa/selenium/bidi/protocol/script/SharedReferenceTest.java",
