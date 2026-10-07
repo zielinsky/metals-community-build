@@ -11,6 +11,10 @@ on:
         description: "Locally published Metals version"
         required: true
         type: string
+      projectsCommit:
+        description: "Commit of the projects branch with the manifests of this run"
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -28,6 +32,13 @@ jobs:
       - name: Check out the community build
         uses: actions/checkout@v7
         with:
+          persist-credentials: false
+
+      - name: Check out the project manifests
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.projectsCommit }}
+          path: projects
           persist-credentials: false
 
       - name: Check out ${{ matrix.projectName }}

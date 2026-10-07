@@ -3,5 +3,8 @@
 .generated/
 node_modules/
 out/
+# Project manifests live on the `projects` branch. CI checks that branch out
+# here; locally use `git worktree add projects projects`.
+projects/
 reports/
 workspaces/

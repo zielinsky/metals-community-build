@@ -4,20 +4,32 @@ This repository runs VS Code end-to-end tests against real Maven, Gradle, and
 Bazel projects. [ExTester](https://github.com/redhat-developer/vscode-extension-tester)
 drives the VS Code UI through Selenium WebDriver.
 
-Projects are data, not CI jobs. The workflow discovers every JSON manifest below
-`projects/{maven,gradle,bazel}`, groups their jobs under Bazel, Maven, or Gradle,
-and runs all scenarios declared by each repository. Adding a project or scenario
-does not require editing `.github/workflows/ci.yml`.
+Projects are data, not CI jobs. The project and scenario manifests live on the
+[`projects` branch](https://github.com/zielinsky/metals-community-build/tree/projects) of this repository, separate from the
+runner on `main`. At the start of a run the workflow checks that branch out
+into `projects/`, records its commit, discovers every JSON manifest below
+`projects/{maven,gradle,bazel}`, groups their jobs under Bazel, Maven, or
+Gradle, and runs all scenarios declared by each repository. Every job of the
+run uses that same manifests commit. Adding a project or scenario is a change
+on the `projects` branch and does not touch `main` or
+`.github/workflows/ci.yml`.
 
-CI never starts on a push or pull request. Start it manually from **Actions →
-Community Build → Run workflow** and provide the Metals source to test. The
-selected source is included in the workflow run name. The input accepts:
+The Community Build never starts on a push or pull request. Start it manually
+from **Actions → Community Build → Run workflow** and provide the Metals source
+to test. The selected source is included in the workflow run name. The input
+accepts:
 
 - a branch URL, for example `https://github.com/scalameta/metals/tree/main-v2`,
 - a commit URL, for example `https://github.com/scalameta/metals/commit/<sha>`,
 - a tag URL, for example `https://github.com/scalameta/metals/releases/tag/<tag>`,
 - `owner/repository@ref`, useful for forks, or just a ref from the default Metals
   repository.
+
+The optional `projects` input selects another branch, tag, or commit of this
+repository to take the manifests from, for example a pull request branch
+against `projects`, to test new manifests before merging them. It defaults to
+`projects`. The manifests commit used by a run is shown in the job summary of
+the **Discover community projects** job.
 
 The source input is visible in GitHub Actions. Pass only a public repository and
 ref; never include credentials or tokens in the URL.
@@ -31,14 +43,12 @@ a failed run retains it for one day so **Re-run failed jobs** can reuse it.
 
 ```text
 community-build.json          default Metals source plus VS Code/extension versions
+project.schema.json           project/scenario manifest schema
 .github/workflows/
   ci.yml                      manual entry point and build-tool groups
   test-projects.yml           reusable per-build-tool project matrix
-projects/
-  project.schema.json         project/scenario manifest schema
-  bazel/*.json                Bazel repositories
-  maven/*.json                Maven repositories
-  gradle/*.json               Gradle repositories
+  schedule.yml                daily dispatch of ci.yml against main-v2
+projects/                     ignored on main: checkout or worktree of the projects branch
 scripts/*.ts                  typed CI setup, validation, and scenario runner
 scripts/run-community-build.sh  dispatches the workflow against the latest commit of a Metals branch
 scripts/report-issues.sh      opens GitHub issues for projects that failed in the report on the results branch
@@ -48,6 +58,17 @@ src/java-diagnostics.test.ts  Java diagnostics scenario
 src/java-test-discovery.test.ts  Java test discovery scenario
 src/java-debug-test.test.ts      Java test debugging and breakpoint scenario
 src/test-support.ts           shared VS Code/MBT setup for UI scenarios
+```
+
+The `projects` branch has no runner code, only the manifests and their own
+validation workflow:
+
+```text
+bazel/*.json                  Bazel repositories
+maven/*.json                  Maven repositories
+gradle/*.json                 Gradle repositories
+.github/workflows/
+  validate-projects.yml       validates every manifest on push and pull request
 ```
 
 Each repository is cloned only once per CI job. Its build tool, VS Code, Metals,
@@ -84,11 +105,23 @@ must not print credentials.
 
 ## Add a repository
 
-Add a manifest to the matching build-tool directory. For example:
+Manifests live on the `projects` branch. Open a pull request against that
+branch and add a manifest to the matching build-tool directory (`bazel/`,
+`maven/`, or `gradle/`). The branch's `Validate project manifests` workflow
+loads every manifest with the runner from `main` and prints the generated
+matrix. To work on manifests inside a `main` checkout, add the branch as a
+worktree at `projects/`, which `main` ignores:
+
+```bash
+git worktree add projects projects
+```
+
+The schema stays on `main` next to the code that defines the scenario kinds,
+so manifests reference it by URL. For example:
 
 ```json
 {
-  "$schema": "../project.schema.json",
+  "$schema": "https://raw.githubusercontent.com/zielinsky/metals-community-build/main/project.schema.json",
   "id": "example",
   "name": "Example",
   "buildTool": "maven",
@@ -227,7 +260,8 @@ can be declared in the manifest's top-level `environment` object. They are
 passed to VS Code, Metals, and child build-tool processes. Never store tokens or
 credentials there because manifests are committed to the repository.
 
-Validate all manifests and inspect the generated CI matrix with:
+Validate all manifests in the `projects/` worktree and inspect the generated
+CI matrix with:
 
 ```bash
 npm run matrix
@@ -246,7 +280,8 @@ npm run test:community -- \
   --metals /path/to/metals
 ```
 
-`--project` accepts either a manifest id or its JSON path. The command publishes
+`--project` accepts either a manifest id, looked up in the `projects/`
+worktree, or any manifest JSON path. The command publishes
 the supplied Metals checkout locally, prepares the pinned VS Code runtime, and
 runs the configured scenarios against the supplied project checkout. Use
 `--scenario debug-json-test` to select one scenario. On subsequent runs,
@@ -282,11 +317,13 @@ scripts/run-community-build.sh
 Add `--wait` to block until the run finishes and exit non-zero when it fails,
 `--dry-run` to print the resolved commit and the dispatch command without
 starting anything, and `--branch-url` to pass the branch URL instead of the
-pinned commit. `--metals-ref`, `--metals-repo`, `--repo`, `--workflow-ref`, and
-`--timeout`, or the matching `METALS_REF`, `METALS_REPO`, `REPO`,
-`WORKFLOW_REF`, `TIMEOUT_MINUTES`, `WAIT`, `BRANCH_URL`, and `DRY_RUN`
-environment variables (also accepted as `VP_INPUT_<NAME>` task inputs), select
-another branch, fork, or workflow checkout. A markdown summary with the commit
+pinned commit. `--metals-ref`, `--metals-repo`, `--repo`, `--workflow-ref`,
+`--projects-ref`, and `--timeout`, or the matching `METALS_REF`, `METALS_REPO`,
+`REPO`, `WORKFLOW_REF`, `PROJECTS_REF`, `TIMEOUT_MINUTES`, `WAIT`,
+`BRANCH_URL`, and `DRY_RUN` environment variables (also accepted as
+`VP_INPUT_<NAME>` task inputs), select another branch, fork, workflow checkout,
+or manifests ref; the manifests default to the `projects` branch. A markdown
+summary with the commit
 and run URL is written to `$VP_OUTPUTS_DIR/<OUTPUT_PORT>.md`, else to
 `OUTPUT_FILE`, else to `/work/output.md` when that directory exists.
 
@@ -348,7 +385,8 @@ scenario catalog, assertions, screenshots, retry behavior, and commands.
 ## Test the runner and screenshots
 
 `npm test` runs fast regression tests for manifest validation, result aggregation,
-and screenshot handling. CI runs these before project scenarios.
+and screenshot handling. CI runs these before project scenarios. The test that
+loads every real manifest runs only when `projects/` is present.
 
 The small Maven fixture exercises **every scenario kind**, including test discovery,
 run, debug with a breakpoint, navigation, and hover, in a single VS Code session:
