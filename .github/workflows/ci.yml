@@ -1,0 +1,343 @@
+name: Community Build
+run-name: Community Build / ${{ inputs.metals }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      metals:
+        description: "Metals branch/commit/tag URL (for example: https://github.com/scalameta/metals/tree/main-v2)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  projects:
+    name: Discover community projects
+    runs-on: ubuntu-latest
+    outputs:
+      bazelMatrix: ${{ steps.matrix.outputs.bazelMatrix }}
+      mavenMatrix: ${{ steps.matrix.outputs.mavenMatrix }}
+      gradleMatrix: ${{ steps.matrix.outputs.gradleMatrix }}
+      hasBazel: ${{ steps.matrix.outputs.hasBazel }}
+      hasMaven: ${{ steps.matrix.outputs.hasMaven }}
+      hasGradle: ${{ steps.matrix.outputs.hasGradle }}
+      metalsRepository: ${{ steps.matrix.outputs.metalsRepository }}
+      metalsRef: ${{ steps.matrix.outputs.metalsRef }}
+      metalsVersion: ${{ steps.matrix.outputs.metalsVersion }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install community build dependencies
+        run: npm ci
+      - id: matrix
+        name: Validate manifests and create matrix
+        run: npm run matrix -- --github-output --metals "$METALS_SOURCE"
+        env:
+          METALS_SOURCE: ${{ inputs.metals }}
+
+  build-metals:
+    name: Build Metals
+    needs: projects
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      artifactId: ${{ steps.metals-artifact.outputs.artifact-id }}
+    steps:
+      - name: Check out Metals
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ needs.projects.outputs.metalsRepository }}
+          ref: ${{ needs.projects.outputs.metalsRef }}
+          path: workspaces/metals
+          persist-credentials: false
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Set up Coursier
+        uses: coursier/setup-action@v3
+
+      - name: Cache Coursier dependencies
+        uses: coursier/cache-action@v8
+        with:
+          ignoreJob: true
+
+      - name: Set up sbt
+        uses: sbt/setup-sbt@v1
+
+      - name: Publish the selected Metals server locally
+        run: sbt --client quick-publish-local
+        working-directory: workspaces/metals
+        env:
+          METALS_TEST: true
+          METALS_VERSION: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+
+      - name: Bundle local Metals repositories
+        shell: bash
+        run: |
+          test -d "$HOME/.ivy2/local/org.scalameta"
+          test -d "$HOME/.m2/repository/org/scalameta"
+          tar -C "$HOME" -czf "$RUNNER_TEMP/metals-local.tgz" \
+            .ivy2/local/org.scalameta \
+            .m2/repository/org/scalameta
+
+      - id: metals-artifact
+        name: Upload local Metals repositories
+        uses: actions/upload-artifact@v7
+        with:
+          name: metals-local-${{ github.run_id }}
+          path: ${{ runner.temp }}/metals-local.tgz
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
+
+  prepare-runtime:
+    name: Prepare VS Code test runtime
+    needs: projects
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the community build
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - id: runtime-cache
+        name: Restore the VS Code test runtime cache
+        uses: actions/cache/restore@v6
+        with:
+          path: |
+            node_modules
+            .test-resources
+            .test-extensions
+          key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
+
+      - name: Prepare the VS Code test runtime
+        if: steps.runtime-cache.outputs.cache-hit != 'true'
+        run: |
+          npm ci
+          npm run setup:vscode
+
+      - name: Save the VS Code test runtime cache
+        if: steps.runtime-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: |
+            node_modules
+            .test-resources
+            .test-extensions
+          key: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
+
+  bazel:
+    name: Bazel
+    needs: [projects, build-metals, prepare-runtime]
+    if: needs.projects.outputs.hasBazel == 'true'
+    uses: ./.github/workflows/test-projects.yml
+    with:
+      matrix: ${{ needs.projects.outputs.bazelMatrix }}
+      metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+
+  maven:
+    name: Maven
+    needs: [projects, build-metals, prepare-runtime]
+    if: needs.projects.outputs.hasMaven == 'true'
+    uses: ./.github/workflows/test-projects.yml
+    with:
+      matrix: ${{ needs.projects.outputs.mavenMatrix }}
+      metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+
+  gradle:
+    name: Gradle
+    needs: [projects, build-metals, prepare-runtime]
+    if: needs.projects.outputs.hasGradle == 'true'
+    uses: ./.github/workflows/test-projects.yml
+    with:
+      matrix: ${{ needs.projects.outputs.gradleMatrix }}
+      metalsVersion: ${{ needs.projects.outputs.metalsVersion }}.${{ github.run_id }}
+
+  report:
+    name: Build static report
+    needs: [projects, bazel, maven, gradle]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+      pages: write
+      id-token: write
+    outputs:
+      pagesArtifactId: ${{ steps.pages-artifact.outputs.artifact_id }}
+    steps:
+      - name: Check out the community build
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install community build dependencies
+        run: npm ci
+
+      - name: Download project diagnostics
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: diagnostics-*-${{ github.run_id }}
+          path: report-input
+
+      - name: Build report
+        run: >-
+          npm run report --
+          --input report-input
+          --output report-site
+          --run-url "$RUN_URL"
+          --metals "$METALS_SOURCE"
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          METALS_SOURCE: ${{ inputs.metals }}
+
+      - name: Upload downloadable report
+        uses: actions/upload-artifact@v7
+        with:
+          name: community-build-report-${{ github.run_id }}
+          path: report-site
+          include-hidden-files: true
+          retention-days: 30
+
+      - name: Publish the report to the results branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$remote" "$RESULTS_BRANCH" >/dev/null; then
+            git clone --quiet --depth 1 --branch "$RESULTS_BRANCH" "$remote" results-branch
+            git -C results-branch rm -r --quiet --ignore-unmatch .
+          else
+            git init --quiet --initial-branch "$RESULTS_BRANCH" results-branch
+            git -C results-branch remote add origin "$remote"
+          fi
+          cp -R report-site/. results-branch/
+          cd results-branch
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit --quiet --allow-empty -m "Community build run ${GITHUB_RUN_ID}: ${METALS_SOURCE}"
+          git push --quiet origin "HEAD:${RESULTS_BRANCH}"
+          echo "Published the report to branch ${RESULTS_BRANCH} at $(git rev-parse HEAD)"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESULTS_BRANCH: results
+          METALS_SOURCE: ${{ inputs.metals }}
+
+      - id: pages
+        name: Configure GitHub Pages
+        continue-on-error: true
+        uses: actions/configure-pages@v5
+
+      - id: pages-artifact
+        name: Upload GitHub Pages report
+        if: steps.pages.outcome == 'success'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: report-site
+          include-hidden-files: true
+
+  deploy-report:
+    name: Publish static report
+    needs: report
+    if: ${{ always() && needs.report.outputs.pagesArtifactId != '' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v5
+
+      - name: Add report link to the job summary
+        run: echo "[Open community build report]($REPORT_URL)" >> "$GITHUB_STEP_SUMMARY"
+        env:
+          REPORT_URL: ${{ steps.deployment.outputs.page_url }}
+
+  cleanup:
+    name: Clean up temporary workflow data
+    needs: [build-metals, prepare-runtime, bazel, maven, gradle, report, deploy-report]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Check out the community build
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Delete obsolete VS Code runtime caches
+        if: needs.prepare-runtime.result == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api --paginate \
+            -H "X-GitHub-Api-Version: 2026-03-10" \
+            "/repos/$GITHUB_REPOSITORY/actions/caches?per_page=100&key=$RUNTIME_CACHE_PREFIX" \
+            --jq '.actions_caches[] | [.id, .key] | @tsv' |
+          while IFS=$'\t' read -r cache_id cache_key; do
+            if [[ "$cache_key" == "$CURRENT_RUNTIME_CACHE_KEY" ]]; then
+              echo "Keeping current runtime cache: $cache_key"
+            else
+              echo "Deleting obsolete runtime cache: $cache_key"
+              gh api --method DELETE \
+                -H "X-GitHub-Api-Version: 2026-03-10" \
+                "/repos/$GITHUB_REPOSITORY/actions/caches/$cache_id"
+            fi
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUNTIME_CACHE_PREFIX: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-
+          CURRENT_RUNTIME_CACHE_KEY: test-runtime-node24-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json', 'community-build.json') }}
+
+      - name: Delete locally published Metals
+        if: >-
+          ${{
+            needs.build-metals.outputs.artifactId != '' &&
+            needs.report.result == 'success' &&
+            (needs.bazel.result == 'success' || needs.bazel.result == 'skipped') &&
+            (needs.maven.result == 'success' || needs.maven.result == 'skipped') &&
+            (needs.gradle.result == 'success' || needs.gradle.result == 'skipped')
+          }}
+        run: >-
+          gh api --method DELETE
+          -H "X-GitHub-Api-Version: 2026-03-10"
+          "/repos/$GITHUB_REPOSITORY/actions/artifacts/$METALS_ARTIFACT_ID"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          METALS_ARTIFACT_ID: ${{ needs.build-metals.outputs.artifactId }}

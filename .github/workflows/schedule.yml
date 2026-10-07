@@ -1,0 +1,57 @@
+name: Scheduled Community Build
+run-name: Scheduled Community Build / ${{ inputs.metalsRef || 'main-v2' }}
+
+# Starts the Community Build workflow on a schedule against the latest commit
+# of a Metals branch. The dispatch goes through scripts/run-community-build.sh,
+# so the run is pinned to the commit URL exactly as when started by hand.
+#
+# GitHub runs scheduled workflows only from the default branch, and disables
+# the schedule after 60 days without repository activity.
+
+on:
+  schedule:
+    # Every day at 02:00 UTC.
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      metalsRef:
+        description: "Metals branch to test (resolved to its latest commit)"
+        required: false
+        default: main-v2
+        type: string
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: scheduled-community-build
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    name: Dispatch the Community Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the community build
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Resolve the branch tip and start the Community Build
+        run: scripts/run-community-build.sh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          WORKFLOW: ci.yml
+          WORKFLOW_REF: ${{ github.ref_name }}
+          METALS_REF: ${{ inputs.metalsRef || 'main-v2' }}
+          OUTPUT_FILE: ${{ runner.temp }}/summary.md
+
+      - name: Add the dispatched run to the job summary
+        if: always()
+        run: |
+          if [[ -f "$RUNNER_TEMP/summary.md" ]]; then
+            cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
+          fi

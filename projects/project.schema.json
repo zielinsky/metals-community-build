@@ -1,0 +1,276 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "buildTool", "repository", "ref", "scenarios"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "buildTool": { "enum": ["bazel", "maven", "gradle"] },
+    "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+    "ref": { "type": "string", "minLength": 1 },
+    "projectRoot": { "type": "string", "default": "." },
+    "javaVersion": { "type": "string", "minLength": 1, "default": "21" },
+    "metalsServerProperties": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "environment": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[A-Za-z_][A-Za-z0-9_-]*$" },
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "openFile"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "kind": {
+            "enum": [
+              "mbt-import",
+              "rename-symbol",
+              "java-diagnostics",
+              "java-test-discovery",
+              "java-main-run",
+              "java-debug-test",
+              "go-to-definition",
+              "go-to-implementation",
+              "document-symbol",
+              "completion",
+              "hover"
+            ]
+          },
+          "openFile": { "type": "string", "minLength": 1 },
+          "namespaceMode": {
+            "enum": ["each-build-target", "single-global-target"]
+          },
+          "required": {
+            "type": "boolean",
+            "default": false,
+            "description": "If true, a failure skips every later scenario in this project instead of just failing this one."
+          },
+          "rename": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["symbol", "newName", "expectedOccurrences"],
+            "properties": {
+              "symbol": { "type": "string", "minLength": 1 },
+              "newName": { "type": "string", "minLength": 1 },
+              "expectedOccurrences": { "type": "integer", "minimum": 1 }
+            }
+          },
+          "imports": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "symbol": { "type": "string", "minLength": 1 },
+          "hoverText": { "type": "string", "minLength": 1 },
+          "expectedLine": { "type": "string", "minLength": 1 },
+          "completion": {
+            "type": "object", "additionalProperties": false,
+            "required": ["replace", "prefix", "item", "expectedText"],
+            "properties": {
+              "replace": { "type": "string", "minLength": 1 },
+              "prefix": { "type": "string", "minLength": 1 },
+              "item": { "type": "string", "minLength": 1 },
+              "expectedText": { "type": "string", "minLength": 1 }
+            }
+          },
+          "definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["file", "text"],
+            "properties": {
+              "file": { "type": "string", "minLength": 1 },
+              "text": { "type": "string", "minLength": 1 }
+            }
+          },
+          "testName": { "type": "string", "minLength": 1 },
+          "breakpoint": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["line"],
+            "properties": {
+              "line": { "type": "integer", "minimum": 1 }
+            }
+          },
+          "main": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["className", "successOutput"],
+            "properties": {
+              "className": { "type": "string", "minLength": 1 },
+              "successOutput": { "type": "string", "minLength": 1 }
+            }
+          },
+          "assertions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "minimumNamespaces": { "type": "integer", "minimum": 1 },
+              "minimumDependencyModules": { "type": "integer", "minimum": 0 },
+              "sources": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "kind": { "const": "completion" } } },
+            "then": { "required": ["completion"] },
+            "else": { "not": { "required": ["completion"] } }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "document-symbol" } } },
+            "then": { "required": ["symbol", "expectedLine"] },
+            "else": { "not": { "required": ["expectedLine"] } }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "mbt-import" } } },
+            "then": {
+              "required": ["assertions"],
+              "not": {
+                "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "rename-symbol" } } },
+            "then": {
+              "required": ["rename"],
+              "not": {
+                "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
+                  { "required": ["assertions"] },
+                  { "required": ["imports"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": { "kind": { "const": "java-diagnostics" } }
+            },
+            "then": {
+              "required": ["imports"],
+              "not": {
+                "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": { "kind": { "const": "java-test-discovery" } }
+            },
+            "then": {
+              "required": ["testName"],
+              "not": {
+                "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "java-main-run" } } },
+            "then": {
+              "required": ["main"],
+              "not": {
+                "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["testName"] },
+                  { "required": ["breakpoint"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "java-debug-test" } } },
+            "then": {
+              "required": ["testName", "breakpoint"],
+              "not": {
+                "anyOf": [
+                  { "required": ["symbol"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["definition"] },
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["main"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "enum": ["go-to-definition", "go-to-implementation"] } } },
+            "then": {
+              "required": ["symbol", "definition"],
+              "not": { "anyOf": [
+                { "required": ["assertions"] }, { "required": ["rename"] },
+                { "required": ["imports"] }, { "required": ["testName"] },
+                { "required": ["main"] }, { "required": ["breakpoint"] },
+                { "required": ["hoverText"] }
+              ] }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "hover" } } },
+            "then": {
+              "required": ["symbol", "hoverText"],
+              "not": { "anyOf": [
+                { "required": ["assertions"] }, { "required": ["rename"] },
+                { "required": ["imports"] }, { "required": ["testName"] },
+                { "required": ["main"] }, { "required": ["breakpoint"] },
+                { "required": ["definition"] }
+              ] }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
