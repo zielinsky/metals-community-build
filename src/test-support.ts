@@ -13,6 +13,7 @@ import {
 } from "vscode-extension-tester";
 
 import { loadProjectConfig, type Scenario } from "../scripts/config";
+import { closePeeks } from "./editor-actions";
 import { ScreenshotRecorder } from "../scripts/screenshots";
 import {
   createProjectResult,
@@ -22,7 +23,7 @@ import {
 
 export interface MbtModel {
   dependencyModules?: unknown[];
-  namespaces?: Record<string, { sources?: string[] }>;
+  namespaces?: Record<string, { sources?: string[]; dependencyModules?: unknown[] }>;
 }
 
 function requiredEnvironment(name: string): string {
@@ -211,7 +212,7 @@ async function selectNamespaceMode(scenario: Scenario): Promise<void> {
   await captureScreenshot("namespace-mode-selected");
 }
 
-async function statusBarTexts(): Promise<string[]> {
+export async function statusBarTexts(): Promise<string[]> {
   const items = await new StatusBar().getItems();
   const texts = await Promise.all(
     items.map(async (item) => {
@@ -297,13 +298,15 @@ async function readMbtModel(timeoutMs: number): Promise<MbtModel> {
   );
 }
 
-async function openScenarioFile(scenario: Scenario): Promise<void> {
+export async function openScenarioFile(scenario: Scenario): Promise<void> {
   const openFile = fileFor(scenario);
   log(`Starting ${project.buildTool} / ${project.id} / ${scenario.id}`);
   log(`Workspace: ${workspace}`);
   log(`Expected editor: ${openFile}`);
   assert.ok(existsSync(openFile), `Missing file to open: ${openFile}`);
 
+  // A peek left open by an earlier scenario steals focus from the editor.
+  await closePeeks();
   if (await new TextEditor().getFilePath().catch(() => "") !== openFile) {
     log(`Opening ${basename(openFile)} in the existing VS Code session`);
     await openFileInWorkbench(openFile);

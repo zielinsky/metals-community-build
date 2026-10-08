@@ -17,25 +17,31 @@ npm run test:community -- --project fixtures/smoke.json --workspace workspaces/s
 
 Ustaw `JAVA_HOME` na JDK zgodny z opublikowanym Metals. Runner usuwa całe `.metals` przed każdą sesją VS Code. Kolejne akcje w sesji współdzielą import. `required: true` oznacza, że błąd tej akcji pomija dalsze scenariusze; pozostałe błędy nie przerywają całej listy. Dla Bazela można ustawić `namespaceMode: "each-build-target"` lub `"single-global-target"`.
 
+Akcje operujące na symbolu (`hover`, `go-to-definition`, `go-to-implementation`, `find-references`, `type-hierarchy`, `code-action`, `document-highlight`) używają pierwszego wystąpienia `symbol` w pliku. Identyfikator musi pasować jako całe słowo, więc `Optional` nie trafi w `OptionalInt`. Opcjonalne pole `near` przesuwa wyszukiwanie do pierwszej linii zawierającej podany tekst, co pozwala wskazać późniejsze wystąpienie bez liczenia ich ręcznie.
+
 ## Lista
 
-| kind | Co sprawdza |
-| --- | --- |
-| `mbt-import` | Import projektu do MBT |
-| `rename-symbol` | Zmiana nazwy symbolu |
-| `java-diagnostics` | Diagnostyka importów Javy |
-| `java-test-discovery` | Wykrywanie testu |
-| `hover` | Dokumentacja pod kursorem |
-| `go-to-definition` | Przejście do definicji |
-| `go-to-implementation` | Przejście do implementacji |
-| `document-symbol` | Wyszukiwanie symbolu w pliku |
-| `completion` | Autouzupełnianie |
-| `java-main-run` | Uruchomienie aplikacji Java |
-| `java-debug-test` | Debugowanie testu Java |
+| kind | Co sprawdza | Zamknięte zgłoszenia Metals |
+| --- | --- | --- |
+| `mbt-import` | Import projektu do MBT, źródła i zależności w `mbt.json` | #8445, #8471, #8546 |
+| `rename-symbol` | Zmiana nazwy symbolu | #8473, #8496 |
+| `java-diagnostics` | Diagnostyka importów Javy i przypisanie pliku do targetu | #8453, #8491 |
+| `java-test-discovery` | Wykrywanie testu | #8515 |
+| `hover` | Dokumentacja pod kursorem | |
+| `go-to-definition` | Przejście do definicji, także między modułami | #7917, #8442 |
+| `go-to-implementation` | Przejście do implementacji | |
+| `document-symbol` | Wyszukiwanie symbolu w pliku | |
+| `completion` | Autouzupełnianie, automatyczny import, brak niepożądanych podpowiedzi | #6356, #7970, #8619 |
+| `find-references` | Wyszukiwanie referencji symbolu w workspace | #8412 |
+| `document-highlight` | Podświetlanie wystąpień symbolu w pliku | #8497, #8591 |
+| `type-hierarchy` | Hierarchia typów z deklaracji i z miejsca użycia | #8503, #8558, #8665 |
+| `code-action` | Code action, np. import brakującego symbolu | #8498, #8499, #8500, #8501 |
+| `java-main-run` | Uruchomienie aplikacji Java, pojedyncze code lensy | #8389, #8476 |
+| `java-debug-test` | Debugowanie testu Java | #8470, #8516 |
 
 ## `mbt-import` — Import projektu do MBT
 
-Wybiera Use MBT, czeka na zakończenie importu i sprawdza model .metals/mbt.json: liczbę przestrzeni nazw, zależności i wskazane źródła.
+Wybiera Use MBT, czeka na zakończenie importu i sprawdza model .metals/mbt.json: liczbę przestrzeni nazw, zależności i wskazane źródła. Opcjonalne `dependencies` to fragmenty identyfikatorów modułów zależności (np. `grupa:artefakt`), które muszą wystąpić w modelu lub w dowolnej przestrzeni nazw; wykrywa to brakujące biblioteki w eksporcie Bazela.
 
 ```json
 {
@@ -48,6 +54,9 @@ Wybiera Use MBT, czeka na zakończenie importu i sprawdza model .metals/mbt.json
     "sources": [
       "src/main/java/example/App.java",
       "src/test/java/example/GreeterTest.java"
+    ],
+    "dependencies": [
+      "org.junit.jupiter:junit-jupiter-api"
     ]
   }
 }
@@ -78,7 +87,7 @@ Screen potwierdzający wynik: `*-rename-verified.png`.
 
 ## `java-diagnostics` — Diagnostyka importów Javy
 
-Sprawdza obecność wskazanych importów w źródle, otwiera Problems i wymaga braku błędów w tym pliku. Nie ignoruje błędów niezwiązanych z importami.
+Sprawdza obecność wskazanych importów w źródle, otwiera Problems i wymaga braku błędów w tym pliku. Nie ignoruje błędów niezwiązanych z importami. `requireBuildTarget: true` dodatkowo wymaga, aby pasek stanu Metals nie pokazywał `no target` dla otwartego pliku, co wykrywa pliki z niestandardowych source setów pominięte w imporcie.
 
 ```json
 {
@@ -87,7 +96,8 @@ Sprawdza obecność wskazanych importów w źródle, otwiera Problems i wymaga b
   "openFile": "src/test/java/example/GreeterTest.java",
   "imports": [
     "org.junit.jupiter.api.Test"
-  ]
+  ],
+  "requireBuildTarget": true
 }
 ```
 
@@ -129,7 +139,7 @@ Screen potwierdzający wynik: `*-hover-verified.png`.
 
 ## `go-to-definition` — Przejście do definicji
 
-Uruchamia Go to Definition i sprawdza pełną ścieżkę otwartego pliku oraz tekst na linii, na której wylądował kursor.
+Uruchamia Go to Definition i sprawdza pełną ścieżkę otwartego pliku oraz tekst na linii, na której wylądował kursor. Działa również z pliku Scala do źródła Javy w innym module.
 
 ```json
 {
@@ -186,7 +196,9 @@ Screen potwierdzający wynik: `*-document-symbol-verified.png`.
 
 ## `completion` — Autouzupełnianie
 
-Zastępuje jedyne wystąpienie replace tekstem prefix, otwiera podpowiedzi, wybiera item i sprawdza wstawiony expectedText. Nazwa item pasuje dokładnie albo do nazwy metody przed nawiasem. Przywraca źródło i bufor edytora także po błędzie.
+Zastępuje jedyne wystąpienie replace tekstem prefix, otwiera podpowiedzi, wybiera item i sprawdza wstawiony expectedText. Nazwa item pasuje dokładnie, do nazwy metody przed nawiasem albo do nazwy przed spacją (etykiety automatycznych importów mają postać `Nazwa - pakiet`). Unikaj nawiasów w prefix, bo edytor domyka je automatycznie. Przywraca źródło i bufor edytora także po błędzie.
+
+Opcjonalne `absentItems` wymienia podpowiedzi, których nie może być wśród widocznych pozycji listy, np. metod instancyjnych proponowanych na klasie.
 
 ```json
 {
@@ -197,7 +209,25 @@ Zastępuje jedyne wystąpienie replace tekstem prefix, otwiera podpowiedzi, wybi
     "replace": "Greeter.message()",
     "prefix": "Greeter.m",
     "item": "message",
-    "expectedText": "Greeter.message()"
+    "expectedText": "Greeter.message()",
+    "absentItems": ["mutableMessage"]
+  }
+}
+```
+
+Opcjonalne `expectedImport` sprawdza automatyczny import: po zaakceptowaniu podpowiedzi plik musi zawierać `import <expectedImport>;`, a poza tą linią i expectedText nie może się różnić od oryginału (pomijając puste linie). Wykrywa to import wstawiony w środek deklaracji pakietu.
+
+```json
+{
+  "id": "completion-auto-import",
+  "kind": "completion",
+  "openFile": "src/main/java/example/App.java",
+  "completion": {
+    "replace": "GREETING);",
+    "prefix": "BigDec",
+    "item": "BigDecimal - java.math",
+    "expectedText": "BigDecimal",
+    "expectedImport": "java.math.BigDecimal"
   }
 }
 ```
@@ -205,9 +235,107 @@ Zastępuje jedyne wystąpienie replace tekstem prefix, otwiera podpowiedzi, wybi
 Screen potwierdzający wynik: `*-completion-verified.png`.
 
 
+## `find-references` — Wyszukiwanie referencji
+
+Ustawia kursor na symbolu, uruchamia Peek References i odczytuje liczbę wyników z nagłówka podglądu. Wymaga co najmniej `minimumCount` referencji oraz, jeśli podano `files`, obecności tych plików wśród wyników. Wyszukiwanie obejmuje symbole z JDK i zależności, więc nadaje się do sprawdzania indeksu semanticdb całego workspace.
+
+```json
+{
+  "id": "references",
+  "kind": "find-references",
+  "openFile": "src/main/java/example/App.java",
+  "symbol": "Greeter",
+  "references": {
+    "minimumCount": 2,
+    "files": ["src/test/java/example/GreeterTest.java"]
+  }
+}
+```
+
+Screen potwierdzający wynik: `*-references-verified.png`.
+
+
+## `document-highlight` — Podświetlanie wystąpień
+
+Ustawia kursor w symbolu i liczy podświetlenia dostarczone przez serwer języka (`wordHighlight`, `wordHighlightStrong`). Tekstowe podświetlenia VS Code (`wordHighlightText`), które pojawiają się bez providera, nie są zaliczane. Liczone są tylko wystąpienia widoczne w oknie edytora, więc wybierz symbol, którego wszystkie wystąpienia mieszczą się w okolicy kursora. Podświetlenie całego ciała konstruktora zamiast nazwy daje inną liczbę niż oczekiwana.
+
+```json
+{
+  "id": "highlight",
+  "kind": "document-highlight",
+  "openFile": "src/main/java/example/App.java",
+  "symbol": "GREETING",
+  "highlight": {
+    "expectedOccurrences": 2
+  }
+}
+```
+
+Screen potwierdzający wynik: `*-document-highlight-verified.png`.
+
+
+## `type-hierarchy` — Hierarchia typów
+
+Uruchamia Peek Type Hierarchy na symbolu, przełącza podgląd na `subtypes` albo `supertypes` przyciskiem w nagłówku i wymaga, aby na liście pojawiły się wszystkie nazwy z `expected`. Przykłady sprawdzają podtypy interfejsu z jego deklaracji oraz nadtypy klasy z miejsca użycia.
+
+```json
+{
+  "id": "subtypes",
+  "kind": "type-hierarchy",
+  "openFile": "src/main/java/example/Greeting.java",
+  "symbol": "Greeting",
+  "hierarchy": {
+    "direction": "subtypes",
+    "expected": ["Greeter"]
+  }
+}
+```
+
+```json
+{
+  "id": "supertypes",
+  "kind": "type-hierarchy",
+  "openFile": "src/main/java/example/App.java",
+  "symbol": "Greeter",
+  "hierarchy": {
+    "direction": "supertypes",
+    "expected": ["Greeting"]
+  }
+}
+```
+
+Screen potwierdzający wynik: `*-type-hierarchy-verified.png`.
+
+
+## `code-action` — Code action
+
+Opcjonalnie najpierw zamienia jedyne wystąpienie `edit.replace` na `edit.with` i zapisuje plik, np. aby wprowadzić nierozwiązany symbol. Następnie ustawia kursor na symbolu, otwiera menu `quick-fix` (domyślne), `refactor` albo `source-action`, wybiera pierwszą akcję, której tytuł zawiera `title`, i wymaga `expectedText` w edytorze. Menu jest otwierane ponownie, dopóki Metals nie opublikuje akcji po diagnostyce. Przywraca źródło i bufor edytora także po błędzie.
+
+```json
+{
+  "id": "import-missing-symbol",
+  "kind": "code-action",
+  "openFile": "src/main/java/example/App.java",
+  "symbol": "List",
+  "near": "List.of(GREETING)",
+  "codeAction": {
+    "edit": {
+      "replace": "System.out.println(GREETING);",
+      "with": "System.out.println(List.of(GREETING));"
+    },
+    "menu": "quick-fix",
+    "title": "Import 'List' from package 'java.util'",
+    "expectedText": "import java.util.List;"
+  }
+}
+```
+
+Screen potwierdzający wynik: `*-code-action-verified.png`.
+
+
 ## `java-main-run` — Uruchomienie aplikacji Java
 
-Klika run przy main, wymaga successOutput w konsoli debugowania i zatrzymuje sesję po wykonaniu scenariusza.
+Klika run przy main, wymaga successOutput w konsoli debugowania i zatrzymuje sesję po wykonaniu scenariusza. `uniqueCodeLenses: true` wymaga dokładnie jednego code lensu run i jednego debug w pliku, co wykrywa zduplikowane lensy.
 
 ```json
 {
@@ -216,7 +344,8 @@ Klika run przy main, wymaga successOutput w konsoli debugowania i zatrzymuje ses
   "openFile": "src/main/java/example/App.java",
   "main": {
     "className": "example.App",
-    "successOutput": "Metals smoke started"
+    "successOutput": "Metals smoke started",
+    "uniqueCodeLenses": true
   }
 }
 ```
@@ -244,7 +373,7 @@ Screen potwierdzający wynik: `*-debug-test-finished.png`.
 
 ## Brak ikonki testu i timeouty
 
-Discovery i debug czekają do 120 s na ikonkę przy właściwej metodzie w już otwartym pliku. Nie zamykają i nie otwierają go ponownie, nie dopisują spacji i nie zapisują sztucznych zmian. Brak ikonki po tym czasie oznacza błąd scenariusza.
+Discovery i debug czekają do 120 s na ikonkę przy właściwej metodzie w już otwartym pliku. Nie zamykają i nie otwierają go ponownie, nie dopisują spacji i nie zapisują sztucznych zmian. Brak ikonki po tym czasie oznacza błąd scenariusza. Referencje, hierarchia typów i podświetlenia czekają do 60 s na wynik; code action jest ponawiany do 2 minut.
 
 ## Wyniki i screeny
 

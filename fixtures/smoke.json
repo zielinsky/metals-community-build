@@ -15,6 +15,9 @@
         "sources": [
           "src/main/java/example/App.java",
           "src/test/java/example/GreeterTest.java"
+        ],
+        "dependencies": [
+          "org.junit.jupiter:junit-jupiter-api"
         ]
       }
     },
@@ -34,7 +37,8 @@
       "openFile": "src/test/java/example/GreeterTest.java",
       "imports": [
         "org.junit.jupiter.api.Test"
-      ]
+      ],
+      "requireBuildTarget": true
     },
     {
       "id": "discovery",
@@ -84,7 +88,75 @@
         "replace": "Greeter.message()",
         "prefix": "Greeter.m",
         "item": "message",
-        "expectedText": "Greeter.message()"
+        "expectedText": "Greeter.message()",
+        "absentItems": ["mutableMessage"]
+      }
+    },
+    {
+      "id": "completion-auto-import",
+      "kind": "completion",
+      "openFile": "src/main/java/example/App.java",
+      "completion": {
+        "replace": "GREETING);",
+        "prefix": "BigDec",
+        "item": "BigDecimal - java.math",
+        "expectedText": "BigDecimal",
+        "expectedImport": "java.math.BigDecimal"
+      }
+    },
+    {
+      "id": "references",
+      "kind": "find-references",
+      "openFile": "src/main/java/example/App.java",
+      "symbol": "Greeter",
+      "references": {
+        "minimumCount": 2,
+        "files": ["src/test/java/example/GreeterTest.java"]
+      }
+    },
+    {
+      "id": "highlight",
+      "kind": "document-highlight",
+      "openFile": "src/main/java/example/App.java",
+      "symbol": "GREETING",
+      "highlight": {
+        "expectedOccurrences": 2
+      }
+    },
+    {
+      "id": "subtypes",
+      "kind": "type-hierarchy",
+      "openFile": "src/main/java/example/Greeting.java",
+      "symbol": "Greeting",
+      "hierarchy": {
+        "direction": "subtypes",
+        "expected": ["Greeter"]
+      }
+    },
+    {
+      "id": "supertypes",
+      "kind": "type-hierarchy",
+      "openFile": "src/main/java/example/App.java",
+      "symbol": "Greeter",
+      "hierarchy": {
+        "direction": "supertypes",
+        "expected": ["Greeting"]
+      }
+    },
+    {
+      "id": "import-missing-symbol",
+      "kind": "code-action",
+      "openFile": "src/main/java/example/App.java",
+      "symbol": "List",
+      "near": "List.of(GREETING)",
+      "codeAction": {
+        "edit": {
+          "replace": "System.out.println(GREETING);",
+          "with": "System.out.println(List.of(GREETING));"
+        },
+        "menu": "quick-fix",
+        "title": "Import 'List' from package 'java.util'",
+        "expectedText": "import java.util.List;"
       }
     },
     {
@@ -93,7 +165,8 @@
       "openFile": "src/main/java/example/App.java",
       "main": {
         "className": "example.App",
-        "successOutput": "Metals smoke started"
+        "successOutput": "Metals smoke started",
+        "uniqueCodeLenses": true
       }
     },
     {

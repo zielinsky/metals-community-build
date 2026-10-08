@@ -6,6 +6,7 @@ import type { ImportScenario } from "../scripts/config";
 import {
   captureScreenshot,
   log,
+  type MbtModel,
   prepareMbt,
   workspace,
 } from "./test-support";
@@ -24,6 +25,25 @@ function sourceContainsFile(source: string, file: string): boolean {
       pathFromSource !== ".." &&
       !pathFromSource.startsWith(`..${sep}`))
   );
+}
+
+/**
+ * Top-level dependency modules are objects with an `id`; namespaces list the
+ * ids of the modules they depend on.
+ */
+export function dependencyIds(model: MbtModel): string[] {
+  const ids = new Set<string>();
+  const add = (entry: unknown) => {
+    if (typeof entry === "string") ids.add(entry);
+    else if (entry && typeof entry === "object" && typeof (entry as { id?: unknown }).id === "string") {
+      ids.add((entry as { id: string }).id);
+    }
+  };
+  (model.dependencyModules ?? []).forEach(add);
+  for (const namespace of Object.values(model.namespaces ?? {})) {
+    (namespace.dependencyModules ?? []).forEach(add);
+  }
+  return [...ids];
 }
 
 export async function testMbtImport(
@@ -61,6 +81,16 @@ export async function testMbtImport(
       `Expected an MBT source root containing ${expectedSource}`,
     );
     log(`Verified imported source: ${expectedSource} via ${owningSource}`);
+  }
+
+  const ids = dependencyIds(imported);
+  for (const dependency of scenario.assertions.dependencies) {
+    const match = ids.find((id) => id.includes(dependency));
+    assert.ok(
+      match,
+      `Expected a dependency module matching '${dependency}' among ${ids.length} modules`,
+    );
+    log(`Verified dependency module: ${dependency} via ${match}`);
   }
   await captureScreenshot("import-verified");
   log(`Scenario passed: ${scenario.id}`);

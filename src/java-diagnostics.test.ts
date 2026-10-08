@@ -6,7 +6,7 @@ import {
   TextEditor,
 } from "vscode-extension-tester";
 
-import { openBottomPanel } from "./editor-actions";
+import { editorText, openBottomPanel } from "./editor-actions";
 
 import type { JavaDiagnosticsScenario } from "../scripts/config";
 import {
@@ -16,6 +16,7 @@ import {
   fileFor,
   log,
   prepareMbt,
+  statusBarTexts,
 } from "./test-support";
 
 async function assertNoFileErrors(openFile: string): Promise<void> {
@@ -56,13 +57,27 @@ async function assertNoFileErrors(openFile: string): Promise<void> {
   }
 }
 
+/** Metals shows "no target" in its module status when a file belongs to no build target. */
+async function assertBuildTarget(openFile: string): Promise<void> {
+  const texts = await statusBarTexts().catch(() => [] as string[]);
+  const noTarget = texts.find((text) => /\bno target\b/i.test(text));
+  if (noTarget) {
+    await captureFailure();
+    throw new Error(
+      `Metals reports no build target for ${basename(openFile)}: '${noTarget}'. ` +
+        `Status bar: ${JSON.stringify(texts)}`,
+    );
+  }
+  log(`Status bar reports a build target for ${basename(openFile)}: ${JSON.stringify(texts)}`);
+}
+
 export async function testJavaDiagnostics(
   scenario: JavaDiagnosticsScenario,
 ): Promise<void> {
   await prepareMbt(scenario);
 
   const editor = new TextEditor();
-  const source = await editor.getText();
+  const source = await editorText(editor);
   for (const importedType of scenario.imports) {
     assert.ok(
       source.includes(`import ${importedType};`),
@@ -72,6 +87,7 @@ export async function testJavaDiagnostics(
 
   await editor.selectText(`import ${scenario.imports[0]};`);
   await delay(5_000);
+  if (scenario.requireBuildTarget) await assertBuildTarget(fileFor(scenario));
   await assertNoFileErrors(fileFor(scenario));
   log(`Scenario passed: ${scenario.id}`);
 }

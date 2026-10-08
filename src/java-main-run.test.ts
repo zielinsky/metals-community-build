@@ -10,7 +10,7 @@ import {
   Workbench,
 } from "vscode-extension-tester";
 
-import { openBottomPanel } from "./editor-actions";
+import { editorText, openBottomPanel } from "./editor-actions";
 
 import type { JavaMainRunScenario } from "../scripts/config";
 import {
@@ -44,6 +44,22 @@ async function waitForRunCodeLens(
   throw new Error(
     `Run code lens did not appear. Visible code lenses: ${JSON.stringify(visibleLenses)}`,
   );
+}
+
+/** Metals once published the run/debug lenses twice for the same main method. */
+async function assertUniqueCodeLenses(editor: TextEditor): Promise<void> {
+  const titles = await Promise.all(
+    (await editor.getCodeLenses()).map((lens) => lens.getText()),
+  );
+  const count = (pattern: RegExp) => titles.filter((title) => pattern.test(title)).length;
+  const runs = count(/^run\b/i);
+  const debugs = count(/^debug\b/i);
+  assert.ok(
+    runs === 1 && debugs === 1,
+    `Expected exactly one run and one debug code lens, found ${runs} run and ` +
+      `${debugs} debug: ${JSON.stringify(titles)}`,
+  );
+  log(`Verified a single run and debug code lens: ${JSON.stringify(titles)}`);
 }
 
 async function waitForApplicationStart(
@@ -109,7 +125,7 @@ export async function testJavaMainRun(
   await prepareMbt(scenario);
 
   const editor = new TextEditor();
-  const source = await editor.getText();
+  const source = await editorText(editor);
   const simpleName = scenario.main.className.split(".").at(-1) ?? "";
   assert.ok(source.includes(`class ${simpleName}`), `Missing ${simpleName}`);
   assert.ok(source.includes("static void main("), "Missing Java main method");
@@ -117,6 +133,7 @@ export async function testJavaMainRun(
   await editor.selectText("main");
   log(`Waiting for the run code lens for ${scenario.main.className}`);
   const run = await waitForRunCodeLens(editor, 10 * 60 * 1000);
+  if (scenario.main.uniqueCodeLenses) await assertUniqueCodeLenses(editor);
   await captureScreenshot("run-code-lens-discovered");
 
   try {

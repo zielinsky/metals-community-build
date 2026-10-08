@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { TextEditor } from "vscode-extension-tester";
 
 import type { JavaTestDiscoveryScenario } from "../scripts/config";
-import { waitForTestGutter } from "./editor-actions";
+import { editorText, waitForTestGutter } from "./editor-actions";
 import {
   captureScreenshot,
   log,
@@ -16,7 +16,7 @@ export async function testJavaTestDiscovery(
   await prepareMbt(scenario);
 
   const editor = new TextEditor();
-  const source = await editor.getText();
+  const source = await editorText(editor);
   assert.ok(
     source.includes(scenario.testName),
     `Missing test: ${scenario.testName}`,

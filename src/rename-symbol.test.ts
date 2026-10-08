@@ -11,6 +11,7 @@ import {
 } from "vscode-extension-tester";
 
 import type { RenameScenario } from "../scripts/config";
+import { editorText } from "./editor-actions";
 import {
   captureScreenshot,
   captureFailure,
@@ -78,7 +79,7 @@ async function verifyRename(scenario: RenameScenario): Promise<void> {
   const openFile = fileFor(scenario);
   const { symbol, newName, expectedOccurrences } = scenario.rename;
   const editor = new TextEditor();
-  const before = await editor.getText();
+  const before = await editorText(editor);
   assert.equal(
     identifierOccurrences(before, symbol),
     expectedOccurrences,

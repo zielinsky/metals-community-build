@@ -57,6 +57,9 @@ src/rename-symbol.test.ts     reusable Rename Symbol UI scenario
 src/java-diagnostics.test.ts  Java diagnostics scenario
 src/java-test-discovery.test.ts  Java test discovery scenario
 src/java-debug-test.test.ts      Java test debugging and breakpoint scenario
+src/references.test.ts        find-references and document-highlight scenarios
+src/type-hierarchy.test.ts    type hierarchy peek scenario
+src/code-action.test.ts       code action (quick fix, refactor, source action) scenario
 src/test-support.ts           shared VS Code/MBT setup for UI scenarios
 ```
 
@@ -247,8 +250,24 @@ and dismisses the popup:
 }
 ```
 
-Both actions use the first occurrence of `symbol` in the source file. The Turbine
-manifest exercises both actions on `TurbineOptions`.
+Both actions use the first whole-word occurrence of `symbol` in the source file.
+An optional `near` starts the search at the first line containing that text,
+so a later occurrence can be selected without counting. The Turbine manifest
+exercises both actions on `TurbineOptions`.
+
+Further scenario kinds follow the same shape and are documented with runnable
+examples in [docs/actions.md](docs/actions.md): `find-references` reads the
+result count of **Peek References**, `document-highlight` counts the
+occurrences highlighted by the language server, `type-hierarchy` checks the
+subtypes or supertypes listed by **Peek Type Hierarchy**, and `code-action`
+applies a quick fix, refactoring, or source action such as importing a missing
+symbol. `completion` can additionally require an automatic import
+(`expectedImport`) and forbid suggestions (`absentItems`), `mbt-import` can
+require dependency modules (`dependencies`), `java-diagnostics` can require a
+build target for the file (`requireBuildTarget`), and `java-main-run` can
+require a single run and debug code lens (`uniqueCodeLenses`). Together these
+cover the regressions reported in closed `metals-v2` issues for Maven, Gradle,
+and Bazel projects.
 
 Projects that need a different runtime JDK or a larger Metals heap can declare
 `javaVersion` and `metalsServerProperties` at the manifest top level. CI uses

@@ -10,7 +10,7 @@ import {
 } from "vscode-extension-tester";
 import type { WebElement } from "selenium-webdriver";
 
-import { findTestGutter, openBottomPanel, waitForTestGutter } from "./editor-actions";
+import { editorText, findTestGutter, openBottomPanel, waitForTestGutter } from "./editor-actions";
 
 import type { JavaDebugTestScenario } from "../scripts/config";
 import {
@@ -165,7 +165,7 @@ export async function testJavaDebug(
   await prepareMbt(scenario);
 
   const editor = new TextEditor();
-  const source = await editor.getText();
+  const source = await editorText(editor);
   assert.ok(source.includes(scenario.testName), `Missing test: ${scenario.testName}`);
   const sourceLines = source.split(/\r?\n/);
   assert.ok(

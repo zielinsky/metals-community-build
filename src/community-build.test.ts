@@ -6,6 +6,9 @@ import { testRenameSymbol } from "./rename-symbol.test";
 import { testJavaTestDiscovery } from "./java-test-discovery.test";
 import { testJavaMainRun } from "./java-main-run.test";
 import { testJavaDebug } from "./java-debug-test.test";
+import { testDocumentHighlight, testFindReferences } from "./references.test";
+import { testTypeHierarchy } from "./type-hierarchy.test";
+import { testCodeAction } from "./code-action.test";
 import { executeScenario, project, scenarios, skipScenario } from "./test-support";
 
 describe(`${project.buildTool} / ${project.id}`, function () {
@@ -39,6 +42,18 @@ describe(`${project.buildTool} / ${project.id}`, function () {
               break;
             case "hover":
               await testHover(scenario);
+              break;
+            case "find-references":
+              await testFindReferences(scenario);
+              break;
+            case "document-highlight":
+              await testDocumentHighlight(scenario);
+              break;
+            case "type-hierarchy":
+              await testTypeHierarchy(scenario);
+              break;
+            case "code-action":
+              await testCodeAction(scenario);
               break;
             case "mbt-import":
               await testMbtImport(scenario);

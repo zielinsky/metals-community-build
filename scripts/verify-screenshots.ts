@@ -16,6 +16,10 @@ const evidence: Record<Scenario["kind"], string> = {
   "go-to-implementation": "implementation-verified",
   "document-symbol": "document-symbol-verified",
   completion: "completion-verified",
+  "find-references": "references-verified",
+  "type-hierarchy": "type-hierarchy-verified",
+  "code-action": "code-action-verified",
+  "document-highlight": "document-highlight-verified",
 };
 
 export function verifyScreenshots(directory: string): number {

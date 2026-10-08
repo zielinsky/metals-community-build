@@ -12,10 +12,7 @@
     "ref": { "type": "string", "minLength": 1 },
     "projectRoot": { "type": "string", "default": "." },
     "javaVersion": { "type": "string", "minLength": 1, "default": "21" },
-    "metalsServerProperties": {
-      "type": "array",
-      "items": { "type": "string", "minLength": 1 }
-    },
+    "metalsServerProperties": { "type": "array", "items": { "type": "string", "minLength": 1 } },
     "environment": {
       "type": "object",
       "propertyNames": { "pattern": "^[A-Za-z_][A-Za-z0-9_-]*$" },
@@ -42,17 +39,39 @@
               "go-to-implementation",
               "document-symbol",
               "completion",
-              "hover"
+              "hover",
+              "find-references",
+              "type-hierarchy",
+              "code-action",
+              "document-highlight"
             ]
           },
           "openFile": { "type": "string", "minLength": 1 },
-          "namespaceMode": {
-            "enum": ["each-build-target", "single-global-target"]
-          },
+          "namespaceMode": { "enum": ["each-build-target", "single-global-target"] },
           "required": {
             "type": "boolean",
             "default": false,
             "description": "If true, a failure skips every later scenario in this project instead of just failing this one."
+          },
+          "symbol": { "type": "string", "minLength": 1 },
+          "near": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Search for symbol from the first line containing this text instead of from the start of the file."
+          },
+          "hoverText": { "type": "string", "minLength": 1 },
+          "expectedLine": { "type": "string", "minLength": 1 },
+          "testName": { "type": "string", "minLength": 1 },
+          "imports": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "requireBuildTarget": {
+            "type": "boolean",
+            "default": false,
+            "description": "Fail when the Metals status bar reports 'no target' for the open file."
           },
           "rename": {
             "type": "object",
@@ -64,23 +83,26 @@
               "expectedOccurrences": { "type": "integer", "minimum": 1 }
             }
           },
-          "imports": {
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": { "type": "string", "minLength": 1 }
-          },
-          "symbol": { "type": "string", "minLength": 1 },
-          "hoverText": { "type": "string", "minLength": 1 },
-          "expectedLine": { "type": "string", "minLength": 1 },
           "completion": {
-            "type": "object", "additionalProperties": false,
+            "type": "object",
+            "additionalProperties": false,
             "required": ["replace", "prefix", "item", "expectedText"],
             "properties": {
               "replace": { "type": "string", "minLength": 1 },
               "prefix": { "type": "string", "minLength": 1 },
               "item": { "type": "string", "minLength": 1 },
-              "expectedText": { "type": "string", "minLength": 1 }
+              "expectedText": { "type": "string", "minLength": 1 },
+              "expectedImport": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Fully qualified name the accepted item must import, with the rest of the file unchanged."
+              },
+              "absentItems": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": { "type": "string", "minLength": 1 },
+                "description": "Labels that must not be offered for the same prefix."
+              }
             }
           },
           "definition": {
@@ -92,14 +114,11 @@
               "text": { "type": "string", "minLength": 1 }
             }
           },
-          "testName": { "type": "string", "minLength": 1 },
           "breakpoint": {
             "type": "object",
             "additionalProperties": false,
             "required": ["line"],
-            "properties": {
-              "line": { "type": "integer", "minimum": 1 }
-            }
+            "properties": { "line": { "type": "integer", "minimum": 1 } }
           },
           "main": {
             "type": "object",
@@ -107,7 +126,12 @@
             "required": ["className", "successOutput"],
             "properties": {
               "className": { "type": "string", "minLength": 1 },
-              "successOutput": { "type": "string", "minLength": 1 }
+              "successOutput": { "type": "string", "minLength": 1 },
+              "uniqueCodeLenses": {
+                "type": "boolean",
+                "default": false,
+                "description": "Require exactly one run and one debug code lens on the main method."
+              }
             }
           },
           "assertions": {
@@ -116,38 +140,100 @@
             "properties": {
               "minimumNamespaces": { "type": "integer", "minimum": 1 },
               "minimumDependencyModules": { "type": "integer", "minimum": 0 },
-              "sources": {
+              "sources": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+              "dependencies": {
                 "type": "array",
-                "items": { "type": "string", "minLength": 1 }
+                "uniqueItems": true,
+                "items": { "type": "string", "minLength": 1 },
+                "description": "Substrings that must match a dependency module id of the model or of any namespace."
               }
             }
+          },
+          "references": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["minimumCount"],
+            "properties": {
+              "minimumCount": { "type": "integer", "minimum": 1 },
+              "files": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": { "type": "string", "minLength": 1 },
+                "description": "Workspace files that must appear among the references."
+              }
+            }
+          },
+          "hierarchy": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["direction", "expected"],
+            "properties": {
+              "direction": { "enum": ["subtypes", "supertypes"] },
+              "expected": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": { "type": "string", "minLength": 1 },
+                "minItems": 1
+              }
+            }
+          },
+          "codeAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "expectedText"],
+            "properties": {
+              "edit": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["replace", "with"],
+                "description": "Single-line replacement applied to the source before invoking the action; the file is restored afterwards.",
+                "properties": {
+                  "replace": { "type": "string", "minLength": 1 },
+                  "with": { "type": "string", "minLength": 1 }
+                }
+              },
+              "menu": {
+                "enum": ["quick-fix", "refactor", "source-action"],
+                "default": "quick-fix"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Exact title or a substring of the code action to select."
+              },
+              "expectedText": { "type": "string", "minLength": 1 }
+            }
+          },
+          "highlight": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["expectedOccurrences"],
+            "properties": { "expectedOccurrences": { "type": "integer", "minimum": 1 } }
           }
         },
         "allOf": [
-          {
-            "if": { "properties": { "kind": { "const": "completion" } } },
-            "then": { "required": ["completion"] },
-            "else": { "not": { "required": ["completion"] } }
-          },
-          {
-            "if": { "properties": { "kind": { "const": "document-symbol" } } },
-            "then": { "required": ["symbol", "expectedLine"] },
-            "else": { "not": { "required": ["expectedLine"] } }
-          },
           {
             "if": { "properties": { "kind": { "const": "mbt-import" } } },
             "then": {
               "required": ["assertions"],
               "not": {
                 "anyOf": [
-                  { "required": ["symbol"] },
-                  { "required": ["hoverText"] },
-                  { "required": ["definition"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
                   { "required": ["testName"] },
                   { "required": ["main"] },
-                  { "required": ["breakpoint"] }
+                  { "required": ["breakpoint"] },
+                  { "required": ["symbol"] },
+                  { "required": ["near"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
                 ]
               }
             }
@@ -158,54 +244,73 @@
               "required": ["rename"],
               "not": {
                 "anyOf": [
-                  { "required": ["symbol"] },
-                  { "required": ["hoverText"] },
-                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
                   { "required": ["testName"] },
                   { "required": ["main"] },
-                  { "required": ["breakpoint"] }
+                  { "required": ["breakpoint"] },
+                  { "required": ["symbol"] },
+                  { "required": ["near"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
                 ]
               }
             }
           },
           {
-            "if": {
-              "properties": { "kind": { "const": "java-diagnostics" } }
-            },
+            "if": { "properties": { "kind": { "const": "java-diagnostics" } } },
             "then": {
               "required": ["imports"],
               "not": {
                 "anyOf": [
-                  { "required": ["symbol"] },
-                  { "required": ["hoverText"] },
-                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["testName"] },
                   { "required": ["main"] },
-                  { "required": ["breakpoint"] }
+                  { "required": ["breakpoint"] },
+                  { "required": ["symbol"] },
+                  { "required": ["near"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
                 ]
               }
             }
           },
           {
-            "if": {
-              "properties": { "kind": { "const": "java-test-discovery" } }
-            },
+            "if": { "properties": { "kind": { "const": "java-test-discovery" } } },
             "then": {
               "required": ["testName"],
               "not": {
                 "anyOf": [
-                  { "required": ["symbol"] },
-                  { "required": ["hoverText"] },
-                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
                   { "required": ["main"] },
-                  { "required": ["breakpoint"] }
+                  { "required": ["breakpoint"] },
+                  { "required": ["symbol"] },
+                  { "required": ["near"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
                 ]
               }
             }
@@ -216,14 +321,22 @@
               "required": ["main"],
               "not": {
                 "anyOf": [
-                  { "required": ["symbol"] },
-                  { "required": ["hoverText"] },
-                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
                   { "required": ["testName"] },
-                  { "required": ["breakpoint"] }
+                  { "required": ["breakpoint"] },
+                  { "required": ["symbol"] },
+                  { "required": ["near"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
                 ]
               }
             }
@@ -234,39 +347,242 @@
               "required": ["testName", "breakpoint"],
               "not": {
                 "anyOf": [
-                  { "required": ["symbol"] },
-                  { "required": ["hoverText"] },
-                  { "required": ["definition"] },
                   { "required": ["assertions"] },
                   { "required": ["rename"] },
                   { "required": ["imports"] },
-                  { "required": ["main"] }
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["main"] },
+                  { "required": ["symbol"] },
+                  { "required": ["near"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
                 ]
               }
             }
           },
           {
-            "if": { "properties": { "kind": { "enum": ["go-to-definition", "go-to-implementation"] } } },
+            "if": { "properties": { "kind": { "const": "go-to-definition" } } },
             "then": {
               "required": ["symbol", "definition"],
-              "not": { "anyOf": [
-                { "required": ["assertions"] }, { "required": ["rename"] },
-                { "required": ["imports"] }, { "required": ["testName"] },
-                { "required": ["main"] }, { "required": ["breakpoint"] },
-                { "required": ["hoverText"] }
-              ] }
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "go-to-implementation" } } },
+            "then": {
+              "required": ["symbol", "definition"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "document-symbol" } } },
+            "then": {
+              "required": ["symbol", "expectedLine"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["near"] },
+                  { "required": ["definition"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "completion" } } },
+            "then": {
+              "required": ["completion"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["symbol"] },
+                  { "required": ["near"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
+                ]
+              }
             }
           },
           {
             "if": { "properties": { "kind": { "const": "hover" } } },
             "then": {
               "required": ["symbol", "hoverText"],
-              "not": { "anyOf": [
-                { "required": ["assertions"] }, { "required": ["rename"] },
-                { "required": ["imports"] }, { "required": ["testName"] },
-                { "required": ["main"] }, { "required": ["breakpoint"] },
-                { "required": ["definition"] }
-              ] }
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "find-references" } } },
+            "then": {
+              "required": ["symbol", "references"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "type-hierarchy" } } },
+            "then": {
+              "required": ["symbol", "hierarchy"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["codeAction"] },
+                  { "required": ["highlight"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "code-action" } } },
+            "then": {
+              "required": ["symbol", "codeAction"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["highlight"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "kind": { "const": "document-highlight" } } },
+            "then": {
+              "required": ["symbol", "highlight"],
+              "not": {
+                "anyOf": [
+                  { "required": ["assertions"] },
+                  { "required": ["rename"] },
+                  { "required": ["imports"] },
+                  { "required": ["requireBuildTarget"] },
+                  { "required": ["testName"] },
+                  { "required": ["main"] },
+                  { "required": ["breakpoint"] },
+                  { "required": ["definition"] },
+                  { "required": ["expectedLine"] },
+                  { "required": ["completion"] },
+                  { "required": ["hoverText"] },
+                  { "required": ["references"] },
+                  { "required": ["hierarchy"] },
+                  { "required": ["codeAction"] }
+                ]
+              }
             }
           }
         ]

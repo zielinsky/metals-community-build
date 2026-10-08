@@ -4,19 +4,23 @@ import { resolve } from "node:path";
 import { By, Key, TextEditor, VSBrowser, Workbench } from "vscode-extension-tester";
 
 import type { DefinitionScenario, DocumentSymbolScenario, HoverScenario } from "../scripts/config";
-import { captureFailure, captureScreenshot, log, prepareMbt, workspace } from "./test-support";
-import { selectExactText } from "./editor-actions";
+import { captureFailure, captureScreenshot, fileFor, log, openScenarioFile, prepareMbt, workspace } from "./test-support";
+import { editorText, selectExactText } from "./editor-actions";
+
+/** A quick pick label is the symbol name, optionally followed by a signature or container. */
+function matchesSymbol(label: string, symbol: string): boolean {
+  const name = label.replace(/\s+/g, " ").trim();
+  return name === symbol || name.startsWith(`${symbol}(`) || name.startsWith(`${symbol} `);
+}
 
 export async function testDefinition(scenario: DefinitionScenario): Promise<void> {
   await prepareMbt(scenario);
-  await selectExactText(new TextEditor(), scenario.symbol);
+  await selectExactText(new TextEditor(), scenario.symbol, scenario.near);
   await captureScreenshot("definition-symbol-selected");
   const command = scenario.kind === "go-to-implementation" ? "Go to Implementations" : "Go to Definition";
-  log(`${command}: ${scenario.symbol}`);
-  await new Workbench().executeCommand(command);
   const expectedFile = resolve(workspace, scenario.definition.file);
   const lines = readFileSync(expectedFile, "utf8").split(/\r?\n/);
-  await VSBrowser.instance.driver.wait(async () => {
+  const arrived = async () => {
     try {
       const editor = new TextEditor();
       if (resolve(await editor.getFilePath()) !== expectedFile) return false;
@@ -27,7 +31,27 @@ export async function testDefinition(scenario: DefinitionScenario): Promise<void
     } catch {
       return false;
     }
-  }, 60_000, `Definition did not navigate to ${scenario.definition.file}: ${scenario.definition.text}`);
+  };
+  // Implementations come from the workspace index, which Metals may still be
+  // building right after the import, so the command is repeated until the
+  // deadline instead of being issued once.
+  const driver = VSBrowser.instance.driver;
+  const deadline = Date.now() + 90_000;
+  let navigated = false;
+  while (!navigated && Date.now() < deadline) {
+    log(`${command}: ${scenario.symbol}`);
+    await new Workbench().executeCommand(command);
+    navigated = await driver.wait(arrived, 15_000).then(() => true, () => false);
+    if (!navigated) {
+      await driver.actions().sendKeys(Key.ESCAPE).perform().catch(() => undefined);
+      const current = await new TextEditor().getFilePath().catch(() => "");
+      if (resolve(current) !== fileFor(scenario)) await openScenarioFile(scenario);
+      await selectExactText(new TextEditor(), scenario.symbol, scenario.near);
+    }
+  }
+  if (!navigated) {
+    throw new Error(`${command} did not navigate to ${scenario.definition.file}: ${scenario.definition.text}`);
+  }
   await captureScreenshot(scenario.kind === "go-to-implementation" ? "implementation-verified" : "definition-verified");
 }
 
@@ -39,15 +63,16 @@ export async function testDocumentSymbol(scenario: DocumentSymbolScenario): Prom
   await driver.actions().clear();
   try {
     await prompt.setText(`@${scenario.symbol}`);
+    let labels: string[] = [];
     const selectedLabel = await driver.wait(async () => {
       const items = await prompt.getQuickPicks();
-      for (const item of items) {
-        const label = await item.getLabel();
-        if (label === scenario.symbol || label.startsWith(`${scenario.symbol}(`) ||
-            label.startsWith(`${scenario.symbol} `)) return label;
-      }
-      return false;
-    }, 30_000, `Document symbol '${scenario.symbol}' did not appear`);
+      labels = await Promise.all(items.map((item) => item.getLabel().catch(() => "")));
+      return labels.find((label) => matchesSymbol(label, scenario.symbol)) ?? false;
+    }, 30_000).catch(() => {
+      throw new Error(
+        `Document symbol '${scenario.symbol}' did not appear. Listed symbols: ${JSON.stringify(labels)}`,
+      );
+    });
     assert.ok(selectedLabel);
     await captureScreenshot("document-symbol-listed");
     await prompt.selectQuickPick(selectedLabel);
@@ -69,8 +94,8 @@ export async function testDocumentSymbol(scenario: DocumentSymbolScenario): Prom
 export async function testHover(scenario: HoverScenario): Promise<void> {
   await prepareMbt(scenario);
   const editor = new TextEditor();
-  assert.ok((await editor.getText()).includes(scenario.symbol), `Missing symbol: ${scenario.symbol}`);
-  await selectExactText(editor, scenario.symbol);
+  assert.ok((await editorText(editor)).includes(scenario.symbol), `Missing symbol: ${scenario.symbol}`);
+  await selectExactText(editor, scenario.symbol, scenario.near);
   log(`Show hover: ${scenario.symbol}`);
   const driver = VSBrowser.instance.driver;
   try {
