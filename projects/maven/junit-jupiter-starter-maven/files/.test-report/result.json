@@ -1,0 +1,35 @@
+{
+  "project": "junit-jupiter-starter-maven",
+  "projectName": "JUnit Jupiter starter (Maven)",
+  "buildTool": "maven",
+  "repository": "junit-team/junit-examples",
+  "ref": "main",
+  "status": "failed",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 28018
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "status": "passed",
+      "durationMs": 3795
+    },
+    {
+      "id": "calculator-definition",
+      "kind": "go-to-definition",
+      "status": "failed",
+      "durationMs": 4013,
+      "error": "Unable to set cursor at column 3\nWait timed out after 2685ms"
+    },
+    {
+      "id": "debug-adds-two-numbers",
+      "kind": "java-debug-test",
+      "status": "passed",
+      "durationMs": 26877
+    }
+  ]
+}

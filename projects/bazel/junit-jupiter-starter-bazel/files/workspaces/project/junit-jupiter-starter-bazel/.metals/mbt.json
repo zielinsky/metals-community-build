@@ -1,0 +1,29 @@
+{
+  "dependencyModules": [],
+  "namespaces": {
+    "//": {
+      "sources": [
+        "src/main/java/com/example/project/Calculator.java",
+        "src/test/java/com/example/project/CalculatorTests.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "dependsOn": [],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/test/java/com/example/project/CalculatorTests.jar"
+      ],
+      "configurations": [
+        "//:src/test/java/com/example/project/CalculatorTests"
+      ],
+      "testClasses": [
+        {
+          "className": "com.example.project.CalculatorTests",
+          "sourcePath": "src/test/java/com/example/project/CalculatorTests.java",
+          "configuration": "//:src/test/java/com/example/project/CalculatorTests"
+        }
+      ]
+    }
+  },
+  "uncheckedSources": []
+}

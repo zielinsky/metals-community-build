@@ -1,0 +1,37 @@
+{
+  "project": "junit-jupiter-starter-gradle",
+  "projectName": "JUnit Jupiter starter (Gradle)",
+  "buildTool": "gradle",
+  "repository": "junit-team/junit-examples",
+  "ref": "main",
+  "status": "failed",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 29941
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "status": "failed",
+      "durationMs": 123107,
+      "error": "Test gutter did not appear for 'addsTwoNumbers'\nWait timed out after 120626ms"
+    },
+    {
+      "id": "calculator-definition",
+      "kind": "go-to-definition",
+      "status": "failed",
+      "durationMs": 3849,
+      "error": "Unable to set cursor at column 3\nWait timed out after 2661ms"
+    },
+    {
+      "id": "debug-adds-two-numbers",
+      "kind": "java-debug-test",
+      "status": "failed",
+      "durationMs": 128433,
+      "error": "Test gutter did not appear for 'addsTwoNumbers'\nWait timed out after 120424ms"
+    }
+  ]
+}

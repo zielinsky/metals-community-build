@@ -12,15 +12,15 @@
       <p class="eyebrow">Bazel</p>
       <h1>Rules Scala</h1>
       <p><a href="https://github.com/bazel-contrib/rules_scala/tree/master">bazel-contrib/rules_scala@master</a></p>
-      <span class="status large passed">passed</span>
+      <span class="status large failed">failed</span>
     </header>
     <section><h2>Scenarios</h2><ul class="scenarios"><li>
             <div class="scenario-header">
-              <span class="status passed">passed</span>
+              <span class="status failed">failed</span>
               <strong>import-encoded-target-names</strong>
-              <span>mbt-import · 79.6 s</span>
+              <span>mbt-import · 54.8 s</span>
             </div>
-            
+            <pre>Expected an MBT source root containing test/coverage_filename_encoding/Test.scala</pre>
             <details class="screenshot-viewer">
       <summary>Screenshots (7)</summary>
       <div class="gallery"><figure>
@@ -42,9 +42,20 @@
               <a href="files/.test-report/screenshots/import-encoded-target-names/006-mbt-imported.png" data-gallery="import-encoded-target-names" data-caption="006-mbt-imported.png"><img loading="lazy" src="files/.test-report/screenshots/import-encoded-target-names/006-mbt-imported.png" alt="006-mbt-imported.png"></a>
               <figcaption>006-mbt-imported.png</figcaption>
             </figure><figure>
-              <a href="files/.test-report/screenshots/import-encoded-target-names/007-import-verified.png" data-gallery="import-encoded-target-names" data-caption="007-import-verified.png"><img loading="lazy" src="files/.test-report/screenshots/import-encoded-target-names/007-import-verified.png" alt="007-import-verified.png"></a>
-              <figcaption>007-import-verified.png</figcaption>
+              <a href="files/.test-report/screenshots/import-encoded-target-names/007-failure.png" data-gallery="import-encoded-target-names" data-caption="007-failure.png"><img loading="lazy" src="files/.test-report/screenshots/import-encoded-target-names/007-failure.png" alt="007-failure.png"></a>
+              <figcaption>007-failure.png</figcaption>
             </figure></div>
+    </details>
+          </li><li>
+            <div class="scenario-header">
+              <span class="status skipped">skipped</span>
+              <strong>encoded-target-definition</strong>
+              <span>go-to-definition · 0 ms</span>
+            </div>
+            
+            <details class="screenshot-viewer">
+      <summary>Screenshots (0)</summary>
+      <p class="muted">No screenshots were produced for this scenario.</p>
     </details>
           </li></ul></section>
     <section><h2>MBT model</h2><div class="metrics">

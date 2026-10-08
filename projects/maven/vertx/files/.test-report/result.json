@@ -1,0 +1,46 @@
+{
+  "project": "vertx",
+  "projectName": "Vert.x",
+  "buildTool": "maven",
+  "repository": "eclipse-vertx/vert.x",
+  "ref": "master",
+  "status": "passed",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 41953
+    },
+    {
+      "id": "interface-subtypes",
+      "kind": "type-hierarchy",
+      "status": "passed",
+      "durationMs": 9200
+    },
+    {
+      "id": "class-supertypes",
+      "kind": "type-hierarchy",
+      "status": "passed",
+      "durationMs": 5649
+    },
+    {
+      "id": "usage-site-supertypes",
+      "kind": "type-hierarchy",
+      "status": "passed",
+      "durationMs": 6334
+    },
+    {
+      "id": "verticle-definition",
+      "kind": "go-to-definition",
+      "status": "passed",
+      "durationMs": 5350
+    },
+    {
+      "id": "verticle-references",
+      "kind": "find-references",
+      "status": "passed",
+      "durationMs": 3987
+    }
+  ]
+}
