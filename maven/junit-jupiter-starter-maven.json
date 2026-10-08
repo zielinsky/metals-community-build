@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/zielinsky/metals-community-build/main/project.schema.json",
+  "id": "junit-jupiter-starter-maven",
+  "name": "JUnit Jupiter starter (Maven)",
+  "buildTool": "maven",
+  "repository": "junit-team/junit-examples",
+  "ref": "main",
+  "projectRoot": "junit-jupiter-starter-maven",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "openFile": "src/test/java/com/example/project/CalculatorTests.java",
+      "required": true,
+      "assertions": {
+        "minimumNamespaces": 1,
+        "sources": [
+          "src/main/java/com/example/project/Calculator.java",
+          "src/test/java/com/example/project/CalculatorTests.java"
+        ],
+        "dependencies": [
+          "org.junit.jupiter:junit-jupiter-api"
+        ]
+      }
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "openFile": "src/test/java/com/example/project/CalculatorTests.java",
+      "testName": "addsTwoNumbers"
+    },
+    {
+      "id": "calculator-definition",
+      "kind": "go-to-definition",
+      "openFile": "src/test/java/com/example/project/CalculatorTests.java",
+      "symbol": "Calculator",
+      "near": "Calculator calculator = new Calculator();",
+      "definition": {
+        "file": "src/main/java/com/example/project/Calculator.java",
+        "text": "public class Calculator"
+      }
+    },
+    {
+      "id": "debug-adds-two-numbers",
+      "kind": "java-debug-test",
+      "openFile": "src/test/java/com/example/project/CalculatorTests.java",
+      "testName": "addsTwoNumbers",
+      "breakpoint": {
+        "line": 25
+      }
+    }
+  ]
+}

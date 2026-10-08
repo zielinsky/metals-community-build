@@ -1,0 +1,84 @@
+{
+  "$schema": "https://raw.githubusercontent.com/zielinsky/metals-community-build/main/project.schema.json",
+  "id": "vertx",
+  "name": "Vert.x",
+  "buildTool": "maven",
+  "repository": "eclipse-vertx/vert.x",
+  "ref": "master",
+  "projectRoot": ".",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "openFile": "vertx-core/src/main/java/io/vertx/core/Verticle.java",
+      "required": true,
+      "assertions": {
+        "minimumNamespaces": 2,
+        "sources": [
+          "vertx-core/src/main/java/io/vertx/core/Verticle.java",
+          "vertx-core/src/main/java/io/vertx/core/AbstractVerticle.java"
+        ],
+        "dependencies": [
+          "io.netty:netty-handler"
+        ]
+      }
+    },
+    {
+      "id": "interface-subtypes",
+      "kind": "type-hierarchy",
+      "openFile": "vertx-core/src/main/java/io/vertx/core/Verticle.java",
+      "symbol": "Verticle",
+      "near": "public interface Verticle extends Deployable",
+      "hierarchy": {
+        "direction": "subtypes",
+        "expected": ["AbstractVerticle"]
+      }
+    },
+    {
+      "id": "class-supertypes",
+      "kind": "type-hierarchy",
+      "openFile": "vertx-core/src/main/java/io/vertx/core/AbstractVerticle.java",
+      "symbol": "AbstractVerticle",
+      "near": "public abstract class AbstractVerticle implements Verticle",
+      "hierarchy": {
+        "direction": "supertypes",
+        "expected": ["Verticle"]
+      }
+    },
+    {
+      "id": "usage-site-supertypes",
+      "kind": "type-hierarchy",
+      "openFile": "vertx-core/src/main/java/io/vertx/core/Context.java",
+      "symbol": "Future",
+      "near": "executeBlocking(Callable<T> blockingCodeHandler, boolean ordered);",
+      "hierarchy": {
+        "direction": "supertypes",
+        "expected": ["AsyncResult"]
+      }
+    },
+    {
+      "id": "verticle-definition",
+      "kind": "go-to-definition",
+      "openFile": "vertx-core/src/main/java/io/vertx/core/AbstractVerticle.java",
+      "symbol": "Verticle",
+      "near": "public abstract class AbstractVerticle implements Verticle",
+      "definition": {
+        "file": "vertx-core/src/main/java/io/vertx/core/Verticle.java",
+        "text": "public interface Verticle"
+      }
+    },
+    {
+      "id": "verticle-references",
+      "kind": "find-references",
+      "openFile": "vertx-core/src/main/java/io/vertx/core/Verticle.java",
+      "symbol": "Verticle",
+      "near": "public interface Verticle extends Deployable",
+      "references": {
+        "minimumCount": 5,
+        "files": [
+          "vertx-core/src/main/java/io/vertx/core/AbstractVerticle.java"
+        ]
+      }
+    }
+  ]
+}

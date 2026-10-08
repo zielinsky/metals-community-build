@@ -17,8 +17,17 @@
         "minimumNamespaces": 2,
         "sources": [
           "java/test/org/openqa/selenium/json/JsonTest.java"
+        ],
+        "dependencies": [
+          "org.junit.jupiter:junit-jupiter-api"
         ]
       }
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "openFile": "java/test/org/openqa/selenium/json/JsonTest.java",
+      "testName": "canReadBooleans"
     },
     {
       "id": "debug-json-test",

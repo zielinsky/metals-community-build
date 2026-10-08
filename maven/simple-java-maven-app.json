@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/zielinsky/metals-community-build/main/project.schema.json",
+  "id": "simple-java-maven-app",
+  "name": "Simple Java Maven App",
+  "buildTool": "maven",
+  "repository": "jenkins-docs/simple-java-maven-app",
+  "ref": "master",
+  "projectRoot": ".",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "openFile": "src/main/java/com/mycompany/app/App.java",
+      "required": true,
+      "assertions": {
+        "minimumNamespaces": 1,
+        "sources": [
+          "src/main/java/com/mycompany/app/App.java",
+          "src/test/java/com/mycompany/app/AppTest.java"
+        ],
+        "dependencies": [
+          "org.junit.jupiter:junit-jupiter-api"
+        ]
+      }
+    },
+    {
+      "id": "run-app",
+      "kind": "java-main-run",
+      "openFile": "src/main/java/com/mycompany/app/App.java",
+      "main": {
+        "className": "com.mycompany.app.App",
+        "successOutput": "Hello World!",
+        "uniqueCodeLenses": true
+      }
+    },
+    {
+      "id": "rename-message",
+      "kind": "rename-symbol",
+      "openFile": "src/main/java/com/mycompany/app/App.java",
+      "rename": {
+        "symbol": "MESSAGE",
+        "newName": "GREETING_MESSAGE",
+        "expectedOccurrences": 3
+      }
+    },
+    {
+      "id": "message-highlight",
+      "kind": "document-highlight",
+      "openFile": "src/main/java/com/mycompany/app/App.java",
+      "symbol": "MESSAGE",
+      "near": "private static final String MESSAGE",
+      "highlight": {
+        "expectedOccurrences": 3
+      }
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "openFile": "src/test/java/com/mycompany/app/AppTest.java",
+      "testName": "testAppMessage"
+    },
+    {
+      "id": "debug-app-test",
+      "kind": "java-debug-test",
+      "openFile": "src/test/java/com/mycompany/app/AppTest.java",
+      "testName": "testAppMessage",
+      "breakpoint": {
+        "line": 22
+      }
+    }
+  ]
+}

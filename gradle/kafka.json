@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/zielinsky/metals-community-build/main/project.schema.json",
+  "id": "kafka",
+  "name": "Apache Kafka",
+  "buildTool": "gradle",
+  "repository": "apache/kafka",
+  "ref": "trunk",
+  "projectRoot": ".",
+  "metalsServerProperties": ["-Xmx4g"],
+  "scenarios": [
+    {
+      "id": "import-test-fixtures",
+      "kind": "mbt-import",
+      "openFile": "clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java",
+      "required": true,
+      "assertions": {
+        "minimumNamespaces": 2,
+        "sources": [
+          "clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java",
+          "core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala"
+        ],
+        "dependencies": [
+          "org.junit.jupiter:junit-jupiter-api"
+        ]
+      }
+    },
+    {
+      "id": "test-fixtures-target",
+      "kind": "java-diagnostics",
+      "openFile": "clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java",
+      "imports": [
+        "org.apache.kafka.test.TestUtils"
+      ],
+      "requireBuildTarget": true
+    },
+    {
+      "id": "scala-to-java-definition",
+      "kind": "go-to-definition",
+      "openFile": "core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala",
+      "symbol": "assertFutureThrows",
+      "near": "import org.apache.kafka.test.TestUtils.assertFutureThrows",
+      "definition": {
+        "file": "clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java",
+        "text": "assertFutureThrows("
+      }
+    }
+  ]
+}
