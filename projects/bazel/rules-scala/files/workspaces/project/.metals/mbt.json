@@ -1442,19 +1442,9 @@
           "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest.scala"
         },
         {
-          "className": "scalarules.test.JavaSuite",
-          "sourcePath": "test/HelloLibTest.scala",
-          "configuration": "//test:MixJavaScalaScalaTest"
-        },
-        {
           "className": "scalarules.test.JavaSuite2",
           "sourcePath": "test/HelloLibTest2.scala",
           "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest2.scala"
-        },
-        {
-          "className": "scalarules.test.OtherJavaLib",
-          "sourcePath": "test/OtherJavaLib.java",
-          "configuration": "//test:MixJavaScalaScalaTest"
         },
         {
           "className": "scalarules.test.ScalaSuite",
@@ -1465,11 +1455,6 @@
           "className": "scalarules.test.ScalaSuite",
           "sourcePath": "test/HelloLibTest.scala",
           "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest.scala"
-        },
-        {
-          "className": "scalarules.test.ScalaSuite",
-          "sourcePath": "test/HelloLibTest.scala",
-          "configuration": "//test:MixJavaScalaScalaTest"
         },
         {
           "className": "scalarules.test.ScalaSuite2",
@@ -1477,16 +1462,6 @@
           "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest2.scala"
         },
         {
-          "className": "scalarules.test.TestFilterTestA",
-          "sourcePath": "test/TestFilterTestA.scala",
-          "configuration": "//test:TestFilterTests"
-        },
-        {
-          "className": "scalarules.test.TestFilterTestB",
-          "sourcePath": "test/TestFilterTestB.scala",
-          "configuration": "//test:TestFilterTests"
-        },
-        {
           "className": "scalarules.test.TestUtil$",
           "sourcePath": "test/HelloLibTest.scala",
           "configuration": "//test:HelloLibTest"
@@ -1495,11 +1470,6 @@
           "className": "scalarules.test.TestUtil$",
           "sourcePath": "test/HelloLibTest.scala",
           "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest.scala"
-        },
-        {
-          "className": "scalarules.test.TestUtil$",
-          "sourcePath": "test/HelloLibTest.scala",
-          "configuration": "//test:MixJavaScalaScalaTest"
         },
         {
           "className": "scalarules.test.TestUtil2$",
@@ -2270,19 +2240,9 @@
           "configuration": "//test/scala_test:a"
         },
         {
-          "className": "_empty_.A",
-          "sourcePath": "test/scala_test/A.scala",
-          "configuration": "//test/scala_test:custom_reporter"
-        },
-        {
           "className": "_empty_.B",
           "sourcePath": "test/scala_test/B.scala",
           "configuration": "//test/scala_test:b"
-        },
-        {
-          "className": "test.scala_test.CustomReporter",
-          "sourcePath": "test/scala_test/CustomReporter.scala",
-          "configuration": "//test/scala_test:custom_reporter"
         }
       ]
     },
@@ -2837,23 +2797,6 @@
       ],
       "configurations": [
         "//test/scala_test_testfilter:tests"
-      ],
-      "testClasses": [
-        {
-          "className": "_empty_.A",
-          "sourcePath": "test/scala_test_testfilter/A.scala",
-          "configuration": "//test/scala_test_testfilter:tests"
-        },
-        {
-          "className": "_empty_.B",
-          "sourcePath": "test/scala_test_testfilter/B.scala",
-          "configuration": "//test/scala_test_testfilter:tests"
-        },
-        {
-          "className": "_empty_.C",
-          "sourcePath": "test/scala_test_testfilter/C.scala",
-          "configuration": "//test/scala_test_testfilter:tests"
-        }
       ]
     },
     "//test/scala_test_env_inherit": {
