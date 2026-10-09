@@ -1,100 +1,69 @@
-2026.10.09 07:20:31 INFO  Started: Metals version 2.0.0-community-build.37898056730 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-2026.10.09 07:20:31 INFO  Memory monitor started
-2026.10.09 07:20:32 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.09 07:20:33 INFO  mbt-v2: indexing 1268 files
-2026.10.09 07:20:34 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals5042801612596226648 -cp /tmp/metals5042801612596226648/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.37898056730:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-2026.10.09 07:20:40 INFO  time: mbt-v2 loaded index for 1268 files in 6.89s
-2026.10.09 07:20:50 INFO  [metals-maven] exporting 3 module(s)
-2026.10.09 07:20:50 INFO  [metals-maven] resolving sources JARs for 52 dependencies...
-2026.10.09 07:20:52 INFO  [metals-maven] sources resolved: 52/52
-2026.10.09 07:20:52 INFO  [metals-maven] resolving 57 dependency JAR(s) missing from local cache...
-2026.10.09 07:20:53 INFO  [metals-maven] namespace: io.vertx:vertx-core-logging:5.3.0-SNAPSHOT
-2026.10.09 07:20:53 INFO  [metals-maven] namespace: io.vertx:vertx-core:5.3.0-SNAPSHOT
-2026.10.09 07:20:53 INFO  [metals-maven] namespace: io.vertx:vertx-core-java21-it:5.3.0-SNAPSHOT
-2026.10.09 07:20:53 INFO  [metals-maven] wrote 6 namespaces, 53 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-2026.10.09 07:20:53 INFO  time: ran 'maven-export' in 19s
-2026.10.09 07:20:53 INFO  mbt-import: wrote .metals/mbt.json
-2026.10.09 07:20:53 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.10.09 07:20:53 INFO  Connected to Build server: MBT v2.0.0-community-build.37898056730
-2026.10.09 07:20:58 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.09 07:21:08 INFO  time: indexed workspace in 15s
-2026.10.09 07:21:14 INFO  time: indexed workspace in 4.95s
-2026.10.09 07:21:15 INFO  implementations: found 1 occurrences
-2026.10.09 07:21:15 INFO  Found 1 candidate files for depth 0.
-2026.10.09 07:21:15 INFO  Found 23 candidate files for depth 1.
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local20
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local438
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local84
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local673
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local303
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local289
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local344
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local161
-2026.10.09 07:21:18 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local39
-2026.10.09 07:21:18 INFO  Found 6 candidate files for depth 2.
-2026.10.09 07:21:18 INFO  Found 0 candidate files for depth 3.
-2026.10.09 07:21:18 INFO  implementations: found 36 implementation results in 2.71s
-2026.10.09 07:21:23 INFO  implementations: found 2 occurrences
-2026.10.09 07:21:23 INFO  Found 23 candidate files for depth 0.
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local20
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local438
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local84
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local673
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local303
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local289
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local344
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local161
-2026.10.09 07:21:23 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local39
-2026.10.09 07:21:23 INFO  Found 6 candidate files for depth 1.
-2026.10.09 07:21:23 INFO  Found 0 candidate files for depth 2.
-2026.10.09 07:21:23 INFO  implementations: found 35 implementation results in 51ms
-2026.10.09 07:21:29 WARN  compiler crashed due to an error in the Java compiler: java.lang.AssertionError, retrying with new compiler instance.
-java.lang.AssertionError
-	at com.sun.tools.javac.util.Assert.error(Assert.java:155)
-	at com.sun.tools.javac.util.Assert.check(Assert.java:46)
-	at com.sun.tools.javac.jvm.ClassReader$AnnotationDeproxy.resolvePossibleProxyType(ClassReader.java:2142)
-	at com.sun.tools.javac.jvm.ClassReader$AnnotationDeproxy.deproxyCompound(ClassReader.java:1997)
-	at com.sun.tools.javac.jvm.ClassReader$AnnotationDeproxy.deproxyCompoundList(ClassReader.java:1991)
-	at com.sun.tools.javac.jvm.ClassReader$AnnotationCompleter.run(ClassReader.java:2210)
-	at com.sun.tools.javac.comp.Annotate.flush(Annotate.java:191)
-	at com.sun.tools.javac.comp.Annotate.unblockAnnotations(Annotate.java:144)
-	at com.sun.tools.javac.comp.Annotate.enterDone(Annotate.java:157)
-	at com.sun.tools.javac.main.JavaCompiler.enterDone(JavaCompiler.java:1820)
-	at com.sun.tools.javac.main.JavaCompiler.enterTrees(JavaCompiler.java:1074)
-	at com.sun.tools.javac.api.JavacTaskImpl.enter(JavacTaskImpl.java:345)
-	at com.sun.tools.javac.api.JavacTaskImpl.analyze(JavacTaskImpl.java:399)
-	at scala.meta.internal.jpc.JavaSourceCompile.withAnalyzePhase(JavaSourceCompile.scala:63)
-	at scala.meta.internal.jpc.JavaSemanticdbProvider.batchTextDocumentBytes(JavaSemanticdbProvider.scala:32)
-	at scala.meta.internal.jpc.JavaPresentationCompiler.$anonfun$batchSemanticdbTextDocuments$1(JavaPresentationCompiler.scala:361)
-	at scala.meta.internal.jpc.JavaPresentationCompiler.$anonfun$request$1(JavaPresentationCompiler.scala:123)
-	at scala.util.Either.map(Either.scala:390)
-	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:179)
-	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:118)
-	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:247)
-	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:157)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.lang.Thread.run(Thread.java:1583)
-
-2026.10.09 07:21:29 INFO  implementations: found 1 occurrences
-2026.10.09 07:21:29 INFO  Found 7 candidate files for depth 0.
-2026.10.09 07:21:29 WARN  compiler crashed due to an error in the Java compiler: com.sun.tools.javac.code.Symbol$CompletionFailure: class file for java.lang.annotation.Annotation not found, retrying with new compiler instance.
-com.sun.tools.javac.code.Symbol$CompletionFailure: class file for java.lang.annotation.Annotation not found
-
-2026.10.09 07:21:29 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local371
-2026.10.09 07:21:29 INFO  Found 5 candidate files for depth 1.
-2026.10.09 07:21:29 INFO  Found 7 candidate files for depth 2.
-2026.10.09 07:21:30 INFO  Found 7 candidate files for depth 3.
-2026.10.09 07:21:30 INFO  Found 9 candidate files for depth 4.
-2026.10.09 07:21:30 INFO  Found 3 candidate files for depth 5.
-2026.10.09 07:21:30 INFO  Found 0 candidate files for depth 6.
-2026.10.09 07:21:30 INFO  implementations: found 25 implementation results in 1.53s
-2026.10.09 07:21:37 INFO  references: found 1 occurrences
-2026.10.09 07:21:37 INFO  references: found 6 external document candidates in 15ms
-2026.10.09 07:21:37 INFO  references: indexed 6 candidates in 61ms
-2026.10.09 07:21:37 INFO  references: found 45 reference results in 93ms
-2026.10.09 07:21:38 INFO  Shutting down server
-2026.10.09 07:21:38 INFO  Memory monitor stopped
-2026.10.09 07:21:38 INFO  shutting down Metals
-2026.10.09 07:21:39 INFO  Shut down connection with build server.
-2026.10.09 07:21:38 INFO  Exiting server
+2026.10.09 07:55:49 INFO  Started: Metals version 2.0.0-community-build.37901402419 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+2026.10.09 07:55:49 INFO  Memory monitor started
+2026.10.09 07:55:50 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.09 07:55:51 INFO  mbt-v2: indexing 1268 files
+2026.10.09 07:55:52 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals12313428123404574221 -cp /tmp/metals12313428123404574221/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.37901402419:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+2026.10.09 07:55:56 INFO  time: mbt-v2 loaded index for 1268 files in 5.64s
+2026.10.09 07:56:07 INFO  [metals-maven] exporting 3 module(s)
+2026.10.09 07:56:07 INFO  [metals-maven] resolving sources JARs for 52 dependencies...
+2026.10.09 07:56:07 INFO  [metals-maven] sources resolved: 52/52
+2026.10.09 07:56:07 INFO  [metals-maven] resolving 57 dependency JAR(s) missing from local cache...
+2026.10.09 07:56:08 INFO  [metals-maven] namespace: io.vertx:vertx-core-logging:5.3.0-SNAPSHOT
+2026.10.09 07:56:08 INFO  [metals-maven] namespace: io.vertx:vertx-core:5.3.0-SNAPSHOT
+2026.10.09 07:56:08 INFO  [metals-maven] namespace: io.vertx:vertx-core-java21-it:5.3.0-SNAPSHOT
+2026.10.09 07:56:08 INFO  [metals-maven] wrote 6 namespaces, 53 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+2026.10.09 07:56:09 INFO  time: ran 'maven-export' in 16s
+2026.10.09 07:56:09 INFO  mbt-import: wrote .metals/mbt.json
+2026.10.09 07:56:09 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.10.09 07:56:09 INFO  Connected to Build server: MBT v2.0.0-community-build.37901402419
+2026.10.09 07:56:14 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.09 07:56:21 INFO  time: indexed workspace in 11s
+2026.10.09 07:56:26 INFO  time: indexed workspace in 4.9s
+2026.10.09 07:56:27 INFO  implementations: found 1 occurrences
+2026.10.09 07:56:27 INFO  Found 1 candidate files for depth 0.
+2026.10.09 07:56:27 INFO  Found 23 candidate files for depth 1.
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local20
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local438
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local84
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local673
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local303
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local289
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local344
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local161
+2026.10.09 07:56:30 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local39
+2026.10.09 07:56:30 INFO  Found 6 candidate files for depth 2.
+2026.10.09 07:56:30 INFO  Found 0 candidate files for depth 3.
+2026.10.09 07:56:30 INFO  implementations: found 36 implementation results in 2.64s
+2026.10.09 07:56:35 INFO  implementations: found 2 occurrences
+2026.10.09 07:56:35 INFO  Found 23 candidate files for depth 0.
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local20
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local438
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local84
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local673
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local303
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local289
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local344
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local161
+2026.10.09 07:56:35 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local39
+2026.10.09 07:56:35 INFO  Found 6 candidate files for depth 1.
+2026.10.09 07:56:35 INFO  Found 0 candidate files for depth 2.
+2026.10.09 07:56:35 INFO  implementations: found 35 implementation results in 66ms
+2026.10.09 07:56:41 INFO  implementations: found 1 occurrences
+2026.10.09 07:56:41 INFO  Found 7 candidate files for depth 0.
+2026.10.09 07:56:41 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local370
+2026.10.09 07:56:41 INFO  Found 5 candidate files for depth 1.
+2026.10.09 07:56:41 INFO  Found 7 candidate files for depth 2.
+2026.10.09 07:56:41 INFO  Found 7 candidate files for depth 3.
+2026.10.09 07:56:41 INFO  Found 9 candidate files for depth 4.
+2026.10.09 07:56:41 INFO  Found 3 candidate files for depth 5.
+2026.10.09 07:56:42 INFO  Found 0 candidate files for depth 6.
+2026.10.09 07:56:42 INFO  implementations: found 25 implementation results in 1.15s
+2026.10.09 07:57:49 INFO  references: found 1 occurrences
+2026.10.09 07:57:49 INFO  references: found 6 external document candidates in 14ms
+2026.10.09 07:57:49 INFO  references: indexed 6 candidates in 80ms
+2026.10.09 07:57:49 INFO  references: found 45 reference results in 0.11s
+2026.10.09 07:57:51 INFO  Shutting down server
+2026.10.09 07:57:51 INFO  Memory monitor stopped
+2026.10.09 07:57:51 INFO  shutting down Metals
+2026.10.09 07:57:51 INFO  Shut down connection with build server.
+2026.10.09 07:57:51 INFO  Exiting server

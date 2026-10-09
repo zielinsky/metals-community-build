@@ -4,37 +4,43 @@
   "buildTool": "maven",
   "repository": "jenkins-docs/simple-java-maven-app",
   "ref": "master",
-  "status": "unknown",
+  "status": "passed",
   "scenarios": [
     {
       "id": "import",
       "kind": "mbt-import",
-      "status": "unknown"
+      "status": "passed",
+      "durationMs": 34990
     },
     {
       "id": "run-app",
       "kind": "java-main-run",
-      "status": "unknown"
+      "status": "passed",
+      "durationMs": 23959
     },
     {
       "id": "rename-message",
       "kind": "rename-symbol",
-      "status": "unknown"
+      "status": "passed",
+      "durationMs": 10518
     },
     {
       "id": "message-highlight",
       "kind": "document-highlight",
-      "status": "unknown"
+      "status": "passed",
+      "durationMs": 1737
     },
     {
       "id": "test-discovery",
       "kind": "java-test-discovery",
-      "status": "unknown"
+      "status": "passed",
+      "durationMs": 4571
     },
     {
       "id": "debug-app-test",
       "kind": "java-debug-test",
-      "status": "unknown"
+      "status": "passed",
+      "durationMs": 19339
     }
   ]
 }

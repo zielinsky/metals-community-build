@@ -4,32 +4,31 @@
   "buildTool": "maven",
   "repository": "junit-team/junit-examples",
   "ref": "main",
-  "status": "failed",
+  "status": "passed",
   "scenarios": [
     {
       "id": "import",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 39355
+      "durationMs": 33697
     },
     {
       "id": "test-discovery",
       "kind": "java-test-discovery",
-      "status": "failed",
-      "durationMs": 124166,
-      "error": "Test gutter did not appear for 'addsTwoNumbers'"
+      "status": "passed",
+      "durationMs": 4509
     },
     {
       "id": "calculator-definition",
       "kind": "go-to-definition",
       "status": "passed",
-      "durationMs": 3000
+      "durationMs": 3337
     },
     {
       "id": "debug-adds-two-numbers",
       "kind": "java-debug-test",
       "status": "passed",
-      "durationMs": 31459
+      "durationMs": 28034
     }
   ]
 }

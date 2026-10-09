@@ -4,43 +4,44 @@
   "buildTool": "maven",
   "repository": "eclipse-vertx/vert.x",
   "ref": "master",
-  "status": "passed",
+  "status": "failed",
   "scenarios": [
     {
       "id": "import",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 46560
+      "durationMs": 46986
     },
     {
       "id": "interface-subtypes",
       "kind": "type-hierarchy",
       "status": "passed",
-      "durationMs": 8182
+      "durationMs": 8749
     },
     {
       "id": "class-supertypes",
       "kind": "type-hierarchy",
       "status": "passed",
-      "durationMs": 5424
+      "durationMs": 5555
     },
     {
       "id": "usage-site-supertypes",
       "kind": "type-hierarchy",
-      "status": "passed",
-      "durationMs": 6035
+      "status": "failed",
+      "durationMs": 65457,
+      "error": "Type hierarchy (supertypes) of 'Future' did not list AsyncResult. Rows: [\"Future io.vertx.core\",\"CompositeFuture io.vertx.core\",\"Timer io.vertx.core\",\"ServerWebSocketHandshaker io.vertx.core.http.impl.websocket\",\"TimerImpl io.vertx.core.impl\",\"CompositeFutureImpl io.vertx.core.impl.future\",\"Composition io.vertx.core.impl.future\",\"Eventually io.vertx.core.impl.future\",\"Expect io.vertx.core.impl.future\",\"FailedFuture io.vertx.core.impl.future\",\"FixedMapping io.vertx.core.impl.future\",\"FixedOtherwise io.vertx.core.impl.future\",\"FutureBase io.vertx.core.impl.future\"]"
     },
     {
       "id": "verticle-definition",
       "kind": "go-to-definition",
       "status": "passed",
-      "durationMs": 4007
+      "durationMs": 4222
     },
     {
       "id": "verticle-references",
       "kind": "find-references",
       "status": "passed",
-      "durationMs": 3527
+      "durationMs": 3561
     }
   ]
 }
