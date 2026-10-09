@@ -189,20 +189,40 @@ export async function findTestGutter(testName: string): Promise<WebElement | und
  * Explorer view is opened once, which is what a user would do, and the editor
  * is focused again.
  */
-export async function waitForTestGutter(testName: string, timeoutMs = 120_000): Promise<WebElement> {
-  const driver = VSBrowser.instance.driver;
+export async function waitForTestGutter(
+  testName: string,
+  reopenFile?: () => Promise<void>,
+  timeoutMs = 120_000,
+): Promise<WebElement> {
   await new TextEditor().selectText(testName);
-  const deadline = Date.now() + timeoutMs;
+  const started = Date.now();
+  const deadline = started + timeoutMs;
   let openedExplorer = false;
+  let reopened = false;
   while (Date.now() < deadline) {
     const glyph = await findTestGutter(testName).catch(() => undefined);
-    if (glyph) return glyph;
-    if (!openedExplorer && Date.now() > deadline - timeoutMs + 30_000) {
+    if (glyph) {
+      if (reopened) {
+        console.log(`[community-build] WARNING: test '${testName}' was discovered only after reopening the file`);
+      }
+      return glyph;
+    }
+    const elapsed = Date.now() - started;
+    if (!openedExplorer && elapsed > 30_000) {
       openedExplorer = true;
       console.log(`[community-build] Opening the Test Explorer to trigger discovery of '${testName}'`);
       await new Workbench().executeCommand("Testing: Focus on Test Explorer View").catch(() => undefined);
       await new Promise((done) => setTimeout(done, 2_000));
       await new Workbench().executeCommand("View: Focus Active Editor Group").catch(() => undefined);
+      await new TextEditor().selectText(testName).catch(() => undefined);
+    } else if (!reopened && reopenFile && elapsed > 60_000) {
+      // Metals computes test cases when a file gains focus; when that happened
+      // before indexing finished, nothing recomputes them until the next
+      // focus. Reopening the file is the last resort and is reported above.
+      reopened = true;
+      console.log(`[community-build] Reopening the file to trigger discovery of '${testName}'`);
+      await reopenFile().catch((error: unknown) =>
+        console.log(`[community-build] Could not reopen the file: ${String(error)}`));
       await new TextEditor().selectText(testName).catch(() => undefined);
     }
     await new Promise((done) => setTimeout(done, 500));

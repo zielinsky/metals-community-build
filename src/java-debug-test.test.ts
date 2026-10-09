@@ -21,6 +21,7 @@ import {
   delay,
   log,
   prepareMbt,
+  reopenScenarioFile,
   workspace,
 } from "./test-support";
 
@@ -91,14 +92,17 @@ async function openDebugTest(glyph: WebElement, testName: string): Promise<void>
  * compilation keeps running, so relaunching from the gutter usually starts
  * the session within the same overall budget.
  */
-async function launchDebugSession(testName: string): Promise<DebugToolbar> {
+async function launchDebugSession(
+  testName: string,
+  reopenFile: () => Promise<void>,
+): Promise<DebugToolbar> {
   const deadline = Date.now() + 15 * 60 * 1000;
   const metalsLog = resolve(workspace, ".metals", "metals.log");
   let attempt = 0;
   while (true) {
     attempt += 1;
     const loggedBefore = existsSync(metalsLog) ? readFileSync(metalsLog, "utf8").length : 0;
-    const glyph = await waitForTestGutter(testName);
+    const glyph = await waitForTestGutter(testName, reopenFile);
     await openDebugTest(glyph, testName);
     const budget = Math.min(5 * 60 * 1000, deadline - Date.now());
     try {
@@ -219,7 +223,7 @@ export async function testJavaDebug(
 
   let toolbar: DebugToolbar | undefined;
   try {
-    toolbar = await launchDebugSession(scenario.testName);
+    toolbar = await launchDebugSession(scenario.testName, () => reopenScenarioFile(scenario));
     await toolbar.waitForBreakPoint(10 * 60 * 1000);
     await waitForPausedLine(editor, scenario.breakpoint.line, 30_000);
     log(`Debugger stopped at line ${scenario.breakpoint.line}`);

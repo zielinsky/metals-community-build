@@ -106,7 +106,7 @@ Screen potwierdzający wynik: `*-imports-resolved.png`.
 
 ## `java-test-discovery` — Wykrywanie testu
 
-Wymaga ikonki uruchomienia przy linii wskazanej metody, bez uruchamiania testu. Nie zalicza ikonki innej metody ani klasy. Jeśli ikonka nie pojawi się w 30 s, runner raz otwiera widok Testing (jak zrobiłby użytkownik) i wraca do edytora.
+Wymaga ikonki uruchomienia przy linii wskazanej metody, bez uruchamiania testu. Nie zalicza ikonki innej metody ani klasy. Jeśli ikonka nie pojawi się w 30 s, runner raz otwiera widok Testing (jak zrobiłby użytkownik) i wraca do edytora; po 60 s zamyka i otwiera plik ponownie, bo Metals liczy testy przy fokusie pliku i nie przelicza ich, gdy fokus nastąpił przed końcem indeksowania. Wykrycie dopiero po ponownym otwarciu jest zaliczane, ale zapisane w logu jako `WARNING`.
 
 ```json
 {
@@ -373,7 +373,7 @@ Screen potwierdzający wynik: `*-debug-test-finished.png`.
 
 ## Brak ikonki testu i timeouty
 
-Discovery i debug czekają do 120 s na ikonkę przy właściwej metodzie w już otwartym pliku. Nie zamykają i nie otwierają go ponownie, nie dopisują spacji i nie zapisują sztucznych zmian; jedyną dodatkową akcją jest jednorazowe otwarcie widoku Testing po 30 s. Pozycje kursora są liczone w znakach, więc pliki wcięte tabulatorami działają tak samo jak wcięte spacjami. Brak ikonki po tym czasie oznacza błąd scenariusza. Referencje, hierarchia typów i podświetlenia czekają do 60 s na wynik; code action jest ponawiany do 2 minut.
+Discovery i debug czekają do 120 s na ikonkę przy właściwej metodzie w już otwartym pliku. Nie dopisują spacji i nie zapisują sztucznych zmian; dodatkowe akcje to jednorazowe otwarcie widoku Testing po 30 s i jednorazowe ponowne otwarcie pliku po 60 s (zalogowane jako `WARNING`, gdy dopiero to pomogło). Pozycje kursora są liczone w znakach, więc pliki wcięte tabulatorami działają tak samo jak wcięte spacjami. Brak ikonki po tym czasie oznacza błąd scenariusza. Referencje, hierarchia typów i podświetlenia czekają do 60 s na wynik; code action jest ponawiany do 2 minut.
 
 ## Wyniki i screeny
 
@@ -382,5 +382,7 @@ Wyniki: `reports/local/<id>/result.json`. Screeny: `reports/local/<id>/screensho
 ```bash
 npm run verify:screenshots -- reports/local/smoke
 ```
+
+Jeśli ExTester zakończy się, zanim jakikolwiek scenariusz zgłosi wynik (np. „Socket closed before the connection was established” przy starcie VS Code), runner raz uruchamia sesję ponownie; to błąd infrastruktury, nie Metals.
 
 Walidator sprawdza poprawność PNG i obecność wymaganego screena końcowego. Nie dowodzi poprawności samych pikseli; treść UI jest sprawdzana przez akcję, a renderowanie należy obejrzeć.

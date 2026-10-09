@@ -298,6 +298,16 @@ async function readMbtModel(timeoutMs: number): Promise<MbtModel> {
   );
 }
 
+/** Closes the scenario's editor and opens the file again through Go to File. */
+export async function reopenScenarioFile(scenario: Scenario): Promise<void> {
+  const openFile = fileFor(scenario);
+  await closePeeks();
+  await new EditorView().closeEditor(basename(openFile)).catch(() => undefined);
+  await delay(1_000);
+  await openFileInWorkbench(openFile);
+  await captureScreenshot("file-reopened");
+}
+
 export async function openScenarioFile(scenario: Scenario): Promise<void> {
   const openFile = fileFor(scenario);
   log(`Starting ${project.buildTool} / ${project.id} / ${scenario.id}`);

@@ -109,18 +109,44 @@ cleanSession(workspace);
 rmSync(resolve(reportDirectory, "screenshots"), { recursive: true, force: true });
 writeProjectResult(reportDirectory, createProjectResult(project, scenarios));
 
-const status = runExtester(["run-tests", paths.tests, ...extesterArguments], {
-  ...project.environment,
-  COMMUNITY_BUILD_PROJECT_CONFIG: source,
-  COMMUNITY_BUILD_REPORT_DIR: reportDirectory ?? "",
-  COMMUNITY_BUILD_SCENARIOS: JSON.stringify(scenarios.map(({ id }) => id)),
-  METALS_COMMUNITY_WORKSPACE: workspace,
-  METALS_COMMUNITY_VSCODE_RESOURCES: JSON.stringify({
-    folder: workspace,
-    file: resolve(workspace, scenarios[0].openFile),
-  }),
-  NODE_OPTIONS: nodeOptions,
-});
+function runScenarios(): number {
+  return runExtester(["run-tests", paths.tests, ...extesterArguments], {
+    ...project.environment,
+    COMMUNITY_BUILD_PROJECT_CONFIG: source,
+    COMMUNITY_BUILD_REPORT_DIR: reportDirectory ?? "",
+    COMMUNITY_BUILD_SCENARIOS: JSON.stringify(scenarios.map(({ id }) => id)),
+    METALS_COMMUNITY_WORKSPACE: workspace,
+    METALS_COMMUNITY_VSCODE_RESOURCES: JSON.stringify({
+      folder: workspace,
+      file: resolve(workspace, scenarios[0].openFile),
+    }),
+    NODE_OPTIONS: nodeOptions,
+  });
+}
+
+/** True when ExTester exited before any scenario reported a result. */
+function nothingRan(): boolean {
+  try {
+    const result = JSON.parse(
+      readFileSync(resolve(reportDirectory, "result.json"), "utf8"),
+    ) as { scenarios: { status: string }[] };
+    return result.scenarios.every(({ status }) => status === "unknown");
+  } catch {
+    return true;
+  }
+}
+
+let status = runScenarios();
+if (status !== 0 && nothingRan()) {
+  // ExTester occasionally loses the ChromeDriver connection while VS Code is
+  // starting ("Socket closed before the connection was established"); that
+  // says nothing about Metals, so the session is started once more.
+  console.log("\nVS Code session ended before any scenario ran; retrying once\n");
+  cleanSession(workspace);
+  rmSync(resolve(reportDirectory, "screenshots"), { recursive: true, force: true });
+  writeProjectResult(reportDirectory, createProjectResult(project, scenarios));
+  status = runScenarios();
+}
 
 if (status !== 0) process.exit(status);
 console.log(`Verified ${verifyScreenshots(reportDirectory)} scenario screenshots`);

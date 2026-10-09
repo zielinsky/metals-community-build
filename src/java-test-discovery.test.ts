@@ -8,6 +8,7 @@ import {
   captureScreenshot,
   log,
   prepareMbt,
+  reopenScenarioFile,
 } from "./test-support";
 
 export async function testJavaTestDiscovery(
@@ -24,7 +25,7 @@ export async function testJavaTestDiscovery(
 
   await editor.selectText(scenario.testName);
   log(`Waiting for VS Code to discover test: ${scenario.testName}`);
-  await waitForTestGutter(scenario.testName);
+  await waitForTestGutter(scenario.testName, () => reopenScenarioFile(scenario));
   log(`VS Code discovered test: ${scenario.testName}`);
   await captureScreenshot("test-run-button-discovered");
 
