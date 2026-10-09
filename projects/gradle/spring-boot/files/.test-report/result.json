@@ -1,0 +1,22 @@
+{
+  "project": "spring-boot",
+  "projectName": "Spring Boot",
+  "buildTool": "gradle",
+  "repository": "spring-projects/spring-boot",
+  "ref": "main",
+  "status": "passed",
+  "scenarios": [
+    {
+      "id": "import-reactive-oauth2-client",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 132311
+    },
+    {
+      "id": "run-reactive-oauth2-client",
+      "kind": "java-main-run",
+      "status": "passed",
+      "durationMs": 80673
+    }
+  ]
+}

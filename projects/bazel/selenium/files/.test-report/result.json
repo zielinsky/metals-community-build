@@ -1,0 +1,28 @@
+{
+  "project": "selenium",
+  "projectName": "Selenium",
+  "buildTool": "bazel",
+  "repository": "SeleniumHQ/selenium",
+  "ref": "trunk",
+  "status": "passed",
+  "scenarios": [
+    {
+      "id": "import-each-build-target",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 142817
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "status": "passed",
+      "durationMs": 2596
+    },
+    {
+      "id": "debug-json-test",
+      "kind": "java-debug-test",
+      "status": "passed",
+      "durationMs": 25712
+    }
+  ]
+}

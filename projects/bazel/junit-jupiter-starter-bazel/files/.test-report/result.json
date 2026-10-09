@@ -1,0 +1,35 @@
+{
+  "project": "junit-jupiter-starter-bazel",
+  "projectName": "JUnit Jupiter starter (Bazel)",
+  "buildTool": "bazel",
+  "repository": "junit-team/junit-examples",
+  "ref": "main",
+  "status": "failed",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "status": "failed",
+      "durationMs": 56908,
+      "error": "Expected a dependency module matching 'org.junit.jupiter:junit-jupiter-api' among 0 modules"
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "status": "skipped",
+      "durationMs": 0
+    },
+    {
+      "id": "calculator-definition",
+      "kind": "go-to-definition",
+      "status": "skipped",
+      "durationMs": 0
+    },
+    {
+      "id": "debug-adds-two-numbers",
+      "kind": "java-debug-test",
+      "status": "skipped",
+      "durationMs": 0
+    }
+  ]
+}

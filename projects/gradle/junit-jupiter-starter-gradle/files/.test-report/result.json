@@ -1,0 +1,34 @@
+{
+  "project": "junit-jupiter-starter-gradle",
+  "projectName": "JUnit Jupiter starter (Gradle)",
+  "buildTool": "gradle",
+  "repository": "junit-team/junit-examples",
+  "ref": "main",
+  "status": "passed",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 35927
+    },
+    {
+      "id": "test-discovery",
+      "kind": "java-test-discovery",
+      "status": "passed",
+      "durationMs": 4497
+    },
+    {
+      "id": "calculator-definition",
+      "kind": "go-to-definition",
+      "status": "passed",
+      "durationMs": 2948
+    },
+    {
+      "id": "debug-adds-two-numbers",
+      "kind": "java-debug-test",
+      "status": "passed",
+      "durationMs": 20387
+    }
+  ]
+}

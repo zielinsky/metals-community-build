@@ -1,0 +1,3354 @@
+{
+  "dependencyModules": [
+    {
+      "id": "com.google.guava:guava:21.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+com_google_guava_guava_21_0/file/v1/com/google/guava/guava/21.0/guava-21.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+com_google_guava_guava_sources_21_0/file/v1/com/google/guava/guava/21.0/guava-21.0-sources.jar"
+    },
+    {
+      "id": "org.apache.commons:commons-lang3:3.18.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_apache_commons_commons_lang3_3_18_0/file/v1/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_apache_commons_commons_lang3_sources_3_18_0/file/v1/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0-sources.jar"
+    },
+    {
+      "id": "org.scala-lang.modules:scala-xml_2.12:2.3.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_modules_scala_xml_2_12_2_3_0/file/v1/org/scala-lang/modules/scala-xml_2.12/2.3.0/scala-xml_2.12-2.3.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_modules_scala_xml_2_12_sources_2_3_0/file/v1/org/scala-lang/modules/scala-xml_2.12/2.3.0/scala-xml_2.12-2.3.0-sources.jar"
+    },
+    {
+      "id": "org.scala-lang:scala-compiler:2.12.20",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_compiler_2_12_20/file/v1/org/scala-lang/scala-compiler/2.12.20/scala-compiler-2.12.20.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_compiler_sources_2_12_20/file/v1/org/scala-lang/scala-compiler/2.12.20/scala-compiler-2.12.20-sources.jar"
+    },
+    {
+      "id": "org.scala-lang:scala-library:2.12.20",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_library_2_12_20/file/v1/org/scala-lang/scala-library/2.12.20/scala-library-2.12.20.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_library_sources_2_12_20/file/v1/org/scala-lang/scala-library/2.12.20/scala-library-2.12.20-sources.jar"
+    },
+    {
+      "id": "org.scala-lang:scala-reflect:2.12.20",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_reflect_2_12_20/file/v1/org/scala-lang/scala-reflect/2.12.20/scala-reflect-2.12.20.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_scala_lang_scala_reflect_sources_2_12_20/file/v1/org/scala-lang/scala-reflect/2.12.20/scala-reflect-2.12.20-sources.jar"
+    },
+    {
+      "id": "org.springframework:spring-beans:6.2.11",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_beans_6_2_11/file/v1/org/springframework/spring-beans/6.2.11/spring-beans-6.2.11.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_beans_sources_6_2_11/file/v1/org/springframework/spring-beans/6.2.11/spring-beans-6.2.11-sources.jar"
+    },
+    {
+      "id": "org.springframework:spring-core:6.2.11",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_core_6_2_11/file/v1/org/springframework/spring-core/6.2.11/spring-core-6.2.11.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_core_sources_6_2_11/file/v1/org/springframework/spring-core/6.2.11/spring-core-6.2.11-sources.jar"
+    },
+    {
+      "id": "org.springframework:spring-jcl:6.2.11",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_jcl_6_2_11/file/v1/org/springframework/spring-jcl/6.2.11/spring-jcl-6.2.11.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_jcl_sources_6_2_11/file/v1/org/springframework/spring-jcl/6.2.11/spring-jcl-6.2.11-sources.jar"
+    },
+    {
+      "id": "org.springframework:spring-tx:6.2.11",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_tx_6_2_11/file/v1/org/springframework/spring-tx/6.2.11/spring-tx-6.2.11.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_springframework_spring_tx_sources_6_2_11/file/v1/org/springframework/spring-tx/6.2.11/spring-tx-6.2.11-sources.jar"
+    },
+    {
+      "id": "org.typelevel:cats-core_2.12:2.13.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_cats_core_2_12_2_13_0/file/v1/org/typelevel/cats-core_2.12/2.13.0/cats-core_2.12-2.13.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_cats_core_2_12_sources_2_13_0/file/v1/org/typelevel/cats-core_2.12/2.13.0/cats-core_2.12-2.13.0-sources.jar"
+    },
+    {
+      "id": "org.typelevel:cats-kernel_2.12:2.13.0",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_cats_kernel_2_12_2_13_0/file/v1/org/typelevel/cats-kernel_2.12/2.13.0/cats-kernel_2.12-2.13.0.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_cats_kernel_2_12_sources_2_13_0/file/v1/org/typelevel/cats-kernel_2.12/2.13.0/cats-kernel_2.12-2.13.0-sources.jar"
+    },
+    {
+      "id": "org.typelevel:kind-projector_2.12.20:0.13.4",
+      "jar": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_kind_projector_2_12_20_0_13_4/file/v1/org/typelevel/kind-projector_2.12.20/0.13.4/kind-projector_2.12.20-0.13.4.jar",
+      "sources": "file:///home/runner/.bazel/external/rules_jvm_external++maven+org_typelevel_kind_projector_2_12_20_sources_0_13_4/file/v1/org/typelevel/kind-projector_2.12.20/0.13.4/kind-projector_2.12.20-0.13.4-sources.jar"
+    }
+  ],
+  "namespaces": {
+    "//test/coverage_specs2_with_junit": {
+      "sources": [
+        "test/coverage_specs2_with_junit/A1.scala",
+        "test/coverage_specs2_with_junit/A2.scala",
+        "test/coverage_specs2_with_junit/B1.scala",
+        "test/coverage_specs2_with_junit/B2.java",
+        "test/coverage_specs2_with_junit/C2.scala",
+        "test/coverage_specs2_with_junit/D1.scala",
+        "test/coverage_specs2_with_junit/E1.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/toolchain_plugins": {
+      "sources": [
+        "test/toolchain_plugins/Placeholder.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/scalac_exec_group": {
+      "sources": [
+        "test/scalac_exec_group/Binary.scala",
+        "test/scalac_exec_group/Lib.scala",
+        "test/scalac_exec_group/LibSuite.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//src/scala/scripts",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scalac_exec_group/Binary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scalac_exec_group/Test.jar"
+      ],
+      "configurations": [
+        "//test/scalac_exec_group:Binary",
+        "//test/scalac_exec_group:Test"
+      ],
+      "mainClasses": [
+        {
+          "className": "scalarules.test.scalac_exec_group.Binary",
+          "configuration": "//test/scalac_exec_group:Binary"
+        }
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.scalac_exec_group.LibSuite",
+          "sourcePath": "test/scalac_exec_group/LibSuite.scala",
+          "configuration": "//test/scalac_exec_group:Test"
+        }
+      ]
+    },
+    "//test/scalacopts_invalid": {
+      "sources": [
+        "test/scalacopts_invalid/Empty.scala"
+      ],
+      "scalacOptions": [
+        "-source:not-existing"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/coverage_filename_encoding": {
+      "sources": [
+        "test/coverage_filename_encoding/A1.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/transitive/java_to_scala": {
+      "sources": [
+        "test/transitive/java_to_scala/A.scala",
+        "test/transitive/java_to_scala/C.java",
+        "test/transitive/java_to_scala/D.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/plus_one_deps/external_deps": {
+      "sources": [
+        "test/plus_one_deps/external_deps/A.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "org.springframework:spring-beans:6.2.11",
+        "org.springframework:spring-core:6.2.11",
+        "org.springframework:spring-jcl:6.2.11",
+        "org.springframework:spring-tx:6.2.11"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/compiler_plugin": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/compiler_plugin/KindProjected.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "org.scala-lang.modules:scala-xml_2.12:2.3.0",
+        "org.scala-lang:scala-compiler:2.12.20",
+        "org.scala-lang:scala-library:2.12.20",
+        "org.scala-lang:scala-reflect:2.12.20",
+        "org.typelevel:kind-projector_2.12.20:0.13.4"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//third_party/dependency_analyzer/src/test": {
+      "sources": [
+        "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/AstUsedJarFinderTest.scala",
+        "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/CompileTest.scala",
+        "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/ScalaVersionMacrosTest.scala",
+        "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/ScalaVersionTest.scala",
+        "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/ScalacDependencyTest.scala",
+        "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/StrictDepsTest.scala",
+        "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/UnusedDependencyCheckerTest.scala",
+        "third_party/dependency_analyzer/src/test/test_optionsparser.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0",
+        "org.apache.commons:commons-lang3:3.18.0"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/io_utils",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main",
+        "//third_party/utils/src/test"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/third_party/dependency_analyzer/src/test/ast_used_jar_finder_test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/third_party/dependency_analyzer/src/test/scala_version_macros_test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/third_party/dependency_analyzer/src/test/scala_version_test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/third_party/dependency_analyzer/src/test/scalac_dependency_test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/third_party/dependency_analyzer/src/test/strict_deps_test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/third_party/dependency_analyzer/src/test/test_optionsparser.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/third_party/dependency_analyzer/src/test/test_that_tests_run.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/third_party/dependency_analyzer/src/test/unused_dependency_checker_test.jar"
+      ],
+      "configurations": [
+        "//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test",
+        "//third_party/dependency_analyzer/src/test:scala_version_macros_test",
+        "//third_party/dependency_analyzer/src/test:scala_version_test",
+        "//third_party/dependency_analyzer/src/test:scalac_dependency_test",
+        "//third_party/dependency_analyzer/src/test:strict_deps_test",
+        "//third_party/dependency_analyzer/src/test:test_optionsparser",
+        "//third_party/dependency_analyzer/src/test:test_that_tests_run",
+        "//third_party/dependency_analyzer/src/test:unused_dependency_checker_test"
+      ],
+      "testClasses": [
+        {
+          "className": "_empty_.TargetSetParserTest",
+          "sourcePath": "third_party/dependency_analyzer/src/test/test_optionsparser.scala",
+          "configuration": "//third_party/dependency_analyzer/src/test:test_optionsparser"
+        },
+        {
+          "className": "io.bazel.rulesscala.dependencyanalyzer.AstUsedJarFinderTest",
+          "sourcePath": "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/AstUsedJarFinderTest.scala",
+          "configuration": "//third_party/dependency_analyzer/src/test:ast_used_jar_finder_test"
+        },
+        {
+          "className": "io.bazel.rulesscala.dependencyanalyzer.CompileTest",
+          "sourcePath": "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/CompileTest.scala",
+          "configuration": "//third_party/dependency_analyzer/src/test:test_that_tests_run"
+        },
+        {
+          "className": "io.bazel.rulesscala.dependencyanalyzer.ScalaVersionMacrosTest",
+          "sourcePath": "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/ScalaVersionMacrosTest.scala",
+          "configuration": "//third_party/dependency_analyzer/src/test:scala_version_macros_test"
+        },
+        {
+          "className": "io.bazel.rulesscala.dependencyanalyzer.ScalaVersionTest",
+          "sourcePath": "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/ScalaVersionTest.scala",
+          "configuration": "//third_party/dependency_analyzer/src/test:scala_version_test"
+        },
+        {
+          "className": "io.bazel.rulesscala.dependencyanalyzer.ScalacDependencyTest",
+          "sourcePath": "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/ScalacDependencyTest.scala",
+          "configuration": "//third_party/dependency_analyzer/src/test:scalac_dependency_test"
+        },
+        {
+          "className": "io.bazel.rulesscala.dependencyanalyzer.StrictDepsTest",
+          "sourcePath": "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/StrictDepsTest.scala",
+          "configuration": "//third_party/dependency_analyzer/src/test:strict_deps_test"
+        },
+        {
+          "className": "io.bazel.rulesscala.dependencyanalyzer.UnusedDependencyCheckerTest",
+          "sourcePath": "third_party/dependency_analyzer/src/test/io/bazel/rulesscala/dependencyanalyzer/UnusedDependencyCheckerTest.scala",
+          "configuration": "//third_party/dependency_analyzer/src/test:unused_dependency_checker_test"
+        }
+      ]
+    },
+    "//test/phase/adjustment": {
+      "sources": [
+        "test/phase/adjustment/PhaseLibrary.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/strict_deps/no_recompilation": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/strict_deps/no_recompilation/A.scala",
+        "test/src/main/scala/scalarules/test/strict_deps/no_recompilation/B.scala",
+        "test/src/main/scala/scalarules/test/strict_deps/no_recompilation/C.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/compiler": {
+      "sources": [],
+      "scalacOptions": [
+        "-Wconf:msg=Alphanumeric method .* is not declared infix:s",
+        "-Wconf:cat=deprecation:s",
+        "-Wconf:msg=unused:s"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac"
+      ],
+      "classDirectories": []
+    },
+    "//test/semanticdb": {
+      "sources": [
+        "test/semanticdb/A.scala",
+        "test/semanticdb/B.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/coverage_scalatest": {
+      "sources": [
+        "test/coverage_scalatest/A1.scala",
+        "test/coverage_scalatest/A2.scala",
+        "test/coverage_scalatest/B1.scala",
+        "test/coverage_scalatest/B2.java",
+        "test/coverage_scalatest/C2.scala",
+        "test/coverage_scalatest/D1.scala",
+        "test/coverage_scalatest/TestB2.java",
+        "test/coverage_scalatest/TestWithScalaTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_scalatest/test-b2.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_scalatest/test-scalatest.jar"
+      ],
+      "configurations": [
+        "//test/coverage_scalatest:test-b2",
+        "//test/coverage_scalatest:test-scalatest"
+      ],
+      "testClasses": [
+        {
+          "className": "coverage_scalatest.TestB2",
+          "sourcePath": "test/coverage_scalatest/TestB2.java",
+          "configuration": "//test/coverage_scalatest:test-b2"
+        },
+        {
+          "className": "coverage_scalatest.TestWithScalaTest",
+          "sourcePath": "test/coverage_scalatest/TestWithScalaTest.scala",
+          "configuration": "//test/coverage_scalatest:test-scalatest"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/srcjars_with_java": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/srcjars_with_java/JavaDependent.scala",
+        "test/src/main/scala/scalarules/test/srcjars_with_java/JavaSourceJar.srcjar",
+        "test/src/main/scala/scalarules/test/srcjars_with_java/MixedLanguageDependent.scala",
+        "test/src/main/scala/scalarules/test/srcjars_with_java/MixedLanguageSourceJar.srcjar"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/resources": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/resources/ScalaLibResourcesFromExternalScalaTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/resources/TestScalaLibResourcesFromExternalScalaTest.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/resources:TestScalaLibResourcesFromExternalScalaTest"
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.resources.ScalaLibResourcesFromExternalScalaTest",
+          "sourcePath": "test/src/main/scala/scalarules/test/resources/ScalaLibResourcesFromExternalScalaTest.scala",
+          "configuration": "//test/src/main/scala/scalarules/test/resources:TestScalaLibResourcesFromExternalScalaTest"
+        }
+      ]
+    },
+    "//test/strict_dependency/filtering": {
+      "sources": [
+        "test/strict_dependency/filtering/UsesGuava.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/toolchains/compilers_jvm_flags": {
+      "sources": [
+        "test/toolchains/compilers_jvm_flags/WillNotCompileJavaSinceXmxTooLow.java",
+        "test/toolchains/compilers_jvm_flags/WillNotCompileScalaSinceXmxTooLow.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "-Xmx1M",
+        "$(location :args.txt)"
+      ],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/strict_dependency/scala_import": {
+      "sources": [
+        "test/strict_dependency/scala_import/LeafScalaImportPassesLabelsDirectDeps.scala",
+        "test/strict_dependency/scala_import/RootScalaImportPassesLabelsDirectDeps.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0",
+        "org.apache.commons:commons-lang3:3.18.0",
+        "org.scala-lang:scala-library:2.12.20",
+        "org.springframework:spring-core:6.2.11",
+        "org.springframework:spring-jcl:6.2.11",
+        "org.typelevel:cats-core_2.12:2.13.0",
+        "org.typelevel:cats-kernel_2.12:2.13.0"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/settings",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/extra_protobuf_generator": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/extra_protobuf_generator/ExtraProtobufGenerator.scala",
+        "test/src/main/scala/scalarules/test/extra_protobuf_generator/ProtobufAdapter.scala",
+        "test/src/main/scala/scalarules/test/extra_protobuf_generator/ProtobufAdapter_2_11.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/env_attribute_expansion": {
+      "sources": [
+        "test/env_attribute_expansion/EnvAttributeManualTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/env_attribute_expansion/EnvAttributeManualTest.jar"
+      ],
+      "configurations": [
+        "//test/env_attribute_expansion:EnvAttributeManualTest"
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.EnvAttributeManualTest",
+          "sourcePath": "test/env_attribute_expansion/EnvAttributeManualTest.scala",
+          "configuration": "//test/env_attribute_expansion:EnvAttributeManualTest"
+        }
+      ]
+    },
+    "//test/toolchains/scala_test_jacocorunner": {
+      "sources": [
+        "test/toolchains/scala_test_jacocorunner/EmptyTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/toolchains/scala_test_jacocorunner/empty_test.jar"
+      ],
+      "configurations": [
+        "//test/toolchains/scala_test_jacocorunner:empty_test"
+      ],
+      "testClasses": [
+        {
+          "className": "test_expect_failure.scala_test_jacocorunner.EmptyTest",
+          "sourcePath": "test/toolchains/scala_test_jacocorunner/EmptyTest.scala",
+          "configuration": "//test/toolchains/scala_test_jacocorunner:empty_test"
+        }
+      ]
+    },
+    "//test/scalac/srcjars": {
+      "sources": [
+        "test/scalac/srcjars/DuplicatesTest.scala",
+        "test/scalac/srcjars/duplicate/single_srcjar",
+        "test/scalac/srcjars/single_srcjar"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scalac/srcjars/duplicates_test.jar"
+      ],
+      "configurations": [
+        "//test/scalac/srcjars:duplicates_test"
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.scalac.srcjars.DuplicatesTest",
+          "sourcePath": "test/scalac/srcjars/DuplicatesTest.scala",
+          "configuration": "//test/scalac/srcjars:duplicates_test"
+        }
+      ]
+    },
+    "//test/plus_one_deps/with_unused_deps": {
+      "sources": [
+        "test/plus_one_deps/with_unused_deps/A.scala",
+        "test/plus_one_deps/with_unused_deps/B.scala",
+        "test/plus_one_deps/with_unused_deps/C.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/srcjars": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/srcjars/SourceJar1.srcjar",
+        "test/src/main/scala/scalarules/test/srcjars/SourceJar2.scala",
+        "test/src/main/scala/scalarules/test/srcjars/SourceJar2.srcjar"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/coverage_scalatest_resources/resource": {
+      "sources": [
+        "test/coverage_scalatest_resources/resource/src/main/scala/com/example/resource/Util.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/scala3_library_eviction": {
+      "sources": [
+        "test/scala3_library_eviction/App.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0",
+        "test.scala3_library_eviction:header_scala3-library_3-3.7.4.jar:local",
+        "test.scala3_library_eviction:scala-library-2.13.0-RC1.jar:local",
+        "test.scala3_library_eviction:scala-library-2.13.99.jar:local",
+        "test.scala3_library_eviction:scala3-library_3-3.6.99.jar:local"
+      ],
+      "scalaVersion": "3.6.4",
+      "dependsOn": [
+        "//scala/settings",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/large_classpath": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/large_classpath/ObjectWithLargeClasspath.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/large_classpath/largeClasspath.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/large_classpath:largeClasspath"
+      ],
+      "mainClasses": [
+        {
+          "className": "scalarules.test.large_classpath.ObjectWithLargeClasspath",
+          "configuration": "//test/src/main/scala/scalarules/test/large_classpath:largeClasspath"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/duplicated_resources/parent": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//src/scala/scripts": {
+      "sources": [
+        "src/scala/scripts/ScalaPBWorker.scala",
+        "src/scala/scripts/ScalaPbCodeGeneratorWrapper.scala",
+        "src/scala/scripts/ScalaPbCodeGeneratorWrapper_2_11.scala",
+        "src/scala/scripts/ScroogeWorker.scala"
+      ],
+      "scalacOptions": [
+        "-source:3.3"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/io_utils",
+        "//src/java/io/bazel/rulesscala/jar",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//src/java/io/bazel/rulesscala/worker",
+        "//src/scala/io/bazel/rules_scala/scrooge_support",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/scala/scripts/scalapb_worker.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/scala/scripts/scrooge_worker.jar"
+      ],
+      "configurations": [
+        "//src/scala/scripts:scalapb_worker",
+        "//src/scala/scripts:scrooge_worker"
+      ],
+      "mainClasses": [
+        {
+          "className": "scripts.ScalaPBWorker",
+          "configuration": "//src/scala/scripts:scalapb_worker"
+        },
+        {
+          "className": "scripts.ScroogeWorker",
+          "configuration": "//src/scala/scripts:scrooge_worker"
+        }
+      ]
+    },
+    "//test/toolchains/scala_repl_classpath_fallback": {
+      "sources": [
+        "test/toolchains/scala_repl_classpath_fallback/Legacy.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/phase/add_to_all_rules": {
+      "sources": [
+        "test/phase/add_to_all_rules/PhaseBinary.scala",
+        "test/phase/add_to_all_rules/PhaseLibrary.scala",
+        "test/phase/add_to_all_rules/PhaseTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/unused_dependency_checker/filtering": {
+      "sources": [
+        "test/unused_dependency_checker/filtering/Empty.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/preconditions": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/preconditions/Preconditions.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/scala_import/srcjar": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "test.src.main.scala.scalarules.test.scala_import.srcjar:my-jar.jar:local"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/settings"
+      ],
+      "classDirectories": []
+    },
+    "//test/compiler_dependency_tracker/sdeps": {
+      "sources": [
+        "test/compiler_dependency_tracker/sdeps/AnotherScalaDep.scala",
+        "test/compiler_dependency_tracker/sdeps/IgnoredScalaDep.scala",
+        "test/compiler_dependency_tracker/sdeps/ScalaDep.scala",
+        "test/compiler_dependency_tracker/sdeps/SomeJava.java",
+        "test/compiler_dependency_tracker/sdeps/SomeScalaWithDeps.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/disappearing_class": {
+      "sources": [
+        "test/disappearing_class/ClassProvider.scala",
+        "test/disappearing_class/UsesClass.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/scalafmt": {
+      "sources": [
+        "test/scalafmt/formatted/formatted-custom-conf.scala",
+        "test/scalafmt/formatted/formatted-encoding.scala",
+        "test/scalafmt/formatted/formatted-test.scala",
+        "test/scalafmt/unformatted/unformatted-custom-conf.scala",
+        "test/scalafmt/unformatted/unformatted-encoding.scala",
+        "test/scalafmt/unformatted/unformatted-test.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/scalafmt",
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/scalac/compileoptions": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/scalac/compileoptions/CompileOptions.java",
+        "src/java/io/bazel/rulesscala/scalac/compileoptions/CompileOptionsTest.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/scalac/compileoptions/CompileOptionsTest.jar"
+      ],
+      "configurations": [
+        "//src/java/io/bazel/rulesscala/scalac/compileoptions:CompileOptionsTest"
+      ],
+      "testClasses": [
+        {
+          "className": "io.bazel.rulesscala.scalac.compileoptions.CompileOptionsTest",
+          "sourcePath": "src/java/io/bazel/rulesscala/scalac/compileoptions/CompileOptionsTest.java",
+          "configuration": "//src/java/io/bazel/rulesscala/scalac/compileoptions:CompileOptionsTest"
+        }
+      ]
+    },
+    "//test/java_in_src_jar": {
+      "sources": [
+        "test/java_in_src_jar/JavaSourceJar.srcjar"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/scala_import/nl": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/scala_import/nl/ScalaImportNeverLink.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "test.src.main.scala.scalarules.test.scala_import.nl:libscala_import_never_link.jar:local"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/settings"
+      ],
+      "classDirectories": []
+    },
+    "//test/mismatching_resource_strip_prefix": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/phase/providers": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test_statsfile": {
+      "sources": [
+        "test_statsfile/Simple.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test_statsfile/Simple.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test_statsfile/SimpleNoStatsFile.jar"
+      ],
+      "configurations": [
+        "//test_statsfile:Simple",
+        "//test_statsfile:SimpleNoStatsFile"
+      ],
+      "mainClasses": [
+        {
+          "className": "scalarules.test.Simple",
+          "configuration": "//test_statsfile:Simple"
+        },
+        {
+          "className": "scalarules.test.Simple",
+          "configuration": "//test_statsfile:SimpleNoStatsFile"
+        }
+      ]
+    },
+    "//test/scalacopts": {
+      "sources": [
+        "test/scalacopts/EchoMacroSettings.scala"
+      ],
+      "scalacOptions": [
+        "-Xmacro-settings:name=Mike,location=US",
+        "-Xmacro-settings:hobby=basketball,soccer"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scalacopts/EchoMacroSettings.jar"
+      ],
+      "configurations": [
+        "//test/scalacopts:EchoMacroSettings"
+      ],
+      "testClasses": [
+        {
+          "className": "scalacopts.EchoMacroSettings",
+          "sourcePath": "test/scalacopts/EchoMacroSettings.scala",
+          "configuration": "//test/scalacopts:EchoMacroSettings"
+        }
+      ]
+    },
+    "//test/persistent_worker": {
+      "sources": [
+        "test/persistent_worker/Broken.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/classpath_resources": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/classpath_resources/ObjectWithClasspathResources.scala",
+        "test/src/main/scala/scalarules/test/classpath_resources/ObjectWithDuplicateClasspathResources.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/classpath_resources/classpath_resource.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/classpath_resources/classpath_resource_duplicates.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/classpath_resources:classpath_resource",
+        "//test/src/main/scala/scalarules/test/classpath_resources:classpath_resource_duplicates"
+      ],
+      "mainClasses": [
+        {
+          "className": "scalarules.test.classpathresources.ObjectWithClasspathResources",
+          "configuration": "//test/src/main/scala/scalarules/test/classpath_resources:classpath_resource"
+        },
+        {
+          "className": "scalarules.test.classpathresources.ObjectWithDuplicateClasspathResources",
+          "configuration": "//test/src/main/scala/scalarules/test/classpath_resources:classpath_resource_duplicates"
+        }
+      ]
+    },
+    "//test/missing_direct_deps/internal_deps": {
+      "sources": [
+        "test/missing_direct_deps/internal_deps/A.scala",
+        "test/missing_direct_deps/internal_deps/B.scala",
+        "test/missing_direct_deps/internal_deps/C.scala",
+        "test/missing_direct_deps/internal_deps/D.scala",
+        "test/missing_direct_deps/internal_deps/HasCustomJavaProviderDependency.scala",
+        "test/missing_direct_deps/internal_deps/JavaLibraryHasCustomJavaProviderDependency.java",
+        "test/missing_direct_deps/internal_deps/Placeholder.java",
+        "test/missing_direct_deps/internal_deps/User.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/missing_direct_deps/internal_deps/binary_user_of_binary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/missing_direct_deps/internal_deps/direct_binary_dependency.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/missing_direct_deps/internal_deps/user_binary.jar"
+      ],
+      "configurations": [
+        "//test/missing_direct_deps/internal_deps:binary_user_of_binary",
+        "//test/missing_direct_deps/internal_deps:direct_binary_dependency",
+        "//test/missing_direct_deps/internal_deps:user_binary"
+      ],
+      "mainClasses": [
+        {
+          "className": "A",
+          "configuration": "//test/missing_direct_deps/internal_deps:user_binary"
+        },
+        {
+          "className": "B",
+          "configuration": "//test/missing_direct_deps/internal_deps:direct_binary_dependency"
+        },
+        {
+          "className": "D",
+          "configuration": "//test/missing_direct_deps/internal_deps:binary_user_of_binary"
+        }
+      ]
+    },
+    "//scala/scalafmt": {
+      "sources": [
+        "scala/scalafmt/scalafmt/ScalafmtAdapter-2_11.scala",
+        "scala/scalafmt/scalafmt/ScalafmtAdapter.scala",
+        "scala/scalafmt/scalafmt/ScalafmtWorker.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//src/java/io/bazel/rulesscala/worker",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/scala/scalafmt/scalafmt.jar"
+      ],
+      "configurations": [
+        "//scala/scalafmt:scalafmt"
+      ],
+      "mainClasses": [
+        {
+          "className": "io.bazel.rules_scala.scalafmt.ScalafmtWorker",
+          "configuration": "//scala/scalafmt:scalafmt"
+        }
+      ]
+    },
+    "//test": {
+      "sources": [
+        "test/A.scala",
+        "test/DataRoot1.scala",
+        "test/DataRoot2.scala",
+        "test/EnvAttributeBinary.scala",
+        "test/EnvAttributeTest.scala",
+        "test/Exported.scala",
+        "test/HelloLib.scala",
+        "test/HelloLibTest.scala",
+        "test/HelloLibTest2.scala",
+        "test/JavaBinary.java",
+        "test/JavaUsesScalaStdLib.java",
+        "test/LibToBin.scala",
+        "test/LibToTest.scala",
+        "test/OtherJavaLib.java",
+        "test/OtherLib.scala",
+        "test/Runtime.scala",
+        "test/ScalaBinary.scala",
+        "test/ScalaBinaryJdk11.scala",
+        "test/ScalaTestData.scala",
+        "test/SuiteUsage.scala",
+        "test/TestFilterTestA.scala",
+        "test/TestFilterTestB.scala",
+        "test/TestServer.scala",
+        "test/UnusedLib.scala",
+        "test/longnames/looooooongnaaaaaaame/anooooootherlooooooooongname/anooooootherlooooooooongname2/anooooootherlooooooooongname3/LongNamesTest.scala",
+        "test/src/main/scala/scalarules/test/BinaryDependentOnJava.scala",
+        "test/src/main/scala/scalarules/test/MixJavaScalaLibBinary.scala",
+        "test/src/main/scala/scalarules/test/ResourcesStripScalaBinary.scala",
+        "test/src/main/scala/scalarules/test/ResourcesStripScalaLib.scala",
+        "test/src/main/scala/scalarules/test/ScalaLibBinary.scala",
+        "test/src/main/scala/scalarules/test/ScalaLibResources.scala",
+        "test/src/main/scala/scalarules/test/junit/JunitCustomRunner.java",
+        "test/src/main/scala/scalarules/test/junit/runtime_platform/JunitRuntimePlatformTest.java",
+        "test/src/main/scala/scalarules/test/junit/separate_target/FailingTest.scala",
+        "test/src/main/scala/scalarules/test/junit/separate_target/JunitJavaSeparateTargetTest.java",
+        "test/src/main/scala/scalarules/test/junit/separate_target/JunitSeparateTargetTest.scala",
+        "test/src/main/scala/scalarules/test/junit/separate_target/SomeScalaClass.scala",
+        "test/src/main/scala/scalarules/test/junit/support/JUnitCompileTimeDep.scala",
+        "test/src/main/scala/scalarules/test/junit/support/JUnitRuntimeDep.scala",
+        "test/src/main/scala/scalarules/test/mix_java_scala/Bar.scala",
+        "test/src/main/scala/scalarules/test/mix_java_scala/Baz.java",
+        "test/src/main/scala/scalarules/test/mix_java_scala/Baz.srcjar",
+        "test/src/main/scala/scalarules/test/mix_java_scala/FooBar.java",
+        "test/src/main/scala/scalarules/test/only_java/Alpha.java",
+        "test/src/main/scala/scalarules/test/utf8/JavaClassWithUtf8.java",
+        "test/src/main/scala/scalarules/test/utf8/ScalaClassWithUtf8.scala"
+      ],
+      "scalacOptions": [
+        "-opt:l:inline",
+        "-opt-inline-from:scalarules.test.**",
+        "-Xfatal-warnings"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [
+        "org.scala-lang:scala-library:2.12.20",
+        "org.typelevel:cats-core_2.12:2.13.0",
+        "org.typelevel:cats-kernel_2.12:2.13.0"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//test/example_jars",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/EnvAttributeBinary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/EnvAttributeTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/HelloLibTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/HelloLibTestSuite_test_suite_HelloLibTest.scala.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/HelloLibTestSuite_test_suite_HelloLibTest2.scala.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/JavaBinary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/JavaBinary2.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/JavaOnlySources.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/LongTestSuiteNamesSuite_1.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/MixJavaScalaBinary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/MixJavaScalaLibBinary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/MixJavaScalaScalaTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/MixJavaScalaSrcjarLibBinary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/ResourcesStripScalaBinary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/ScalaBinary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/ScalaBinary_dependent_on_binary_with_java.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/ScalaBinary_with_fake.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/ScalaBinary_with_service_manifest_srcs.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/ScalaLibBinary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/TestFilterTests.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/TestSuitePassesKwArgs_test_suite_ScalaTestData.scala.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scala_binary_jdk_11.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/test_scala_proto_server.jar"
+      ],
+      "configurations": [
+        "//test:EnvAttributeBinary",
+        "//test:EnvAttributeTest",
+        "//test:HelloLibTest",
+        "//test:HelloLibTestSuite_test_suite_HelloLibTest.scala",
+        "//test:HelloLibTestSuite_test_suite_HelloLibTest2.scala",
+        "//test:JavaBinary",
+        "//test:JavaBinary2",
+        "//test:JavaOnlySources",
+        "//test:LongTestSuiteNamesSuite_1",
+        "//test:MixJavaScalaBinary",
+        "//test:MixJavaScalaLibBinary",
+        "//test:MixJavaScalaScalaTest",
+        "//test:MixJavaScalaSrcjarLibBinary",
+        "//test:ResourcesStripScalaBinary",
+        "//test:ScalaBinary",
+        "//test:ScalaBinary_dependent_on_binary_with_java",
+        "//test:ScalaBinary_with_fake",
+        "//test:ScalaBinary_with_service_manifest_srcs",
+        "//test:ScalaLibBinary",
+        "//test:TestFilterTests",
+        "//test:TestSuitePassesKwArgs_test_suite_ScalaTestData.scala",
+        "//test:scala_binary_jdk_11",
+        "//test:test_scala_proto_server"
+      ],
+      "mainClasses": [
+        {
+          "className": "scalarules.test.A",
+          "configuration": "//test:ScalaBinary_with_service_manifest_srcs"
+        },
+        {
+          "className": "scalarules.test.Alpha",
+          "configuration": "//test:JavaOnlySources"
+        },
+        {
+          "className": "scalarules.test.BinaryDependentOnJava",
+          "configuration": "//test:ScalaBinary_dependent_on_binary_with_java"
+        },
+        {
+          "className": "scalarules.test.EnvAttributeBinary",
+          "configuration": "//test:EnvAttributeBinary"
+        },
+        {
+          "className": "scalarules.test.JavaBinary",
+          "configuration": "//test:JavaBinary"
+        },
+        {
+          "className": "scalarules.test.JavaBinary",
+          "configuration": "//test:JavaBinary2"
+        },
+        {
+          "className": "scalarules.test.JavaBinary",
+          "configuration": "//test:MixJavaScalaBinary"
+        },
+        {
+          "className": "scalarules.test.MixJavaScalaLibBinary",
+          "configuration": "//test:MixJavaScalaLibBinary"
+        },
+        {
+          "className": "scalarules.test.MixJavaScalaLibBinary",
+          "configuration": "//test:MixJavaScalaSrcjarLibBinary"
+        },
+        {
+          "className": "scalarules.test.ResourcesStripScalaBinary",
+          "configuration": "//test:ResourcesStripScalaBinary"
+        },
+        {
+          "className": "scalarules.test.ScalaBinary",
+          "configuration": "//test:ScalaBinary"
+        },
+        {
+          "className": "scalarules.test.ScalaBinary",
+          "configuration": "//test:ScalaBinary_with_fake"
+        },
+        {
+          "className": "scalarules.test.ScalaBinaryJdk11",
+          "configuration": "//test:scala_binary_jdk_11"
+        },
+        {
+          "className": "scalarules.test.ScalaLibBinary",
+          "configuration": "//test:ScalaLibBinary"
+        },
+        {
+          "className": "test.proto.TestServer",
+          "configuration": "//test:test_scala_proto_server"
+        }
+      ],
+      "testClasses": [
+        {
+          "className": "_empty_.RunfileSpec",
+          "sourcePath": "test/ScalaTestData.scala",
+          "configuration": "//test:TestSuitePassesKwArgs_test_suite_ScalaTestData.scala"
+        },
+        {
+          "className": "scalarules.test.EnvAttributeTest",
+          "sourcePath": "test/EnvAttributeTest.scala",
+          "configuration": "//test:EnvAttributeTest"
+        },
+        {
+          "className": "scalarules.test.JavaSuite",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:HelloLibTest"
+        },
+        {
+          "className": "scalarules.test.JavaSuite",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest.scala"
+        },
+        {
+          "className": "scalarules.test.JavaSuite",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:MixJavaScalaScalaTest"
+        },
+        {
+          "className": "scalarules.test.JavaSuite2",
+          "sourcePath": "test/HelloLibTest2.scala",
+          "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest2.scala"
+        },
+        {
+          "className": "scalarules.test.OtherJavaLib",
+          "sourcePath": "test/OtherJavaLib.java",
+          "configuration": "//test:MixJavaScalaScalaTest"
+        },
+        {
+          "className": "scalarules.test.ScalaSuite",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:HelloLibTest"
+        },
+        {
+          "className": "scalarules.test.ScalaSuite",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest.scala"
+        },
+        {
+          "className": "scalarules.test.ScalaSuite",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:MixJavaScalaScalaTest"
+        },
+        {
+          "className": "scalarules.test.ScalaSuite2",
+          "sourcePath": "test/HelloLibTest2.scala",
+          "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest2.scala"
+        },
+        {
+          "className": "scalarules.test.TestFilterTestA",
+          "sourcePath": "test/TestFilterTestA.scala",
+          "configuration": "//test:TestFilterTests"
+        },
+        {
+          "className": "scalarules.test.TestFilterTestB",
+          "sourcePath": "test/TestFilterTestB.scala",
+          "configuration": "//test:TestFilterTests"
+        },
+        {
+          "className": "scalarules.test.TestUtil$",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:HelloLibTest"
+        },
+        {
+          "className": "scalarules.test.TestUtil$",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest.scala"
+        },
+        {
+          "className": "scalarules.test.TestUtil$",
+          "sourcePath": "test/HelloLibTest.scala",
+          "configuration": "//test:MixJavaScalaScalaTest"
+        },
+        {
+          "className": "scalarules.test.TestUtil2$",
+          "sourcePath": "test/HelloLibTest2.scala",
+          "configuration": "//test:HelloLibTestSuite_test_suite_HelloLibTest2.scala"
+        },
+        {
+          "className": "test.longnames.looooooongnaaaaaaame.anooooootherlooooooooongname.anooooootherlooooooooongname2.anooooootherlooooooooongname3.SomeLoooooooongTestNaaaaaaaaaaaaaaaaaaaaaaaame",
+          "sourcePath": "test/longnames/looooooongnaaaaaaame/anooooootherlooooooooongname/anooooootherlooooooooongname2/anooooootherlooooooooongname3/LongNamesTest.scala",
+          "configuration": "//test:LongTestSuiteNamesSuite_1"
+        }
+      ]
+    },
+    "//test/strict_dependency/scala_proto_deps": {
+      "sources": [
+        "test/strict_dependency/scala_proto_deps/UseScalaProtoIndirectly.scala",
+        "test/strict_dependency/scala_proto_deps/UseTestMessage.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//scala/private/source_compat": {
+      "sources": [
+        "scala/private/source_compat/scala2_12/SourceCompat.scala",
+        "scala/private/source_compat/scala2_13/SourceCompat.scala",
+        "scala/private/source_compat/scala3/SourceCompat.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/scala_test": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/scala_test/Runner.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": []
+    },
+    "//test/coverage_oversized_method": {
+      "sources": [
+        "test/coverage_oversized_method/OversizedMethod.scala",
+        "test/coverage_oversized_method/SmallClass.scala",
+        "test/coverage_oversized_method/TestOversizedMethod.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_oversized_method/test-oversized-method.jar"
+      ],
+      "configurations": [
+        "//test/coverage_oversized_method:test-oversized-method"
+      ],
+      "testClasses": [
+        {
+          "className": "coverage_oversized_method.TestOversizedMethod",
+          "sourcePath": "test/coverage_oversized_method/TestOversizedMethod.scala",
+          "configuration": "//test/coverage_oversized_method:test-oversized-method"
+        }
+      ]
+    },
+    "//src/java/io/bazel/rulesscala/test_discovery": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/test_discovery/ArchiveEntries.scala",
+        "src/java/io/bazel/rulesscala/test_discovery/DiscoveredTestSuite.scala",
+        "src/java/io/bazel/rulesscala/test_discovery/FilteredRunnerBuilder.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/private/source_compat",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/specs2": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/specs2/Specs2RunnerBuilder.scala",
+        "src/java/io/bazel/rulesscala/specs2/package.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/private/source_compat",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//src/java/io/bazel/rulesscala/test_discovery",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/plus_one_deps/deps_of_exports": {
+      "sources": [
+        "test/plus_one_deps/deps_of_exports/A.scala",
+        "test/plus_one_deps/deps_of_exports/B.scala",
+        "test/plus_one_deps/deps_of_exports/C.scala",
+        "test/plus_one_deps/deps_of_exports/D.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/plugins": {
+      "sources": [
+        "test/plugins/check_expand_location_plugin.scala",
+        "test/plugins/trivial.scala"
+      ],
+      "scalacOptions": [
+        "-P:diablerie:location=$(location :check_expand_location_plugin_deploy.jar)"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/missing_direct_deps/external_deps": {
+      "sources": [
+        "test/missing_direct_deps/external_deps/A.scala",
+        "test/missing_direct_deps/external_deps/B.scala",
+        "test/missing_direct_deps/external_deps/Empty.java",
+        "test/missing_direct_deps/external_deps/UsesExternalDep.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/twitter_scrooge/prefix_test/e/f/b/c/d": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//src/scala/scripts",
+        "//test/src/main/scala/scalarules/test/twitter_scrooge/prefix_test/a/b/c/d"
+      ],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/scalac": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/scalac/ScalacInvokerResults.java",
+        "src/java/io/bazel/rulesscala/scalac/ScalacWorker.java",
+        "src/java/io/bazel/rulesscala/scalac/StdlibVersionCheck.java",
+        "src/java/io/bazel/rulesscala/scalac/StdlibVersionCheckTest.java",
+        "src/java/io/bazel/rulesscala/scalac/scala_2/ReportableMainClass.java",
+        "src/java/io/bazel/rulesscala/scalac/scala_2/ScalacInvoker.java",
+        "src/java/io/bazel/rulesscala/scalac/scala_3/ReportableDriver.java",
+        "src/java/io/bazel/rulesscala/scalac/scala_3/ScalacInvoker.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "-source",
+        "1.8",
+        "-target",
+        "-Xlint:-options"
+      ],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/io_utils",
+        "//src/java/io/bazel/rulesscala/jar",
+        "//src/java/io/bazel/rulesscala/scalac/compileoptions",
+        "//src/java/io/bazel/rulesscala/scalac/reporter",
+        "//src/java/io/bazel/rulesscala/worker",
+        "//third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/compiler"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/scalac/StdlibVersionCheckTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/scalac/scalac.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/scalac/scalac_bootstrap.jar"
+      ],
+      "configurations": [
+        "//src/java/io/bazel/rulesscala/scalac:StdlibVersionCheckTest",
+        "//src/java/io/bazel/rulesscala/scalac:scalac",
+        "//src/java/io/bazel/rulesscala/scalac:scalac_bootstrap"
+      ],
+      "mainClasses": [
+        {
+          "className": "io.bazel.rulesscala.scalac.ScalacWorker",
+          "configuration": "//src/java/io/bazel/rulesscala/scalac:scalac"
+        },
+        {
+          "className": "io.bazel.rulesscala.scalac.ScalacWorker",
+          "configuration": "//src/java/io/bazel/rulesscala/scalac:scalac_bootstrap"
+        }
+      ],
+      "testClasses": [
+        {
+          "className": "io.bazel.rulesscala.scalac.StdlibVersionCheckTest",
+          "sourcePath": "src/java/io/bazel/rulesscala/scalac/StdlibVersionCheckTest.java",
+          "configuration": "//src/java/io/bazel/rulesscala/scalac:StdlibVersionCheckTest"
+        }
+      ]
+    },
+    "//src/scala/io/bazel/rules_scala/scrooge_support": {
+      "sources": [
+        "src/scala/io/bazel/rules_scala/scrooge_support/Compiler.scala",
+        "src/scala/io/bazel/rules_scala/scrooge_support/FocusedZipImporter.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/diagnostics_reporter": {
+      "sources": [
+        "test/diagnostics_reporter/DiagnosticsReporterTest.java",
+        "test/diagnostics_reporter/DiagnosticsReporterTestCases2.java",
+        "test/diagnostics_reporter/DiagnosticsReporterTestCases3.java",
+        "test/diagnostics_reporter/ErrorAndWarningFile.scala",
+        "test/diagnostics_reporter/ErrorFile.scala",
+        "test/diagnostics_reporter/InfoFile.scala",
+        "test/diagnostics_reporter/TwoErrorsFile.scala",
+        "test/diagnostics_reporter/VerifyDiagnosticsOutput.java",
+        "test/diagnostics_reporter/WarningFile.scala"
+      ],
+      "scalacOptions": [
+        "-Ywarn-unused:imports",
+        "-Wunused:imports",
+        "-Ydebug",
+        "-Ylog:genBCode",
+        "--verbose"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/diagnostics_reporter/diagnostics_reporter_test.jar"
+      ],
+      "configurations": [
+        "//test/diagnostics_reporter:diagnostics_reporter_test"
+      ],
+      "mainClasses": [
+        {
+          "className": "diagnostics_reporter.DiagnosticsReporterTest",
+          "configuration": "//test/diagnostics_reporter:diagnostics_reporter_test"
+        }
+      ]
+    },
+    "//test/toolchains/scala_test_jvm_flags": {
+      "sources": [
+        "test/toolchains/scala_test_jvm_flags/EmptyTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/toolchains/scala_test_jvm_flags/empty_overriding_test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/toolchains/scala_test_jvm_flags/empty_test.jar"
+      ],
+      "configurations": [
+        "//test/toolchains/scala_test_jvm_flags:empty_overriding_test",
+        "//test/toolchains/scala_test_jvm_flags:empty_test"
+      ],
+      "testClasses": [
+        {
+          "className": "test_expect_failure.scala_test_jvm_flags.EmptyTest",
+          "sourcePath": "test/toolchains/scala_test_jvm_flags/EmptyTest.scala",
+          "configuration": "//test/toolchains/scala_test_jvm_flags:empty_overriding_test"
+        },
+        {
+          "className": "test_expect_failure.scala_test_jvm_flags.EmptyTest",
+          "sourcePath": "test/toolchains/scala_test_jvm_flags/EmptyTest.scala",
+          "configuration": "//test/toolchains/scala_test_jvm_flags:empty_test"
+        }
+      ]
+    },
+    "//src/scala/io/bazel/rules_scala/jmh_support": {
+      "sources": [
+        "src/scala/io/bazel/rules_scala/jmh_support/BenchmarkGenerator.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/private/source_compat",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/scala/io/bazel/rules_scala/jmh_support/benchmark_generator.jar"
+      ],
+      "configurations": [
+        "//src/scala/io/bazel/rules_scala/jmh_support:benchmark_generator"
+      ],
+      "mainClasses": [
+        {
+          "className": "io.bazel.rules_scala.jmh_support.BenchmarkGenerator",
+          "configuration": "//src/scala/io/bazel/rules_scala/jmh_support:benchmark_generator"
+        }
+      ]
+    },
+    "//test/unused_dependency_checker": {
+      "sources": [
+        "test/unused_dependency_checker/A.scala",
+        "test/unused_dependency_checker/B.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//scala": {
+      "sources": [
+        "scala/PlaceHolderClassToCreateEmptyJarForScalaImport.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": []
+    },
+    "//test/coverage_scalatest_resources/consumer": {
+      "sources": [
+        "test/coverage_scalatest_resources/consumer/src/main/scala/com/example/consumer/Consumer.scala",
+        "test/coverage_scalatest_resources/consumer/src/test/scala/com/example/consumer/ConsumerSpec.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//test/coverage_scalatest_resources/resource",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_scalatest_resources/consumer/tests.jar"
+      ],
+      "configurations": [
+        "//test/coverage_scalatest_resources/consumer:tests"
+      ],
+      "testClasses": [
+        {
+          "className": "com.example.consumer.ConsumerSpec",
+          "sourcePath": "test/coverage_scalatest_resources/consumer/src/test/scala/com/example/consumer/ConsumerSpec.scala",
+          "configuration": "//test/coverage_scalatest_resources/consumer:tests"
+        }
+      ]
+    },
+    "//test/scala_library_suite": {
+      "sources": [
+        "test/scala_library_suite/DataA.scala",
+        "test/scala_library_suite/DependsOnSibling.scala",
+        "test/scala_library_suite/Sibling.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/resources/java_sources": {
+      "sources": [
+        "test/src/main/resources/java_sources/SimpleJavaSourceFileA.java",
+        "test/src/main/resources/java_sources/SimpleJavaSourceFileB.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/twitter_scrooge": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/twitter_scrooge/BareThrifts.scala",
+        "test/src/main/scala/scalarules/test/twitter_scrooge/JustScrooge1.java",
+        "test/src/main/scala/scalarules/test/twitter_scrooge/JustScrooge1.scala",
+        "test/src/main/scala/scalarules/test/twitter_scrooge/JustScrooge2a.scala",
+        "test/src/main/scala/scalarules/test/twitter_scrooge/JustScrooge2b.scala",
+        "test/src/main/scala/scalarules/test/twitter_scrooge/JustScrooge3.scala",
+        "test/src/main/scala/scalarules/test/twitter_scrooge/Mixed.scala",
+        "test/src/main/scala/scalarules/test/twitter_scrooge/Scrooge2.scala",
+        "test/src/main/scala/scalarules/test/twitter_scrooge/Twodeep.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//src/scala/scripts",
+        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift3",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/twitter_scrooge/barethrifts.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/twitter_scrooge/justscrooge2b_binary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/twitter_scrooge/justscrooges.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/twitter_scrooge/justscrooges_java.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/twitter_scrooge/justscrooges_scala_and_java.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/twitter_scrooge/test_binary_to_ensure_no_exec_deps.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/twitter_scrooge/twodeep_binary.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/twitter_scrooge:barethrifts",
+        "//test/src/main/scala/scalarules/test/twitter_scrooge:justscrooge2b_binary",
+        "//test/src/main/scala/scalarules/test/twitter_scrooge:justscrooges",
+        "//test/src/main/scala/scalarules/test/twitter_scrooge:justscrooges_java",
+        "//test/src/main/scala/scalarules/test/twitter_scrooge:justscrooges_scala_and_java",
+        "//test/src/main/scala/scalarules/test/twitter_scrooge:test_binary_to_ensure_no_exec_deps",
+        "//test/src/main/scala/scalarules/test/twitter_scrooge:twodeep_binary"
+      ],
+      "mainClasses": [
+        {
+          "className": "scalarules.test.twitter_scrooge.BareThrifts",
+          "configuration": "//test/src/main/scala/scalarules/test/twitter_scrooge:barethrifts"
+        },
+        {
+          "className": "scalarules.test.twitter_scrooge.JustScrooge1",
+          "configuration": "//test/src/main/scala/scalarules/test/twitter_scrooge:justscrooges"
+        },
+        {
+          "className": "scalarules.test.twitter_scrooge.JustScrooge1",
+          "configuration": "//test/src/main/scala/scalarules/test/twitter_scrooge:justscrooges_java"
+        },
+        {
+          "className": "scalarules.test.twitter_scrooge.JustScrooge1",
+          "configuration": "//test/src/main/scala/scalarules/test/twitter_scrooge:justscrooges_scala_and_java"
+        },
+        {
+          "className": "scalarules.test.twitter_scrooge.JustScrooge2b",
+          "configuration": "//test/src/main/scala/scalarules/test/twitter_scrooge:justscrooge2b_binary"
+        },
+        {
+          "className": "scalarules.test.twitter_scrooge.JustScrooge2b",
+          "configuration": "//test/src/main/scala/scalarules/test/twitter_scrooge:test_binary_to_ensure_no_exec_deps"
+        },
+        {
+          "className": "scalarules.test.twitter_scrooge.Twodeep",
+          "configuration": "//test/src/main/scala/scalarules/test/twitter_scrooge:twodeep_binary"
+        }
+      ]
+    },
+    "//scala/settings": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/scalac/reporter": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/scalac/deps_tracking_reporter/after_2_12_13_and_before_2_13_12/DepsTrackingReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/deps_tracking_reporter/after_2_13_12/DepsTrackingReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/deps_tracking_reporter/before_2_12_13/DepsTrackingReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/deps_tracking_reporter/scala_3/DepsTrackingReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/reporter/after_2_12_13_and_before_2_13_12/ProtoReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/reporter/after_2_13_12/ProtoReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/reporter/before_2_12_13/ProtoReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/reporter/scala_3/BazelConsoleReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/reporter/scala_3/ProtoReporter.java",
+        "src/java/io/bazel/rulesscala/scalac/reporter/since_3_3_before_3_7_2/CompilerCompat.java",
+        "src/java/io/bazel/rulesscala/scalac/reporter/since_3_7_4/CompilerCompat.java",
+        "src/java/io/bazel/rulesscala/scalac/reporter/since_3_before_3_3/CompilerCompat.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/scalac/compileoptions"
+      ],
+      "classDirectories": []
+    },
+    "//test/compiler_dependency_tracker": {
+      "sources": [
+        "test/compiler_dependency_tracker/A.scala",
+        "test/compiler_dependency_tracker/B.scala",
+        "test/compiler_dependency_tracker/C.scala",
+        "test/compiler_dependency_tracker/D.scala",
+        "test/compiler_dependency_tracker/E.scala",
+        "test/compiler_dependency_tracker/F.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/toolchains/scalac_jvm_opts": {
+      "sources": [
+        "test/toolchains/scalac_jvm_opts/Empty.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/worker": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/worker/Worker.java",
+        "src/java/io/bazel/rulesscala/worker/WorkerTest.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/worker/worker_test.jar"
+      ],
+      "configurations": [
+        "//src/java/io/bazel/rulesscala/worker:worker_test"
+      ],
+      "testClasses": [
+        {
+          "className": "io.bazel.rulesscala.worker.WorkerTest",
+          "sourcePath": "src/java/io/bazel/rulesscala/worker/WorkerTest.java",
+          "configuration": "//src/java/io/bazel/rulesscala/worker:worker_test"
+        }
+      ]
+    },
+    "//test/jmh/reports_failure": {
+      "sources": [
+        "test/jmh/reports_failure/InvalidBenchmark.scala",
+        "test/jmh/reports_failure/jmh_reports_failure_codegen.srcjar"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/jmh/reports_failure/jmh_reports_failure.jar"
+      ],
+      "configurations": [
+        "//test/jmh/reports_failure:jmh_reports_failure"
+      ],
+      "mainClasses": [
+        {
+          "className": "org.openjdk.jmh.Main",
+          "configuration": "//test/jmh/reports_failure:jmh_reports_failure"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/resource_jars": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/resource_jars/TestResourceJars.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "test.src.main.scala.scalarules.test.resource_jars:jar_with_resources.jar:local"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/settings",
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/resource_jars/resource_jars.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/resource_jars:resource_jars"
+      ],
+      "testClasses": [
+        {
+          "className": "foo.TestResourceJars",
+          "sourcePath": "test/src/main/scala/scalarules/test/resource_jars/TestResourceJars.scala",
+          "configuration": "//test/src/main/scala/scalarules/test/resource_jars:resource_jars"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/java_classpath_order": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/java_classpath_order/Original.scala",
+        "test/src/main/scala/scalarules/test/java_classpath_order/Overridable.java",
+        "test/src/main/scala/scalarules/test/java_classpath_order/VerifyOverride.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/java_classpath_order/verify_override_test.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/java_classpath_order:verify_override_test"
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.java_classpath_order.VerifyOverrideTest",
+          "sourcePath": "test/src/main/scala/scalarules/test/java_classpath_order/VerifyOverride.scala",
+          "configuration": "//test/src/main/scala/scalarules/test/java_classpath_order:verify_override_test"
+        }
+      ]
+    },
+    "//test/scala_test": {
+      "sources": [
+        "test/scala_test/A.scala",
+        "test/scala_test/B.scala",
+        "test/scala_test/CustomReporter.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scala_test/a.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scala_test/b.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scala_test/custom_reporter.jar"
+      ],
+      "configurations": [
+        "//test/scala_test:a",
+        "//test/scala_test:b",
+        "//test/scala_test:custom_reporter"
+      ],
+      "testClasses": [
+        {
+          "className": "_empty_.A",
+          "sourcePath": "test/scala_test/A.scala",
+          "configuration": "//test/scala_test:a"
+        },
+        {
+          "className": "_empty_.A",
+          "sourcePath": "test/scala_test/A.scala",
+          "configuration": "//test/scala_test:custom_reporter"
+        },
+        {
+          "className": "_empty_.B",
+          "sourcePath": "test/scala_test/B.scala",
+          "configuration": "//test/scala_test:b"
+        },
+        {
+          "className": "test.scala_test.CustomReporter",
+          "sourcePath": "test/scala_test/CustomReporter.scala",
+          "configuration": "//test/scala_test:custom_reporter"
+        }
+      ]
+    },
+    "//test/macros": {
+      "sources": [
+        "test/macros/BadMacroInvocation.scala",
+        "test/macros/IdentityMacro.scala",
+        "test/macros/MacroDependency.scala",
+        "test/macros/MacroExportUser.scala",
+        "test/macros/MacroUser.scala",
+        "test/macros/MacroWithDependenciesUser.scala",
+        "test/macros/StackOverflowMacroInvocation.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/twitter_scrooge/prefix_test/a/b/c/d": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//src/scala/scripts"
+      ],
+      "classDirectories": []
+    },
+    "//test/example_jars": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/compiler_dependency_tracker/given_imports": {
+      "sources": [
+        "test/compiler_dependency_tracker/given_imports/Givens.scala",
+        "test/compiler_dependency_tracker/given_imports/TC.scala",
+        "test/compiler_dependency_tracker/given_imports/User.scala",
+        "test/compiler_dependency_tracker/given_imports/UserMissingGivenDep.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "3.7.4",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/plus_one_deps/exports_of_deps": {
+      "sources": [
+        "test/plus_one_deps/exports_of_deps/A.scala",
+        "test/plus_one_deps/exports_of_deps/B.scala",
+        "test/plus_one_deps/exports_of_deps/C.scala",
+        "test/plus_one_deps/exports_of_deps/D.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/toolchains/compilers_javac_opts": {
+      "sources": [
+        "test/toolchains/compilers_javac_opts/WillNotCompileSinceJavaToolchainAddsAnInvalidJvmFlag.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "-target InvalidTarget"
+      ],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/unstable": {
+      "sources": [
+        "test/unstable/binary.scala",
+        "test/unstable/library.scala",
+        "test/unstable/test.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/unstable/binary.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/unstable/test.jar"
+      ],
+      "configurations": [
+        "//test/unstable:binary",
+        "//test/unstable:test"
+      ],
+      "mainClasses": [
+        {
+          "className": "test.v2.Binary",
+          "configuration": "//test/unstable:binary"
+        }
+      ],
+      "testClasses": [
+        {
+          "className": "test.v2.Test",
+          "sourcePath": "test/unstable/test.scala",
+          "configuration": "//test/unstable:test"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/ijar": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/ijar/A.scala",
+        "test/src/main/scala/scalarules/test/ijar/B.scala",
+        "test/src/main/scala/scalarules/test/ijar/C.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/stamping": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/stamping/ClassFromLibrary.scala",
+        "test/src/main/scala/scalarules/test/stamping/JarStampingTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/stamping/JarStampingTest.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/stamping:JarStampingTest"
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.stamping.JarStampingTest",
+          "sourcePath": "test/src/main/scala/scalarules/test/stamping/JarStampingTest.scala",
+          "configuration": "//test/src/main/scala/scalarules/test/stamping:JarStampingTest"
+        }
+      ]
+    },
+    "//third_party/dependency_analyzer/src/main": {
+      "sources": [
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/AstUsedJarFinder.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/DependencyAnalyzer.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/DependencyAnalyzerSettings.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/HighLevelCrawlUsedJarFinder.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/OptionsParser.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/Reporter.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/Reporter213.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/ScalaVersion.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/AstUsedJarFinder.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/DependencyAnalyzer.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/HighLevelCrawlUsedJarFinder.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/ScalaVersion.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//src/java/io/bazel/rulesscala/scalac/reporter"
+      ],
+      "classDirectories": []
+    },
+    "//test/plus_one_deps/internal_deps": {
+      "sources": [
+        "test/plus_one_deps/internal_deps/A.scala",
+        "test/plus_one_deps/internal_deps/B.scala",
+        "test/plus_one_deps/internal_deps/C.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/transitive/scala_to_java": {
+      "sources": [
+        "test/transitive/scala_to_java/A.java",
+        "test/transitive/scala_to_java/D.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/jmh": {
+      "sources": [
+        "test/jmh/AddNumbers.scala",
+        "test/jmh/JavaType.java",
+        "test/jmh/JvmFlagsBenchmark.scala",
+        "test/jmh/ScalaType.scala",
+        "test/jmh/TestBenchmark.scala",
+        "test/jmh/test_benchmark_codegen.srcjar",
+        "test/jmh/test_benchmark_jvm_flags_codegen.srcjar",
+        "test/jmh/test_benchmark_testonly_codegen.srcjar"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/jmh/jmh_command_line_parsing_test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/jmh/test_benchmark.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/jmh/test_benchmark_jvm_flags.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/jmh/test_benchmark_testonly.jar"
+      ],
+      "configurations": [
+        "//test/jmh:jmh_command_line_parsing_test",
+        "//test/jmh:test_benchmark",
+        "//test/jmh:test_benchmark_jvm_flags",
+        "//test/jmh:test_benchmark_testonly"
+      ],
+      "mainClasses": [
+        {
+          "className": "org.openjdk.jmh.Main",
+          "configuration": "//test/jmh:test_benchmark"
+        },
+        {
+          "className": "org.openjdk.jmh.Main",
+          "configuration": "//test/jmh:test_benchmark_jvm_flags"
+        },
+        {
+          "className": "org.openjdk.jmh.Main",
+          "configuration": "//test/jmh:test_benchmark_testonly"
+        }
+      ]
+    },
+    "//specs2": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "specs2:libempty.jar:local"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/io_utils": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/io_utils/DeleteRecursively.java",
+        "src/java/io/bazel/rulesscala/io_utils/StreamCopy.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": []
+    },
+    "//test/src/main/scala/scalarules/test/scala_import": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/scala_import/generic/Generic.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0",
+        "org.apache.commons:commons-lang3:3.18.0",
+        "org.scala-lang:scala-library:2.12.20",
+        "org.typelevel:cats-core_2.12:2.13.0",
+        "org.typelevel:cats-kernel_2.12:2.13.0",
+        "test.src.main.scala.scalarules.test.scala_import.nl:libscala_import_never_link.jar:local",
+        "test.src.main.scala.scalarules.test.scala_import:generic_scalalib.jar:local"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/settings",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/scalacopts/scalacopts_from_toolchain": {
+      "sources": [
+        "test/scalacopts/scalacopts_from_toolchain/ClassWithUnused.scala"
+      ],
+      "scalacOptions": [
+        "-Xfatal-warnings"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//scala/support": {
+      "sources": [
+        "scala/support/JUnitXmlReporter.scala"
+      ],
+      "scalacOptions": [
+        "-deprecation:true",
+        "-encoding",
+        "UTF-8",
+        "-feature",
+        "-language:implicitConversions",
+        "-unchecked",
+        "-Xfatal-warnings",
+        "-Xlint",
+        "-Ywarn-dead-code",
+        "-Ywarn-numeric-widen",
+        "-Ywarn-value-discard",
+        "-language:existentials",
+        "-language:higherKinds",
+        "-Yno-adapted-args",
+        "-Xfuture",
+        "-Ywarn-unused-import",
+        "-Ypartial-unification",
+        "-Wunused:imports",
+        "-Werror"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//src/scala/io/bazel/rules_scala/scaladoc_support": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/scala/io/bazel/rules_scala/scaladoc_support/scaladoc_generator.jar"
+      ],
+      "configurations": [
+        "//src/scala/io/bazel/rules_scala/scaladoc_support:scaladoc_generator"
+      ],
+      "mainClasses": [
+        {
+          "className": "scala.tools.nsc.ScalaDoc",
+          "configuration": "//src/scala/io/bazel/rules_scala/scaladoc_support:scaladoc_generator"
+        }
+      ]
+    },
+    "//test/resource_from_local_target": {
+      "sources": [
+        "test/resource_from_local_target/ScalaTestResourcesFromLocalTargetTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/resource_from_local_target/ScalaTestResourcesFromLocalTargetTest.jar"
+      ],
+      "configurations": [
+        "//test/resource_from_local_target:ScalaTestResourcesFromLocalTargetTest"
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.ScalaTestResourcesFromLocalTargetTest",
+          "sourcePath": "test/resource_from_local_target/ScalaTestResourcesFromLocalTargetTest.scala",
+          "configuration": "//test/resource_from_local_target:ScalaTestResourcesFromLocalTargetTest"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift3": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//test/src/main/scala/scalarules/test/twitter_scrooge"
+      ],
+      "classDirectories": []
+    },
+    "//third_party/utils/src/test": {
+      "sources": [
+        "third_party/utils/src/test/io/bazel/rulesscala/utils/CommandLineParserAdapter_before_2_13_9.scala",
+        "third_party/utils/src/test/io/bazel/rulesscala/utils/CommandLineParserAdapter_since_2_13_9.scala",
+        "third_party/utils/src/test/io/bazel/rulesscala/utils/JavaCompileUtil.scala",
+        "third_party/utils/src/test/io/bazel/rulesscala/utils/TestUtil.scala",
+        "third_party/utils/src/test/io/bazel/rulesscala/utils/TestUtil3.scala",
+        "third_party/utils/src/test/io/bazel/rulesscala/utils/TestUtilCommon.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/private/source_compat",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/gen_src": {
+      "sources": [
+        "test/gen_src/SrcGenerator.scala",
+        "test/gen_src/foo.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/gen_src/src_generator.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/gen_src/uses_gen_file.jar"
+      ],
+      "configurations": [
+        "//test/gen_src:src_generator",
+        "//test/gen_src:uses_gen_file"
+      ],
+      "mainClasses": [
+        {
+          "className": "Foo",
+          "configuration": "//test/gen_src:uses_gen_file"
+        },
+        {
+          "className": "build.bazel.rulesscala.test.srcgen.SrcGenerator",
+          "configuration": "//test/gen_src:src_generator"
+        }
+      ]
+    },
+    "//test/scala_test_testfilter": {
+      "sources": [
+        "test/scala_test_testfilter/A.scala",
+        "test/scala_test_testfilter/B.scala",
+        "test/scala_test_testfilter/C.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scala_test_testfilter/tests.jar"
+      ],
+      "configurations": [
+        "//test/scala_test_testfilter:tests"
+      ],
+      "testClasses": [
+        {
+          "className": "_empty_.A",
+          "sourcePath": "test/scala_test_testfilter/A.scala",
+          "configuration": "//test/scala_test_testfilter:tests"
+        },
+        {
+          "className": "_empty_.B",
+          "sourcePath": "test/scala_test_testfilter/B.scala",
+          "configuration": "//test/scala_test_testfilter:tests"
+        },
+        {
+          "className": "_empty_.C",
+          "sourcePath": "test/scala_test_testfilter/C.scala",
+          "configuration": "//test/scala_test_testfilter:tests"
+        }
+      ]
+    },
+    "//test/scala_test_env_inherit": {
+      "sources": [
+        "test/scala_test_env_inherit/InheritedEnvTest.scala",
+        "test/scala_test_env_inherit/SpacedEnvTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scala_test_env_inherit/inherit_a.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/scala_test_env_inherit/inherit_greeting.jar"
+      ],
+      "configurations": [
+        "//test/scala_test_env_inherit:inherit_a",
+        "//test/scala_test_env_inherit:inherit_greeting"
+      ],
+      "testClasses": [
+        {
+          "className": "_empty_.InheritedEnvTest",
+          "sourcePath": "test/scala_test_env_inherit/InheritedEnvTest.scala",
+          "configuration": "//test/scala_test_env_inherit:inherit_a"
+        },
+        {
+          "className": "_empty_.SpacedEnvTest",
+          "sourcePath": "test/scala_test_env_inherit/SpacedEnvTest.scala",
+          "configuration": "//test/scala_test_env_inherit:inherit_greeting"
+        }
+      ]
+    },
+    "//test/transitive/scala_to_scala": {
+      "sources": [
+        "test/transitive/scala_to_scala/A.scala",
+        "test/transitive/scala_to_scala/D.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//manual_test/scala_test_jacocorunner": {
+      "sources": [
+        "manual_test/scala_test_jacocorunner/EmptyTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/manual_test/scala_test_jacocorunner/empty_test.jar"
+      ],
+      "configurations": [
+        "//manual_test/scala_test_jacocorunner:empty_test"
+      ],
+      "testClasses": [
+        {
+          "className": "test_expect_failure.scala_test_jacocorunner.EmptyTest",
+          "sourcePath": "manual_test/scala_test_jacocorunner/EmptyTest.scala",
+          "configuration": "//manual_test/scala_test_jacocorunner:empty_test"
+        }
+      ]
+    },
+    "//test/proto/custom_generator": {
+      "sources": [
+        "test/proto/custom_generator/DummyGenerator.scala",
+        "test/proto/custom_generator/DummyGeneratorTest.scala",
+        "test/proto/custom_generator/FailingGenerator.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/proto/custom_generator/DummyGeneratorTest.jar"
+      ],
+      "configurations": [
+        "//test/proto/custom_generator:DummyGeneratorTest"
+      ],
+      "testClasses": [
+        {
+          "className": "test.proto.custom_generator.DummyGeneratorTest",
+          "sourcePath": "test/proto/custom_generator/DummyGeneratorTest.scala",
+          "configuration": "//test/proto/custom_generator:DummyGeneratorTest"
+        }
+      ]
+    },
+    "//test/coverage_source_path_mapping": {
+      "sources": [
+        "test/coverage_source_path_mapping/AlsoMapped.scala",
+        "test/coverage_source_path_mapping/Mapped.scala",
+        "test/coverage_source_path_mapping/TestSameBasenameMapping.scala",
+        "test/coverage_source_path_mapping/TestSourcePathMapping.scala",
+        "test/coverage_source_path_mapping/maven_layout/com/example/coverage/aliasing/one/Same.scala",
+        "test/coverage_source_path_mapping/maven_layout/com/example/coverage/aliasing/two/Same.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_source_path_mapping/test-same-basename-mapping.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_source_path_mapping/test-source-path-mapping.jar"
+      ],
+      "configurations": [
+        "//test/coverage_source_path_mapping:test-same-basename-mapping",
+        "//test/coverage_source_path_mapping:test-source-path-mapping"
+      ],
+      "testClasses": [
+        {
+          "className": "com.example.coverage.aliasing.TestSameBasenameMapping",
+          "sourcePath": "test/coverage_source_path_mapping/TestSameBasenameMapping.scala",
+          "configuration": "//test/coverage_source_path_mapping:test-same-basename-mapping"
+        },
+        {
+          "className": "com.example.coverage.mapping.TestSourcePathMapping",
+          "sourcePath": "test/coverage_source_path_mapping/TestSourcePathMapping.scala",
+          "configuration": "//test/coverage_source_path_mapping:test-source-path-mapping"
+        }
+      ]
+    },
+    "//test/proto": {
+      "sources": [
+        "test/proto/BlackListedProtoTest.scala",
+        "test/proto/CustomGeneratedObjectTest.scala",
+        "test/proto/PackProtosTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/proto/test_binary_to_ensure_no_exec_deps.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/proto/test_blacklisted_proto.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/proto/test_custom_object_exists.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/proto/test_pack_protos.jar"
+      ],
+      "configurations": [
+        "//test/proto:test_binary_to_ensure_no_exec_deps",
+        "//test/proto:test_blacklisted_proto",
+        "//test/proto:test_custom_object_exists",
+        "//test/proto:test_pack_protos"
+      ],
+      "mainClasses": [
+        {
+          "className": "a.b.c",
+          "configuration": "//test/proto:test_binary_to_ensure_no_exec_deps"
+        }
+      ],
+      "testClasses": [
+        {
+          "className": "_empty_.BlackListedProtoTest",
+          "sourcePath": "test/proto/BlackListedProtoTest.scala",
+          "configuration": "//test/proto:test_blacklisted_proto"
+        },
+        {
+          "className": "_empty_.CustomGeneratedObjectTest",
+          "sourcePath": "test/proto/CustomGeneratedObjectTest.scala",
+          "configuration": "//test/proto:test_custom_object_exists"
+        },
+        {
+          "className": "_empty_.PackProtosTest",
+          "sourcePath": "test/proto/PackProtosTest.scala",
+          "configuration": "//test/proto:test_pack_protos"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/duplicated_resources/child": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/duplicated_resources/child/ScalaLibResourcesDuplicatedTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//test/src/main/scala/scalarules/test/duplicated_resources/parent",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/duplicated_resources/child/child.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/duplicated_resources/child:child"
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.duplicated.ScalaLibResourcesDuplicatedTest",
+          "sourcePath": "test/src/main/scala/scalarules/test/duplicated_resources/child/ScalaLibResourcesDuplicatedTest.scala",
+          "configuration": "//test/src/main/scala/scalarules/test/duplicated_resources/child:child"
+        }
+      ]
+    },
+    "//src/java/io/bazel/rulesscala/coverage/instrumenter": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/coverage/instrumenter/JacocoInstrumenter.java",
+        "src/java/io/bazel/rulesscala/coverage/instrumenter/JacocoInstrumenterTest.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "-source 1.8",
+        "-target 1.8"
+      ],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/io_utils",
+        "//src/java/io/bazel/rulesscala/jar",
+        "//src/java/io/bazel/rulesscala/worker"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/coverage/instrumenter/JacocoInstrumenterTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/coverage/instrumenter/instrumenter.jar"
+      ],
+      "configurations": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter:JacocoInstrumenterTest",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter:instrumenter"
+      ],
+      "mainClasses": [
+        {
+          "className": "io.bazel.rulesscala.coverage.instrumenter.JacocoInstrumenter",
+          "configuration": "//src/java/io/bazel/rulesscala/coverage/instrumenter:instrumenter"
+        }
+      ],
+      "testClasses": [
+        {
+          "className": "io.bazel.rulesscala.coverage.instrumenter.JacocoInstrumenterTest",
+          "sourcePath": "src/java/io/bazel/rulesscala/coverage/instrumenter/JacocoInstrumenterTest.java",
+          "configuration": "//src/java/io/bazel/rulesscala/coverage/instrumenter:JacocoInstrumenterTest"
+        }
+      ]
+    },
+    "//test/scaladoc": {
+      "sources": [
+        "test/scaladoc/A.scala",
+        "test/scaladoc/B.scala",
+        "test/scaladoc/C.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "test.scaladoc:A.jar:local",
+        "test.scaladoc:B.jar:local"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/settings",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//src/java/io/bazel/rulesscala/jar": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/jar/JarCreator.java",
+        "src/java/io/bazel/rulesscala/jar/JarHelper.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/jar/binary.jar"
+      ],
+      "configurations": [
+        "//src/java/io/bazel/rulesscala/jar:binary"
+      ],
+      "mainClasses": [
+        {
+          "className": "io.bazel.rulesscala.jar.JarCreator",
+          "configuration": "//src/java/io/bazel/rulesscala/jar:binary"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/resources/strip": {
+      "sources": [],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": []
+    },
+    "//test/aspect": {
+      "sources": [
+        "test/aspect/A.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [
+        "com.google.guava:guava:21.0"
+      ],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/settings",
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/aspect/scala_test.jar"
+      ],
+      "configurations": [
+        "//test/aspect:scala_test"
+      ]
+    },
+    "//src/java/io/bazel/rulesscala/exe": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/exe/LaunchInfo.java",
+        "src/java/io/bazel/rulesscala/exe/LauncherFileWriter.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/io_utils",
+        "//src/java/io/bazel/rulesscala/preconditions"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/exe/exe.jar"
+      ],
+      "configurations": [
+        "//src/java/io/bazel/rulesscala/exe:exe"
+      ],
+      "mainClasses": [
+        {
+          "className": "io.bazel.rulesscala.exe.LauncherFileWriter",
+          "configuration": "//src/java/io/bazel/rulesscala/exe:exe"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/neverlink": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/neverlink/A.scala",
+        "test/src/main/scala/scalarules/test/neverlink/B.scala",
+        "test/src/main/scala/scalarules/test/neverlink/NeverlinkTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/neverlink/NeverlinkTest.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/neverlink:NeverlinkTest"
+      ],
+      "testClasses": [
+        {
+          "className": "neverlink.NeverlinkTest",
+          "sourcePath": "test/src/main/scala/scalarules/test/neverlink/NeverlinkTest.scala",
+          "configuration": "//test/src/main/scala/scalarules/test/neverlink:NeverlinkTest"
+        }
+      ]
+    },
+    "//test/src/main/scala/scalarules/test/io_utils": {
+      "sources": [
+        "test/src/main/scala/scalarules/test/io_utils/DeleteDirectoryTest.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/io_utils",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/src/main/scala/scalarules/test/io_utils/directory_utils.jar"
+      ],
+      "configurations": [
+        "//test/src/main/scala/scalarules/test/io_utils:directory_utils"
+      ],
+      "testClasses": [
+        {
+          "className": "scalarules.test.io_utils.DeleteDirectoryTest",
+          "sourcePath": "test/src/main/scala/scalarules/test/io_utils/DeleteDirectoryTest.scala",
+          "configuration": "//test/src/main/scala/scalarules/test/io_utils:directory_utils"
+        }
+      ]
+    },
+    "//test/jmh/runtime": {
+      "sources": [
+        "test/jmh/runtime/TestJmhRuntimeJdk11.scala",
+        "test/jmh/runtime/TestJmhRuntimeJdk8.scala",
+        "test/jmh/runtime/test_jmh_jdk11_codegen.srcjar",
+        "test/jmh/runtime/test_jmh_jdk8_codegen.srcjar"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/jmh/runtime/test_jmh_jdk11.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/jmh/runtime/test_jmh_jdk8.jar"
+      ],
+      "configurations": [
+        "//test/jmh/runtime:test_jmh_jdk11",
+        "//test/jmh/runtime:test_jmh_jdk8"
+      ],
+      "mainClasses": [
+        {
+          "className": "org.openjdk.jmh.Main",
+          "configuration": "//test/jmh/runtime:test_jmh_jdk11"
+        },
+        {
+          "className": "org.openjdk.jmh.Main",
+          "configuration": "//test/jmh/runtime:test_jmh_jdk8"
+        }
+      ]
+    }
+  },
+  "uncheckedSources": []
+}

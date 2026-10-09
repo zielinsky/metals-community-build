@@ -1,0 +1,119 @@
+2026.10.09 08:50:16 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.09 08:50:17 INFO  mbt-v2: indexing 229 files
+2026.10.09 08:50:17 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals5793054834508391145 -cp /tmp/metals5793054834508391145/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.37906862351:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+2026.10.09 08:50:19 INFO  time: mbt-v2 loaded index for 229 files in 2.75s
+2026.10.09 08:50:27 INFO  [metals-maven] exporting 1 module(s)
+2026.10.09 08:50:27 INFO  [metals-maven] resolving sources JARs for 27 dependencies...
+2026.10.09 08:50:27 INFO  [metals-maven] sources resolved: 26/27
+2026.10.09 08:50:27 INFO  [metals-maven] resolving 26 dependency JAR(s) missing from local cache...
+2026.10.09 08:50:27 INFO  [metals-maven] namespace: com.google.turbine:turbine:HEAD-SNAPSHOT
+2026.10.09 08:50:27 INFO  [metals-maven] wrote 2 namespaces, 27 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+2026.10.09 08:50:28 INFO  time: ran 'maven-export' in 10s
+2026.10.09 08:50:28 INFO  mbt-import: wrote .metals/mbt.json
+2026.10.09 08:50:28 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.10.09 08:50:28 INFO  Connected to Build server: MBT v2.0.0-community-build.37906862351
+2026.10.09 08:50:28 WARN  Your project uses JDK version 25 and
+Metals server is running on JDK version 21.
+This might cause incorrect completions, since
+Metals JDK version should be greater than or equal to the project's JDK version.
+
+2026.10.09 08:50:29 WARN  Your project uses JDK version 25 and
+Metals server is running on JDK version 21.
+This might cause incorrect completions, since
+Metals JDK version should be greater than or equal to the project's JDK version.
+
+2026.10.09 08:50:31 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.09 08:50:34 INFO  references: found 1 occurrences
+2026.10.09 08:50:34 INFO  references: found 1 external document candidates in 25ms
+2026.10.09 08:50:34 INFO  MBT fallback for symbol com/google/turbine/main/Main#MANIFEST_DIR#: found 0 definitions
+2026.10.09 08:50:34 INFO  references: indexed 1 candidates in 1ms
+2026.10.09 08:50:34 INFO  references: found 4 reference results in 40ms
+2026.10.09 08:50:41 INFO  time: indexed workspace in 13s
+2026.10.09 08:50:41 WARN  Your project uses JDK version 25 and
+Metals server is running on JDK version 21.
+This might cause incorrect completions, since
+Metals JDK version should be greater than or equal to the project's JDK version.
+
+2026.10.09 08:50:42 WARN  Your project uses JDK version 25 and
+Metals server is running on JDK version 21.
+This might cause incorrect completions, since
+Metals JDK version should be greater than or equal to the project's JDK version.
+
+2026.10.09 08:50:44 INFO  time: indexed workspace in 2.69s
+2026.10.09 08:50:46 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
+2026.10.09 08:50:46 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
+2026.10.09 08:50:49 INFO  references: found 1 occurrences
+2026.10.09 08:50:49 INFO  references: found 55 external document candidates in 11ms
+2026.10.09 08:50:52 INFO  references: indexed 55 candidates in 2.33s
+2026.10.09 08:50:52 INFO  references: found 83 reference results in 2.37s
+Oct 09, 2026 8:50:59 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.IllegalArgumentException
+java.util.concurrent.CompletionException: java.lang.IllegalArgumentException
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:747)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735)
+	at java.base/java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2214)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:285)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.IllegalArgumentException
+	at jdk.compiler/com.sun.tools.javac.util.JCDiagnostic.<init>(JCDiagnostic.java:643)
+	at jdk.compiler/com.sun.tools.javac.util.JCDiagnostic.<init>(JCDiagnostic.java:623)
+	at jdk.compiler/com.sun.tools.javac.util.JCDiagnostic$Factory.create(JCDiagnostic.java:300)
+	at jdk.compiler/com.sun.tools.javac.util.JCDiagnostic$Factory.error(JCDiagnostic.java:113)
+	at jdk.compiler/com.sun.tools.javac.util.AbstractLog.error(AbstractLog.java:145)
+	at jdk.compiler/com.sun.tools.javac.parser.JavaTokenizer.lexError(JavaTokenizer.java:216)
+	at jdk.compiler/com.sun.tools.javac.parser.JavaTokenizer.scanString(JavaTokenizer.java:585)
+	at jdk.compiler/com.sun.tools.javac.parser.JavaTokenizer.readToken(JavaTokenizer.java:1129)
+	at jdk.compiler/com.sun.tools.javac.parser.Scanner.nextToken(Scanner.java:117)
+	at scala.meta.internal.jpc.Positions$.foldTokens(Positions.scala:134)
+	at scala.meta.internal.jpc.Positions$.findNameOffset(Positions.scala:21)
+	at scala.meta.internal.parsing.JavaTrees.scala$meta$internal$parsing$JavaTrees$$findNameRange(JavaTrees.scala:668)
+	at scala.meta.internal.parsing.JavaTrees.scala$meta$internal$parsing$JavaTrees$$methodNameRange(JavaTrees.scala:633)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder$$anonfun$1.$anonfun$applyOrElse$1(JavaTrees.scala:524)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder$$anonfun$1.applyOrElse(JavaTrees.scala:517)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder$$anonfun$1.applyOrElse(JavaTrees.scala:512)
+	at scala.collection.StrictOptimizedIterableOps.collect(StrictOptimizedIterableOps.scala:151)
+	at scala.collection.StrictOptimizedIterableOps.collect$(StrictOptimizedIterableOps.scala:136)
+	at scala.collection.convert.JavaCollectionWrappers$JListWrapper.collect(JavaCollectionWrappers.scala:138)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder.$anonfun$visitClass$2(JavaTrees.scala:512)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder.$anonfun$visitClass$2$adapted(JavaTrees.scala:506)
+	at scala.Option.foreach(Option.scala:437)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder.$anonfun$visitClass$1(JavaTrees.scala:506)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder.$anonfun$visitClass$1$adapted(JavaTrees.scala:499)
+	at scala.Option.foreach(Option.scala:437)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder.visitClass(JavaTrees.scala:499)
+	at scala.meta.internal.parsing.JavaTrees$EnclosingClassFinder.visitClass(JavaTrees.scala:482)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:855)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:119)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:152)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:623)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.parsing.JavaTrees.$anonfun$findEnclosingJavaClass$2(JavaTrees.scala:62)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.parsing.JavaTrees.$anonfun$findEnclosingJavaClass$1(JavaTrees.scala:59)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.parsing.JavaTrees.findEnclosingJavaClass(JavaTrees.scala:58)
+	at scala.meta.internal.metals.codeactions.GenerateConstructors.$anonfun$contribute$2(GenerateConstructors.scala:35)
+	at scala.collection.immutable.List.flatMap(List.scala:283)
+	at scala.collection.immutable.List.flatMap(List.scala:79)
+	at scala.meta.internal.metals.codeactions.GenerateConstructors.$anonfun$contribute$1(GenerateConstructors.scala:34)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	... 3 more
+
+2026.10.09 08:51:02 INFO  Shutting down server
+2026.10.09 08:51:02 INFO  Memory monitor stopped
+2026.10.09 08:51:02 INFO  shutting down Metals
+2026.10.09 08:51:02 INFO  Shut down connection with build server.
+2026.10.09 08:51:02 INFO  Exiting server

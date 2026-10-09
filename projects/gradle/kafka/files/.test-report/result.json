@@ -1,0 +1,28 @@
+{
+  "project": "kafka",
+  "projectName": "Apache Kafka",
+  "buildTool": "gradle",
+  "repository": "apache/kafka",
+  "ref": "trunk",
+  "status": "passed",
+  "scenarios": [
+    {
+      "id": "import-test-fixtures",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 137057
+    },
+    {
+      "id": "test-fixtures-target",
+      "kind": "java-diagnostics",
+      "status": "passed",
+      "durationMs": 16104
+    },
+    {
+      "id": "scala-to-java-definition",
+      "kind": "go-to-definition",
+      "status": "passed",
+      "durationMs": 12045
+    }
+  ]
+}
