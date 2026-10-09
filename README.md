@@ -359,6 +359,14 @@ schedules only from the default branch and pauses them after 60 days without
 repository activity; re-enable the workflow from the Actions tab when that
 happens.
 
+## Notify a webhook after each run
+
+When the repository secret `REPORT_WEBHOOK_URL` is set, the `Notify report
+webhook` job sends an empty `POST` (`Content-Type: application/json`, body
+`{}`) to that URL after the report of the run has been built and published,
+whether the run passed or failed. The request is retried three times; without
+the secret the job only logs that it skipped the call.
+
 ## Open issues for failed projects
 
 After every run, CI commits the complete static report to the `results`

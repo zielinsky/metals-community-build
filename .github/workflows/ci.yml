@@ -324,6 +324,31 @@ jobs:
         env:
           REPORT_URL: ${{ steps.deployment.outputs.page_url }}
 
+  notify:
+    name: Notify report webhook
+    needs: [report, deploy-report]
+    if: ${{ always() && needs.report.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    steps:
+      # Pings the URL from the REPORT_WEBHOOK_URL secret once the report of
+      # this run is published; no data is sent. Skipped when the secret is
+      # not configured.
+      - name: Call the report webhook
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "$WEBHOOK_URL" ]]; then
+            echo "REPORT_WEBHOOK_URL is not configured; skipping the notification"
+            exit 0
+          fi
+          curl --fail --silent --show-error --retry 3 --retry-all-errors \
+            -X POST "$WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -d '{}'
+          echo "Called the report webhook"
+        env:
+          WEBHOOK_URL: ${{ secrets.REPORT_WEBHOOK_URL }}
+
   cleanup:
     name: Clean up temporary workflow data
     needs: [build-metals, prepare-runtime, bazel, maven, gradle, report, deploy-report]
