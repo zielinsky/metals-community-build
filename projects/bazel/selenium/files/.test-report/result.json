@@ -4,26 +4,25 @@
   "buildTool": "bazel",
   "repository": "SeleniumHQ/selenium",
   "ref": "trunk",
-  "status": "failed",
+  "status": "passed",
   "scenarios": [
     {
       "id": "import-each-build-target",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 267269
+      "durationMs": 249481
     },
     {
       "id": "test-discovery",
       "kind": "java-test-discovery",
       "status": "passed",
-      "durationMs": 4869
+      "durationMs": 5352
     },
     {
       "id": "debug-json-test",
       "kind": "java-debug-test",
-      "status": "failed",
-      "durationMs": 909902,
-      "error": "Waiting for element to be located By(css selector, .debug-toolbar)\nWait timed out after 900151ms"
+      "status": "passed",
+      "durationMs": 348538
     }
   ]
 }

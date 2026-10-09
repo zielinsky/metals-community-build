@@ -5575,7 +5575,9 @@
         "org.checkerframework:dataflow-nullaway:4.2.3",
         "org.jspecify:jspecify:1.0.1"
       ],
-      "dependsOn": [],
+      "dependsOn": [
+        "//java/src/org/openqa/selenium/io"
+      ],
       "classDirectories": []
     },
     "//java/src/org/openqa/selenium/grid/sessionqueue/httpd": {

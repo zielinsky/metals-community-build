@@ -10,26 +10,26 @@
       "id": "import",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 28018
+      "durationMs": 39355
     },
     {
       "id": "test-discovery",
       "kind": "java-test-discovery",
-      "status": "passed",
-      "durationMs": 3795
+      "status": "failed",
+      "durationMs": 124166,
+      "error": "Test gutter did not appear for 'addsTwoNumbers'"
     },
     {
       "id": "calculator-definition",
       "kind": "go-to-definition",
-      "status": "failed",
-      "durationMs": 4013,
-      "error": "Unable to set cursor at column 3\nWait timed out after 2685ms"
+      "status": "passed",
+      "durationMs": 3000
     },
     {
       "id": "debug-adds-two-numbers",
       "kind": "java-debug-test",
       "status": "passed",
-      "durationMs": 26877
+      "durationMs": 31459
     }
   ]
 }

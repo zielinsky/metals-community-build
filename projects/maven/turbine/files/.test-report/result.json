@@ -4,50 +4,49 @@
   "buildTool": "maven",
   "repository": "google/turbine",
   "ref": "main",
-  "status": "failed",
+  "status": "passed",
   "scenarios": [
     {
       "id": "import",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 24645
+      "durationMs": 19280
     },
     {
       "id": "rename-manifest-dir",
       "kind": "rename-symbol",
       "status": "passed",
-      "durationMs": 10666
+      "durationMs": 9994
     },
     {
       "id": "turbine-options-hover",
       "kind": "hover",
       "status": "passed",
-      "durationMs": 6751
+      "durationMs": 4499
     },
     {
       "id": "turbine-options-definition",
       "kind": "go-to-definition",
       "status": "passed",
-      "durationMs": 3835
+      "durationMs": 2892
     },
     {
       "id": "jdk-symbol-references",
       "kind": "find-references",
-      "status": "failed",
-      "durationMs": 64845,
-      "error": "Expected at least 2 references to 'Objects' in java/com/google/turbine/options/TurbineOptions.java, found 82. Peek title: 'Main.java ~/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main References (82)'. Rows: [\"MethodSymbol.java java/com/google/turbine/binder/sym 2\",\"ParamSymbol.java java/com/google/turbine/binder/sym 2\",\"RecordComponentSymbol.java java/com/google/turbine/binder/sym 2\",\"TyVarSymbol.java java/com/google/turbine/binder/sym 2\",\"ClassFile.java java/com/google/turbine/bytecode 1\",\"ClassReader.java java/com/google/turbine/bytecode 1\",\"ConstantPool.java java/com/google/turbine/bytecode 6\",\"LineMap.java java/com/google/turbine/diag 1\",\"SourceFile.java java/com/google/turbine/diag 2\",\"TurbineDiagnostic.java java/com/google/turbine/diag 4\",\"Lower.java java/com/google/turbine/lower 1\",\"RemovePrivateMembers.java java/com/google/turbine/lower 1\",\"Main.java java/com/google/turbine/main 1\",\"java.util. Objects .requireNonNull;\"]"
+      "status": "passed",
+      "durationMs": 7578
     },
     {
       "id": "local-variable-highlight",
       "kind": "document-highlight",
       "status": "passed",
-      "durationMs": 2738
+      "durationMs": 1477
     },
     {
       "id": "import-missing-symbol",
       "kind": "code-action",
       "status": "passed",
-      "durationMs": 8459
+      "durationMs": 5955
     }
   ]
 }

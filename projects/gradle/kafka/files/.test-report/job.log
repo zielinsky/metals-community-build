@@ -14,117 +14,576 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 8821 ms
+Browser ready in 7390 ms
 Launching tests...
   gradle / kafka
-[community-build] 2026-10-08T16:40:15.925Z Starting gradle / kafka / import-test-fixtures
-[community-build] 2026-10-08T16:40:15.925Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-08T16:40:15.925Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java
-[community-build] 2026-10-08T16:40:18.306Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-08T16:40:19.730Z VS Code opened TestUtils.java
-[community-build] 2026-10-08T16:40:19.996Z Captured screenshot: import-test-fixtures/001-file-opened.png
-[community-build] 2026-10-08T16:40:19.997Z Waiting for the build server choice notification
+[community-build] 2026-10-09T07:20:46.191Z Starting gradle / kafka / import-test-fixtures
+[community-build] 2026-10-09T07:20:46.191Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-09T07:20:46.192Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java
+[community-build] 2026-10-09T07:20:48.173Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-09T07:20:49.584Z VS Code opened TestUtils.java
+[community-build] 2026-10-09T07:20:49.958Z Captured screenshot: import-test-fixtures/001-file-opened.png
+[community-build] 2026-10-09T07:20:49.959Z Waiting for the build server choice notification
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
-[metals] 2026.10.08 16:40:23 INFO  Started: Metals version 2.0.0-community-build.37809780703 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-[metals] 2026.10.08 16:40:23 INFO  Memory monitor started
-[metals] 2026.10.08 16:40:24 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-10-08T16:40:25.961Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
-[community-build] 2026-10-08T16:40:26.276Z Captured screenshot: import-test-fixtures/002-build-server-prompt.png
-[community-build] 2026-10-08T16:40:26.276Z Clicking notification action: Use MBT
-[metals] 2026.10.08 16:40:26 INFO  mbt-v2: indexing 6482 files
-[community-build] 2026-10-08T16:40:26.626Z Clicked notification action: Use MBT
-[community-build] 2026-10-08T16:40:27.227Z Captured screenshot: import-test-fixtures/003-mbt-selected.png
-[community-build] 2026-10-08T16:40:27.228Z Waiting for the VS Code importing status to finish
-[community-build] 2026-10-08T16:40:28.093Z VS Code status bar reports that the project is importing
-[metals] 2026.10.08 16:40:31 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-[metals] 2026.10.08 16:40:31 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.08 16:40:32 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.08 16:40:40 INFO  time: mbt-v2 loaded index for 6482 files in 15s
-[metals] 2026.10.08 16:42:17 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.08 16:42:17 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.09 07:20:51 INFO  Started: Metals version 2.0.0-community-build.37898056730 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+[metals] 2026.10.09 07:20:51 INFO  Memory monitor started
+[metals] 2026.10.09 07:20:51 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-10-09T07:20:54.122Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
+[community-build] 2026-10-09T07:20:54.592Z Captured screenshot: import-test-fixtures/002-build-server-prompt.png
+[community-build] 2026-10-09T07:20:54.597Z Clicking notification action: Use MBT
+[community-build] 2026-10-09T07:20:54.777Z Clicked notification action: Use MBT
+[community-build] 2026-10-09T07:20:55.716Z Captured screenshot: import-test-fixtures/003-mbt-selected.png
+[community-build] 2026-10-09T07:20:55.716Z Waiting for the VS Code importing status to finish
+[metals] 2026.10.09 07:20:55 INFO  mbt-v2: indexing 6482 files
+[community-build] 2026-10-09T07:20:56.177Z VS Code status bar reports that the project is importing
+[metals] 2026.10.09 07:20:58 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+[metals] 2026.10.09 07:20:58 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
 [metals] Fetching distribution.
-[metals] Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
-[metals] .....................................................................................................................................
-[metals] 2026.10.08 16:42:52 INFO  time: gradle-extractor extract in 2m26s
-[metals] 2026.10.08 16:42:52 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.10.08 16:42:53 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.10.08 16:42:53 INFO  Connected to Build server: MBT v2.0.0-community-build.37809780703
-[metals] 2026.10.08 16:43:25 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-10-08T16:43:36.090Z VS Code status bar reports that the project import finished
-[community-build] 2026-10-08T16:43:36.091Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
-[community-build] 2026-10-08T16:43:36.280Z Captured screenshot: import-test-fixtures/004-mbt-imported.png
-[community-build] 2026-10-08T16:43:36.283Z MBT model contains 154 namespaces and 477 dependency modules
-[community-build] 2026-10-08T16:43:36.284Z Verified imported source: clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java via clients/src/testFixtures/java
-[community-build] 2026-10-08T16:43:36.285Z Verified imported source: core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala via core/src/test/scala
-[community-build] 2026-10-08T16:43:36.289Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:5.14.4
-[metals] 2026.10.08 16:43:35 INFO  time: indexed workspace in 41s
-[community-build] 2026-10-08T16:43:36.554Z Captured screenshot: import-test-fixtures/005-import-verified.png
-[community-build] 2026-10-08T16:43:36.554Z Scenario passed: import-test-fixtures
-    ✔ import-test-fixtures (200632ms)
-[community-build] 2026-10-08T16:43:36.559Z Starting gradle / kafka / test-fixtures-target
-[community-build] 2026-10-08T16:43:36.559Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-08T16:43:36.559Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
-[community-build] 2026-10-08T16:43:36.667Z Opening NetworkTestUtils.java in the existing VS Code session
-[community-build] 2026-10-08T16:43:38.631Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-08T16:43:38.740Z VS Code opened NetworkTestUtils.java
-[community-build] 2026-10-08T16:43:38.886Z Captured screenshot: test-fixtures-target/001-file-opened.png
-[community-build] 2026-10-08T16:43:38.886Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-08T16:43:39.005Z Captured screenshot: test-fixtures-target/002-mbt-session-reused.png
-[metals] 2026.10.08 16:43:40 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
-[community-build] 2026-10-08T16:43:45.316Z Status bar reports a build target for NetworkTestUtils.java: ["remote"," trunk* project (Git) - trunk*, Checkout Branch/Tag...","project (Git) - Synchronize Changes"," 0 \n 0 No Problems","Notifications","MBT  MBT  link, Metals is connected to the build server (MBT).","clients:testFixtures \n  clients:testFixtures  check, No errors for the build target.\nPress to open doctor.","Copilot status","Java Java","Editor Language Status: $(copilot) No inline suggestion available, Inline suggestions","LF LF","UTF-8 UTF-8","Spaces: 4 Spaces: 4","Ln 27, Col 40 (39 selected) Ln 27, Col 40 (39 selected)"," Lucas Brutschy (6 hours ago) git-commit  Lucas Brutschy (6 hours ago)"]
-[metals] Oct 08, 2026 4:43:45 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] Downloading https://services.gradle.org/distributions/gradle-9.7.1-bin.zip
+[metals] ................................................................................................................................................
+[metals] 2026.10.09 07:21:13 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.09 07:21:16 INFO  time: mbt-v2 loaded index for 6482 files in 23s
+[metals] 2026.10.09 07:21:54 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.09 07:21:54 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.09 07:22:04 INFO  time: gradle-extractor extract in 1m9s
+[metals] 2026.10.09 07:22:04 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.10.09 07:22:04 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.10.09 07:22:04 INFO  Connected to Build server: MBT v2.0.0-community-build.37898056730
+[metals] 2026.10.09 07:22:26 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.10.09 07:22:37 INFO  time: indexed workspace in 32s
+[community-build] 2026-10-09T07:22:38.875Z VS Code status bar reports that the project import finished
+[community-build] 2026-10-09T07:22:38.877Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[community-build] 2026-10-09T07:22:39.189Z Captured screenshot: import-test-fixtures/004-mbt-imported.png
+[community-build] 2026-10-09T07:22:39.189Z MBT model contains 154 namespaces and 477 dependency modules
+[community-build] 2026-10-09T07:22:39.190Z Verified imported source: clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java via clients/src/testFixtures/java
+[community-build] 2026-10-09T07:22:39.205Z Verified imported source: core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala via core/src/test/scala
+[community-build] 2026-10-09T07:22:39.206Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:5.14.4
+[community-build] 2026-10-09T07:22:39.462Z Captured screenshot: import-test-fixtures/005-import-verified.png
+[community-build] 2026-10-09T07:22:39.462Z Scenario passed: import-test-fixtures
+    ✔ import-test-fixtures (113275ms)
+[community-build] 2026-10-09T07:22:39.464Z Starting gradle / kafka / test-fixtures-target
+[community-build] 2026-10-09T07:22:39.464Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-09T07:22:39.464Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+[community-build] 2026-10-09T07:22:39.533Z Opening NetworkTestUtils.java in the existing VS Code session
+[community-build] 2026-10-09T07:22:43.469Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-09T07:22:43.809Z VS Code opened NetworkTestUtils.java
+[community-build] 2026-10-09T07:22:44.132Z Captured screenshot: test-fixtures-target/001-file-opened.png
+[community-build] 2026-10-09T07:22:44.132Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-09T07:22:44.385Z Captured screenshot: test-fixtures-target/002-mbt-session-reused.png
+[metals] 2026.10.09 07:22:47 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+[metals] 2026.10.09 07:22:47 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+[community-build] 2026-10-09T07:22:54.257Z Status bar reports a build target for NetworkTestUtils.java: ["remote"," trunk* project (Git) - trunk*, Checkout Branch/Tag...","project (Git) - Synchronize Changes"," 0 \n 0 No Problems"," Sync: 48s Outlining","Notifications","MBT  MBT  link, Metals is connected to the build server (MBT).","clients:testFixtures \n  clients:testFixtures  check, No errors for the build target.\nPress to open doctor.","Copilot status","Java Java","Editor Language Status: $(copilot) No inline suggestion available, Inline suggestions","LF LF","UTF-8 UTF-8","Spaces: 4 Spaces: 4","Ln 27, Col 40 (39 selected) Ln 27, Col 40 (39 selected)"," Ritika Reddy (10 hours ago) git-commit  Ritika Reddy (10 hours ago)"]
+[metals] Oct 09, 2026 7:22:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Oct 08, 2026 4:43:45 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[community-build] 2026-10-09T07:22:56.869Z Verified that NetworkTestUtils.java has no error diagnostics
+[metals] Oct 09, 2026 7:22:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Oct 08, 2026 4:43:46 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
-[metals] INFO: Unsupported notification method: $/setTrace
-[community-build] 2026-10-08T16:43:46.564Z Verified that NetworkTestUtils.java has no error diagnostics
-[community-build] 2026-10-08T16:43:46.672Z Captured screenshot: test-fixtures-target/003-imports-resolved.png
-[community-build] 2026-10-08T16:43:46.748Z Scenario passed: test-fixtures-target
-    ✔ test-fixtures-target (10190ms)
-[community-build] 2026-10-08T16:43:46.749Z Starting gradle / kafka / scala-to-java-definition
-[community-build] 2026-10-08T16:43:46.749Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-08T16:43:46.749Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
-[community-build] 2026-10-08T16:43:46.797Z Opening SaslSslAdminIntegrationTest.scala in the existing VS Code session
-[community-build] 2026-10-08T16:43:47.873Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-08T16:43:48.074Z VS Code opened SaslSslAdminIntegrationTest.scala
-[community-build] 2026-10-08T16:43:48.308Z Captured screenshot: scala-to-java-definition/001-file-opened.png
-[community-build] 2026-10-08T16:43:48.309Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-08T16:43:48.536Z Captured screenshot: scala-to-java-definition/002-mbt-session-reused.png
-[metals] Oct 08, 2026 4:43:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
-[metals] WARNING: Unmatched cancel notification for request id 42
-[community-build] 2026-10-08T16:43:50.120Z Captured screenshot: scala-to-java-definition/003-definition-symbol-selected.png
-[community-build] 2026-10-08T16:43:50.120Z Go to Definition: assertFutureThrows
-[metals] 2026.10.08 16:43:52 INFO  time: semanticdb:textDocument:typeCheck in 1.896 s
-[metals] 2026.10.08 16:43:52 INFO  time: semanticdb:testDocument:toTextDocument in 822.0 ms
-[community-build] 2026-10-08T16:44:08.588Z Go to Definition: assertFutureThrows
-[community-build] 2026-10-08T16:44:26.187Z Go to Definition: assertFutureThrows
-[community-build] 2026-10-08T16:44:43.761Z Go to Definition: assertFutureThrows
-[community-build] 2026-10-08T16:45:01.149Z Go to Definition: assertFutureThrows
-[community-build] 2026-10-08T16:45:18.466Z Go to Definition: assertFutureThrows
-[community-build] 2026-10-08T16:45:36.090Z Captured screenshot: scala-to-java-definition/004-failure.png
-    1) scala-to-java-definition
+[community-build] 2026-10-09T07:22:57.120Z Captured screenshot: test-fixtures-target/003-imports-resolved.png
+[community-build] 2026-10-09T07:22:57.276Z Scenario passed: test-fixtures-target
+    ✔ test-fixtures-target (17813ms)
+[community-build] 2026-10-09T07:22:57.277Z Starting gradle / kafka / scala-to-java-definition
+[community-build] 2026-10-09T07:22:57.277Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-09T07:22:57.277Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
+[community-build] 2026-10-09T07:22:57.360Z Opening SaslSslAdminIntegrationTest.scala in the existing VS Code session
+[community-build] 2026-10-09T07:22:59.731Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-09T07:23:00.018Z VS Code opened SaslSslAdminIntegrationTest.scala
+[metals] 2026.10.09 07:22:59 INFO  time: indexed workspace in 21s
+[community-build] 2026-10-09T07:23:00.325Z Captured screenshot: scala-to-java-definition/001-file-opened.png
+[community-build] 2026-10-09T07:23:00.325Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-09T07:23:00.667Z Captured screenshot: scala-to-java-definition/002-mbt-session-reused.png
+[community-build] 2026-10-09T07:23:04.359Z Captured screenshot: scala-to-java-definition/003-definition-symbol-selected.png
+[community-build] 2026-10-09T07:23:04.359Z Go to Definition: assertFutureThrows
+[metals] 2026.10.09 07:23:04 WARN  compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+[metals] java.lang.AssertionError: assertion failed: 
+[metals]   @new Timeout(120) class SaslSslAdminIntegrationTest extends BaseAdminIntegrationTest with SaslSetup {
+[metals]   def <init>() = {
+[metals]     super.<init>();
+[metals]     ()
+[metals]   };
+[metals]   val clusterResourcePattern = new ResourcePattern(ResourceType.CLUSTER, Resource.CLUSTER_NAME, PatternType.LITERAL);
+[metals]   val kraftAuthorizerClassName = classOf[StandardAuthorizer].getName;
+[metals]   val kafkaPrincipal = new KafkaPrincipal(KafkaPrincipal.USER_TYPE, JaasTestUtils.KAFKA_SERVER_PRINCIPAL_UNQUALIFIED_NAME);
+[metals]   var superUserAdmin: Admin = _;
+[metals]   val secretKey = "secretKey";
+[metals]   override protected def securityProtocol = SecurityProtocol.SASL_SSL;
+[metals]   override lazy protected val trustStoreFile = Some(TestUtils.tempFile("truststore", ".jks"));
+[metals]   @new BeforeEach() override def setUp(testInfo: TestInfo): Unit = {
+[metals]     this.serverConfig.setProperty(ServerConfigs.AUTHORIZER_CLASS_NAME_CONFIG, kraftAuthorizerClassName);
+[metals]     this.controllerConfig.setProperty(ServerConfigs.AUTHORIZER_CLASS_NAME_CONFIG, kraftAuthorizerClassName);
+[metals]     this.serverConfig.setProperty(StandardAuthorizer.SUPER_USERS_CONFIG, kafkaPrincipal.toString.$plus(";").$plus(KafkaPrincipal.ANONYMOUS.toString));
+[metals]     this.controllerConfig.setProperty(StandardAuthorizer.SUPER_USERS_CONFIG, kafkaPrincipal.toString);
+[metals]     this.serverConfig.setProperty(DelegationTokenManagerConfigs.DELEGATION_TOKEN_SECRET_KEY_CONFIG, secretKey);
+[metals]     this.serverConfig.setProperty(DelegationTokenManagerConfigs.DELEGATION_TOKEN_EXPIRY_TIME_MS_CONFIG, Long.MaxValue.toString);
+[metals]     this.serverConfig.setProperty(DelegationTokenManagerConfigs.DELEGATION_TOKEN_MAX_LIFETIME_CONFIG, Long.MaxValue.toString);
+[metals]     setUpSasl();
+[metals]     super.setUp(testInfo);
+[metals]     setInitialAcls()
+[metals]   };
+[metals]   def setUpSasl(): Unit = {
+[metals]     startSasl(jaasSections(Seq("GSSAPI"), Some("GSSAPI"), JaasTestUtils.KAFKA_SERVER_CONTEXT_NAME));
+[metals]     val loginContext = jaasAdminLoginModule("GSSAPI");
+[metals]     superuserClientConfig.put(SaslConfigs.SASL_JAAS_CONFIG, loginContext)
+[metals]   };
+[metals]   private def setInitialAcls(): Unit = {
+[metals]     superUserAdmin = createSuperuserAdminClient();
+[metals]     val ace = new AccessControlEntry(WILDCARD_PRINCIPAL_STRING, WILDCARD_HOST, ALL, ALLOW);
+[metals]     superUserAdmin.createAcls(java.util.List.of(new AclBinding(new ResourcePattern(TOPIC, "*", LITERAL), ace)));
+[metals]     superUserAdmin.createAcls(java.util.List.of(new AclBinding(new ResourcePattern(GROUP, "*", LITERAL), ace)));
+[metals]     val clusterAcls = List(clusterAcl(ALLOW, CREATE), clusterAcl(ALLOW, DELETE), clusterAcl(ALLOW, CLUSTER_ACTION), clusterAcl(ALLOW, ALTER_CONFIGS), clusterAcl(ALLOW, ALTER), clusterAcl(ALLOW, IDEMPOTENT_WRITE));
+[metals]     superUserAdmin.createAcls(clusterAcls.map(((ace) => new AclBinding(clusterResourcePattern, ace))).asJava);
+[metals]     brokers.foreach(((b) => {
+[metals]       TestUtils.waitAndVerifyAcls(Set(ace), b.dataPlaneRequestProcessor.authorizerPlugin.get, new ResourcePattern(TOPIC, "*", LITERAL));
+[metals]       TestUtils.waitAndVerifyAcls(Set(ace), b.dataPlaneRequestProcessor.authorizerPlugin.get, new ResourcePattern(GROUP, "*", LITERAL));
+[metals]       TestUtils.waitAndVerifyAcls(clusterAcls.toSet, b.dataPlaneRequestProcessor.authorizerPlugin.get, clusterResourcePattern)
+[metals]     }))
+[metals]   };
+[metals]   private def clusterAcl(permissionType: AclPermissionType, operation: AclOperation): AccessControlEntry = new AccessControlEntry(new KafkaPrincipal(KafkaPrincipal.USER_TYPE, "*").toString, WILDCARD_HOST, operation, permissionType);
+[metals]   @new AfterEach() override def tearDown(): Unit = {
+[metals]     super.tearDown();
+[metals]     closeSasl()
+[metals]   };
+[metals]   val anyAcl = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "*", PatternType.LITERAL), new AccessControlEntry("User:*", "*", AclOperation.ALL, AclPermissionType.ALLOW));
+[metals]   val acl2 = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "mytopic2", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.WRITE, AclPermissionType.ALLOW));
+[metals]   val acl3 = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "mytopic3", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.READ, AclPermissionType.ALLOW));
+[metals]   val fooAcl = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "foobar", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.READ, AclPermissionType.ALLOW));
+[metals]   val prefixAcl = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "mytopic", PatternType.PREFIXED), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.READ, AclPermissionType.ALLOW));
+[metals]   val transactionalIdAcl = new AclBinding(new ResourcePattern(ResourceType.TRANSACTIONAL_ID, "transactional_id", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.WRITE, AclPermissionType.ALLOW));
+[metals]   val groupAcl = new AclBinding(new ResourcePattern(ResourceType.GROUP, "*", PatternType.LITERAL), new AccessControlEntry("User:*", "*", AclOperation.ALL, AclPermissionType.ALLOW));
+[metals]   @new Test() @new Timeout(30) def testAclOperationsWithOptionTimeoutMs(): Unit = {
+[metals]     val config = createConfig;
+[metals]     config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, StringContext("localhost:", "").s(TestUtils.IncorrectBrokerPort));
+[metals]     val brokenClient = Admin.create(config);
+[metals]     try {
+[metals]       val acl = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "mytopic3", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.DESCRIBE, AclPermissionType.ALLOW));
+[metals]       val exception = assertThrows(classOf[ExecutionException], (() => brokenClient.createAcls(util.Set.of(acl), new CreateAclsOptions().timeoutMs(0)).all().get()));
+[metals]       assertInstanceOf(classOf[TimeoutException], exception.getCause)
+[metals]     } finally brokenClient.close(time.Duration.ZERO)
+[metals]   };
+[metals]   @new Test() @new Timeout(30) def testDeleteAclsWithOptionTimeoutMs(): Unit = {
+[metals]     val config = createConfig;
+[metals]     config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, StringContext("localhost:", "").s(TestUtils.IncorrectBrokerPort));
+[metals]     val brokenClient = Admin.create(config);
+[metals]     try {
+[metals]       val exception = assertThrows(classOf[ExecutionException], (() => brokenClient.deleteAcls(util.Set.of(AclBindingFilter.ANY), new DeleteAclsOptions().timeoutMs(0)).all().get()));
+[metals]       assertInstanceOf(classOf[TimeoutException], exception.getCause)
+[metals]     } finally brokenClient.close(time.Duration.ZERO)
+[metals]   };
+[metals]   @new Test() def testExpireDelegationTokenWithOptionExpireTimePeriodMs(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val renewer = java.util.List.of(SecurityUtils.parseKafkaPrincipal("User:renewer"));
+[metals]     def generateTokenResult(maxLifeTimeMs: Int, expiryTimePeriodMs: Int, expectedTokenNum: Int): scala.Tuple2[CreateDelegationTokenResult, ExpireDelegationTokenResult] = {
+[metals]       val createResult = client.createDelegationToken(new CreateDelegationTokenOptions().renewers(renewer).maxLifetimeMs(maxLifeTimeMs));
+[metals]       val tokenCreated = createResult.delegationToken.get;
+[metals]       TestUtils.waitUntilTrue((() => brokers.forall(((server) => server.tokenCache.tokens().size().$eq$eq(expectedTokenNum)))), "Timed out waiting for token to propagate to all servers");
+[metals]       val expireResult = client.expireDelegationToken(tokenCreated.hmac(), new ExpireDelegationTokenOptions().expiryTimePeriodMs(expiryTimePeriodMs));
+[metals]       scala.Tuple2(createResult, expireResult)
+[metals]     };
+[metals]     try {
+[metals]       <synthetic> <artifact> private[this] val x$2 = generateTokenResult(10000, -1, 1): @scala.unchecked match {
+[metals]         case scala.Tuple2((createResult1 @ _), (expireResult1 @ _)) => scala.Tuple2(createResult1, expireResult1)
+[metals]       };
+[metals]       val createResult1 = x$2._1;
+[metals]       val expireResult1 = x$2._2;
+[metals]       assertTrue(createResult1.delegationToken().get().tokenInfo().maxTimestamp().$greater(expireResult1.expiryTimestamp().get()));
+[metals]       <synthetic> <artifact> private[this] val x$3 = generateTokenResult(50000, 100000, 1): @scala.unchecked match {
+[metals]         case scala.Tuple2((createResult2 @ _), (expireResult2 @ _)) => scala.Tuple2(createResult2, expireResult2)
+[metals]       };
+[metals]       val createResult2 = x$3._1;
+[metals]       val expireResult2 = x$3._2;
+[metals]       assert(createResult2.delegationToken().get().tokenInfo().expiryTimestamp().$eq$eq(expireResult2.expiryTimestamp().get()));
+[metals]       <synthetic> <artifact> private[this] val x$4 = generateTokenResult(5000, 2000, 2): @scala.unchecked match {
+[metals]         case scala.Tuple2((createResult3 @ _), (expireResult3 @ _)) => scala.Tuple2(createResult3, expireResult3)
+[metals]       };
+[metals]       val createResult3 = x$4._1;
+[metals]       val expireResult3 = x$4._2;
+[metals]       assert(createResult3.delegationToken().get().tokenInfo().expiryTimestamp().$greater(expireResult3.expiryTimestamp().get()))
+[metals]     } finally client.close(time.Duration.ZERO)
+[metals]   };
+[metals]   @new Test() def testAclOperations(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val acl = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "mytopic3", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.DESCRIBE, AclPermissionType.ALLOW));
+[metals]     assertEquals(8, getAcls(AclBindingFilter.ANY).size);
+[metals]     val results = client.createAcls(java.util.List.of(acl2, acl3));
+[metals]     assertEquals(Set(acl2, acl3), results.values.keySet().asScala);
+[metals]     results.values.values.forEach(((value) => value.get));
+[metals]     val aclUnknown = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "mytopic3", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.UNKNOWN, AclPermissionType.ALLOW));
+[metals]     val results2 = client.createAcls(java.util.List.of(aclUnknown));
+[metals]     assertEquals(Set(aclUnknown), results2.values.keySet().asScala);
+[metals]     assertFutureThrows(classOf[InvalidRequestException], results2.all);
+[metals]     val results3 = client.deleteAcls(java.util.List.of(acl.toFilter, acl2.toFilter, acl3.toFilter)).values;
+[metals]     assertEquals(Set(acl.toFilter, acl2.toFilter, acl3.toFilter), results3.keySet.asScala);
+[metals]     assertEquals(0, results3.get(acl.toFilter).get.values.size());
+[metals]     assertEquals(Set(acl2), results3.get(acl2.toFilter).get.values.asScala.map(((x$5) => x$5.binding)).toSet);
+[metals]     assertEquals(Set(acl3), results3.get(acl3.toFilter).get.values.asScala.map(((x$6) => x$6.binding)).toSet)
+[metals]   };
+[metals]   @new Test() def testAclOperations2(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val results = client.createAcls(java.util.List.of(acl2, acl2, transactionalIdAcl));
+[metals]     assertEquals(Set(acl2, acl2, transactionalIdAcl), results.values.keySet.asScala);
+[metals]     results.all.get();
+[metals]     waitForDescribeAcls(client, acl2.toFilter, Set(acl2));
+[metals]     waitForDescribeAcls(client, transactionalIdAcl.toFilter, Set(transactionalIdAcl));
+[metals]     val filterA = new AclBindingFilter(new ResourcePatternFilter(ResourceType.GROUP, null, PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     val filterB = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, "mytopic2", PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     val filterC = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TRANSACTIONAL_ID, null, PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     waitForDescribeAcls(client, filterA, Set(groupAcl));
+[metals]     waitForDescribeAcls(client, filterC, Set(transactionalIdAcl));
+[metals]     val results2 = client.deleteAcls(java.util.List.of(filterA, filterB, filterC), new DeleteAclsOptions());
+[metals]     assertEquals(Set(filterA, filterB, filterC), results2.values.keySet.asScala);
+[metals]     assertEquals(Set(groupAcl), results2.values.get(filterA).get.values.asScala.map(((x$7) => x$7.binding)).toSet);
+[metals]     assertEquals(Set(transactionalIdAcl), results2.values.get(filterC).get.values.asScala.map(((x$8) => x$8.binding)).toSet);
+[metals]     assertEquals(Set(acl2), results2.values.get(filterB).get.values.asScala.map(((x$9) => x$9.binding)).toSet);
+[metals]     waitForDescribeAcls(client, filterB, Set());
+[metals]     waitForDescribeAcls(client, filterC, Set())
+[metals]   };
+[metals]   @new Test() def testAclDescribe(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     ensureAcls(Set(anyAcl, acl2, fooAcl, prefixAcl));
+[metals]     val allTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, null, PatternType.ANY), AccessControlEntryFilter.ANY);
+[metals]     val allLiteralTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, null, PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     val allPrefixedTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, null, PatternType.PREFIXED), AccessControlEntryFilter.ANY);
+[metals]     val literalMyTopic2Acls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, "mytopic2", PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     val prefixedMyTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, "mytopic", PatternType.PREFIXED), AccessControlEntryFilter.ANY);
+[metals]     val allMyTopic2Acls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, "mytopic2", PatternType.MATCH), AccessControlEntryFilter.ANY);
+[metals]     val allFooTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, "foobar", PatternType.MATCH), AccessControlEntryFilter.ANY);
+[metals]     assertEquals(Set(anyAcl), getAcls(anyAcl.toFilter));
+[metals]     assertEquals(Set(prefixAcl), getAcls(prefixAcl.toFilter));
+[metals]     assertEquals(Set(acl2), getAcls(acl2.toFilter));
+[metals]     assertEquals(Set(fooAcl), getAcls(fooAcl.toFilter));
+[metals]     assertEquals(Set(acl2), getAcls(literalMyTopic2Acls));
+[metals]     assertEquals(Set(prefixAcl), getAcls(prefixedMyTopicAcls));
+[metals]     assertEquals(Set(anyAcl, acl2, fooAcl), getAcls(allLiteralTopicAcls));
+[metals]     assertEquals(Set(prefixAcl), getAcls(allPrefixedTopicAcls));
+[metals]     assertEquals(Set(anyAcl, acl2, prefixAcl), getAcls(allMyTopic2Acls));
+[metals]     assertEquals(Set(anyAcl, fooAcl), getAcls(allFooTopicAcls));
+[metals]     assertEquals(Set(anyAcl, acl2, fooAcl, prefixAcl), getAcls(allTopicAcls))
+[metals]   };
+[metals]   @new Test() def testAclDelete(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     ensureAcls(Set(anyAcl, acl2, fooAcl, prefixAcl));
+[metals]     val allTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, null, PatternType.MATCH), AccessControlEntryFilter.ANY);
+[metals]     val allLiteralTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, null, PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     val allPrefixedTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, null, PatternType.PREFIXED), AccessControlEntryFilter.ANY);
+[metals]     var deleted = client.deleteAcls(java.util.List.of(acl2.toFilter)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => waitAndVerifyRemovedAcl(acl2.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, acl2.pattern())));
+[metals]     assertEquals(Set(anyAcl, fooAcl, prefixAcl), getAcls(allTopicAcls));
+[metals]     ensureAcls(deleted);
+[metals]     deleted = client.deleteAcls(java.util.List.of(anyAcl.toFilter)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => waitAndVerifyRemovedAcl(anyAcl.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, anyAcl.pattern())));
+[metals]     assertEquals(Set(acl2, fooAcl, prefixAcl), getAcls(allTopicAcls));
+[metals]     ensureAcls(deleted);
+[metals]     deleted = client.deleteAcls(java.util.List.of(prefixAcl.toFilter)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => waitAndVerifyRemovedAcl(prefixAcl.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, prefixAcl.pattern())));
+[metals]     assertEquals(Set(anyAcl, acl2, fooAcl), getAcls(allTopicAcls));
+[metals]     ensureAcls(deleted);
+[metals]     deleted = client.deleteAcls(java.util.List.of(allLiteralTopicAcls)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => Set(anyAcl, acl2, fooAcl).foreach(((acl) => waitAndVerifyRemovedAcl(acl.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, acl.pattern())))));
+[metals]     assertEquals(Set(prefixAcl), getAcls(allTopicAcls));
+[metals]     ensureAcls(deleted);
+[metals]     deleted = client.deleteAcls(java.util.List.of(allPrefixedTopicAcls)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => waitAndVerifyRemovedAcl(prefixAcl.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, prefixAcl.pattern())));
+[metals]     assertEquals(Set(anyAcl, acl2, fooAcl), getAcls(allTopicAcls));
+[metals]     ensureAcls(deleted);
+[metals]     deleted = client.deleteAcls(java.util.List.of(allTopicAcls)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => Set(anyAcl, acl2, fooAcl, prefixAcl).foreach(((acl) => waitAndVerifyRemovedAcl(acl.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, acl.pattern())))));
+[metals]     assertEquals(Set(), getAcls(allTopicAcls))
+[metals]   };
+[metals]   @new Test() def testLegacyAclOpsNeverAffectOrReturnPrefixed(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     ensureAcls(Set(anyAcl, acl2, fooAcl, prefixAcl));
+[metals]     val allTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, null, PatternType.MATCH), AccessControlEntryFilter.ANY);
+[metals]     val legacyAllTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, null, PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     val legacyMyTopic2Acls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, "mytopic2", PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     val legacyAnyTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, "*", PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     val legacyFooTopicAcls = new AclBindingFilter(new ResourcePatternFilter(ResourceType.TOPIC, "foobar", PatternType.LITERAL), AccessControlEntryFilter.ANY);
+[metals]     assertEquals(Set(anyAcl, acl2, fooAcl), getAcls(legacyAllTopicAcls));
+[metals]     assertEquals(Set(acl2), getAcls(legacyMyTopic2Acls));
+[metals]     assertEquals(Set(anyAcl), getAcls(legacyAnyTopicAcls));
+[metals]     assertEquals(Set(fooAcl), getAcls(legacyFooTopicAcls));
+[metals]     var deleted = client.deleteAcls(java.util.List.of(legacyMyTopic2Acls)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => waitAndVerifyRemovedAcl(acl2.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, acl2.pattern())));
+[metals]     assertEquals(Set(anyAcl, fooAcl, prefixAcl), getAcls(allTopicAcls));
+[metals]     ensureAcls(deleted);
+[metals]     deleted = client.deleteAcls(java.util.List.of(legacyAnyTopicAcls)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => waitAndVerifyRemovedAcl(anyAcl.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, anyAcl.pattern())));
+[metals]     assertEquals(Set(acl2, fooAcl, prefixAcl), getAcls(allTopicAcls));
+[metals]     ensureAcls(deleted);
+[metals]     deleted = client.deleteAcls(java.util.List.of(legacyAllTopicAcls)).all().get().asScala.toSet;
+[metals]     brokers.foreach(((b) => Set(anyAcl, acl2, fooAcl).foreach(((acl) => waitAndVerifyRemovedAcl(acl.entry(), b.dataPlaneRequestProcessor.authorizerPlugin.get, acl.pattern())))));
+[metals]     assertEquals(Set(), getAcls(legacyAllTopicAcls));
+[metals]     assertEquals(Set(prefixAcl), getAcls(allTopicAcls))
+[metals]   };
+[metals]   @new Test() def testAttemptToCreateInvalidAcls(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val clusterAcl = new AclBinding(new ResourcePattern(ResourceType.CLUSTER, "foobar", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.READ, AclPermissionType.ALLOW));
+[metals]     val emptyResourceNameAcl = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "", PatternType.LITERAL), new AccessControlEntry("User:ANONYMOUS", "*", AclOperation.READ, AclPermissionType.ALLOW));
+[metals]     val results = client.createAcls(java.util.List.of(clusterAcl, emptyResourceNameAcl), new CreateAclsOptions());
+[metals]     assertEquals(Set(clusterAcl, emptyResourceNameAcl), results.values.keySet().asScala);
+[metals]     assertFutureThrows(classOf[InvalidRequestException], results.values.get(clusterAcl));
+[metals]     assertFutureThrows(classOf[InvalidRequestException], results.values.get(emptyResourceNameAcl))
+[metals]   };
+[metals]   @new Test() def testCreateDelegationTokenWithSmallerTimeout(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val timeout = 5000;
+[metals]     val options = new CreateDelegationTokenOptions().maxLifetimeMs(timeout);
+[metals]     val tokenInfo = client.createDelegationToken(options).delegationToken.get.tokenInfo;
+[metals]     assertEquals(timeout, tokenInfo.maxTimestamp.$minus(tokenInfo.issueTimestamp));
+[metals]     assertTrue(tokenInfo.maxTimestamp.$greater$eq(tokenInfo.expiryTimestamp))
+[metals]   };
+[metals]   @new Test() def testExpiredTimeStampLargerThanMaxLifeStamp(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val timeout = 5000;
+[metals]     val createOptions = new CreateDelegationTokenOptions().maxLifetimeMs(timeout);
+[metals]     val token = client.createDelegationToken(createOptions).delegationToken.get;
+[metals]     val tokenInfo = token.tokenInfo;
+[metals]     assertEquals(timeout, tokenInfo.maxTimestamp.$minus(tokenInfo.issueTimestamp));
+[metals]     assertTrue(tokenInfo.maxTimestamp.$greater$eq(tokenInfo.expiryTimestamp));
+[metals]     TestUtils.waitUntilTrue((() => brokers.forall(((server) => server.tokenCache.tokens.size.$eq$eq(1)))), "Timed out waiting for token to propagate to all servers");
+[metals]     val expiredOptions = new ExpireDelegationTokenOptions().expiryTimePeriodMs(tokenInfo.maxTimestamp.$plus(1));
+[metals]     val expiredResult = client.expireDelegationToken(token.hmac, expiredOptions);
+[metals]     assertEquals(tokenInfo.maxTimestamp, expiredResult.expiryTimestamp.get())
+[metals]   };
+[metals]   private def verifyCauseIsClusterAuth(e: Throwable): Unit = assertEquals(classOf[ClusterAuthorizationException], e.getCause.getClass);
+[metals]   private def testAclCreateGetDelete(expectAuth: Boolean): Unit = {
+[metals]     TestUtils.waitUntilTrue((() => {
+[metals]       val result = client.createAcls(java.util.List.of(fooAcl, transactionalIdAcl), new CreateAclsOptions());
+[metals]       if (expectAuth)
+[metals]         Try(result.all.get) match {
+[metals]           case Failure((e @ _)) => {
+[metals]             verifyCauseIsClusterAuth(e);
+[metals]             false
+[metals]           }
+[metals]           case Success(_) => true
+[metals]         }
+[metals]       else
+[metals]         Try(result.all.get) match {
+[metals]           case Failure((e @ _)) => {
+[metals]             verifyCauseIsClusterAuth(e);
+[metals]             true
+[metals]           }
+[metals]           case Success(_) => false
+[metals]         }
+[metals]     }), "timed out waiting for createAcls to ".$plus(if (expectAuth)
+[metals]       "succeed"
+[metals]     else
+[metals]       "fail"));
+[metals]     if (expectAuth)
+[metals]       {
+[metals]         waitForDescribeAcls(client, fooAcl.toFilter, Set(fooAcl));
+[metals]         waitForDescribeAcls(client, transactionalIdAcl.toFilter, Set(transactionalIdAcl))
+[metals]       }
+[metals]     else
+[metals]       ();
+[metals]     TestUtils.waitUntilTrue((() => {
+[metals]       val result = client.deleteAcls(java.util.List.of(fooAcl.toFilter, transactionalIdAcl.toFilter), new DeleteAclsOptions());
+[metals]       if (expectAuth)
+[metals]         Try(result.all.get) match {
+[metals]           case Failure((e @ _)) => {
+[metals]             verifyCauseIsClusterAuth(e);
+[metals]             false
+[metals]           }
+[metals]           case Success(_) => true
+[metals]         }
+[metals]       else
+[metals]         Try(result.all.get) match {
+[metals]           case Failure((e @ _)) => {
+[metals]             verifyCauseIsClusterAuth(e);
+[metals]             true
+[metals]           }
+[metals]           case Success(_) => {
+[metals]             assertEquals(Set(fooAcl, transactionalIdAcl), result.values.keySet);
+[metals]             assertEquals(Set(fooAcl), result.values.get(fooAcl.toFilter).get.values.asScala.map(((x$10) => x$10.binding)).toSet);
+[metals]             assertEquals(Set(transactionalIdAcl), result.values.get(transactionalIdAcl.toFilter).get.values.asScala.map(((x$11) => x$11.binding)).toSet);
+[metals]             true
+[metals]           }
+[metals]         }
+[metals]     }), "timed out waiting for deleteAcls to ".$plus(if (expectAuth)
+[metals]       "succeed"
+[metals]     else
+[metals]       "fail"));
+[metals]     if (expectAuth)
+[metals]       {
+[metals]         waitForDescribeAcls(client, fooAcl.toFilter, Set.empty);
+[metals]         waitForDescribeAcls(client, transactionalIdAcl.toFilter, Set.empty)
+[metals]       }
+[metals]     else
+[metals]       ()
+[metals]   };
+[metals]   private def testAclGet(expectAuth: Boolean): Unit = TestUtils.waitUntilTrue((() => {
+[metals]     val userAcl = new AclBinding(new ResourcePattern(ResourceType.TOPIC, "*", PatternType.LITERAL), new AccessControlEntry("User:*", "*", AclOperation.ALL, AclPermissionType.ALLOW));
+[metals]     val results = client.describeAcls(userAcl.toFilter);
+[metals]     if (expectAuth)
+[metals]       Try(results.values.get) match {
+[metals]         case Failure((e @ _)) => {
+[metals]           verifyCauseIsClusterAuth(e);
+[metals]           false
+[metals]         }
+[metals]         case Success((acls @ _)) => Set(userAcl).equals(acls.asScala.toSet)
+[metals]       }
+[metals]     else
+[metals]       Try(results.values.get) match {
+[metals]         case Failure((e @ _)) => {
+[metals]           verifyCauseIsClusterAuth(e);
+[metals]           true
+[metals]         }
+[metals]         case Success(_) => false
+[metals]       }
+[metals]   }), "timed out waiting for describeAcls to ".$plus(if (expectAuth)
+[metals]     "succeed"
+[metals]   else
+[metals]     "fail"));
+[metals]   @new Test() def testAclAuthorizationDenied(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     addClusterAcl(DENY, ALTER);
+[metals]     testAclGet(expectAuth = true);
+[metals]     testAclCreateGetDelete(expectAuth = false);
+[metals]     addClusterAcl(DENY, DESCRIBE);
+[metals]     testAclGet(expectAuth = false);
+[metals]     testAclCreateGetDelete(expectAuth = false);
+[metals]     removeClusterAcl(DENY, DESCRIBE);
+[metals]     removeClusterAcl(DENY, ALTER);
+[metals]     testAclGet(expectAuth = true);
+[metals]     testAclCreateGetDelete(expectAuth = true);
+[metals]     removeClusterAcl(ALLOW, ALTER);
+[metals]     removeClusterAcl(ALLOW, DELETE);
+[metals]     testAclGet(expectAuth = false);
+[metals]     testAclCreateGetDelete(expectAuth = false);
+[metals]     addClusterAcl(ALLOW, DESCRIBE);
+[metals]     testAclGet(expectAuth = true);
+[metals]     testAclCreateGetDelete(expectAuth = false)
+[metals]   };
+[metals]   private def addClusterAcl(permissionType: AclPermissionType, operation: AclOperation): Unit = {
+[metals]     val ace = clusterAcl(permissionType, operation);
+[metals]     superUserAdmin.createAcls(java.util.List.of(new AclBinding(clusterResourcePattern, ace)));
+[metals]     brokers.foreach(((b) => waitAndVerifyAcl(ace, b.dataPlaneRequestProcessor.authorizerPlugin.get, clusterResourcePattern)))
+[metals]   };
+[metals]   private def removeClusterAcl(permissionType: AclPermissionType, operation: AclOperation): Unit = {
+[metals]     val ace = clusterAcl(permissionType, operation);
+[metals]     superUserAdmin.deleteAcls(java.util.List.of(new AclBinding(clusterResourcePattern, ace).toFilter)).values;
+[metals]     brokers.foreach(((b) => waitAndVerifyRemovedAcl(ace, b.dataPlaneRequestProcessor.authorizerPlugin.get, clusterResourcePattern)))
+[metals]   };
+[metals]   @new Test() def testCreateTopicsResponseMetadataAndConfig(): Unit = {
+[metals]     val topic1 = "mytopic1";
+[metals]     val topic2 = "mytopic2";
+[metals]     val denyAcl = new AclBinding(new ResourcePattern(ResourceType.TOPIC, topic2, PatternType.LITERAL), new AccessControlEntry("User:*", "*", AclOperation.DESCRIBE_CONFIGS, AclPermissionType.DENY));
+[metals]     client = createAdminClient;
+[metals]     client.createAcls(java.util.List.of(denyAcl), new CreateAclsOptions()).all().get();
+[metals]     val topics = Seq(topic1, topic2);
+[metals]     val configsOverride = java.util.Map.of(TopicConfig.SEGMENT_BYTES_CONFIG, "3000000");
+[metals]     val newTopics = java.util.List.of(new NewTopic(topic1, 2, 3.toShort).configs(configsOverride), new NewTopic(topic2, Optional.empty[Integer], Optional.empty[java.lang.Short]).configs(configsOverride));
+[metals]     val validateResult = client.createTopics(newTopics, new CreateTopicsOptions().validateOnly(true));
+[metals]     validateResult.all.get();
+[metals]     waitForTopics(client, List(), topics);
+[metals]     def validateMetadataAndConfigs(result: CreateTopicsResult): Unit = {
+[metals]       assertEquals(2, result.numPartitions(topic1).get());
+[metals]       assertEquals(3, result.replicationFactor(topic1).get());
+[metals]       val topicConfigs = result.config(topic1).get().entries.asScala;
+[metals]       assertTrue(topicConfigs.nonEmpty);
+[metals]       val segmentBytesConfig = topicConfigs.find(((x$12) => x$12.name.$eq$eq(TopicConfig.SEGMENT_BYTES_CONFIG))).get;
+[metals]       assertEquals(3000000, segmentBytesConfig.value.toLong);
+[metals]       assertEquals(ConfigEntry.ConfigSource.DYNAMIC_TOPIC_CONFIG, segmentBytesConfig.source);
+[metals]       val compressionConfig = topicConfigs.find(((x$13) => x$13.name.$eq$eq(TopicConfig.COMPRESSION_TYPE_CONFIG))).get;
+[metals]       assertEquals(ServerLogConfigs.COMPRESSION_TYPE_DEFAULT, compressionConfig.value);
+[metals]       assertEquals(ConfigEntry.ConfigSource.DEFAULT_CONFIG, compressionConfig.source);
+[metals]       assertFutureThrows(classOf[TopicAuthorizationException], result.numPartitions(topic2));
+[metals]       assertFutureThrows(classOf[TopicAuthorizationException], result.replicationFactor(topic2));
+[metals]       assertFutureThrows(classOf[TopicAuthorizationException], result.config(topic2))
+[metals]     };
+[metals]     validateMetadataAndConfigs(validateResult);
+[metals]     val createResult = client.createTopics(newTopics, new CreateTopicsOptions());
+[metals]     createResult.all.get();
+[metals]     waitForTopics(client, topics, List());
+[metals]     validateMetadataAndConfigs(createResult);
+[metals]     val topicIds = getTopicIds();
+[metals]     assertNotEquals(Uuid.ZERO_UUID, createResult.topicId(topic1).get());
+[metals]     assertEquals(topicIds(topic1), createResult.topicId(topic1).get());
+[metals]     assertFutureThrows(classOf[TopicAuthorizationException], createResult.topicId(topic2));
+[metals]     val createResponseConfig = createResult.config(topic1).get().entries.asScala;
+[metals]     val describeResponseConfig = describeConfigs(topic1);
+[metals]     assertEquals(describeResponseConfig.map(((x$14) => x$14.name)).toSet, createResponseConfig.map(((x$15) => x$15.name)).toSet);
+[metals]     describeResponseConfig.foreach(((describeEntry) => {
+[metals]       val name = describeEntry.name;
+[metals]       val createEntry = createResponseConfig.find(((x$16) => x$16.name.$eq$eq(name))).get;
+[metals]       assertEquals(describeEntry.value, createEntry.value, StringContext("Value mismatch for ", "").s(name));
+[metals]       assertEquals(describeEntry.isReadOnly, createEntry.isReadOnly, StringContext("isReadOnly mismatch for ", "").s(name));
+[metals]       assertEquals(describeEntry.isSensitive, createEntry.isSensitive, StringContext("isSensitive mismatch for ", "").s(name));
+[metals]       assertEquals(describeEntry.source, createEntry.source, StringContext("Source mismatch for ", "").s(name))
+[metals]     }))
+[metals]   };
+[metals]   @new Test() def testExpireDelegationToken(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val createDelegationTokenOptions = new CreateDelegationTokenOptions().maxLifetimeMs(5000);
+[metals]     assertFutureThrows(classOf[DelegationTokenNotFoundException], client.expireDelegationToken("".getBytes()).expiryTimestamp());
+[metals]     val token1 = client.createDelegationToken(createDelegationTokenOptions).delegationToken().get();
+[metals]     TestUtils.retry(maxWaitMs = 1000)(assertTrue(expireTokenOrFailWithAssert(token1, -1).$less(System.currentTimeMillis())));
+[metals]     val token2 = client.createDelegationToken(createDelegationTokenOptions.maxLifetimeMs(1000)).delegationToken().get();
+[metals]     Thread.sleep(1000);
+[metals]     assertFutureThrows(classOf[DelegationTokenExpiredException], client.expireDelegationToken(token2.hmac(), new ExpireDelegationTokenOptions().expiryTimePeriodMs(1)).expiryTimestamp());
+[metals]     assertDoesNotThrow((() => expireTokenOrFailWithAssert(token2, -1)));
+[metals]     val token3 = client.createDelegationToken(createDelegationTokenOptions).delegationToken().get();
+[metals]     TestUtils.retry(1000)(assertTrue(expireTokenOrFailWithAssert(token3, 200).$less(token3.tokenInfo().expiryTimestamp())))
+[metals]   };
+[metals]   @new Test() def testCreateTokenWithOverflowTimestamp(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val token = client.createDelegationToken(new CreateDelegationTokenOptions().maxLifetimeMs(Long.MaxValue)).delegationToken().get();
+[metals]     assertEquals(Long.MaxValue, token.tokenInfo().expiryTimestamp())
+[metals]   };
+[metals]   @new Test() def testExpireTokenWithOverflowTimestamp(): Unit = {
+[metals]     client = createAdminClient;
+[metals]     val token = client.createDelegationToken(new CreateDelegationTokenOptions().maxLifetimeMs(Long.MaxValue)).delegationToken().get();
+[metals]     TestUtils.retry(1000)(assertTrue(expireTokenOrFailWithAssert(token, Long.MaxValue).$eq$eq(Long.MaxValue)))
+[metals]   };
+[metals]   private def expireTokenOrFailWithAssert(token: DelegationToken, expiryTimePeriodMs: Long): Long = try {
+[metals]     client.expireDelegationToken(token.hmac(), new ExpireDelegationTokenOptions().expiryTimePeriodMs(expiryTimePeriodMs)).expiryTimestamp().get()
+[metals]   } catch {
+[metals]     case (_: ExecutionException) => throw new AssertionError("Metadata not sync yet.")
+[metals]   };
+[metals]   private def describeConfigs(topic: String): Iterable[ConfigEntry] = {
+[metals]     val topicResource = new ConfigResource(ConfigResource.Type.TOPIC, topic);
+[metals]     var configEntries: Iterable[ConfigEntry] = null;
+[metals]     TestUtils.waitUntilTrue((() => try {
+[metals]       val topicResponse = client.describeConfigs(java.util.List.of(topicResource)).all.get.get(topicResource);
+[metals]       configEntries = topicResponse.entries.asScala;
+[metals]       true
+[metals]     } catch {
+[metals]       case (e @ (_: ExecutionException)) if e.getCause.isInstanceOf[UnknownTopicOrPartitionException] => false
+[metals]     }), "Timed out waiting for describeConfigs");
+[metals]     configEntries
+[metals]   };
+[metals]   private def waitForDescribeAcls(client: Admin, filter: AclBindingFilter, acls: Set[AclBinding]): Unit = {
+[metals]     var lastResults: util.Collection[AclBinding] = null;
+[metals]     TestUtils.waitUntilTrue((() => {
+[metals]       lastResults = client.describeAcls(filter).values.get();
+[metals]       acls.$eq$eq(lastResults.asScala.toSet)
+[metals]     }), StringContext("timed out waiting for ACLs ", ".\\nActual ", "").s(acls, lastResults))
+[metals]   };
+[metals]   private def ensureAcls(bindings: Set[AclBinding]): Unit = {
+[metals]     client.createAcls(bindings.asJava).all().get();
+[metals]     bindings.foreach(((binding) => waitForDescribeAcls(client, binding.toFilter, Set(binding))))
+[metals]   };
+[metals]   private def getAcls(allTopicAcls: AclBindingFilter) = client.describeAcls(allTopicAcls).values.get().asScala.toSet;
+[metals]   def waitAndVerifyRemovedAcl(expectedToRemoved: AccessControlEntry, authorizerPlugin: Plugin[JAuthorizer], resource: ResourcePattern, accessControlEntryFilter: AccessControlEntryFilter = AccessControlEntryFilter.ANY): Unit = {
+[metals]     val newLine = scala.util.Properties.lineSeparator;
+[metals]     val authorizer = authorizerPlugin.get;
+[metals]     val filter = new AclBindingFilter(resource.toFilter, accessControlEntryFilter);
+[metals]     waitUntilTrue((() => authorizer.acls(filter).asScala.map(((x$17) => x$17.entry)).toSet.contains(expectedToRemoved).unary_$bang), StringContext("expected acl to be removed : ", "").s(expectedToRemoved).$plus(StringContext("but got:", "").s(authorizer.acls(filter).asScala.map(((x$18) => x$18.entry)).mkString(newLine.$plus("\t"), newLine.$plus("\t"), newLine))), 45000)
+[metals]   };
+[metals]   def waitAndVerifyAcl(expected: AccessControlEntry, authorizerPlugin: Plugin[JAuthorizer], resource: ResourcePattern, accessControlEntryFilter: AccessControlEntryFilter = AccessControlEntryFilter.ANY): Unit = {
+[metals]     val newLine = scala.util.Properties.lineSeparator;
+[metals]     val authorizer = authorizerPlugin.get;
+[metals]     val filter = new AclBindingFilter(resource.toFilter, accessControlEntryFilter);
+[metals]     waitUntilTrue((() => authorizer.acls(filter).asScala.map(((x$19) => x$19.entry)).toSet.contains(expected)), StringContext("expected to contain acl: ", "").s(expected).$plus(StringContext("but got:", "").s(authorizer.acls(filter).asScala.map(((x$20) => x$20.entry)).mkString(newLine.$plus("\t"), newLine.$plus("\t"), newLine))), 45000)
+[metals]   }
+[metals] }
+[metals]      while compiling: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
+[metals]         during phase: globalPhase=<no phase>, enteringPhase=typer
+[metals]      library version: version 2.13.18
+[metals]     compiler version: version 2.13.18
+[metals]   reconstructed args: -sourcepath /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/GroupCoordinatorBaseRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/network/DynamicNumNetworkThreadsTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/ClientOAuthIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DescribeClusterRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ReplicaManagerQuotasTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslClientsWithInvalidCredentialsTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/AbstractFetcherManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/TxnOffsetCommitRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/coordinator/group/CoordinatorPartitionWriterTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/metrics/MetricsTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/PlaintextConsumerAssignorsTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/share/DelayedShareFetchTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/MockLeaderEndPoint.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/TierStateMachineTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/GroupCoordinatorIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/AlterUserScramCredentialsRequestNotAuthorizedTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/HeartbeatRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ServerMetricsTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/AlterUserScramCredentialsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ConfigAdminManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/AuthorizerIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ConsumerGroupHeartbeatRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/tools/StorageToolTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ReplicaManagerConcurrencyTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ApiVersionsResponseIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/RegistrationTestContext.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/kafka/server/LocalLeaderEndPointTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/RaftManagerSslReconfigIntegrationTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/server/DynamicBrokerReconfigurationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/handlers/DescribeTopicPartitionsRequestHandlerTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ListGroupsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/EdgeCaseRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DescribeUserScramCredentialsRequestNotAuthorizedTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/EndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/network/SocketServerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/BaseQuotaTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/AbstractConsumerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/IncrementalAllocationProducerSendTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DynamicBrokerConfigTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/PlaintextEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/StreamsGroupTopologyDescriptionNoPluginRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ControllerApisTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/coordinator/transaction/TransactionCoordinatorTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/BaseConsumerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/integration/KafkaServerTestHarness.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/server/QuorumTestHarness.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/WriteTxnMarkersRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/BrokerLifecycleManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ControllerConfigurationValidatorTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/cluster/AssignmentStateTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/BaseAdminIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/FailingTopologyDescriptionPlugin.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/StreamsGroupHeartbeatRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ListOffsetsRequestWithRemoteStoreTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/IntegrationTestHarness.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslConsumerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SslProducerSendTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ReplicaAlterLogDirsThreadTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/MetricsTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SslEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/KafkaApisTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ServerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/admin/RemoteTopicCrudTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/raft/RaftManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/kafka/utils/LoggingTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/share/ShareFetchUtilsTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DelegationTokenRequestsTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/AlterReplicaLogDirsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/share/SharePartitionTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/share/SharePartitionCacheTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/StreamsGroupDescribeRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ReplicationQuotasTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslOAuthBearerSslEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DescribeLogDirsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/BrokerMetricNamesTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DescribeUserScramCredentialsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ShareGroupHeartbeatRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/kafka/utils/TestInfoUtils.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DeleteGroupsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/IsrExpirationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DelegationTokenRequestsOnPlainTextTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/server/DelayedFetchTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/metadata/BrokerMetadataPublisherTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/epoch/LeaderEpochIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ShareGroupDescribeRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/cluster/PartitionLockTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/share/ReplicaManagerLogReaderTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSetup.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/JoinGroupRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/UserClientIdQuotaTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/epoch/util/MockBlockingSender.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/KafkaMetricReporterExceptionHandlingTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/OffsetFetchRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/cluster/PartitionTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/FetcherThreadTestUtils.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/LogRecoveryTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslScramSslEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DeleteTopicsRequestWithDeletionDisabledTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/server/FetchFromFollowerIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/LogDirFailureTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DelegationTokenRequestsWithDisableTokenFeatureTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/kafka/server/KafkaRequestHandlerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/AbstractFetcherThreadTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/utils/TestUtils.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/coordinator/transaction/TransactionMarkerChannelManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/OffsetCommitRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/network/ConnectionQuotasTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/epoch/OffsetsForLeaderEpochTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/coordinator/transaction/TransactionCoordinatorConcurrencyTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SslAdminIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/network/DynamicConnectionQuotaTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/UserQuotaTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/log/LogConfigTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/AbstractSaslTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/MockTierStateMachine.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/server/GssapiAuthenticationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/share/SharePartitionManagerTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/BaseProducerSendTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ControllerMutationQuotaTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ConsumerGroupDescribeRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/AddPartitionsToTxnRequestServerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslMultiMechanismConsumerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ServerShutdownTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/java/kafka/server/share/ShareCoordinatorMetadataCacheHelperImplTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/PlaintextProducerSendTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/KafkaConfigTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslPlainSslEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslGssapiSslEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/KafkaConfigTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ConsumerProtocolMigrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/DelegationTokenEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/kafka/server/RemoteLeaderEndPointTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/docker/KafkaDockerWrapperTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/coordinator/transaction/TransactionMarkerRequestCompletionHandlerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/BaseRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/ClientIdQuotaTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/FixedPortTestUtils.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/KafkaRaftServerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/OffsetsForLeaderEpochRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/FetchRequestMaxBytesTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/FetchRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/RequestQuotaTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DeleteRecordsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/MockFetcherThread.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ControllerRegistrationManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/HighwatermarkPersistenceTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/BaseFetchRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ShareFetchAcknowledgeRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/cluster/AbstractPartitionTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/ConsumerBounceTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/PlaintextAdminIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DynamicConfigChangeTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/GroupEndToEndAuthorizationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ReplicaFetcherThreadTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DeleteTopicsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/AllocateProducerIdsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/LeaveGroupRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ListOffsetsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/StreamsGroupTopologyDescriptionRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SslConsumerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/kafka/server/metadata/ClientQuotaMetadataManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/server/MultipleListenersWithSameSecurityProtocolBaseTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/coordinator/transaction/TransactionStateManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/AbstractAuthorizerIntegrationTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/ReplicaManagerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/KafkaMetricsReporterTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/CustomQuotaCallbackTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/server/MultipleListenersWithDefaultJaasContextTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/coordinator/AbstractCoordinatorConcurrencyTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DescribeGroupsRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/DelegationTokenEndToEndAuthorizationWithOwnerTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/OffsetDeleteRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/TransactionsBounceTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/SyncGroupRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/server/MultipleListenersWithAdditionalJaasContextTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/unit/kafka/server/DescribeQuorumRequestTest.scala:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/ClusterTest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/DetectThreadLeak.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/ClusterFeature.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/ClusterTestDefaults.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/AutoStart.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/ClusterTests.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/ClusterConfigProperty.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/Type.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/ClusterTemplate.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/TestKitDefaults.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-internal-api/src/main/java/org/apache/kafka/common/test/api/ClusterConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionMetadata.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionStateManagerConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/PendingCompleteTxnAndMarkerEntry.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TxnMarkerQueue.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/RPCProducerIdManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionLogConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/InitProducerIdResult.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TxnMetadataCacheEntry.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/CoordinatorEpochAndTxnMetadata.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/PendingCompleteTxn.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionPartitionAndLeaderEpoch.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/AddPartitionsToTxnConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TxnTransitMetadata.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionalIdAndProducerIdEpoch.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/ProducerIdManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionalIdCoordinatorEpochAndMetadata.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionalIdCoordinatorEpochAndTransitMetadata.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionCoordinatorRecordSerde.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/transaction-coordinator/src/main/java/org/apache/kafka/coordinator/transaction/TransactionLog.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/group-coordinator/src/testFixtures/java/org/apache/kafka/coordinator/group/Assertions.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/testFixtures/java/org/apache/kafka/server/share/fetch/ShareFetchTestUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/testFixtures/java/org/apache/kafka/server/metrics/ClientMetricsTestUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/testFixtures/java/org/apache/kafka/server/MockNodeToControllerChannelManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/testFixtures/java/org/apache/kafka/server/util/MockAlterPartitionManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/testFixtures/java/org/apache/kafka/security/JaasTestUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/testFixtures/java/org/apache/kafka/security/JaasModule.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/testFixtures/java/org/apache/kafka/security/minikdc/MiniKdc.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/SslManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/TestKitNodes.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/KafkaClusterTestKit.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/AdminUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/junit/ClusterTestExtensions.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/KafkaClusterThreadFactory.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/MockFaultHandler.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/junit/ClusterInstanceParameterResolver.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/TestKitNode.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/junit/RaftClusterInvocationContext.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/TestUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/ClusterInstance.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/JaasUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/MockController.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/test-common/test-common-runtime/src/main/java/org/apache/kafka/common/test/PreboundSocketFactoryManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/util/timer/MockTimer.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/immutable/DelegationChecker.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/util/MockTime.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/common/MetadataVersionTestUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/fault/MockFaultHandler.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/util/ServerTestUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/timeline/TrackingSnapshotRegistry.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/util/MockScheduler.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/IntegrationTestUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server-common/src/testFixtures/java/org/apache/kafka/server/util/MockRandom.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/logger/Log4jCoreController.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/PartitionListener.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/AssignmentsManagerDeadlineFunction.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/purgatory/DeleteRecordsPartitionStatus.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ClientSensors.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/HostedPartition.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ReplicaQuota.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/AlterPartitionManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ApiVersionManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/DynamicConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/purgatory/ReplicaManagerAdapter.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ReplicaState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/logger/NoOpController.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ControllerInformation.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/BrokerReconfigurable.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/DelayedShareFetchPartitionKey.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/FetchSessionCacheShard.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/logger/Log4jControllerRegistration.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/util/TerseFailure.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/streams/InMemoryTopologyDescriptionPlugin.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/ClientTelemetryExporterPlugin.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ReplicaFetch.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/DefaultSupportedConfigChecker.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/Processor.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/DeliveryCountOps.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/TooManyConnectionsException.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ActionQueue.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/DefaultClientTelemetryPayload.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/session/ShareSessionCache.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/ClientMetricsInstanceMetadata.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/DefaultApiVersionManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/ShareGroupDLQRecordHelper.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/FetchContext.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/replica/ReplicaState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ControllerMutationQuotaManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/QuotaFactory.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/SimpleAssignmentState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/BrokerFeatures.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/logger/LoggingController.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/PartitionFetchState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/AcquisitionLockTimerTask.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/AssignmentsManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/KRaftTopicCreator.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/DefaultClientTelemetryContext.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/NodeToControllerQueueItem.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/ShareGroupDLQStateManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ThrottledChannel.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/ReplicationConfigs.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/FetchManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/metrics/ShareGroupMetrics.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/DynamicBrokerConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/package-info.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/DefaultShareGroupDLQManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/purgatory/DelayedDeleteRecords.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ResultWithPartitions.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/SimpleApiVersionManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/PartitionRotateStrategy.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/AcquisitionLockTimeoutHandler.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/OngoingReassignmentState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/context/FinalContext.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/EnvelopeUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/BaseRequest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/ClientMetricsConfigs.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/StartThrottlingResponse.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ProcessRole.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/ErroneousAndValidPartitionData.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/NoOpResponse.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/ConnectionThrottledException.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/StrictControllerMutationQuota.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/AuthHelper.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/context/ShareFetchContext.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/session/ShareSession.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/ClientMetricsInstance.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/TopicCreator.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/DelayedShareFetchGroupKey.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/PendingExpandIsr.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/logger/LoggingControllerMBean.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/ShareGroupDLQValidator.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/PartitionMaxBytesStrategy.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/logger/RuntimeLoggerManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ReplicationQuotaManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/DynamicProducerStateManagerConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/ShareGroupListener.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/BrokerServerMetrics.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ClientMetricsManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/ShareFetchPartitionData.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/AbstractKafkaConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/purgatory/DelayedFuturePurgatory.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/LeaderEndPoint.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/transaction/AddPartitionsToTxnManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/ShareAcquiredRecords.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/PendingShrinkIsr.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/LinuxIoMetricsCollector.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ThrottleCallback.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ClientRequestQuotaManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/purgatory/DelayedProduce.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/DelayedShareFetchKey.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/EndThrottlingResponse.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/LogAppendResult.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/NodeToControllerRequestThread.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/DynamicThreadPool.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/metrics/SharePartitionMetrics.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ClientQuotaManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/CallbackRequest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/NodeMetrics.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/LogDeleteRecordsResult.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/CachedSharePartition.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/security/authorizer/AclEntry.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ForwardingManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/Assignment.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/Response.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/ShutdownRequest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/ShareGroupDLQRecordFetcher.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/PermissiveControllerMutationQuota.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/InFlightState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/AutoTopicCreationManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ForwardingManagerImpl.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/RequestConvertToJson.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/PartitionMetadataProvider.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/AbstractControllerMutationQuota.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/metrics/RequestMetrics.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ForwardingManagerUtil.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/ClientQuotaManagerConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/SocketServerConfigs.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/metrics/RequestChannelMetrics.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/DefaultAlterPartitionManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/security/authorizer/AuthorizerUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/context/ShareSessionContext.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/RaftControllerNodeProvider.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/BrokerLifecycleManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/purgatory/DelayedFetch.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/ConnectionQuotaEntity.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/WakeupRequest.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/DefaultAutoTopicCreationManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/PartitionState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/AlterPartitionListener.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/Request.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/NoOpShareGroupDLQManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ExpiringErrorCache.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/SocketServer.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/CommittedPartitionState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/logger/LoggingControllerDelegate.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/session/ShareSessionKey.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/AlterPartitionItem.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/util/NetworkPartitionMetadataClient.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/purgatory/DelayedFuture.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/acknowledge/ShareAcknowledgementBatch.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/DynamicLogCleanerConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/FetchSession.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/DelayedActionQueue.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/controller/ControllerRegistrationManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/Session.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/InFlightBatch.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/quota/ControllerMutationQuota.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/MetricConfigs.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/replica/Replica.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/PendingPartitionChange.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/ShareGroupDLQMetadataCacheHelper.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/NodeToControllerChannelManagerImpl.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/metrics/ForwardingManagerMetrics.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/config/ReplicationQuotaManagerConfig.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/LogReader.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/ShareGroupDLQManager.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/partition/AssignmentState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/ShareFetch.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/SendResponse.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ServerSocketFactory.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/fetch/RecordState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/ConfigHelperUtils.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/server/share/dlq/ShareGroupDLQRecordParameter.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/src/main/java/org/apache/kafka/network/CloseConnectionResponse.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/Isolation.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/internals/BatchBuilder.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/errors/NotLeaderException.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/QuorumState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/internals/RecordsIterator.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/snapshot/RawSnapshotWriter.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/ValidOffsetAndEpoch.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/internals/BatchAccumulator.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/internals/AddVoterHandler.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/LeaderState.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/internals/EpochElection.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/RaftMessageQueue.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/internals/RequestSendResult.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/internals/RecordsDecodingStrategy.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/snapshot/RecordsSnapshotWriter.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/snapshot/RawSnapshotReader.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/errors/BufferAllocationException.java:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/raft/src/main/java/org/apache/kafka/raft/UnattachedS[community-build] 2026-10-09T07:23:10.460Z Captured screenshot: scala-to-java-definition/004-definition-verified.png
+    ✔ scala-to-java-definition (13187ms)
 
 Shutting down the browser
-[metals] 2026.10.08 16:45:37 INFO  Shutting down server
-[metals] 2026.10.08 16:45:37 INFO  Memory monitor stopped
-[metals] 2026.10.08 16:45:37 INFO  shutting down Metals
-[metals] 2026.10.08 16:45:37 INFO  Shut down connection with build server.
-[metals] 2026.10.08 16:45:37 INFO  Exiting server
 
-  2 passing (6m)
-  1 failing
+  3 passing (3m)
 
-  1) gradle / kafka
-       scala-to-java-definition:
-     Error: Go to Definition did not navigate to clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java: assertFutureThrows(
-      at testDefinition (out/src/navigation.test.js:60:15)
-      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-      at async /home/runner/work/metals-community-build/metals-community-build/out/src/community-build.test.js:39:29
-      at async executeScenario (out/src/test-support.js:91:9)
-      at async Context.<anonymous> (out/src/community-build.test.js:29:17)
-
-
-
-[33mINFO: Screenshots of failures can be found in: /home/runner/work/metals-community-build/metals-community-build/.test-resources/screenshots/20261008T164007
-[0m
+Verified 12 scenario screenshots

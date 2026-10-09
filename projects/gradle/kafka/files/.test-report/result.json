@@ -4,26 +4,25 @@
   "buildTool": "gradle",
   "repository": "apache/kafka",
   "ref": "trunk",
-  "status": "failed",
+  "status": "passed",
   "scenarios": [
     {
       "id": "import-test-fixtures",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 200629
+      "durationMs": 113271
     },
     {
       "id": "test-fixtures-target",
       "kind": "java-diagnostics",
       "status": "passed",
-      "durationMs": 10189
+      "durationMs": 17812
     },
     {
       "id": "scala-to-java-definition",
       "kind": "go-to-definition",
-      "status": "failed",
-      "durationMs": 109342,
-      "error": "Go to Definition did not navigate to clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java: assertFutureThrows("
+      "status": "passed",
+      "durationMs": 13183
     }
   ]
 }
