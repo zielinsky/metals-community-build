@@ -77,6 +77,7 @@ jobs:
         with:
           module-root: ${{ matrix.workspacePath }}
           bazelisk-cache: true
+          disk-cache: true
           repository-cache: true
           cache-save: true
 

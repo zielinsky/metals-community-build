@@ -106,7 +106,7 @@ Screen potwierdzający wynik: `*-imports-resolved.png`.
 
 ## `java-test-discovery` — Wykrywanie testu
 
-Wymaga ikonki uruchomienia przy linii wskazanej metody, bez uruchamiania testu. Nie zalicza ikonki innej metody.
+Wymaga ikonki uruchomienia przy linii wskazanej metody, bez uruchamiania testu. Nie zalicza ikonki innej metody ani klasy. Jeśli ikonka nie pojawi się w 30 s, runner raz otwiera widok Testing (jak zrobiłby użytkownik) i wraca do edytora.
 
 ```json
 {
@@ -139,7 +139,7 @@ Screen potwierdzający wynik: `*-hover-verified.png`.
 
 ## `go-to-definition` — Przejście do definicji
 
-Uruchamia Go to Definition i sprawdza pełną ścieżkę otwartego pliku oraz tekst na linii, na której wylądował kursor. Działa również z pliku Scala do źródła Javy w innym module.
+Uruchamia Go to Definition i sprawdza pełną ścieżkę otwartego pliku oraz tekst na linii, na której wylądował kursor. Działa również z pliku Scala do źródła Javy w innym module. Przy wielu definicjach (np. przeciążeniach importowanej metody) VS Code jest skonfigurowany na przejście do pierwszej zamiast podglądu (`editor.gotoLocation.multipleDefinitions: goto` w `settings.base.json`). Polecenie jest ponawiane do 90 s, bo implementacje pochodzą z indeksu, który może jeszcze się budować.
 
 ```json
 {
@@ -237,7 +237,7 @@ Screen potwierdzający wynik: `*-completion-verified.png`.
 
 ## `find-references` — Wyszukiwanie referencji
 
-Ustawia kursor na symbolu, uruchamia Peek References i odczytuje liczbę wyników z nagłówka podglądu. Wymaga co najmniej `minimumCount` referencji oraz, jeśli podano `files`, obecności tych plików wśród wyników. Wyszukiwanie obejmuje symbole z JDK i zależności, więc nadaje się do sprawdzania indeksu semanticdb całego workspace.
+Ustawia kursor na symbolu, uruchamia Peek References i odczytuje liczbę wyników z nagłówka podglądu. Wymaga co najmniej `minimumCount` referencji oraz, jeśli podano `files`, obecności tych plików wśród wyników; drzewo podglądu jest przewijane klawiaturą, więc pliki spoza pierwszej strony też są widziane. Wyszukiwanie obejmuje symbole z JDK i zależności, więc nadaje się do sprawdzania indeksu semanticdb całego workspace.
 
 ```json
 {
@@ -355,7 +355,7 @@ Screen potwierdzający wynik: `*-application-started.png`.
 
 ## `java-debug-test` — Debugowanie testu Java
 
-Ustawia breakpoint, wybiera Debug Test z menu ikonki testu, wymaga zatrzymania na dokładnie wskazanej linii, kontynuuje i sprawdza sukces testu. Na końcu usuwa breakpoint i zatrzymuje sesję.
+Ustawia breakpoint, wybiera Debug Test z menu ikonki testu, wymaga zatrzymania na dokładnie wskazanej linii, kontynuuje i sprawdza sukces testu. Na końcu usuwa breakpoint i zatrzymuje sesję. Gdy Metals zaloguje „Timeout while starting the debug session” (pierwsza kompilacja Bazela trwa dłużej niż limit startu sesji), runner ponawia Debug Test w ramach 15-minutowego budżetu.
 
 ```json
 {
@@ -373,7 +373,7 @@ Screen potwierdzający wynik: `*-debug-test-finished.png`.
 
 ## Brak ikonki testu i timeouty
 
-Discovery i debug czekają do 120 s na ikonkę przy właściwej metodzie w już otwartym pliku. Nie zamykają i nie otwierają go ponownie, nie dopisują spacji i nie zapisują sztucznych zmian. Brak ikonki po tym czasie oznacza błąd scenariusza. Referencje, hierarchia typów i podświetlenia czekają do 60 s na wynik; code action jest ponawiany do 2 minut.
+Discovery i debug czekają do 120 s na ikonkę przy właściwej metodzie w już otwartym pliku. Nie zamykają i nie otwierają go ponownie, nie dopisują spacji i nie zapisują sztucznych zmian; jedyną dodatkową akcją jest jednorazowe otwarcie widoku Testing po 30 s. Pozycje kursora są liczone w znakach, więc pliki wcięte tabulatorami działają tak samo jak wcięte spacjami. Brak ikonki po tym czasie oznacza błąd scenariusza. Referencje, hierarchia typów i podświetlenia czekają do 60 s na wynik; code action jest ponawiany do 2 minut.
 
 ## Wyniki i screeny
 

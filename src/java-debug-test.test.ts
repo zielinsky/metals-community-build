@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
 
 import {
   By,
@@ -19,6 +21,7 @@ import {
   delay,
   log,
   prepareMbt,
+  workspace,
 } from "./test-support";
 
 async function visibleMenuItems(): Promise<WebElement[]> {
@@ -79,6 +82,37 @@ async function openDebugTest(glyph: WebElement, testName: string): Promise<void>
     `Could not select 'Debug Test' for '${testName}'. ` +
       `Focused menu items: ${JSON.stringify(seen)}`,
   );
+}
+
+/**
+ * Metals gives a debug session a fixed time to start. The first run in a
+ * fresh Bazel workspace compiles the test target and can exceed it, in which
+ * case Metals logs a timeout and VS Code never shows the debug toolbar. The
+ * compilation keeps running, so relaunching from the gutter usually starts
+ * the session within the same overall budget.
+ */
+async function launchDebugSession(testName: string): Promise<DebugToolbar> {
+  const deadline = Date.now() + 15 * 60 * 1000;
+  const metalsLog = resolve(workspace, ".metals", "metals.log");
+  let attempt = 0;
+  while (true) {
+    attempt += 1;
+    const loggedBefore = existsSync(metalsLog) ? readFileSync(metalsLog, "utf8").length : 0;
+    const glyph = await waitForTestGutter(testName);
+    await openDebugTest(glyph, testName);
+    const budget = Math.min(5 * 60 * 1000, deadline - Date.now());
+    try {
+      return await DebugToolbar.create(budget);
+    } catch (error) {
+      const logged = existsSync(metalsLog) ? readFileSync(metalsLog, "utf8").slice(loggedBefore) : "";
+      const timedOut = /Timeout while starting the debug session/i.test(logged);
+      if (!timedOut || Date.now() >= deadline - 60_000) throw error;
+      log(`Metals timed out starting the debug session (attempt ${attempt}); relaunching`);
+      await captureScreenshot(`debug-start-timeout-${attempt}`);
+      await VSBrowser.instance.driver.actions().sendKeys(Key.ESCAPE).perform().catch(() => undefined);
+      await delay(5_000);
+    }
+  }
 }
 
 async function waitForPausedLine(
@@ -185,10 +219,7 @@ export async function testJavaDebug(
 
   let toolbar: DebugToolbar | undefined;
   try {
-    const glyph = await waitForTestGutter(scenario.testName);
-    await openDebugTest(glyph, scenario.testName);
-
-    toolbar = await DebugToolbar.create(15 * 60 * 1000);
+    toolbar = await launchDebugSession(scenario.testName);
     await toolbar.waitForBreakPoint(10 * 60 * 1000);
     await waitForPausedLine(editor, scenario.breakpoint.line, 30_000);
     log(`Debugger stopped at line ${scenario.breakpoint.line}`);

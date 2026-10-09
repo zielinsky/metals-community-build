@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 
 import {
   By,
@@ -11,7 +11,7 @@ import {
 } from "vscode-extension-tester";
 
 import type { RenameScenario } from "../scripts/config";
-import { editorText } from "./editor-actions";
+import { editorText, restoreSource } from "./editor-actions";
 import {
   captureScreenshot,
   captureFailure,
@@ -92,9 +92,21 @@ async function verifyRename(scenario: RenameScenario): Promise<void> {
     "a",
   );
   log(`Renaming ${symbol} to ${newName}`);
-  await input.sendKeys(selectAll, newName, Key.ENTER);
-
   const driver = VSBrowser.instance.driver;
+  // Keystrokes sent while the rename box is still being laid out get dropped,
+  // so the typed value is verified before it is accepted.
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    await input.sendKeys(selectAll, newName);
+    const typed = await driver.wait(
+      async () => (await input.getAttribute("value").catch(() => "")) === newName,
+      2_000,
+    ).then(() => true, () => false);
+    if (typed) break;
+    log(`Rename box contains '${await input.getAttribute("value").catch(() => "")}'; retyping`);
+    await delay(500);
+  }
+  assert.equal(await input.getAttribute("value"), newName, "Rename box did not accept the new name");
+  await input.sendKeys(Key.ENTER);
   await driver.wait(async () => {
     try {
       const text = await editor.getText();
@@ -143,7 +155,9 @@ export async function testRenameSymbol(
     await captureFailure();
     throw error;
   } finally {
-    writeFileSync(openFile, original);
+    // Also reverts the editor buffer, otherwise a failed rename leaks into the
+    // next scenario as an unsaved modification.
+    await restoreSource(openFile, original);
     log(`Restored ${openFile}`);
   }
 }

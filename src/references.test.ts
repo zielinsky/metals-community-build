@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { basename, dirname } from "node:path";
-import { By, TextEditor, VSBrowser, Workbench } from "vscode-extension-tester";
+import { By, Key, TextEditor, VSBrowser, Workbench } from "vscode-extension-tester";
 import type { WebElement } from "selenium-webdriver";
 
 import type { DocumentHighlightScenario, ReferencesScenario } from "../scripts/config";
@@ -35,6 +35,27 @@ async function readPeek(widget: WebElement): Promise<PeekState> {
   return { total, rows, title: title ?? "", message: message ?? "" };
 }
 
+/**
+ * The peek tree is virtualized, so only the rows near the top exist in the
+ * DOM. Page through the tree with the keyboard and collect every row seen.
+ */
+async function collectRows(widget: WebElement): Promise<string[]> {
+  const driver = VSBrowser.instance.driver;
+  const seen = new Set<string>(await visibleTexts(".ref-tree .monaco-list-row", widget));
+  const lists = await widget.findElements(By.css(".ref-tree .monaco-list"));
+  if (lists.length === 0) return [...seen];
+  let unchanged = 0;
+  for (let page = 0; page < 60 && unchanged < 2; page += 1) {
+    await lists[0].sendKeys(Key.PAGE_DOWN).catch(() => undefined);
+    await driver.sleep(150);
+    const before = seen.size;
+    for (const row of await visibleTexts(".ref-tree .monaco-list-row", widget)) seen.add(row);
+    unchanged = seen.size === before ? unchanged + 1 : 0;
+  }
+  await lists[0].sendKeys(Key.HOME).catch(() => undefined);
+  return [...seen];
+}
+
 function mentionsFile(texts: string[], file: string): boolean {
   const name = basename(file);
   const directory = dirname(file);
@@ -57,9 +78,12 @@ export async function testFindReferences(scenario: ReferencesScenario): Promise<
       for (const widget of widgets) {
         if (!(await widget.isDisplayed().catch(() => false))) continue;
         state = await readPeek(widget).catch(() => state);
-        const texts = [state.title, ...state.rows];
-        return state.total >= scenario.references.minimumCount &&
-          scenario.references.files.every((file) => mentionsFile(texts, file));
+        if (state.total < scenario.references.minimumCount) return false;
+        const missing = (texts: string[]) =>
+          scenario.references.files.filter((file) => !mentionsFile(texts, file));
+        if (missing([state.title, ...state.rows]).length === 0) return true;
+        state = { ...state, rows: await collectRows(widget).catch(() => state.rows) };
+        return missing([state.title, ...state.rows]).length === 0;
       }
       return false;
     }, 60_000, "References did not match").catch(() => {

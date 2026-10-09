@@ -18,9 +18,35 @@ export async function editorText(editor: TextEditor): Promise<string> {
   return previous;
 }
 
+/**
+ * Moves the caret with "Go to Line/Column". ExTester's setCursor() verifies
+ * the column against the status bar, which shows the visual column, so it
+ * never settles in files indented with tabs; only the line is verified here.
+ */
+export async function setCaret(editor: TextEditor, line: number, column: number): Promise<void> {
+  const driver = VSBrowser.instance.driver;
+  const prompt = await new Workbench().openCommandPrompt();
+  await driver.actions().clear();
+  try {
+    await prompt.setText(`:${line},${column}`);
+    await driver.wait(async () => (await prompt.getQuickPicks().catch(() => [])).length > 0, 5_000)
+      .catch(() => undefined);
+    await prompt.confirm();
+  } finally {
+    await driver.actions().clear();
+  }
+  await driver.wait(async () => {
+    try {
+      return (await editor.getCoordinates())[0] === line;
+    } catch {
+      return false;
+    }
+  }, 10_000, `Could not move the caret to line ${line}`);
+}
+
 export async function selectExactText(editor: TextEditor, text: string, near?: string): Promise<void> {
   const [line, column] = sourceSelection(await editorText(editor), text, near);
-  await editor.setCursor(line, column);
+  await setCaret(editor, line, column);
   const actions = VSBrowser.instance.driver.actions();
   await actions.clear();
   actions.keyDown(Key.SHIFT);
@@ -37,7 +63,7 @@ export async function selectExactText(editor: TextEditor, text: string, near?: s
 export async function clickSymbol(editor: TextEditor, text: string, near?: string): Promise<void> {
   const source = await editorText(editor);
   const [line, column] = sourceSelection(source, text, near);
-  await editor.setCursor(line, column + 1);
+  await setCaret(editor, line, column + 1);
   const expectedLine = source.split(/\r?\n/)[line - 1].replace(/\s+/g, " ").trim();
   for (const viewLine of await editor.findElements(By.css(".view-lines .view-line"))) {
     if (!(await viewLine.isDisplayed().catch(() => false))) continue;
@@ -56,7 +82,7 @@ export async function clickSymbol(editor: TextEditor, text: string, near?: strin
 /** Put the caret inside the first character of `text` without selecting anything. */
 export async function placeCursorInside(editor: TextEditor, text: string, near?: string): Promise<void> {
   const [line, column] = sourceSelection(await editorText(editor), text, near);
-  await editor.setCursor(line, column + 1);
+  await setCaret(editor, line, column + 1);
 }
 
 /**
@@ -157,13 +183,29 @@ export async function findTestGutter(testName: string): Promise<WebElement | und
   return undefined;
 }
 
+/**
+ * Waits for the run gutter of `testName`. VS Code resolves test items lazily
+ * in some sessions, so when nothing shows up within the first 30 s the Test
+ * Explorer view is opened once, which is what a user would do, and the editor
+ * is focused again.
+ */
 export async function waitForTestGutter(testName: string, timeoutMs = 120_000): Promise<WebElement> {
+  const driver = VSBrowser.instance.driver;
   await new TextEditor().selectText(testName);
-  const glyph = await VSBrowser.instance.driver.wait(
-    async () => (await findTestGutter(testName).catch(() => undefined)) || false,
-    timeoutMs,
-    `Test gutter did not appear for '${testName}'`,
-  );
-  if (!glyph) throw new Error(`Missing test gutter: ${testName}`);
-  return glyph;
+  const deadline = Date.now() + timeoutMs;
+  let openedExplorer = false;
+  while (Date.now() < deadline) {
+    const glyph = await findTestGutter(testName).catch(() => undefined);
+    if (glyph) return glyph;
+    if (!openedExplorer && Date.now() > deadline - timeoutMs + 30_000) {
+      openedExplorer = true;
+      console.log(`[community-build] Opening the Test Explorer to trigger discovery of '${testName}'`);
+      await new Workbench().executeCommand("Testing: Focus on Test Explorer View").catch(() => undefined);
+      await new Promise((done) => setTimeout(done, 2_000));
+      await new Workbench().executeCommand("View: Focus Active Editor Group").catch(() => undefined);
+      await new TextEditor().selectText(testName).catch(() => undefined);
+    }
+    await new Promise((done) => setTimeout(done, 500));
+  }
+  throw new Error(`Test gutter did not appear for '${testName}'`);
 }
