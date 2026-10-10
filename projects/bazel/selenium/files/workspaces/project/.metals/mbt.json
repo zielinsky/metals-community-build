@@ -10674,60 +10674,6 @@
         }
       ]
     },
-    "//java/src/org/openqa/selenium/devtools/v152": {
-      "sources": [
-        "java/src/org/openqa/selenium/devtools/v152/create-cdp-srcs",
-        "java/src/org/openqa/selenium/devtools/v152/package-info.java",
-        "java/src/org/openqa/selenium/devtools/v152/v152CdpInfo.java",
-        "java/src/org/openqa/selenium/devtools/v152/v152Domains.java",
-        "java/src/org/openqa/selenium/devtools/v152/v152Events.java",
-        "java/src/org/openqa/selenium/devtools/v152/v152Javascript.java",
-        "java/src/org/openqa/selenium/devtools/v152/v152Log.java",
-        "java/src/org/openqa/selenium/devtools/v152/v152Network.java",
-        "java/src/org/openqa/selenium/devtools/v152/v152Target.java"
-      ],
-      "scalacOptions": [],
-      "javacOptions": [
-        "-parameters",
-        "-Xep:NullAway:WARN",
-        "-XepOpt:NullAway:AnnotatedPackages=org.openqa.selenium",
-        "-Xep:NullAway:ERROR"
-      ],
-      "dependencyModules": [
-        "com.github.javaparser:javaparser-core:3.28.2",
-        "com.google.auto.service:auto-service-annotations:1.1.1",
-        "com.google.auto.service:auto-service:1.1.1",
-        "com.google.auto:auto-common:1.2.2",
-        "com.google.errorprone:error_prone_annotations:2.5.1",
-        "com.google.guava:failureaccess:1.0.3",
-        "com.google.guava:guava:33.7.2-jre",
-        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
-        "com.google.j2objc:j2objc-annotations:2.8",
-        "com.uber.nullaway:nullaway:0.14.2",
-        "io.opentelemetry:opentelemetry-api:1.66.0",
-        "io.opentelemetry:opentelemetry-common:1.66.0",
-        "io.opentelemetry:opentelemetry-context:1.66.0",
-        "io.opentelemetry:opentelemetry-exporter-logging:1.66.0",
-        "io.opentelemetry:opentelemetry-sdk-common:1.66.0",
-        "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.66.0",
-        "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.66.0",
-        "io.opentelemetry:opentelemetry-sdk-logs:1.66.0",
-        "io.opentelemetry:opentelemetry-sdk-metrics:1.66.0",
-        "io.opentelemetry:opentelemetry-sdk-trace:1.66.0",
-        "io.opentelemetry:opentelemetry-sdk:1.66.0",
-        "java.src.org.openqa.selenium:manifest-entries.jar:local",
-        "java.src.org.openqa.selenium:version.jar:local",
-        "net.bytebuddy:byte-buddy:1.18.14",
-        "org.checkerframework:checker-qual:4.3.0",
-        "org.checkerframework:dataflow-nullaway:4.2.3",
-        "org.jetbrains:annotations:26.1.0",
-        "org.jspecify:jspecify:1.0.1"
-      ],
-      "dependsOn": [
-        "//java"
-      ],
-      "classDirectories": []
-    },
     "//java/test/org/openqa/selenium/bidi/protocol/script": {
       "sources": [
         "java/test/org/openqa/selenium/bidi/protocol/script/NodePropertiesTest.java",
@@ -10789,6 +10735,60 @@
           "framework": "JUnit"
         }
       ]
+    },
+    "//java/src/org/openqa/selenium/devtools/v155": {
+      "sources": [
+        "java/src/org/openqa/selenium/devtools/v155/create-cdp-srcs",
+        "java/src/org/openqa/selenium/devtools/v155/package-info.java",
+        "java/src/org/openqa/selenium/devtools/v155/v155CdpInfo.java",
+        "java/src/org/openqa/selenium/devtools/v155/v155Domains.java",
+        "java/src/org/openqa/selenium/devtools/v155/v155Events.java",
+        "java/src/org/openqa/selenium/devtools/v155/v155Javascript.java",
+        "java/src/org/openqa/selenium/devtools/v155/v155Log.java",
+        "java/src/org/openqa/selenium/devtools/v155/v155Network.java",
+        "java/src/org/openqa/selenium/devtools/v155/v155Target.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "-parameters",
+        "-Xep:NullAway:WARN",
+        "-XepOpt:NullAway:AnnotatedPackages=org.openqa.selenium",
+        "-Xep:NullAway:ERROR"
+      ],
+      "dependencyModules": [
+        "com.github.javaparser:javaparser-core:3.28.2",
+        "com.google.auto.service:auto-service-annotations:1.1.1",
+        "com.google.auto.service:auto-service:1.1.1",
+        "com.google.auto:auto-common:1.2.2",
+        "com.google.errorprone:error_prone_annotations:2.5.1",
+        "com.google.guava:failureaccess:1.0.3",
+        "com.google.guava:guava:33.7.2-jre",
+        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        "com.google.j2objc:j2objc-annotations:2.8",
+        "com.uber.nullaway:nullaway:0.14.2",
+        "io.opentelemetry:opentelemetry-api:1.66.0",
+        "io.opentelemetry:opentelemetry-common:1.66.0",
+        "io.opentelemetry:opentelemetry-context:1.66.0",
+        "io.opentelemetry:opentelemetry-exporter-logging:1.66.0",
+        "io.opentelemetry:opentelemetry-sdk-common:1.66.0",
+        "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.66.0",
+        "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.66.0",
+        "io.opentelemetry:opentelemetry-sdk-logs:1.66.0",
+        "io.opentelemetry:opentelemetry-sdk-metrics:1.66.0",
+        "io.opentelemetry:opentelemetry-sdk-trace:1.66.0",
+        "io.opentelemetry:opentelemetry-sdk:1.66.0",
+        "java.src.org.openqa.selenium:manifest-entries.jar:local",
+        "java.src.org.openqa.selenium:version.jar:local",
+        "net.bytebuddy:byte-buddy:1.18.14",
+        "org.checkerframework:checker-qual:4.3.0",
+        "org.checkerframework:dataflow-nullaway:4.2.3",
+        "org.jetbrains:annotations:26.1.0",
+        "org.jspecify:jspecify:1.0.1"
+      ],
+      "dependsOn": [
+        "//java"
+      ],
+      "classDirectories": []
     },
     "//java/src/org/openqa/selenium/devtools/v154": {
       "sources": [
@@ -13497,6 +13497,7 @@
         "java/test/org/openqa/selenium/ClearTest.java",
         "java/test/org/openqa/selenium/ClickScrollingTest.java",
         "java/test/org/openqa/selenium/ClickTest.java",
+        "java/test/org/openqa/selenium/CloseExtraWindowsTest.java",
         "java/test/org/openqa/selenium/ContentEditableTest.java",
         "java/test/org/openqa/selenium/CookieImplementationTest.java",
         "java/test/org/openqa/selenium/CookieTest.java",
@@ -13708,6 +13709,12 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/ClickTest-edge.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/ClickTest-firefox-beta.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/ClickTest-safari.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/CloseExtraWindowsTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/CloseExtraWindowsTest-chrome.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/CloseExtraWindowsTest-chrome-beta.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/CloseExtraWindowsTest-edge.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/CloseExtraWindowsTest-firefox-beta.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/CloseExtraWindowsTest-safari.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/ContentEditableTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/ContentEditableTest-chrome.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/ContentEditableTest-chrome-beta.jar",
@@ -14093,6 +14100,12 @@
         "//java/test/org/openqa/selenium:ClickTest-edge",
         "//java/test/org/openqa/selenium:ClickTest-firefox-beta",
         "//java/test/org/openqa/selenium:ClickTest-safari",
+        "//java/test/org/openqa/selenium:CloseExtraWindowsTest",
+        "//java/test/org/openqa/selenium:CloseExtraWindowsTest-chrome",
+        "//java/test/org/openqa/selenium:CloseExtraWindowsTest-chrome-beta",
+        "//java/test/org/openqa/selenium:CloseExtraWindowsTest-edge",
+        "//java/test/org/openqa/selenium:CloseExtraWindowsTest-firefox-beta",
+        "//java/test/org/openqa/selenium:CloseExtraWindowsTest-safari",
         "//java/test/org/openqa/selenium:ContentEditableTest",
         "//java/test/org/openqa/selenium:ContentEditableTest-chrome",
         "//java/test/org/openqa/selenium:ContentEditableTest-chrome-beta",
@@ -14701,6 +14714,42 @@
           "className": "org.openqa.selenium.ClickTest",
           "sourcePath": "java/test/org/openqa/selenium/ClickTest.java",
           "configuration": "//java/test/org/openqa/selenium:ClickTest-safari",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.CloseExtraWindowsTest",
+          "sourcePath": "java/test/org/openqa/selenium/CloseExtraWindowsTest.java",
+          "configuration": "//java/test/org/openqa/selenium:CloseExtraWindowsTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.CloseExtraWindowsTest",
+          "sourcePath": "java/test/org/openqa/selenium/CloseExtraWindowsTest.java",
+          "configuration": "//java/test/org/openqa/selenium:CloseExtraWindowsTest-chrome",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.CloseExtraWindowsTest",
+          "sourcePath": "java/test/org/openqa/selenium/CloseExtraWindowsTest.java",
+          "configuration": "//java/test/org/openqa/selenium:CloseExtraWindowsTest-chrome-beta",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.CloseExtraWindowsTest",
+          "sourcePath": "java/test/org/openqa/selenium/CloseExtraWindowsTest.java",
+          "configuration": "//java/test/org/openqa/selenium:CloseExtraWindowsTest-edge",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.CloseExtraWindowsTest",
+          "sourcePath": "java/test/org/openqa/selenium/CloseExtraWindowsTest.java",
+          "configuration": "//java/test/org/openqa/selenium:CloseExtraWindowsTest-firefox-beta",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.CloseExtraWindowsTest",
+          "sourcePath": "java/test/org/openqa/selenium/CloseExtraWindowsTest.java",
+          "configuration": "//java/test/org/openqa/selenium:CloseExtraWindowsTest-safari",
           "framework": "JUnit"
         },
         {
@@ -17500,6 +17549,7 @@
     "//java/test/org/openqa/selenium/testing": {
       "sources": [
         "java/test/org/openqa/selenium/testing/CaptureLoggingRule.java",
+        "java/test/org/openqa/selenium/testing/CloseExtraWindowsAfterTest.java",
         "java/test/org/openqa/selenium/testing/Ignore.java",
         "java/test/org/openqa/selenium/testing/IgnoreComparator.java",
         "java/test/org/openqa/selenium/testing/IgnoreComparatorUnitTest.java",
