@@ -1688,6 +1688,56 @@
       ],
       "classDirectories": []
     },
+    "//test/coverage_jacoco_runtime": {
+      "sources": [
+        "test/coverage_jacoco_runtime/Helper.scala",
+        "test/coverage_jacoco_runtime/JacocoRuntimeScala3Test.scala",
+        "test/coverage_jacoco_runtime/JacocoRuntimeTest.scala",
+        "test/coverage_jacoco_runtime/Main.scala",
+        "test/coverage_jacoco_runtime/User.scala",
+        "test/coverage_jacoco_runtime/UserScala3.scala"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_jacoco_runtime/bin.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_jacoco_runtime/test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_jacoco_runtime/test_scala3.jar"
+      ],
+      "configurations": [
+        "//test/coverage_jacoco_runtime:bin",
+        "//test/coverage_jacoco_runtime:test",
+        "//test/coverage_jacoco_runtime:test_scala3"
+      ],
+      "mainClasses": [
+        {
+          "className": "coverage_jacoco_runtime.Main",
+          "configuration": "//test/coverage_jacoco_runtime:bin"
+        }
+      ],
+      "testClasses": [
+        {
+          "className": "coverage_jacoco_runtime.JacocoRuntimeScala3Test",
+          "sourcePath": "test/coverage_jacoco_runtime/JacocoRuntimeScala3Test.scala",
+          "configuration": "//test/coverage_jacoco_runtime:test_scala3"
+        },
+        {
+          "className": "coverage_jacoco_runtime.JacocoRuntimeTest",
+          "sourcePath": "test/coverage_jacoco_runtime/JacocoRuntimeTest.scala",
+          "configuration": "//test/coverage_jacoco_runtime:test"
+        }
+      ]
+    },
     "//test/src/main/scala/scalarules/test/twitter_scrooge/prefix_test/e/f/b/c/d": {
       "sources": [],
       "scalacOptions": [],
@@ -2490,6 +2540,8 @@
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/Reporter213.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/ScalaVersion.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/AstUsedJarFinder.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/CompilerCompat.scala",
+        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/CompilerCompat310.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/DependencyAnalyzer.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/HighLevelCrawlUsedJarFinder.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/ScalaVersion.scala"
