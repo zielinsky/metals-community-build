@@ -2810,6 +2810,7 @@
         "kafka-core",
         "metadata",
         "mirror-client",
+        "mirror-coordinator",
         "raft",
         "runtime",
         "server",
@@ -3703,6 +3704,7 @@
         "group-coordinator",
         "group-coordinator-api",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server-common",
         "share-coordinator",
@@ -3829,6 +3831,7 @@
         "group-coordinator-api",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -4197,6 +4200,7 @@
         "group-coordinator",
         "group-coordinator-api",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server-common",
         "share-coordinator",
@@ -4507,6 +4511,7 @@
         "group-coordinator-api",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -5129,6 +5134,7 @@
         "json",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "runtime",
         "server",
@@ -5524,6 +5530,7 @@
         "group-coordinator-api",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -5727,6 +5734,7 @@
         "json",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "runtime",
         "server",
@@ -5906,6 +5914,39 @@
         "streams/upgrade-system-tests-42/build/classes/java/main"
       ],
       "projectPath": ":streams:upgrade-system-tests-42"
+    },
+    "mirror-coordinator": {
+      "sources": [
+        "mirror-coordinator/src/main/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "17",
+        "-encoding",
+        "UTF-8",
+        "-Xlint:all",
+        "-Xlint:-serial",
+        "-Xlint:-try",
+        "-Werror"
+      ],
+      "dependencyModules": [
+        "at.yawk.lz4:lz4-java:1.11.4",
+        "com.github.luben:zstd-jni:1.5.7-17",
+        "com.google.protobuf:protobuf-java:3.25.5",
+        "commons-net:commons-net:3.13.0",
+        "io.opentelemetry.proto:opentelemetry-proto:1.3.2-alpha",
+        "org.slf4j:slf4j-api:1.7.36",
+        "org.xerial.snappy:snappy-java:1.1.10.11"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
+      "dependsOn": [
+        "clients"
+      ],
+      "classDirectories": [
+        "mirror-coordinator/build/classes/java/main"
+      ],
+      "projectPath": ":mirror-coordinator"
     },
     "raft": {
       "sources": [
@@ -6224,6 +6265,7 @@
         "group-coordinator-api",
         "json",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "runtime",
         "server",
@@ -6381,6 +6423,7 @@
         "group-coordinator",
         "group-coordinator-api",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -7472,6 +7515,7 @@
         "group-coordinator",
         "group-coordinator-api",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -7799,6 +7843,7 @@
         "group-coordinator-api",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -8196,6 +8241,7 @@
         "json",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -8665,6 +8711,7 @@
         "json",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -9197,6 +9244,7 @@
         "group-coordinator-api",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -9438,6 +9486,67 @@
       ],
       "projectPath": ":storage:storage-api"
     },
+    "mirror-coordinator:test": {
+      "sources": [
+        "mirror-coordinator/src/test/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "17",
+        "-encoding",
+        "UTF-8",
+        "-parameters"
+      ],
+      "dependencyModules": [
+        "at.yawk.lz4:lz4-java:1.11.4",
+        "biz.aQute.bnd:biz.aQute.bnd.annotation:7.1.0",
+        "com.fasterxml.jackson.core:jackson-annotations:2.22",
+        "com.fasterxml.jackson.core:jackson-core:2.22.3",
+        "com.fasterxml.jackson.core:jackson-databind:2.22.3",
+        "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.22.3",
+        "com.github.luben:zstd-jni:1.5.7-17",
+        "com.google.errorprone:error_prone_annotations:2.38.0",
+        "com.google.protobuf:protobuf-java:3.25.5",
+        "commons-net:commons-net:3.13.0",
+        "io.opentelemetry.proto:opentelemetry-proto:1.3.2-alpha",
+        "net.bytebuddy:byte-buddy:1.17.7",
+        "net.bytebuddy:byte-buddy-agent:1.17.7",
+        "org.apache.logging.log4j:log4j-api:2.25.5",
+        "org.apache.logging.log4j:log4j-core:2.25.5",
+        "org.apache.logging.log4j:log4j-slf4j-impl:2.25.5",
+        "org.apiguardian:apiguardian-api:1.1.2",
+        "org.jspecify:jspecify:1.0.0",
+        "org.junit.jupiter:junit-jupiter:5.14.4",
+        "org.junit.jupiter:junit-jupiter-api:5.14.4",
+        "org.junit.jupiter:junit-jupiter-engine:5.14.4",
+        "org.junit.jupiter:junit-jupiter-params:5.14.4",
+        "org.junit.platform:junit-platform-commons:1.14.4",
+        "org.junit.platform:junit-platform-engine:1.14.4",
+        "org.junit.platform:junit-platform-launcher:1.14.4",
+        "org.mockito:mockito-core:5.24.0",
+        "org.objenesis:objenesis:3.3",
+        "org.opentest4j:opentest4j:1.3.0",
+        "org.osgi:org.osgi.annotation.bundle:2.0.0",
+        "org.osgi:org.osgi.annotation.versioning:1.1.2",
+        "org.osgi:org.osgi.resource:1.0.0",
+        "org.osgi:org.osgi.service.serviceloader:1.0.0",
+        "org.slf4j:slf4j-api:1.7.36",
+        "org.xerial.snappy:snappy-java:1.1.10.11",
+        "org.yaml:snakeyaml:2.5"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
+      "dependsOn": [
+        "mirror-coordinator",
+        "clients",
+        "test-common-util",
+        "clients:testFixtures"
+      ],
+      "classDirectories": [
+        "mirror-coordinator/build/classes/java/test"
+      ],
+      "projectPath": ":mirror-coordinator"
+    },
     "storage": {
       "sources": [
         "storage/build/generated/main/java",
@@ -9647,6 +9756,7 @@
         "json",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -10108,6 +10218,7 @@
         "group-coordinator-api",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
@@ -10399,6 +10510,7 @@
         "group-coordinator-api",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server-common",
         "share-coordinator",
@@ -10637,6 +10749,7 @@
         "json",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "runtime",
         "server",
@@ -10918,6 +11031,7 @@
         "group-coordinator-api",
         "kafka-core",
         "metadata",
+        "mirror-coordinator",
         "raft",
         "server",
         "server-common",
