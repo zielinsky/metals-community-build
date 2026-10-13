@@ -10654,6 +10654,7 @@
         "esql",
         "esql-core",
         "esql-datasource-csv",
+        "esql-datasource-gzip",
         "esql-datasource-ndjson",
         "esql-datasource-orc",
         "esql-datasource-parquet",
@@ -42808,6 +42809,7 @@
     },
     "wildcard:test": {
       "sources": [
+        "x-pack/plugin/wildcard/src/heapPressureTest/java",
         "x-pack/plugin/wildcard/src/internalClusterTest/java",
         "x-pack/plugin/wildcard/src/test/java",
         "x-pack/plugin/wildcard/src/yamlRestTest/java"
@@ -45815,6 +45817,7 @@
         "esql",
         "esql-core",
         "esql-datasource-csv",
+        "esql-datasource-gzip",
         "esql-datasource-ndjson",
         "esql-datasource-orc",
         "esql-datasource-parquet",
