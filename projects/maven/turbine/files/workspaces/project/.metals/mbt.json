@@ -155,7 +155,7 @@
         "-XDcompilePolicy=simple",
         "--should-stop=ifError=FLOW",
         "-XDaddTypeAnnotationsToSymbol=true",
-        "-Xplugin:ErrorProne -Xep:EqualsIncompatibleType:ERROR -Xep:TruthIncompatibleType:ERROR",
+        "-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -Xep:EqualsIncompatibleType:ERROR -Xep:TruthIncompatibleType:ERROR",
         "-processorpath",
         "/home/runner/.m2/repository/com/google/errorprone/error_prone_core/2.50.0/error_prone_core-2.50.0.jar:/home/runner/.m2/repository/com/google/auto/value/auto-value/1.11.1/auto-value-1.11.1.jar"
       ],
@@ -193,7 +193,7 @@
         "-XDcompilePolicy=simple",
         "--should-stop=ifError=FLOW",
         "-XDaddTypeAnnotationsToSymbol=true",
-        "-Xplugin:ErrorProne -Xep:EqualsIncompatibleType:ERROR -Xep:TruthIncompatibleType:ERROR",
+        "-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -Xep:EqualsIncompatibleType:ERROR -Xep:TruthIncompatibleType:ERROR",
         "--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
         "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
         "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",

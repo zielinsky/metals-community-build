@@ -14,100 +14,100 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 3422 ms
+Browser ready in 8354 ms
 Launching tests...
   gradle / kafka
-[community-build] 2026-10-13T09:11:48.867Z Starting gradle / kafka / import-test-fixtures
-[community-build] 2026-10-13T09:11:48.867Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-13T09:11:48.867Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java
-[community-build] 2026-10-13T09:11:50.920Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-13T09:11:52.998Z VS Code opened TestUtils.java
-[community-build] 2026-10-13T09:11:53.185Z Captured screenshot: import-test-fixtures/001-file-opened.png
-[community-build] 2026-10-13T09:11:53.186Z Waiting for the build server choice notification
+[community-build] 2026-10-14T07:23:05.564Z Starting gradle / kafka / import-test-fixtures
+[community-build] 2026-10-14T07:23:05.564Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-14T07:23:05.564Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java
+[community-build] 2026-10-14T07:23:06.423Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-14T07:23:09.079Z VS Code opened TestUtils.java
+[community-build] 2026-10-14T07:23:09.206Z Captured screenshot: import-test-fixtures/001-file-opened.png
+[community-build] 2026-10-14T07:23:09.207Z Waiting for the build server choice notification
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
-[metals] 2026.10.13 09:11:55 INFO  Started: Metals version 2.0.0-community-build.38374017046 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-[metals] 2026.10.13 09:11:55 INFO  Memory monitor started
-[metals] 2026.10.13 09:11:56 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-10-13T09:11:58.248Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
-[community-build] 2026-10-13T09:11:58.732Z Captured screenshot: import-test-fixtures/002-build-server-prompt.png
-[community-build] 2026-10-13T09:11:58.733Z Clicking notification action: Use MBT
-[community-build] 2026-10-13T09:11:59.143Z Clicked notification action: Use MBT
-[metals] 2026.10.13 09:11:58 INFO  mbt-v2: indexing 6491 files
-[community-build] 2026-10-13T09:12:00.416Z Captured screenshot: import-test-fixtures/003-mbt-selected.png
-[community-build] 2026-10-13T09:12:00.417Z Waiting for the VS Code importing status to finish
-[community-build] 2026-10-13T09:12:00.417Z VS Code status bar reports that the project is importing
-[metals] 2026.10.13 09:12:02 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-[metals] 2026.10.13 09:12:02 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.14 07:23:21 INFO  Started: Metals version 2.0.0-community-build.38527320921 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+[metals] 2026.10.14 07:23:21 INFO  Memory monitor started
+[metals] 2026.10.14 07:23:23 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-10-14T07:23:24.265Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
+[community-build] 2026-10-14T07:23:24.377Z Captured screenshot: import-test-fixtures/002-build-server-prompt.png
+[community-build] 2026-10-14T07:23:24.377Z Clicking notification action: Use MBT
+[community-build] 2026-10-14T07:23:24.535Z Clicked notification action: Use MBT
+[community-build] 2026-10-14T07:23:25.176Z VS Code status bar reports that the project is importing
+[community-build] 2026-10-14T07:23:25.416Z Captured screenshot: import-test-fixtures/003-mbt-selected.png
+[community-build] 2026-10-14T07:23:25.417Z Waiting for the VS Code importing status to finish
+[metals] 2026.10.14 07:23:24 INFO  mbt-v2: indexing 6491 files
+[metals] 2026.10.14 07:23:27 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+[metals] 2026.10.14 07:23:27 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.14 07:23:28 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.14 07:23:38 INFO  time: mbt-v2 loaded index for 6491 files in 14s
+[metals] 2026.10.14 07:24:08 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.14 07:24:08 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
 [metals] Fetching distribution.
-[metals] Downloading https://services.gradle.org/distributions/gradle-9.7.1-bin.zip
-[metals] ................................................................................................................................................
-[metals] 2026.10.13 09:12:18 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.13 09:12:18 INFO  time: mbt-v2 loaded index for 6491 files in 20s
-[metals] 2026.10.13 09:13:13 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.13 09:13:13 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.13 09:13:22 INFO  time: gradle-extractor extract in 1m23s
-[metals] 2026.10.13 09:13:22 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.10.13 09:13:22 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.10.13 09:13:22 INFO  Connected to Build server: MBT v2.0.0-community-build.38374017046
-[metals] 2026.10.13 09:13:41 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.10.13 09:13:49 INFO  time: indexed workspace in 26s
-[community-build] 2026-10-13T09:13:50.320Z VS Code status bar reports that the project import finished
-[community-build] 2026-10-13T09:13:50.325Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
-[community-build] 2026-10-13T09:13:50.665Z Captured screenshot: import-test-fixtures/004-mbt-imported.png
-[community-build] 2026-10-13T09:13:50.666Z MBT model contains 156 namespaces and 477 dependency modules
-[community-build] 2026-10-13T09:13:50.666Z Verified imported source: clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java via clients/src/testFixtures/java
-[community-build] 2026-10-13T09:13:50.671Z Verified imported source: core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala via core/src/test/scala
-[community-build] 2026-10-13T09:13:50.673Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:5.14.4
-[community-build] 2026-10-13T09:13:50.951Z Captured screenshot: import-test-fixtures/005-import-verified.png
-[community-build] 2026-10-13T09:13:50.951Z Scenario passed: import-test-fixtures
-    ✔ import-test-fixtures (122086ms)
-[community-build] 2026-10-13T09:13:50.953Z Starting gradle / kafka / test-fixtures-target
-[community-build] 2026-10-13T09:13:50.956Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-13T09:13:50.956Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
-[community-build] 2026-10-13T09:13:51.037Z Opening NetworkTestUtils.java in the existing VS Code session
-[community-build] 2026-10-13T09:13:54.625Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-13T09:13:55.074Z VS Code opened NetworkTestUtils.java
-[community-build] 2026-10-13T09:13:55.360Z Captured screenshot: test-fixtures-target/001-file-opened.png
-[community-build] 2026-10-13T09:13:55.360Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-13T09:13:55.630Z Captured screenshot: test-fixtures-target/002-mbt-session-reused.png
-[metals] 2026.10.13 09:13:58 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
-[community-build] 2026-10-13T09:14:04.410Z Status bar reports a build target for NetworkTestUtils.java: ["remote"," trunk* project (Git) - trunk*, Checkout Branch/Tag...","project (Git) - Synchronize Changes"," 0 \n 0 No Problems"," Sync: 40s Sync: 40s","Notifications","MBT  MBT  link, Metals is connected to the build server (MBT).","clients:testFixtures \n  clients:testFixtures  check, No errors for the build target.\nPress to open doctor.","Copilot status","Java Java","Editor Language Status: $(copilot) No inline suggestion available, Inline suggestions","LF LF","UTF-8 UTF-8","Spaces: 4 Spaces: 4","Ln 27, Col 40 (39 selected) Ln 27, Col 40 (39 selected)"," ChickenchickenLove (11 minutes ago) git-commit  ChickenchickenLove (11 minutes ago)"]
-[metals] Oct 13, 2026 9:14:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
+[metals] .....................................................................................................................................
+[metals] 2026.10.14 07:24:24 INFO  time: gradle-extractor extract in 1m
+[metals] 2026.10.14 07:24:24 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.10.14 07:24:24 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.10.14 07:24:24 INFO  Connected to Build server: MBT v2.0.0-community-build.38527320921
+[metals] 2026.10.14 07:24:40 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-10-14T07:24:49.629Z VS Code status bar reports that the project import finished
+[community-build] 2026-10-14T07:24:49.630Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[metals] 2026.10.14 07:24:48 INFO  time: indexed workspace in 23s
+[community-build] 2026-10-14T07:24:49.975Z Captured screenshot: import-test-fixtures/004-mbt-imported.png
+[community-build] 2026-10-14T07:24:49.978Z MBT model contains 156 namespaces and 477 dependency modules
+[community-build] 2026-10-14T07:24:49.979Z Verified imported source: clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java via clients/src/testFixtures/java
+[community-build] 2026-10-14T07:24:49.980Z Verified imported source: core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala via core/src/test/scala
+[community-build] 2026-10-14T07:24:49.987Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:5.14.4
+[community-build] 2026-10-14T07:24:50.353Z Captured screenshot: import-test-fixtures/005-import-verified.png
+[community-build] 2026-10-14T07:24:50.353Z Scenario passed: import-test-fixtures
+    ✔ import-test-fixtures (104802ms)
+[community-build] 2026-10-14T07:24:50.360Z Starting gradle / kafka / test-fixtures-target
+[community-build] 2026-10-14T07:24:50.362Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-14T07:24:50.362Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+[community-build] 2026-10-14T07:24:50.521Z Opening NetworkTestUtils.java in the existing VS Code session
+[community-build] 2026-10-14T07:24:53.524Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-14T07:24:53.780Z VS Code opened NetworkTestUtils.java
+[community-build] 2026-10-14T07:24:54.043Z Captured screenshot: test-fixtures-target/001-file-opened.png
+[community-build] 2026-10-14T07:24:54.044Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-14T07:24:54.294Z Captured screenshot: test-fixtures-target/002-mbt-session-reused.png
+[metals] 2026.10.14 07:24:56 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+[community-build] 2026-10-14T07:25:01.964Z Status bar reports a build target for NetworkTestUtils.java: ["remote"," trunk* project (Git) - trunk*, Checkout Branch/Tag...","project (Git) - Synchronize Changes"," 0 \n 0 No Problems"," Sync: 35s Sync: 35s","Notifications","MBT  MBT  link, Metals is connected to the build server (MBT).","clients:testFixtures \n  clients:testFixtures  check, No errors for the build target.\nPress to open doctor.","Copilot status","Java Java","Editor Language Status: $(copilot) No inline suggestion available, Inline suggestions","LF LF","UTF-8 UTF-8","Spaces: 4 Spaces: 4","Ln 27, Col 40 (39 selected) Ln 27, Col 40 (39 selected)"," David Jacot (13 hours ago) git-commit  David Jacot (13 hours ago)"]
+[metals] Oct 14, 2026 7:25:02 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Oct 13, 2026 9:14:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[community-build] 2026-10-14T07:25:04.527Z Verified that NetworkTestUtils.java has no error diagnostics
+[metals] Oct 14, 2026 7:25:03 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Oct 13, 2026 9:14:06 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
-[metals] INFO: Unsupported notification method: $/setTrace
-[community-build] 2026-10-13T09:14:07.343Z Verified that NetworkTestUtils.java has no error diagnostics
-[community-build] 2026-10-13T09:14:07.595Z Captured screenshot: test-fixtures-target/003-imports-resolved.png
-[community-build] 2026-10-13T09:14:07.800Z Scenario passed: test-fixtures-target
-    ✔ test-fixtures-target (16850ms)
-[community-build] 2026-10-13T09:14:07.804Z Starting gradle / kafka / scala-to-java-definition
-[community-build] 2026-10-13T09:14:07.804Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-10-13T09:14:07.804Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
-[community-build] 2026-10-13T09:14:07.955Z Opening SaslSslAdminIntegrationTest.scala in the existing VS Code session
-[community-build] 2026-10-13T09:14:10.540Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-13T09:14:10.934Z VS Code opened SaslSslAdminIntegrationTest.scala
-[community-build] 2026-10-13T09:14:11.280Z Captured screenshot: scala-to-java-definition/001-file-opened.png
-[community-build] 2026-10-13T09:14:11.280Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-13T09:14:11.577Z Captured screenshot: scala-to-java-definition/002-mbt-session-reused.png
-[metals] 2026.10.13 09:14:12 INFO  time: indexed workspace in 22s
-[community-build] 2026-10-13T09:14:14.818Z Captured screenshot: scala-to-java-definition/003-definition-symbol-selected.png
-[community-build] 2026-10-13T09:14:14.818Z Go to Definition: assertFutureThrows
-[metals] 2026.10.13 09:14:18 INFO  time: semanticdb:textDocument:typeCheck in 4.993 s
-[metals] 2026.10.13 09:14:19 INFO  time: semanticdb:testDocument:toTextDocument in 1.102 s
-[metals] 2026.10.13 09:14:20 INFO  time: semanticdb:textDocument:typeCheck in 1.394 s
-[metals] 2026.10.13 09:14:20 INFO  time: semanticdb:testDocument:toTextDocument in 578.9 ms
-[metals] 2026.10.13 09:14:21 WARN  Could not find semantic tokens for: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
-[metals] Oct 13, 2026 9:14:22 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
-[metals] WARNING: Unmatched cancel notification for request id 63
-[community-build] 2026-10-13T09:14:23.040Z Captured screenshot: scala-to-java-definition/004-definition-verified.png
-    ✔ scala-to-java-definition (15237ms)
+[community-build] 2026-10-14T07:25:04.707Z Captured screenshot: test-fixtures-target/003-imports-resolved.png
+[community-build] 2026-10-14T07:25:04.837Z Scenario passed: test-fixtures-target
+    ✔ test-fixtures-target (14481ms)
+[community-build] 2026-10-14T07:25:04.842Z Starting gradle / kafka / scala-to-java-definition
+[community-build] 2026-10-14T07:25:04.842Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-10-14T07:25:04.842Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
+[community-build] 2026-10-14T07:25:04.976Z Opening SaslSslAdminIntegrationTest.scala in the existing VS Code session
+[community-build] 2026-10-14T07:25:07.244Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-14T07:25:07.459Z VS Code opened SaslSslAdminIntegrationTest.scala
+[metals] 2026.10.14 07:25:07 INFO  time: indexed workspace in 18s
+[community-build] 2026-10-14T07:25:07.780Z Captured screenshot: scala-to-java-definition/001-file-opened.png
+[community-build] 2026-10-14T07:25:07.780Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-14T07:25:08.026Z Captured screenshot: scala-to-java-definition/002-mbt-session-reused.png
+[community-build] 2026-10-14T07:25:10.371Z Captured screenshot: scala-to-java-definition/003-definition-symbol-selected.png
+[community-build] 2026-10-14T07:25:10.371Z Go to Definition: assertFutureThrows
+[metals] Oct 14, 2026 7:25:11 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+[metals] WARNING: Unmatched cancel notification for request id 47
+[metals] Oct 14, 2026 7:25:11 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+[metals] WARNING: Unmatched cancel notification for request id 42
+[metals] 2026.10.14 07:25:14 INFO  time: semanticdb:textDocument:typeCheck in 2.397 s
+[metals] 2026.10.14 07:25:14 INFO  time: semanticdb:testDocument:toTextDocument in 382.3 ms
+[community-build] 2026-10-14T07:25:17.043Z Captured screenshot: scala-to-java-definition/004-definition-verified.png
+    ✔ scala-to-java-definition (12202ms)
 
-[metals] 2026.10.13 09:14:24 INFO  time: semanticdb:testDocument:toTextDocument in 512.8 ms
-[metals] 2026.10.13 09:14:24 INFO  time: semanticdb:testDocument:toTextDocument in 302.2 ms
 Shutting down the browser
+[metals] 2026.10.14 07:25:18 INFO  Shutting down server
+[metals] 2026.10.14 07:25:18 INFO  Memory monitor stopped
+[metals] 2026.10.14 07:25:18 INFO  shutting down Metals
+[metals] 2026.10.14 07:25:18 INFO  Shut down connection with build server.
+[metals] 2026.10.14 07:25:18 INFO  Exiting server
 
-  3 passing (3m)
+  3 passing (2m)
 
 Verified 12 scenario screenshots
