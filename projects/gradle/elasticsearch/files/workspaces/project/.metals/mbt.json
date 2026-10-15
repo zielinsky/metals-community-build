@@ -226,7 +226,7 @@
     },
     {
       "id": "com.azure:azure-core:1.55.3",
-      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/2f60f61822a2ad25a31f9259324a5f46/transformed/azure-core-1.55.3-patched.jar",
+      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/02da1d172dbf33cf12f056971e9371c7/transformed/azure-core-1.55.3-patched.jar",
       "sources": "file:///home/runner/.gradle/caches/modules-2/files-2.1/com.azure/azure-core/1.55.3/5fb880ce24d416307ddea19a10030e25ff0d120b/azure-core-1.55.3-sources.jar"
     },
     {
@@ -2093,7 +2093,7 @@
     },
     {
       "id": "org.apache.hadoop:hadoop-client-api:3.4.1",
-      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/056a6385e9314216325f5f664ad22cef/transformed/hadoop-client-api-3.4.1-patched.jar"
+      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/03a8d6efc9a4267866875d9126c1c07a/transformed/hadoop-client-api-3.4.1-patched.jar"
     },
     {
       "id": "org.apache.hadoop:hadoop-client-api:3.4.3",
@@ -3711,15 +3711,11 @@
         "-Xdoclint:-missing",
         "--enable-preview",
         "-Xlint:-preview",
-        "--module-path=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/core/build/classes/java/main",
         "--module-version=9.6.0-SNAPSHOT",
         "-Xlint:-module,-exports,-requires-automatic,-requires-transitive-automatic,-missing-explicit-ctor"
       ],
       "dependencyModules": [],
       "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
-      "dependsOn": [
-        "libs-core"
-      ],
       "classDirectories": [
         "libs/foreign-adapter/build/classes/java/main"
       ],
@@ -46703,6 +46699,7 @@
     },
     "elasticsearch-server:test": {
       "sources": [
+        "server/src/heapPressureTest/java",
         "server/src/internalClusterTest/java",
         "server/src/test/java"
       ],
@@ -57503,7 +57500,7 @@
         "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
         "-Xdoclint:all",
         "-Xdoclint:-missing",
-        "--module-path=/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/10.5.1/9cf36fb7aaa63a1c994b653f317499ae7d87efbe/lucene-core-10.5.1.jar:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/core/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/foreign-adapter/build/classes/java/main",
+        "--module-path=/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/10.5.1/9cf36fb7aaa63a1c994b653f317499ae7d87efbe/lucene-core-10.5.1.jar:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/core/build/classes/java/main",
         "--module-version=9.6.0-SNAPSHOT",
         "-Xlint:-module,-exports,-requires-automatic,-requires-transitive-automatic,-missing-explicit-ctor"
       ],
@@ -57512,7 +57509,6 @@
       ],
       "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/",
       "dependsOn": [
-        "foreign-adapter",
         "libs-core"
       ],
       "classDirectories": [
