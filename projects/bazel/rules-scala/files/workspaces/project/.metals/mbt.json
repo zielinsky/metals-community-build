@@ -2810,6 +2810,42 @@
       ],
       "classDirectories": []
     },
+    "//test/coverage_inline": {
+      "sources": [
+        "test/coverage_inline/App.scala",
+        "test/coverage_inline/InlineTest.scala",
+        "test/coverage_inline/Lib.scala"
+      ],
+      "scalacOptions": [
+        "-opt:inline:**",
+        "-Werror",
+        "-Wopt"
+      ],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [
+        "//scala/support",
+        "//src/java/io/bazel/rulesscala/coverage/instrumenter",
+        "//src/java/io/bazel/rulesscala/exe",
+        "//src/java/io/bazel/rulesscala/scala_test",
+        "//src/java/io/bazel/rulesscala/scalac",
+        "//third_party/dependency_analyzer/src/main"
+      ],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_inline/test.jar"
+      ],
+      "configurations": [
+        "//test/coverage_inline:test"
+      ],
+      "testClasses": [
+        {
+          "className": "coverage_inline.InlineTest",
+          "sourcePath": "test/coverage_inline/InlineTest.scala",
+          "configuration": "//test/coverage_inline:test"
+        }
+      ]
+    },
     "//third_party/utils/src/test": {
       "sources": [
         "third_party/utils/src/test/io/bazel/rulesscala/utils/CommandLineParserAdapter_before_2_13_9.scala",

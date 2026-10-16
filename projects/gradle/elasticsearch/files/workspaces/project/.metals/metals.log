@@ -1,21 +1,21 @@
-2026.10.15 07:15:17 INFO  Started: Metals version 2.0.0-community-build.38696796044 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-2026.10.15 07:15:17 INFO  Memory monitor started
-2026.10.15 07:15:17 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.15 07:15:21 INFO  mbt-v2: indexing 32995 files
-2026.10.15 07:15:22 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-2026.10.15 07:15:22 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.16 06:57:59 INFO  Started: Metals version 2.0.0-community-build.38863648187 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+2026.10.16 06:57:59 INFO  Memory monitor started
+2026.10.16 06:58:01 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.16 06:58:04 INFO  mbt-v2: indexing 33026 files
+2026.10.16 06:58:06 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+2026.10.16 06:58:06 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
 Fetching distribution.
 Downloading https://services.gradle.org/distributions/gradle-9.7.1-bin.zip
 ................................................................................................................................................
-2026.10.15 07:15:31 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.15 07:15:54 INFO  time: mbt-v2 loaded index for 32995 files in 35s
-2026.10.15 07:17:24 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.15 07:17:24 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.16 06:58:22 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.16 06:58:51 INFO  time: mbt-v2 loaded index for 33026 files in 49s
+2026.10.16 07:02:23 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.16 07:02:25 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
 Fetching distribution.
 Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
 .....................................................................................................................................
-2026.10.15 07:17:37 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.15 07:17:39 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools
+2026.10.16 07:02:51 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.16 07:02:54 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools
 org.gradle.tooling.BuildException: Could not fetch model of type 'IdeaProject' using connection to Gradle distribution 'https://services.gradle.org/distributions/gradle-9.5.1-bin.zip'.
 	at org.gradle.tooling.internal.consumer.ConnectionExceptionTransformer.transform(ConnectionExceptionTransformer.java:69)
 	at org.gradle.tooling.internal.consumer.ResultHandlerAdapter.onFailure(ResultHandlerAdapter.java:42)
@@ -345,92 +345,55 @@ Note: Recompile with -Xlint:unchecked for details.
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 
-2026.10.15 07:17:39 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.15 07:17:48 INFO  time: gradle-extractor extract in 2m28s
-2026.10.15 07:17:48 INFO  mbt-import: wrote .metals/mbt.json
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'repository-s3:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'azure-fixture:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'text-structure:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'data-streams:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'benchmarks' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'downsample-qa-mixed-cluster:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'tls-utils' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'streams:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'plugin:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'vector' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'qa-jdbc' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'test-clusters' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'stateless-test-framework:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'esql-qa-server' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'azure-fixture' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'x-pack-qa-third-party:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'yaml-rest-runner:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'server-security:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'test-multi-project:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'x-pack-qa-third-party' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'esql-qa-server:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'benchmarks:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'framework:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'downsample-qa-rest:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 's3-fixture:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'xpack-rest-tests-with-multiple-projects:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'qa-jdbc:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'test-clusters:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'tls-utils:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'stateless-test-framework' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'stateless:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 's3-fixture' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'esql-datasource-s3:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'repository-azure:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'vector:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:48 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.10.15 07:17:49 INFO  Connected to Build server: MBT v2.0.0-community-build.38696796044
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'repository-s3:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'azure-fixture:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'text-structure:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'data-streams:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'benchmarks' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'downsample-qa-mixed-cluster:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'tls-utils' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'streams:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'plugin:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'vector' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'qa-jdbc' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'test-clusters' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'stateless-test-framework:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'esql-qa-server' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'azure-fixture' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'x-pack-qa-third-party:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'yaml-rest-runner:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'server-security:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'test-multi-project:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'x-pack-qa-third-party' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'esql-qa-server:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'benchmarks:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'framework:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'downsample-qa-rest:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 's3-fixture:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'xpack-rest-tests-with-multiple-projects:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'qa-jdbc:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'test-clusters:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'tls-utils:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'stateless-test-framework' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'stateless:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 's3-fixture' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'esql-datasource-s3:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'repository-azure:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:17:49 WARN  mbt-build: namespace 'vector:test' dependsOn unknown namespace 'reaper'.
-2026.10.15 07:18:29 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.15 07:18:39 INFO  time: indexed workspace in 48s
-2026.10.15 07:18:44 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
-Oct 15, 2026 7:18:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+2026.10.16 07:02:54 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.16 07:03:13 INFO  time: gradle-extractor extract in 5m10s
+2026.10.16 07:03:13 INFO  mbt-import: wrote .metals/mbt.json
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'repository-s3:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'azure-fixture:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'text-structure:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'data-streams:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'benchmarks' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'downsample-qa-mixed-cluster:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'tls-utils' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'streams:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'plugin:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'vector' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'qa-jdbc' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'test-clusters' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'stateless-test-framework:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'esql-qa-server' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'azure-fixture' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'x-pack-qa-third-party:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'yaml-rest-runner:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'server-security:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'test-multi-project:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'x-pack-qa-third-party' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'esql-qa-server:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'benchmarks:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'framework:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'downsample-qa-rest:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 's3-fixture:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'xpack-rest-tests-with-multiple-projects:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'qa-jdbc:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'test-clusters:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'tls-utils:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'stateless-test-framework' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'stateless:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 's3-fixture' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'esql-datasource-s3:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'repository-azure:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 WARN  mbt-build: namespace 'vector:test' dependsOn unknown namespace 'reaper'.
+2026.10.16 07:03:13 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.10.16 07:03:13 INFO  Connected to Build server: MBT v2.0.0-community-build.38863648187
+2026.10.16 07:04:10 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.16 07:04:31 INFO  time: indexed workspace in 1m15s
+2026.10.16 07:04:37 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build-tools-internal/src/test/java/org/elasticsearch/gradle/internal/EmptyDirTaskTests.java
+Oct 16, 2026 7:04:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-Oct 15, 2026 7:18:51 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+Oct 16, 2026 7:04:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-Oct 15, 2026 7:18:52 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
-INFO: Unsupported notification method: $/setTrace
-2026.10.15 07:19:25 INFO  Shutting down server
-2026.10.15 07:19:25 INFO  Memory monitor stopped
-2026.10.15 07:19:25 INFO  shutting down Metals
-2026.10.15 07:19:25 INFO  Shut down connection with build server.
-2026.10.15 07:19:25 INFO  Exiting server
+2026.10.16 07:05:22 INFO  Shutting down server
+2026.10.16 07:05:22 INFO  Memory monitor stopped
+2026.10.16 07:05:22 INFO  shutting down Metals
+2026.10.16 07:05:23 INFO  Shut down connection with build server.
+2026.10.16 07:05:22 INFO  Exiting server
