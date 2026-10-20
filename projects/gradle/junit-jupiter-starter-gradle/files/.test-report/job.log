@@ -14,125 +14,129 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 3550 ms
+Browser ready in 3064 ms
 Launching tests...
   gradle / junit-jupiter-starter-gradle
-[community-build] 2026-10-19T07:34:15.220Z Starting gradle / junit-jupiter-starter-gradle / import
-[community-build] 2026-10-19T07:34:15.220Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle
-[community-build] 2026-10-19T07:34:15.220Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java
-[community-build] 2026-10-19T07:34:17.157Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-19T07:34:18.548Z VS Code opened CalculatorTests.java
-[community-build] 2026-10-19T07:34:18.664Z Captured screenshot: import/001-file-opened.png
-[community-build] 2026-10-19T07:34:18.664Z Waiting for the build server choice notification
+[community-build] 2026-10-20T07:22:31.528Z Starting gradle / junit-jupiter-starter-gradle / import
+[community-build] 2026-10-20T07:22:31.528Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle
+[community-build] 2026-10-20T07:22:31.528Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java
+[community-build] 2026-10-20T07:22:33.356Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-20T07:22:34.622Z VS Code opened CalculatorTests.java
+[community-build] 2026-10-20T07:22:34.765Z Captured screenshot: import/001-file-opened.png
+[community-build] 2026-10-20T07:22:34.765Z Waiting for the build server choice notification
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/metals.log' has appeared;  following new file
-[metals] 2026.10.19 07:34:20 INFO  Started: Metals version 2.0.0-community-build.39216250470 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle' for client Visual Studio Code 1.131.0.
-[metals] 2026.10.19 07:34:20 INFO  Memory monitor started
-[community-build] 2026-10-19T07:34:22.903Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
-[metals] 2026.10.19 07:34:22 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.10.19 07:34:22 INFO  mbt-v2: indexing 2 files
-[community-build] 2026-10-19T07:34:23.010Z Captured screenshot: import/002-build-server-prompt.png
-[community-build] 2026-10-19T07:34:23.012Z Clicking notification action: Use MBT
-[community-build] 2026-10-19T07:34:23.275Z Clicked notification action: Use MBT
-[community-build] 2026-10-19T07:34:23.785Z Captured screenshot: import/003-mbt-selected.png
-[community-build] 2026-10-19T07:34:23.786Z Waiting for the VS Code importing status to finish
-[metals] 2026.10.19 07:34:22 INFO  time: mbt-v2 loaded index for 2 files in 0.97s
-[community-build] 2026-10-19T07:34:24.333Z VS Code status bar reports that the project is importing
-[metals] 2026.10.19 07:34:24 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-[metals] 2026.10.19 07:34:24 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.20 07:22:37 INFO  Started: Metals version 2.0.0-community-build.39385630551 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle' for client Visual Studio Code 1.131.0.
+[metals] 2026.10.20 07:22:37 INFO  Memory monitor started
+[metals] 2026.10.20 07:22:39 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-10-20T07:22:40.314Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
+[community-build] 2026-10-20T07:22:40.514Z Captured screenshot: import/002-build-server-prompt.png
+[community-build] 2026-10-20T07:22:40.524Z Clicking notification action: Use MBT
+[metals] 2026.10.20 07:22:39 INFO  mbt-v2: indexing 2 files
+[metals] 2026.10.20 07:22:39 INFO  time: mbt-v2 loaded index for 2 files in 0.66s
+[community-build] 2026-10-20T07:22:40.851Z Clicked notification action: Use MBT
+[community-build] 2026-10-20T07:22:41.438Z Captured screenshot: import/003-mbt-selected.png
+[community-build] 2026-10-20T07:22:41.438Z Waiting for the VS Code importing status to finish
+[community-build] 2026-10-20T07:22:42.053Z VS Code status bar reports that the project is importing
+[metals] 2026.10.20 07:22:42 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+[metals] 2026.10.20 07:22:42 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
 [metals] Fetching distribution.
 [metals] Downloading https://services.gradle.org/distributions/gradle-9.8.1-bin.zip
 [metals] ................................................................................................................................................
-[metals] 2026.10.19 07:34:27 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.19 07:34:34 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-[metals] 2026.10.19 07:34:34 INFO  time: gradle-extractor extract in 11s
-[metals] 2026.10.19 07:34:34 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.10.19 07:34:34 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.10.19 07:34:34 INFO  Connected to Build server: MBT v2.0.0-community-build.39216250470
-[metals] 2026.10.19 07:34:35 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.10.19 07:34:46 INFO  time: indexed workspace in 12s
-[community-build] 2026-10-19T07:34:47.079Z VS Code status bar reports that the project import finished
-[community-build] 2026-10-19T07:34:47.079Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/mbt.json
-[community-build] 2026-10-19T07:34:47.167Z Captured screenshot: import/004-mbt-imported.png
-[community-build] 2026-10-19T07:34:47.167Z MBT model contains 2 namespaces and 10 dependency modules
-[community-build] 2026-10-19T07:34:47.168Z Verified imported source: src/main/java/com/example/project/Calculator.java via src/main/java
-[community-build] 2026-10-19T07:34:47.168Z Verified imported source: src/test/java/com/example/project/CalculatorTests.java via src/test/java
-[community-build] 2026-10-19T07:34:47.168Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:6.1.3
-[community-build] 2026-10-19T07:34:47.272Z Captured screenshot: import/005-import-verified.png
-[community-build] 2026-10-19T07:34:47.272Z Scenario passed: import
-    ✔ import (32055ms)
-[community-build] 2026-10-19T07:34:47.275Z Starting gradle / junit-jupiter-starter-gradle / test-discovery
-[community-build] 2026-10-19T07:34:47.275Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle
-[community-build] 2026-10-19T07:34:47.275Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java
-[community-build] 2026-10-19T07:34:47.326Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-19T07:34:47.438Z VS Code opened CalculatorTests.java
-[community-build] 2026-10-19T07:34:47.521Z Captured screenshot: test-discovery/001-file-opened.png
-[community-build] 2026-10-19T07:34:47.521Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-19T07:34:47.605Z Captured screenshot: test-discovery/002-mbt-session-reused.png
-[metals] 2026.10.19 07:34:47 INFO  time: indexed workspace in 1.29s
-[community-build] 2026-10-19T07:34:48.791Z Waiting for VS Code to discover test: addsTwoNumbers
-[community-build] 2026-10-19T07:34:50.618Z VS Code discovered test: addsTwoNumbers
-[community-build] 2026-10-19T07:34:50.713Z Captured screenshot: test-discovery/003-test-run-button-discovered.png
-[community-build] 2026-10-19T07:34:50.713Z Scenario passed: test-discovery
-    ✔ test-discovery (3438ms)
-[community-build] 2026-10-19T07:34:50.714Z Starting gradle / junit-jupiter-starter-gradle / calculator-definition
-[community-build] 2026-10-19T07:34:50.714Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle
-[community-build] 2026-10-19T07:34:50.714Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java
-[community-build] 2026-10-19T07:34:50.742Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-19T07:34:50.804Z VS Code opened CalculatorTests.java
-[community-build] 2026-10-19T07:34:50.863Z Captured screenshot: calculator-definition/001-file-opened.png
-[community-build] 2026-10-19T07:34:50.863Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-19T07:34:50.929Z Captured screenshot: calculator-definition/002-mbt-session-reused.png
-[community-build] 2026-10-19T07:34:51.562Z Captured screenshot: calculator-definition/003-definition-symbol-selected.png
-[community-build] 2026-10-19T07:34:51.562Z Go to Definition: Calculator
-[community-build] 2026-10-19T07:34:52.947Z Captured screenshot: calculator-definition/004-definition-verified.png
-    ✔ calculator-definition (2233ms)
-[community-build] 2026-10-19T07:34:52.948Z Starting gradle / junit-jupiter-starter-gradle / debug-adds-two-numbers
-[community-build] 2026-10-19T07:34:52.948Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle
-[community-build] 2026-10-19T07:34:52.948Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java
-[community-build] 2026-10-19T07:34:52.977Z Opening CalculatorTests.java in the existing VS Code session
-[community-build] 2026-10-19T07:34:53.584Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-19T07:34:53.674Z VS Code opened CalculatorTests.java
-[community-build] 2026-10-19T07:34:53.765Z Captured screenshot: debug-adds-two-numbers/001-file-opened.png
-[community-build] 2026-10-19T07:34:53.765Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-19T07:34:53.864Z Captured screenshot: debug-adds-two-numbers/002-mbt-session-reused.png
-[community-build] 2026-10-19T07:34:54.826Z Added breakpoint at line 25
-[community-build] 2026-10-19T07:34:54.895Z Captured screenshot: debug-adds-two-numbers/003-breakpoint-added.png
-[community-build] 2026-10-19T07:34:56.964Z Launching debug test from gutter: addsTwoNumbers
-[metals] 2026.10.19 07:34:57 INFO  MBT compile via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/gradlew
-[metals] 2026.10.19 07:34:58 INFO  > Task :compileJava
-[metals] 2026.10.19 07:34:58 INFO  > Task :processResources NO-SOURCE
-[metals] 2026.10.19 07:34:58 INFO  > Task :classes
-[metals] 2026.10.19 07:34:58 INFO  > Task :compileTestJava
-[metals] 2026.10.19 07:34:58 INFO  > Task :processTestResources NO-SOURCE
-[metals] 2026.10.19 07:34:58 INFO  > Task :testClasses
-[metals] 2026.10.19 07:34:58 INFO  gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1792395297597.json
-[metals] 2026.10.19 07:34:58 INFO  
-[metals] 2026.10.19 07:34:58 INFO  BUILD SUCCESSFUL in 1s
-[metals] 2026.10.19 07:34:58 INFO  2 actionable tasks: 2 executed
-[metals] 2026.10.19 07:34:58 INFO  Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.8.1/userguide/configuration_cache_enabling.html
-[metals] 2026.10.19 07:34:58 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
-[metals] 2026.10.19 07:34:58 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-[metals] 2026.10.19 07:34:58 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-[metals] 2026.10.19 07:34:58 INFO  Starting debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
-[metals] 2026.10.19 07:34:58 INFO  MBT test debug session via gradle (forked): /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/gradlew
-[metals] 2026.10.19 07:34:58 INFO  Loaded expression compiler in 141 milliseconds
-[metals] 2026.10.19 07:35:05 INFO  Loaded all sources and classes in 7 seconds
-[metals] 2026.10.19 07:35:05 INFO  Initialized Scala 3 decoder in 2 milliseconds
-[metals] 2026.10.19 07:35:05 INFO  Trying to attach to remote debuggee VM localhost:41045 .
-[metals] 2026.10.19 07:35:05 INFO  Attaching to debuggee VM succeeded.
-[community-build] 2026-10-19T07:35:06.883Z Debugger stopped at line 25
-[community-build] 2026-10-19T07:35:06.980Z Captured screenshot: debug-adds-two-numbers/004-breakpoint-hit.png
-[community-build] 2026-10-19T07:35:07.025Z Continued the debug session
-[community-build] 2026-10-19T07:35:07.777Z Debug console reports a passed test run: /\b[1-9]\d* (?:tests? |suites? )?passed\b/i
-[community-build] 2026-10-19T07:35:07.777Z Debug test finished successfully: addsTwoNumbers
-[community-build] 2026-10-19T07:35:07.924Z Captured screenshot: debug-adds-two-numbers/005-debug-test-finished.png
-[metals] 2026.10.19 07:35:07 INFO  Canceling debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
-[metals] 2026.10.19 07:35:07 INFO  Closing debug server tcp://0.0.0.0:39273
-[community-build] 2026-10-19T07:35:13.184Z Scenario passed: debug-adds-two-numbers
-    ✔ debug-adds-two-numbers (20236ms)
+[metals] 2026.10.20 07:22:46 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.20 07:22:56 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+[metals] 2026.10.20 07:22:56 INFO  time: gradle-extractor extract in 15s
+[metals] 2026.10.20 07:22:56 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.10.20 07:22:56 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.10.20 07:22:56 INFO  Connected to Build server: MBT v2.0.0-community-build.39385630551
+[metals] 2026.10.20 07:22:57 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.10.20 07:23:05 INFO  time: indexed workspace in 9.26s
+[community-build] 2026-10-20T07:23:06.892Z VS Code status bar reports that the project import finished
+[community-build] 2026-10-20T07:23:06.893Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/mbt.json
+[community-build] 2026-10-20T07:23:06.991Z Captured screenshot: import/004-mbt-imported.png
+[community-build] 2026-10-20T07:23:06.991Z MBT model contains 2 namespaces and 10 dependency modules
+[community-build] 2026-10-20T07:23:06.991Z Verified imported source: src/main/java/com/example/project/Calculator.java via src/main/java
+[community-build] 2026-10-20T07:23:06.991Z Verified imported source: src/test/java/com/example/project/CalculatorTests.java via src/test/java
+[community-build] 2026-10-20T07:23:06.991Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:6.1.3
+[community-build] 2026-10-20T07:23:07.092Z Captured screenshot: import/005-import-verified.png
+[community-build] 2026-10-20T07:23:07.092Z Scenario passed: import
+    ✔ import (35566ms)
+[community-build] 2026-10-20T07:23:07.093Z Starting gradle / junit-jupiter-starter-gradle / test-discovery
+[community-build] 2026-10-20T07:23:07.093Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle
+[community-build] 2026-10-20T07:23:07.093Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java
+[community-build] 2026-10-20T07:23:07.140Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-20T07:23:07.291Z VS Code opened CalculatorTests.java
+[community-build] 2026-10-20T07:23:07.411Z Captured screenshot: test-discovery/001-file-opened.png
+[community-build] 2026-10-20T07:23:07.411Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-20T07:23:07.532Z Captured screenshot: test-discovery/002-mbt-session-reused.png
+[metals] 2026.10.20 07:23:07 INFO  time: indexed workspace in 1.66s
+[community-build] 2026-10-20T07:23:09.075Z Waiting for VS Code to discover test: addsTwoNumbers
+[community-build] Opening the Test Explorer to trigger discovery of 'addsTwoNumbers'
+[community-build] Reopening the file to trigger discovery of 'addsTwoNumbers'
+[community-build] 2026-10-20T07:24:13.040Z Captured screenshot: test-discovery/003-file-reopened.png
+[community-build] WARNING: test 'addsTwoNumbers' was discovered only after reopening the file
+[community-build] 2026-10-20T07:24:14.901Z VS Code discovered test: addsTwoNumbers
+[community-build] 2026-10-20T07:24:15.015Z Captured screenshot: test-discovery/004-test-run-button-discovered.png
+[community-build] 2026-10-20T07:24:15.015Z Scenario passed: test-discovery
+    ✔ test-discovery (67922ms)
+[community-build] 2026-10-20T07:24:15.016Z Starting gradle / junit-jupiter-starter-gradle / calculator-definition
+[community-build] 2026-10-20T07:24:15.016Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle
+[community-build] 2026-10-20T07:24:15.016Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java
+[community-build] 2026-10-20T07:24:15.054Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-20T07:24:15.137Z VS Code opened CalculatorTests.java
+[community-build] 2026-10-20T07:24:15.214Z Captured screenshot: calculator-definition/001-file-opened.png
+[community-build] 2026-10-20T07:24:15.214Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-20T07:24:15.296Z Captured screenshot: calculator-definition/002-mbt-session-reused.png
+[community-build] 2026-10-20T07:24:16.182Z Captured screenshot: calculator-definition/003-definition-symbol-selected.png
+[community-build] 2026-10-20T07:24:16.182Z Go to Definition: Calculator
+[community-build] 2026-10-20T07:24:18.013Z Captured screenshot: calculator-definition/004-definition-verified.png
+    ✔ calculator-definition (2997ms)
+[community-build] 2026-10-20T07:24:18.013Z Starting gradle / junit-jupiter-starter-gradle / debug-adds-two-numbers
+[community-build] 2026-10-20T07:24:18.014Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle
+[community-build] 2026-10-20T07:24:18.014Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java
+[community-build] 2026-10-20T07:24:18.055Z Opening CalculatorTests.java in the existing VS Code session
+[community-build] 2026-10-20T07:24:18.893Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-20T07:24:19.045Z VS Code opened CalculatorTests.java
+[community-build] 2026-10-20T07:24:19.148Z Captured screenshot: debug-adds-two-numbers/001-file-opened.png
+[community-build] 2026-10-20T07:24:19.148Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-20T07:24:19.247Z Captured screenshot: debug-adds-two-numbers/002-mbt-session-reused.png
+[community-build] 2026-10-20T07:24:20.458Z Added breakpoint at line 25
+[community-build] 2026-10-20T07:24:20.566Z Captured screenshot: debug-adds-two-numbers/003-breakpoint-added.png
+[community-build] 2026-10-20T07:24:23.119Z Launching debug test from gutter: addsTwoNumbers
+[metals] 2026.10.20 07:24:23 INFO  MBT compile via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/gradlew
+[metals] 2026.10.20 07:24:24 INFO  > Task :compileJava
+[metals] 2026.10.20 07:24:24 INFO  > Task :processResources NO-SOURCE
+[metals] 2026.10.20 07:24:24 INFO  > Task :classes
+[metals] 2026.10.20 07:24:24 INFO  > Task :compileTestJava
+[metals] 2026.10.20 07:24:24 INFO  > Task :processTestResources NO-SOURCE
+[metals] 2026.10.20 07:24:24 INFO  > Task :testClasses
+[metals] 2026.10.20 07:24:24 INFO  gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1792481063998.json
+[metals] 2026.10.20 07:24:24 INFO  
+[metals] 2026.10.20 07:24:24 INFO  BUILD SUCCESSFUL in 1s
+[metals] 2026.10.20 07:24:24 INFO  2 actionable tasks: 2 executed
+[metals] 2026.10.20 07:24:24 INFO  Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.8.1/userguide/configuration_cache_enabling.html
+[metals] 2026.10.20 07:24:24 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
+[metals] 2026.10.20 07:24:25 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+[metals] 2026.10.20 07:24:24 INFO  MBT test debug session via gradle (forked): /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/gradlew
+[metals] 2026.10.20 07:24:25 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+[metals] 2026.10.20 07:24:24 INFO  Starting debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
+[metals] 2026.10.20 07:24:25 INFO  Loaded expression compiler in 241 milliseconds
+[metals] 2026.10.20 07:24:30 INFO  Loaded all sources and classes in 5 seconds
+[metals] 2026.10.20 07:24:30 INFO  Initialized Scala 3 decoder in 3 milliseconds
+[metals] 2026.10.20 07:24:30 INFO  Trying to attach to remote debuggee VM localhost:33491 .
+[metals] 2026.10.20 07:24:30 INFO  Attaching to debuggee VM succeeded.
+[community-build] 2026-10-20T07:24:32.184Z Debugger stopped at line 25
+[community-build] 2026-10-20T07:24:32.305Z Captured screenshot: debug-adds-two-numbers/004-breakpoint-hit.png
+[community-build] 2026-10-20T07:24:32.367Z Continued the debug session
+[community-build] 2026-10-20T07:24:33.315Z Debug console reports a passed test run: /\b[1-9]\d* (?:tests? |suites? )?passed\b/i
+[community-build] 2026-10-20T07:24:33.316Z Debug test finished successfully: addsTwoNumbers
+[community-build] 2026-10-20T07:24:33.452Z Captured screenshot: debug-adds-two-numbers/005-debug-test-finished.png
+[metals] 2026.10.20 07:24:32 INFO  Closing debug server tcp://0.0.0.0:35529
+[metals] 2026.10.20 07:24:32 INFO  Canceling debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
+[community-build] 2026-10-20T07:24:38.777Z Scenario passed: debug-adds-two-numbers
+    ✔ debug-adds-two-numbers (20764ms)
 
 Shutting down the browser
 
-  4 passing (1m)
+  4 passing (2m)
 
-Verified 17 scenario screenshots
+Verified 18 scenario screenshots

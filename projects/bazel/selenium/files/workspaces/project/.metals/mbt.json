@@ -4445,6 +4445,7 @@
     },
     "//java/test/org/openqa/selenium/internal": {
       "sources": [
+        "java/test/org/openqa/selenium/internal/DebugTest.java",
         "java/test/org/openqa/selenium/internal/EitherTest.java",
         "java/test/org/openqa/selenium/internal/MapsTest.java",
         "java/test/org/openqa/selenium/internal/MultimapTest.java",
@@ -4462,6 +4463,7 @@
         "com.uber.nullaway:nullaway:0.14.2",
         "java.src.org.openqa.selenium:manifest-entries.jar:local",
         "java.src.org.openqa.selenium:version.jar:local",
+        "net.bytebuddy:byte-buddy-agent:1.17.7",
         "net.bytebuddy:byte-buddy:1.18.14",
         "org.apiguardian:apiguardian-api:1.1.2",
         "org.assertj:assertj-core:3.27.7",
@@ -4475,22 +4477,32 @@
         "org.junit.platform:junit-platform-launcher:6.1.3",
         "org.junit.platform:junit-platform-reporting:6.1.3",
         "org.opentest4j.reporting:open-test-reporting-tooling-spi:0.2.5",
-        "org.opentest4j:opentest4j:1.3.0"
+        "org.opentest4j:opentest4j:1.3.0",
+        "uk.org.webcompere:system-stubs-core:2.1.8",
+        "uk.org.webcompere:system-stubs-jupiter:2.1.8"
       ],
       "dependsOn": [],
       "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/internal/DebugTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/internal/EitherTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/internal/MapsTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/internal/MultimapTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/internal/SetsTest.jar"
       ],
       "configurations": [
+        "//java/test/org/openqa/selenium/internal:DebugTest",
         "//java/test/org/openqa/selenium/internal:EitherTest",
         "//java/test/org/openqa/selenium/internal:MapsTest",
         "//java/test/org/openqa/selenium/internal:MultimapTest",
         "//java/test/org/openqa/selenium/internal:SetsTest"
       ],
       "testClasses": [
+        {
+          "className": "org.openqa.selenium.internal.DebugTest",
+          "sourcePath": "java/test/org/openqa/selenium/internal/DebugTest.java",
+          "configuration": "//java/test/org/openqa/selenium/internal:DebugTest",
+          "framework": "JUnit"
+        },
         {
           "className": "org.openqa.selenium.internal.EitherTest",
           "sourcePath": "java/test/org/openqa/selenium/internal/EitherTest.java",
@@ -25639,6 +25651,7 @@
         "java/test/org/openqa/selenium/remote/RemotableByTest.java",
         "java/test/org/openqa/selenium/remote/RemoteLogsTest.java",
         "java/test/org/openqa/selenium/remote/RemoteWebDriverBuilderTest.java",
+        "java/test/org/openqa/selenium/remote/RemoteWebDriverDebugLoggingTest.java",
         "java/test/org/openqa/selenium/remote/RemoteWebDriverInitializationTest.java",
         "java/test/org/openqa/selenium/remote/RemoteWebDriverScreenshotTest.java",
         "java/test/org/openqa/selenium/remote/RemoteWebDriverTest.java",
@@ -25795,7 +25808,9 @@
         "org.tomlj:tomlj:2.2.0",
         "org.yaml:snakeyaml:2.6",
         "org.zeromq:jeromq:0.6.0",
-        "redis.clients.authentication:redis-authx-core:0.1.1-beta2"
+        "redis.clients.authentication:redis-authx-core:0.1.1-beta2",
+        "uk.org.webcompere:system-stubs-core:2.1.8",
+        "uk.org.webcompere:system-stubs-jupiter:2.1.8"
       ],
       "dependsOn": [
         "//java",
@@ -25817,6 +25832,7 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemotableByTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteLogsTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebDriverBuilderTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebDriverDebugLoggingTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebDriverInitializationTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebDriverScreenshotTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebDriverScreenshotTest-chrome.jar",
@@ -25851,6 +25867,7 @@
         "//java/test/org/openqa/selenium/remote:RemotableByTest",
         "//java/test/org/openqa/selenium/remote:RemoteLogsTest",
         "//java/test/org/openqa/selenium/remote:RemoteWebDriverBuilderTest",
+        "//java/test/org/openqa/selenium/remote:RemoteWebDriverDebugLoggingTest",
         "//java/test/org/openqa/selenium/remote:RemoteWebDriverInitializationTest",
         "//java/test/org/openqa/selenium/remote:RemoteWebDriverScreenshotTest",
         "//java/test/org/openqa/selenium/remote:RemoteWebDriverScreenshotTest-chrome",
@@ -25943,6 +25960,12 @@
           "className": "org.openqa.selenium.remote.RemoteWebDriverBuilderTest",
           "sourcePath": "java/test/org/openqa/selenium/remote/RemoteWebDriverBuilderTest.java",
           "configuration": "//java/test/org/openqa/selenium/remote:RemoteWebDriverBuilderTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.remote.RemoteWebDriverDebugLoggingTest",
+          "sourcePath": "java/test/org/openqa/selenium/remote/RemoteWebDriverDebugLoggingTest.java",
+          "configuration": "//java/test/org/openqa/selenium/remote:RemoteWebDriverDebugLoggingTest",
           "framework": "JUnit"
         },
         {
