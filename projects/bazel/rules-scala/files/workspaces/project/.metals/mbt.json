@@ -558,9 +558,7 @@
     },
     "//test/src/main/scala/scalarules/test/extra_protobuf_generator": {
       "sources": [
-        "test/src/main/scala/scalarules/test/extra_protobuf_generator/ExtraProtobufGenerator.scala",
-        "test/src/main/scala/scalarules/test/extra_protobuf_generator/ProtobufAdapter.scala",
-        "test/src/main/scala/scalarules/test/extra_protobuf_generator/ProtobufAdapter_2_11.scala"
+        "test/src/main/scala/scalarules/test/extra_protobuf_generator/ExtraProtobufGenerator.scala"
       ],
       "scalacOptions": [],
       "javacOptions": [],
@@ -785,8 +783,6 @@
     "//src/scala/scripts": {
       "sources": [
         "src/scala/scripts/ScalaPBWorker.scala",
-        "src/scala/scripts/ScalaPbCodeGeneratorWrapper.scala",
-        "src/scala/scripts/ScalaPbCodeGeneratorWrapper_2_11.scala",
         "src/scala/scripts/ScroogeWorker.scala"
       ],
       "scalacOptions": [
@@ -1210,7 +1206,6 @@
     },
     "//scala/scalafmt": {
       "sources": [
-        "scala/scalafmt/scalafmt/ScalafmtAdapter-2_11.scala",
         "scala/scalafmt/scalafmt/ScalafmtAdapter.scala",
         "scala/scalafmt/scalafmt/ScalafmtWorker.scala"
       ],
@@ -2111,11 +2106,9 @@
       "sources": [
         "src/java/io/bazel/rulesscala/scalac/deps_tracking_reporter/after_2_12_13_and_before_2_13_12/DepsTrackingReporter.java",
         "src/java/io/bazel/rulesscala/scalac/deps_tracking_reporter/after_2_13_12/DepsTrackingReporter.java",
-        "src/java/io/bazel/rulesscala/scalac/deps_tracking_reporter/before_2_12_13/DepsTrackingReporter.java",
         "src/java/io/bazel/rulesscala/scalac/deps_tracking_reporter/scala_3/DepsTrackingReporter.java",
         "src/java/io/bazel/rulesscala/scalac/reporter/after_2_12_13_and_before_2_13_12/ProtoReporter.java",
         "src/java/io/bazel/rulesscala/scalac/reporter/after_2_13_12/ProtoReporter.java",
-        "src/java/io/bazel/rulesscala/scalac/reporter/before_2_12_13/ProtoReporter.java",
         "src/java/io/bazel/rulesscala/scalac/reporter/scala_3/BazelConsoleReporter.java",
         "src/java/io/bazel/rulesscala/scalac/reporter/scala_3/ProtoReporter.java",
         "src/java/io/bazel/rulesscala/scalac/reporter/since_3_3_before_3_7_2/CompilerCompat.java",
@@ -2536,7 +2529,6 @@
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/DependencyAnalyzerSettings.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/HighLevelCrawlUsedJarFinder.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/OptionsParser.scala",
-        "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/Reporter.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/Reporter213.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer/ScalaVersion.scala",
         "third_party/dependency_analyzer/src/main/io/bazel/rulesscala/dependencyanalyzer3/AstUsedJarFinder.scala",

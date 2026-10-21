@@ -1,48 +1,48 @@
-2026.10.20 07:22:37 INFO  Started: Metals version 2.0.0-community-build.39385630551 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle' for client Visual Studio Code 1.131.0.
-2026.10.20 07:22:37 INFO  Memory monitor started
-2026.10.20 07:22:39 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.20 07:22:39 INFO  mbt-v2: indexing 2 files
-2026.10.20 07:22:39 INFO  time: mbt-v2 loaded index for 2 files in 0.66s
-2026.10.20 07:22:42 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-2026.10.20 07:22:42 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.21 07:21:51 INFO  Started: Metals version 2.0.0-community-build.39560887491 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle' for client Visual Studio Code 1.131.0.
+2026.10.21 07:21:51 INFO  Memory monitor started
+2026.10.21 07:21:51 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.21 07:21:52 INFO  mbt-v2: indexing 2 files
+2026.10.21 07:21:52 INFO  time: mbt-v2 loaded index for 2 files in 0.54s
+2026.10.21 07:21:54 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+2026.10.21 07:21:54 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
 Fetching distribution.
 Downloading https://services.gradle.org/distributions/gradle-9.8.1-bin.zip
 ................................................................................................................................................
-2026.10.20 07:22:46 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.20 07:22:56 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-2026.10.20 07:22:56 INFO  time: gradle-extractor extract in 15s
-2026.10.20 07:22:56 INFO  mbt-import: wrote .metals/mbt.json
-2026.10.20 07:22:56 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.10.20 07:22:56 INFO  Connected to Build server: MBT v2.0.0-community-build.39385630551
-2026.10.20 07:22:57 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.20 07:23:05 INFO  time: indexed workspace in 9.26s
-2026.10.20 07:23:07 INFO  time: indexed workspace in 1.66s
-2026.10.20 07:24:23 INFO  MBT compile via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/gradlew
-2026.10.20 07:24:24 INFO  > Task :compileJava
-2026.10.20 07:24:24 INFO  > Task :processResources NO-SOURCE
-2026.10.20 07:24:24 INFO  > Task :classes
-2026.10.20 07:24:24 INFO  > Task :compileTestJava
-2026.10.20 07:24:24 INFO  > Task :processTestResources NO-SOURCE
-2026.10.20 07:24:24 INFO  > Task :testClasses
-2026.10.20 07:24:24 INFO  gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1792481063998.json
-2026.10.20 07:24:24 INFO  
-2026.10.20 07:24:24 INFO  BUILD SUCCESSFUL in 1s
-2026.10.20 07:24:24 INFO  2 actionable tasks: 2 executed
-2026.10.20 07:24:24 INFO  Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.8.1/userguide/configuration_cache_enabling.html
-2026.10.20 07:24:24 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
-2026.10.20 07:24:25 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-2026.10.20 07:24:24 INFO  MBT test debug session via gradle (forked): /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/gradlew
-2026.10.20 07:24:25 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-2026.10.20 07:24:24 INFO  Starting debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
-2026.10.20 07:24:25 INFO  Loaded expression compiler in 241 milliseconds
-2026.10.20 07:24:30 INFO  Loaded all sources and classes in 5 seconds
-2026.10.20 07:24:30 INFO  Initialized Scala 3 decoder in 3 milliseconds
-2026.10.20 07:24:30 INFO  Trying to attach to remote debuggee VM localhost:33491 .
-2026.10.20 07:24:30 INFO  Attaching to debuggee VM succeeded.
-2026.10.20 07:24:32 INFO  Closing debug server tcp://0.0.0.0:35529
-2026.10.20 07:24:32 INFO  Canceling debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
-2026.10.20 07:24:40 INFO  Shutting down server
-2026.10.20 07:24:40 INFO  Memory monitor stopped
-2026.10.20 07:24:40 INFO  shutting down Metals
-2026.10.20 07:24:40 INFO  Shut down connection with build server.
-2026.10.20 07:24:40 INFO  Exiting server
+2026.10.21 07:21:57 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.21 07:22:03 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026.10.21 07:22:03 INFO  time: gradle-extractor extract in 10s
+2026.10.21 07:22:03 INFO  mbt-import: wrote .metals/mbt.json
+2026.10.21 07:22:03 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.10.21 07:22:03 INFO  Connected to Build server: MBT v2.0.0-community-build.39560887491
+2026.10.21 07:22:04 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.21 07:22:10 INFO  time: indexed workspace in 7.13s
+2026.10.21 07:22:12 INFO  time: indexed workspace in 1.03s
+2026.10.21 07:22:19 INFO  MBT compile via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/gradlew
+2026.10.21 07:22:20 INFO  > Task :compileJava
+2026.10.21 07:22:20 INFO  > Task :processResources NO-SOURCE
+2026.10.21 07:22:20 INFO  > Task :classes
+2026.10.21 07:22:20 INFO  > Task :compileTestJava
+2026.10.21 07:22:20 INFO  > Task :processTestResources NO-SOURCE
+2026.10.21 07:22:20 INFO  > Task :testClasses
+2026.10.21 07:22:20 INFO  gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1792567339732.json
+2026.10.21 07:22:20 INFO  
+2026.10.21 07:22:20 INFO  BUILD SUCCESSFUL in 1s
+2026.10.21 07:22:20 INFO  2 actionable tasks: 2 executed
+2026.10.21 07:22:20 INFO  Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.8.1/userguide/configuration_cache_enabling.html
+2026.10.21 07:22:20 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
+2026.10.21 07:22:20 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+2026.10.21 07:22:20 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+2026.10.21 07:22:20 INFO  Starting debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
+2026.10.21 07:22:20 INFO  MBT test debug session via gradle (forked): /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-gradle/gradlew
+2026.10.21 07:22:20 INFO  Loaded expression compiler in 114 milliseconds
+2026.10.21 07:22:26 INFO  Loaded all sources and classes in 6 seconds
+2026.10.21 07:22:26 INFO  Initialized Scala 3 decoder in 3 milliseconds
+2026.10.21 07:22:26 INFO  Trying to attach to remote debuggee VM localhost:38431 .
+2026.10.21 07:22:26 INFO  Attaching to debuggee VM succeeded.
+2026.10.21 07:22:28 INFO  Canceling debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
+2026.10.21 07:22:28 INFO  Closing debug server tcp://0.0.0.0:41073
+2026.10.21 07:22:34 INFO  Shutting down server
+2026.10.21 07:22:34 INFO  Memory monitor stopped
+2026.10.21 07:22:34 INFO  shutting down Metals
+2026.10.21 07:22:34 INFO  Shut down connection with build server.
+2026.10.21 07:22:34 INFO  Exiting server

@@ -8481,6 +8481,7 @@
         "java/test/org/openqa/selenium/bidi/BiDiSessionCleanUpTest.java",
         "java/test/org/openqa/selenium/bidi/BiDiSessionTest.java",
         "java/test/org/openqa/selenium/bidi/BiDiTest.java",
+        "java/test/org/openqa/selenium/bidi/BiDiUnsubscribeTest.java",
         "java/test/org/openqa/selenium/bidi/ConnectionTest.java",
         "java/test/org/openqa/selenium/bidi/ConverterFunctionsTest.java"
       ],
@@ -8670,6 +8671,7 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/BiDiTest-firefox-beta.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/BiDiTest-firefox-beta-remote.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/BiDiTest-remote.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/BiDiUnsubscribeTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/ConnectionTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/ConverterFunctionsTest.jar"
       ],
@@ -8704,6 +8706,7 @@
         "//java/test/org/openqa/selenium/bidi:BiDiTest-firefox-beta",
         "//java/test/org/openqa/selenium/bidi:BiDiTest-firefox-beta-remote",
         "//java/test/org/openqa/selenium/bidi:BiDiTest-remote",
+        "//java/test/org/openqa/selenium/bidi:BiDiUnsubscribeTest",
         "//java/test/org/openqa/selenium/bidi:ConnectionTest",
         "//java/test/org/openqa/selenium/bidi:ConverterFunctionsTest"
       ],
@@ -8886,6 +8889,12 @@
           "className": "org.openqa.selenium.bidi.BiDiTest",
           "sourcePath": "java/test/org/openqa/selenium/bidi/BiDiTest.java",
           "configuration": "//java/test/org/openqa/selenium/bidi:BiDiTest-remote",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.bidi.BiDiUnsubscribeTest",
+          "sourcePath": "java/test/org/openqa/selenium/bidi/BiDiUnsubscribeTest.java",
+          "configuration": "//java/test/org/openqa/selenium/bidi:BiDiUnsubscribeTest",
           "framework": "JUnit"
         },
         {
@@ -25159,8 +25168,7 @@
         "org.jspecify:jspecify:1.0.1"
       ],
       "dependsOn": [
-        "//java",
-        "//java/src/org/openqa/selenium/bidi"
+        "//java"
       ],
       "classDirectories": []
     },
