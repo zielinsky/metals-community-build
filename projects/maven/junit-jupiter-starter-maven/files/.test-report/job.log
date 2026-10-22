@@ -14,120 +14,113 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 6548 ms
+Browser ready in 6116 ms
 Launching tests...
   maven / junit-jupiter-starter-maven
-[community-build] 2026-10-21T07:21:29.177Z Starting maven / junit-jupiter-starter-maven / import
-[community-build] 2026-10-21T07:21:29.177Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven
-[community-build] 2026-10-21T07:21:29.177Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java
-[community-build] 2026-10-21T07:21:31.301Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-21T07:21:32.441Z VS Code opened CalculatorTests.java
-[community-build] 2026-10-21T07:21:32.564Z Captured screenshot: import/001-file-opened.png
-[community-build] 2026-10-21T07:21:32.564Z Waiting for the build server choice notification
+[community-build] 2026-10-22T07:23:07.771Z Starting maven / junit-jupiter-starter-maven / import
+[community-build] 2026-10-22T07:23:07.771Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven
+[community-build] 2026-10-22T07:23:07.771Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java
+[community-build] 2026-10-22T07:23:08.995Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-22T07:23:09.527Z VS Code opened CalculatorTests.java
+[community-build] 2026-10-22T07:23:09.635Z Captured screenshot: import/001-file-opened.png
+[community-build] 2026-10-22T07:23:09.635Z Waiting for the build server choice notification
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/metals.log' has appeared;  following new file
-[metals] 2026.10.21 07:21:37 INFO  Started: Metals version 2.0.0-community-build.39560887491 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven' for client Visual Studio Code 1.131.0.
-[metals] 2026.10.21 07:21:37 INFO  Memory monitor started
-[metals] 2026.10.21 07:21:38 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-10-21T07:21:39.565Z Notification appeared: New maven workspace detected. Which build server would you like to use?
-[community-build] 2026-10-21T07:21:39.808Z Captured screenshot: import/002-build-server-prompt.png
-[community-build] 2026-10-21T07:21:39.811Z Clicking notification action: Use MBT
-[metals] 2026.10.21 07:21:39 INFO  mbt-v2: indexing 2 files
-[metals] 2026.10.21 07:21:39 INFO  time: mbt-v2 loaded index for 2 files in 0.66s
-[community-build] 2026-10-21T07:21:40.125Z Clicked notification action: Use MBT
-[community-build] 2026-10-21T07:21:40.798Z Captured screenshot: import/003-mbt-selected.png
-[community-build] 2026-10-21T07:21:40.798Z Waiting for the VS Code importing status to finish
-[metals] 2026.10.21 07:21:40 INFO  Running command: ./mvnw --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.39560887491:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt-maven.json
-[community-build] 2026-10-21T07:21:41.281Z VS Code status bar reports that the project is importing
-[metals] 2026.10.21 07:21:46 INFO  [metals-maven] exporting 1 module(s)
-[metals] 2026.10.21 07:21:46 INFO  [metals-maven] resolving sources JARs for 9 dependencies...
-[metals] 2026.10.21 07:21:46 INFO  [metals-maven] sources resolved: 9/9
-[metals] 2026.10.21 07:21:46 INFO  [metals-maven] resolving 9 dependency JAR(s) missing from local cache...
-[metals] 2026.10.21 07:21:46 INFO  [metals-maven] namespace: com.example:junit-jupiter-starter-maven:1.0-SNAPSHOT
-[metals] 2026.10.21 07:21:46 INFO  [metals-maven] wrote 2 namespaces, 9 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt-maven.json
-[metals] 2026.10.21 07:21:47 INFO  time: ran 'maven-export' in 7.34s
-[metals] 2026.10.21 07:21:47 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.10.21 07:21:47 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.10.21 07:21:47 INFO  Connected to Build server: MBT v2.0.0-community-build.39560887491
-[metals] 2026.10.21 07:21:49 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.10.21 07:21:57 INFO  time: indexed workspace in 9.9s
-[community-build] 2026-10-21T07:21:58.517Z VS Code status bar reports that the project import finished
-[community-build] 2026-10-21T07:21:58.518Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt.json
-[community-build] 2026-10-21T07:21:58.623Z Captured screenshot: import/004-mbt-imported.png
-[community-build] 2026-10-21T07:21:58.624Z MBT model contains 2 namespaces and 9 dependency modules
-[community-build] 2026-10-21T07:21:58.624Z Verified imported source: src/main/java/com/example/project/Calculator.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/main/java
-[community-build] 2026-10-21T07:21:58.624Z Verified imported source: src/test/java/com/example/project/CalculatorTests.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java
-[community-build] 2026-10-21T07:21:58.624Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:6.1.3
-[community-build] 2026-10-21T07:21:58.738Z Captured screenshot: import/005-import-verified.png
-[community-build] 2026-10-21T07:21:58.738Z Scenario passed: import
-    ✔ import (29567ms)
-[community-build] 2026-10-21T07:21:58.739Z Starting maven / junit-jupiter-starter-maven / test-discovery
-[community-build] 2026-10-21T07:21:58.740Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven
-[community-build] 2026-10-21T07:21:58.740Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java
-[community-build] 2026-10-21T07:21:58.805Z Waiting for VS Code to open the requested file
-[metals] Oct 21, 2026 7:21:57 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
-[metals] WARNING: Unmatched cancel notification for request id 9
-[community-build] 2026-10-21T07:21:58.910Z VS Code opened CalculatorTests.java
-[community-build] 2026-10-21T07:21:59.067Z Captured screenshot: test-discovery/001-file-opened.png
-[community-build] 2026-10-21T07:21:59.067Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-21T07:21:59.214Z Captured screenshot: test-discovery/002-mbt-session-reused.png
-[metals] 2026.10.21 07:21:59 INFO  time: indexed workspace in 1.58s
-[community-build] 2026-10-21T07:22:00.797Z Waiting for VS Code to discover test: addsTwoNumbers
-[community-build] 2026-10-21T07:22:03.146Z VS Code discovered test: addsTwoNumbers
-[community-build] 2026-10-21T07:22:03.220Z Captured screenshot: test-discovery/003-test-run-button-discovered.png
-[community-build] 2026-10-21T07:22:03.220Z Scenario passed: test-discovery
-    ✔ test-discovery (4481ms)
-[community-build] 2026-10-21T07:22:03.221Z Starting maven / junit-jupiter-starter-maven / calculator-definition
-[community-build] 2026-10-21T07:22:03.221Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven
-[community-build] 2026-10-21T07:22:03.221Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java
-[community-build] 2026-10-21T07:22:03.259Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-21T07:22:03.349Z VS Code opened CalculatorTests.java
-[community-build] 2026-10-21T07:22:03.436Z Captured screenshot: calculator-definition/001-file-opened.png
-[community-build] 2026-10-21T07:22:03.436Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-21T07:22:03.518Z Captured screenshot: calculator-definition/002-mbt-session-reused.png
-[community-build] 2026-10-21T07:22:04.353Z Captured screenshot: calculator-definition/003-definition-symbol-selected.png
-[community-build] 2026-10-21T07:22:04.353Z Go to Definition: Calculator
-[community-build] 2026-10-21T07:22:06.323Z Captured screenshot: calculator-definition/004-definition-verified.png
-    ✔ calculator-definition (3102ms)
-[community-build] 2026-10-21T07:22:06.324Z Starting maven / junit-jupiter-starter-maven / debug-adds-two-numbers
-[community-build] 2026-10-21T07:22:06.324Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven
-[community-build] 2026-10-21T07:22:06.324Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java
-[community-build] 2026-10-21T07:22:06.369Z Opening CalculatorTests.java in the existing VS Code session
-[community-build] 2026-10-21T07:22:07.164Z Waiting for VS Code to open the requested file
-[community-build] 2026-10-21T07:22:07.295Z VS Code opened CalculatorTests.java
-[community-build] 2026-10-21T07:22:07.404Z Captured screenshot: debug-adds-two-numbers/001-file-opened.png
-[community-build] 2026-10-21T07:22:07.404Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-10-21T07:22:07.520Z Captured screenshot: debug-adds-two-numbers/002-mbt-session-reused.png
-[community-build] 2026-10-21T07:22:08.771Z Added breakpoint at line 25
-[community-build] 2026-10-21T07:22:08.870Z Captured screenshot: debug-adds-two-numbers/003-breakpoint-added.png
-[community-build] 2026-10-21T07:22:11.491Z Launching debug test from gutter: addsTwoNumbers
-[metals] 2026.10.21 07:22:11 INFO  MBT compile via mvn: ./mvnw
-[metals] 2026.10.21 07:22:18 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
-[metals] 2026.10.21 07:22:19 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-[metals] 2026.10.21 07:22:19 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-[metals] 2026.10.21 07:22:19 INFO  Starting debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
-[metals] 2026.10.21 07:22:18 INFO  MBT test debug session via mvn (forked): ./mvnw
-[metals] 2026.10.21 07:22:20 INFO  Loaded expression compiler in 909 milliseconds
-[metals] 2026.10.21 07:22:25 INFO  Loaded all sources and classes in 5 seconds
-[metals] 2026.10.21 07:22:25 INFO  Initialized Scala 3 decoder in 3 milliseconds
-[metals] 2026.10.21 07:22:25 INFO  Trying to attach to remote debuggee VM localhost:42821 .
-[metals] 2026.10.21 07:22:25 INFO  Attaching to debuggee VM succeeded.
-[community-build] 2026-10-21T07:22:26.839Z Debugger stopped at line 25
-[community-build] 2026-10-21T07:22:26.962Z Captured screenshot: debug-adds-two-numbers/004-breakpoint-hit.png
-[community-build] 2026-10-21T07:22:27.032Z Continued the debug session
-[metals] 2026.10.21 07:22:27 INFO  Canceling debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
-[metals] 2026.10.21 07:22:27 INFO  Closing debug server tcp://0.0.0.0:41045
-[community-build] 2026-10-21T07:22:28.814Z Test gutter icon reports a passed result for 'addsTwoNumbers'
-[community-build] 2026-10-21T07:22:28.815Z Debug test finished successfully: addsTwoNumbers
-[community-build] 2026-10-21T07:22:28.896Z Captured screenshot: debug-adds-two-numbers/005-debug-test-finished.png
-[community-build] 2026-10-21T07:22:34.153Z Scenario passed: debug-adds-two-numbers
-    ✔ debug-adds-two-numbers (27830ms)
+[community-build] 2026-10-22T07:23:15.098Z Notification appeared: New maven workspace detected. Which build server would you like to use?
+[metals] 2026.10.22 07:23:13 INFO  Started: Metals version 2.0.0-community-build.39739541907 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven' for client Visual Studio Code 1.131.0.
+[metals] 2026.10.22 07:23:13 INFO  Memory monitor started
+[metals] 2026.10.22 07:23:13 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.10.22 07:23:14 INFO  mbt-v2: indexing 2 files
+[metals] 2026.10.22 07:23:14 INFO  time: mbt-v2 loaded index for 2 files in 0.51s
+[community-build] 2026-10-22T07:23:15.265Z Captured screenshot: import/002-build-server-prompt.png
+[community-build] 2026-10-22T07:23:15.270Z Clicking notification action: Use MBT
+[community-build] 2026-10-22T07:23:15.529Z Clicked notification action: Use MBT
+[community-build] 2026-10-22T07:23:15.758Z Captured screenshot: import/003-mbt-selected.png
+[community-build] 2026-10-22T07:23:15.759Z Waiting for the VS Code importing status to finish
+[metals] 2026.10.22 07:23:15 INFO  Running command: ./mvnw --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.39739541907:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt-maven.json
+[community-build] 2026-10-22T07:23:16.807Z VS Code status bar reports that the project is importing
+[metals] 2026.10.22 07:23:49 INFO  [metals-maven] exporting 1 module(s)
+[metals] 2026.10.22 07:23:49 INFO  [metals-maven] resolving sources JARs for 9 dependencies...
+[metals] 2026.10.22 07:23:49 INFO  [metals-maven] sources resolved: 9/9
+[metals] 2026.10.22 07:23:49 INFO  [metals-maven] resolving 9 dependency JAR(s) missing from local cache...
+[metals] 2026.10.22 07:23:49 INFO  [metals-maven] namespace: com.example:junit-jupiter-starter-maven:1.0-SNAPSHOT
+[metals] 2026.10.22 07:23:49 INFO  [metals-maven] wrote 2 namespaces, 9 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt-maven.json
+[metals] 2026.10.22 07:23:50 INFO  time: ran 'maven-export' in 34s
+[metals] 2026.10.22 07:23:50 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.10.22 07:23:50 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.10.22 07:23:50 INFO  Connected to Build server: MBT v2.0.0-community-build.39739541907
+[metals] 2026.10.22 07:23:51 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.10.22 07:23:56 INFO  time: indexed workspace in 5.92s
+[community-build] 2026-10-22T07:23:57.420Z VS Code status bar reports that the project import finished
+[community-build] 2026-10-22T07:23:57.421Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt.json
+[community-build] 2026-10-22T07:23:57.469Z Captured screenshot: import/004-mbt-imported.png
+[community-build] 2026-10-22T07:23:57.469Z MBT model contains 2 namespaces and 9 dependency modules
+[community-build] 2026-10-22T07:23:57.469Z Verified imported source: src/main/java/com/example/project/Calculator.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/main/java
+[community-build] 2026-10-22T07:23:57.469Z Verified imported source: src/test/java/com/example/project/CalculatorTests.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java
+[community-build] 2026-10-22T07:23:57.469Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:6.1.3
+[community-build] 2026-10-22T07:23:57.536Z Captured screenshot: import/005-import-verified.png
+[community-build] 2026-10-22T07:23:57.536Z Scenario passed: import
+    ✔ import (49765ms)
+[community-build] 2026-10-22T07:23:57.537Z Starting maven / junit-jupiter-starter-maven / test-discovery
+[community-build] 2026-10-22T07:23:57.537Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven
+[community-build] 2026-10-22T07:23:57.537Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java
+[community-build] 2026-10-22T07:23:57.569Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-22T07:23:57.630Z VS Code opened CalculatorTests.java
+[community-build] 2026-10-22T07:23:57.685Z Captured screenshot: test-discovery/001-file-opened.png
+[community-build] 2026-10-22T07:23:57.685Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-22T07:23:57.751Z Captured screenshot: test-discovery/002-mbt-session-reused.png
+[metals] 2026.10.22 07:23:57 INFO  time: indexed workspace in 0.97s
+[community-build] 2026-10-22T07:23:58.639Z Waiting for VS Code to discover test: addsTwoNumbers
+[community-build] 2026-10-22T07:23:59.508Z VS Code discovered test: addsTwoNumbers
+[community-build] 2026-10-22T07:23:59.567Z Captured screenshot: test-discovery/003-test-run-button-discovered.png
+[community-build] 2026-10-22T07:23:59.567Z Scenario passed: test-discovery
+    ✔ test-discovery (2034ms)
+[community-build] 2026-10-22T07:23:59.571Z Starting maven / junit-jupiter-starter-maven / calculator-definition
+[community-build] 2026-10-22T07:23:59.571Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven
+[community-build] 2026-10-22T07:23:59.571Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java
+[community-build] 2026-10-22T07:23:59.598Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-22T07:23:59.646Z VS Code opened CalculatorTests.java
+[community-build] 2026-10-22T07:23:59.736Z Captured screenshot: calculator-definition/001-file-opened.png
+[community-build] 2026-10-22T07:23:59.736Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-22T07:23:59.818Z Captured screenshot: calculator-definition/002-mbt-session-reused.png
+[community-build] 2026-10-22T07:24:00.418Z Captured screenshot: calculator-definition/003-definition-symbol-selected.png
+[community-build] 2026-10-22T07:24:00.419Z Go to Definition: Calculator
+[community-build] 2026-10-22T07:24:01.692Z Captured screenshot: calculator-definition/004-definition-verified.png
+    ✔ calculator-definition (2122ms)
+[community-build] 2026-10-22T07:24:01.693Z Starting maven / junit-jupiter-starter-maven / debug-adds-two-numbers
+[community-build] 2026-10-22T07:24:01.693Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven
+[community-build] 2026-10-22T07:24:01.693Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java
+[community-build] 2026-10-22T07:24:01.720Z Opening CalculatorTests.java in the existing VS Code session
+[community-build] 2026-10-22T07:24:02.233Z Waiting for VS Code to open the requested file
+[community-build] 2026-10-22T07:24:02.306Z VS Code opened CalculatorTests.java
+[community-build] 2026-10-22T07:24:02.393Z Captured screenshot: debug-adds-two-numbers/001-file-opened.png
+[community-build] 2026-10-22T07:24:02.393Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-10-22T07:24:02.489Z Captured screenshot: debug-adds-two-numbers/002-mbt-session-reused.png
+[community-build] 2026-10-22T07:24:03.363Z Added breakpoint at line 25
+[community-build] 2026-10-22T07:24:03.420Z Captured screenshot: debug-adds-two-numbers/003-breakpoint-added.png
+[community-build] 2026-10-22T07:24:05.447Z Launching debug test from gutter: addsTwoNumbers
+[metals] 2026.10.22 07:24:05 INFO  MBT compile via mvn: ./mvnw
+[metals] 2026.10.22 07:24:11 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
+[metals] 2026.10.22 07:24:11 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+[metals] 2026.10.22 07:24:11 INFO  MBT test debug session via mvn (forked): ./mvnw
+[metals] 2026.10.22 07:24:11 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+[metals] 2026.10.22 07:24:11 INFO  Starting debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
+[metals] 2026.10.22 07:24:12 INFO  Loaded expression compiler in 670 milliseconds
+[metals] 2026.10.22 07:24:15 INFO  Loaded all sources and classes in 3 seconds
+[metals] 2026.10.22 07:24:15 INFO  Initialized Scala 3 decoder in 2 milliseconds
+[metals] 2026.10.22 07:24:15 INFO  Trying to attach to remote debuggee VM localhost:43395 .
+[metals] 2026.10.22 07:24:15 INFO  Attaching to debuggee VM succeeded.
+[community-build] 2026-10-22T07:24:16.848Z Debugger stopped at line 25
+[community-build] 2026-10-22T07:24:16.939Z Captured screenshot: debug-adds-two-numbers/004-breakpoint-hit.png
+[community-build] 2026-10-22T07:24:16.980Z Continued the debug session
+[community-build] 2026-10-22T07:24:17.595Z Test gutter icon reports a passed result for 'addsTwoNumbers'
+[community-build] 2026-10-22T07:24:17.595Z Debug test finished successfully: addsTwoNumbers
+[community-build] 2026-10-22T07:24:17.683Z Captured screenshot: debug-adds-two-numbers/005-debug-test-finished.png
+[metals] 2026.10.22 07:24:17 INFO  Canceling debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
+[metals] 2026.10.22 07:24:17 INFO  Closing debug server tcp://0.0.0.0:43317
+[community-build] 2026-10-22T07:24:22.851Z Scenario passed: debug-adds-two-numbers
+    ✔ debug-adds-two-numbers (21159ms)
 
 Shutting down the browser
-[metals] 2026.10.21 07:22:34 INFO  Shutting down server
-[metals] 2026.10.21 07:22:34 INFO  Memory monitor stopped
-[metals] 2026.10.21 07:22:34 INFO  shutting down Metals
-[metals] 2026.10.21 07:22:34 INFO  Shut down connection with build server.
-[metals] 2026.10.21 07:22:34 INFO  Exiting server
 
   4 passing (1m)
 
