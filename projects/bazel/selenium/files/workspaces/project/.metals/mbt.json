@@ -10210,60 +10210,6 @@
         }
       ]
     },
-    "//java/src/org/openqa/selenium/devtools/v153": {
-      "sources": [
-        "java/src/org/openqa/selenium/devtools/v153/create-cdp-srcs",
-        "java/src/org/openqa/selenium/devtools/v153/package-info.java",
-        "java/src/org/openqa/selenium/devtools/v153/v153CdpInfo.java",
-        "java/src/org/openqa/selenium/devtools/v153/v153Domains.java",
-        "java/src/org/openqa/selenium/devtools/v153/v153Events.java",
-        "java/src/org/openqa/selenium/devtools/v153/v153Javascript.java",
-        "java/src/org/openqa/selenium/devtools/v153/v153Log.java",
-        "java/src/org/openqa/selenium/devtools/v153/v153Network.java",
-        "java/src/org/openqa/selenium/devtools/v153/v153Target.java"
-      ],
-      "scalacOptions": [],
-      "javacOptions": [
-        "-parameters",
-        "-Xep:NullAway:WARN",
-        "-XepOpt:NullAway:AnnotatedPackages=org.openqa.selenium",
-        "-Xep:NullAway:ERROR"
-      ],
-      "dependencyModules": [
-        "com.github.javaparser:javaparser-core:3.28.2",
-        "com.google.auto.service:auto-service-annotations:1.1.1",
-        "com.google.auto.service:auto-service:1.1.1",
-        "com.google.auto:auto-common:1.2.1",
-        "com.google.errorprone:error_prone_annotations:2.5.1",
-        "com.google.guava:failureaccess:1.0.3",
-        "com.google.guava:guava:33.7.2-jre",
-        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
-        "com.google.j2objc:j2objc-annotations:2.8",
-        "com.uber.nullaway:nullaway:0.14.2",
-        "io.opentelemetry:opentelemetry-api:1.67.0",
-        "io.opentelemetry:opentelemetry-common:1.67.0",
-        "io.opentelemetry:opentelemetry-context:1.67.0",
-        "io.opentelemetry:opentelemetry-exporter-logging:1.67.0",
-        "io.opentelemetry:opentelemetry-sdk-common:1.67.0",
-        "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.67.0",
-        "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.67.0",
-        "io.opentelemetry:opentelemetry-sdk-logs:1.67.0",
-        "io.opentelemetry:opentelemetry-sdk-metrics:1.67.0",
-        "io.opentelemetry:opentelemetry-sdk-trace:1.67.0",
-        "io.opentelemetry:opentelemetry-sdk:1.67.0",
-        "java.src.org.openqa.selenium:manifest-entries.jar:local",
-        "java.src.org.openqa.selenium:version.jar:local",
-        "net.bytebuddy:byte-buddy:1.18.15",
-        "org.checkerframework:checker-qual:4.2.3",
-        "org.checkerframework:dataflow-nullaway:4.2.3",
-        "org.jetbrains:annotations:26.1.0",
-        "org.jspecify:jspecify:1.0.1"
-      ],
-      "dependsOn": [
-        "//java"
-      ],
-      "classDirectories": []
-    },
     "//java/test/org/openqa/selenium/bidi/network": {
       "sources": [
         "java/test/org/openqa/selenium/bidi/network/AddInterceptParametersTest.java",
@@ -10733,6 +10679,60 @@
           "framework": "JUnit"
         }
       ]
+    },
+    "//java/src/org/openqa/selenium/devtools/v156": {
+      "sources": [
+        "java/src/org/openqa/selenium/devtools/v156/create-cdp-srcs",
+        "java/src/org/openqa/selenium/devtools/v156/package-info.java",
+        "java/src/org/openqa/selenium/devtools/v156/v156CdpInfo.java",
+        "java/src/org/openqa/selenium/devtools/v156/v156Domains.java",
+        "java/src/org/openqa/selenium/devtools/v156/v156Events.java",
+        "java/src/org/openqa/selenium/devtools/v156/v156Javascript.java",
+        "java/src/org/openqa/selenium/devtools/v156/v156Log.java",
+        "java/src/org/openqa/selenium/devtools/v156/v156Network.java",
+        "java/src/org/openqa/selenium/devtools/v156/v156Target.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "-parameters",
+        "-Xep:NullAway:WARN",
+        "-XepOpt:NullAway:AnnotatedPackages=org.openqa.selenium",
+        "-Xep:NullAway:ERROR"
+      ],
+      "dependencyModules": [
+        "com.github.javaparser:javaparser-core:3.28.2",
+        "com.google.auto.service:auto-service-annotations:1.1.1",
+        "com.google.auto.service:auto-service:1.1.1",
+        "com.google.auto:auto-common:1.2.1",
+        "com.google.errorprone:error_prone_annotations:2.5.1",
+        "com.google.guava:failureaccess:1.0.3",
+        "com.google.guava:guava:33.7.2-jre",
+        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        "com.google.j2objc:j2objc-annotations:2.8",
+        "com.uber.nullaway:nullaway:0.14.2",
+        "io.opentelemetry:opentelemetry-api:1.67.0",
+        "io.opentelemetry:opentelemetry-common:1.67.0",
+        "io.opentelemetry:opentelemetry-context:1.67.0",
+        "io.opentelemetry:opentelemetry-exporter-logging:1.67.0",
+        "io.opentelemetry:opentelemetry-sdk-common:1.67.0",
+        "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.67.0",
+        "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.67.0",
+        "io.opentelemetry:opentelemetry-sdk-logs:1.67.0",
+        "io.opentelemetry:opentelemetry-sdk-metrics:1.67.0",
+        "io.opentelemetry:opentelemetry-sdk-trace:1.67.0",
+        "io.opentelemetry:opentelemetry-sdk:1.67.0",
+        "java.src.org.openqa.selenium:manifest-entries.jar:local",
+        "java.src.org.openqa.selenium:version.jar:local",
+        "net.bytebuddy:byte-buddy:1.18.15",
+        "org.checkerframework:checker-qual:4.2.3",
+        "org.checkerframework:dataflow-nullaway:4.2.3",
+        "org.jetbrains:annotations:26.1.0",
+        "org.jspecify:jspecify:1.0.1"
+      ],
+      "dependsOn": [
+        "//java"
+      ],
+      "classDirectories": []
     },
     "//java/src/org/openqa/selenium/devtools/v155": {
       "sources": [
