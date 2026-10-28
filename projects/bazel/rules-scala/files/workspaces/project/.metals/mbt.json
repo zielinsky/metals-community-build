@@ -1688,6 +1688,7 @@
         "test/coverage_jacoco_runtime/Helper.scala",
         "test/coverage_jacoco_runtime/JacocoRuntimeScala3Test.scala",
         "test/coverage_jacoco_runtime/JacocoRuntimeTest.scala",
+        "test/coverage_jacoco_runtime/JavaHelper.java",
         "test/coverage_jacoco_runtime/Main.scala",
         "test/coverage_jacoco_runtime/User.scala",
         "test/coverage_jacoco_runtime/UserScala3.scala"
@@ -2805,8 +2806,10 @@
     "//test/coverage_inline": {
       "sources": [
         "test/coverage_inline/App.scala",
+        "test/coverage_inline/CheckedApp.scala",
         "test/coverage_inline/InlineTest.scala",
-        "test/coverage_inline/Lib.scala"
+        "test/coverage_inline/Lib.scala",
+        "test/coverage_inline/MacroApp.scala"
       ],
       "scalacOptions": [
         "-opt:inline:**",
