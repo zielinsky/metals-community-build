@@ -1,52 +1,47 @@
-2026.10.28 08:07:12 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.28 08:07:13 INFO  mbt-v2: indexing 232 files
-2026.10.28 08:07:13 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals9619905481215383698 -cp /tmp/metals9619905481215383698/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.40654052279:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-2026.10.28 08:07:16 INFO  time: mbt-v2 loaded index for 232 files in 3.37s
-2026.10.28 08:07:23 INFO  [metals-maven] exporting 1 module(s)
-2026.10.28 08:07:23 INFO  [metals-maven] resolving sources JARs for 27 dependencies...
-2026.10.28 08:07:23 INFO  [metals-maven] sources resolved: 26/27
-2026.10.28 08:07:23 INFO  [metals-maven] resolving 26 dependency JAR(s) missing from local cache...
-2026.10.28 08:07:23 INFO  [metals-maven] namespace: com.google.turbine:turbine:HEAD-SNAPSHOT
-2026.10.28 08:07:25 INFO  [metals-maven] wrote 2 namespaces, 27 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-2026.10.28 08:07:25 INFO  time: ran 'maven-export' in 11s
-2026.10.28 08:07:25 INFO  mbt-import: wrote .metals/mbt.json
-2026.10.28 08:07:25 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.10.28 08:07:25 INFO  Connected to Build server: MBT v2.0.0-community-build.40654052279
-2026.10.28 08:07:25 WARN  Your project uses JDK version 25 and
+2026.10.29 08:18:36 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.29 08:18:36 INFO  mbt-v2: indexing 233 files
+2026.10.29 08:18:37 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals14485229829752605706 -cp /tmp/metals14485229829752605706/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.40840540627:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+2026.10.29 08:18:39 INFO  time: mbt-v2 loaded index for 233 files in 2.56s
+2026.10.29 08:18:46 INFO  [metals-maven] exporting 1 module(s)
+2026.10.29 08:18:46 INFO  [metals-maven] resolving sources JARs for 27 dependencies...
+2026.10.29 08:18:46 INFO  [metals-maven] sources resolved: 26/27
+2026.10.29 08:18:46 INFO  [metals-maven] resolving 26 dependency JAR(s) missing from local cache...
+2026.10.29 08:18:46 INFO  [metals-maven] namespace: com.google.turbine:turbine:HEAD-SNAPSHOT
+2026.10.29 08:18:46 INFO  [metals-maven] wrote 2 namespaces, 27 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+2026.10.29 08:18:46 INFO  time: ran 'maven-export' in 9.01s
+2026.10.29 08:18:46 INFO  mbt-import: wrote .metals/mbt.json
+2026.10.29 08:18:47 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.10.29 08:18:47 INFO  Connected to Build server: MBT v2.0.0-community-build.40840540627
+2026.10.29 08:18:47 WARN  Your project uses JDK version 25 and
 Metals server is running on JDK version 21.
 This might cause incorrect completions, since
 Metals JDK version should be greater than or equal to the project's JDK version.
 
-2026.10.28 08:07:27 WARN  Your project uses JDK version 25 and
+2026.10.29 08:18:48 WARN  Your project uses JDK version 25 and
 Metals server is running on JDK version 21.
 This might cause incorrect completions, since
 Metals JDK version should be greater than or equal to the project's JDK version.
 
-2026.10.28 08:07:29 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.28 08:07:32 INFO  references: found 1 occurrences
-2026.10.28 08:07:32 INFO  MBT fallback for symbol com/google/turbine/main/Main#MANIFEST_DIR#: found 0 definitions
-2026.10.28 08:07:32 INFO  references: found 1 external document candidates in 37ms
-2026.10.28 08:07:32 INFO  references: indexed 1 candidates in 777μs
-2026.10.28 08:07:32 INFO  references: found 4 reference results in 71ms
-2026.10.28 08:07:39 INFO  time: indexed workspace in 14s
-2026.10.28 08:07:39 WARN  Your project uses JDK version 25 and
+2026.10.29 08:18:50 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.29 08:18:54 INFO  references: found 1 occurrences
+2026.10.29 08:18:54 INFO  references: found 1 external document candidates in 30ms
+2026.10.29 08:18:54 INFO  MBT fallback for symbol com/google/turbine/main/Main#MANIFEST_DIR#: found 0 definitions
+2026.10.29 08:18:54 INFO  references: indexed 1 candidates in 4ms
+2026.10.29 08:18:54 INFO  references: found 4 reference results in 74ms
+2026.10.29 08:18:58 INFO  time: indexed workspace in 11s
+2026.10.29 08:18:59 WARN  Your project uses JDK version 25 and
 Metals server is running on JDK version 21.
 This might cause incorrect completions, since
 Metals JDK version should be greater than or equal to the project's JDK version.
 
-2026.10.28 08:07:41 WARN  Your project uses JDK version 25 and
-Metals server is running on JDK version 21.
-This might cause incorrect completions, since
-Metals JDK version should be greater than or equal to the project's JDK version.
-
-2026.10.28 08:07:42 INFO  time: indexed workspace in 2.82s
-2026.10.28 08:07:46 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
-2026.10.28 08:07:47 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
-2026.10.28 08:07:50 INFO  references: found 1 occurrences
-2026.10.28 08:07:50 INFO  references: found 56 external document candidates in 14ms
-2026.10.28 08:07:53 INFO  references: indexed 56 candidates in 2.53s
-2026.10.28 08:07:53 INFO  references: found 85 reference results in 2.58s
-Oct 28, 2026 8:08:01 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+2026.10.29 08:19:01 INFO  time: indexed workspace in 2.6s
+2026.10.29 08:19:06 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
+2026.10.29 08:19:06 WARN  document-symbol: range is undefined for symbol com/google/turbine/options/TurbineOptions#`<init>`().. info=SymbolInformation(com/google/turbine/options/TurbineOptions#`<init>`().,JAVA,CONSTRUCTOR,0,<init>,Empty,List(),Empty,List(),None) occ=SymbolOccurrence(Some(Range(-1,-1,-1,-1)),com/google/turbine/options/TurbineOptions#`<init>`().,DEFINITION)
+2026.10.29 08:19:09 INFO  references: found 1 occurrences
+2026.10.29 08:19:09 INFO  references: found 56 external document candidates in 13ms
+2026.10.29 08:19:11 INFO  references: indexed 56 candidates in 2.14s
+2026.10.29 08:19:11 INFO  references: found 85 reference results in 2.19s
+Oct 29, 2026 8:19:19 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
 SEVERE: Internal error: java.lang.IllegalArgumentException
 java.util.concurrent.CompletionException: java.lang.IllegalArgumentException
 	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
@@ -109,20 +104,9 @@ Caused by: java.lang.IllegalArgumentException
 	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
 	... 3 more
 
-2026.10.28 08:08:05 INFO  Shutting down server
-2026.10.28 08:08:05 INFO  Memory monitor stopped
-2026.10.28 08:08:05 INFO  shutting down Metals
-2026.10.28 08:08:05 INFO  Shut down connection with build server.
-Oct 28, 2026 8:08:05 AM org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer fireStreamClosed
-INFO: Pipe closed
-java.io.IOException: Pipe closed
-	at java.base/java.io.PipedInputStream.read(PipedInputStream.java:313)
-	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:82)
-	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-
-2026.10.28 08:08:05 INFO  Exiting server
+2026.10.29 08:19:20 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/java/com/google/turbine/main/Main.java
+2026.10.29 08:19:23 INFO  Shutting down server
+2026.10.29 08:19:23 INFO  Memory monitor stopped
+2026.10.29 08:19:23 INFO  shutting down Metals
+2026.10.29 08:19:23 INFO  Shut down connection with build server.
+2026.10.29 08:19:23 INFO  Exiting server
