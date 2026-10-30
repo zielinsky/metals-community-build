@@ -43,6 +43,22 @@
         "file": "clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java",
         "text": "assertFutureThrows("
       }
+    },
+    {
+      "id": "auto-import-into-renamed-group",
+      "kind": "code-action",
+      "openFile": "core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala",
+      "symbol": "AuthorizerServerInfo",
+      "near": "unresolvedAuthInfo",
+      "codeAction": {
+        "edit": {
+          "replace": "val clusterResourcePattern = new ResourcePattern(ResourceType.CLUSTER, Resource.CLUSTER_NAME, PatternType.LITERAL)",
+          "with": "val clusterResourcePattern = new ResourcePattern(ResourceType.CLUSTER, Resource.CLUSTER_NAME, PatternType.LITERAL); val unresolvedAuthInfo: AuthorizerServerInfo = null"
+        },
+        "menu": "quick-fix",
+        "title": "Import 'AuthorizerServerInfo' from package 'org.apache.kafka.server.authorizer'",
+        "expectedText": "import org.apache.kafka.server.authorizer.{Authorizer => JAuthorizer, AuthorizerServerInfo}"
+      }
     }
   ]
 }
