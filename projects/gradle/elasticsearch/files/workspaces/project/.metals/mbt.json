@@ -226,7 +226,7 @@
     },
     {
       "id": "com.azure:azure-core:1.55.3",
-      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/1b869521231ba533c5a9da19f81cf646/transformed/azure-core-1.55.3-patched.jar",
+      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/3915b2236913f3bbea32a04a250d6d45/transformed/azure-core-1.55.3-patched.jar",
       "sources": "file:///home/runner/.gradle/caches/modules-2/files-2.1/com.azure/azure-core/1.55.3/5fb880ce24d416307ddea19a10030e25ff0d120b/azure-core-1.55.3-sources.jar"
     },
     {
@@ -2073,7 +2073,7 @@
     },
     {
       "id": "org.apache.hadoop:hadoop-client-api:3.4.1",
-      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/7fcec46e3dfc76af7e0bc4e99214678d/transformed/hadoop-client-api-3.4.1-patched.jar"
+      "jar": "file:///home/runner/.gradle/caches/9.7.1/transforms/c6b408a93e16ac90606f4b7792bf14e7/transformed/hadoop-client-api-3.4.1-patched.jar"
     },
     {
       "id": "org.apache.hadoop:hadoop-client-api:3.4.3",
@@ -23674,30 +23674,6 @@
       ],
       "projectPath": ":x-pack:plugin:sql:qa:jdbc"
     },
-    "bc": {
-      "sources": [
-        "distribution/tools/plugin-cli/bc/src/main/java"
-      ],
-      "scalacOptions": [],
-      "javacOptions": [
-        "--release",
-        "21",
-        "-Werror",
-        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
-        "-Xdoclint:all",
-        "-Xdoclint:-missing"
-      ],
-      "dependencyModules": [
-        "org.bouncycastle:bcpg-jdk18on:1.86",
-        "org.bouncycastle:bcprov-jdk18on:1.86",
-        "org.bouncycastle:bcutil-jdk18on:1.86"
-      ],
-      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
-      "classDirectories": [
-        "distribution/tools/plugin-cli/bc/build/classes/java/main"
-      ],
-      "projectPath": ":distribution:tools:plugin-cli:bc"
-    },
     "transform-qa-single-node-tests": {
       "sources": [],
       "scalacOptions": [],
@@ -30990,7 +30966,6 @@
       "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
       "dependsOn": [
         "plugin-cli",
-        "bc",
         "bridge",
         "cli-terminal",
         "client-rest",
@@ -31013,6 +30988,7 @@
         "lucene-store",
         "lz4",
         "native",
+        "plugin-cli-bc",
         "plugin-scanner",
         "simdjson",
         "simdvec",
@@ -32980,6 +32956,83 @@
         "modules/reindex/build/classes/java/main"
       ],
       "projectPath": ":modules:reindex"
+    },
+    "cli-bc:test": {
+      "sources": [
+        "x-pack/plugin/security/cli/bc/src/test/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing"
+      ],
+      "dependencyModules": [
+        "at.yawk.lz4:lz4-java:1.11.4",
+        "co.elastic.logging:ecs-logging-core:1.7.0",
+        "co.elastic.logging:log4j2-ecs-layout:1.7.0",
+        "com.carrotsearch:hppc:0.8.1",
+        "com.google.errorprone:error_prone_annotations:2.38.0",
+        "net.sf.jopt-simple:jopt-simple:5.0.2",
+        "org.apache.logging.log4j:log4j-api:2.26.1",
+        "org.apache.logging.log4j:log4j-core:2.26.1",
+        "org.apache.lucene:lucene-analysis-common:10.5.2",
+        "org.apache.lucene:lucene-backward-codecs:10.5.2",
+        "org.apache.lucene:lucene-core:10.5.2",
+        "org.apache.lucene:lucene-facet:10.5.2",
+        "org.apache.lucene:lucene-grouping:10.5.2",
+        "org.apache.lucene:lucene-highlighter:10.5.2",
+        "org.apache.lucene:lucene-join:10.5.2",
+        "org.apache.lucene:lucene-memory:10.5.2",
+        "org.apache.lucene:lucene-misc:10.5.2",
+        "org.apache.lucene:lucene-queries:10.5.2",
+        "org.apache.lucene:lucene-queryparser:10.5.2",
+        "org.apache.lucene:lucene-sandbox:10.5.2",
+        "org.apache.lucene:lucene-suggest:10.5.2",
+        "org.bouncycastle:bcpkix-jdk18on:1.86",
+        "org.bouncycastle:bcprov-jdk18on:1.86",
+        "org.bouncycastle:bcutil-jdk18on:1.86",
+        "org.hdrhistogram:HdrHistogram:2.1.9",
+        "org.jruby.jcodings:jcodings:1.0.63",
+        "org.jruby.joni:joni:2.2.6",
+        "org.jspecify:jspecify:1.0.0"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
+      "dependsOn": [
+        "cli-bc",
+        "cli-terminal",
+        "columnar",
+        "elasticsearch-server",
+        "entitlement",
+        "exponential-histogram",
+        "foreign-adapter",
+        "foreign-library",
+        "geo",
+        "grok",
+        "ip-location-api",
+        "libs-cli",
+        "libs-core",
+        "libs-logging",
+        "libs-plugin-analysis-api",
+        "libs-plugin-api",
+        "libs-x-content",
+        "lucene-store",
+        "lz4",
+        "native",
+        "simdjson",
+        "simdvec",
+        "tdigest",
+        "user-agent-api",
+        "zstd",
+        "simdvec:testFixtures"
+      ],
+      "classDirectories": [
+        "x-pack/plugin/security/cli/bc/build/classes/java/test"
+      ],
+      "projectPath": ":x-pack:plugin:security:cli:bc"
     },
     "vector-tile:test": {
       "sources": [
@@ -37101,7 +37154,6 @@
       ],
       "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
       "dependsOn": [
-        "bc",
         "cli-terminal",
         "columnar",
         "elasticsearch-server",
@@ -37117,6 +37169,7 @@
         "libs-plugin-api",
         "libs-x-content",
         "lz4",
+        "plugin-cli-bc",
         "plugin-scanner",
         "tdigest",
         "user-agent-api"
@@ -40621,6 +40674,33 @@
       ],
       "projectPath": ":x-pack:plugin:snapshot-based-recoveries:qa:fs"
     },
+    "plugin-cli-bc:test": {
+      "sources": [
+        "distribution/tools/plugin-cli/bc/src/test/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing"
+      ],
+      "dependencyModules": [
+        "org.bouncycastle:bcpg-jdk18on:1.86",
+        "org.bouncycastle:bcprov-jdk18on:1.86",
+        "org.bouncycastle:bcutil-jdk18on:1.86"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
+      "dependsOn": [
+        "plugin-cli-bc"
+      ],
+      "classDirectories": [
+        "distribution/tools/plugin-cli/bc/build/classes/java/test"
+      ],
+      "projectPath": ":distribution:tools:plugin-cli:bc"
+    },
     "fixtures": {
       "sources": [],
       "scalacOptions": [],
@@ -40853,6 +40933,7 @@
         "aggregations",
         "analysis-common",
         "bridge",
+        "cli-bc",
         "cli-terminal",
         "client-rest",
         "columnar",
@@ -49790,9 +49871,6 @@
         "org.apache.lucene:lucene-queryparser:10.5.2",
         "org.apache.lucene:lucene-sandbox:10.5.2",
         "org.apache.lucene:lucene-suggest:10.5.2",
-        "org.bouncycastle:bcpkix-jdk18on:1.86",
-        "org.bouncycastle:bcprov-jdk18on:1.86",
-        "org.bouncycastle:bcutil-jdk18on:1.86",
         "org.hdrhistogram:HdrHistogram:2.1.9",
         "org.jruby.jcodings:jcodings:1.0.63",
         "org.jruby.joni:joni:2.2.6",
@@ -49800,6 +49878,7 @@
       ],
       "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
       "dependsOn": [
+        "cli-bc",
         "cli-terminal",
         "columnar",
         "elasticsearch-server",
@@ -53751,33 +53830,6 @@
       ],
       "projectPath": ":x-pack:plugin:async-search"
     },
-    "bc:test": {
-      "sources": [
-        "distribution/tools/plugin-cli/bc/src/test/java"
-      ],
-      "scalacOptions": [],
-      "javacOptions": [
-        "--release",
-        "21",
-        "-Werror",
-        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
-        "-Xdoclint:all",
-        "-Xdoclint:-missing"
-      ],
-      "dependencyModules": [
-        "org.bouncycastle:bcpg-jdk18on:1.86",
-        "org.bouncycastle:bcprov-jdk18on:1.86",
-        "org.bouncycastle:bcutil-jdk18on:1.86"
-      ],
-      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
-      "dependsOn": [
-        "bc"
-      ],
-      "classDirectories": [
-        "distribution/tools/plugin-cli/bc/build/classes/java/test"
-      ],
-      "projectPath": ":distribution:tools:plugin-cli:bc"
-    },
     "audit": {
       "sources": [],
       "scalacOptions": [],
@@ -56232,71 +56284,6 @@
       "classDirectories": [],
       "projectPath": ":x-pack:plugin:logsdb:qa:with-custom-cutoff"
     },
-    "test-otel-filter-plugin": {
-      "sources": [
-        "test/external-modules/otel-filter-plugin/src/main/java"
-      ],
-      "scalacOptions": [],
-      "javacOptions": [
-        "--release",
-        "21",
-        "-Werror",
-        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
-        "-Xdoclint:all",
-        "-Xdoclint:-missing",
-        "--add-modules=ALL-MODULE-PATH",
-        "--module-path=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/tdigest/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/exponential-histogram/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/x-content/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/lz4/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/user-agent-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/ip-location-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/cli/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/core/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/logging/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/geo/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/plugin-analysis-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/plugin-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/grok/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/columnar/build/classes/java/main:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-suggest/10.5.2/e1af2cc1ce920a953ebfe904f67a9a28ceced9cb/lucene-suggest-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analysis-common/10.5.2/845af3088dbf36cf6739d67e766415beedc19a/lucene-analysis-common-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-backward-codecs/10.5.2/cfe1b2c10b750989a8ff851406057e45af67d298/lucene-backward-codecs-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queryparser/10.5.2/7a21df13da33b5693847297ece1e14ef1b38a810/lucene-queryparser-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-sandbox/10.5.2/4364ab60d825127ba39bf319517478f9340a1592/lucene-sandbox-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-facet/10.5.2/be286224d2634702c148d0a88d6ea4c32eab07c/lucene-facet-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-grouping/10.5.2/8ec4351b7183dbff17a44985a4f82b9204c3ead3/lucene-grouping-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-highlighter/10.5.2/e141bc952a8670f1ebb1d2d673f5e726a8410574/lucene-highlighter-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-join/10.5.2/2ba4aa4093f27d9a3c80ab6fe4b981938d604bdc/lucene-join-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-memory/10.5.2/45ed6c39125b8bf357d2c38b22fdf6d3aa2fad72/lucene-memory-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-misc/10.5.2/3c7478b0cb8c6e053f265aad32372ad6ff1d6437/lucene-misc-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queries/10.5.2/83286c578234e5876db84d6187735998b8fbeb40/lucene-queries-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/10.5.2/db6ca85590666a53e3bf33a558e3869cb60d9ea0/lucene-core-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.9/e4631ce165eb400edecfa32e03d3f1be53dee754/HdrHistogram-2.1.9.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.26.1/b9864ed8d0c01f65f3b0bf70f1447e5cc1b49c24/log4j-api-2.26.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.26.1/1941359537713285d224714f63ca4e5cf004d575/log4j-core-2.26.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/co.elastic.logging/log4j2-ecs-layout/1.7.0/8326e6fa5aa2a1090b22e6a4f1a1c114c84d85a3/log4j2-ecs-layout-1.7.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/co.elastic.logging/ecs-logging-core/1.7.0/46791b93c3acaa3bcc584b795252edd8d2054cc4/ecs-logging-core-1.7.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/at.yawk.lz4/lz4-java/1.11.4/a27ccbac6c886771d3db36f91b144950bdb5082a/lz4-java-1.11.4.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jruby.joni/joni/2.2.6/864217ab7dcece78ad7bf3c045a602d871ff309a/joni-2.2.6.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.63/b8c386790e72f0bad666c8f1a8af12d0528992e0/jcodings-1.0.63.jar:/home/runner/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.2/98cafc6081d5632b61be2c9e60650b64ddbc637c/jopt-simple-5.0.2.jar:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/cli-terminal/build/classes/java/main:/home/runner/.gradle/caches/modules-2/files-2.1/org.jspecify/jspecify/1.0.0/7425a601c1c7ec76645a78d22b8c6a627edee507/jspecify-1.0.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.38.0/fc0ae991433e8590ba51cd558421478318a74c8c/error_prone_annotations-2.38.0.jar"
-      ],
-      "dependencyModules": [
-        "at.yawk.lz4:lz4-java:1.11.4",
-        "co.elastic.logging:ecs-logging-core:1.7.0",
-        "co.elastic.logging:log4j2-ecs-layout:1.7.0",
-        "com.google.errorprone:error_prone_annotations:2.38.0",
-        "net.sf.jopt-simple:jopt-simple:5.0.2",
-        "org.apache.logging.log4j:log4j-api:2.26.1",
-        "org.apache.logging.log4j:log4j-core:2.26.1",
-        "org.apache.lucene:lucene-analysis-common:10.5.2",
-        "org.apache.lucene:lucene-backward-codecs:10.5.2",
-        "org.apache.lucene:lucene-core:10.5.2",
-        "org.apache.lucene:lucene-facet:10.5.2",
-        "org.apache.lucene:lucene-grouping:10.5.2",
-        "org.apache.lucene:lucene-highlighter:10.5.2",
-        "org.apache.lucene:lucene-join:10.5.2",
-        "org.apache.lucene:lucene-memory:10.5.2",
-        "org.apache.lucene:lucene-misc:10.5.2",
-        "org.apache.lucene:lucene-queries:10.5.2",
-        "org.apache.lucene:lucene-queryparser:10.5.2",
-        "org.apache.lucene:lucene-sandbox:10.5.2",
-        "org.apache.lucene:lucene-suggest:10.5.2",
-        "org.hdrhistogram:HdrHistogram:2.1.9",
-        "org.jruby.jcodings:jcodings:1.0.63",
-        "org.jruby.joni:joni:2.2.6",
-        "org.jspecify:jspecify:1.0.0"
-      ],
-      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
-      "dependsOn": [
-        "cli-terminal",
-        "columnar",
-        "elasticsearch-server",
-        "exponential-histogram",
-        "geo",
-        "grok",
-        "ip-location-api",
-        "libs-cli",
-        "libs-core",
-        "libs-logging",
-        "libs-plugin-analysis-api",
-        "libs-plugin-api",
-        "libs-x-content",
-        "lz4",
-        "tdigest",
-        "user-agent-api"
-      ],
-      "classDirectories": [
-        "test/external-modules/otel-filter-plugin/build/classes/java/main"
-      ],
-      "projectPath": ":test:external-modules:test-otel-filter-plugin"
-    },
     "security-implicit-privileges-extension:test": {
       "sources": [
         "x-pack/qa/security-implicit-privileges-extension/src/javaRestTest/java",
@@ -56772,6 +56759,95 @@
         "libs/plugin-analysis-api/build/classes/java/main"
       ],
       "projectPath": ":libs:plugin-analysis-api"
+    },
+    "test-otel-filter-plugin": {
+      "sources": [
+        "test/external-modules/otel-filter-plugin/src/main/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing",
+        "--add-modules=ALL-MODULE-PATH",
+        "--module-path=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/tdigest/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/exponential-histogram/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/x-content/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/lz4/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/user-agent-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/ip-location-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/cli/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/core/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/logging/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/geo/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/plugin-analysis-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/plugin-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/grok/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/columnar/build/classes/java/main:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-suggest/10.5.2/e1af2cc1ce920a953ebfe904f67a9a28ceced9cb/lucene-suggest-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analysis-common/10.5.2/845af3088dbf36cf6739d67e766415beedc19a/lucene-analysis-common-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-backward-codecs/10.5.2/cfe1b2c10b750989a8ff851406057e45af67d298/lucene-backward-codecs-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queryparser/10.5.2/7a21df13da33b5693847297ece1e14ef1b38a810/lucene-queryparser-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-sandbox/10.5.2/4364ab60d825127ba39bf319517478f9340a1592/lucene-sandbox-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-facet/10.5.2/be286224d2634702c148d0a88d6ea4c32eab07c/lucene-facet-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-grouping/10.5.2/8ec4351b7183dbff17a44985a4f82b9204c3ead3/lucene-grouping-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-highlighter/10.5.2/e141bc952a8670f1ebb1d2d673f5e726a8410574/lucene-highlighter-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-join/10.5.2/2ba4aa4093f27d9a3c80ab6fe4b981938d604bdc/lucene-join-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-memory/10.5.2/45ed6c39125b8bf357d2c38b22fdf6d3aa2fad72/lucene-memory-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-misc/10.5.2/3c7478b0cb8c6e053f265aad32372ad6ff1d6437/lucene-misc-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queries/10.5.2/83286c578234e5876db84d6187735998b8fbeb40/lucene-queries-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/10.5.2/db6ca85590666a53e3bf33a558e3869cb60d9ea0/lucene-core-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.9/e4631ce165eb400edecfa32e03d3f1be53dee754/HdrHistogram-2.1.9.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.26.1/b9864ed8d0c01f65f3b0bf70f1447e5cc1b49c24/log4j-api-2.26.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.26.1/1941359537713285d224714f63ca4e5cf004d575/log4j-core-2.26.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/co.elastic.logging/log4j2-ecs-layout/1.7.0/8326e6fa5aa2a1090b22e6a4f1a1c114c84d85a3/log4j2-ecs-layout-1.7.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/co.elastic.logging/ecs-logging-core/1.7.0/46791b93c3acaa3bcc584b795252edd8d2054cc4/ecs-logging-core-1.7.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/at.yawk.lz4/lz4-java/1.11.4/a27ccbac6c886771d3db36f91b144950bdb5082a/lz4-java-1.11.4.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jruby.joni/joni/2.2.6/864217ab7dcece78ad7bf3c045a602d871ff309a/joni-2.2.6.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.63/b8c386790e72f0bad666c8f1a8af12d0528992e0/jcodings-1.0.63.jar:/home/runner/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.2/98cafc6081d5632b61be2c9e60650b64ddbc637c/jopt-simple-5.0.2.jar:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/cli-terminal/build/classes/java/main:/home/runner/.gradle/caches/modules-2/files-2.1/org.jspecify/jspecify/1.0.0/7425a601c1c7ec76645a78d22b8c6a627edee507/jspecify-1.0.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.38.0/fc0ae991433e8590ba51cd558421478318a74c8c/error_prone_annotations-2.38.0.jar"
+      ],
+      "dependencyModules": [
+        "at.yawk.lz4:lz4-java:1.11.4",
+        "co.elastic.logging:ecs-logging-core:1.7.0",
+        "co.elastic.logging:log4j2-ecs-layout:1.7.0",
+        "com.google.errorprone:error_prone_annotations:2.38.0",
+        "net.sf.jopt-simple:jopt-simple:5.0.2",
+        "org.apache.logging.log4j:log4j-api:2.26.1",
+        "org.apache.logging.log4j:log4j-core:2.26.1",
+        "org.apache.lucene:lucene-analysis-common:10.5.2",
+        "org.apache.lucene:lucene-backward-codecs:10.5.2",
+        "org.apache.lucene:lucene-core:10.5.2",
+        "org.apache.lucene:lucene-facet:10.5.2",
+        "org.apache.lucene:lucene-grouping:10.5.2",
+        "org.apache.lucene:lucene-highlighter:10.5.2",
+        "org.apache.lucene:lucene-join:10.5.2",
+        "org.apache.lucene:lucene-memory:10.5.2",
+        "org.apache.lucene:lucene-misc:10.5.2",
+        "org.apache.lucene:lucene-queries:10.5.2",
+        "org.apache.lucene:lucene-queryparser:10.5.2",
+        "org.apache.lucene:lucene-sandbox:10.5.2",
+        "org.apache.lucene:lucene-suggest:10.5.2",
+        "org.hdrhistogram:HdrHistogram:2.1.9",
+        "org.jruby.jcodings:jcodings:1.0.63",
+        "org.jruby.joni:joni:2.2.6",
+        "org.jspecify:jspecify:1.0.0"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
+      "dependsOn": [
+        "cli-terminal",
+        "columnar",
+        "elasticsearch-server",
+        "exponential-histogram",
+        "geo",
+        "grok",
+        "ip-location-api",
+        "libs-cli",
+        "libs-core",
+        "libs-logging",
+        "libs-plugin-analysis-api",
+        "libs-plugin-api",
+        "libs-x-content",
+        "lz4",
+        "tdigest",
+        "user-agent-api"
+      ],
+      "classDirectories": [
+        "test/external-modules/otel-filter-plugin/build/classes/java/main"
+      ],
+      "projectPath": ":test:external-modules:test-otel-filter-plugin"
+    },
+    "plugin-cli-bc": {
+      "sources": [
+        "distribution/tools/plugin-cli/bc/src/main/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing"
+      ],
+      "dependencyModules": [
+        "org.bouncycastle:bcpg-jdk18on:1.86",
+        "org.bouncycastle:bcprov-jdk18on:1.86",
+        "org.bouncycastle:bcutil-jdk18on:1.86"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
+      "classDirectories": [
+        "distribution/tools/plugin-cli/bc/build/classes/java/main"
+      ],
+      "projectPath": ":distribution:tools:plugin-cli:bc"
     },
     "ccs-unavailable-clusters:test": {
       "sources": [
@@ -60865,6 +60941,74 @@
         "x-pack/plugin/ccr/build/classes/java/test"
       ],
       "projectPath": ":x-pack:plugin:ccr"
+    },
+    "cli-bc": {
+      "sources": [
+        "x-pack/plugin/security/cli/bc/src/main/java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [
+        "--release",
+        "21",
+        "-Werror",
+        "-Xlint:all,-path,-serial,-options,-deprecation,-try,-removal,-processing",
+        "-Xdoclint:all",
+        "-Xdoclint:-missing",
+        "--add-modules=ALL-MODULE-PATH",
+        "--module-path=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/server/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/tdigest/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/exponential-histogram/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/x-content/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/lz4/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/user-agent-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/ip-location-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/cli/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/core/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/logging/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/geo/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/plugin-analysis-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/plugin-api/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/grok/build/classes/java/main:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/columnar/build/classes/java/main:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-suggest/10.5.2/e1af2cc1ce920a953ebfe904f67a9a28ceced9cb/lucene-suggest-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analysis-common/10.5.2/845af3088dbf36cf6739d67e766415beedc19a/lucene-analysis-common-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-backward-codecs/10.5.2/cfe1b2c10b750989a8ff851406057e45af67d298/lucene-backward-codecs-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queryparser/10.5.2/7a21df13da33b5693847297ece1e14ef1b38a810/lucene-queryparser-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-sandbox/10.5.2/4364ab60d825127ba39bf319517478f9340a1592/lucene-sandbox-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-facet/10.5.2/be286224d2634702c148d0a88d6ea4c32eab07c/lucene-facet-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-grouping/10.5.2/8ec4351b7183dbff17a44985a4f82b9204c3ead3/lucene-grouping-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-highlighter/10.5.2/e141bc952a8670f1ebb1d2d673f5e726a8410574/lucene-highlighter-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-join/10.5.2/2ba4aa4093f27d9a3c80ab6fe4b981938d604bdc/lucene-join-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-memory/10.5.2/45ed6c39125b8bf357d2c38b22fdf6d3aa2fad72/lucene-memory-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-misc/10.5.2/3c7478b0cb8c6e053f265aad32372ad6ff1d6437/lucene-misc-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queries/10.5.2/83286c578234e5876db84d6187735998b8fbeb40/lucene-queries-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/10.5.2/db6ca85590666a53e3bf33a558e3869cb60d9ea0/lucene-core-10.5.2.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.9/e4631ce165eb400edecfa32e03d3f1be53dee754/HdrHistogram-2.1.9.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.26.1/b9864ed8d0c01f65f3b0bf70f1447e5cc1b49c24/log4j-api-2.26.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.26.1/1941359537713285d224714f63ca4e5cf004d575/log4j-core-2.26.1.jar:/home/runner/.gradle/caches/modules-2/files-2.1/co.elastic.logging/log4j2-ecs-layout/1.7.0/8326e6fa5aa2a1090b22e6a4f1a1c114c84d85a3/log4j2-ecs-layout-1.7.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/co.elastic.logging/ecs-logging-core/1.7.0/46791b93c3acaa3bcc584b795252edd8d2054cc4/ecs-logging-core-1.7.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/at.yawk.lz4/lz4-java/1.11.4/a27ccbac6c886771d3db36f91b144950bdb5082a/lz4-java-1.11.4.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jruby.joni/joni/2.2.6/864217ab7dcece78ad7bf3c045a602d871ff309a/joni-2.2.6.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.63/b8c386790e72f0bad666c8f1a8af12d0528992e0/jcodings-1.0.63.jar:/home/runner/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.2/98cafc6081d5632b61be2c9e60650b64ddbc637c/jopt-simple-5.0.2.jar:/home/runner/work/metals-community-build/metals-community-build/workspaces/project/libs/cli-terminal/build/classes/java/main:/home/runner/.gradle/caches/modules-2/files-2.1/org.jspecify/jspecify/1.0.0/7425a601c1c7ec76645a78d22b8c6a627edee507/jspecify-1.0.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.38.0/fc0ae991433e8590ba51cd558421478318a74c8c/error_prone_annotations-2.38.0.jar"
+      ],
+      "dependencyModules": [
+        "at.yawk.lz4:lz4-java:1.11.4",
+        "co.elastic.logging:ecs-logging-core:1.7.0",
+        "co.elastic.logging:log4j2-ecs-layout:1.7.0",
+        "com.google.errorprone:error_prone_annotations:2.38.0",
+        "net.sf.jopt-simple:jopt-simple:5.0.2",
+        "org.apache.logging.log4j:log4j-api:2.26.1",
+        "org.apache.logging.log4j:log4j-core:2.26.1",
+        "org.apache.lucene:lucene-analysis-common:10.5.2",
+        "org.apache.lucene:lucene-backward-codecs:10.5.2",
+        "org.apache.lucene:lucene-core:10.5.2",
+        "org.apache.lucene:lucene-facet:10.5.2",
+        "org.apache.lucene:lucene-grouping:10.5.2",
+        "org.apache.lucene:lucene-highlighter:10.5.2",
+        "org.apache.lucene:lucene-join:10.5.2",
+        "org.apache.lucene:lucene-memory:10.5.2",
+        "org.apache.lucene:lucene-misc:10.5.2",
+        "org.apache.lucene:lucene-queries:10.5.2",
+        "org.apache.lucene:lucene-queryparser:10.5.2",
+        "org.apache.lucene:lucene-sandbox:10.5.2",
+        "org.apache.lucene:lucene-suggest:10.5.2",
+        "org.bouncycastle:bcpkix-jdk18on:1.86",
+        "org.bouncycastle:bcprov-jdk18on:1.86",
+        "org.bouncycastle:bcutil-jdk18on:1.86",
+        "org.hdrhistogram:HdrHistogram:2.1.9",
+        "org.jruby.jcodings:jcodings:1.0.63",
+        "org.jruby.joni:joni:2.2.6",
+        "org.jspecify:jspecify:1.0.0"
+      ],
+      "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
+      "dependsOn": [
+        "cli-terminal",
+        "columnar",
+        "elasticsearch-server",
+        "exponential-histogram",
+        "geo",
+        "grok",
+        "ip-location-api",
+        "libs-cli",
+        "libs-core",
+        "libs-logging",
+        "libs-plugin-analysis-api",
+        "libs-plugin-api",
+        "libs-x-content",
+        "lz4",
+        "tdigest",
+        "user-agent-api"
+      ],
+      "classDirectories": [
+        "x-pack/plugin/security/cli/bc/build/classes/java/main"
+      ],
+      "projectPath": ":x-pack:plugin:security:cli:bc"
     },
     "deprecations:test": {
       "sources": [
