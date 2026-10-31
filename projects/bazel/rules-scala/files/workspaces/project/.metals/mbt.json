@@ -2814,7 +2814,10 @@
       "scalacOptions": [
         "-opt:inline:**",
         "-Werror",
-        "-Wopt"
+        "-Wopt",
+        "-opt",
+        "-opt-inline:**",
+        "-Wopt:at-inline-failed"
       ],
       "javacOptions": [],
       "dependencyModules": [],
@@ -2828,16 +2831,23 @@
         "//third_party/dependency_analyzer/src/main"
       ],
       "classDirectories": [
-        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_inline/test.jar"
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_inline/test.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/test/coverage_inline/test_scala3.jar"
       ],
       "configurations": [
-        "//test/coverage_inline:test"
+        "//test/coverage_inline:test",
+        "//test/coverage_inline:test_scala3"
       ],
       "testClasses": [
         {
           "className": "coverage_inline.InlineTest",
           "sourcePath": "test/coverage_inline/InlineTest.scala",
           "configuration": "//test/coverage_inline:test"
+        },
+        {
+          "className": "coverage_inline.InlineTest",
+          "sourcePath": "test/coverage_inline/InlineTest.scala",
+          "configuration": "//test/coverage_inline:test_scala3"
         }
       ]
     },

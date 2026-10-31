@@ -5926,6 +5926,7 @@
     },
     "mirror-coordinator": {
       "sources": [
+        "mirror-coordinator/build/generated/main/java",
         "mirror-coordinator/src/main/java"
       ],
       "scalacOptions": [],
@@ -5941,16 +5942,31 @@
       ],
       "dependencyModules": [
         "at.yawk.lz4:lz4-java:1.11.4",
+        "com.fasterxml.jackson.core:jackson-annotations:2.22",
+        "com.fasterxml.jackson.core:jackson-core:2.22.4",
+        "com.fasterxml.jackson.core:jackson-databind:2.22.4",
+        "com.github.ben-manes.caffeine:caffeine:3.2.4",
         "com.github.luben:zstd-jni:1.5.7-17",
         "com.google.protobuf:protobuf-java:3.25.5",
+        "com.yammer.metrics:metrics-core:2.2.0",
         "commons-net:commons-net:3.13.0",
         "io.opentelemetry.proto:opentelemetry-proto:1.3.2-alpha",
+        "net.sf.jopt-simple:jopt-simple:5.0.4",
+        "org.hdrhistogram:HdrHistogram:2.2.2",
+        "org.jspecify:jspecify:1.0.0",
+        "org.pcollections:pcollections:4.0.2",
         "org.slf4j:slf4j-api:1.7.36",
         "org.xerial.snappy:snappy-java:1.1.10.11"
       ],
       "javaHome": "file:///opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/",
       "dependsOn": [
-        "clients"
+        "clients",
+        "coordinator-common",
+        "metadata",
+        "raft",
+        "server-common",
+        "storage",
+        "storage-api"
       ],
       "classDirectories": [
         "mirror-coordinator/build/classes/java/main"
@@ -9502,17 +9518,21 @@
         "com.fasterxml.jackson.core:jackson-core:2.22.4",
         "com.fasterxml.jackson.core:jackson-databind:2.22.4",
         "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.22.4",
+        "com.github.ben-manes.caffeine:caffeine:3.2.4",
         "com.github.luben:zstd-jni:1.5.7-17",
         "com.google.errorprone:error_prone_annotations:2.38.0",
         "com.google.protobuf:protobuf-java:3.25.5",
+        "com.yammer.metrics:metrics-core:2.2.0",
         "commons-net:commons-net:3.13.0",
         "io.opentelemetry.proto:opentelemetry-proto:1.3.2-alpha",
         "net.bytebuddy:byte-buddy:1.17.7",
         "net.bytebuddy:byte-buddy-agent:1.17.7",
+        "net.sf.jopt-simple:jopt-simple:5.0.4",
         "org.apache.logging.log4j:log4j-api:2.25.5",
         "org.apache.logging.log4j:log4j-core:2.25.5",
         "org.apache.logging.log4j:log4j-slf4j-impl:2.25.5",
         "org.apiguardian:apiguardian-api:1.1.2",
+        "org.hdrhistogram:HdrHistogram:2.2.2",
         "org.jspecify:jspecify:1.0.0",
         "org.junit.jupiter:junit-jupiter:5.14.4",
         "org.junit.jupiter:junit-jupiter-api:5.14.4",
@@ -9528,6 +9548,7 @@
         "org.osgi:org.osgi.annotation.versioning:1.1.2",
         "org.osgi:org.osgi.resource:1.0.0",
         "org.osgi:org.osgi.service.serviceloader:1.0.0",
+        "org.pcollections:pcollections:4.0.2",
         "org.slf4j:slf4j-api:1.7.36",
         "org.xerial.snappy:snappy-java:1.1.10.11",
         "org.yaml:snakeyaml:2.5"
@@ -9536,8 +9557,20 @@
       "dependsOn": [
         "mirror-coordinator",
         "clients",
+        "coordinator-common",
+        "metadata",
+        "raft",
+        "server-common",
+        "storage",
+        "storage-api",
         "test-common-util",
-        "clients:testFixtures"
+        "clients:testFixtures",
+        "coordinator-common:testFixtures",
+        "metadata:testFixtures",
+        "raft:testFixtures",
+        "server-common:testFixtures",
+        "storage:testFixtures",
+        "storage-api:testFixtures"
       ],
       "classDirectories": [
         "mirror-coordinator/build/classes/java/test"
