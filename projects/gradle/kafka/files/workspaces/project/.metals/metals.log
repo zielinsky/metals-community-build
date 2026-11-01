@@ -1,37 +1,45 @@
-2026.10.31 08:13:25 INFO  Started: Metals version 2.0.0-community-build.41183402809 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-2026.10.31 08:13:25 INFO  Memory monitor started
-2026.10.31 08:13:26 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.31 08:13:28 INFO  mbt-v2: indexing 6539 files
-2026.10.31 08:13:31 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-2026.10.31 08:13:31 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.01 09:00:22 INFO  Started: Metals version 2.0.0-community-build.41290796962 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+2026.11.01 09:00:22 INFO  Memory monitor started
+2026.11.01 09:00:22 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.01 09:00:24 INFO  mbt-v2: indexing 6539 files
+2026.11.01 09:00:28 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+2026.11.01 09:00:28 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
 Fetching distribution.
 Downloading https://services.gradle.org/distributions/gradle-9.8.2-bin.zip
 ................................................................................................................................................
-2026.10.31 08:13:45 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
-2026.10.31 08:13:46 INFO  time: mbt-v2 loaded index for 6539 files in 18s
-2026.10.31 08:14:33 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
-2026.10.31 08:14:33 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
-Fetching distribution.
-Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
-.....................................................................................................................................
-2026.10.31 08:14:51 INFO  time: gradle-extractor extract in 1m23s
-2026.10.31 08:14:51 INFO  mbt-import: wrote .metals/mbt.json
-2026.10.31 08:14:52 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.10.31 08:14:52 INFO  Connected to Build server: MBT v2.0.0-community-build.41183402809
-2026.10.31 08:15:10 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.10.31 08:15:20 INFO  time: indexed workspace in 27s
-2026.10.31 08:15:29 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
-Oct 31, 2026 8:15:36 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+2026.11.01 09:00:38 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.01 09:00:38 INFO  time: mbt-v2 loaded index for 6539 files in 15s
+2026.11.01 09:01:07 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.01 09:01:07 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.01 09:01:15 INFO  time: gradle-extractor extract in 51s
+2026.11.01 09:01:15 INFO  mbt-import: wrote .metals/mbt.json
+2026.11.01 09:01:15 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.11.01 09:01:15 INFO  Connected to Build server: MBT v2.0.0-community-build.41290796962
+2026.11.01 09:01:32 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.01 09:01:40 INFO  time: indexed workspace in 24s
+2026.11.01 09:01:49 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+Nov 01, 2026 9:01:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-Oct 31, 2026 8:15:38 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+Nov 01, 2026 9:01:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-2026.10.31 08:15:44 INFO  time: indexed workspace in 23s
-2026.10.31 08:15:46 WARN  Could not find semantic tokens for: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
-2026.10.31 08:15:49 INFO  time: semanticdb:textDocument:typeCheck in 3.194 s
-2026.10.31 08:15:49 INFO  time: semanticdb:testDocument:toTextDocument in 732.2 ms
-2026.10.31 08:15:54 INFO  time: semanticdb:testDocument:toTextDocument in 585.7 ms
-2026.10.31 08:16:05 INFO  Shutting down server
-2026.10.31 08:16:05 INFO  Memory monitor stopped
-2026.10.31 08:16:05 INFO  shutting down Metals
-2026.10.31 08:16:05 INFO  Shut down connection with build server.
-2026.10.31 08:16:05 INFO  Exiting server
+Nov 01, 2026 9:01:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.11.01 09:02:01 INFO  time: indexed workspace in 20s
+2026.11.01 09:02:03 WARN  compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+scala.tools.nsc.interactive.MissingResponse: response missing
+	at scala.tools.nsc.interactive.CompilerControl$ReloadItem.raiseMissing(CompilerControl.scala:333)
+	at scala.tools.nsc.interactive.Global.$anonfun$pollForWork$9(Global.scala:483)
+	at scala.tools.nsc.util.WorkScheduler.$anonfun$dequeueAll$2(WorkScheduler.scala:42)
+	at scala.collection.immutable.List.map(List.scala:240)
+	at scala.collection.immutable.List.map(List.scala:79)
+	at scala.tools.nsc.util.WorkScheduler.dequeueAll(WorkScheduler.scala:42)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:482)
+	at scala.tools.nsc.interactive.MetalsGlobalThreadNoBackgroundCompilation.run(MetalsGlobalThreadNoBackgroundCompilation.scala:50)
+
+2026.11.01 09:02:03 WARN  Could not find semantic tokens for: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
+2026.11.01 09:02:07 INFO  time: semanticdb:textDocument:typeCheck in 3.462 s
+2026.11.01 09:02:07 INFO  time: semanticdb:textDocument:typeCheck in 4.032 s
+2026.11.01 09:02:07 INFO  time: semanticdb:testDocument:toTextDocument in 698.0 ms
+2026.11.01 09:02:07 INFO  time: semanticdb:testDocument:toTextDocument in 702.8 ms
+2026.11.01 09:02:12 INFO  time: semanticdb:testDocument:toTextDocument in 616.2 ms
+2026.11.01 09:02:12 INFO  time: semanticdb:testDocument:toTextDocument in 425.6 ms
