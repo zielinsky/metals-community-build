@@ -4,25 +4,26 @@
   "buildTool": "bazel",
   "repository": "SeleniumHQ/selenium",
   "ref": "trunk",
-  "status": "passed",
+  "status": "failed",
   "scenarios": [
     {
       "id": "import-each-build-target",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 261819
+      "durationMs": 206901
     },
     {
       "id": "test-discovery",
       "kind": "java-test-discovery",
       "status": "passed",
-      "durationMs": 3699
+      "durationMs": 5146
     },
     {
       "id": "debug-json-test",
       "kind": "java-debug-test",
-      "status": "passed",
-      "durationMs": 54021
+      "status": "failed",
+      "durationMs": 108088,
+      "error": "Debug session ended without a successful result for 'canReadBooleans'.\nDebug console:\nFailures: 0\nTime: 0.750\n//java/test/org/openqa/selenium/json:JsonTest                            PASSED in 1.9s\n    PASSED  org.openqa.selenium.json.JsonTest.canReadBooleans() (0.6s)\nTest cases: finished with 1 passing, 0 skipped and 0 failing out of 1 test cases\nExecuted 1 out of 1 test: 1 test passes."
     }
   ]
 }
