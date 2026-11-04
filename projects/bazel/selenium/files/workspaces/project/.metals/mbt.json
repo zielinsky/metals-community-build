@@ -25206,6 +25206,7 @@
     },
     "//java/test/org/openqa/selenium/bidi/protocol/input": {
       "sources": [
+        "java/test/org/openqa/selenium/bidi/protocol/input/DeclaredRangeTest.java",
         "java/test/org/openqa/selenium/bidi/protocol/input/JsIntRangeTest.java"
       ],
       "scalacOptions": [],
@@ -25243,12 +25244,20 @@
         "//java/src/org/openqa/selenium/bidi"
       ],
       "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/protocol/input/DeclaredRangeTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/bidi/protocol/input/JsIntRangeTest.jar"
       ],
       "configurations": [
+        "//java/test/org/openqa/selenium/bidi/protocol/input:DeclaredRangeTest",
         "//java/test/org/openqa/selenium/bidi/protocol/input:JsIntRangeTest"
       ],
       "testClasses": [
+        {
+          "className": "org.openqa.selenium.bidi.protocol.input.DeclaredRangeTest",
+          "sourcePath": "java/test/org/openqa/selenium/bidi/protocol/input/DeclaredRangeTest.java",
+          "configuration": "//java/test/org/openqa/selenium/bidi/protocol/input:DeclaredRangeTest",
+          "framework": "JUnit"
+        },
         {
           "className": "org.openqa.selenium.bidi.protocol.input.JsIntRangeTest",
           "sourcePath": "java/test/org/openqa/selenium/bidi/protocol/input/JsIntRangeTest.java",

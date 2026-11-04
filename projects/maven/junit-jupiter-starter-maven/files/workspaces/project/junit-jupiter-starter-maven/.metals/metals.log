@@ -1,37 +1,37 @@
-2026.11.03 09:16:37 INFO  Started: Metals version 2.0.0-community-build.41608982910 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven' for client Visual Studio Code 1.131.0.
-2026.11.03 09:16:37 INFO  Memory monitor started
-2026.11.03 09:16:38 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.11.03 09:16:39 INFO  mbt-v2: indexing 2 files
-2026.11.03 09:16:39 INFO  time: mbt-v2 loaded index for 2 files in 0.79s
-2026.11.03 09:16:40 INFO  Running command: ./mvnw --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.41608982910:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt-maven.json
-2026.11.03 09:16:47 INFO  [metals-maven] exporting 1 module(s)
-2026.11.03 09:16:47 INFO  [metals-maven] resolving sources JARs for 9 dependencies...
-2026.11.03 09:16:47 INFO  [metals-maven] sources resolved: 9/9
-2026.11.03 09:16:47 INFO  [metals-maven] resolving 9 dependency JAR(s) missing from local cache...
-2026.11.03 09:16:47 INFO  [metals-maven] namespace: com.example:junit-jupiter-starter-maven:1.0-SNAPSHOT
-2026.11.03 09:16:47 INFO  [metals-maven] wrote 2 namespaces, 9 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt-maven.json
-2026.11.03 09:16:47 INFO  time: ran 'maven-export' in 7.67s
-2026.11.03 09:16:47 INFO  mbt-import: wrote .metals/mbt.json
-2026.11.03 09:16:48 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.11.03 09:16:48 INFO  Connected to Build server: MBT v2.0.0-community-build.41608982910
-2026.11.03 09:16:49 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.11.03 09:16:57 INFO  time: indexed workspace in 9.01s
-2026.11.03 09:16:58 INFO  time: indexed workspace in 1.67s
-2026.11.03 09:17:10 INFO  MBT compile via mvn: ./mvnw
-2026.11.03 09:17:16 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
-2026.11.03 09:17:16 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-2026.11.03 09:17:16 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-2026.11.03 09:17:16 INFO  Starting debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
-2026.11.03 09:17:16 INFO  MBT test debug session via mvn (forked): ./mvnw
-2026.11.03 09:17:17 INFO  Loaded expression compiler in 928 milliseconds
-2026.11.03 09:17:22 INFO  Loaded all sources and classes in 4 seconds
-2026.11.03 09:17:22 INFO  Initialized Scala 3 decoder in 2 milliseconds
-2026.11.03 09:17:22 INFO  Trying to attach to remote debuggee VM localhost:45613 .
-2026.11.03 09:17:22 INFO  Attaching to debuggee VM succeeded.
-2026.11.03 09:17:24 INFO  Canceling debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
-2026.11.03 09:17:24 INFO  Closing debug server tcp://0.0.0.0:34359
-2026.11.03 09:17:33 INFO  Shutting down server
-2026.11.03 09:17:33 INFO  Memory monitor stopped
-2026.11.03 09:17:33 INFO  shutting down Metals
-2026.11.03 09:17:33 INFO  Shut down connection with build server.
-2026.11.03 09:17:33 INFO  Exiting server
+2026.11.04 08:51:32 INFO  Started: Metals version 2.0.0-community-build.41802152919 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven' for client Visual Studio Code 1.131.0.
+2026.11.04 08:51:32 INFO  Memory monitor started
+2026.11.04 08:51:32 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.04 08:51:33 INFO  mbt-v2: indexing 2 files
+2026.11.04 08:51:33 INFO  time: mbt-v2 loaded index for 2 files in 0.63s
+2026.11.04 08:51:34 INFO  Running command: ./mvnw --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.41802152919:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt-maven.json
+2026.11.04 08:51:39 INFO  [metals-maven] exporting 1 module(s)
+2026.11.04 08:51:39 INFO  [metals-maven] resolving sources JARs for 9 dependencies...
+2026.11.04 08:51:39 INFO  [metals-maven] sources resolved: 9/9
+2026.11.04 08:51:39 INFO  [metals-maven] resolving 9 dependency JAR(s) missing from local cache...
+2026.11.04 08:51:39 INFO  [metals-maven] namespace: com.example:junit-jupiter-starter-maven:1.0-SNAPSHOT
+2026.11.04 08:51:39 INFO  [metals-maven] wrote 2 namespaces, 9 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/mbt-maven.json
+2026.11.04 08:51:39 INFO  time: ran 'maven-export' in 5.55s
+2026.11.04 08:51:39 INFO  mbt-import: wrote .metals/mbt.json
+2026.11.04 08:51:40 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.11.04 08:51:40 INFO  Connected to Build server: MBT v2.0.0-community-build.41802152919
+2026.11.04 08:51:41 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.04 08:51:48 INFO  time: indexed workspace in 8.01s
+2026.11.04 08:51:49 INFO  time: indexed workspace in 1.14s
+2026.11.04 08:53:01 INFO  MBT compile via mvn: ./mvnw
+2026.11.04 08:53:06 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
+2026.11.04 08:53:06 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+2026.11.04 08:53:06 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/junit-jupiter-starter-maven/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+2026.11.04 08:53:07 INFO  Starting debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
+2026.11.04 08:53:06 INFO  MBT test debug session via mvn (forked): ./mvnw
+2026.11.04 08:53:07 INFO  Loaded expression compiler in 840 milliseconds
+2026.11.04 08:53:13 INFO  Loaded all sources and classes in 5 seconds
+2026.11.04 08:53:13 INFO  Initialized Scala 3 decoder in 3 milliseconds
+2026.11.04 08:53:13 INFO  Trying to attach to remote debuggee VM localhost:35817 .
+2026.11.04 08:53:13 INFO  Attaching to debuggee VM succeeded.
+2026.11.04 08:53:15 INFO  Canceling debug proxy for [com.example.project.CalculatorTests(addsTwoNumbers())]
+2026.11.04 08:53:15 INFO  Closing debug server tcp://0.0.0.0:35169
+2026.11.04 08:53:22 INFO  Shutting down server
+2026.11.04 08:53:22 INFO  Memory monitor stopped
+2026.11.04 08:53:22 INFO  shutting down Metals
+2026.11.04 08:53:22 INFO  Shut down connection with build server.
+2026.11.04 08:53:22 INFO  Exiting server
