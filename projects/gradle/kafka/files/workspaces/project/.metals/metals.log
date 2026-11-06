@@ -1,0 +1,37 @@
+2026.11.06 09:07:19 INFO  Started: Metals version 2.0.0-community-build.42191987037 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+2026.11.06 09:07:19 INFO  Memory monitor started
+2026.11.06 09:07:20 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.06 09:07:23 INFO  mbt-v2: indexing 6555 files
+2026.11.06 09:07:26 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+2026.11.06 09:07:26 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.06 09:07:29 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.06 09:07:42 INFO  time: mbt-v2 loaded index for 6555 files in 20s
+2026.11.06 09:08:54 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.06 09:08:54 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+Fetching distribution.
+Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
+.....................................................................................................................................
+2026.11.06 09:09:18 INFO  time: gradle-extractor extract in 1m55s
+2026.11.06 09:09:18 INFO  mbt-import: wrote .metals/mbt.json
+2026.11.06 09:09:19 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.11.06 09:09:19 INFO  Connected to Build server: MBT v2.0.0-community-build.42191987037
+2026.11.06 09:09:38 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.06 09:09:47 INFO  time: indexed workspace in 27s
+2026.11.06 09:09:56 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+Nov 06, 2026 9:10:02 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Nov 06, 2026 9:10:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.11.06 09:10:06 INFO  time: indexed workspace in 18s
+2026.11.06 09:10:12 INFO  time: semanticdb:textDocument:typeCheck in 2.610 s
+2026.11.06 09:10:12 INFO  time: semanticdb:testDocument:toTextDocument in 760.8 ms
+2026.11.06 09:10:13 INFO  time: semanticdb:testDocument:toTextDocument in 308.8 ms
+Nov 06, 2026 9:10:16 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 63
+2026.11.06 09:10:17 INFO  time: semanticdb:testDocument:toTextDocument in 411.6 ms
+2026.11.06 09:10:17 INFO  time: semanticdb:testDocument:toTextDocument in 342.8 ms
+2026.11.06 09:10:29 INFO  Shutting down server
+2026.11.06 09:10:29 INFO  Memory monitor stopped
+2026.11.06 09:10:29 INFO  shutting down Metals
+2026.11.06 09:10:29 INFO  Shut down connection with build server.
+2026.11.06 09:10:29 INFO  Exiting server
