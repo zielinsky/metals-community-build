@@ -1,84 +1,65 @@
-2026.11.06 09:07:13 INFO  Started: Metals version 2.0.0-community-build.42191987037 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-2026.11.06 09:07:13 INFO  Memory monitor started
-2026.11.06 09:07:14 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.11.06 09:07:15 INFO  mbt-v2: indexing 2 files
-2026.11.06 09:07:15 INFO  time: mbt-v2 loaded index for 2 files in 0.75s
-2026.11.06 09:07:16 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals2013490409933679222 -cp /tmp/metals2013490409933679222/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.42191987037:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-2026.11.06 09:07:21 INFO  [metals-maven] exporting 1 module(s)
-2026.11.06 09:07:21 INFO  [metals-maven] resolving sources JARs for 5 dependencies...
-2026.11.06 09:07:21 INFO  [metals-maven] sources resolved: 5/5
-2026.11.06 09:07:21 INFO  [metals-maven] resolving 5 dependency JAR(s) missing from local cache...
-2026.11.06 09:07:21 INFO  [metals-maven] namespace: com.mycompany.app:my-app:1.0-SNAPSHOT
-2026.11.06 09:07:21 INFO  [metals-maven] wrote 2 namespaces, 5 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-2026.11.06 09:07:21 INFO  time: ran 'maven-export' in 5.16s
-2026.11.06 09:07:21 INFO  mbt-import: wrote .metals/mbt.json
-2026.11.06 09:07:21 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.11.06 09:07:21 INFO  Connected to Build server: MBT v2.0.0-community-build.42191987037
-2026.11.06 09:07:23 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.11.06 09:07:32 INFO  time: indexed workspace in 10s
-2026.11.06 09:07:33 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:07:33 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:07:33 INFO  time: indexed workspace in 1.81s
-2026.11.06 09:07:33 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:07:35 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-Nov 06, 2026 9:07:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+2026.11.07 08:35:11 INFO  Started: Metals version 2.0.0-community-build.42355748035 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+2026.11.07 08:35:11 INFO  Memory monitor started
+2026.11.07 08:35:11 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.07 08:35:12 INFO  mbt-v2: indexing 2 files
+2026.11.07 08:35:12 INFO  time: mbt-v2 loaded index for 2 files in 0.75s
+2026.11.07 08:35:13 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals16826354452606998559 -cp /tmp/metals16826354452606998559/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.42355748035:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+2026.11.07 08:35:16 INFO  [metals-maven] exporting 1 module(s)
+2026.11.07 08:35:16 INFO  [metals-maven] resolving sources JARs for 5 dependencies...
+2026.11.07 08:35:16 INFO  [metals-maven] sources resolved: 5/5
+2026.11.07 08:35:16 INFO  [metals-maven] resolving 5 dependency JAR(s) missing from local cache...
+2026.11.07 08:35:16 INFO  [metals-maven] namespace: com.mycompany.app:my-app:1.0-SNAPSHOT
+2026.11.07 08:35:16 INFO  [metals-maven] wrote 2 namespaces, 5 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+2026.11.07 08:35:17 INFO  time: ran 'maven-export' in 3.76s
+2026.11.07 08:35:17 INFO  mbt-import: wrote .metals/mbt.json
+2026.11.07 08:35:17 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.11.07 08:35:17 INFO  Connected to Build server: MBT v2.0.0-community-build.42355748035
+2026.11.07 08:35:18 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.07 08:35:24 INFO  time: indexed workspace in 7.4s
+2026.11.07 08:35:26 INFO  time: indexed workspace in 1.34s
+2026.11.07 08:35:26 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+2026.11.07 08:35:27 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+Nov 07, 2026 8:35:27 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-Nov 06, 2026 9:07:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+Nov 07, 2026 8:35:27 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-Nov 06, 2026 9:07:37 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+Nov 07, 2026 8:35:27 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-2026.11.06 09:07:44 INFO  Starting debug session without debugging
-2026.11.06 09:07:44 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-2026.11.06 09:07:46 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
-2026.11.06 09:07:46 INFO  MBT debug session via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-2026.11.06 09:07:46 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-2026.11.06 09:07:46 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-2026.11.06 09:07:47 INFO  Starting debug proxy for [com.mycompany.app.App]
-2026.11.06 09:07:47 INFO  Initialized Scala 3 decoder in 3 milliseconds
-2026.11.06 09:07:50 INFO  Trying to attach to remote debuggee VM localhost:45011 .
-2026.11.06 09:07:50 INFO  Attaching to debuggee VM succeeded.
-2026.11.06 09:07:50 INFO  Canceling debug proxy for [com.mycompany.app.App]
-2026.11.06 09:07:50 INFO  Closing debug server tcp://0.0.0.0:36003
-2026.11.06 09:07:52 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-2026.11.06 09:07:53 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:07:53 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:07:53 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:07:56 INFO  MBT debug session via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-2026.11.06 09:07:56 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-2026.11.06 09:07:56 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-2026.11.06 09:07:56 INFO  Starting debug proxy for [com.mycompany.app.App]
-2026.11.06 09:07:57 INFO  Loaded expression compiler in 1 second
-2026.11.06 09:07:59 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:07:59 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:08:03 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:08:03 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-2026.11.06 09:08:04 INFO  Loaded all sources and classes in 6 seconds
-2026.11.06 09:08:04 INFO  Initialized Scala 3 decoder in 0 milliseconds
-2026.11.06 09:08:04 INFO  Trying to attach to remote debuggee VM localhost:36005 .
-2026.11.06 09:08:04 INFO  Attaching to debuggee VM succeeded.
-2026.11.06 09:08:04 INFO  Canceling debug proxy for [com.mycompany.app.App]
-2026.11.06 09:08:04 INFO  Closing debug server tcp://0.0.0.0:35735
-2026.11.06 09:08:05 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-2026.11.06 09:08:05 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-2026.11.06 09:08:05 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-2026.11.06 09:08:05 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-2026.11.06 09:08:07 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-2026.11.06 09:08:09 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-2026.11.06 09:08:11 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-2026.11.06 09:08:13 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-2026.11.06 09:08:16 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-2026.11.06 09:08:16 INFO  MBT test debug session via mvn (forked): /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-2026.11.06 09:08:16 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-2026.11.06 09:08:16 INFO  Starting debug proxy for [com.mycompany.app.AppTest(testAppMessage())]
-2026.11.06 09:08:16 INFO  Loaded expression compiler in 2 milliseconds
-2026.11.06 09:08:17 INFO  Loaded all sources and classes in 1 second
-2026.11.06 09:08:17 INFO  Initialized Scala 3 decoder in 0 milliseconds
-2026.11.06 09:08:21 INFO  Trying to attach to remote debuggee VM localhost:40255 .
-2026.11.06 09:08:21 INFO  Attaching to debuggee VM succeeded.
-2026.11.06 09:08:22 INFO  Canceling debug proxy for [com.mycompany.app.AppTest(testAppMessage())]
-2026.11.06 09:08:22 INFO  Closing debug server tcp://0.0.0.0:37341
-2026.11.06 09:08:29 INFO  Shutting down server
-2026.11.06 09:08:29 INFO  Memory monitor stopped
-2026.11.06 09:08:29 INFO  shutting down Metals
-2026.11.06 09:08:29 INFO  Shut down connection with build server.
-2026.11.06 09:08:29 INFO  Exiting server
+Nov 07, 2026 8:35:28 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.11.07 08:35:35 INFO  Starting debug session without debugging
+2026.11.07 08:35:35 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+2026.11.07 08:35:37 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
+2026.11.07 08:35:37 INFO  MBT debug session via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+2026.11.07 08:35:37 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+2026.11.07 08:35:37 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+2026.11.07 08:35:37 INFO  Starting debug proxy for [com.mycompany.app.App]
+2026.11.07 08:35:37 INFO  Initialized Scala 3 decoder in 5 milliseconds
+2026.11.07 08:35:40 INFO  Trying to attach to remote debuggee VM localhost:43769 .
+2026.11.07 08:35:40 INFO  Attaching to debuggee VM succeeded.
+2026.11.07 08:35:41 INFO  Canceling debug proxy for [com.mycompany.app.App]
+2026.11.07 08:35:41 INFO  Closing debug server tcp://0.0.0.0:36027
+2026.11.07 08:35:43 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+2026.11.07 08:35:45 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+2026.11.07 08:35:45 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+2026.11.07 08:35:49 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+2026.11.07 08:35:49 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+2026.11.07 08:35:50 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+2026.11.07 08:35:53 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+2026.11.07 08:35:55 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+2026.11.07 08:35:57 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+2026.11.07 08:35:57 INFO  MBT test debug session via mvn (forked): /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+2026.11.07 08:35:58 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+2026.11.07 08:35:57 INFO  Starting debug proxy for [com.mycompany.app.AppTest(testAppMessage())]
+2026.11.07 08:35:58 INFO  Loaded expression compiler in 499 milliseconds
+2026.11.07 08:36:02 INFO  Loaded all sources and classes in 4 seconds
+2026.11.07 08:36:02 INFO  Initialized Scala 3 decoder in 0 milliseconds
+2026.11.07 08:36:02 INFO  Trying to attach to remote debuggee VM localhost:36999 .
+2026.11.07 08:36:02 INFO  Attaching to debuggee VM succeeded.
+2026.11.07 08:36:04 INFO  Canceling debug proxy for [com.mycompany.app.AppTest(testAppMessage())]
+2026.11.07 08:36:04 INFO  Closing debug server tcp://0.0.0.0:36481
+2026.11.07 08:36:11 INFO  Shutting down server
+2026.11.07 08:36:11 INFO  Memory monitor stopped
+2026.11.07 08:36:11 INFO  shutting down Metals
+2026.11.07 08:36:11 INFO  Shut down connection with build server.
+2026.11.07 08:36:11 INFO  Exiting server
