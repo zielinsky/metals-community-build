@@ -1,0 +1,52 @@
+{
+  "project": "turbine",
+  "projectName": "Turbine",
+  "buildTool": "maven",
+  "repository": "google/turbine",
+  "ref": "main",
+  "status": "passed",
+  "scenarios": [
+    {
+      "id": "import",
+      "kind": "mbt-import",
+      "status": "passed",
+      "durationMs": 18288
+    },
+    {
+      "id": "rename-manifest-dir",
+      "kind": "rename-symbol",
+      "status": "passed",
+      "durationMs": 12019
+    },
+    {
+      "id": "turbine-options-hover",
+      "kind": "hover",
+      "status": "passed",
+      "durationMs": 3057
+    },
+    {
+      "id": "turbine-options-definition",
+      "kind": "go-to-definition",
+      "status": "passed",
+      "durationMs": 2654
+    },
+    {
+      "id": "jdk-symbol-references",
+      "kind": "find-references",
+      "status": "passed",
+      "durationMs": 7032
+    },
+    {
+      "id": "local-variable-highlight",
+      "kind": "document-highlight",
+      "status": "passed",
+      "durationMs": 1496
+    },
+    {
+      "id": "import-missing-symbol",
+      "kind": "code-action",
+      "status": "passed",
+      "durationMs": 6288
+    }
+  ]
+}
