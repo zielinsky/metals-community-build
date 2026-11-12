@@ -1158,6 +1158,28 @@
         }
       ]
     },
+    "//src/java/io/bazel/rulesscala/scaladoc": {
+      "sources": [
+        "src/java/io/bazel/rulesscala/scaladoc/ScaladocRunner.java"
+      ],
+      "scalacOptions": [],
+      "javacOptions": [],
+      "dependencyModules": [],
+      "scalaVersion": "2.12.21",
+      "dependsOn": [],
+      "classDirectories": [
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/src/java/io/bazel/rulesscala/scaladoc/runner.jar"
+      ],
+      "configurations": [
+        "//src/java/io/bazel/rulesscala/scaladoc:runner"
+      ],
+      "mainClasses": [
+        {
+          "className": "io.bazel.rulesscala.scaladoc.ScaladocRunner",
+          "configuration": "//src/java/io/bazel/rulesscala/scaladoc:runner"
+        }
+      ]
+    },
     "//test/missing_direct_deps/internal_deps": {
       "sources": [
         "test/missing_direct_deps/internal_deps/A.scala",
@@ -3237,8 +3259,12 @@
         "test/scaladoc/A.scala",
         "test/scaladoc/B.scala",
         "test/scaladoc/C.scala",
+        "test/scaladoc/Color.scala",
+        "test/scaladoc/Drawing.scala",
+        "test/scaladoc/Shape.scala",
         "test/scaladoc/Sibling.scala",
-        "test/scaladoc/Siblings.scala"
+        "test/scaladoc/Siblings.scala",
+        "test/scaladoc/UsesSibling.scala"
       ],
       "scalacOptions": [],
       "javacOptions": [],
@@ -3246,7 +3272,7 @@
         "test.scaladoc:A.jar:local",
         "test.scaladoc:B.jar:local"
       ],
-      "scalaVersion": "2.12.21",
+      "scalaVersion": "3.10.1",
       "dependsOn": [
         "//scala/settings",
         "//src/java/io/bazel/rulesscala/coverage/instrumenter",

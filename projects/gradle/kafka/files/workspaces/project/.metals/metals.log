@@ -1,75 +1,35 @@
-2026.11.11 09:03:30 INFO  Started: Metals version 2.0.0-community-build.42991431405 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-2026.11.11 09:03:30 INFO  Memory monitor started
-2026.11.11 09:03:32 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.11.11 09:03:34 INFO  mbt-v2: indexing 6556 files
-2026.11.11 09:03:37 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-2026.11.11 09:03:37 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.12 09:34:52 INFO  Started: Metals version 2.0.0-community-build.43191886064 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+2026.11.12 09:34:52 INFO  Memory monitor started
+2026.11.12 09:34:53 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.12 09:34:55 INFO  mbt-v2: indexing 6556 files
+2026.11.12 09:34:59 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+2026.11.12 09:34:59 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
 Fetching distribution.
 Downloading https://services.gradle.org/distributions/gradle-9.8.2-bin.zip
 ................................................................................................................................................
-2026.11.11 09:03:50 INFO  time: mbt-v2 loaded index for 6556 files in 17s
-2026.11.11 09:03:52 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
-2026.11.11 09:06:17 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
-2026.11.11 09:06:17 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
-Fetching distribution.
-Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
-.....................................................................................................................................
-2026.11.11 09:07:01 INFO  time: gradle-extractor extract in 3m26s
-2026.11.11 09:07:01 INFO  mbt-import: wrote .metals/mbt.json
-2026.11.11 09:07:01 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-2026.11.11 09:07:01 INFO  Connected to Build server: MBT v2.0.0-community-build.42991431405
-2026.11.11 09:07:21 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.11.11 09:07:31 INFO  time: indexed workspace in 29s
-2026.11.11 09:07:40 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
-Nov 11, 2026 9:07:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+2026.11.12 09:35:12 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.12 09:35:12 INFO  time: mbt-v2 loaded index for 6556 files in 18s
+2026.11.12 09:37:04 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.12 09:37:04 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+2026.11.12 09:37:30 INFO  time: gradle-extractor extract in 2m35s
+2026.11.12 09:37:30 INFO  mbt-import: wrote .metals/mbt.json
+2026.11.12 09:37:31 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+2026.11.12 09:37:31 INFO  Connected to Build server: MBT v2.0.0-community-build.43191886064
+2026.11.12 09:37:49 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.11.12 09:37:57 INFO  time: indexed workspace in 25s
+2026.11.12 09:38:05 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+Nov 12, 2026 9:38:11 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-Nov 11, 2026 9:07:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+Nov 12, 2026 9:38:13 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
-2026.11.11 09:07:52 INFO  time: indexed workspace in 20s
-2026.11.11 09:07:58 INFO  time: semanticdb:textDocument:typeCheck in 2.781 s
-2026.11.11 09:07:58 INFO  time: semanticdb:testDocument:toTextDocument in 829.7 ms
-2026.11.11 09:08:00 INFO  time: semanticdb:testDocument:toTextDocument in 408.0 ms
-2026.11.11 09:08:04 INFO  time: semanticdb:testDocument:toTextDocument in 621.0 ms
-2026.11.11 09:08:08 WARN  compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
-java.lang.AssertionError: assertion failed: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala: 37980 >= 37980
-	at scala.reflect.internal.util.SourceFile.position(SourceFile.scala:34)
-	at scala.tools.nsc.CompilationUnits$CompilationUnit.position(CompilationUnits.scala:136)
-	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:26)
-	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$signatureHelp$1(ScalaPresentationCompiler.scala:618)
-	at scala.util.Either.map(Either.scala:390)
-	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:179)
-	at scala.meta.internal.pc.CompilerAccess.$anonfun$withNonInterruptableCompiler$1(CompilerAccess.scala:160)
-	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:247)
-	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:157)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.lang.Thread.run(Thread.java:1583)
-
-Nov 11, 2026 9:08:09 AM scala.meta.internal.metals.StdReporter $anonfun$create$7
-INFO: Created report: Optional[file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala]
-Nov 11, 2026 9:08:09 AM scala.meta.internal.metals.StdReporter $anonfun$create$1
-INFO: java.lang.AssertionError: assertion failed: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala: 37980 >= 37980 (full report at: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/.reports/metals-full/2026-11-11/r_compiler-error_(kafka-core_3atest)_09-08-09-148.md)
-2026.11.11 09:08:08 WARN  compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
-java.lang.AssertionError: assertion failed: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala: 37980 >= 37980
-	at scala.reflect.internal.util.SourceFile.position(SourceFile.scala:34)
-	at scala.tools.nsc.CompilationUnits$CompilationUnit.position(CompilationUnits.scala:136)
-	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:26)
-	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$signatureHelp$1(ScalaPresentationCompiler.scala:618)
-	at scala.util.Either.map(Either.scala:390)
-	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:179)
-	at scala.meta.internal.pc.CompilerAccess.$anonfun$withNonInterruptableCompiler$1(CompilerAccess.scala:160)
-	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:247)
-	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:157)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.lang.Thread.run(Thread.java:1583)
-
-Nov 11, 2026 9:08:09 AM scala.meta.internal.metals.StdReporter $anonfun$create$7
-INFO: Created report: Optional[file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala]
-Nov 11, 2026 9:08:09 AM scala.meta.internal.metals.StdReporter $anonfun$create$1
-INFO: java.lang.AssertionError: assertion failed: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala: 37980 >= 37980 (full report at: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/.reports/metals-full/2026-11-11/r_compiler-error_(kafka-core_3atest)_09-08-09-534.md)
-2026.11.11 09:08:21 INFO  Shutting down server
-2026.11.11 09:08:21 INFO  Memory monitor stopped
-2026.11.11 09:08:21 INFO  shutting down Metals
-2026.11.11 09:08:21 INFO  Shut down connection with build server.
-2026.11.11 09:08:21 INFO  Exiting server
+2026.11.12 09:38:14 INFO  time: indexed workspace in 16s
+2026.11.12 09:38:20 INFO  time: semanticdb:textDocument:typeCheck in 2.224 s
+2026.11.12 09:38:20 INFO  time: semanticdb:testDocument:toTextDocument in 580.8 ms
+2026.11.12 09:38:21 INFO  time: semanticdb:testDocument:toTextDocument in 303.1 ms
+2026.11.12 09:38:25 INFO  time: semanticdb:testDocument:toTextDocument in 420.3 ms
+2026.11.12 09:38:25 INFO  time: semanticdb:testDocument:toTextDocument in 303.6 ms
+2026.11.12 09:38:37 INFO  Shutting down server
+2026.11.12 09:38:37 INFO  Memory monitor stopped
+2026.11.12 09:38:37 INFO  shutting down Metals
+2026.11.12 09:38:37 INFO  Shut down connection with build server.
+2026.11.12 09:38:37 INFO  Exiting server

@@ -5731,7 +5731,8 @@
         "java/test/org/openqa/selenium/json/ConstructorCoercerTest.java",
         "java/test/org/openqa/selenium/json/JsonInputTest.java",
         "java/test/org/openqa/selenium/json/JsonOutputTest.java",
-        "java/test/org/openqa/selenium/json/JsonTest.java"
+        "java/test/org/openqa/selenium/json/JsonTest.java",
+        "java/test/org/openqa/selenium/json/NumberParsingTest.java"
       ],
       "scalacOptions": [],
       "javacOptions": [
@@ -5785,13 +5786,15 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/json/ConstructorCoercerTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/json/JsonInputTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/json/JsonOutputTest.jar",
-        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/json/JsonTest.jar"
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/json/JsonTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/json/NumberParsingTest.jar"
       ],
       "configurations": [
         "//java/test/org/openqa/selenium/json:ConstructorCoercerTest",
         "//java/test/org/openqa/selenium/json:JsonInputTest",
         "//java/test/org/openqa/selenium/json:JsonOutputTest",
-        "//java/test/org/openqa/selenium/json:JsonTest"
+        "//java/test/org/openqa/selenium/json:JsonTest",
+        "//java/test/org/openqa/selenium/json:NumberParsingTest"
       ],
       "testClasses": [
         {
@@ -5816,6 +5819,12 @@
           "className": "org.openqa.selenium.json.JsonTest",
           "sourcePath": "java/test/org/openqa/selenium/json/JsonTest.java",
           "configuration": "//java/test/org/openqa/selenium/json:JsonTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.json.NumberParsingTest",
+          "sourcePath": "java/test/org/openqa/selenium/json/NumberParsingTest.java",
+          "configuration": "//java/test/org/openqa/selenium/json:NumberParsingTest",
           "framework": "JUnit"
         }
       ]

@@ -4,25 +4,26 @@
   "buildTool": "bazel",
   "repository": "SeleniumHQ/selenium",
   "ref": "trunk",
-  "status": "passed",
+  "status": "failed",
   "scenarios": [
     {
       "id": "import-each-build-target",
       "kind": "mbt-import",
       "status": "passed",
-      "durationMs": 222308
+      "durationMs": 245710
     },
     {
       "id": "test-discovery",
       "kind": "java-test-discovery",
       "status": "passed",
-      "durationMs": 5129
+      "durationMs": 4915
     },
     {
       "id": "debug-json-test",
       "kind": "java-debug-test",
-      "status": "passed",
-      "durationMs": 51491
+      "status": "failed",
+      "durationMs": 1665,
+      "error": "Could not add breakpoint at line 60"
     }
   ]
 }
