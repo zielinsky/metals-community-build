@@ -14,562 +14,128 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 5094 ms
+Browser ready in 4376 ms
 Launching tests...
   gradle / kafka
-[community-build] 2026-11-15T09:02:38.222Z Starting gradle / kafka / import-test-fixtures
-[community-build] 2026-11-15T09:02:38.223Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-15T09:02:38.223Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java
-[community-build] 2026-11-15T09:02:40.178Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-15T09:02:41.850Z VS Code opened TestUtils.java
-[community-build] 2026-11-15T09:02:42.132Z Captured screenshot: import-test-fixtures/001-file-opened.png
-[community-build] 2026-11-15T09:02:42.132Z Waiting for the build server choice notification
+[community-build] 2026-11-16T09:17:11.298Z Starting gradle / kafka / import-test-fixtures
+[community-build] 2026-11-16T09:17:11.298Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-16T09:17:11.298Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java
+[community-build] 2026-11-16T09:17:13.156Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-16T09:17:13.575Z VS Code opened TestUtils.java
+[community-build] 2026-11-16T09:17:13.964Z Captured screenshot: import-test-fixtures/001-file-opened.png
+[community-build] 2026-11-16T09:17:13.965Z Waiting for the build server choice notification
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
-[metals] 2026.11.15 09:02:44 INFO  Started: Metals version 2.0.0-community-build.43696855007 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-[metals] 2026.11.15 09:02:44 INFO  Memory monitor started
-[metals] 2026.11.15 09:02:45 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-11-15T09:02:47.417Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
-[community-build] 2026-11-15T09:02:47.850Z Captured screenshot: import-test-fixtures/002-build-server-prompt.png
-[community-build] 2026-11-15T09:02:47.851Z Clicking notification action: Use MBT
-[metals] 2026.11.15 09:02:48 INFO  mbt-v2: indexing 6557 files
-[community-build] 2026-11-15T09:02:48.262Z Clicked notification action: Use MBT
-[community-build] 2026-11-15T09:02:49.266Z Captured screenshot: import-test-fixtures/003-mbt-selected.png
-[community-build] 2026-11-15T09:02:49.266Z Waiting for the VS Code importing status to finish
-[community-build] 2026-11-15T09:02:49.624Z VS Code status bar reports that the project is importing
-[metals] 2026.11.15 09:02:51 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-[metals] 2026.11.15 09:02:51 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+[metals] 2026.11.16 09:17:16 INFO  Started: Metals version 2.0.0-community-build.43837503983 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+[metals] 2026.11.16 09:17:16 INFO  Memory monitor started
+[metals] 2026.11.16 09:17:16 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-11-16T09:17:17.839Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
+[metals] 2026.11.16 09:17:17 INFO  mbt-v2: indexing 6558 files
+[community-build] 2026-11-16T09:17:18.097Z Captured screenshot: import-test-fixtures/002-build-server-prompt.png
+[community-build] 2026-11-16T09:17:18.097Z Clicking notification action: Use MBT
+[community-build] 2026-11-16T09:17:18.474Z Clicked notification action: Use MBT
+[community-build] 2026-11-16T09:17:19.030Z Captured screenshot: import-test-fixtures/003-mbt-selected.png
+[community-build] 2026-11-16T09:17:19.031Z Waiting for the VS Code importing status to finish
+[community-build] 2026-11-16T09:17:20.114Z VS Code status bar reports that the project is importing
+[metals] 2026.11.16 09:17:21 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+[metals] 2026.11.16 09:17:21 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
 [metals] Fetching distribution.
 [metals] Downloading https://services.gradle.org/distributions/gradle-9.8.2-bin.zip
 [metals] ................................................................................................................................................
-[metals] 2026.11.15 09:03:06 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
-[metals] 2026.11.15 09:03:06 INFO  time: mbt-v2 loaded index for 6557 files in 20s
-[metals] 2026.11.15 09:04:35 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
-[metals] 2026.11.15 09:04:35 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+[metals] 2026.11.16 09:17:27 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+[metals] 2026.11.16 09:17:28 INFO  time: mbt-v2 loaded index for 6558 files in 11s
+[metals] 2026.11.16 09:18:30 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
+[metals] 2026.11.16 09:18:30 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64
 [metals] Fetching distribution.
 [metals] Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
 [metals] .....................................................................................................................................
-[metals] 2026.11.15 09:05:05 INFO  time: gradle-extractor extract in 2m17s
-[metals] 2026.11.15 09:05:05 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.11.15 09:05:06 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.11.15 09:05:06 INFO  Connected to Build server: MBT v2.0.0-community-build.43696855007
-[metals] 2026.11.15 09:05:28 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.11.15 09:05:37 INFO  time: indexed workspace in 31s
-[community-build] 2026-11-15T09:05:39.092Z VS Code status bar reports that the project import finished
-[community-build] 2026-11-15T09:05:39.095Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
-[community-build] 2026-11-15T09:05:39.451Z Captured screenshot: import-test-fixtures/004-mbt-imported.png
-[community-build] 2026-11-15T09:05:39.452Z MBT model contains 158 namespaces and 476 dependency modules
-[community-build] 2026-11-15T09:05:39.452Z Verified imported source: clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java via clients/src/testFixtures/java
-[community-build] 2026-11-15T09:05:39.454Z Verified imported source: core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala via core/src/test/scala
-[community-build] 2026-11-15T09:05:39.463Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:5.14.4
-[community-build] 2026-11-15T09:05:39.876Z Captured screenshot: import-test-fixtures/005-import-verified.png
-[community-build] 2026-11-15T09:05:39.879Z Scenario passed: import-test-fixtures
-    ✔ import-test-fixtures (181660ms)
-[community-build] 2026-11-15T09:05:39.882Z Starting gradle / kafka / test-fixtures-target
-[community-build] 2026-11-15T09:05:39.882Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-15T09:05:39.882Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
-[community-build] 2026-11-15T09:05:40.010Z Opening NetworkTestUtils.java in the existing VS Code session
-[community-build] 2026-11-15T09:05:42.944Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-15T09:05:43.239Z VS Code opened NetworkTestUtils.java
-[community-build] 2026-11-15T09:05:43.548Z Captured screenshot: test-fixtures-target/001-file-opened.png
-[community-build] 2026-11-15T09:05:43.556Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-15T09:05:43.795Z Captured screenshot: test-fixtures-target/002-mbt-session-reused.png
-[metals] 2026.11.15 09:05:47 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
-[community-build] 2026-11-15T09:05:53.536Z Status bar reports a build target for NetworkTestUtils.java: ["remote"," trunk* project (Git) - trunk*, Checkout Branch/Tag...","project (Git) - Synchronize Changes"," 0 \n 0 No Problems"," Sync: 46s Outlining","Notifications","MBT  MBT  link, Metals is connected to the build server (MBT).","clients:testFixtures \n  clients:testFixtures  check, No errors for the build target.\nPress to open doctor.","Copilot status","Java Java","Editor Language Status: $(copilot) No inline suggestion available, Inline suggestions","LF LF","UTF-8 UTF-8","Spaces: 4 Spaces: 4","Ln 27, Col 40 (39 selected) Ln 27, Col 40 (39 selected)"," Doyeon Kim (38 minutes ago) git-commit  Doyeon Kim (38 minutes ago)"]
-[metals] Nov 15, 2026 9:05:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] 2026.11.16 09:18:52 INFO  time: gradle-extractor extract in 1m33s
+[metals] 2026.11.16 09:18:52 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.11.16 09:18:52 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.11.16 09:18:52 INFO  Connected to Build server: MBT v2.0.0-community-build.43837503983
+[metals] 2026.11.16 09:19:06 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.11.16 09:19:13 INFO  time: indexed workspace in 21s
+[community-build] 2026-11-16T09:19:14.396Z VS Code status bar reports that the project import finished
+[community-build] 2026-11-16T09:19:14.398Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[community-build] 2026-11-16T09:19:14.562Z Captured screenshot: import-test-fixtures/004-mbt-imported.png
+[community-build] 2026-11-16T09:19:14.562Z MBT model contains 158 namespaces and 476 dependency modules
+[community-build] 2026-11-16T09:19:14.563Z Verified imported source: clients/src/testFixtures/java/org/apache/kafka/test/TestUtils.java via clients/src/testFixtures/java
+[community-build] 2026-11-16T09:19:14.567Z Verified imported source: core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala via core/src/test/scala
+[community-build] 2026-11-16T09:19:14.568Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:5.14.4
+[community-build] 2026-11-16T09:19:14.792Z Captured screenshot: import-test-fixtures/005-import-verified.png
+[community-build] 2026-11-16T09:19:14.792Z Scenario passed: import-test-fixtures
+    ✔ import-test-fixtures (123495ms)
+[community-build] 2026-11-16T09:19:14.794Z Starting gradle / kafka / test-fixtures-target
+[community-build] 2026-11-16T09:19:14.794Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-16T09:19:14.797Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+[community-build] 2026-11-16T09:19:14.902Z Opening NetworkTestUtils.java in the existing VS Code session
+[community-build] 2026-11-16T09:19:16.945Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-16T09:19:17.244Z VS Code opened NetworkTestUtils.java
+[community-build] 2026-11-16T09:19:17.466Z Captured screenshot: test-fixtures-target/001-file-opened.png
+[community-build] 2026-11-16T09:19:17.466Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-16T09:19:17.694Z Captured screenshot: test-fixtures-target/002-mbt-session-reused.png
+[metals] 2026.11.16 09:19:19 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/clients/src/testFixtures/java/org/apache/kafka/common/network/NetworkTestUtils.java
+[community-build] 2026-11-16T09:19:25.991Z Status bar reports a build target for NetworkTestUtils.java: ["remote"," trunk* project (Git) - trunk*, Checkout Branch/Tag...","project (Git) - Synchronize Changes"," 0 \n 0 No Problems"," Sync: 32s Sync: 32s","Notifications","MBT  MBT  link, Metals is connected to the build server (MBT).","clients:testFixtures \n  clients:testFixtures  check, No errors for the build target.\nPress to open doctor.","Copilot status","Java Java","Editor Language Status: $(copilot) No inline suggestion available, Inline suggestions","LF LF","UTF-8 UTF-8","Spaces: 4 Spaces: 4","Ln 27, Col 40 (39 selected) Ln 27, Col 40 (39 selected)"," Lucy Liu (2 hours ago) git-commit  Lucy Liu (2 hours ago)"]
+[metals] 2026.11.16 09:19:26 INFO  time: indexed workspace in 12s
+[metals] Nov 16, 2026 9:19:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Nov 15, 2026 9:05:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] Nov 16, 2026 9:19:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[community-build] 2026-11-15T09:05:55.721Z Verified that NetworkTestUtils.java has no error diagnostics
-[community-build] 2026-11-15T09:05:55.911Z Captured screenshot: test-fixtures-target/003-imports-resolved.png
-[community-build] 2026-11-15T09:05:56.163Z Scenario passed: test-fixtures-target
-    ✔ test-fixtures-target (16281ms)
-[community-build] 2026-11-15T09:05:56.164Z Starting gradle / kafka / scala-to-java-definition
-[community-build] 2026-11-15T09:05:56.164Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-15T09:05:56.164Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
-[community-build] 2026-11-15T09:05:56.294Z Opening SaslSslAdminIntegrationTest.scala in the existing VS Code session
-[community-build] 2026-11-15T09:05:59.024Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-15T09:05:59.312Z VS Code opened SaslSslAdminIntegrationTest.scala
-[community-build] 2026-11-15T09:05:59.635Z Captured screenshot: scala-to-java-definition/001-file-opened.png
-[community-build] 2026-11-15T09:05:59.635Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-15T09:05:59.989Z Captured screenshot: scala-to-java-definition/002-mbt-session-reused.png
-[metals] 2026.11.15 09:06:01 INFO  time: indexed workspace in 22s
-[community-build] 2026-11-15T09:06:03.207Z Captured screenshot: scala-to-java-definition/003-definition-symbol-selected.png
-[community-build] 2026-11-15T09:06:03.208Z Go to Definition: assertFutureThrows
-[metals] 2026.11.15 09:06:04 INFO  time: semanticdb:textDocument:typeCheck in 3.482 s
-[metals] 2026.11.15 09:06:04 INFO  time: semanticdb:testDocument:toTextDocument in 723.9 ms
-[metals] 2026.11.15 09:06:06 INFO  time: semanticdb:testDocument:toTextDocument in 340.7 ms
-[community-build] 2026-11-15T09:06:09.230Z Captured screenshot: scala-to-java-definition/004-definition-verified.png
-    ✔ scala-to-java-definition (13068ms)
-[community-build] 2026-11-15T09:06:09.232Z Starting gradle / kafka / auto-import-into-renamed-group
-[community-build] 2026-11-15T09:06:09.233Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-15T09:06:09.233Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
-[community-build] 2026-11-15T09:06:09.357Z Opening SaslSslAdminIntegrationTest.scala in the existing VS Code session
-[metals] 2026.11.15 09:06:10 INFO  time: semanticdb:testDocument:toTextDocument in 731.2 ms
-[metals] 2026.11.15 09:06:10 INFO  time: semanticdb:testDocument:toTextDocument in 280.9 ms
-[community-build] 2026-11-15T09:06:11.221Z Waiting for VS Code to open the requested file
-[metals] Nov 15, 2026 9:06:10 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
-[metals] WARNING: Unmatched cancel notification for request id 71
-[community-build] 2026-11-15T09:06:11.559Z VS Code opened SaslSslAdminIntegrationTest.scala
-[community-build] 2026-11-15T09:06:11.823Z Captured screenshot: auto-import-into-renamed-group/001-file-opened.png
-[community-build] 2026-11-15T09:06:11.823Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-15T09:06:12.042Z Captured screenshot: auto-import-into-renamed-group/002-mbt-session-reused.png
-[community-build] 2026-11-15T09:06:14.372Z Replaced 'val clusterResourcePattern = new ResourcePattern(ResourceType.CLUSTER, Resource.CLUSTER_NAME, PatternType.LITERAL)' with 'val clusterResourcePattern = new ResourcePattern(ResourceType.CLUSTER, Resource.CLUSTER_NAME, PatternType.LITERAL); val unresolvedAuthInfo: AuthorizerServerInfo = null' and saved
-[metals] 2026.11.15 09:06:14 WARN  [SaslSslAdminIntegrationTest.scala] Presentation compiler crashed while type checking this file:
-[metals] java.lang.InterruptedException
-[metals] 	at scala.tools.nsc.io.SourceReader.read(SourceReader.scala:50)
-[metals] 	at scala.tools.nsc.io.SourceReader.read(SourceReader.scala:60)
-[metals] 	at scala.tools.nsc.Global.getSourceFile(Global.scala:398)
-[metals] 	at scala.meta.internal.pc.classpath.MetalsBrowsingLoaders.browseTopLevel(MetalsBrowsingLoaders.scala:203)
-[metals] 	at scala.tools.nsc.symtab.BrowsingLoaders.enterToplevelsFromSource(BrowsingLoaders.scala:133)
-[metals] 	at scala.tools.nsc.symtab.SymbolLoaders.initializeFromClassPath(SymbolLoaders.scala:196)
-[metals] 	at scala.tools.nsc.symtab.SymbolLoaders$PackageLoader.$anonfun$doComplete$2(SymbolLoaders.scala:301)
-[metals] 	at scala.tools.nsc.symtab.SymbolLoaders$PackageLoader.$anonfun$doComplete$2$adapted(SymbolLoaders.scala:301)
-[metals] 	at scala.collection.immutable.VectorStatics$.foreachRec(Vector.scala:2125)
-[metals] 	at scala.collection.immutable.Vector.foreach(Vector.scala:2131)
-[metals] 	at scala.tools.nsc.symtab.SymbolLoaders$PackageLoader.doComplete(SymbolLoaders.scala:301)
-[metals] 	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.$anonfun$complete$2(SymbolLoaders.scala:250)
-[metals] 	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.complete(SymbolLoaders.scala:248)
-[metals] 	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.load(SymbolLoaders.scala:269)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.$anonfun$typeParams$1(Symbols.scala:1826)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeTypeParams$1(Symbols.scala:1826)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.typeParams(Symbols.scala:1833)
-[metals] 	at scala.reflect.internal.Types.isRawIfWithoutArgs(Types.scala:4419)
-[metals] 	at scala.reflect.internal.Types.isRawIfWithoutArgs$(Types.scala:4419)
-[metals] 	at scala.reflect.internal.SymbolTable.isRawIfWithoutArgs(SymbolTable.scala:28)
-[metals] 	at scala.reflect.internal.tpe.TypeMaps$$anon$1.apply(TypeMaps.scala:288)
-[metals] 	at scala.reflect.internal.tpe.TypeMaps$$anon$1.apply(TypeMaps.scala:285)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.modifyInfo(Symbols.scala:1616)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.cookJavaRawInfo(Symbols.scala:1777)
-[metals] 	at scala.tools.nsc.typechecker.Infer$Inferencer.checkAccessible(Infer.scala:305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.makeAccessible(Typers.scala:514)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$69(Typers.scala:5596)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.silent(Typers.scala:622)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelect$1(Typers.scala:5596)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:5663)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6458)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.qual(Contexts.scala:1861)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.maybeNonLocalMember$1(Contexts.scala:1880)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$ImportInfo.importedSelectedSymbol(Contexts.scala:1902)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1481)
-[metals] 	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1233)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5726)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5821)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6302)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedTypeConstructor(Typers.scala:6559)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedTypeConstructor(Typers.scala:6576)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedParentType(Typers.scala:1596)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedParentTypes(Typers.scala:1762)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.templateSig(Namers.scala:1187)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.moduleSig(Namers.scala:1304)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.memberSig(Namers.scala:1968)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.typeSig(Namers.scala:1915)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$MonoTypeCompleter.completeImpl(Namers.scala:834)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.cookJavaRawInfo(Symbols.scala:1775)
-[metals] 	at scala.tools.nsc.typechecker.Infer$Inferencer.checkAccessible(Infer.scala:305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.makeAccessible(Typers.scala:514)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$69(Typers.scala:5596)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.silent(Typers.scala:622)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelect$1(Typers.scala:5596)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:5663)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6305)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer.scala$tools$nsc$typechecker$Namers$Namer$$importSig(Namers.scala:1856)
-[metals] 	at scala.tools.nsc.typechecker.Namers$Namer$ImportTypeCompleter.completeImpl(Namers.scala:864)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2112)
-[metals] 	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2110)
-[metals] 	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2105)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1584)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1549)
-[metals] 	at scala.reflect.internal.Symbols$Symbol.initialize(Symbols.scala:1748)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:3358)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3530)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3530)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5934)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:6270)
-[metals] 	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6360)
-[metals] 	at scala.tools.nsc.typechecker.Analyzer$typerFactory$TyperPhase.apply(Analyzer.scala:143)
-[metals] 	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:485)
-[metals] 	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1371)
-[metals] 	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1364)
-[metals] 	at scala.meta.internal.pc.PcDiagnostics.$anonfun$backgroundCompile$3(PcDiagnostics.scala:143)
-[metals] 	at scala.meta.internal.pc.PcDiagnostics.$anonfun$backgroundCompile$3$adapted(PcDiagnostics.scala:135)
-[metals] 	at scala.Option.foreach(Option.scala:437)
-[metals] 	at scala.meta.internal.pc.PcDiagnostics.$anonfun$backgroundCompile$2(PcDiagnostics.scala:135)
-[metals] 	at scala.meta.internal.pc.PcDiagnostics.$anonfun$backgroundCompile$2$adapted(PcDiagnostics.scala:135)
-[metals] 	at scala.collection.immutable.List.foreach(List.scala:323)
-[metals] 	at scala.meta.internal.pc.PcDiagnostics.backgroundCompile(PcDiagnostics.scala:135)
-[metals] 	at scala.meta.internal.pc.PcDiagnostics.diagnosticsOf(PcDiagnostics.scala:39)
-[metals] 	at scala.meta.internal.pc.PcDiagnostics.diagnosticsOf$(PcDiagnostics.scala:31)
-[metals] 	at scala.meta.internal.pc.MetalsGlobal.diagnosticsOf(MetalsGlobal.scala:42)
-[metals] 	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$didChange$1(ScalaPresentationCompiler.scala:305)
-[metals] 	at scala.util.Either.map(Either.scala:390)
-[metals] 	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:179)
-[metals] 	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:118)
-[metals] 	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:247)
-[metals] 	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:157)
-[metals] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-[metals] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-[metals] 	at java.lang.Thread.run(Thread.java:1583)
-[metals] 
-[community-build] 2026-11-15T09:06:17.073Z Captured screenshot: auto-import-into-renamed-group/003-code-action-symbol-selected.png
-[community-build] 2026-11-15T09:06:17.640Z Captured screenshot: auto-import-into-renamed-group/004-code-action-listed.png
-[community-build] 2026-11-15T09:06:18.169Z Selecting code action: Import 'AuthorizerServerInfo' from package 'org.apache.kafka.server.authorizer'
-[community-build] 2026-11-15T09:06:20.010Z Code action 'Import 'AuthorizerServerInfo' from package 'org.apache.kafka.server.authorizer'' inserted 'import org.apache.kafka.server.authorizer.{Authorizer => JAuthorizer, AuthorizerServerInfo}'
-[community-build] 2026-11-15T09:06:20.184Z Captured screenshot: auto-import-into-renamed-group/005-code-action-verified.png
-    ✔ auto-import-into-renamed-group (12851ms)
+[metals] Nov 16, 2026 9:19:27 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] INFO: Unsupported notification method: $/setTrace
+[community-build] 2026-11-16T09:19:27.821Z Verified that NetworkTestUtils.java has no error diagnostics
+[community-build] 2026-11-16T09:19:27.880Z Captured screenshot: test-fixtures-target/003-imports-resolved.png
+[community-build] 2026-11-16T09:19:27.996Z Scenario passed: test-fixtures-target
+    ✔ test-fixtures-target (13203ms)
+[community-build] 2026-11-16T09:19:27.998Z Starting gradle / kafka / scala-to-java-definition
+[community-build] 2026-11-16T09:19:27.998Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-16T09:19:27.998Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
+[community-build] 2026-11-16T09:19:28.036Z Opening SaslSslAdminIntegrationTest.scala in the existing VS Code session
+[community-build] 2026-11-16T09:19:28.904Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-16T09:19:29.130Z VS Code opened SaslSslAdminIntegrationTest.scala
+[community-build] 2026-11-16T09:19:29.310Z Captured screenshot: scala-to-java-definition/001-file-opened.png
+[community-build] 2026-11-16T09:19:29.311Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-16T09:19:29.597Z Captured screenshot: scala-to-java-definition/002-mbt-session-reused.png
+[community-build] 2026-11-16T09:19:30.842Z Captured screenshot: scala-to-java-definition/003-definition-symbol-selected.png
+[community-build] 2026-11-16T09:19:30.845Z Go to Definition: assertFutureThrows
+[metals] 2026.11.16 09:19:31 INFO  time: semanticdb:textDocument:typeCheck in 1.428 s
+[metals] 2026.11.16 09:19:31 INFO  time: semanticdb:testDocument:toTextDocument in 316.6 ms
+[community-build] 2026-11-16T09:19:34.093Z Captured screenshot: scala-to-java-definition/004-definition-verified.png
+    ✔ scala-to-java-definition (6096ms)
+[community-build] 2026-11-16T09:19:34.094Z Starting gradle / kafka / auto-import-into-renamed-group
+[community-build] 2026-11-16T09:19:34.094Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-16T09:19:34.094Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/core/src/test/scala/integration/kafka/api/SaslSslAdminIntegrationTest.scala
+[community-build] 2026-11-16T09:19:34.143Z Opening SaslSslAdminIntegrationTest.scala in the existing VS Code session
+[community-build] 2026-11-16T09:19:35.045Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-16T09:19:35.193Z VS Code opened SaslSslAdminIntegrationTest.scala
+[community-build] 2026-11-16T09:19:35.337Z Captured screenshot: auto-import-into-renamed-group/001-file-opened.png
+[community-build] 2026-11-16T09:19:35.337Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-16T09:19:35.482Z Captured screenshot: auto-import-into-renamed-group/002-mbt-session-reused.png
+[metals] 2026.11.16 09:20:35 INFO  time: code lens generation in 1.31s
+    1) auto-import-into-renamed-group
+    2) "after each" hook for "auto-import-into-renamed-group"
 
-Shutting down the browser
-[metals] 2026.11.15 09:06:23 INFO  Shutting down server
-[metals] 2026.11.15 09:06:23 INFO  Memory monitor stopped
-[metals] 2026.11.15 09:06:23 INFO  shutting down Metals
-[metals] 2026.11.15 09:06:23 INFO  Shut down connection with build server.
-[metals] 2026.11.15 09:06:23 INFO  Exiting server
+  3) "after all" hook in "{root}"
 
-  4 passing (4m)
+  3 passing (55m)
+  3 failing
 
-Verified 17 scenario screenshots
+  1) gradle / kafka
+       auto-import-into-renamed-group:
+     Error: Timeout of 1800000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (/home/runner/work/metals-community-build/metals-community-build/out/src/community-build.test.js)
+      at listOnTimeout (node:internal/timers:685:17)
+      at process.processTimers (node:internal/timers:618:7)
+
+  2) "after each" hook for "auto-import-into-renamed-group":
+     Error: Timeout of 1200000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
+      at listOnTimeout (node:internal/timers:685:17)
+      at process.processTimers (node:internal/timers:618:7)
+
+  3) "after all" hook in "{root}":
+     Error: Timeout of 180000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
+      at listOnTimeout (node:internal/timers:685:17)
+      at process.processTimers (node:internal/timers:618:7)
+
+
+
+[33mINFO: Screenshots of failures can be found in: /home/runner/work/metals-community-build/metals-community-build/.test-resources/screenshots/20261116T091706
+[0m
