@@ -12,46 +12,17 @@
       <p class="eyebrow">Maven</p>
       <h1>Simple Java Maven App</h1>
       <p><a href="https://github.com/jenkins-docs/simple-java-maven-app/tree/master">jenkins-docs/simple-java-maven-app@master</a></p>
-      <span class="status large failed">failed</span>
+      <span class="status large passed">passed</span>
     </header>
     <section><h2>Scenarios</h2><ul class="scenarios"><li>
             <div class="scenario-header">
-              <span class="status failed">failed</span>
+              <span class="status passed">passed</span>
               <strong>import</strong>
-              <span>mbt-import · 42.7 s</span>
+              <span>mbt-import · 15.7 s</span>
             </div>
-            <pre>MBT import did not create valid JSON at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json. Last JSON error: undefined
-
-Metals log tail:
-2026.11.16 09:16:45 INFO  Started: Metals version 2.0.0-community-build.43837503983 in folders &#39;/home/runner/work/metals-community-build/metals-community-build/workspaces/project&#39; for client Visual Studio Code 1.131.0.
-2026.11.16 09:16:45 INFO  Memory monitor started
-2026.11.16 09:16:45 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-2026.11.16 09:16:46 INFO  mbt-v2: indexing 2 files
-2026.11.16 09:16:46 INFO  time: mbt-v2 loaded index for 2 files in 0.61s
-2026.11.16 09:16:47 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals1760746084177280922 -cp /tmp/metals1760746084177280922/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.43837503983:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-2026.11.16 09:16:48 ERROR Exception in thread &quot;main&quot; java.io.IOException: Server returned HTTP response code: 429 for URL: https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip
-2026.11.16 09:16:48 ERROR 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:2034)
-2026.11.16 09:16:48 ERROR 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1632)
-2026.11.16 09:16:48 ERROR 	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:223)
-2026.11.16 09:16:48 ERROR 	at org.apache.maven.wrapper.DefaultDownloader.downloadInternal(DefaultDownloader.java:100)
-2026.11.16 09:16:48 ERROR 	at org.apache.maven.wrapper.DefaultDownloader.download(DefaultDownloader.java:86)
-2026.11.16 09:16:48 ERROR 	at org.apache.maven.wrapper.Installer.createDist(Installer.java:84)
-2026.11.16 09:16:48 ERROR 	at org.apache.maven.wrapper.WrapperExecutor.execute(WrapperExecutor.java:160)
-2026.11.16 09:16:48 ERROR 	at org.apache.maven.wrapper.MavenWrapperMain.main(MavenWrapperMain.java:73)
-2026.11.16 09:16:48 INFO  time: ran &#39;maven-export&#39; in 1.28s
-2026.11.16 09:16:48 ERROR mbt-import: provider &#39;maven&#39; failed
-java.lang.Exception: mbt-maven-export failed with exit code 1
-	at scala.meta.internal.metals.mbt.importer.MavenMbtImporter.$anonfun$extract$1(MavenMbtImporter.scala:58)
-	at scala.meta.internal.metals.mbt.importer.MavenMbtImporter.$anonfun$extract$1$adapted(MavenMbtImporter.scala:46)
-	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.lang.Thread.run(Thread.java:1583)
-
-2026.11.16 09:16:48 WARN  no build target for: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-</pre>
+            
             <details class="screenshot-viewer">
-      <summary>Screenshots (4)</summary>
+      <summary>Screenshots (5)</summary>
       <div class="gallery"><figure>
               <a href="files/.test-report/screenshots/import/001-file-opened.png" data-gallery="import" data-caption="001-file-opened.png"><img loading="lazy" src="files/.test-report/screenshots/import/001-file-opened.png" alt="001-file-opened.png"></a>
               <figcaption>001-file-opened.png</figcaption>
@@ -62,67 +33,141 @@ java.lang.Exception: mbt-maven-export failed with exit code 1
               <a href="files/.test-report/screenshots/import/003-mbt-selected.png" data-gallery="import" data-caption="003-mbt-selected.png"><img loading="lazy" src="files/.test-report/screenshots/import/003-mbt-selected.png" alt="003-mbt-selected.png"></a>
               <figcaption>003-mbt-selected.png</figcaption>
             </figure><figure>
-              <a href="files/.test-report/screenshots/import/004-failure.png" data-gallery="import" data-caption="004-failure.png"><img loading="lazy" src="files/.test-report/screenshots/import/004-failure.png" alt="004-failure.png"></a>
-              <figcaption>004-failure.png</figcaption>
+              <a href="files/.test-report/screenshots/import/004-mbt-imported.png" data-gallery="import" data-caption="004-mbt-imported.png"><img loading="lazy" src="files/.test-report/screenshots/import/004-mbt-imported.png" alt="004-mbt-imported.png"></a>
+              <figcaption>004-mbt-imported.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/import/005-import-verified.png" data-gallery="import" data-caption="005-import-verified.png"><img loading="lazy" src="files/.test-report/screenshots/import/005-import-verified.png" alt="005-import-verified.png"></a>
+              <figcaption>005-import-verified.png</figcaption>
             </figure></div>
     </details>
           </li><li>
             <div class="scenario-header">
-              <span class="status skipped">skipped</span>
+              <span class="status passed">passed</span>
               <strong>run-app</strong>
-              <span>java-main-run · 0 ms</span>
+              <span>java-main-run · 17.0 s</span>
             </div>
             
             <details class="screenshot-viewer">
-      <summary>Screenshots (0)</summary>
-      <p class="muted">No screenshots were produced for this scenario.</p>
+      <summary>Screenshots (5)</summary>
+      <div class="gallery"><figure>
+              <a href="files/.test-report/screenshots/run-app/001-file-opened.png" data-gallery="run-app" data-caption="001-file-opened.png"><img loading="lazy" src="files/.test-report/screenshots/run-app/001-file-opened.png" alt="001-file-opened.png"></a>
+              <figcaption>001-file-opened.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/run-app/002-mbt-session-reused.png" data-gallery="run-app" data-caption="002-mbt-session-reused.png"><img loading="lazy" src="files/.test-report/screenshots/run-app/002-mbt-session-reused.png" alt="002-mbt-session-reused.png"></a>
+              <figcaption>002-mbt-session-reused.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/run-app/003-run-code-lens-discovered.png" data-gallery="run-app" data-caption="003-run-code-lens-discovered.png"><img loading="lazy" src="files/.test-report/screenshots/run-app/003-run-code-lens-discovered.png" alt="003-run-code-lens-discovered.png"></a>
+              <figcaption>003-run-code-lens-discovered.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/run-app/004-run-clicked.png" data-gallery="run-app" data-caption="004-run-clicked.png"><img loading="lazy" src="files/.test-report/screenshots/run-app/004-run-clicked.png" alt="004-run-clicked.png"></a>
+              <figcaption>004-run-clicked.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/run-app/005-application-started.png" data-gallery="run-app" data-caption="005-application-started.png"><img loading="lazy" src="files/.test-report/screenshots/run-app/005-application-started.png" alt="005-application-started.png"></a>
+              <figcaption>005-application-started.png</figcaption>
+            </figure></div>
     </details>
           </li><li>
             <div class="scenario-header">
-              <span class="status skipped">skipped</span>
+              <span class="status passed">passed</span>
               <strong>rename-message</strong>
-              <span>rename-symbol · 0 ms</span>
+              <span>rename-symbol · 7.6 s</span>
             </div>
             
             <details class="screenshot-viewer">
-      <summary>Screenshots (0)</summary>
-      <p class="muted">No screenshots were produced for this scenario.</p>
+      <summary>Screenshots (5)</summary>
+      <div class="gallery"><figure>
+              <a href="files/.test-report/screenshots/rename-message/001-file-opened.png" data-gallery="rename-message" data-caption="001-file-opened.png"><img loading="lazy" src="files/.test-report/screenshots/rename-message/001-file-opened.png" alt="001-file-opened.png"></a>
+              <figcaption>001-file-opened.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/rename-message/002-mbt-session-reused.png" data-gallery="rename-message" data-caption="002-mbt-session-reused.png"><img loading="lazy" src="files/.test-report/screenshots/rename-message/002-mbt-session-reused.png" alt="002-mbt-session-reused.png"></a>
+              <figcaption>002-mbt-session-reused.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/rename-message/003-rename-symbol-selected.png" data-gallery="rename-message" data-caption="003-rename-symbol-selected.png"><img loading="lazy" src="files/.test-report/screenshots/rename-message/003-rename-symbol-selected.png" alt="003-rename-symbol-selected.png"></a>
+              <figcaption>003-rename-symbol-selected.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/rename-message/004-rename-input-opened.png" data-gallery="rename-message" data-caption="004-rename-input-opened.png"><img loading="lazy" src="files/.test-report/screenshots/rename-message/004-rename-input-opened.png" alt="004-rename-input-opened.png"></a>
+              <figcaption>004-rename-input-opened.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/rename-message/005-rename-verified.png" data-gallery="rename-message" data-caption="005-rename-verified.png"><img loading="lazy" src="files/.test-report/screenshots/rename-message/005-rename-verified.png" alt="005-rename-verified.png"></a>
+              <figcaption>005-rename-verified.png</figcaption>
+            </figure></div>
     </details>
           </li><li>
             <div class="scenario-header">
-              <span class="status skipped">skipped</span>
+              <span class="status passed">passed</span>
               <strong>message-highlight</strong>
-              <span>document-highlight · 0 ms</span>
+              <span>document-highlight · 905 ms</span>
             </div>
             
             <details class="screenshot-viewer">
-      <summary>Screenshots (0)</summary>
-      <p class="muted">No screenshots were produced for this scenario.</p>
+      <summary>Screenshots (3)</summary>
+      <div class="gallery"><figure>
+              <a href="files/.test-report/screenshots/message-highlight/001-file-opened.png" data-gallery="message-highlight" data-caption="001-file-opened.png"><img loading="lazy" src="files/.test-report/screenshots/message-highlight/001-file-opened.png" alt="001-file-opened.png"></a>
+              <figcaption>001-file-opened.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/message-highlight/002-mbt-session-reused.png" data-gallery="message-highlight" data-caption="002-mbt-session-reused.png"><img loading="lazy" src="files/.test-report/screenshots/message-highlight/002-mbt-session-reused.png" alt="002-mbt-session-reused.png"></a>
+              <figcaption>002-mbt-session-reused.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/message-highlight/003-document-highlight-verified.png" data-gallery="message-highlight" data-caption="003-document-highlight-verified.png"><img loading="lazy" src="files/.test-report/screenshots/message-highlight/003-document-highlight-verified.png" alt="003-document-highlight-verified.png"></a>
+              <figcaption>003-document-highlight-verified.png</figcaption>
+            </figure></div>
     </details>
           </li><li>
             <div class="scenario-header">
-              <span class="status skipped">skipped</span>
+              <span class="status passed">passed</span>
               <strong>test-discovery</strong>
-              <span>java-test-discovery · 0 ms</span>
+              <span>java-test-discovery · 2.5 s</span>
             </div>
             
             <details class="screenshot-viewer">
-      <summary>Screenshots (0)</summary>
-      <p class="muted">No screenshots were produced for this scenario.</p>
+      <summary>Screenshots (3)</summary>
+      <div class="gallery"><figure>
+              <a href="files/.test-report/screenshots/test-discovery/001-file-opened.png" data-gallery="test-discovery" data-caption="001-file-opened.png"><img loading="lazy" src="files/.test-report/screenshots/test-discovery/001-file-opened.png" alt="001-file-opened.png"></a>
+              <figcaption>001-file-opened.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/test-discovery/002-mbt-session-reused.png" data-gallery="test-discovery" data-caption="002-mbt-session-reused.png"><img loading="lazy" src="files/.test-report/screenshots/test-discovery/002-mbt-session-reused.png" alt="002-mbt-session-reused.png"></a>
+              <figcaption>002-mbt-session-reused.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/test-discovery/003-test-run-button-discovered.png" data-gallery="test-discovery" data-caption="003-test-run-button-discovered.png"><img loading="lazy" src="files/.test-report/screenshots/test-discovery/003-test-run-button-discovered.png" alt="003-test-run-button-discovered.png"></a>
+              <figcaption>003-test-run-button-discovered.png</figcaption>
+            </figure></div>
     </details>
           </li><li>
             <div class="scenario-header">
-              <span class="status skipped">skipped</span>
+              <span class="status passed">passed</span>
               <strong>debug-app-test</strong>
-              <span>java-debug-test · 0 ms</span>
+              <span>java-debug-test · 15.3 s</span>
             </div>
             
             <details class="screenshot-viewer">
-      <summary>Screenshots (0)</summary>
-      <p class="muted">No screenshots were produced for this scenario.</p>
+      <summary>Screenshots (5)</summary>
+      <div class="gallery"><figure>
+              <a href="files/.test-report/screenshots/debug-app-test/001-file-opened.png" data-gallery="debug-app-test" data-caption="001-file-opened.png"><img loading="lazy" src="files/.test-report/screenshots/debug-app-test/001-file-opened.png" alt="001-file-opened.png"></a>
+              <figcaption>001-file-opened.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/debug-app-test/002-mbt-session-reused.png" data-gallery="debug-app-test" data-caption="002-mbt-session-reused.png"><img loading="lazy" src="files/.test-report/screenshots/debug-app-test/002-mbt-session-reused.png" alt="002-mbt-session-reused.png"></a>
+              <figcaption>002-mbt-session-reused.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/debug-app-test/003-breakpoint-added.png" data-gallery="debug-app-test" data-caption="003-breakpoint-added.png"><img loading="lazy" src="files/.test-report/screenshots/debug-app-test/003-breakpoint-added.png" alt="003-breakpoint-added.png"></a>
+              <figcaption>003-breakpoint-added.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/debug-app-test/004-breakpoint-hit.png" data-gallery="debug-app-test" data-caption="004-breakpoint-hit.png"><img loading="lazy" src="files/.test-report/screenshots/debug-app-test/004-breakpoint-hit.png" alt="004-breakpoint-hit.png"></a>
+              <figcaption>004-breakpoint-hit.png</figcaption>
+            </figure><figure>
+              <a href="files/.test-report/screenshots/debug-app-test/005-debug-test-finished.png" data-gallery="debug-app-test" data-caption="005-debug-test-finished.png"><img loading="lazy" src="files/.test-report/screenshots/debug-app-test/005-debug-test-finished.png" alt="005-debug-test-finished.png"></a>
+              <figcaption>005-debug-test-finished.png</figcaption>
+            </figure></div>
     </details>
           </li></ul></section>
-    <section><h2>MBT model</h2><p class="muted">No MBT model was uploaded.</p></section>
+    <section><h2>MBT model</h2><div class="metrics">
+      <span><strong>2</strong> namespaces</span>
+      <span><strong>5</strong> dependencies</span>
+      <span><strong>0</strong> unchecked sources</span>
+    </div><details class="log-viewer">
+    <summary>workspaces/project/.metals/mbt.json</summary>
+    <p><a href="files/workspaces/project/.metals/mbt.json">Open raw file</a></p>
+    <pre data-source="files/workspaces/project/.metals/mbt.json" data-format="json">Open this section to load the file.</pre>
+  </details></section>
     <section><h2>Logs</h2><details class="log-viewer">
     <summary>.test-report/job.log</summary>
     <p><a href="files/.test-report/job.log">Open raw file</a></p>

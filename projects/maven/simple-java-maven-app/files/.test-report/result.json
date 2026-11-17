@@ -4,44 +4,43 @@
   "buildTool": "maven",
   "repository": "jenkins-docs/simple-java-maven-app",
   "ref": "master",
-  "status": "failed",
+  "status": "passed",
   "scenarios": [
     {
       "id": "import",
       "kind": "mbt-import",
-      "status": "failed",
-      "durationMs": 42719,
-      "error": "MBT import did not create valid JSON at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json. Last JSON error: undefined\n\nMetals log tail:\n2026.11.16 09:16:45 INFO  Started: Metals version 2.0.0-community-build.43837503983 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.\n2026.11.16 09:16:45 INFO  Memory monitor started\n2026.11.16 09:16:45 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.\n2026.11.16 09:16:46 INFO  mbt-v2: indexing 2 files\n2026.11.16 09:16:46 INFO  time: mbt-v2 loaded index for 2 files in 0.61s\n2026.11.16 09:16:47 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals1760746084177280922 -cp /tmp/metals1760746084177280922/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.43837503983:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json\n2026.11.16 09:16:48 ERROR Exception in thread \"main\" java.io.IOException: Server returned HTTP response code: 429 for URL: https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip\n2026.11.16 09:16:48 ERROR \tat java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:2034)\n2026.11.16 09:16:48 ERROR \tat java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1632)\n2026.11.16 09:16:48 ERROR \tat java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:223)\n2026.11.16 09:16:48 ERROR \tat org.apache.maven.wrapper.DefaultDownloader.downloadInternal(DefaultDownloader.java:100)\n2026.11.16 09:16:48 ERROR \tat org.apache.maven.wrapper.DefaultDownloader.download(DefaultDownloader.java:86)\n2026.11.16 09:16:48 ERROR \tat org.apache.maven.wrapper.Installer.createDist(Installer.java:84)\n2026.11.16 09:16:48 ERROR \tat org.apache.maven.wrapper.WrapperExecutor.execute(WrapperExecutor.java:160)\n2026.11.16 09:16:48 ERROR \tat org.apache.maven.wrapper.MavenWrapperMain.main(MavenWrapperMain.java:73)\n2026.11.16 09:16:48 INFO  time: ran 'maven-export' in 1.28s\n2026.11.16 09:16:48 ERROR mbt-import: provider 'maven' failed\njava.lang.Exception: mbt-maven-export failed with exit code 1\n\tat scala.meta.internal.metals.mbt.importer.MavenMbtImporter.$anonfun$extract$1(MavenMbtImporter.scala:58)\n\tat scala.meta.internal.metals.mbt.importer.MavenMbtImporter.$anonfun$extract$1$adapted(MavenMbtImporter.scala:46)\n\tat scala.concurrent.impl.Promise$Transformation.run(Promise.scala:503)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\n\tat java.lang.Thread.run(Thread.java:1583)\n\n2026.11.16 09:16:48 WARN  no build target for: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java\n"
+      "status": "passed",
+      "durationMs": 15728
     },
     {
       "id": "run-app",
       "kind": "java-main-run",
-      "status": "skipped",
-      "durationMs": 0
+      "status": "passed",
+      "durationMs": 16958
     },
     {
       "id": "rename-message",
       "kind": "rename-symbol",
-      "status": "skipped",
-      "durationMs": 0
+      "status": "passed",
+      "durationMs": 7601
     },
     {
       "id": "message-highlight",
       "kind": "document-highlight",
-      "status": "skipped",
-      "durationMs": 0
+      "status": "passed",
+      "durationMs": 905
     },
     {
       "id": "test-discovery",
       "kind": "java-test-discovery",
-      "status": "skipped",
-      "durationMs": 0
+      "status": "passed",
+      "durationMs": 2550
     },
     {
       "id": "debug-app-test",
       "kind": "java-debug-test",
-      "status": "skipped",
-      "durationMs": 0
+      "status": "passed",
+      "durationMs": 15272
     }
   ]
 }
