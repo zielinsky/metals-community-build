@@ -14,42 +14,42 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 7956 ms
+Browser ready in 15276 ms
 Launching tests...
   gradle / spring-boot
-[community-build] 2026-11-19T10:04:24.860Z Starting gradle / spring-boot / import-reactive-oauth2-client
-[community-build] 2026-11-19T10:04:24.863Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-19T10:04:24.863Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java
-[community-build] 2026-11-19T10:04:27.045Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-19T10:04:28.350Z VS Code opened SampleReactiveOAuth2ClientApplication.java
-[community-build] 2026-11-19T10:04:28.516Z Captured screenshot: import-reactive-oauth2-client/001-file-opened.png
-[community-build] 2026-11-19T10:04:28.516Z Waiting for the build server choice notification
+[community-build] 2026-11-20T09:55:20.807Z Starting gradle / spring-boot / import-reactive-oauth2-client
+[community-build] 2026-11-20T09:55:20.807Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-20T09:55:20.807Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java
+[community-build] 2026-11-20T09:55:22.146Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-20T09:55:22.799Z VS Code opened SampleReactiveOAuth2ClientApplication.java
+[community-build] 2026-11-20T09:55:22.930Z Captured screenshot: import-reactive-oauth2-client/001-file-opened.png
+[community-build] 2026-11-20T09:55:22.930Z Waiting for the build server choice notification
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
-[metals] 2026.11.19 10:04:31 INFO  Started: Metals version 2.0.0-community-build.44501477140 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-[metals] 2026.11.19 10:04:31 INFO  Memory monitor started
-[metals] 2026.11.19 10:04:32 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[community-build] 2026-11-19T10:04:33.910Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
-[community-build] 2026-11-19T10:04:34.094Z Captured screenshot: import-reactive-oauth2-client/002-build-server-prompt.png
-[community-build] 2026-11-19T10:04:34.103Z Clicking notification action: Use MBT
-[community-build] 2026-11-19T10:04:34.451Z Clicked notification action: Use MBT
-[metals] 2026.11.19 10:04:34 INFO  mbt-v2: indexing 8736 files
-[community-build] 2026-11-19T10:04:35.047Z Captured screenshot: import-reactive-oauth2-client/003-mbt-selected.png
-[community-build] 2026-11-19T10:04:35.048Z Waiting for the VS Code importing status to finish
-[community-build] 2026-11-19T10:04:35.984Z VS Code status bar reports that the project is importing
-[metals] 2026.11.19 10:04:37 INFO  GradleInfoExtractor: Connected to the Gradle daemon
-[metals] 2026.11.19 10:04:37 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
+[metals] 2026.11.20 09:55:25 INFO  Started: Metals version 2.0.0-community-build.44714007125 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+[metals] 2026.11.20 09:55:25 INFO  Memory monitor started
+[metals] 2026.11.20 09:55:25 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-11-20T09:55:27.524Z Notification appeared: New gradle workspace detected. Which build server would you like to use?
+[metals] 2026.11.20 09:55:27 INFO  mbt-v2: indexing 8746 files
+[community-build] 2026-11-20T09:55:27.692Z Captured screenshot: import-reactive-oauth2-client/002-build-server-prompt.png
+[community-build] 2026-11-20T09:55:27.693Z Clicking notification action: Use MBT
+[community-build] 2026-11-20T09:55:28.036Z Clicked notification action: Use MBT
+[community-build] 2026-11-20T09:55:28.938Z Captured screenshot: import-reactive-oauth2-client/003-mbt-selected.png
+[community-build] 2026-11-20T09:55:28.938Z Waiting for the VS Code importing status to finish
+[community-build] 2026-11-20T09:55:29.126Z VS Code status bar reports that the project is importing
+[metals] 2026.11.20 09:55:30 INFO  GradleInfoExtractor: Connected to the Gradle daemon
+[metals] 2026.11.20 09:55:30 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
 [metals] Fetching distribution.
 [metals] Downloading https://services.gradle.org/distributions/gradle-9.9.1-bin.zip
-[metals] ................................................................................................................................
-[metals] 2026.11.19 10:04:43 INFO  time: mbt-v2 loaded index for 8736 files in 10s
-[metals] 2026.11.19 10:04:45 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
-[metals] 2026.11.19 10:05:51 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
-[metals] 2026.11.19 10:05:51 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
+[metals] .............................................................................................................................2026.11.20 09:55:37 INFO  time: mbt-v2 loaded index for 8746 files in 10s
+[metals] ...
+[metals] 2026.11.20 09:55:39 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
+[metals] 2026.11.20 09:57:33 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
+[metals] 2026.11.20 09:57:35 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
 [metals] Fetching distribution.
 [metals] Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
 [metals] .....................................................................................................................................
-[metals] 2026.11.19 10:06:07 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
-[metals] 2026.11.19 10:06:07 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/gradle/plugins
+[metals] 2026.11.20 09:57:56 INFO  GradleInfoExtractor: Setting Java home for the Gradle model builder: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.5-8/x64
+[metals] 2026.11.20 09:57:56 WARN  Failed to extract modules from editable build /home/runner/work/metals-community-build/metals-community-build/workspaces/project/gradle/plugins
 [metals] org.gradle.tooling.BuildException: Could not fetch model of type 'IdeaProject' using connection to Gradle distribution 'https://services.gradle.org/distributions/gradle-9.5.1-bin.zip'.
 [metals] 	at org.gradle.tooling.internal.consumer.ConnectionExceptionTransformer.transform(ConnectionExceptionTransformer.java:69)
 [metals] 	at org.gradle.tooling.internal.consumer.ResultHandlerAdapter.onFailure(ResultHandlerAdapter.java:42)
@@ -515,341 +515,340 @@ tail: '/home/runner/work/metals-community-build/metals-community-build/workspace
 [metals] 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 [metals] 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 [metals] 
-[metals] 2026.11.19 10:06:07 INFO  time: gradle-extractor extract in 1m33s
-[metals] 2026.11.19 10:06:07 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.11.19 10:06:07 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.11.19 10:06:07 INFO  Connected to Build server: MBT v2.0.0-community-build.44501477140
-[metals] 2026.11.19 10:06:23 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.11.19 10:06:31 INFO  time: indexed workspace in 21s
-[community-build] 2026-11-19T10:06:32.110Z VS Code status bar reports that the project import finished
-[community-build] 2026-11-19T10:06:32.161Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
-[community-build] 2026-11-19T10:06:32.387Z Captured screenshot: import-reactive-oauth2-client/004-mbt-imported.png
-[community-build] 2026-11-19T10:06:32.387Z MBT model contains 926 namespaces and 1056 dependency modules
-[community-build] 2026-11-19T10:06:32.400Z Verified imported source: smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java via smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java
-[community-build] 2026-11-19T10:06:32.533Z Captured screenshot: import-reactive-oauth2-client/005-import-verified.png
-[community-build] 2026-11-19T10:06:32.533Z Scenario passed: import-reactive-oauth2-client
-    ✔ import-reactive-oauth2-client (127673ms)
-[community-build] 2026-11-19T10:06:32.534Z Starting gradle / spring-boot / run-reactive-oauth2-client
-[community-build] 2026-11-19T10:06:32.534Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-19T10:06:32.534Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java
-[community-build] 2026-11-19T10:06:32.610Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-19T10:06:32.750Z VS Code opened SampleReactiveOAuth2ClientApplication.java
-[community-build] 2026-11-19T10:06:32.822Z Captured screenshot: run-reactive-oauth2-client/001-file-opened.png
-[community-build] 2026-11-19T10:06:32.822Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-19T10:06:32.905Z Captured screenshot: run-reactive-oauth2-client/002-mbt-session-reused.png
-[community-build] 2026-11-19T10:06:34.142Z Waiting for the run code lens for smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication
-[community-build] 2026-11-19T10:06:34.216Z Verified a single run and debug code lens: ["run","debug"]
-[community-build] 2026-11-19T10:06:34.321Z Captured screenshot: run-reactive-oauth2-client/003-run-code-lens-discovered.png
-[community-build] 2026-11-19T10:06:34.321Z Clicking run for smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication
-[metals] 2026.11.19 10:06:34 INFO  MBT compile via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/gradlew
-[community-build] 2026-11-19T10:06:34.495Z Captured screenshot: run-reactive-oauth2-client/004-run-clicked.png
-[community-build] 2026-11-19T10:06:34.495Z Waiting for application output: Started SampleReactiveOAuth2ClientApplication
-[metals] Nov 19, 2026 10:06:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] 2026.11.20 09:57:56 INFO  time: gradle-extractor extract in 2m29s
+[metals] 2026.11.20 09:57:56 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.11.20 09:57:57 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.11.20 09:57:57 INFO  Connected to Build server: MBT v2.0.0-community-build.44714007125
+[metals] 2026.11.20 09:58:13 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.11.20 09:58:18 INFO  time: indexed workspace in 19s
+[community-build] 2026-11-20T09:58:19.501Z VS Code status bar reports that the project import finished
+[community-build] 2026-11-20T09:58:19.515Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[community-build] 2026-11-20T09:58:19.695Z Captured screenshot: import-reactive-oauth2-client/004-mbt-imported.png
+[community-build] 2026-11-20T09:58:19.696Z MBT model contains 926 namespaces and 1056 dependency modules
+[community-build] 2026-11-20T09:58:19.721Z Verified imported source: smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java via smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java
+[community-build] 2026-11-20T09:58:19.950Z Captured screenshot: import-reactive-oauth2-client/005-import-verified.png
+[community-build] 2026-11-20T09:58:19.950Z Scenario passed: import-reactive-oauth2-client
+    ✔ import-reactive-oauth2-client (179144ms)
+[community-build] 2026-11-20T09:58:19.954Z Starting gradle / spring-boot / run-reactive-oauth2-client
+[community-build] 2026-11-20T09:58:19.954Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-20T09:58:19.954Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/smoke-test/spring-boot-smoke-test-reactive-oauth2-client/src/main/java/smoketest/oauth2/client/SampleReactiveOAuth2ClientApplication.java
+[community-build] 2026-11-20T09:58:20.165Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-20T09:58:20.475Z VS Code opened SampleReactiveOAuth2ClientApplication.java
+[community-build] 2026-11-20T09:58:20.620Z Captured screenshot: run-reactive-oauth2-client/001-file-opened.png
+[community-build] 2026-11-20T09:58:20.623Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-20T09:58:20.736Z Captured screenshot: run-reactive-oauth2-client/002-mbt-session-reused.png
+[community-build] 2026-11-20T09:58:22.564Z Waiting for the run code lens for smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication
+[community-build] 2026-11-20T09:58:22.725Z Verified a single run and debug code lens: ["run","debug"]
+[community-build] 2026-11-20T09:58:22.890Z Captured screenshot: run-reactive-oauth2-client/003-run-code-lens-discovered.png
+[community-build] 2026-11-20T09:58:22.893Z Clicking run for smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication
+[community-build] 2026-11-20T09:58:23.219Z Captured screenshot: run-reactive-oauth2-client/004-run-clicked.png
+[community-build] 2026-11-20T09:58:23.219Z Waiting for application output: Started SampleReactiveOAuth2ClientApplication
+[metals] Nov 20, 2026 9:58:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Nov 19, 2026 10:06:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] 2026.11.20 09:58:23 INFO  MBT compile via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/gradlew
+[metals] Nov 20, 2026 9:58:23 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Nov 19, 2026 10:06:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] Nov 20, 2026 9:58:24 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Nov 19, 2026 10:06:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
-[metals] INFO: Unsupported notification method: $/setTrace
-[metals] 2026.11.19 10:06:35 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:35 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:pluginDescriptors
-[metals] 2026.11.19 10:06:35 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:processResources
-[metals] 2026.11.19 10:06:35 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:classes
-[metals] 2026.11.19 10:06:35 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:jar
-[metals] 2026.11.19 10:06:35 INFO  [mbt-compile] > Task :buildSrc:checkFormatMain FROM-CACHE
-[metals] 2026.11.19 10:06:35 INFO  [mbt-compile] > Task :buildSrc:checkFormatTest FROM-CACHE
-[metals] 2026.11.19 10:06:35 INFO  [mbt-compile] > Task :buildSrc:checkFormat UP-TO-DATE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:compileGroovy NO-SOURCE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:pluginDescriptors
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:processResources
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:classes
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:checkstyleMain FROM-CACHE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:compileTestJava FROM-CACHE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:compileTestGroovy NO-SOURCE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:processTestResources
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:testClasses
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:checkstyleTest FROM-CACHE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:pluginUnderTestMetadata
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:test FROM-CACHE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:validatePlugins FROM-CACHE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:check UP-TO-DATE
-[metals] 2026.11.19 10:06:37 INFO  [mbt-compile] > Task :buildSrc:jar
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot:checkKotlinGradlePluginConfigurationErrors SKIPPED
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-actuator:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-test:checkKotlinGradlePluginConfigurationErrors SKIPPED
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-web-server:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-actuator-autoconfigure:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-health:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-gson:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot:syncJavaTemplates
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-http-codec:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-jackson:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-jackson2:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-kotlinx-serialization-json:checkKotlinGradlePluginConfigurationErrors SKIPPED
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-kotlinx-serialization-json:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-docker-compose:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-testcontainers:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-micrometer-metrics:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-micrometer-observation:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-opentelemetry:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-reactor:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-netty:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:classes
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:classes
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:extractLegalResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-reactor-netty:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:extractLegalResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:jar
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-h2console:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:jar
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-servlet:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-jersey:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-security:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-rsocket:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-validation:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-webflux:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-http-converter:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-webmvc:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-tomcat:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :starter:spring-boot-starter-logging:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-webmvc-test:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :module:spring-boot-security-oauth2-client:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:processResources
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot:compileKotlin FROM-CACHE
-[metals] 2026.11.19 10:06:46 INFO  [mbt-compile] > Task :core:spring-boot:processResources
-[metals] 2026.11.19 10:06:47 INFO  [mbt-compile] > Task :core:spring-boot:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:47 INFO  [mbt-compile] > Task :core:spring-boot-test:compileKotlin NO-SOURCE
-[metals] 2026.11.19 10:06:47 INFO  [mbt-compile] > Task :core:spring-boot-test:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:47 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:47 INFO  [mbt-compile] > Task :module:spring-boot-kotlinx-serialization-json:compileKotlin NO-SOURCE
-[metals] 2026.11.19 10:06:47 INFO  [mbt-compile] > Task :core:spring-boot-test-autoconfigure:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:47 INFO  [mbt-compile] > Task :core:spring-boot-docker-compose:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:47 INFO  [mbt-compile] > Task :module:spring-boot-jackson:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-jackson2:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-gson:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-kotlinx-serialization-json:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-micrometer-observation:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-web-server:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-http-codec:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-reactor:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-web-server-test:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-netty:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-h2console:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :core:spring-boot-testcontainers:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-validation:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-webtestclient:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :starter:spring-boot-starter:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :starter:spring-boot-starter-jackson:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-jsonb:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-opentelemetry:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-http-converter:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:48 INFO  [mbt-compile] > Task :module:spring-boot-actuator:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :module:spring-boot-actuator-autoconfigure:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :module:spring-boot-servlet:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :module:spring-boot-reactor-netty:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :starter:spring-boot-starter-reactor-netty:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :module:spring-boot-health:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :module:spring-boot-rsocket:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :module:spring-boot-micrometer-metrics:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :starter:spring-boot-starter-micrometer-metrics:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:50 INFO  [mbt-compile] > Task :starter:spring-boot-starter-actuator:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :module:spring-boot-tomcat:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :module:spring-boot-jersey:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :module:spring-boot-webmvc:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :module:spring-boot-webflux:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :starter:spring-boot-starter-webflux:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :module:spring-boot-webflux-test:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :module:spring-boot-webmvc-test:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :module:spring-boot-security:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :starter:spring-boot-starter-security:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :module:spring-boot-security-oauth2-client:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :starter:spring-boot-starter-security-oauth2-client:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:compileJava FROM-CACHE
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:classes
-[metals] 2026.11.19 10:06:51 INFO  [mbt-compile] gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1795082795671.json
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] 
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] [Incubating] Problems report is available at: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build/reports/problems/problems-report.html
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] 
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] 
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] 
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] For more on this, please refer to https://docs.gradle.org/9.9.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] 
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] BUILD SUCCESSFUL in 17s
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] 97 actionable tasks: 47 executed, 50 from cache
-[metals] 2026.11.19 10:06:52 INFO  [mbt-compile] Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.9.1/userguide/configuration_cache_enabling.html
-[metals] 2026.11.19 10:06:52 INFO  Starting debug session without debugging
-[metals] 2026.11.19 10:06:52 INFO  MBT compile via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/gradlew
-[metals] 2026.11.19 10:06:53 INFO  > Task :plugins:cycle-detection-plugin:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :plugins:cycle-detection-plugin:pluginDescriptors UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :plugins:cycle-detection-plugin:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :plugins:cycle-detection-plugin:classes UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :plugins:cycle-detection-plugin:jar UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:checkFormatMain UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:checkFormatTest UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:checkFormat UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:compileGroovy NO-SOURCE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:pluginDescriptors UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:classes UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:checkstyleMain UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:compileTestJava UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:compileTestGroovy NO-SOURCE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:processTestResources UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:testClasses UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:checkstyleTest UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:pluginUnderTestMetadata UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:test UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:validatePlugins UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:check UP-TO-DATE
-[metals] 2026.11.19 10:06:53 INFO  > Task :buildSrc:jar UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot:checkKotlinGradlePluginConfigurationErrors SKIPPED
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot:syncJavaTemplates UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-autoconfigure:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-actuator:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-test:checkKotlinGradlePluginConfigurationErrors SKIPPED
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-web-server:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-actuator-autoconfigure:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-health:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-gson:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-http-codec:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-jackson:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-jackson2:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-kotlinx-serialization-json:checkKotlinGradlePluginConfigurationErrors SKIPPED
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-kotlinx-serialization-json:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-docker-compose:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-testcontainers:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-micrometer-metrics:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-micrometer-observation:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-opentelemetry:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-reactor:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-netty:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-reactor-netty:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-h2console:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-jersey:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-servlet:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-rsocket:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-security:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-validation:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-webflux:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-http-converter:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-tomcat:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-webmvc:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-webmvc-test:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-security-oauth2-client:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :starter:spring-boot-starter-logging:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:57 INFO  > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:classes UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-autoconfigure-processor:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:extractLegalResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-autoconfigure-processor:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-autoconfigure-processor:classes UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-autoconfigure-processor:extractLegalResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:jar UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-autoconfigure-processor:jar UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot:compileKotlin UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot:processResources UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-test:compileKotlin NO-SOURCE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-test:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-autoconfigure:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-kotlinx-serialization-json:compileKotlin NO-SOURCE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-web-server:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-test-autoconfigure:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-docker-compose:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-gson:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-kotlinx-serialization-json:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-jackson:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-micrometer-observation:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-reactor:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-jackson2:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-netty:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-web-server-test:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-h2console:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-validation:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-jsonb:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-http-codec:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-webtestclient:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :starter:spring-boot-starter:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:57 INFO  > Task :starter:spring-boot-starter-jackson:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-http-converter:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :core:spring-boot-testcontainers:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:57 INFO  > Task :module:spring-boot-opentelemetry:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-actuator:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-actuator-autoconfigure:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-health:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-reactor-netty:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :starter:spring-boot-starter-reactor-netty:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-servlet:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-rsocket:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-micrometer-metrics:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :starter:spring-boot-starter-micrometer-metrics:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:59 INFO  > Task :starter:spring-boot-starter-actuator:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-webflux:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :starter:spring-boot-starter-webflux:compileJava NO-SOURCE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-webflux-test:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-tomcat:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-jersey:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-webmvc:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-webmvc-test:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:06:59 INFO  > Task :module:spring-boot-security:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:07:00 INFO  > Task :starter:spring-boot-starter-security:compileJava NO-SOURCE
-[metals] 2026.11.19 10:07:00 INFO  > Task :module:spring-boot-security-oauth2-client:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:07:00 INFO  > Task :starter:spring-boot-starter-security-oauth2-client:compileJava NO-SOURCE
-[metals] 2026.11.19 10:07:00 INFO  > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:compileJava UP-TO-DATE
-[metals] 2026.11.19 10:07:00 INFO  > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:classes UP-TO-DATE
-[metals] 2026.11.19 10:07:00 INFO  gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1795082813231.json
-[metals] 2026.11.19 10:07:00 INFO  
-[metals] 2026.11.19 10:07:00 INFO  [Incubating] Problems report is available at: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build/reports/problems/problems-report.html
-[metals] 2026.11.19 10:07:00 INFO  
-[metals] 2026.11.19 10:07:00 INFO  Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
-[metals] 2026.11.19 10:07:00 INFO  
-[metals] 2026.11.19 10:07:00 INFO  You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-[metals] 2026.11.19 10:07:00 INFO  
-[metals] 2026.11.19 10:07:00 INFO  For more on this, please refer to https://docs.gradle.org/9.9.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
-[metals] 2026.11.19 10:07:00 INFO  
-[metals] 2026.11.19 10:07:00 INFO  BUILD SUCCESSFUL in 7s
-[metals] 2026.11.19 10:07:00 INFO  97 actionable tasks: 97 up-to-date
-[metals] 2026.11.19 10:07:00 INFO  Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.9.1/userguide/configuration_cache_enabling.html
-[metals] 2026.11.19 10:07:00 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
-[metals] 2026.11.19 10:07:00 INFO  MBT debug session via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/gradlew
-[metals] 2026.11.19 10:07:00 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-[metals] 2026.11.19 10:07:00 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-[metals] 2026.11.19 10:07:00 INFO  Starting debug proxy for [smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication]
-[metals] 2026.11.19 10:07:00 INFO  Initialized Scala 3 decoder in 2 milliseconds
-[metals] 2026.11.19 10:07:09 INFO  Trying to attach to remote debuggee VM localhost:42779 .
-[metals] 2026.11.19 10:07:09 INFO  Attaching to debuggee VM succeeded.
-[metals] 2026.11.19 10:07:12 ERROR WARNING: A restricted method in java.lang.System has been called
-[metals] 2026.11.19 10:07:12 ERROR WARNING: java.lang.System::loadLibrary has been called by io.netty.util.internal.NativeLibraryUtil in an unnamed module (file:/home/runner/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.2.20.Final/e87b2bbdc7b7ebcb59ab5c29576e40a423e0661b/netty-common-4.2.20.Final.jar)
-[metals] 2026.11.19 10:07:12 ERROR WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-[metals] 2026.11.19 10:07:12 ERROR WARNING: Restricted methods will be blocked in a future release unless native access is enabled
-[metals] 2026.11.19 10:07:12 ERROR 
-[community-build] 2026-11-19T10:07:13.151Z Application started: smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication
-[community-build] 2026-11-19T10:07:13.252Z Captured screenshot: run-reactive-oauth2-client/005-application-started.png
-[community-build] 2026-11-19T10:07:13.253Z Stopping the application debug session
-[community-build] 2026-11-19T10:07:14.754Z Scenario passed: run-reactive-oauth2-client
-    ✔ run-reactive-oauth2-client (42221ms)
+[metals] 2026.11.20 09:58:25 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:25 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:pluginDescriptors
+[metals] 2026.11.20 09:58:25 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:processResources
+[metals] 2026.11.20 09:58:25 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:classes
+[metals] 2026.11.20 09:58:25 INFO  [mbt-compile] > Task :plugins:cycle-detection-plugin:jar
+[metals] 2026.11.20 09:58:25 INFO  [mbt-compile] > Task :buildSrc:checkFormatMain FROM-CACHE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:checkFormatTest FROM-CACHE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:checkFormat UP-TO-DATE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:compileGroovy NO-SOURCE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:pluginDescriptors
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:processResources
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:classes
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:checkstyleMain FROM-CACHE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:compileTestJava FROM-CACHE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:compileTestGroovy NO-SOURCE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:processTestResources
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:testClasses
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:checkstyleTest FROM-CACHE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:pluginUnderTestMetadata
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:test FROM-CACHE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:validatePlugins FROM-CACHE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:check UP-TO-DATE
+[metals] 2026.11.20 09:58:26 INFO  [mbt-compile] > Task :buildSrc:jar
+[metals] 2026.11.20 09:58:41 INFO  time: indexed workspace in 20s
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot:checkKotlinGradlePluginConfigurationErrors SKIPPED
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-actuator:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-test:checkKotlinGradlePluginConfigurationErrors SKIPPED
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-web-server:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-actuator-autoconfigure:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-health:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-gson:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot:syncJavaTemplates
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-http-codec:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-jackson:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-jackson2:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-kotlinx-serialization-json:checkKotlinGradlePluginConfigurationErrors SKIPPED
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-kotlinx-serialization-json:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-docker-compose:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-testcontainers:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-micrometer-metrics:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-micrometer-observation:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-opentelemetry:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-reactor:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-netty:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-reactor-netty:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-h2console:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-jersey:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-servlet:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-rsocket:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-security:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-validation:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-webflux:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-http-converter:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-tomcat:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-webmvc:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-webmvc-test:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :module:spring-boot-security-oauth2-client:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :starter:spring-boot-starter-logging:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:classes
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:extractLegalResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure-processor:jar
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:processResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:classes
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:extractLegalResources
+[metals] 2026.11.20 09:58:45 INFO  [mbt-compile] > Task :configuration-metadata:spring-boot-configuration-processor:jar
+[metals] 2026.11.20 09:58:46 INFO  [mbt-compile] > Task :core:spring-boot:compileKotlin FROM-CACHE
+[metals] 2026.11.20 09:58:46 INFO  [mbt-compile] > Task :core:spring-boot:processResources
+[metals] 2026.11.20 09:58:46 INFO  [mbt-compile] > Task :core:spring-boot:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:46 INFO  [mbt-compile] > Task :core:spring-boot-test:compileKotlin NO-SOURCE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :core:spring-boot-test:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :core:spring-boot-autoconfigure:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-kotlinx-serialization-json:compileKotlin NO-SOURCE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-kotlinx-serialization-json:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :core:spring-boot-docker-compose:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :core:spring-boot-test-autoconfigure:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-web-server:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-micrometer-observation:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-gson:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-jackson:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-reactor:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-jackson2:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-netty:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :core:spring-boot-testcontainers:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-web-server-test:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-http-codec:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-opentelemetry:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-h2console:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-validation:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :starter:spring-boot-starter:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :starter:spring-boot-starter-jackson:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-jsonb:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-webtestclient:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-actuator:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-http-converter:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-actuator-autoconfigure:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:47 INFO  [mbt-compile] > Task :module:spring-boot-servlet:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-reactor-netty:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-health:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :starter:spring-boot-starter-reactor-netty:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-rsocket:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-micrometer-metrics:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :starter:spring-boot-starter-micrometer-metrics:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :starter:spring-boot-starter-actuator:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-jersey:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-tomcat:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-webflux:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :starter:spring-boot-starter-webflux:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-webmvc:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-webflux-test:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-webmvc-test:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-security:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :starter:spring-boot-starter-security:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :module:spring-boot-security-oauth2-client:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :starter:spring-boot-starter-security-oauth2-client:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:compileJava FROM-CACHE
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:classes
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1795168704967.json
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] 
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] [Incubating] Problems report is available at: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build/reports/problems/problems-report.html
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] 
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] 
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] 
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] For more on this, please refer to https://docs.gradle.org/9.9.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] 
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] BUILD SUCCESSFUL in 26s
+[metals] 2026.11.20 09:58:48 INFO  [mbt-compile] 97 actionable tasks: 47 executed, 50 from cache
+[metals] 2026.11.20 09:58:49 INFO  [mbt-compile] Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.9.1/userguide/configuration_cache_enabling.html
+[metals] 2026.11.20 09:58:49 INFO  Starting debug session without debugging
+[metals] 2026.11.20 09:58:49 INFO  MBT compile via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/gradlew
+[metals] 2026.11.20 09:58:50 INFO  > Task :plugins:cycle-detection-plugin:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :plugins:cycle-detection-plugin:pluginDescriptors UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :plugins:cycle-detection-plugin:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :plugins:cycle-detection-plugin:classes UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :plugins:cycle-detection-plugin:jar UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:checkFormatMain UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:checkFormatTest UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:checkFormat UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:compileGroovy NO-SOURCE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:pluginDescriptors UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:classes UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:checkstyleMain UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:compileTestJava UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:compileTestGroovy NO-SOURCE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:processTestResources UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:testClasses UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:checkstyleTest UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:pluginUnderTestMetadata UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:test UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:validatePlugins UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:check UP-TO-DATE
+[metals] 2026.11.20 09:58:50 INFO  > Task :buildSrc:jar UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot:checkKotlinGradlePluginConfigurationErrors SKIPPED
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot:syncJavaTemplates UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-autoconfigure:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-actuator:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-test:checkKotlinGradlePluginConfigurationErrors SKIPPED
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-web-server:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-actuator-autoconfigure:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-health:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-gson:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-http-codec:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-jackson:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-jackson2:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-kotlinx-serialization-json:checkKotlinGradlePluginConfigurationErrors SKIPPED
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-autoconfigure-processor:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-kotlinx-serialization-json:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-autoconfigure-processor:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-docker-compose:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-autoconfigure-processor:classes UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:classes UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-autoconfigure-processor:extractLegalResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-testcontainers:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:extractLegalResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-autoconfigure-processor:jar UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-micrometer-metrics:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :configuration-metadata:spring-boot-configuration-processor:jar UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-opentelemetry:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-micrometer-observation:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-reactor:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-netty:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-reactor-netty:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-jersey:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-servlet:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-rsocket:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-h2console:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-security:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-validation:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-http-converter:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-tomcat:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-webflux:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-webmvc:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot:compileKotlin UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-webmvc-test:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter-logging:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-security-oauth2-client:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:processResources UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-test:compileKotlin NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-autoconfigure:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-kotlinx-serialization-json:compileKotlin NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-test:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-web-server:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-docker-compose:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-kotlinx-serialization-json:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-test-autoconfigure:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-actuator:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-micrometer-observation:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-gson:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :core:spring-boot-testcontainers:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-actuator-autoconfigure:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-health:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-reactor:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-jackson:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-opentelemetry:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-netty:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-h2console:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-web-server-test:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-jackson2:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-servlet:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-reactor-netty:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-validation:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-micrometer-metrics:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-rsocket:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-http-codec:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-jsonb:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-webflux:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-tomcat:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-http-converter:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter-micrometer-metrics:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter-actuator:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter-jackson:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter-reactor-netty:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter-webflux:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-jersey:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-webtestclient:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-webmvc:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-webflux-test:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-webmvc-test:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-security:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter-security:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :module:spring-boot-security-oauth2-client:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :starter:spring-boot-starter-security-oauth2-client:compileJava NO-SOURCE
+[metals] 2026.11.20 09:58:54 INFO  > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:compileJava UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  > Task :smoke-test:spring-boot-smoke-test-reactive-oauth2-client:classes UP-TO-DATE
+[metals] 2026.11.20 09:58:54 INFO  gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1795168730381.json
+[metals] 2026.11.20 09:58:54 INFO  
+[metals] 2026.11.20 09:58:54 INFO  [Incubating] Problems report is available at: file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/build/reports/problems/problems-report.html
+[metals] 2026.11.20 09:58:54 INFO  
+[metals] 2026.11.20 09:58:54 INFO  Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+[metals] 2026.11.20 09:58:54 INFO  
+[metals] 2026.11.20 09:58:54 INFO  You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+[metals] 2026.11.20 09:58:54 INFO  
+[metals] 2026.11.20 09:58:54 INFO  For more on this, please refer to https://docs.gradle.org/9.9.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+[metals] 2026.11.20 09:58:54 INFO  
+[metals] 2026.11.20 09:58:54 INFO  BUILD SUCCESSFUL in 4s
+[metals] 2026.11.20 09:58:54 INFO  97 actionable tasks: 97 up-to-date
+[metals] 2026.11.20 09:58:54 INFO  Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.9.1/userguide/configuration_cache_enabling.html
+[metals] 2026.11.20 09:58:54 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
+[metals] 2026.11.20 09:58:54 INFO  MBT debug session via gradle: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/gradlew
+[metals] 2026.11.20 09:58:55 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+[metals] 2026.11.20 09:58:55 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+[metals] 2026.11.20 09:58:55 INFO  Starting debug proxy for [smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication]
+[metals] 2026.11.20 09:58:55 INFO  Initialized Scala 3 decoder in 4 milliseconds
+[metals] 2026.11.20 09:59:00 INFO  Trying to attach to remote debuggee VM localhost:44519 .
+[metals] 2026.11.20 09:59:00 INFO  Attaching to debuggee VM succeeded.
+[metals] 2026.11.20 09:59:02 ERROR WARNING: A restricted method in java.lang.System has been called
+[metals] 2026.11.20 09:59:02 ERROR WARNING: java.lang.System::loadLibrary has been called by io.netty.util.internal.NativeLibraryUtil in an unnamed module (file:/home/runner/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.2.20.Final/e87b2bbdc7b7ebcb59ab5c29576e40a423e0661b/netty-common-4.2.20.Final.jar)
+[metals] 2026.11.20 09:59:02 ERROR WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+[metals] 2026.11.20 09:59:02 ERROR WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+[metals] 2026.11.20 09:59:02 ERROR 
+[community-build] 2026-11-20T09:59:03.030Z Application started: smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication
+[community-build] 2026-11-20T09:59:03.125Z Captured screenshot: run-reactive-oauth2-client/005-application-started.png
+[community-build] 2026-11-20T09:59:03.125Z Stopping the application debug session
+[community-build] 2026-11-20T09:59:04.449Z Scenario passed: run-reactive-oauth2-client
+    ✔ run-reactive-oauth2-client (44495ms)
 
-[metals] 2026.11.19 10:07:15 INFO  Canceling debug proxy for [smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication]
-[metals] 2026.11.19 10:07:15 INFO  Closing debug server tcp://0.0.0.0:43667
+[metals] 2026.11.20 09:59:04 INFO  Canceling debug proxy for [smoketest.oauth2.client.SampleReactiveOAuth2ClientApplication]
+[metals] 2026.11.20 09:59:04 INFO  Closing debug server tcp://0.0.0.0:34417
 Shutting down the browser
-[metals] 2026.11.19 10:07:15 INFO  Shutting down server
-[metals] 2026.11.19 10:07:15 INFO  Memory monitor stopped
-[metals] 2026.11.19 10:07:15 INFO  shutting down Metals
-[metals] 2026.11.19 10:07:15 INFO  Shut down connection with build server.
-[metals] 2026.11.19 10:07:15 INFO  Exiting server
+[metals] 2026.11.20 09:59:05 INFO  Shutting down server
+[metals] 2026.11.20 09:59:05 INFO  Memory monitor stopped
+[metals] 2026.11.20 09:59:05 INFO  shutting down Metals
+[metals] 2026.11.20 09:59:05 INFO  Shut down connection with build server.
+[metals] 2026.11.20 09:59:05 INFO  Exiting server
 
-  2 passing (3m)
+  2 passing (4m)
 
 Verified 10 scenario screenshots

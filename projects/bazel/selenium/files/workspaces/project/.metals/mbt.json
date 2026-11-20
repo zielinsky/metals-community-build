@@ -8343,7 +8343,9 @@
         "org.tomlj:tomlj:2.2.0",
         "org.yaml:snakeyaml:2.6",
         "org.zeromq:jeromq:0.6.0",
-        "redis.clients.authentication:redis-authx-core:0.2.0"
+        "redis.clients.authentication:redis-authx-core:0.2.0",
+        "uk.org.webcompere:system-stubs-core:2.1.8",
+        "uk.org.webcompere:system-stubs-jupiter:2.1.8"
       ],
       "dependsOn": [
         "//java/src/org/openqa/selenium/grid",
@@ -19052,6 +19054,7 @@
         "java/test/org/openqa/selenium/grid/router/RemoteWebDriverDownloadTest.java",
         "java/test/org/openqa/selenium/grid/router/ReverseProxyEndToEndTest.java",
         "java/test/org/openqa/selenium/grid/router/RouterTest.java",
+        "java/test/org/openqa/selenium/grid/router/SeleniumManagerNodeTest.java",
         "java/test/org/openqa/selenium/grid/router/SessionCleanUpTest.java",
         "java/test/org/openqa/selenium/grid/router/SessionQueueGridTest.java",
         "java/test/org/openqa/selenium/grid/router/SessionQueueGridWithTimeoutTest.java",
@@ -19201,6 +19204,9 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/RemoteWebDriverDownloadTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/ReverseProxyEndToEndTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/RouterTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/SeleniumManagerNodeTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/SeleniumManagerNodeTest-chrome.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/SeleniumManagerNodeTest-edge.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/SessionCleanUpTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/SessionQueueGridTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/grid/router/SessionQueueGridWithTimeoutTest.jar",
@@ -19224,6 +19230,9 @@
         "//java/test/org/openqa/selenium/grid/router:RemoteWebDriverDownloadTest",
         "//java/test/org/openqa/selenium/grid/router:ReverseProxyEndToEndTest",
         "//java/test/org/openqa/selenium/grid/router:RouterTest",
+        "//java/test/org/openqa/selenium/grid/router:SeleniumManagerNodeTest",
+        "//java/test/org/openqa/selenium/grid/router:SeleniumManagerNodeTest-chrome",
+        "//java/test/org/openqa/selenium/grid/router:SeleniumManagerNodeTest-edge",
         "//java/test/org/openqa/selenium/grid/router:SessionCleanUpTest",
         "//java/test/org/openqa/selenium/grid/router:SessionQueueGridTest",
         "//java/test/org/openqa/selenium/grid/router:SessionQueueGridWithTimeoutTest",
@@ -19325,6 +19334,24 @@
           "className": "org.openqa.selenium.grid.router.RouterTest",
           "sourcePath": "java/test/org/openqa/selenium/grid/router/RouterTest.java",
           "configuration": "//java/test/org/openqa/selenium/grid/router:RouterTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.grid.router.SeleniumManagerNodeTest",
+          "sourcePath": "java/test/org/openqa/selenium/grid/router/SeleniumManagerNodeTest.java",
+          "configuration": "//java/test/org/openqa/selenium/grid/router:SeleniumManagerNodeTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.grid.router.SeleniumManagerNodeTest",
+          "sourcePath": "java/test/org/openqa/selenium/grid/router/SeleniumManagerNodeTest.java",
+          "configuration": "//java/test/org/openqa/selenium/grid/router:SeleniumManagerNodeTest-chrome",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.grid.router.SeleniumManagerNodeTest",
+          "sourcePath": "java/test/org/openqa/selenium/grid/router/SeleniumManagerNodeTest.java",
+          "configuration": "//java/test/org/openqa/selenium/grid/router:SeleniumManagerNodeTest-edge",
           "framework": "JUnit"
         },
         {
