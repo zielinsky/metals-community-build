@@ -1,0 +1,190 @@
+
+> metals-community-build@0.1.0 test:e2e:prepared
+> node out/scripts/run-project.js
+
+
+=== maven / vertx / 6 scenario(s) ===
+
+tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has become inaccessible: No such file or directory
+tail: directory containing watched file was removed
+tail: inotify cannot be used, reverting to polling
+Loading mocha configuration from /home/runner/work/metals-community-build/metals-community-build/.mocharc.json
+
+
+Detected user defined code settings
+Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
+Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
+Browser ready in 8349 ms
+Launching tests...
+  maven / vertx
+[community-build] 2026-11-24T12:15:39.166Z Starting maven / vertx / import
+[community-build] 2026-11-24T12:15:39.166Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-24T12:15:39.166Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java/io/vertx/core/Verticle.java
+[community-build] 2026-11-24T12:15:41.398Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-24T12:15:43.019Z VS Code opened Verticle.java
+[community-build] 2026-11-24T12:15:43.168Z Captured screenshot: import/001-file-opened.png
+[community-build] 2026-11-24T12:15:43.168Z Waiting for the build server choice notification
+tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
+[metals] 2026.11.24 12:15:47 INFO  Started: Metals version 2.0.0-community-build.45390940134 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+[metals] 2026.11.24 12:15:47 INFO  Memory monitor started
+[metals] 2026.11.24 12:15:48 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[community-build] 2026-11-24T12:15:49.638Z Notification appeared: New maven workspace detected. Which build server would you like to use?
+[metals] 2026.11.24 12:15:49 INFO  mbt-v2: indexing 1333 files
+[community-build] 2026-11-24T12:15:49.956Z Captured screenshot: import/002-build-server-prompt.png
+[community-build] 2026-11-24T12:15:49.960Z Clicking notification action: Use MBT
+[community-build] 2026-11-24T12:15:50.176Z Clicked notification action: Use MBT
+[metals] 2026.11.24 12:15:50 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals12466819261757329000 -cp /tmp/metals12466819261757329000/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.45390940134:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+[community-build] 2026-11-24T12:15:50.956Z Captured screenshot: import/003-mbt-selected.png
+[community-build] 2026-11-24T12:15:50.956Z Waiting for the VS Code importing status to finish
+[community-build] 2026-11-24T12:15:51.796Z VS Code status bar reports that the project is importing
+[metals] 2026.11.24 12:15:54 INFO  time: mbt-v2 loaded index for 1333 files in 5.69s
+[metals] 2026.11.24 12:16:04 INFO  [metals-maven] exporting 3 module(s)
+[metals] 2026.11.24 12:16:04 INFO  [metals-maven] resolving sources JARs for 52 dependencies...
+[metals] 2026.11.24 12:16:04 INFO  [metals-maven] sources resolved: 52/52
+[metals] 2026.11.24 12:16:04 INFO  [metals-maven] resolving 57 dependency JAR(s) missing from local cache...
+[metals] 2026.11.24 12:16:05 INFO  [metals-maven] namespace: io.vertx:vertx-core-logging:5.3.0-SNAPSHOT
+[metals] 2026.11.24 12:16:05 INFO  [metals-maven] namespace: io.vertx:vertx-core:5.3.0-SNAPSHOT
+[metals] 2026.11.24 12:16:05 INFO  [metals-maven] namespace: io.vertx:vertx-core-java21-it:5.3.0-SNAPSHOT
+[metals] 2026.11.24 12:16:05 INFO  [metals-maven] wrote 6 namespaces, 53 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+[metals] 2026.11.24 12:16:06 INFO  time: ran 'maven-export' in 15s
+[metals] 2026.11.24 12:16:06 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.11.24 12:16:06 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.11.24 12:16:06 INFO  Connected to Build server: MBT v2.0.0-community-build.45390940134
+[metals] 2026.11.24 12:16:11 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.11.24 12:16:19 INFO  time: indexed workspace in 13s
+[community-build] 2026-11-24T12:16:20.060Z VS Code status bar reports that the project import finished
+[community-build] 2026-11-24T12:16:20.061Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[community-build] 2026-11-24T12:16:20.254Z Captured screenshot: import/004-mbt-imported.png
+[community-build] 2026-11-24T12:16:20.254Z MBT model contains 6 namespaces and 53 dependency modules
+[community-build] 2026-11-24T12:16:20.254Z Verified imported source: vertx-core/src/main/java/io/vertx/core/Verticle.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java
+[community-build] 2026-11-24T12:16:20.254Z Verified imported source: vertx-core/src/main/java/io/vertx/core/AbstractVerticle.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java
+[community-build] 2026-11-24T12:16:20.255Z Verified dependency module: io.netty:netty-handler via io.netty:netty-handler:4.2.20.Final
+[community-build] 2026-11-24T12:16:20.518Z Captured screenshot: import/005-import-verified.png
+[community-build] 2026-11-24T12:16:20.519Z Scenario passed: import
+    ✔ import (41365ms)
+[community-build] 2026-11-24T12:16:20.523Z Starting maven / vertx / interface-subtypes
+[community-build] 2026-11-24T12:16:20.523Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-24T12:16:20.523Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java/io/vertx/core/Verticle.java
+[community-build] 2026-11-24T12:16:20.649Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-24T12:16:21.028Z VS Code opened Verticle.java
+[community-build] 2026-11-24T12:16:21.268Z Captured screenshot: interface-subtypes/001-file-opened.png
+[community-build] 2026-11-24T12:16:21.268Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-24T12:16:21.472Z Captured screenshot: interface-subtypes/002-mbt-session-reused.png
+[community-build] 2026-11-24T12:16:23.755Z Captured screenshot: interface-subtypes/003-type-hierarchy-symbol-selected.png
+[community-build] 2026-11-24T12:16:23.755Z Peek Type Hierarchy (subtypes): Verticle
+[metals] 2026.11.24 12:16:24 INFO  time: indexed workspace in 5.45s
+[metals] 2026.11.24 12:16:26 INFO  implementations: found 1 occurrences
+[metals] 2026.11.24 12:16:26 INFO  Found 1 candidate files for depth 0.
+[metals] 2026.11.24 12:16:26 INFO  Found 22 candidate files for depth 1.
+[metals] 2026.11.24 12:16:28 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local20
+[metals] 2026.11.24 12:16:28 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local256
+[metals] 2026.11.24 12:16:28 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local84
+[metals] 2026.11.24 12:16:28 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local267
+[metals] 2026.11.24 12:16:28 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local300
+[metals] 2026.11.24 12:16:28 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local161
+[metals] 2026.11.24 12:16:28 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local390
+[metals] 2026.11.24 12:16:28 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local39
+[metals] 2026.11.24 12:16:28 INFO  Found 6 candidate files for depth 2.
+[metals] 2026.11.24 12:16:28 INFO  Found 0 candidate files for depth 3.
+[metals] 2026.11.24 12:16:28 INFO  implementations: found 35 implementation results in 2.06s
+[community-build] 2026-11-24T12:16:28.512Z Type hierarchy shows subtypes: Subtypes of 'Verticle'
+[community-build] 2026-11-24T12:16:28.660Z Type hierarchy lists AbstractVerticle: ["Verticle io.vertx.core","ConfigurableVerticleExamples examples","MyVerticle","AbstractVerticle io.vertx.core","SourceVerticle io.vertx.test.sourceverticle","OtherSourceVerticle io.vertx.test.sourceverticle.somepackage","MyVerticle io.vertx.core.externals","MyAbstractVerticle io.vertx.tests.deployment","ParentVerticle io.vertx.tests.deployment","ChildVerticle io.vertx.tests.deployment","ParentVerticle","MultiInstanceVerticle","NoDefaultPublicConstructorVerticle"]
+[community-build] 2026-11-24T12:16:28.764Z Captured screenshot: interface-subtypes/004-type-hierarchy-verified.png
+    ✔ interface-subtypes (8640ms)
+[community-build] 2026-11-24T12:16:29.163Z Starting maven / vertx / class-supertypes
+[community-build] 2026-11-24T12:16:29.163Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-24T12:16:29.163Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java/io/vertx/core/AbstractVerticle.java
+[community-build] 2026-11-24T12:16:29.200Z Opening AbstractVerticle.java in the existing VS Code session
+[community-build] 2026-11-24T12:16:30.040Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-24T12:16:30.156Z VS Code opened AbstractVerticle.java
+[community-build] 2026-11-24T12:16:30.306Z Captured screenshot: class-supertypes/001-file-opened.png
+[community-build] 2026-11-24T12:16:30.306Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-24T12:16:30.449Z Captured screenshot: class-supertypes/002-mbt-session-reused.png
+[community-build] 2026-11-24T12:16:31.312Z Captured screenshot: class-supertypes/003-type-hierarchy-symbol-selected.png
+[community-build] 2026-11-24T12:16:31.312Z Peek Type Hierarchy (supertypes): AbstractVerticle
+[metals] 2026.11.24 12:16:33 INFO  implementations: found 2 occurrences
+[metals] 2026.11.24 12:16:33 INFO  Found 22 candidate files for depth 0.
+[metals] 2026.11.24 12:16:33 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local20
+[metals] 2026.11.24 12:16:33 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local256
+[metals] 2026.11.24 12:16:33 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local84
+[metals] 2026.11.24 12:16:33 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local267
+[metals] 2026.11.24 12:16:33 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local300
+[metals] 2026.11.24 12:16:33 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local161
+[metals] 2026.11.24 12:16:33 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local390
+[metals] 2026.11.24 12:16:33 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local39
+[metals] 2026.11.24 12:16:33 INFO  Found 6 candidate files for depth 1.
+[metals] 2026.11.24 12:16:33 INFO  Found 0 candidate files for depth 2.
+[metals] 2026.11.24 12:16:33 INFO  implementations: found 34 implementation results in 47ms
+[community-build] 2026-11-24T12:16:33.625Z Switching the type hierarchy from subtypes to supertypes
+[community-build] 2026-11-24T12:16:34.215Z Type hierarchy shows supertypes: Supertypes of 'AbstractVerticle'
+[community-build] 2026-11-24T12:16:34.278Z Type hierarchy lists Verticle: ["AbstractVerticle io.vertx.core","Verticle io.vertx.core","Object java.lang"]
+[community-build] 2026-11-24T12:16:34.417Z Captured screenshot: class-supertypes/004-type-hierarchy-verified.png
+    ✔ class-supertypes (5635ms)
+[community-build] 2026-11-24T12:16:34.798Z Starting maven / vertx / usage-site-supertypes
+[community-build] 2026-11-24T12:16:34.798Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-24T12:16:34.798Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java/io/vertx/core/Context.java
+[community-build] 2026-11-24T12:16:34.835Z Opening Context.java in the existing VS Code session
+[community-build] 2026-11-24T12:16:35.743Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-24T12:16:36.083Z VS Code opened Context.java
+[community-build] 2026-11-24T12:16:36.316Z Captured screenshot: usage-site-supertypes/001-file-opened.png
+[community-build] 2026-11-24T12:16:36.317Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-24T12:16:36.512Z Captured screenshot: usage-site-supertypes/002-mbt-session-reused.png
+[community-build] 2026-11-24T12:16:38.269Z Captured screenshot: usage-site-supertypes/003-type-hierarchy-symbol-selected.png
+[community-build] 2026-11-24T12:16:38.270Z Peek Type Hierarchy (supertypes): Future
+[metals] 2026.11.24 12:16:40 INFO  implementations: found 1 occurrences
+[metals] 2026.11.24 12:16:40 INFO  Found 9 candidate files for depth 0.
+[metals] 2026.11.24 12:16:40 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local432
+[metals] 2026.11.24 12:16:40 INFO  Found 11 candidate files for depth 1.
+[metals] 2026.11.24 12:16:40 WARN  mbt-v2: unexpected implementation symbol for possibleReferences: local3
+[metals] 2026.11.24 12:16:40 INFO  Found 12 candidate files for depth 2.
+[metals] 2026.11.24 12:16:41 INFO  Found 13 candidate files for depth 3.
+[metals] 2026.11.24 12:16:41 INFO  Found 10 candidate files for depth 4.
+[metals] 2026.11.24 12:16:41 INFO  Found 3 candidate files for depth 5.
+[metals] 2026.11.24 12:16:41 INFO  Found 0 candidate files for depth 6.
+[metals] 2026.11.24 12:16:41 INFO  implementations: found 36 implementation results in 1.33s
+[community-build] 2026-11-24T12:16:42.484Z Switching the type hierarchy from subtypes to supertypes
+[community-build] 2026-11-24T12:16:42.986Z Type hierarchy shows supertypes: Supertypes of 'Future'
+[community-build] 2026-11-24T12:16:43.064Z Type hierarchy lists AsyncResult: ["Future io.vertx.core","AsyncResult io.vertx.core","Object java.lang"]
+[community-build] 2026-11-24T12:16:43.175Z Captured screenshot: usage-site-supertypes/004-type-hierarchy-verified.png
+    ✔ usage-site-supertypes (8835ms)
+[community-build] 2026-11-24T12:16:43.633Z Starting maven / vertx / verticle-definition
+[community-build] 2026-11-24T12:16:43.633Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-24T12:16:43.633Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java/io/vertx/core/AbstractVerticle.java
+[community-build] 2026-11-24T12:16:43.672Z Opening AbstractVerticle.java in the existing VS Code session
+[community-build] 2026-11-24T12:16:44.379Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-24T12:16:44.622Z VS Code opened AbstractVerticle.java
+[community-build] 2026-11-24T12:16:44.764Z Captured screenshot: verticle-definition/001-file-opened.png
+[community-build] 2026-11-24T12:16:44.764Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-24T12:16:44.894Z Captured screenshot: verticle-definition/002-mbt-session-reused.png
+[community-build] 2026-11-24T12:16:45.745Z Captured screenshot: verticle-definition/003-definition-symbol-selected.png
+[community-build] 2026-11-24T12:16:45.745Z Go to Definition: Verticle
+[community-build] 2026-11-24T12:16:47.630Z Captured screenshot: verticle-definition/004-definition-verified.png
+    ✔ verticle-definition (3997ms)
+[community-build] 2026-11-24T12:16:47.632Z Starting maven / vertx / verticle-references
+[community-build] 2026-11-24T12:16:47.632Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-24T12:16:47.632Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java/io/vertx/core/Verticle.java
+[community-build] 2026-11-24T12:16:47.679Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-24T12:16:47.797Z VS Code opened Verticle.java
+[community-build] 2026-11-24T12:16:47.924Z Captured screenshot: verticle-references/001-file-opened.png
+[community-build] 2026-11-24T12:16:47.924Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-24T12:16:48.071Z Captured screenshot: verticle-references/002-mbt-session-reused.png
+[community-build] 2026-11-24T12:16:48.836Z Captured screenshot: verticle-references/003-references-symbol-selected.png
+[community-build] 2026-11-24T12:16:48.836Z Peek References: Verticle
+[metals] 2026.11.24 12:16:50 INFO  references: found 1 occurrences
+[metals] 2026.11.24 12:16:50 INFO  references: found 6 external document candidates in 17ms
+[metals] 2026.11.24 12:16:50 INFO  references: indexed 6 candidates in 36ms
+[metals] 2026.11.24 12:16:50 INFO  references: found 45 reference results in 67ms
+[community-build] 2026-11-24T12:16:50.548Z Found 45 references to Verticle: Verticle.java ~/work/metals-community-build/metals-community-build/workspaces/project/vertx-core/src/main/java/io/vertx/core References (45)
+[community-build] 2026-11-24T12:16:50.644Z Captured screenshot: verticle-references/004-references-verified.png
+    ✔ verticle-references (3394ms)
+
+Shutting down the browser
+[metals] 2026.11.24 12:16:52 INFO  Shutting down server
+[metals] 2026.11.24 12:16:52 INFO  Memory monitor stopped
+[metals] 2026.11.24 12:16:52 INFO  shutting down Metals
+[metals] 2026.11.24 12:16:52 INFO  Shut down connection with build server.
+[metals] 2026.11.24 12:16:52 INFO  Exiting server
+
+  6 passing (1m)
+
+Verified 25 scenario screenshots
