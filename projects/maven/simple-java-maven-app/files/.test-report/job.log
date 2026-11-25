@@ -14,258 +14,203 @@ Loading mocha configuration from /home/runner/work/metals-community-build/metals
 Detected user defined code settings
 Writing code settings to /home/runner/work/metals-community-build/metals-community-build/.test-resources/settings/User/settings.json
 Launching browser... (ChromeDriver log: /home/runner/work/metals-community-build/metals-community-build/.test-resources/chromedriver.log)
-Browser ready in 6245 ms
+Browser ready in 7018 ms
 Launching tests...
   maven / simple-java-maven-app
-[community-build] 2026-11-24T12:15:29.137Z Starting maven / simple-java-maven-app / import
-[community-build] 2026-11-24T12:15:29.137Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-24T12:15:29.137Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:15:30.963Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-24T12:15:32.119Z VS Code opened App.java
-[community-build] 2026-11-24T12:15:32.211Z Captured screenshot: import/001-file-opened.png
-[community-build] 2026-11-24T12:15:32.211Z Waiting for the build server choice notification
+[community-build] 2026-11-25T11:04:24.577Z Starting maven / simple-java-maven-app / import
+[community-build] 2026-11-25T11:04:24.577Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-25T11:04:24.577Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:04:26.908Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-25T11:04:28.970Z VS Code opened App.java
+[community-build] 2026-11-25T11:04:29.074Z Captured screenshot: import/001-file-opened.png
+[community-build] 2026-11-25T11:04:29.074Z Waiting for the build server choice notification
 tail: '/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/metals.log' has appeared;  following new file
-[metals] 2026.11.24 12:15:35 INFO  Started: Metals version 2.0.0-community-build.45390940134 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
-[metals] 2026.11.24 12:15:35 INFO  Memory monitor started
-[metals] 2026.11.24 12:15:35 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.11.24 12:15:37 INFO  mbt-v2: indexing 2 files
-[community-build] 2026-11-24T12:15:37.345Z Notification appeared: New maven workspace detected. Which build server would you like to use?
-[community-build] 2026-11-24T12:15:37.520Z Captured screenshot: import/002-build-server-prompt.png
-[community-build] 2026-11-24T12:15:37.522Z Clicking notification action: Use MBT
-[metals] 2026.11.24 12:15:37 INFO  time: mbt-v2 loaded index for 2 files in 0.66s
-[community-build] 2026-11-24T12:15:37.716Z Clicked notification action: Use MBT
-[metals] 2026.11.24 12:15:37 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals4720023799246159971 -cp /tmp/metals4720023799246159971/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.45390940134:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-[community-build] 2026-11-24T12:15:38.226Z Captured screenshot: import/003-mbt-selected.png
-[community-build] 2026-11-24T12:15:38.226Z Waiting for the VS Code importing status to finish
-[community-build] 2026-11-24T12:15:39.094Z VS Code status bar reports that the project is importing
-[metals] 2026.11.24 12:15:43 INFO  [metals-maven] exporting 1 module(s)
-[metals] 2026.11.24 12:15:43 INFO  [metals-maven] resolving sources JARs for 5 dependencies...
-[metals] 2026.11.24 12:15:43 INFO  [metals-maven] sources resolved: 5/5
-[metals] 2026.11.24 12:15:43 INFO  [metals-maven] resolving 5 dependency JAR(s) missing from local cache...
-[metals] 2026.11.24 12:15:43 INFO  [metals-maven] namespace: com.mycompany.app:my-app:1.0-SNAPSHOT
-[metals] 2026.11.24 12:15:43 INFO  [metals-maven] wrote 2 namespaces, 5 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
-[metals] 2026.11.24 12:15:43 INFO  time: ran 'maven-export' in 5.67s
-[metals] 2026.11.24 12:15:43 INFO  mbt-import: wrote .metals/mbt.json
-[metals] 2026.11.24 12:15:43 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
-[metals] 2026.11.24 12:15:43 INFO  Connected to Build server: MBT v2.0.0-community-build.45390940134
-[metals] 2026.11.24 12:15:45 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
-[metals] 2026.11.24 12:15:53 INFO  time: indexed workspace in 9.4s
-[community-build] 2026-11-24T12:15:53.585Z VS Code status bar reports that the project import finished
-[community-build] 2026-11-24T12:15:53.585Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
-[community-build] 2026-11-24T12:15:53.667Z Captured screenshot: import/004-mbt-imported.png
-[community-build] 2026-11-24T12:15:53.667Z MBT model contains 2 namespaces and 5 dependency modules
-[community-build] 2026-11-24T12:15:53.668Z Verified imported source: src/main/java/com/mycompany/app/App.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java
-[community-build] 2026-11-24T12:15:53.668Z Verified imported source: src/test/java/com/mycompany/app/AppTest.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java
-[community-build] 2026-11-24T12:15:53.668Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:6.1.3
-[community-build] 2026-11-24T12:15:53.747Z Captured screenshot: import/005-import-verified.png
-[community-build] 2026-11-24T12:15:53.747Z Scenario passed: import
-    ✔ import (24611ms)
-[community-build] 2026-11-24T12:15:53.748Z Starting maven / simple-java-maven-app / run-app
-[community-build] 2026-11-24T12:15:53.748Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-24T12:15:53.748Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:15:53.801Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-24T12:15:53.990Z VS Code opened App.java
-[community-build] 2026-11-24T12:15:54.064Z Captured screenshot: run-app/001-file-opened.png
-[community-build] 2026-11-24T12:15:54.064Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-24T12:15:54.145Z Captured screenshot: run-app/002-mbt-session-reused.png
-[metals] 2026.11.24 12:15:54 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[metals] 2026.11.24 12:15:54 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[metals] 2026.11.24 12:15:54 INFO  time: indexed workspace in 1.61s
-[metals] 2026.11.24 12:15:54 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:15:55.667Z Waiting for the run code lens for com.mycompany.app.App
-[community-build] 2026-11-24T12:15:55.819Z Verified a single run and debug code lens: ["run","debug"]
-[community-build] 2026-11-24T12:15:55.913Z Captured screenshot: run-app/003-run-code-lens-discovered.png
-[community-build] 2026-11-24T12:15:55.913Z Clicking run for com.mycompany.app.App
-[community-build] 2026-11-24T12:15:56.089Z Captured screenshot: run-app/004-run-clicked.png
-[community-build] 2026-11-24T12:15:56.089Z Waiting for application output: Hello World!
-[metals] Nov 24, 2026 12:15:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] 2026.11.25 11:04:30 INFO  Started: Metals version 2.0.0-community-build.45600095799 in folders '/home/runner/work/metals-community-build/metals-community-build/workspaces/project' for client Visual Studio Code 1.131.0.
+[metals] 2026.11.25 11:04:30 INFO  Memory monitor started
+[metals] 2026.11.25 11:04:30 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.11.25 11:04:32 INFO  mbt-v2: indexing 2 files
+[metals] 2026.11.25 11:04:32 INFO  time: mbt-v2 loaded index for 2 files in 0.36s
+[community-build] 2026-11-25T11:04:32.605Z Notification appeared: New maven workspace detected. Which build server would you like to use?
+[community-build] 2026-11-25T11:04:32.788Z Captured screenshot: import/002-build-server-prompt.png
+[community-build] 2026-11-25T11:04:32.788Z Clicking notification action: Use MBT
+[community-build] 2026-11-25T11:04:33.217Z Clicked notification action: Use MBT
+[metals] 2026.11.25 11:04:32 INFO  Running command: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/runner/work/metals-community-build/metals-community-build/workspaces/project -Dmaven.home=/tmp/metals16991148868269667488 -cp /tmp/metals16991148868269667488/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain --quiet org.scalameta:metals-maven-plugin:2.0.0-community-build.45600095799:export -DmbtOutputFile=/home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+[community-build] 2026-11-25T11:04:33.735Z VS Code status bar reports that the project is importing
+[community-build] 2026-11-25T11:04:33.867Z Captured screenshot: import/003-mbt-selected.png
+[community-build] 2026-11-25T11:04:33.867Z Waiting for the VS Code importing status to finish
+[metals] 2026.11.25 11:04:37 INFO  [metals-maven] exporting 1 module(s)
+[metals] 2026.11.25 11:04:37 INFO  [metals-maven] resolving sources JARs for 5 dependencies...
+[metals] 2026.11.25 11:04:37 INFO  [metals-maven] sources resolved: 5/5
+[metals] 2026.11.25 11:04:37 INFO  [metals-maven] resolving 5 dependency JAR(s) missing from local cache...
+[metals] 2026.11.25 11:04:37 INFO  [metals-maven] namespace: com.mycompany.app:my-app:1.0-SNAPSHOT
+[metals] 2026.11.25 11:04:37 INFO  [metals-maven] wrote 2 namespaces, 5 dependencies → /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt-maven.json
+[metals] 2026.11.25 11:04:37 INFO  time: ran 'maven-export' in 4.59s
+[metals] 2026.11.25 11:04:37 INFO  mbt-import: wrote .metals/mbt.json
+[metals] 2026.11.25 11:04:37 INFO  Tracing is disabled for protocol BSP. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/bsp.trace.json or /home/runner/.cache/metals/bsp.trace.json
+[metals] 2026.11.25 11:04:37 INFO  Connected to Build server: MBT v2.0.0-community-build.45600095799
+[metals] 2026.11.25 11:04:39 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+[metals] 2026.11.25 11:04:52 INFO  time: indexed workspace in 14s
+[community-build] 2026-11-25T11:04:53.533Z VS Code status bar reports that the project import finished
+[community-build] 2026-11-25T11:04:53.534Z Loaded MBT model from /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/mbt.json
+[community-build] 2026-11-25T11:04:53.635Z Captured screenshot: import/004-mbt-imported.png
+[community-build] 2026-11-25T11:04:53.635Z MBT model contains 2 namespaces and 5 dependency modules
+[community-build] 2026-11-25T11:04:53.635Z Verified imported source: src/main/java/com/mycompany/app/App.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java
+[community-build] 2026-11-25T11:04:53.635Z Verified imported source: src/test/java/com/mycompany/app/AppTest.java via /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java
+[community-build] 2026-11-25T11:04:53.635Z Verified dependency module: org.junit.jupiter:junit-jupiter-api via org.junit.jupiter:junit-jupiter-api:6.1.3
+[community-build] 2026-11-25T11:04:53.738Z Captured screenshot: import/005-import-verified.png
+[community-build] 2026-11-25T11:04:53.738Z Scenario passed: import
+    ✔ import (29165ms)
+[community-build] 2026-11-25T11:04:53.740Z Starting maven / simple-java-maven-app / run-app
+[community-build] 2026-11-25T11:04:53.740Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-25T11:04:53.740Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:04:53.804Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-25T11:04:53.909Z VS Code opened App.java
+[community-build] 2026-11-25T11:04:54.001Z Captured screenshot: run-app/001-file-opened.png
+[community-build] 2026-11-25T11:04:54.001Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-25T11:04:54.071Z Captured screenshot: run-app/002-mbt-session-reused.png
+[metals] 2026.11.25 11:04:54 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[metals] 2026.11.25 11:04:54 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[metals] 2026.11.25 11:04:54 INFO  time: indexed workspace in 1.75s
+[metals] 2026.11.25 11:04:54 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:04:55.726Z Waiting for the run code lens for com.mycompany.app.App
+[community-build] 2026-11-25T11:04:55.853Z Verified a single run and debug code lens: ["run","debug"]
+[community-build] 2026-11-25T11:04:55.951Z Captured screenshot: run-app/003-run-code-lens-discovered.png
+[community-build] 2026-11-25T11:04:55.951Z Clicking run for com.mycompany.app.App
+[metals] 2026.11.25 11:04:56 INFO  Starting debug session without debugging
+[metals] 2026.11.25 11:04:56 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+[community-build] 2026-11-25T11:04:56.180Z Captured screenshot: run-app/004-run-clicked.png
+[community-build] 2026-11-25T11:04:56.180Z Waiting for application output: Hello World!
+[metals] Nov 25, 2026 11:04:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] Nov 24, 2026 12:15:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] Nov 25, 2026 11:04:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] 2026.11.24 12:15:56 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-[metals] Nov 24, 2026 12:15:57 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+[metals] Nov 25, 2026 11:04:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 [metals] INFO: Unsupported notification method: $/setTrace
-[metals] 2026.11.24 12:16:04 INFO  Starting debug session without debugging
-[metals] 2026.11.24 12:16:04 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-[metals] 2026.11.24 12:16:06 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
-[metals] 2026.11.24 12:16:06 INFO  MBT debug session via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-[metals] 2026.11.24 12:16:06 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-[metals] 2026.11.24 12:16:06 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-[metals] 2026.11.24 12:16:07 INFO  Starting debug proxy for [com.mycompany.app.App]
-[metals] 2026.11.24 12:16:07 INFO  Initialized Scala 3 decoder in 3 milliseconds
-[metals] 2026.11.24 12:16:10 INFO  Trying to attach to remote debuggee VM localhost:51633 .
-[metals] 2026.11.24 12:16:10 INFO  Attaching to debuggee VM succeeded.
-[metals] 2026.11.24 12:16:10 INFO  Canceling debug proxy for [com.mycompany.app.App]
-[metals] 2026.11.24 12:16:10 INFO  Closing debug server tcp://0.0.0.0:41279
-[community-build] 2026-11-24T12:16:11.415Z Application started: com.mycompany.app.App
-[community-build] 2026-11-24T12:16:11.461Z Captured screenshot: run-app/005-application-started.png
-[community-build] 2026-11-24T12:16:11.461Z Stopping the application debug session
-[community-build] 2026-11-24T12:16:12.350Z Scenario passed: run-app
-    ✔ run-app (18602ms)
-[community-build] 2026-11-24T12:16:12.351Z Starting maven / simple-java-maven-app / rename-message
-[community-build] 2026-11-24T12:16:12.351Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-24T12:16:12.351Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:16:12.397Z Waiting for VS Code to open the requested file
-[metals] 2026.11.24 12:16:12 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-[community-build] 2026-11-24T12:16:12.631Z VS Code opened App.java
-[community-build] 2026-11-24T12:16:12.732Z Captured screenshot: rename-message/001-file-opened.png
-[community-build] 2026-11-24T12:16:12.732Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-24T12:16:12.803Z Captured screenshot: rename-message/002-mbt-session-reused.png
-[metals] 2026.11.24 12:16:13 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[metals] 2026.11.24 12:16:13 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[metals] 2026.11.24 12:16:13 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:16:15.452Z Selected symbol: MESSAGE
-[community-build] 2026-11-24T12:16:15.583Z Captured screenshot: rename-message/003-rename-symbol-selected.png
-[community-build] 2026-11-24T12:16:15.583Z Executing command: Rename Symbol
-[metals] 2026.11.24 12:16:15 INFO  MBT debug session via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-[metals] 2026.11.24 12:16:15 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-[metals] 2026.11.24 12:16:15 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-[metals] 2026.11.24 12:16:15 INFO  Starting debug proxy for [com.mycompany.app.App]
-[metals] 2026.11.24 12:16:17 INFO  Loaded expression compiler in 1 second
-[community-build] 2026-11-24T12:16:19.292Z Captured screenshot: rename-message/004-rename-input-opened.png
-[community-build] 2026-11-24T12:16:19.292Z Renaming MESSAGE to GREETING_MESSAGE
-[metals] Nov 24, 2026 12:16:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
-[metals] SEVERE: Internal error: java.lang.IllegalArgumentException
-[metals] java.util.concurrent.CompletionException: java.lang.IllegalArgumentException
-[metals] 	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
-[metals] 	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
-[metals] 	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
-[metals] 	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
-[metals] 	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
-[metals] 	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:41)
-[metals] 	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:39)
-[metals] 	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:517)
-[metals] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-[metals] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-[metals] 	at java.base/java.lang.Thread.run(Thread.java:1583)
-[metals] Caused by: java.lang.IllegalArgumentException
-[metals] 	at jdk.compiler/com.sun.tools.javac.util.JCDiagnostic.<init>(JCDiagnostic.java:643)
-[metals] 	at jdk.compiler/com.sun.tools.javac.util.JCDiagnostic.<init>(JCDiagnostic.java:623)
-[metals] 	at jdk.compiler/com.sun.tools.javac.util.JCDiagnostic$Factory.create(JCDiagnostic.java:300)
-[metals] 	at jdk.compiler/com.sun.tools.javac.util.JCDiagnostic$Factory.error(JCDiagnostic.java:113)
-[metals] 	at jdk.compiler/com.sun.tools.javac.util.AbstractLog.error(AbstractLog.java:145)
-[metals] 	at jdk.compiler/com.sun.tools.javac.parser.JavaTokenizer.lexError(JavaTokenizer.java:216)
-[metals] 	at jdk.compiler/com.sun.tools.javac.parser.JavaTokenizer.scanString(JavaTokenizer.java:585)
-[metals] 	at jdk.compiler/com.sun.tools.javac.parser.JavaTokenizer.readToken(JavaTokenizer.java:1129)
-[metals] 	at jdk.compiler/com.sun.tools.javac.parser.Scanner.nextToken(Scanner.java:117)
-[metals] 	at scala.meta.internal.jpc.Positions$.foldTokens(Positions.scala:134)
-[metals] 	at scala.meta.internal.jpc.Positions$.findNameOffset(Positions.scala:21)
-[metals] 	at scala.meta.internal.parsing.JavaTrees$EnclosingVariableFinder.visitVariable(JavaTrees.scala:445)
-[metals] 	at scala.meta.internal.parsing.JavaTrees$EnclosingVariableFinder.visitVariable(JavaTrees.scala:428)
-[metals] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:1040)
-[metals] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
-[metals] 	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
-[metals] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:119)
-[metals] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:203)
-[metals] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:855)
-[metals] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
-[metals] 	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
-[metals] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:119)
-[metals] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:152)
-[metals] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:623)
-[metals] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
-[metals] 	at scala.meta.internal.parsing.JavaTrees.$anonfun$findEnclosingJavaVariable$2(JavaTrees.scala:111)
-[metals] 	at scala.Option.flatMap(Option.scala:283)
-[metals] 	at scala.meta.internal.parsing.JavaTrees.$anonfun$findEnclosingJavaVariable$1(JavaTrees.scala:108)
-[metals] 	at scala.Option.flatMap(Option.scala:283)
-[metals] 	at scala.meta.internal.parsing.JavaTrees.findEnclosingJavaVariable(JavaTrees.scala:107)
-[metals] 	at scala.meta.internal.metals.codeactions.InlineValueCodeAction.$anonfun$isInlinableJavaValue$1(InlineValueCodeAction.scala:108)
-[metals] 	at scala.Option.orElse(Option.scala:477)
-[metals] 	at scala.meta.internal.metals.codeactions.InlineValueCodeAction.isInlinableJavaValue(InlineValueCodeAction.scala:108)
-[metals] 	at scala.meta.internal.metals.codeactions.InlineValueCodeAction.javaContribute(InlineValueCodeAction.scala:76)
-[metals] 	at scala.meta.internal.metals.codeactions.InlineValueCodeAction.$anonfun$contribute$1(InlineValueCodeAction.scala:47)
-[metals] 	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
-[metals] 	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
-[metals] 	... 3 more
-[metals] 
-[metals] 2026.11.24 12:16:19 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:16:20.008Z Verified 3 occurrences of GREETING_MESSAGE
-[metals] 2026.11.24 12:16:19 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:16:21.082Z Selected renamed symbol for screenshot: GREETING_MESSAGE
-[community-build] 2026-11-24T12:16:21.453Z Captured screenshot: rename-message/005-rename-verified.png
-[community-build] 2026-11-24T12:16:21.453Z Scenario passed: rename-message
-[metals] 2026.11.24 12:16:22 INFO  Loaded all sources and classes in 5 seconds
-[metals] 2026.11.24 12:16:22 INFO  Initialized Scala 3 decoder in 0 milliseconds
-[metals] 2026.11.24 12:16:22 INFO  Trying to attach to remote debuggee VM localhost:46669 .
-[metals] 2026.11.24 12:16:22 INFO  Attaching to debuggee VM succeeded.
-[metals] 2026.11.24 12:16:22 INFO  Closing debug server tcp://0.0.0.0:43441
-[metals] 2026.11.24 12:16:23 INFO  Canceling debug proxy for [com.mycompany.app.App]
-[community-build] 2026-11-24T12:16:23.613Z Restored /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-    ✔ rename-message (11263ms)
-[community-build] 2026-11-24T12:16:23.614Z Starting maven / simple-java-maven-app / message-highlight
-[community-build] 2026-11-24T12:16:23.615Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-24T12:16:23.615Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:16:23.661Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-24T12:16:23.747Z VS Code opened App.java
-[community-build] 2026-11-24T12:16:23.795Z Captured screenshot: message-highlight/001-file-opened.png
-[community-build] 2026-11-24T12:16:23.795Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-24T12:16:23.860Z Captured screenshot: message-highlight/002-mbt-session-reused.png
-[community-build] 2026-11-24T12:16:23.889Z Waiting for 3 document highlights of MESSAGE
-[metals] 2026.11.24 12:16:24 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[metals] 2026.11.24 12:16:24 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
-[community-build] 2026-11-24T12:16:24.864Z Verified 3 highlighted occurrences of MESSAGE
-[community-build] 2026-11-24T12:16:24.911Z Captured screenshot: message-highlight/003-document-highlight-verified.png
-    ✔ message-highlight (1297ms)
-[community-build] 2026-11-24T12:16:24.912Z Starting maven / simple-java-maven-app / test-discovery
-[community-build] 2026-11-24T12:16:24.912Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-24T12:16:24.912Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[community-build] 2026-11-24T12:16:24.950Z Opening AppTest.java in the existing VS Code session
-[metals] 2026.11.24 12:16:25 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[community-build] 2026-11-24T12:16:25.793Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-24T12:16:25.922Z VS Code opened AppTest.java
-[community-build] 2026-11-24T12:16:26.021Z Captured screenshot: test-discovery/001-file-opened.png
-[community-build] 2026-11-24T12:16:26.021Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-24T12:16:26.119Z Captured screenshot: test-discovery/002-mbt-session-reused.png
-[metals] 2026.11.24 12:16:25 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[metals] 2026.11.24 12:16:25 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[metals] 2026.11.24 12:16:25 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[community-build] 2026-11-24T12:16:27.268Z Waiting for VS Code to discover test: testAppMessage
-[metals] 2026.11.24 12:16:27 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[community-build] 2026-11-24T12:16:29.119Z VS Code discovered test: testAppMessage
-[community-build] 2026-11-24T12:16:29.198Z Captured screenshot: test-discovery/003-test-run-button-discovered.png
-[community-build] 2026-11-24T12:16:29.198Z Scenario passed: test-discovery
-    ✔ test-discovery (4287ms)
-[community-build] 2026-11-24T12:16:29.199Z Starting maven / simple-java-maven-app / debug-app-test
-[community-build] 2026-11-24T12:16:29.199Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
-[community-build] 2026-11-24T12:16:29.199Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[community-build] 2026-11-24T12:16:29.241Z Waiting for VS Code to open the requested file
-[community-build] 2026-11-24T12:16:29.338Z VS Code opened AppTest.java
-[community-build] 2026-11-24T12:16:29.398Z Captured screenshot: debug-app-test/001-file-opened.png
-[community-build] 2026-11-24T12:16:29.398Z Reusing the existing VS Code, Metals and MBT session
-[community-build] 2026-11-24T12:16:29.463Z Captured screenshot: debug-app-test/002-mbt-session-reused.png
-[metals] 2026.11.24 12:16:29 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[community-build] 2026-11-24T12:16:30.747Z Added breakpoint at line 22
-[community-build] 2026-11-24T12:16:30.813Z Captured screenshot: debug-app-test/003-breakpoint-added.png
-[metals] 2026.11.24 12:16:30 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
-[community-build] 2026-11-24T12:16:33.082Z Launching debug test from gutter: testAppMessage
-[metals] 2026.11.24 12:16:33 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-[metals] 2026.11.24 12:16:36 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
-[metals] 2026.11.24 12:16:36 INFO  MBT test debug session via mvn (forked): /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
-[metals] 2026.11.24 12:16:36 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
-[metals] 2026.11.24 12:16:36 INFO  Starting debug proxy for [com.mycompany.app.AppTest(testAppMessage())]
-[metals] 2026.11.24 12:16:36 INFO  Loaded expression compiler in 3 milliseconds
-[metals] 2026.11.24 12:16:37 INFO  Loaded all sources and classes in 1 second
-[metals] 2026.11.24 12:16:37 INFO  Initialized Scala 3 decoder in 1 millisecond
-[metals] 2026.11.24 12:16:40 INFO  Trying to attach to remote debuggee VM localhost:45423 .
-[metals] 2026.11.24 12:16:40 INFO  Attaching to debuggee VM succeeded.
-[community-build] 2026-11-24T12:16:41.878Z Debugger stopped at line 22
-[community-build] 2026-11-24T12:16:41.957Z Captured screenshot: debug-app-test/004-breakpoint-hit.png
-[community-build] 2026-11-24T12:16:42.015Z Continued the debug session
-[metals] 2026.11.24 12:16:42 INFO  Canceling debug proxy for [com.mycompany.app.AppTest(testAppMessage())]
-[metals] 2026.11.24 12:16:42 INFO  Closing debug server tcp://0.0.0.0:33461
-[community-build] 2026-11-24T12:16:43.158Z Test gutter icon reports a passed result for 'testAppMessage'
-[community-build] 2026-11-24T12:16:43.158Z Debug test finished successfully: testAppMessage
-[community-build] 2026-11-24T12:16:43.266Z Captured screenshot: debug-app-test/005-debug-test-finished.png
-[community-build] 2026-11-24T12:16:48.528Z Scenario passed: debug-app-test
-    ✔ debug-app-test (19330ms)
+[metals] 2026.11.25 11:05:05 WARN  MBT does not support `buildTarget/jvmRunEnvironment`, unable to fetch run environment.
+[metals] 2026.11.25 11:05:05 INFO  MBT debug session via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+[metals] 2026.11.25 11:05:05 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+[metals] 2026.11.25 11:05:05 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+[metals] 2026.11.25 11:05:06 INFO  Starting debug proxy for [com.mycompany.app.App]
+[metals] 2026.11.25 11:05:06 INFO  Initialized Scala 3 decoder in 3 milliseconds
+[metals] 2026.11.25 11:05:09 INFO  Trying to attach to remote debuggee VM localhost:32799 .
+[metals] 2026.11.25 11:05:09 INFO  Attaching to debuggee VM succeeded.
+[metals] 2026.11.25 11:05:09 INFO  Canceling debug proxy for [com.mycompany.app.App]
+[metals] 2026.11.25 11:05:09 INFO  Closing debug server tcp://0.0.0.0:38089
+[community-build] 2026-11-25T11:05:10.639Z Application started: com.mycompany.app.App
+[community-build] 2026-11-25T11:05:10.702Z Captured screenshot: run-app/005-application-started.png
+[community-build] 2026-11-25T11:05:10.702Z Stopping the application debug session
+[community-build] 2026-11-25T11:05:11.656Z Scenario passed: run-app
+    ✔ run-app (17917ms)
+[community-build] 2026-11-25T11:05:11.658Z Starting maven / simple-java-maven-app / rename-message
+[community-build] 2026-11-25T11:05:11.658Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-25T11:05:11.658Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:05:11.705Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-25T11:05:11.879Z VS Code opened App.java
+[metals] 2026.11.25 11:05:11 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+[community-build] 2026-11-25T11:05:12.015Z Captured screenshot: rename-message/001-file-opened.png
+[community-build] 2026-11-25T11:05:12.016Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-25T11:05:12.116Z Captured screenshot: rename-message/002-mbt-session-reused.png
+[metals] 2026.11.25 11:05:12 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[metals] 2026.11.25 11:05:12 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[metals] 2026.11.25 11:05:12 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:05:14.735Z Selected symbol: MESSAGE
+[community-build] 2026-11-25T11:05:14.881Z Captured screenshot: rename-message/003-rename-symbol-selected.png
+[community-build] 2026-11-25T11:05:14.882Z Executing command: Rename Symbol
+[metals] 2026.11.25 11:05:15 INFO  MBT debug session via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+[metals] 2026.11.25 11:05:15 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+[metals] 2026.11.25 11:05:15 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+[metals] 2026.11.25 11:05:15 INFO  Starting debug proxy for [com.mycompany.app.App]
+[metals] 2026.11.25 11:05:17 INFO  Loaded expression compiler in 1 second
+[community-build] 2026-11-25T11:05:18.370Z Captured screenshot: rename-message/004-rename-input-opened.png
+[community-build] 2026-11-25T11:05:18.370Z Renaming MESSAGE to GREETING_MESSAGE
+[metals] 2026.11.25 11:05:19 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:05:19.380Z Verified 3 occurrences of GREETING_MESSAGE
+[metals] 2026.11.25 11:05:19 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:05:20.443Z Selected renamed symbol for screenshot: GREETING_MESSAGE
+[community-build] 2026-11-25T11:05:20.801Z Captured screenshot: rename-message/005-rename-verified.png
+[community-build] 2026-11-25T11:05:20.801Z Scenario passed: rename-message
+[community-build] 2026-11-25T11:05:22.620Z Restored /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+    ✔ rename-message (10964ms)
+[community-build] 2026-11-25T11:05:22.622Z Starting maven / simple-java-maven-app / message-highlight
+[community-build] 2026-11-25T11:05:22.622Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-25T11:05:22.622Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:05:22.661Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-25T11:05:22.758Z VS Code opened App.java
+[community-build] 2026-11-25T11:05:22.819Z Captured screenshot: message-highlight/001-file-opened.png
+[community-build] 2026-11-25T11:05:22.819Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-25T11:05:22.884Z Captured screenshot: message-highlight/002-mbt-session-reused.png
+[community-build] 2026-11-25T11:05:22.903Z Waiting for 3 document highlights of MESSAGE
+[metals] 2026.11.25 11:05:23 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[metals] 2026.11.25 11:05:23 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/main/java/com/mycompany/app/App.java
+[community-build] 2026-11-25T11:05:23.898Z Verified 3 highlighted occurrences of MESSAGE
+[community-build] 2026-11-25T11:05:23.978Z Captured screenshot: message-highlight/003-document-highlight-verified.png
+    ✔ message-highlight (1357ms)
+[community-build] 2026-11-25T11:05:23.979Z Starting maven / simple-java-maven-app / test-discovery
+[community-build] 2026-11-25T11:05:23.979Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-25T11:05:23.979Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[community-build] 2026-11-25T11:05:24.049Z Opening AppTest.java in the existing VS Code session
+[metals] 2026.11.25 11:05:24 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[community-build] 2026-11-25T11:05:25.043Z Waiting for VS Code to open the requested file
+[community-build] 2026-11-25T11:05:25.154Z VS Code opened AppTest.java
+[community-build] 2026-11-25T11:05:25.243Z Captured screenshot: test-discovery/001-file-opened.png
+[community-build] 2026-11-25T11:05:25.243Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-25T11:05:25.347Z Captured screenshot: test-discovery/002-mbt-session-reused.png
+[metals] 2026.11.25 11:05:24 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[metals] 2026.11.25 11:05:24 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[metals] 2026.11.25 11:05:24 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[community-build] 2026-11-25T11:05:26.477Z Waiting for VS Code to discover test: testAppMessage
+[metals] 2026.11.25 11:05:26 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[metals] 2026.11.25 11:05:28 INFO  Loaded all sources and classes in 10 seconds
+[metals] 2026.11.25 11:05:28 INFO  Initialized Scala 3 decoder in 0 milliseconds
+[metals] 2026.11.25 11:05:28 INFO  Trying to attach to remote debuggee VM localhost:37361 .
+[metals] 2026.11.25 11:05:28 INFO  Attaching to debuggee VM succeeded.
+[community-build] 2026-11-25T11:05:28.657Z VS Code discovered test: testAppMessage
+[community-build] 2026-11-25T11:05:28.756Z Captured screenshot: test-discovery/003-test-run-button-discovered.png
+[community-build] 2026-11-25T11:05:28.756Z Scenario passed: test-discovery
+    ✔ test-discovery (4777ms)
+[community-build] 2026-11-25T11:05:28.756Z Starting maven / simple-java-maven-app / debug-app-test
+[community-build] 2026-11-25T11:05:28.757Z Workspace: /home/runner/work/metals-community-build/metals-community-build/workspaces/project
+[community-build] 2026-11-25T11:05:28.757Z Expected editor: /home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[community-build] 2026-11-25T11:05:28.794Z Waiting for VS Code to open the requested file
+[metals] 2026.11.25 11:05:28 INFO  Closing debug server tcp://0.0.0.0:37907
+[metals] 2026.11.25 11:05:28 INFO  Canceling debug proxy for [com.mycompany.app.App]
+[community-build] 2026-11-25T11:05:28.902Z VS Code opened AppTest.java
+[community-build] 2026-11-25T11:05:29.005Z Captured screenshot: debug-app-test/001-file-opened.png
+[community-build] 2026-11-25T11:05:29.005Z Reusing the existing VS Code, Metals and MBT session
+[community-build] 2026-11-25T11:05:29.122Z Captured screenshot: debug-app-test/002-mbt-session-reused.png
+[metals] 2026.11.25 11:05:29 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[community-build] 2026-11-25T11:05:30.331Z Added breakpoint at line 22
+[community-build] 2026-11-25T11:05:30.419Z Captured screenshot: debug-app-test/003-breakpoint-added.png
+[metals] 2026.11.25 11:05:30 WARN  JavaMetalsGlobal: no tree path found for file:///home/runner/work/metals-community-build/metals-community-build/workspaces/project/src/test/java/com/mycompany/app/AppTest.java
+[community-build] 2026-11-25T11:05:32.666Z Launching debug test from gutter: testAppMessage
+[metals] 2026.11.25 11:05:32 INFO  MBT compile via mvn: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+[metals] 2026.11.25 11:05:36 INFO  Tracing is disabled for protocol dap-server. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-server.trace.json or /home/runner/.cache/metals/dap-server.trace.json
+[metals] 2026.11.25 11:05:36 INFO  MBT test debug session via mvn (forked): /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.13-9/x64/bin/java
+[metals] 2026.11.25 11:05:36 INFO  Tracing is disabled for protocol dap-client. To enable tracing of incoming and outgoing JSON messages, create an empty file at /home/runner/work/metals-community-build/metals-community-build/workspaces/project/.metals/dap-client.trace.json or /home/runner/.cache/metals/dap-client.trace.json
+[metals] 2026.11.25 11:05:36 INFO  Starting debug proxy for [com.mycompany.app.AppTest(testAppMessage())]
+[metals] 2026.11.25 11:05:36 INFO  Loaded expression compiler in 2 milliseconds
+[metals] 2026.11.25 11:05:36 INFO  Loaded all sources and classes in 974 milliseconds
+[metals] 2026.11.25 11:05:36 INFO  Initialized Scala 3 decoder in 0 milliseconds
+[metals] 2026.11.25 11:05:40 INFO  Trying to attach to remote debuggee VM localhost:34349 .
+[metals] 2026.11.25 11:05:40 INFO  Attaching to debuggee VM succeeded.
+[community-build] 2026-11-25T11:05:41.903Z Debugger stopped at line 22
+[community-build] 2026-11-25T11:05:42.024Z Captured screenshot: debug-app-test/004-breakpoint-hit.png
+[community-build] 2026-11-25T11:05:42.092Z Continued the debug session
+[metals] 2026.11.25 11:05:42 INFO  Canceling debug proxy for [com.mycompany.app.AppTest(testAppMessage())]
+[metals] 2026.11.25 11:05:42 INFO  Closing debug server tcp://0.0.0.0:42371
+[community-build] 2026-11-25T11:05:43.253Z Test gutter icon reports a passed result for 'testAppMessage'
+[community-build] 2026-11-25T11:05:43.253Z Debug test finished successfully: testAppMessage
+[community-build] 2026-11-25T11:05:43.324Z Captured screenshot: debug-app-test/005-debug-test-finished.png
+[community-build] 2026-11-25T11:05:48.577Z Scenario passed: debug-app-test
+    ✔ debug-app-test (19821ms)
 
 Shutting down the browser
-[metals] 2026.11.24 12:16:49 INFO  Shutting down server
-[metals] 2026.11.24 12:16:49 INFO  Memory monitor stopped
-[metals] 2026.11.24 12:16:49 INFO  shutting down Metals
-[metals] 2026.11.24 12:16:49 INFO  Shut down connection with build server.
-[metals] 2026.11.24 12:16:49 INFO  Exiting server
+[metals] 2026.11.25 11:05:49 INFO  Shutting down server
+[metals] 2026.11.25 11:05:49 INFO  Memory monitor stopped
+[metals] 2026.11.25 11:05:49 INFO  shutting down Metals
+[metals] 2026.11.25 11:05:49 INFO  Shut down connection with build server.
+[metals] 2026.11.25 11:05:49 INFO  Exiting server
 
-  6 passing (1m)
+  6 passing (2m)
 
 Verified 26 scenario screenshots
