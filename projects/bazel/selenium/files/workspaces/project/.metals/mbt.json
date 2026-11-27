@@ -3682,6 +3682,7 @@
         "java/src/org/openqa/selenium/remote/RemoteWebDriver.java",
         "java/src/org/openqa/selenium/remote/RemoteWebDriverBuilder.java",
         "java/src/org/openqa/selenium/remote/RemoteWebElement.java",
+        "java/src/org/openqa/selenium/remote/RemoteWebExtensions.java",
         "java/src/org/openqa/selenium/remote/Response.java",
         "java/src/org/openqa/selenium/remote/ResponseCodec.java",
         "java/src/org/openqa/selenium/remote/ScreenshotException.java",
@@ -4719,7 +4720,9 @@
         "java/test/org/openqa/selenium/firefox/GeckoDriverServiceTest.java",
         "java/test/org/openqa/selenium/firefox/PreferencesTest.java",
         "java/test/org/openqa/selenium/firefox/RemoteFirefoxDriverTest.java",
-        "java/test/org/openqa/selenium/firefox/TakesFullPageScreenshotTest.java"
+        "java/test/org/openqa/selenium/firefox/TakesFullPageScreenshotTest.java",
+        "java/test/org/openqa/selenium/firefox/WebExtensionsTest.java",
+        "java/test/org/openqa/selenium/firefox/WebExtensionsWithoutBiDiTest.java"
       ],
       "scalacOptions": [],
       "javacOptions": [
@@ -4894,7 +4897,11 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/RemoteFirefoxDriverTest-firefox-beta-remote.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/RemoteFirefoxDriverTest-remote.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/TakesFullPageScreenshotTest.jar",
-        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/TakesFullPageScreenshotTest-firefox-beta.jar"
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/TakesFullPageScreenshotTest-firefox-beta.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/WebExtensionsTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/WebExtensionsTest-firefox-beta.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/WebExtensionsWithoutBiDiTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/firefox/WebExtensionsWithoutBiDiTest-firefox-beta.jar"
       ],
       "configurations": [
         "//java/test/org/openqa/selenium/firefox:ExtensionsTest",
@@ -4916,7 +4923,11 @@
         "//java/test/org/openqa/selenium/firefox:RemoteFirefoxDriverTest-firefox-beta-remote",
         "//java/test/org/openqa/selenium/firefox:RemoteFirefoxDriverTest-remote",
         "//java/test/org/openqa/selenium/firefox:TakesFullPageScreenshotTest",
-        "//java/test/org/openqa/selenium/firefox:TakesFullPageScreenshotTest-firefox-beta"
+        "//java/test/org/openqa/selenium/firefox:TakesFullPageScreenshotTest-firefox-beta",
+        "//java/test/org/openqa/selenium/firefox:WebExtensionsTest",
+        "//java/test/org/openqa/selenium/firefox:WebExtensionsTest-firefox-beta",
+        "//java/test/org/openqa/selenium/firefox:WebExtensionsWithoutBiDiTest",
+        "//java/test/org/openqa/selenium/firefox:WebExtensionsWithoutBiDiTest-firefox-beta"
       ],
       "testClasses": [
         {
@@ -5037,6 +5048,30 @@
           "className": "org.openqa.selenium.firefox.TakesFullPageScreenshotTest",
           "sourcePath": "java/test/org/openqa/selenium/firefox/TakesFullPageScreenshotTest.java",
           "configuration": "//java/test/org/openqa/selenium/firefox:TakesFullPageScreenshotTest-firefox-beta",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.firefox.WebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/firefox/WebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/firefox:WebExtensionsTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.firefox.WebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/firefox/WebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/firefox:WebExtensionsTest-firefox-beta",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.firefox.WebExtensionsWithoutBiDiTest",
+          "sourcePath": "java/test/org/openqa/selenium/firefox/WebExtensionsWithoutBiDiTest.java",
+          "configuration": "//java/test/org/openqa/selenium/firefox:WebExtensionsWithoutBiDiTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.firefox.WebExtensionsWithoutBiDiTest",
+          "sourcePath": "java/test/org/openqa/selenium/firefox/WebExtensionsWithoutBiDiTest.java",
+          "configuration": "//java/test/org/openqa/selenium/firefox:WebExtensionsWithoutBiDiTest-firefox-beta",
           "framework": "JUnit"
         }
       ]
@@ -6660,7 +6695,8 @@
         "java/test/org/openqa/selenium/chrome/ChromeDriverServiceTest.java",
         "java/test/org/openqa/selenium/chrome/ChromeOptionsFunctionalTest.java",
         "java/test/org/openqa/selenium/chrome/ChromeOptionsTest.java",
-        "java/test/org/openqa/selenium/chrome/ElectronOptionsTest.java"
+        "java/test/org/openqa/selenium/chrome/ElectronOptionsTest.java",
+        "java/test/org/openqa/selenium/chrome/WebExtensionsTest.java"
       ],
       "scalacOptions": [],
       "javacOptions": [
@@ -6823,7 +6859,11 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/ChromeOptionsFunctionalTest-chrome-beta-remote.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/ChromeOptionsFunctionalTest-remote.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/ChromeOptionsTest.jar",
-        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/ElectronOptionsTest.jar"
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/ElectronOptionsTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/WebExtensionsTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/WebExtensionsTest-chrome-beta.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/WebExtensionsTest-chrome-beta-remote.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/chrome/WebExtensionsTest-remote.jar"
       ],
       "configurations": [
         "//java/test/org/openqa/selenium/chrome:ChromeDriverFunctionalTest",
@@ -6836,7 +6876,11 @@
         "//java/test/org/openqa/selenium/chrome:ChromeOptionsFunctionalTest-chrome-beta-remote",
         "//java/test/org/openqa/selenium/chrome:ChromeOptionsFunctionalTest-remote",
         "//java/test/org/openqa/selenium/chrome:ChromeOptionsTest",
-        "//java/test/org/openqa/selenium/chrome:ElectronOptionsTest"
+        "//java/test/org/openqa/selenium/chrome:ElectronOptionsTest",
+        "//java/test/org/openqa/selenium/chrome:WebExtensionsTest",
+        "//java/test/org/openqa/selenium/chrome:WebExtensionsTest-chrome-beta",
+        "//java/test/org/openqa/selenium/chrome:WebExtensionsTest-chrome-beta-remote",
+        "//java/test/org/openqa/selenium/chrome:WebExtensionsTest-remote"
       ],
       "testClasses": [
         {
@@ -6903,6 +6947,30 @@
           "className": "org.openqa.selenium.chrome.ElectronOptionsTest",
           "sourcePath": "java/test/org/openqa/selenium/chrome/ElectronOptionsTest.java",
           "configuration": "//java/test/org/openqa/selenium/chrome:ElectronOptionsTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.chrome.WebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/chrome/WebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/chrome:WebExtensionsTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.chrome.WebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/chrome/WebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/chrome:WebExtensionsTest-chrome-beta",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.chrome.WebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/chrome/WebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/chrome:WebExtensionsTest-chrome-beta-remote",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.chrome.WebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/chrome/WebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/chrome:WebExtensionsTest-remote",
           "framework": "JUnit"
         }
       ]
@@ -8995,7 +9063,12 @@
         "java/src/org/openqa/selenium/virtualauthenticator/HasVirtualAuthenticator.java",
         "java/src/org/openqa/selenium/virtualauthenticator/VirtualAuthenticator.java",
         "java/src/org/openqa/selenium/virtualauthenticator/VirtualAuthenticatorOptions.java",
-        "java/src/org/openqa/selenium/virtualauthenticator/package-info.java"
+        "java/src/org/openqa/selenium/virtualauthenticator/package-info.java",
+        "java/src/org/openqa/selenium/webextension/FirefoxWebExtensionOptions.java",
+        "java/src/org/openqa/selenium/webextension/HasWebExtensions.java",
+        "java/src/org/openqa/selenium/webextension/WebExtension.java",
+        "java/src/org/openqa/selenium/webextension/WebExtensionOptions.java",
+        "java/src/org/openqa/selenium/webextension/package-info.java"
       ],
       "scalacOptions": [],
       "javacOptions": [
@@ -13607,7 +13680,9 @@
         "java/test/org/openqa/selenium/WrappedWebElement.java",
         "java/test/org/openqa/selenium/print/PageMarginTest.java",
         "java/test/org/openqa/selenium/print/PageSizeTest.java",
-        "java/test/org/openqa/selenium/print/PrintOptionsTest.java"
+        "java/test/org/openqa/selenium/print/PrintOptionsTest.java",
+        "java/test/org/openqa/selenium/webextension/FirefoxWebExtensionOptionsTest.java",
+        "java/test/org/openqa/selenium/webextension/WebExtensionTest.java"
       ],
       "scalacOptions": [],
       "javacOptions": [
@@ -14089,7 +14164,9 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/WindowTest-safari.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/print/PageMarginTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/print/PageSizeTest.jar",
-        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/print/PrintOptionsTest.jar"
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/print/PrintOptionsTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/webextension/FirefoxWebExtensionOptionsTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/webextension/WebExtensionTest.jar"
       ],
       "configurations": [
         "//java/test/org/openqa/selenium:AlertsTest",
@@ -14480,7 +14557,9 @@
         "//java/test/org/openqa/selenium:WindowTest-safari",
         "//java/test/org/openqa/selenium:print/PageMarginTest",
         "//java/test/org/openqa/selenium:print/PageSizeTest",
-        "//java/test/org/openqa/selenium:print/PrintOptionsTest"
+        "//java/test/org/openqa/selenium:print/PrintOptionsTest",
+        "//java/test/org/openqa/selenium:webextension/FirefoxWebExtensionOptionsTest",
+        "//java/test/org/openqa/selenium:webextension/WebExtensionTest"
       ],
       "testClasses": [
         {
@@ -16816,6 +16895,18 @@
           "sourcePath": "java/test/org/openqa/selenium/print/PrintOptionsTest.java",
           "configuration": "//java/test/org/openqa/selenium:print/PrintOptionsTest",
           "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.webextension.FirefoxWebExtensionOptionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/webextension/FirefoxWebExtensionOptionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium:webextension/FirefoxWebExtensionOptionsTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.webextension.WebExtensionTest",
+          "sourcePath": "java/test/org/openqa/selenium/webextension/WebExtensionTest.java",
+          "configuration": "//java/test/org/openqa/selenium:webextension/WebExtensionTest",
+          "framework": "JUnit"
         }
       ]
     },
@@ -17243,7 +17334,8 @@
         "java/test/org/openqa/selenium/edge/EdgeDriverInfoTest.java",
         "java/test/org/openqa/selenium/edge/EdgeDriverServiceTest.java",
         "java/test/org/openqa/selenium/edge/EdgeOptionsFunctionalTest.java",
-        "java/test/org/openqa/selenium/edge/EdgeOptionsTest.java"
+        "java/test/org/openqa/selenium/edge/EdgeOptionsTest.java",
+        "java/test/org/openqa/selenium/edge/WebExtensionsTest.java"
       ],
       "scalacOptions": [],
       "javacOptions": [
@@ -17402,7 +17494,9 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/edge/EdgeDriverServiceTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/edge/EdgeOptionsFunctionalTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/edge/EdgeOptionsFunctionalTest-remote.jar",
-        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/edge/EdgeOptionsTest.jar"
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/edge/EdgeOptionsTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/edge/WebExtensionsTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/edge/WebExtensionsTest-remote.jar"
       ],
       "configurations": [
         "//java/test/org/openqa/selenium/edge:EdgeDriverFunctionalTest",
@@ -17411,7 +17505,9 @@
         "//java/test/org/openqa/selenium/edge:EdgeDriverServiceTest",
         "//java/test/org/openqa/selenium/edge:EdgeOptionsFunctionalTest",
         "//java/test/org/openqa/selenium/edge:EdgeOptionsFunctionalTest-remote",
-        "//java/test/org/openqa/selenium/edge:EdgeOptionsTest"
+        "//java/test/org/openqa/selenium/edge:EdgeOptionsTest",
+        "//java/test/org/openqa/selenium/edge:WebExtensionsTest",
+        "//java/test/org/openqa/selenium/edge:WebExtensionsTest-remote"
       ],
       "testClasses": [
         {
@@ -17454,6 +17550,18 @@
           "className": "org.openqa.selenium.edge.EdgeOptionsTest",
           "sourcePath": "java/test/org/openqa/selenium/edge/EdgeOptionsTest.java",
           "configuration": "//java/test/org/openqa/selenium/edge:EdgeOptionsTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.edge.WebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/edge/WebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/edge:WebExtensionsTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.edge.WebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/edge/WebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/edge:WebExtensionsTest-remote",
           "framework": "JUnit"
         }
       ]
@@ -25554,6 +25662,7 @@
         "java/test/org/openqa/selenium/remote/RemoteWebDriverTest.java",
         "java/test/org/openqa/selenium/remote/RemoteWebDriverUnitTest.java",
         "java/test/org/openqa/selenium/remote/RemoteWebElementTest.java",
+        "java/test/org/openqa/selenium/remote/RemoteWebExtensionsTest.java",
         "java/test/org/openqa/selenium/remote/ShadowDomTest.java",
         "java/test/org/openqa/selenium/remote/TracedCommandExecutorTest.java",
         "java/test/org/openqa/selenium/remote/W3CHandshakeResponseTest.java",
@@ -25745,6 +25854,7 @@
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebDriverTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebDriverUnitTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebElementTest.jar",
+        "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/RemoteWebExtensionsTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/ShadowDomTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/TracedCommandExecutorTest.jar",
         "/home/runner/.bazel/execroot/_main/bazel-out/k8-fastbuild/bin/java/test/org/openqa/selenium/remote/W3CHandshakeResponseTest.jar",
@@ -25780,6 +25890,7 @@
         "//java/test/org/openqa/selenium/remote:RemoteWebDriverTest",
         "//java/test/org/openqa/selenium/remote:RemoteWebDriverUnitTest",
         "//java/test/org/openqa/selenium/remote:RemoteWebElementTest",
+        "//java/test/org/openqa/selenium/remote:RemoteWebExtensionsTest",
         "//java/test/org/openqa/selenium/remote:ShadowDomTest",
         "//java/test/org/openqa/selenium/remote:TracedCommandExecutorTest",
         "//java/test/org/openqa/selenium/remote:W3CHandshakeResponseTest",
@@ -25958,6 +26069,12 @@
           "className": "org.openqa.selenium.remote.RemoteWebElementTest",
           "sourcePath": "java/test/org/openqa/selenium/remote/RemoteWebElementTest.java",
           "configuration": "//java/test/org/openqa/selenium/remote:RemoteWebElementTest",
+          "framework": "JUnit"
+        },
+        {
+          "className": "org.openqa.selenium.remote.RemoteWebExtensionsTest",
+          "sourcePath": "java/test/org/openqa/selenium/remote/RemoteWebExtensionsTest.java",
+          "configuration": "//java/test/org/openqa/selenium/remote:RemoteWebExtensionsTest",
           "framework": "JUnit"
         },
         {
